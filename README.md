@@ -3,13 +3,7 @@ pandoc
 
 Create a d3 visualization of the interconnectedness between the sections in SICP.
 
-#sicp http://rht.github.io/diracgraph/force.html?type=sicp
-1. create tokens from each sections found in http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-4.html#%_toc_start (after the content has been sanitized, of course).
-2. remove common english words from the token
-3. make corpora and dictionary of the book, with gensim
-4. compute tfidf for each section
-5. compute cosine similarity
-The result is harder to interpret, but I can narrate for you the next one. If I remove links with weak weight, maybe the structure can be clearer.
+#sicp http://rht.github.io/sicp-lda
 
 #dirac http://rht.github.io/diracgraph/force.html
 same as above, but since I do the partition based on chapters instead of section, it is easier to interpret.
