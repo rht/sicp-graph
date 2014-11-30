@@ -27,7 +27,7 @@ licence
 5.4  The Explicit-Control Evaluator
 5.5  Compilation
 References
-List of Exercies
+List of Exercises
 Index
 This book is dedicated, in respect and admiration, to the spirit that lives in the computer
 Table of contents

@@ -75,6 +75,12 @@ book = [
 
 try:
     labels = open('titles.txt','r').read().split('\n')[:-1]
+
+    #strip unreadable characters
+    labels = [re.sub('\xc2|\xa0|\xe2|\x80|\x94',' ',i) for i in labels]
+
+    # remove section name from labels
+    labels = [ (l[0].isdigit() and l.split(' ')[0]) or l for l in labels]
 except:
     labels = {i:i+1 for i in range(len(book))}
 
@@ -101,7 +107,7 @@ for text in corpus:
 index = similarities.Similarity('/tmp/tst', corpus_tfidf.corpus, num_features=corpus.num_terms+1)
 sims = index[corpus_tfidf]
 #step 3.1
-sims[sims < 1.* pylab.mean(sims)] = 0
+sims[sims < pylab.percentile(sims, 90)] = 0
 
 #step 4 convert datatype to networkx Graph
 print "converting similarity matrix to networkx Graph"

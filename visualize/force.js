@@ -1,6 +1,5 @@
-
-var w = 1000,
-    h = 1000,
+var w = 1200,
+    h = 600,
     fill = d3.scale.category20();
 
 var vis = d3.select("#chart")
@@ -8,12 +7,12 @@ var vis = d3.select("#chart")
     .attr("width", w)
     .attr("height", h);
 
-//d3.json("graph_dirac.json", function(json) {
 d3.json("graph_sicp.json", function(json) {
   var force = d3.layout.force()
+      //.charge(-120)
+      //.linkDistance(function(d) { return 10/d.weight; })
       .charge(-120)
-      //.linkDistance(function(d) { return d.weight*2000; })
-      .linkDistance(function(d) { return d.weight*1000; })
+      .linkDistance(40)
       .nodes(json.nodes)
       .links(json.links)
       .size([w, h])
