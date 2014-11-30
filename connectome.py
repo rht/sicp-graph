@@ -44,13 +44,15 @@ if prefix == 'sicp':
 
     groups = [(l[0].isdigit() and l[0]) or 0 for l in labels]
 elif prefix == 'dirac':
-    labels = [ ((l[0].isdigit() and l[1].isdigit()) and l.split(' ')[0]) or l for l in labels]
-    labels = [ (l[0].isdigit() and l.split(' ')[0]) or l for l in labels]
+    labels = [ l.split('.')[0] for l in labels if l[0].isdigit()]
     groups = [((l[0].isdigit() and not l[1].isdigit()) and l[0]) or ((l[0].isdigit() and l[1].isdigit()) and l[:2]) or 0 for l in labels]
-else:
-    labels = [ ((l[0].isdigit() and l[1].isdigit()) and l.split(' ')[0]) or l for l in labels]
-    labels = [ (l[0].isdigit() and l.split(' ')[0]) or l for l in labels]
-    groups = [(l[0].isdigit() and l[0]) or 0 for l in labels]
+elif prefix == 'dirac_sections':
+    labels = [ l.split('.')[0] for l in labels if l[0].isdigit()]
+    groupdic = {d[0]:d[1] for d in [i.split(' ') for i in open(prefix+'/metadata_extra.txt','r').read().strip().split('\n')]}
+    print groupdic
+    groups = [groupdic[i] for i in labels]
+    print groups
+    eixt()
 
 #step 1 prepare corpus
 prepare_corpus([open(section,'r').read().decode('utf-8') for section in book])

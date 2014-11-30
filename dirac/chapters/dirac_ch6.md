@@ -4,7 +4,7 @@
 
 A SIMPLE and interesting example of a dynamical system in quantum
 mechanics is the harmonic oscillator. This example is of importance
-for general theory, because it forms a corner-stone in the theory of
+for general theory, because it forms a corner-stone in the theory ofjj
 radiation. The dynamical variables needed for describing the system
 are just one coordinate q and its conjugate momentum p. The
 Hamiltonian in classical mechanics is
