@@ -47,155 +47,193 @@
     ], 
     "nodes": [
         {
+            "group": "1", 
             "name": "1.1", 
             "id": 0
         }, 
         {
+            "group": "1", 
             "name": "1.2", 
             "id": 1
         }, 
         {
+            "group": "1", 
             "name": "1.3", 
             "id": 2
         }, 
         {
-            "name": "2.", 
+            "group": "2", 
+            "name": "2. Building Abstractions with Data", 
             "id": 3
         }, 
         {
+            "group": "2", 
             "name": "2.1", 
             "id": 4
         }, 
         {
+            "group": "2", 
             "name": "2.2", 
             "id": 5
         }, 
         {
+            "group": "2", 
             "name": "2.3", 
             "id": 6
         }, 
         {
+            "group": "2", 
             "name": "2.4", 
             "id": 7
         }, 
         {
+            "group": "2", 
             "name": "2.5", 
             "id": 8
         }, 
         {
-            "name": "3.", 
+            "group": "3", 
+            "name": "3. Modularity, Objects, and State", 
             "id": 9
         }, 
         {
+            "group": 0, 
             "name": "titlepage", 
             "id": 10
         }, 
         {
+            "group": "3", 
             "name": "3.1", 
             "id": 11
         }, 
         {
+            "group": "3", 
             "name": "3.2", 
             "id": 12
         }, 
         {
+            "group": "3", 
             "name": "3.3", 
             "id": 13
         }, 
         {
+            "group": "3", 
             "name": "3.4", 
             "id": 14
         }, 
         {
+            "group": "3", 
             "name": "3.5", 
             "id": 15
         }, 
         {
-            "name": "4.", 
+            "group": "4", 
+            "name": "4. Metalinguistic Abstraction", 
             "id": 16
         }, 
         {
+            "group": "4", 
             "name": "4.1", 
             "id": 17
         }, 
         {
+            "group": "4", 
             "name": "4.2", 
             "id": 18
         }, 
         {
+            "group": "4", 
             "name": "4.3", 
             "id": 19
         }, 
         {
+            "group": "4", 
             "name": "4.4", 
             "id": 20
         }, 
         {
+            "group": 0, 
             "name": "licence", 
             "id": 21
         }, 
         {
-            "name": "5.", 
+            "group": "5", 
+            "name": "5. Computing with Register Machines", 
             "id": 22
         }, 
         {
+            "group": "5", 
             "name": "5.1", 
             "id": 23
         }, 
         {
+            "group": "5", 
             "name": "5.2", 
             "id": 24
         }, 
         {
+            "group": "5", 
             "name": "5.3", 
             "id": 25
         }, 
         {
+            "group": "5", 
             "name": "5.4", 
             "id": 26
         }, 
         {
+            "group": "5", 
             "name": "5.5", 
             "id": 27
         }, 
         {
+            "group": 0, 
             "name": "References", 
             "id": 28
         }, 
         {
+            "group": 0, 
             "name": "List of Exercises", 
             "id": 29
         }, 
         {
+            "group": 0, 
             "name": "Index", 
             "id": 30
         }, 
         {
+            "group": 0, 
             "name": "This book is dedicated, in respect and admiration, to the spirit that lives in the computer", 
             "id": 31
         }, 
         {
+            "group": 0, 
             "name": "Table of contents", 
             "id": 32
         }, 
         {
+            "group": 0, 
             "name": "Foreword", 
             "id": 33
         }, 
         {
+            "group": 0, 
             "name": "Preface to the Second Edition", 
             "id": 34
         }, 
         {
+            "group": 0, 
             "name": "Preface to the First Edition", 
             "id": 35
         }, 
         {
+            "group": 0, 
             "name": "Acknowledgements", 
             "id": 36
         }, 
         {
-            "name": "1.", 
+            "group": "1", 
+            "name": "1. Building Abstractions with Procedures", 
             "id": 37
         }
     ], 

@@ -80,7 +80,9 @@ try:
     labels = [re.sub('\xc2|\xa0|\xe2|\x80|\x94',' ',i) for i in labels]
 
     # remove section name from labels
-    labels = [ (l[0].isdigit() and l.split(' ')[0]) or l for l in labels]
+    labels = [ ((l[0].isdigit() and l[2].isdigit()) and l.split(' ')[0]) or l for l in labels]
+
+    groups = [(l[0].isdigit() and l[0]) or 0 for l in labels]
 except:
     labels = {i:i+1 for i in range(len(book))}
 
@@ -113,6 +115,7 @@ sims[sims < pylab.percentile(sims, 90)] = 0
 print "converting similarity matrix to networkx Graph"
 sims = networkx.Graph(sims, node_list=range(len(book)))
 networkx.set_node_attributes(sims, 'name', {x:y for x,y in enumerate(labels)})
+networkx.set_node_attributes(sims, 'group', {x:y for x,y in enumerate(groups)})
 
 #step 5: dump json for visualization in d3.js
 json_data = json_graph.node_link_data(sims)
