@@ -1,0 +1,897 @@
+#VII PERTURBATION THEORY
+
+#42. General remarks
+IN the preceding chapter exact treatments were given of some simple
+dynamical systems in the quantum theory. Most quantum problems,
+however, cannot be solved exactly with the present resources of
+mathematics, as they lead to equations whose solutions cannot be
+expressed in finite terms with the help of the ordinary functions of
+analysis. For such problems one can often use a perturbation method.
+This consists in splitting up the Hamiltonian into two parts, one of
+which must be simple and the other small. The first part may then
+be considered as the Hamiltonian of a simplified or unperturbed
+system, which can be dealt with exactly, and the addition of the
+second will then require small corrections, of the nature of a perturba-
+tion, in the solution for the unperturbed system. The requirement
+that the first part shall be simple requires in practice that it shall not
+involve the time explicitly. If the second part contains a small
+numerical factor e, we can obtain the solution of our equations for
+the perturbed system in the form of a power series in e, which, pro-
+vided it converges, will give the answer to our problem with any
+desired accuracy. Even when the series does not converge, the first
+approximation obtained by means of it is usually fairly accurate.
+There are two distinct methods in perturbation theory. In one of
+these the perturbation is considered as causing a modiﬁcation o‘ the
+states o‘ motion of the unperturbed system. In the other we do not
+consider any modification to be made in the states of the unperturbed
+system, but we suppose that the perturbed system, instead of remain-
+ing permanently in one of these states, is continually changing from
+one to another, or making transitions, under the inﬂuence of ‘the
+perturbation. Which method is to be used in any particular case
+depends on the nature of the problem to be solved. The first method
+is usefulusually only when the perturbing energy (the correction in the
+Hamiltonian for the undisturbed system) does not involve the time
+explicitly, and is then applied to the stationary states. It can be used
+for calculating things that do not? refer to any deﬁnite time, such as
+the energy-levels of the stationary states of the perturbed system, or,
+in the case of collision problems, the probability of scattering through
+
+168 PERTURBATION THEORY §4=2
+
+a given angle. The second method must, on the other hand, be used
+for solving all problems involving a consideration of time, such as
+those about the transient phenomena that occur when the perturba-
+tion is suddenly applied, or more generally problems in which the
+perturbation varies with the time in any way (Le. in which the per-
+turbing energy involves the time explicitly). Again, this second
+method must be used in collision problems, even though the per-
+turbing energy does not here involve the time explicitly, if one
+wishes to calculate absorption and emission probabilities, since these
+probabilities, unlike a scattering probability, cannot be deﬁned with-
+out reference to a state of affairs that varies with the time.
+
+One can summarize the distinctive features of the two methods by
+saying that, with the first method, one compares the stationary states
+of the perturbed system with those of the unperturbed system; with
+the second method one takes a stationary state of the unperturbed
+
+system and sees how it varies with time under the inﬂuence of the
+perturbation.
+
+#43. The change in the energy-levels caused by a perturbation
+
+The ﬁrst of the above-mentioned methods will now be applied to
+the calculation of the changes in the energy-levels of a system caused
+by a perturbation. We assume the perturbing energy, like the Hamil-
+tonian for the unperturbed system, not to involve the time explicitly.
+Our problem has a meaning, of course, only provided the energy-levels
+of the unperturbed system are discrete and the differences between
+them are large compared with the changes in them caused by the
+perturbation. This circumstance results in the treatment of perturba-
+tion problems by the first method having some different features
+
+according to whether the energy-levels of the unperturbed system are
+discrete or continuous.
+
+Let the Hamiltonian of the perturbed system be
+
+H = E —|- V, (l)
+E being the Hamiltonian of the unperturbed system and V the small
+perturbing energy. By hypothesis each eigenvalue H‘ of H lies very
+close to one and only one eigenvalue E’ of E. We shall use the same
+number of primes to specify any eigenvalue of H and the eigenvalue
+of E to which it lies very close. Thus we shall have H" differingfrom
+E" by a small quantity of order V and differingfrom E’ by a quantity
+that is not small unless E‘ = E”. We must now take care always to
+
+§43 CHANGE IN THE ENERGY-LEVELS 169
+
+use different numbers of primes to specify eigenvalues of H and E
+
+Which We do not Want to lie very close together.
+T0 obtain the eigenvalues of H, We have to solve the equation
+
+H[H’>_= H'|H’>
+or (H’-E)]H’> = V|H’>. (2)
+Let 10> be an eigenket of E belonging to the eigenvalue E ' and
+
+suppose,the 1H’) and H’ that satisfy (2) to differ from i0) and E’
+only by small quantities and to be expressed as
+
+|H'> = l0>+l1>+l3>+---, J (3)
+H’ = E ’fa1+a2+...,
+Where l1) and a, are of the first order of smallness (Le. the same order
+as V), 12> and a, are of the second order, and so on. Substituting
+these expressions in (2), We obtain
+
+{E"-E+a1+a2+...}{[0>+|1)+}2>-|-...} = V{]0>+]1)+...}.
+If We now separate the terms of zero order, of the first order, of the
+second order, and so on, We get the following set of equations,
+
+(E’“'E)l1>+a1l0> = VIOZ (4)
+(E"'“E)|2>+a1|1>+a2l0>= 711%
+
+The first of these equations tells us, What We have already assumed,
+that l0) is an eigenket of E belongingto the eigenvalue E ’. The others
+
+enable us to calculate the various corrections {l}, |2>,..., a,, a2,“ .
+For the further discussion of these equations it is convenient to
+
+introduce a representation in which E is diagonal, i.e. a Heisenberg
+representation for the unperturbed system, and to take E itself as
+one of the observables Whose eigenvalues label the representatives.
+Let the others, in the event of others being necessary, as is the case
+When there is more than one eigenstate of E belonging to any eigen-
+value, be called Fs. A basic bra is then <E",8"|. Since |0> is an
+
+eigenket of E belonging to the eigenvalue E ', We have
+
+<E”ﬁ”l0> = 5E'E'f (18% (5)
+WherefQB”) is some function of the variables ,8". With the help of this
+result the second of equations (4), Written in terms of representatives,
+becomes
+
+(E"—~E”)<E"5”l1>+@15E-E'f(»8") = Z <E"B"IVIE'B’>J‘°(5’)- (6)
+B,
+
+170 PERTURBATION THEORY 843
+
+Putting E" = E’ here, we get
+@1118") = g <E'ﬁ"|I/1Eu@'>fw'>. w
+
+Equation ( 7 )is of the form of the standard equation in the theory
+of eigenvalues, so far as the variables )3’ are concerned. It shows that
+the various possible values for a, are the eigenvalues of the matrix
+<E';8"[V]E’,8'>. This matrix is a part of the representative of the
+perturbing energy in the Heisenberg representation for the unper-
+turbed system, namely, the part consisting of those elements that
+refer to the same unperturbed energy-level E’ for their row and
+column. Each of these values for a, gives, to the first order, an energy-
+level of the perturbed system lying close to the energy-level E’ of the
+unperturbed systemj There may thus be several energy-levels of the
+perturbed system lying close to the one energy-level E’ of the unper-
+turbed system, their number being anything not exceeding the
+number of independent states of the unperturbed system belonging
+to the energy-level E’. In this way the perturbation may cause a
+separation or partial separation of the energy-levels that coincide
+at E’ for the unperturbed system.
+
+Equation (7) also determines, to the zero order, the representatives
+(E”,8”|0> of the stationary states of the perturbed system belonging
+to energy-levels lying close to E’, any solution fQB’) of ( 7) substituted
+in (5) giving one such representative. Each of these stationary states
+of the perturbed system approximates to one of the stationary states
+of the unperturbed system, but the converse, that each stationary
+state of the unperturbed system approximates to one of the stationary
+states of the perturbed system, is not true, since the general
+stationary state of the unperturbed system belonging to the energy-
+level E’ is represented by the right-hand side of ( 5 )with an arbitrary
+function fQB”). The problem of finding which stationary states of
+the unperturbed system approximate to stationary states of the
+perturbed system, i.e. the problem of finding the solutions ﬂﬁ’) of
+(7), corresponds to the problem of ‘secular perturbations’ in classical
+mechanics. It should be noted that the above results are indepen-
+dent of the values of all those matrix elements of the perturbing
+
+T To distinguish these energy-levels one from another We should require some
+more elaborate notation, since according to the present notation they must all be
+speciﬁed by the same number of primes, namely by the number of primes specifying
+
+the energy-level of the unperturbed system from which they arise. Por our present
+purposes, however, this more elaborate notation is not required.
+
+§43 CHANGE IN THE ENERGY-LEVELS 171
+
+energy which refer t0 two different energy-levels 0f the unperturbed
+system.
+
+Let us see What the above results become in the specially simple case
+when there is only one stationary state of the unperturbed system
+belonging to each energy-levelff In this case E alone ﬁxes the repre-
+sentation, no f3’s being required. The sum in (7) now reduces to a
+single term and We get
+
+d, = (EWVIF) (8)
+There is only one energy-level of the perturbed system lying close to
+any energy-level of the unperturbed system and the change in energy
+is equal, i n the ﬁrst order, to the corresponding diagonal element q’ the
+perturbing energy i n the Heisenberg representation for the unperturbed
+system, or to the average value q’ the perturbing energy for the correspond-
+ing unperturbed state. The latter formulation of the result is the same
+as in classical mechanics When the unperturbed system is multiply
+periodic.
+
+We shall proceed to calculate the second-order correction a, in
+the energy-level for the case when the unperturbed system is non-
+degenerate. Equation (5) for this case reads
+
+<Eillo> 2 321E’: _
+With neglect of an unimportant numerical factor, and equation (6)
+reads (E’—E”)(E”|1>+a18E-E, = <E”[V|E’>.
+This gives us the value of ( E|1> when E 5r‘: E’, namely
+f! <E"|V|E’>
+E = —---- 9
+< r1> E.___E. . <>
+
+The third of equations (4), written in terms of representatives,
+becomes
+(E:_Err)<E1r|2>+a1<Enr!1>+a28Ew I z:  <EulViErxr><Enrtl>.
+Putting E = E’ here, We get
+a1<Eri1>+a2 i: g! <Er[V|Errr><Er.v‘1>’
+
+which reduces, With the help of (8), to
+
+a2: 2 <E'|V[E">(E"]1>.
+EﬁﬁE’
+
+1‘ A system With only one stationary state belonging to each energy-level is often
+called non-degenerate and one With tWo or more stationary states belonging to an
+energy-level is called degenerate, although these Words are not very appropriate from
+the modern point of vieW.
+
+172 PERTURBATION THEORY §43
+
+Substituting for ( E|1) from (9), we obtain ﬁnally
+_ <E*'|V|E”><E'f|V]E'>
+a2 —- E,___E~
+E”¢E'
+
+7
+
+giving for the total energy change t0 the second order
+
+l‘ H If V I
+a1+a2=<E’|I/|E'>+ 2 <E'Vig.>__<§..' ‘E? (w)
+
+E’¢E'
+
+The method may be developed for the calculation of the higher
+approximations if required. General recurrence formulas giving the
+nth order corrections in terms of those of lower order have been
+obtained by Born, Heisenberg, and J ordanﬂ‘
+
+#44. The perturbation considered as causing transitions
+
+We shall now consider the second of the two perturbation methods
+mentioned in § 42. We suppose again that we have an unperturbed
+system governed by a Hamiltonian E which does not involve the
+time explicitly, and a perturbing energy V which can now be an
+arbitrary function of the time. The Hamiltonian for the perturbed
+system is again H := E-I-V. For the present method it does not
+make any essential difference whether the energy-levels of the
+unperturbed system, i.e. the eigenvalues of E, form a discrete or
+continuous set. We shall, however, take the discrete case, for
+definiteness. We shall again work with a Heisenberg representation
+for the unperturbed system, but as there will now be no advantage in
+taking E itself as one of the observables whose eigenvalues label the
+representatives, we shall suppose we have a general set of afs to label
+the representatives.
+
+Let us suppose that at the initial time to the system is in a state for
+which the a's certainly have the values a'. The ket corresponding to
+this state is the basic ket lal). If there were no perturbation, i.e. if the
+Hamiltonian were E, this state» "would be stationary. The perturba-
+tion causes the state to change. At time t the ket corresponding to the
+state in Schrodinger's picture will be The’), according to equation (l)
+of $27 . The probability of the 08s then having the values a" is
+
+Pﬁafoc") = |(a“ [T|oc'>|2. (11)
+
+For a" 7i a', Pﬁifa") is the probability of a transition taking place
+from state a’ to state a" during the time interval to —> t, while PMQ’
+
+1 z.£. Physik, 35 (1925), 565.
+
+§44= PERTURBATION CAUSING TRANSITIONS 173
+
+is the probability of no transition taking place at all. The sum of
+P(a’a”) for all a” is, of course, unity.
+
+Let us now suppose that initially the system, instead of being
+certainly in the state a’, is in one or other of various states a’ with
+the probability Pa» for each. The Gibbs densitycorresponding to this
+distribution is, according to (68) of § 33
+
+p == g l@'>P..-<@'r- (12)
+
+At time t, each ket hi’) will have changed to Tla’) and each bra <a’|
+to (a517, so p will have changed to
+
+p, = Z T|a*>P,.<a'|T. (13)
+The probability of the a's then having the values a” will be, from
+(73) of§ 33, ___
+<anlptlmrr> Z g <anlTloér>pa’<arlTlan>
+= §P,,P(a’@” (14)
+
+with the help of (ll). This result expresses that the probability of
+the system being in the state a” at time t is the sum of the probabilities
+of the system being initially in any state a’ 7’: a”, and making a transi-
+tion from state a’ to state a" and the probability of its being initially
+in the state 0c” and making n0 transition. Thus the various transition
+probabilities act independently of one another, according to the
+ordinary laws of probability.
+
+The whole problem of calculating transitions thus reduces to the
+determination of the probability amplitudes <@¢”|T la’). These can be
+Worked out from the differential equation for T, equation (6)of $27 ,or
+
+iﬁdT/dt = HT z (E—{—V)T. (15)
+
+The calculation can be simpliﬁed by working with
+T* = e‘E<‘""<=?lﬁT. (16)
+
+We have 11ft dT*/dt = e"3E('"‘@)""(~—E T +11% dT/dt)
+Z emrwoyny/T I, Vaqw, (17)
+where 7* = eiEu-eoyaVe-azmz-aoyn, (18)
+
+i.e. V* is the result of applying a certain unitary transformation to V.
+Equation (17) is of a more convenient form than (15), because (17)
+makes the change in T * depend entirely on the perturbation V, and
+
+174 PERTURBATION THEORY §44=
+
+for V = O it would make T * equal its initial value, namely unity.
+We have from (1 6)
+
+<@"1T*|@v> = @*E"<*4~>'ﬂ<@~"|r1w@'>.
+
+S0 that P0130?) = I<O1”IT*I¢¥’>IZ, (19)
+showing that T * and T are equally good for determining transition
+probabilities.
+
+Our Work up to the present has been exact. We noW assume V is
+a small quantity of the first order and express T* in the form
+
+T* = l-l-Tf-l-Tj-i-m, (20)
+
+“there T? is of the first order, T3‘ is of the second, and so on. Substi-
+tuting (20)into (17) and equating terms of equal order, We get
+
+ifaldTffdt = V*,
+ifzldTj/dt = V*T;“, (21)
+
+From the first of these equations We obtain
+z
+f = “ta-l f V*(¢’) dz, (22)
+in "
+from the second We obtain
+
+t t’
+T; z Hit-Z f V*(t’) at’ f 11m") at’; (2a)
+in to
+
+and so on. For many practical problems it is sufficiently accurate to
+retain only the term T1“, which gives for the transition probability
+P(oa'oz") With cx" # a’
+
+2
+
+P(o¢’o¢") = ﬁ/“Z
+
+   
+
+:
+<05’; J V*(t’) dt’ {of}
+z to
+I <oc"]V*(i')|o¢'> dﬁ’
+n,
+We obtain in this xvay the transition probability to the second order
+
+of accuracy. The result depends only on the matrix element
+
+<cx"|V*(t’)|cx'> of V*(t’) referring to the tWo states concerned, with t’
+going from to to t. Since V* is real, like V,
+
+(a"lV*(t’)ﬂ = (a'lV*(t’)la'Q
+and hence PMQ”) = P(a”@¢' (25)
+
+to the second order of accuracy.
+
+, <24)
+
+z h"'2
+
+   
+
+§44= PERTURBATION CAUSING TRANSITIONS 175
+
+Sometimes one is interested in a transition a’ ~+ a” such that the
+matrix element <Q¢”IV* la’) vanishes, 0r is small compared with other
+matrix elements of V*. It is then necessary to work to a higher
+accuracy. If we retain only the terms Elf and Tg‘, we get, for m” 2;‘: a’,
+
+Pﬂxlcx") = 5'2
+
+t
+f <@"1V*<r>|@r> db
+in
+
+r r z
+—iﬁ"1  b I <u”]V*(t’)[a”’> dt’ J (a”’{V*(t")la9 alt” . (26)
+oam¢a .0: to to
+
+The terms a" = a’ and a" = a" are omitted from the sum since they
+are small compared with other terms of the sum, on account of the
+smallness of <a"|V* lot’). To interpret the result (26), we may suppose
+
+that the term t
+
+l <@”lV*(¢')I@¢’> at’ <27)
+in
+gives rise to a transition directly from state a’ to state a", while the
+term r r
+_-m.-1f <a*'|v*(t')|a~"> at’ <a"'|v*(z*’)[a’> dz" (28)
+t0 o
+
+gives rise to a transition from state a’ to state of”, followed by a
+transition from state of” to state ca”. The state d” is called an inter-
+mediate state in this interpretation. We must add the term (2 7 )to the
+various terms (28) corresponding to different intermediate states
+and then take the square of the modulus of the sum, which means
+that there is interference between the different transition processes-
+the direct one and those involving intermediate states —and one can-
+not give a meaning to the probability for one of these processes by
+itself. For each of these processes, however, there is a probability
+amplitude. If one carries out the perturbation method to a higher
+degree of accuracy, one obtains a result which can be interpreted
+similarly, with the help of more complicated transition processes
+involving a succession of intermediate states.
+
+#45. Application to radiation
+
+In the preceding section a general theory of the perturbation of an
+atomic system was developed, in which the perturbing energy could
+vary with the time in an arbitrary way. A perturbation of this
+kind can be realized in practice by allowintg incident electromagnetic
+
+176 PERTURBATION THEORY §45
+
+radiation to fall 0n the system. Let us see What our result (24) reduces
+
+to in this case.
+
+If We neglect the effects of the magnetic ﬁeld of the incident radia-
+tion, and if We further assume that the Wave-lengths of the harmonic
+components of this radiation are all large compared With tho dimen-
+sions of the atomic system, then the perturbing energy is simply the
+
+scalar product V = (D, a} (29)
+
+Where D is the total electric displacement of the system and é? is
+the electric force of the incident radiation. We suppose é‘ to be a
+given function of the time. If We take for simplicity the case When
+the incident radiation is plane polarized With its electric vector in
+a certain direction and let D denote the Cartesian component of D
+in this direction, the expression (29) for V reduces to the ordinary
+
+product V = DE,
+
+Where é‘ is the magnitude of the vector é‘. The matrix elements of
+V ar€ <anlVloir> i <OzrrRDRar>€,
+
+since E is a number. The matrix element (oa”|D]oc'> is independent
+of t. From (l8)
+
+(aavﬂrnav = a" IDl@'>@*=<E"-E’><*—*~>"1@<a.
+
+and hence the expression ( 24 )for the transition probability becomes
+
+z
+f ei(E"-E'x:'_¢,,)/ﬁ@(;') art’
+t»
+
+If the incident radiation during the time interval to to t is resolved
+into its Fourier components, the energy crossing unit area per unit
+frequency range about the frequency v Will be, according to classical
+electrodynamics, z
+
+Pwa") =- ﬁ~2|<@”l11:a'>12 2. <30)
+
+   
+
+   
+
+Ev m EC; I e21r¢v(s’-r°)@(¢’) d5’ 2. (31)
+in
+Comparing this With (30), We obtain
+Fwd”) = 21rc"1ﬁ"2|(a"]D]a‘>|2E,,, (32)
+Where v m |E”—E’|/h. (33)
+
+From this result We see in the first place that the transition proba-
+bility depends only on that Fourier component of the incident radia-
+tion Whose frequency v is connected With the change of energy by (3 3).
+
+§45 APPLICATION TO RADIATION 177
+
+This gives us Bohrls Frequency Condition and shows how the ideas
+of Bohr's atomic theory, which was the forerunner of quantum
+mechanics, can be fitted in with quantum mechanics.
+
+The present elementary theory does not tell us anything about the
+energy of the ﬁeld of radiation. It would be reasonable to assume,
+though, that the energy absorbed or liberated by the atomic system
+in the transition process comes from or goes into the component of
+the radiation with frequency v given by (33). This assumption will
+be justified by the more complete theory of radiation given in
+Chapter X. The result (32) is then to be interpreted as the proba-
+bility of the system, if initially in the state of lower energy, absorb-
+ing radiation and being carried to the upper state, and if initially in
+the upper state, being stimulated by the incident radiation to emit
+and fall to the lower state. The present theory does not account for
+the experimental fact that the system, if in the upper state with no
+incident radiation, can emit spontaneously and fall to the lower state,
+but this also will be accounted for by the more complete theory of
+Chapter X.
+
+The existence of the phenomenon of stimulated emission was in-
+ferred by Einsteinj long before the discovery of quantum mechanics,
+from a consideration of statistical equilibrium between atoms and a
+field of black-body radiation satisfying Planck's law. Einsteinshowed
+that the transition probability for stimulated emission must equal
+that for absorption between the same pair of states, in agreement
+with the present quantum theory, and deduced also a relation con-
+necting this transition probability with that for spontaneous emission,
+which relation is in agreement with the theory of Chapter X.
+
+The matrix element (a"]D|oc'> in (32) plays the part of the ampli-
+tude of one of the Fourier components of D in the classical theory of
+a multiply-periodic system interacting with radiation. In fact it was
+the idea of replacing classical Fourier components by matrix elements
+which led Heisenberg to the discovery of quantum mechanics in 1925.
+Heisenberg assumed that the formulas describing the interaction with
+radiation of a system in the quantum theory can be obtained from
+the classical formulas by substituting for the Fourier components of
+the total electric displacement of the system the corresponding matrix
+elements. According to this assumption applied to spontaneous emis-
+sion, a system having an electric moment D will, when in the state
+
+1 31111816111, Phys. 264:8. 1s (1917), 121.
+
+11s PERTURBATION THEORY §15
+
+a’, spontaneously emit radiation of frequency v = (E'—-E”)/h, where
+E" is an energy-level, less than E’, of some state a", at the rate
+
+g ‘2;”’4r<@"11>:a'>:2» <34)
+
+The distribution of this radiation over the different directions of
+emission and its state of polarization for each direction will be the
+same as that for a classical electric dipole of moment equal to the
+real part of <a”|D|@J). To interpret this rate of emission of radiant
+energy as a transition probability, we must divide it by the quantum
+of energy of this frequency, namely 1w, and call it the probability per
+unit time of this quantum being spontaneously emitted, with the
+atomic system simultaneously dropping to the state a" of lower
+energy. These assumptions of Heisenberg are justified by the present
+radiation theory, supplemented by the spontaneous transition theory
+of Chapter X.
+
+#46. Transitions caused by a perturbation independent of the
+time
+
+The perturbation method of § 44 is still valid when the perturbing
+energy V does not involve the time t explicitly. Since the total
+Hamiltonian H in this case does not involve t explicitly, we could
+now, if desired, deal with the system by the perturbation method of
+§ 43 and find its stationary states. Whether this method would be
+convenient or not would depend on what we want to find out about
+the system. If what we have to calculate makes an explicit reference
+to the time, eg. if we have to calculate the probability of the system
+being in a certain state at one time when we are given that it is in a
+certain state at another time, the method of § 44 would be the more
+convenient one.
+
+Let us see what the result (24) for the transition probab‘ lity becomes
+when V does not involve t explicitly and let us take to = 0 to simplify
+the writing. The matrix element (a" IVIQ’) is now independent of t,
+
+ 
+
+and fr“ ‘l8’ <@"|V*<r)1@'> = <@"|Vn@'>@i<E"—E'>*'1h. <35»
+g ,3 ,,__ J, m
+SO IQJIV (I§')|cx'> it’ E <oa"|V]oc'>- ,
+
+o
+provided E"_ .7’: E’. Thus the transition probability (24) becomes
+
+Pwa”) 4 1<@"|v|@='>|2[@**=<E"~E'>**’*-11[@~t<E”-E'>"ﬁ-1]/<E"--E'>2
+=ZI<=1"IVI@'>l2[1—@<>S{(E”-E')¢/%}l/(E"-—E’)? <36)
+
+§45 TRANSITION PROBABILITIES 179
+
+If E" differs appreciably from E’ this transition probability is small
+and remains s0 for all values of t. This result is required by the law
+of the conservation of energy. The total energy H is constant and
+hence the proper-energy E (i.e. the energy with neglect of the part
+V due to the perturbation), being approximately equal to H, must
+be approximately constant. This means that if E initially has the
+numerical value E‘, at any later time there must be only a small
+probability of its having a numerical value differing considerably
+from E'.
+
+On the other hand, when the initial state a’ is such that there exists
+another state a" having the same or very nearly the same proper-
+energy E, the probability of a transition to the final state 0c" may be
+quite large. The case of physical interest now is that in which there
+is a continuous range of final states a” having a continuous range of
+proper-energy levels E passing through the value E' of the proper-
+energy of the initial state. The initial state must not be one of the
+continuous range of final states, but may be either a separate discrete
+state or one of another continuous range of states. We shall now have,
+remembering the rules of § 18 for the interpretation of probability
+amplitudes with continuous ranges of states, that, with Pbzfu”)
+having the value (36), the probability of a transition to a final state
+within the small range a" to of-l-da” will be Pmfot") don" if the initial
+state a’ is discrete and will be proportional to this quantity if a‘ is
+one of a continuous range.
+
+We may suppose that the a's describing the final state consist of
+E together with a number of other dynamical variables ,8, so that we
+have a representation like that of § 43 for the degenerate case. (The
+He, however, need have no meaning for the initial state of.) We shall
+suppose for definiteness that the ,8’s have only discrete eigenvalues.
+The total probability of a transition to a final state a" for which the
+,8’s have the values H’ and E has any value (there will be a strong
+probability of its having a value near the initial value E’) will now
+be (or be proportional to)
+
+f P(o:'oa") dE”
+
+== 2  |<E"B”lVlof>I"*[1—<=0S{(E”—E’)¢/%}]/(E”—E’)2dE” <37)
+
+H
+
+2M4} |(E’+fém/t,,8"lV[cx’>]2[1-cos:z:]/:c2d2:
+
+180 PERTURBATION THEORIY M6
+
+if one makes the substitution (E —E')t/?£ = x. For large values 0f t
+
+this reduces t0
+00
+
+2:»>~1|<E'B"1v1w>|* f [lecosxl/wzdw
+
+" .1 2wuz~1|<E'5"|I/|a'>|2. (as)
+Thus the total probability up to time t of a transition to a ﬁnal state
+for which the HS have the values ,8” is proportional to t. There is
+therefore a deﬁnite probability GOﬁﬁﬁiﬁli, or probability per unit time,
+for the transition process under consideration, having the value
+
+2wh*1|<E’B”|V|a’>|”. (39)
+
+It is proportional to the square of the modulus of the matrix element,
+associated With this transition, of the perturbing energy.
+If the matrix element <E',B”|V|cx'> is small compared with other
+
+matrix elements of V, We must work with the more accurate formula
+(26). We have from (35)
+
+l‘ i’
+f<an\V*(tr)|am->  <ar.nlV*(tn)lar> dtn
+0 0
+f
+
+l é x m ‘r I t’ ' m__ W f
+= <a"lvla"'><a'"|vaa’> J aw ~E M» a Jew W“ dt’
+
+ﬁ“ <afliVicxlff><affflvlcx
+'""" ixErrrhEw/ﬁ
+
+n
+> f {ei(E"-E')t’lﬁ____ei(E"-E'”)t’lﬁ} dtQ
+n
+
+For E close to E’, only the ﬁrst term inthe integrand here gives rise
+to a transition probability of physical importance and the second
+term may be discarded. Using this result in (2 6) We get
+
+P(arai!
+
+__ 2 21--oos{(E”-E’)t/h}
+(En__Er)2 9
+which replaces (3 6 Proceeding as before, We obtain for the transi-
+tion probability per unit time to a ﬁnal state for Which the Ks have
+the values B” and E has a value close to its initial value E’
+<Ej§fLLK|¢VWﬂ|VIa9l
+__ Em__Er *
+
+a,” ma.
+This formula shows how intermediate states, differing from the initial
+
+state and ﬁnal state, play a role in the determination of a probability
+coefﬁcient.
+
+<a"1I/|a'>“ Z l°”l5§T»->§°§»Ll’la9
+
+277 r r! r
+"I?  lVlO‘ >""'
+
+ 
+
+(40)
+
+§46 TRANSITION PROBABILITIES 131
+
+In order that the approximations used in deriving (3 9)and (40)may
+be valid, the time t must be not too small and not too large. It must
+be large compared with the periods of the atomic system in order that
+the approximate evaluation of the integral (37) leading to the result
+(38) may be valid, While it must not be excessively large or else the
+general formula (24) or (26) will break down. In fact one could make
+the probability (3 8) greater than unity by taking t large enough. The
+upper limit to t is fixed by the condition that the probability (24) or
+(26), or t times (39) or (40), must be small compared with unity. There
+is no difficulty in t satisfying both these conditions simultaneously
+provided the perturbing energy V is sufficiently small.
+
+#47. The anomalous Zeeman effect
+
+One of the simplest examples of the perturbation method of § 43
+is the calculation of the first-order change in the energy-levels of an
+atom caused by a uniform magnetic field. The problem of a hydrogen
+atom in a uniform magnetic field has already been dealt with in § 41
+and Was so simple thatperturbation theory was unnecessary. The
+case of a general atom is not much more complicated when We make
+a few approximations such that We can set up a simple model for the
+atom.
+
+We ﬁrst of all consider the atom in the absence of the magnetic
+field and look for constants of the motion or quantities that are
+approximately constants of the motion. The total angular momen-
+tum of the atom, the vector j say, is certainly a constant of the
+motion. This angular momentum may be regarded as the sum of two
+parts, the total orbital angular momentum of all the electrons, 1 say,
+and the total spin angular momentum, s say. Thus We have j = l-l-s.
+Now the effect of the spin magnetic moments on the motion of the
+electrons is small compared with the effect of the Coulomb forces and
+may be neglected as a first approximation. With this approximation
+the spin angular momentum of each electron is a constant of the
+motion, there being no forces tending to change its orientation. Thus
+s, and hence also 1, will be constants of the motion. The magnitudes,
+l, s, andj say, of l, s, andj will be given by
+
+l+12~ﬁ = (li+l§+l§+i%*>*,
+sH-h = (si+8§+@§+i%*)t
+He? = (a1%+j3+.v'§+&ﬁ‘=)*.
+
+3595.57 N
+
+182 PERTURBATION THEORY §47
+
+corresponding t0 equation (39) of § 36. They commute with each
+other, and from (47) of § 36 we see that with given numerical values
+for l and s the possible numerical values for j are
+
+1+3, Z-l-swli, ..., [Z-—s[.
+
+Let us consider a stationary state for which I, s, and j have deﬁnite
+numerical values in agreement with the above scheme. The energy
+of this state will depend on I, but one inight think that with neglect
+of the spin magnetic moments it would be independent of s, and
+also of the direction of the vector s relative to l, and thus of j. It will
+be found in Chapter IX, however, that the energy depends very much
+on the magnitude s of the vector s, although independent of its
+direction when one neglects the spin magnetic moments, on account
+of certain phenomena arising from the fact that the electrons are
+indistinguishable one from another. There are thus different energy-
+levels of the system for each different value of 1 and s. This means
+that I and s are functions of the energy, according to the general
+definition of a function given in § 1 1, since the l and s of a stationary
+state are ﬁxed when the energy of that state is ﬁxed.
+
+We can now take into account the effect of the spin magnetic
+moments, treating it as a small perturbation according to the method
+of § 43. The energy of the unperturbed system will still be approxi-
+mately a constant of the motion and hence l and s, being functions
+of this energy, will still be approximately constants of the motion.
+The directions of the vectors l and s, however, riot being functions of
+the unperturbed energy, need not now be approximately constants
+of the motion and may undergo large secular variations. Since the
+vector j is constant, the only possible variation of l and s is a pre-
+cession about the vector j. We thus have an approximate model of
+the atom consisting of the two vectors l and s of constant lengths
+precessing about their sum j, "which is a ﬁxed vector. The energy is
+determined mainly by the magnitudes of l and s and depends only
+slightly on their relative directions, speciﬁed by j. Thus states with
+the same 1 and s and different j will have only slightly different
+energy-levels, forming what is called a multiplet terln.
+
+Let us now take this atomic model as our unperturbed system and
+suppose it to be subjected to a uniform magnetic ﬁeld of magnitude .11‘
+in the direction of the z-axis. The extra energy due to this magnetic
+
+ﬁeld will consist of a term
+eﬂ/Zwzc. (mz-i-iiaz), (41)
+
+M’! THE ANOMALOTTS ZEEMAN EFFECT 183
+
+like tlie last term in equation (89) of §4l, contributed by each
+electron, and will thus be altogether
+
+eﬂ/Qmc. Z (ma-Hing) = eﬂ/Qmcudz-l-Qsz) = eﬂ/QmcJjZ-l-sz). (42)
+This is our perturbing energy V. We shall now use the method of
+§ 43 to determine the changes in the energy-levels caused by this V.
+The method will be legitimate only provided the ﬁeld is so weak that
+V is small compared with the energy differences within a multiplet.
+
+Our unperturbed system is degenerate, on account of the direction
+
+of the vector j being undetermined. We must therefore take, from
+the representative of V in a Heisenberg representation for the un-
+perturbed system, those matrix elements that refer to one particular
+energy-level for their row and column, and obtain the eigenvalues of
+the matrix thus formed. We can do this best by first splitting up V
+into two parts, one of which is a constant of the unperturbed motion,
+so that its representative contains only matrix elements referring to
+the same unperturbed energy-level for their row and column, while
+the representative of the other contains only matrix elements refer-
+ring to two different unperturbed energy-levels for their row and
+column, so that this second p_art does not affect the first-order per-
+turbation. The term involving j, in (42) is a constant of the un-
+perturbed motion and thus belongs entirely to the first part. For the
+term involving s, we have
+
+ :3 jz(3xjx+8yjy+8zjz) +.(Szjx_"jz  (Szjy “i? syn‘?
+or
+
+   
+
+h
+w ere ya a Lfzgvﬂjz f”. =- szly~lz 3y z:- Zy 33-4,, s,” } (44)
+‘l/y ZJzQzWTSzJa: T" zz 8x""‘9zza: z Zﬂsfﬂzrﬁsﬁ‘
+
+The first term in this expression for sz is a constant of the unperturbed
+motion /and thus belongs entirely to the first part, while the second
+term, as we shall now see, belongs entirely to the second part.
+Corresponding to (44) we can introduce
+y, = Zzsy-Zysx.
+It can now easilybe verified that
+
+jzyzn+jyyy+jzyz = O
+and from (30) of§ 35
+
+[jzryaa] 2 ‘V111 [jzr V11] z “Yw [jzryz] 2 
+
+184 PERTURBATION THEORY §47
+
+These relations connecting jx, j,, j, and 3/9,, 32y, y, are of the same form
+as the relations connecting m, my, m, and x, y, z in the calculation
+in § 4O of the selection rule for the matrix elements of z in a repre-
+sentation with k diagonal. From the result there obtained that all
+matrix elements of z vanish except those referring to two k values
+differing by i6, we can infer that all matrix elements of 31,, and
+similarly of ya, and yy, in a representation with j diagonal, vanish
+except those referring to two j values differing by i6. The coeffi-
+cients of yx and yy in the second term on the right-hand side of (43)
+commute with j, so the representative of the whole of this term will
+contain only matrix elements referring to two j values differing by
+53%, and thus referring to two different energy-levels of the unper-
+turbed system.
+
+Hence the perturbing energy V becomes, when we neglect that
+part of it whose representative consists of matrix elements referring
+to two different unperturbed energy-levels,
+
+61*‘ - J'(j+?i)—l(l+?i)+8(8+%)
+%a.{1+ 23.0%,) . e5)
+The eigenvalues of this give the first-order changes in the energy-
+levels. We can make the representative of this expression diagonal
+by choosing our representation such that j, is diagonal, and it then
+gives us directly the first-order changes in the energy-levels caused by
+the magnetic field. This expression is known as Landé’s formula.
+The result (45)holds only provided the perturbing energy V is small
+compared with the energy differences within a multiplet. For larger
+values of V a more complicated theory is required. For very strong
+fields, however, for which Vis large compared with the energy differ-
+ences within a multiplet, the theory is again very simple. We may
+now neglect altogether the energy of the spin magnetic moments for
+the atom with no external field, so that for our unperturbed system
+the vectors l and s themselves are constants of the motion, and not
+merely their magnitudes Z and s. Our perturbing energy V, which is
+still eJ#/2mo.(j,+s,), is now a constant of the motion for the unper-
+turbed system, so that its eigenvalues give directly the changes in the
+energy-levels. These eigenvalues are integral or half-odd integral
+multiples of eﬂﬁ/Zmc according to whether the number of electrons
+in the atom is even or odd.
+

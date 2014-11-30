@@ -1,0 +1,249 @@
+#!/usr/bin/env python
+import sys
+import nltk
+from collections import Counter
+import pylab
+from time import time
+from nltk.collocations import *
+from nltk import bigrams, trigrams
+#There are essentially levels of analysis: lexical, character, syntactic, and semantic, with measures such as lexical richness, n-gram. The most state-of-the-art of the last one, semantic, being 'systemic functional grammar'
+#The first www was in 1990, while arxiv was in 1991.
+# for main reference see http://www.clips.ua.ac.be/stylometry/aboutSty.php
+
+fname = sys.argv[1]
+print fname
+text = open(fname).read()
+#see http://splasho.com/blog/2013/01/17/a-bit-more-about-the-up-goer-five-text-editor/
+simple_english = open('/Users/rht/sources/bin/nltk/1000dicin_withinflections.txt').read().lower().split('\n')
+tic = time()
+tokens = nltk.word_tokenize(text)
+total_length = len(tokens)
+sentences = nltk.sent_tokenize(text)  # uses punkt
+words = nltk.tokenize.RegexpTokenizer(r'\w+').tokenize(text.lower())
+bigram_measures = nltk.collocations.BigramAssocMeasures()
+trigram_measures = nltk.collocations.TrigramAssocMeasures()
+bigram_finder = BigramCollocationFinder.from_words(words)
+trigram_finder = TrigramCollocationFinder.from_words(words)
+bigram_finder.apply_freq_filter(3)
+trigram_finder.apply_freq_filter(3)
+
+
+#tags = nltk.pos_tag(text)  # this is the biggest bottleneck
+#counts = Counter(tag for word,tag in tags)
+#total = sum(counts.values())
+#normalized_counts = dict((word, float(count)/total*100.) for word,count in counts.items())
+#print normalized_counts.keys()
+#for i in normalized_counts.keys(): print '%.2s: %.2f%%' %(i, normalized_counts[i])
+
+
+# 1. analyze how simple the text is. Duplicates should be included, and hence the set method can't be used
+non_simple_words = []  #sorted(list(set(words) - simple_english))
+number_of_simple_words = 0  #len(words) - len(non_simple_words)
+for w in words:
+    if w in simple_english:
+        number_of_simple_words += 1
+    else:
+        non_simple_words.append(w)
+non_simple_words = Counter(non_simple_words)
+toc=time()
+#print "style analysis (or, writer invariant, or writeprint):"
+print "total number of words {:d}".format(total_length)
+print "{:3.2f}% simple english".format(number_of_simple_words *100. / total_length)
+sentences_length = map(len, [i.split(' ') for i in sentences])
+print "average sentence length {:.2f}".format(pylab.mean(sentences_length))
+cusum = pylab.cumsum(pylab.array(sentences_length) - pylab.mean(sentences_length))
+print "average word length {:.2f}".format(pylab.mean(map(len, tokens)))
+#print "noun usage frequency {:.2f}%".format(normalized_counts['NN'] + normalized_counts['NNP'] + normalized_counts['NNS'])
+#print "verb usage frequency {:.2f}%".format(normalized_counts['VBD'] + normalized_counts['VBP'] + normalized_counts['VBZ'])
+
+
+#lexical richness
+#according to the paper http://link.springer.com/article/10.1023%2FA%3A1001749303137 (1998, 15 years ago, 203 citations), Yule K function, Z, and D are more constant than other measures
+#currently I'm using the Yule K function
+#vocabulary_size = len(set(tokens))
+#print "lexical richness; type token ratio {:.3f}".format(vocabulary_size / float(len(tokens)))  # from http://nltk.org/book3/ch01.html, also known as type token ratio
+#lexical richness; hapax legomena
+#print "hapax legomena", nltk.probability.FreqDist(words).hapaxes()
+#lexical richness; dis legomena
+#print "lexical richness; dis legomena {:.3f}".format(VN(2)*1./vocabulary_size)
+#lexical richness; yule K function
+freqs = Counter(nltk.probability.FreqDist(words).values())
+VN = lambda i:freqs[i]
+K = (-1./total_length + 1.*sum(VN(i)*i*i for i in range(1,total_length+1))/(total_length**2))
+# just like 1/TTR, K is a measure of rate of repeated word, and can be used to gauge the lexical richness
+print "lexical richness; inverse Yule K function {:.0f}".format(1/K)
+
+
+#word frequency distribution
+# also see http://www.iu1.org/special/cdsi/speech/criteria/files/language/determiningTheType.pdf
+print "most common words:",
+for w, count in non_simple_words.most_common(30):
+   print "%s: %d," % (w, count),
+print
+
+#print "average , or : or ; /sentences {:.2f}%".format((tokens.count(',') + tokens.count(';') + tokens.count('--'))/ float(len(sentences)))
+#print "function words frequency"
+
+#n-grams
+#http://stackoverflow.com/questions/7591258/fast-n-gram-calculation
+#def ngrams(tokens, MIN_N, MAX_N):
+    #n_tokens = len(tokens)
+    #for i in xrange(n_tokens):
+        #for j in xrange(i+MIN_N, min(n_tokens, i+MAX_N)+1):
+            #print tokens[i:j]
+#ngrams(tokens, 1, 4)
+
+#collocation, also see nltk book chapter 7, and this http://nlpwp.org/book/chap-ngrams.xhtml
+#http://stackoverflow.com/questions/2452982/how-to-extract-common-significant-phrases-from-a-series-of-text-entries
+# return the 10 n-grams with the highest PMI
+print "bigrams:", ', '.join([' '.join(i) for i in bigram_finder.nbest(bigram_measures.pmi, 10)])
+print "trigrams:", ', '.join([' '.join(i) for i in trigram_finder.nbest(trigram_measures.pmi, 10)])
+#print ', '.join([' '.join(i) for i in bigrams(words)[:20]])
+#print ', '.join([' '.join(i) for i in trigrams(words)[:20]])
+
+
+#cusum
+
+print "elapsed {:.3f}s".format(time() - tic)
+print
+pylab.plot(cusum)
+pylab.title('cusum')
+pylab.savefig('plot_'+fname+'.png')
+#pylab.show()
+
+"""
+references:
+1. based on http://www.aicbt.com/authorship-attribution/
+2. and also http://en.wikipedia.org/wiki/Writer_invariant
+3. see http://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
+for comprehensive tag list
+4. and see also http://www.ncfta.ca/papers/emailforensics.pdf
+5. http://blog.thegrandlocus.com/2013/03/one-shade-of-authorship-attribution
+6. http://ieeexplore.ieee.org/xpls/icp.jsp?arnumber=5671087
+7. a very good paper http://ehis.ebscohost.com/ehost/detail?sid=e99749de-e608-4731-b371-80df42f2696e%40sessionmgr4004&vid=1&hid=4111&bdata=JnNpdGU9ZWhvc3QtbGl2ZQ%3d%3d#db=a9h&AN=27057274
+8. n-gram method http://ieeexplore.ieee.org/xpls/icp.jsp?arnumber=5671087
+9. http://stackoverflow.com/questions/11763613/python-list-of-ngrams-with-frequencies
+
+More three good references:
+1. http://publications.maxwellinstitute.byu.edu/fullscreen/?pub=1392&index=5
+2. http://www.csdl.tamu.edu/~furuta/courses/06c_689dh/dh06readings/DH06-078-080.pdf
+3. http://opim.wharton.upenn.edu/~sok/papers/r/s004.html
+   suggest a more advanced method beyond the usual lexical approach (which is about 20 years old)
+   "There will be theoretical advances too, as in the change from lexically based techniques to syntactic annotation proposed by Baayen, Van Halteren and Tweedie (1996)."
+   [Outside the cave of shadows: Using syntactic annotation to enhance authorship attribution](http://www.hd.uib.no/allc/baayenny.pdf)
+
+4. https://sites.google.com/site/computationalstylistics/
+   has a script to generate 'dendogram', rolling delta for texts.
+5. http://www.clips.ua.ac.be/stylometry/aboutSty.php
+6. cusum method 1995 http://promethee.philo.ulg.ac.be/RISSHpdf/Annee1995/Articles/DHolmesetc.pdf
+
+
+#main references
+#authorship attribution
+1. 2009 A survey of modern authorship attribution methods http://onlinelibrary.wiley.com/doi/10.1002/asi.21001, http://gen.lib.rus.ec/scimag/index.php?s=A+survey+of+modern+authorship+attribution+methods
+2. Computer-Based Authorship Attribution without Lexical Measures 2001
+   low-level measures:
+   * word-length, Brinegar 1963
+   * syllables per word, Fucks 1952
+   * sentence-length, Morton 1965
+   lexical: TTR, hapax legomena, dislegomena (Sichel 1986 shows that dislegomena is unstable for N_token < 1000)
+   * SCBD
+3. 2011 Authorship attribution in the wild http://link.springer.com/article/10.1007/s10579-009-9111-2
+
+
+"""
+
+
+
+## 2. summarize the text
+## works with assumption that summary sentence usually has the most uncommon words
+## based on http://www.reddit.com/r/Python/comments/1jjxk1/a_quick_script_i_wrote_using_nltk_that_can/
+#from nltk.corpus import stopwords
+#stop_words = stopwords.words('english')
+## The low end of shared words to consider
+#LOWER_BOUND = .20
+
+## The high end, since anything above this is probably SEO garbage or a
+## duplicate sentence
+#UPPER_BOUND = .90
+
+#def only_important(sentence):
+#    def is_important(word):
+#        return not (word in ['.','!',','] or ('\'' in word) or word in stop_words)
+#    return filter(lambda w: is_important(w), sentence)
+
+#def compare_sents(sent1, sent2):
+#    """Compare two word-tokenized sentences for shared words"""
+#    if not len(sent1) or not len(sent2):
+#        return 0
+#    return len(set(only_important(sent1)) & set(only_important(sent2))) / ((len(sent1) + len(sent2)) / 2.0)
+
+
+#def compare_sents_bounded(sent1, sent2):
+#    """If the result of compare_sents is not between LOWER_BOUND and
+#    UPPER_BOUND, it returns 0 instead, so outliers don't mess with the sum"""
+#    cmpd = compare_sents(sent1, sent2)
+#    if cmpd <= LOWER_BOUND or cmpd >= UPPER_BOUND:
+#        return 0
+#    return cmpd
+
+
+#def compute_score(sent, sents):
+#    """Computes the average score of sent vs the other sentences (the result of
+#    sent vs itself isn't counted because it's 1, and that's above
+#    UPPER_BOUND)"""
+#    if not len(sent):
+#        return 0
+#    return sum(compare_sents_bounded(sent, sent1) for sent1 in sents) / float(len(sents))
+
+
+#def summarize_block(block):
+#    """Return the sentence that best summarizes block"""
+#    if not block:
+#        return None
+#    sents = nltk.sent_tokenize(block)
+#    word_sents = map(nltk.word_tokenize, sents)
+#    d = dict((compute_score(word_sent, word_sents), sent) for sent, word_sent in zip(sents, word_sents))
+#    return d[max(d.keys())]
+
+
+#def find_likely_body(b):
+#    """Find the tag with the most directly-descended <p> tags"""
+#    return max(b.find_all(), key=lambda t: len(t.find_all('p', recursive=False)))
+
+
+#class Summary(object):
+#    def __init__(self, url, article_html, title, summaries):
+#        self.url = url
+#        self.article_html = article_html
+#        self.title = title
+#        self.summaries = summaries
+
+#    def __repr__(self):
+#        return 'Summary({0}, {1}, {2}, {3})'.format(
+#            repr(self.url), repr(self.article_html), repr(self.title), repr(self.summaries)
+#        )
+
+#    def __str__(self):
+#        return u"{0} - {1}\n\n{2}".format(self.title, self.url, '\n'.join(self.summaries))
+
+
+#def summarize_page(url):
+#    import bs4
+#    import re
+#    import requests
+
+#    html = bs4.BeautifulSoup(requests.get(url).text)
+#    b = find_likely_body(html)
+#    summaries = map(lambda p: re.sub('\s+', ' ', summarize_block(p.text) or '').strip(), b.find_all('p'))
+#    summaries = sorted(set(summaries), key=summaries.index)  # deduplicate and preserve order
+#    summaries = [re.sub('\s+', ' ', summary.strip())
+#                 for summary in summaries
+#                 if filter(lambda c: c.lower() in string.letters, summary)]
+#    return Summary(url, b, html.title.text if html.title else None, summaries)
+
+#paragraphs = text.split('\n\n')
+#print "2. summary of text:"
+#for par in paragraphs:
+#    print summarize_block(par)
+#    print

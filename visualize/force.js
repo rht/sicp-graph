@@ -3,6 +3,17 @@
 //http://bl.ocks.org/mbostock/4062045
 //http://bost.ocks.org/mike/miserables/
 
+function gup( name ) {
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return null;
+  else
+    return results[1];
+}
+
 var w = 1200,
     h = 600,
     fill = d3.scale.category20();
@@ -12,12 +23,12 @@ var vis = d3.select("#chart")
     .attr("width", w)
     .attr("height", h);
 
-d3.json("graph_sicp.json", function(json) {
+var type = (gup("type") || "sicp").replace("/","");
+d3.json("graph_"+type+".json", function(json) {
   var force = d3.layout.force()
-      //.charge(-120)
-      //.linkDistance(function(d) { return 10/d.weight; })
       .charge(-120)
       .linkDistance(40)
+      //.linkDistance(function(d) { return 10/d.weight; })
       .nodes(json.nodes)
       .links(json.links)
       .size([w, h])

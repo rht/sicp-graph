@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>dirac_ch1.md</title>
+  <link rel="stylesheet" href="pycco.css">
+  <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+                      tex2jax: {
+                          inlineMath: [ ['$','$'] ],
+                          processEscapes: true,
+                          processEnvironments: true,
+                      },
+                      TeX:    {
+                          equationNumbers: { autoNumber: "AMS"},
+                          Macros: {
+                                    bra: ['{\\left\\langle #1\\right|}',1],
+                                    ket: ['{\\left| #1\\right\\rangle}',1],
+                                    braket: ['{\\left\\langle #1|#2\\right\\rangle}',2]
+                                }
+                      }
+          });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="background"></div>
+<div id='container'>
+  <div class='section'>
+    <div class='docs'><h1>dirac_ch1.md</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      <h1>The Principle of Superposition</h1>
+<h1>1. The need for a quantum theory</h1>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <p>CLASSICAL mechanics has been developed continuously from the time of Newton and applied to an ever-widening range of dynamical systems, including the electromagnetic field in interaction with matter. The underlying ideas and the laws governing their application form a simple and elegant scheme, which one would be inclined to think could not be seriously modified without having all its attractive features spoilt. Nevertheless it has been found possible to set up a new scheme, called quantum mechanics, which is more suitable for the description of phenomena on the atomic scale and which is in some respects more elegant and satisfying than the classical scheme. This possibility is due to the changes which the new scheme involves being of a very profound character and not clashing with the features of the classical theory that make it so attractive, as a result of which all these features can be incorporated in the new scheme.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Summary:</span> <span class="p">(</span><span class="nf">okay</span><span class="p">)</span> <span class="nv">Consistency</span> <span class="nv">between</span> <span class="nv">the</span> <span class="nv">classical</span> <span class="nv">scheme</span> <span class="k">and </span><span class="nv">the</span> <span class="nv">new</span> <span class="nv">scheme</span><span class="o">.</span>
+<span class="ss">&#39;not</span> <span class="nv">clashing</span><span class="o">&#39;</span> <span class="nv">can</span> <span class="nv">possibly</span> <span class="nv">have</span> <span class="nv">two</span> <span class="nv">meanings:</span>
+<span class="mi">1</span><span class="o">.</span> <span class="nv">that</span> <span class="nv">the</span> <span class="nv">new</span> <span class="nv">scheme</span> <span class="nv">agrees</span> <span class="nv">with</span> <span class="nv">the</span> <span class="nv">classical</span> <span class="nv">scheme</span> <span class="nv">via</span> <span class="nv">Bohr</span> <span class="nv">correspondence</span>
+   <span class="nv">principle</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">classical</span> <span class="nv">limit</span><span class="o">.</span>
+<span class="mi">2</span><span class="o">.</span> <span class="nv">the</span> <span class="nv">expectation</span> <span class="nv">value</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">new</span> <span class="nv">scheme</span> <span class="nv">agrees</span> <span class="nv">with</span> <span class="nv">the</span> <span class="nv">classical</span> <span class="nv">scheme</span>
+   <span class="p">(</span><span class="nf">Ehrenfest</span> <span class="nv">theorem</span><span class="p">)</span><span class="o">.</span>
+<span class="nv">We</span> <span class="nv">have</span> <span class="nv">witnessed</span> <span class="nv">a</span> <span class="nv">huge</span> <span class="nv">progress</span> <span class="nv">in</span> <span class="nv">this</span> <span class="ss">&#39;not</span> <span class="nv">clashing</span><span class="o">&#39;</span> <span class="nv">requirement</span> <span class="nv">of</span> <span class="nv">the</span>
+<span class="nv">first</span> <span class="nv">paragraph</span> <span class="nv">of</span> <span class="nv">Dirac</span> <span class="nv">thanks</span> <span class="nv">to</span> <span class="nv">Zurek</span><span class="ss">&#39;s</span> <span class="nv">quantum</span> <span class="nv">Darwinism</span> <span class="p">(</span><span class="nf">on</span> <span class="nv">the</span> <span class="nv">origin</span> <span class="nv">of</span>
+<span class="nv">the</span> <span class="nv">classical</span> <span class="nv">trajectory</span><span class="p">)</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>The necessity for a departure from classical mechanics is clearly shown by experimental results. In the first place the forces known in classical electrodynamics are inadequate for the explanation of the remarkable stability of atoms and molecules, which is necessary in order that materials may have any definite physical and chemical properties at all. The introduction of new hypothetical forces will not save the situation, since there exist general principles of classical mechanics, holding for all kinds of forces, leading to results in direct disagreement with observation. For example, if an atomic system has its equilibrium disturbed in any way and is then left alone, it will be set in oscillation and the oscillations will get impressed on the surrounding electromagnetic field, so that their frequencies may be observed with a spectroscope. Now whatever the laws of force governing the equilibrium, one would expect to be able to include the various frequencies in a scheme comprising certain fundamental frequencies and their harmonics. This is not observed to be the case. Instead, there is observed a new and unexpected connexion between the frequencies, called Ritz's Combination Law of Spectroscopy, according to which all the frequencies can be expressed as differences between certain terms, the number of terms being much less than the number of frequencies. This law is quite unintelligible from the classical standpoint.</p>
+<p>One might try to get over the difficulty without departing from classical mechanics by assuming each of the spectroscopically observed frequencies to be a fundamental frequency with its own degree of freedom, the laws of force being such that the harmonic vibrations do not occur. Such a theory will not do, however, even apart from the fact that it would give no explanation of the Combination Law, since it would immediately bring one into conflict with the experimental evidence on specific heats. Classical statistical mechanics enables one to establish a general connexion between the total number of degrees of freedom of an assembly of vibrating systems and its specific heat. If one assumes all the spectroscopic frequencies of an atom to correspond to different degrees of freedom, one would get a specific heat for any kind of matter very much greater than the observed value. In fact the observed specific heats at ordinary temperatures are given fairly well by a theory that takes into account merely the motion of each atom as a whole and assigns no internal motion to it at all.</p>
+<p>This leads us to a new clash between classical mechanics and the results of experiment. There must certainly be some internal motion in an atom to account for its spectrum, but the internal degrees of freedom, for some classically inexplicable reason, do not contribute to the specific heat. A similar clash is found in connexion with the energy of oscillation of the electromagnetic field in a vacuum. Classical mechanics requires the specific heat corresponding to this energy to be infinite, but it is observed to be quite finite. A general conclusion from experimental results is that oscillations of high frequency do not contribute their classical quota to the specific heat.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Summary:</span> <span class="p">(</span><span class="nf">possibly</span> <span class="nv">outdated</span><span class="p">)</span> <span class="nv">Three</span> <span class="nv">experimental</span> <span class="nv">evidences</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">need</span> <span class="nv">of</span> <span class="nv">quantum</span>
+<span class="nv">mechanics</span><span class="o">.</span>
+<span class="mi">1</span><span class="o">.</span> <span class="nv">The</span> <span class="nv">stability</span> <span class="nv">of</span> <span class="nv">atoms</span><span class="o">.</span> <span class="nv">This</span> <span class="nv">is</span> <span class="nv">forbidden</span> <span class="nv">in</span> <span class="nv">classical</span> <span class="nv">electrodynamics</span> <span class="nv">by</span>
+   <span class="nv">Earnshaw</span> <span class="nv">theorem</span><span class="o">.</span> <span class="nv">The</span> <span class="nv">stability</span> <span class="nv">of</span> <span class="nv">atoms</span> <span class="nv">is</span> <span class="nv">explained</span> <span class="nv">through</span> <span class="nv">Heisenberg</span>
+   <span class="nv">uncertainty,</span> <span class="nv">while</span> <span class="nv">the</span> <span class="nv">stability</span> <span class="nv">of</span> <span class="nv">many</span> <span class="nv">body</span> <span class="nv">systems</span> <span class="nv">is</span> <span class="nv">explained</span> <span class="nv">by</span> <span class="nv">Fermion</span>
+   <span class="nv">repulsion</span><span class="o">.</span> <span class="nv">However,</span> <span class="nv">we</span> <span class="nv">know</span> <span class="nv">that</span> <span class="nv">the</span> <span class="nv">existence</span> <span class="nv">of</span> <span class="nv">stability</span> <span class="nv">is</span> <span class="nv">no</span> <span class="nv">longer</span>
+   <span class="nv">exclusive</span> <span class="nv">to</span> <span class="nv">quantum</span> <span class="nv">mechanics,</span> <span class="nv">as</span> <span class="nv">we</span> <span class="nv">have</span> <span class="nv">seen</span> <span class="nv">it</span> <span class="nv">in</span> <span class="ss">&#39;optical</span> <span class="nv">trapping</span><span class="o">&#39;.</span>
+   <span class="nv">Yet</span> <span class="nv">stability</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">a</span> <span class="nv">direct</span> <span class="nv">result</span> <span class="nv">of</span> <span class="nv">superposition</span> <span class="nv">principle</span> <span class="p">(</span><span class="nf">excluding</span> <span class="nv">the</span>
+   <span class="nv">fact</span> <span class="nv">that</span> <span class="nv">we</span> <span class="nv">implement</span> <span class="nv">indistinguishability</span> <span class="nv">by</span> <span class="nv">using</span> <span class="nv">superposition</span><span class="p">)</span><span class="o">,</span> <span class="nv">and</span>
+   <span class="nv">hence</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">a</span> <span class="nv">good</span> <span class="nv">first</span> <span class="nv">illustration</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">principle</span><span class="o">.</span>
+<span class="mi">2</span><span class="o">.</span> <span class="nv">The</span> <span class="nv">Ritz</span> <span class="nv">combination</span> <span class="nv">principle</span> <span class="nv">suggests</span> <span class="nv">additional</span> <span class="nv">internal</span> <span class="nv">degrees</span> <span class="nv">of</span> <span class="nv">freedom</span><span class="o">.</span>
+<span class="mi">3</span><span class="o">.</span> <span class="nv">The</span> <span class="nv">specific</span> <span class="nv">heat</span> <span class="nv">of</span> <span class="nv">a</span> <span class="nv">vibrating</span> <span class="nv">system</span> <span class="nv">suggests</span> <span class="nv">that</span> <span class="nv">the</span>
+   <span class="nv">additional</span> <span class="nv">degrees</span> <span class="nv">of</span> <span class="nv">freedom</span> <span class="nv">is</span> <span class="nv">frozen</span><span class="o">.</span> <span class="nv">This</span> <span class="nv">experimental</span> <span class="nv">method</span> <span class="nv">is</span>
+   <span class="nv">particularly</span> <span class="nv">adept</span> <span class="nv">at</span> <span class="nv">detecting</span> <span class="nv">number</span> <span class="nv">of</span> <span class="nv">active</span> <span class="nv">degrees</span> <span class="nv">of</span> <span class="nv">freedom</span><span class="o">.</span>
+   <span class="nv">Why</span> <span class="nv">does</span> <span class="nv">a</span> <span class="nv">discrete</span> <span class="nv">degree</span> <span class="nv">of</span> <span class="nv">freedom</span> <span class="nv">leads</span> <span class="nv">to</span> <span class="nv">its</span> <span class="nv">freezing/activation</span> <span class="nv">at</span>
+   <span class="nv">specific</span> <span class="nv">temperature</span> <span class="nv">range?</span> <span class="ss">&#39;Because</span><span class="o">&#39;</span> <span class="nv">a</span> <span class="nv">discrete</span> <span class="nv">dof</span> <span class="nv">implies</span> <span class="nv">the</span> <span class="nv">existence</span>
+   <span class="nv">of</span> <span class="nv">characteristic</span> <span class="nv">energy</span> <span class="nv">scale</span><span class="o">.</span> <span class="nv">A</span> <span class="nv">quantized</span> <span class="nv">degree</span> <span class="nv">of</span> <span class="nv">freedom</span> <span class="nv">is</span> <span class="nv">less</span> <span class="nv">tightly</span>
+   <span class="nv">coupled</span> <span class="nv">compared</span> <span class="nv">to</span> <span class="nv">its</span> <span class="nv">classical</span> <span class="nv">counterpart</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>As another illustration of the failure of classical mechanics we may consider the behaviour of light. We have, on the one hand, the phenomena of interference and diffraction, which can be explained only on the basis of a wave theory; on the other, phenomena such as photo-electric emission and scattering by free electrons, which show that light is composed of small particles. These particles, which are called photons, have each a definite energy and momentum, depending on the frequency of the light, and appear to have just as real an existence as electrons, or any other particles known in physics. A fraction of a photon is never observed.</p>
+<p>Experiments have shown that this anomalous behaviour is not peculiar to light, but is quite general. All material particles have wave properties, which can be exhibited under suitable conditions. We have here a very striking and general example of the breakdown of classical mechanics — not merely an inaccuracy in its laws of motion, but an inadequacy of its concepts to supply us with a description of atomic events.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Summary:</span> <span class="p">(</span><span class="nf">Outdated</span><span class="p">)</span> <span class="nv">Three</span> <span class="nv">more</span> <span class="nv">experimental</span> <span class="nv">evidences</span><span class="o">.</span>
+<span class="mi">1</span><span class="o">.</span> <span class="nv">Photo-electric</span> <span class="nv">effect</span> <span class="nv">shows</span> <span class="nv">that</span> <span class="nv">electrons</span> <span class="nv">are</span> <span class="nv">quantum</span> <span class="nv">object,</span> <span class="k">and </span><span class="nv">only</span>
+   <span class="nv">indirectly</span> <span class="nv">that</span> <span class="nv">light</span> <span class="nv">can</span> <span class="nv">have</span> <span class="nv">quantum</span> <span class="nv">property,</span> <span class="nv">through</span> <span class="nv">the</span> <span class="nv">reasoning</span> <span class="nv">that</span>
+   <span class="nv">anything</span> <span class="nv">which</span> <span class="nv">interact</span> <span class="nv">directly</span> <span class="nv">with</span> <span class="nv">a</span> <span class="nv">quantum</span> <span class="nv">object</span> <span class="nv">must</span> <span class="nv">be</span> <span class="nv">quantum,</span> <span class="nv">too</span><span class="o">.</span>
+<span class="mi">2</span><span class="o">.</span> <span class="ss">&#39;scattering</span> <span class="nv">by</span> <span class="nv">free</span> <span class="nv">electrons</span><span class="ss">&#39;?</span> <span class="nv">Does</span> <span class="nv">this</span> <span class="nv">refer</span> <span class="nv">to</span> <span class="nv">compton</span> <span class="nv">scattering?</span>
+   <span class="nv">If</span> <span class="nv">yes,</span> <span class="nv">then</span> <span class="nv">there</span> <span class="nv">are</span> <span class="nv">several</span> <span class="nv">missing</span> <span class="nv">logical</span> <span class="nv">steps</span> <span class="nv">here</span> <span class="nv">that</span> <span class="nv">leads</span> <span class="nv">to</span>
+   <span class="s">&quot;ergo, light is a quantum object&quot;</span><span class="o">.</span> <span class="nv">We</span> <span class="nv">need</span> <span class="nv">to</span> <span class="nv">first</span> <span class="nv">state</span> <span class="nv">de-Broglie</span> <span class="nv">principle</span>
+<span class="mi">3</span><span class="o">.</span> <span class="nv">The</span> <span class="nv">statement</span> <span class="ss">&#39;A</span> <span class="nv">fraction</span> <span class="nv">of</span> <span class="nv">a</span> <span class="nv">photon</span> <span class="nv">is</span> <span class="nv">never</span> <span class="nv">observed</span><span class="o">&#39;</span> <span class="nv">can</span> <span class="nv">have</span> <span class="nv">multiple</span>
+   <span class="nv">interpretation</span><span class="o">.</span> <span class="nv">One</span> <span class="nv">modern</span> <span class="nv">QED</span> <span class="nv">confirmation</span> <span class="p">(</span><span class="nf">this</span> <span class="nv">takes</span> <span class="nv">into</span> <span class="nv">account</span> <span class="nv">pair</span>
+   <span class="nv">production</span> <span class="nv">loop</span> <span class="nv">diagrams</span><span class="p">)</span> <span class="nv">is</span> <span class="nv">via</span> <span class="nv">Furry</span><span class="ss">&#39;s</span> <span class="nv">theorem,</span> <span class="nv">which</span> <span class="nv">forbids</span> <span class="nv">odd</span> <span class="nv">photon</span>
+   <span class="nv">vertices</span> <span class="nv">but</span> <span class="nv">still</span> <span class="nv">allows</span> <span class="nv">scattering</span> <span class="nv">like</span> <span class="mi">2</span> <span class="nv">-&gt;</span> <span class="mi">4</span> <span class="nv">photons</span><span class="o">.</span>
+   <span class="nv">Also,</span> <span class="nv">there</span> <span class="nv">might</span> <span class="nv">be</span> <span class="nv">counterexamples</span> <span class="nv">from</span> <span class="nv">nonlinear</span> <span class="nv">media</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>The necessity to depart from classical ideas when one wishes to account for the ultimate structure of matter may be seen, not only from experimentally established facts, but also from general philosophical grounds. In a classical explanation of the constitution of matter, one would assume it to be made up of a large number of small constituent parts and one would postulate laws for the behaviour of these parts, from which the laws of the matter in bulk could be deduced. This would not complete the explanation, however, since the question of the structure and stability of the constituent parts is left untouched. To go into this question, it becomes necessary to postulate that each constituent part is itself made up of smaller parts, in terms of which its behaviour is to be explained. There is clearly no end to this procedure, so that one can never arrive at the ultimate structure of matter on these lines. So long as big and small are merely relative concepts, it is no help to explain the big in terms of the small. It is therefore necessary to modify classical ideas in such a way as to give an absolute meaning to size.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Pending,</span> <span class="nv">lots</span> <span class="nv">of</span> <span class="nv">thoughts</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <p>At this stage it becomes important to remember that science is concerned only with observable things and that we can observe an object only by letting it interact with some outside influence. An act of observation is thus necessarily accompanied by some disturbance of the object observed. We may define an object to be big when the disturbance accompanying our observation of it may be neglected, and small when the disturbance cannot be neglected. This definition is in close agreement with the common meanings of big and small.</p>
+<p>It is usually assumed that, by being careful, we may cut down the disturbance accompanying our observation to any desired extent. The concepts of big and small are then purely relative and refer to the gentleness of our means of observation as well as to the object being described. In order to give an absolute meaning to size, such as is required for any theory of the ultimate structure of matter, we have to assume that there is a limit to the fineness of our powers of observation and the smallness of the accompanying disturbance a limit which is inherent in the nature of things and can never be surpassed by improved technique or increased skill on the part of the observer. If the object under observation is such that the unavoidable limiting disturbance is negligible, then the object is big in the absolute sense and we may apply classical mechanics to it. If, on the other hand, the limiting disturbance is not negligible, then the object is small in the absolute sense and we require a new theory for dealing with it.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Summary:</span> <span class="nv">The</span> <span class="nv">observer</span> <span class="nv">effect</span><span class="o">.</span>
+<span class="nv">This</span> <span class="nv">is</span> <span class="ss">&#39;observer</span> <span class="nv">effect</span><span class="o">&#39;</span> <span class="k">and </span><span class="nv">has</span> <span class="nv">nothing</span> <span class="nv">to</span> <span class="k">do </span><span class="nv">with</span> <span class="nv">Heisenberg</span> <span class="nv">uncertainty</span> <span class="nv">principle</span><span class="o">.</span>
+<span class="nv">However,</span> <span class="nv">it</span> <span class="nv">is</span> <span class="nv">interesting</span> <span class="nv">that</span> <span class="nv">Dirac</span> <span class="nv">connects</span> <span class="nv">the</span> <span class="nv">idea</span> <span class="nv">of</span> <span class="ss">&#39;observer</span> <span class="nv">effect</span><span class="o">&#39;</span> <span class="nv">and</span>
+<span class="nv">absolute</span> <span class="nv">scale</span><span class="o">.</span> <span class="nv">The</span> <span class="nv">statement</span> <span class="nv">is</span> <span class="nv">however,</span> <span class="nv">too</span> <span class="nv">handwavy</span> <span class="nv">to</span> <span class="nv">be</span> <span class="nv">sharpened</span><span class="o">.</span>
+<span class="nv">I</span> <span class="nv">used</span> <span class="nv">to</span> <span class="nv">use</span> <span class="nv">this</span> <span class="ss">&#39;observer</span> <span class="nv">effect</span><span class="o">&#39;</span> <span class="nv">as</span> <span class="nv">a</span> <span class="nv">signature</span> <span class="nv">to</span> <span class="nv">distinguish</span> <span class="nv">quantum</span>
+<span class="nv">phenomena</span> <span class="nv">from</span> <span class="nv">classical</span> <span class="nv">phenomena</span><span class="o">.</span>
+
+<span class="nv">Quantum</span> <span class="nv">zeno</span> <span class="nv">effect</span> <span class="nv">is</span> <span class="nv">another</span> <span class="nv">interesting</span> <span class="nv">consequence</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">observer</span> <span class="nv">effect,</span>
+<span class="nv">since</span> <span class="nv">a</span> <span class="nv">measurement</span> <span class="nv">always</span> <span class="nv">reduce</span> <span class="nv">the</span> <span class="nv">entropy</span> <span class="nv">of</span> <span class="nv">a</span> <span class="nv">state</span> <span class="nv">into</span> <span class="nv">a</span> <span class="nv">pure</span> <span class="nv">state</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>A consequence of the preceding discussion is that we must revise our ideas of causality. Causality applies only to a system which is left undisturbed. If a system is small, we cannot observe it without producing a serious disturbance and hence we cannot expect to find any causal connexion between the results of our observations. Causality will still be assumed to apply to undisturbed systems and the equations which will be set up to describe an undisturbed system will be differential equations expressing a causal connexion between conditions at one time and conditions at a later time. These equations will be in close correspondence with the equations of classical mechanics, but they will be connected only indirectly with the results of observations. There is an unavoidable indeterminacy in the calculation of observational results, the theory enabling us to calculate in general only the probability of our obtaining a particular result when we make an observation.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="p">(</span><span class="nf">interesting</span><span class="p">)</span> <span class="nv">Dirac</span> <span class="nv">is</span> <span class="nv">connecting</span> <span class="nv">the</span> <span class="nv">idea</span> <span class="nv">of</span> <span class="ss">&#39;observer</span> <span class="nv">effect</span><span class="o">&#39;</span> <span class="k">and </span><span class="nv">causality</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <h1>2. The polarization of photons</h1>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p>The discussion in the preceding section about the limit to the gentleness with which observations can be made and the consequent indeterminacy in the results of those observations does not provide any quantitative basis for the building up of quantum mechanics. For this purpose a new set of accurate laws of nature is required. One of the most fundamental and most drastic of these is the Principle of Superposition of States. We shall lead up to a general formulation of this principle through a consideration of some special cases, taking first the example provided by the polarization of light.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Summary:</span> <span class="p">(</span><span class="mi">1</span> <span class="nv">-&gt;</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nv">The</span> <span class="nv">photon</span> <span class="nv">polarization</span> <span class="p">(</span><span class="nf">the</span> <span class="nv">double-slit</span> <span class="nv">experiment</span> <span class="nv">in</span> <span class="nv">other</span> <span class="nv">books</span><span class="p">)</span> <span class="nv">is</span> <span class="nv">used</span> <span class="nv">to</span>
+<span class="nv">motivate</span> <span class="nv">the</span> <span class="nv">first</span> <span class="nv">Dirac</span> <span class="nv">axiom</span> <span class="nv">of</span> <span class="nv">quantum</span> <span class="nv">mechanics:</span> <span class="nv">the</span> <span class="nv">superposition</span> <span class="nv">principle</span><span class="o">.</span>
+<span class="nv">Its</span> <span class="nv">connection</span> <span class="nv">with</span> <span class="nv">the</span> <span class="nv">observer</span> <span class="nv">effect</span> <span class="nv">will</span> <span class="nv">be</span> <span class="nv">elaborated</span> <span class="nv">soon</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <p>It is known experimentally that when plane-polarized light is used for ejecting photo-electrons, there is a preferential direction for the electron emission. Thus the polarization properties of light are closely connected with its corpuscular properties and one must ascribe a polarization to the photons. One must consider, for instance, a beam of light plane-polarized in a certain direction as consisting of photons each of which is plane-polarized in that direction and a beam of circularly polarized light as consisting of photons each circularly polarized. Every photon is in a certain state of polarization, as we shall say. The problem we must now consider is how to fit in these ideas with the known facts about the resolution of light into polarized components and the recombination of these components.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Summary:</span> <span class="p">(</span><span class="nf">false</span> <span class="nv">outdated</span><span class="p">)</span> <span class="nv">Experimental</span> <span class="nv">suggestion</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">particle</span> <span class="nv">nature</span> <span class="nv">of</span> <span class="nv">light</span><span class="o">.</span>
+<span class="nv">On</span> <span class="nv">the</span> <span class="nv">contrary,</span> <span class="nv">classical</span> <span class="nv">electrodynamics</span> <span class="nv">can</span> <span class="nv">still</span> <span class="nv">fully</span> <span class="nv">explain</span> <span class="nv">the</span>
+<span class="nv">preferred</span> <span class="nv">polarization</span> <span class="nv">direction</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">light</span> <span class="p">(</span><span class="nf">radiated</span> <span class="nv">by</span> <span class="nv">the</span> <span class="nv">electron</span><span class="p">)</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <p>Let us take a definite case. Suppose we have a beam of light passing through a crystal of tourmaline, which has the property of letting through only light plane-polarized perpendicular to its optic axis. Classical electrodynamics tells us what will happen for any given polarization of the incident beam. If this beam is polarized perpendicular to the optic axis, it will all go through the crystal; if parallel to the axis, none of it will go through; while if polarized at an angle $\alpha$ to the axis, a fraction $\sin 2\alpha$ will go through. How are we to understand these results on a photon basis?</p>
+<p>A beam that is plane-polarized in a certain direction is to be pictured as made up of photons each plane-polarized in that direction. This picture leads to no difficulty in the cases when our incident beam is polarized perpendicular or parallel to the optic axis. We merely have to suppose that each photon polarized perpendicular to the axis passes unhindered and unchanged through the crystal, while each photon polarized parallel to the axis is stopped and absorbed. A difficulty arises, however, in the case of the obliquely polarized incident beam. Each of the incident photons is then obliquely polarized and it is not clear what will happen to such a photon when it reaches the tourmaline.</p>
+<p>A question about what will happen to a particular photon under certain conditions is not really very precise. To make it precise one must imagine some experiment performed having a bearing on the question and inquire what will be the result of the experiment. Only questions about the results of experiments have a real significance and it is only such questions that theoretical physics has to consider.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Summary:</span> <span class="nv">Quantum</span> <span class="nv">description</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">projection</span> <span class="nv">of</span> <span class="nv">light</span> <span class="nv">polarization</span><span class="o">.</span>
+<span class="nv">Indeed,</span> <span class="nv">classical</span> <span class="nv">optics</span> <span class="nv">with</span> <span class="nv">Maxwell</span> <span class="nv">equations</span> <span class="nv">already</span> <span class="nv">has</span> <span class="nv">superposition</span>
+<span class="nv">feature</span> <span class="nv">built-in</span><span class="o">.</span> <span class="nv">Furthermore,</span> <span class="nv">we</span> <span class="nv">can</span> <span class="nv">even</span> <span class="nv">observe</span> <span class="nv">a</span> <span class="nv">Hilbert</span> <span class="nv">space</span> <span class="nv">structure</span>
+<span class="nv">in</span> <span class="nv">classical</span> <span class="nv">electrodynamics</span> <span class="p">(</span><span class="nf">thus,</span> <span class="nv">enabling</span> <span class="nv">Bell-like</span> <span class="nv">nonlocal</span> <span class="nv">entanglement</span><span class="p">)</span><span class="o">.</span>
+
+<span class="nv">This</span> <span class="nv">is</span> <span class="nv">about</span> <span class="nv">to</span> <span class="nv">become</span> <span class="nv">a</span> <span class="nv">misleading</span> <span class="nv">classical</span> <span class="nv">statistical</span> <span class="nv">mechanics</span> <span class="nv">picture</span> <span class="nv">of</span>
+<span class="nv">a</span> <span class="nv">photon</span> <span class="nv">passing</span> <span class="nv">through</span> <span class="nv">a</span> <span class="nv">polarizer</span><span class="o">.</span> <span class="nv">Fortunately,</span> <span class="nv">Dirac</span> <span class="nv">stood</span> <span class="nv">a</span> <span class="nv">few</span> <span class="nv">steps</span> <span class="nv">back</span>
+<span class="nv">from</span> <span class="nv">this,</span> <span class="nv">staying</span> <span class="nv">within</span> <span class="nv">the</span> <span class="nv">explicit</span> <span class="ss">&#39;positivism</span><span class="o">&#39;</span> <span class="nv">approach</span> <span class="nv">of</span> <span class="nv">physics</span> <span class="p">(</span><span class="nf">i</span><span class="o">.</span><span class="nv">e</span><span class="o">.</span>
+<span class="nv">the</span> <span class="nv">only</span> <span class="nv">meaningful</span> <span class="nv">scientific</span> <span class="nv">questions</span> <span class="nv">are</span> <span class="nv">the</span> <span class="nv">ones</span> <span class="nv">that</span> <span class="nv">can</span> <span class="nv">be</span> <span class="nv">measured</span><span class="p">)</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      <p>In our present example the obvious experiment is to use an incident beam consisting of only a single photon and to observe what appears on the back side of the crystal. According to quantum mechanics the result of this experiment will be that sometimes one will find a whole photon, of energy equal to the energy of the incident photon, on the back side and other times one will find nothing. When one finds a whole photon, it will be polarized perpendicular to the optic axis. One will never find only a part of a photon on the back side. If one repeats the experiment a large number of times, one will find the photon on the back side in a fraction $\sin 2\alpha$ of the total number of times. Thus we may say that the photon has a probability sin2α of passing through the tourmaline and appearing on the back side polarized perpendicular to the axis and a probability cos2α of being absorbed. These values for the probabilities lead to the correct classical results for an incident beam containing a large number of photons.</p>
+<p>In this way we preserve the individuality of the photon in all cases. We are able to do this, however, only because we abandon the determinacy of the classical theory. The result of an experiment is not determined, as it would be according to classical ideas, by the conditions under the control of the experimenter. The most that can be predicted is a set of possible results, with a probability of occurrence for each.</p>
+<p>The foregoing discussion about the result of an experiment with a single obliquely polarized photon incident on a crystal of tourmaline answers all that can legitimately be asked about what happens to an obliquely polarized photon when it reaches the tourmaline. Questions about what decides whether the photon is to go through or not and how it changes its direction of polarization when it does go through cannot be investigated by experiment and should be regarded as outside the domain of science. Nevertheless some further description is necessary in order to correlate the results of this experiment with the results of other experiments that might be performed with photons and to fit them all into a general scheme. Such further description should be regarded, not as an attempt to answer questions outside the domain of science, but as an aid to the formulation of rules for expressing concisely the results of large numbers of experiments.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Summary:</span> <span class="nv">A</span> <span class="nv">more</span> <span class="nv">refined</span> <span class="k">and </span><span class="nv">relevant</span> <span class="nv">description</span> <span class="nv">of</span> <span class="nv">a</span> <span class="nv">quantum</span> <span class="nv">of</span> <span class="nv">polarized</span> <span class="nv">light</span><span class="o">.</span>
+<span class="nv">A</span> <span class="nv">fair</span> <span class="nv">move,</span> <span class="nv">for</span> <span class="k">if </span><span class="nv">we</span> <span class="nv">don</span><span class="ss">&#39;t</span> <span class="nv">how</span> <span class="nv">things</span> <span class="nv">work,</span> <span class="nv">better</span> <span class="nv">describe</span> <span class="nv">it</span> <span class="nv">statistically</span>
+<span class="p">(</span><span class="nf">a</span> <span class="nv">kind</span> <span class="nv">of</span> <span class="nv">coarse-graining</span> <span class="nv">is</span> <span class="nv">implied?</span><span class="p">)</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <p>The further description provided by quantum mechanics runs as follows. It is supposed that a photon polarized obliquely to the optic axis may be regarded as being partly in the state of polarization parallel to the axis and partly in the state of polarization perpendicular to the axis. The state of oblique polarization may be considered as the result of some kind of superposition process applied to the two states of parallel and perpendicular polarization. This implies a certain special kind of relationship between the various states of polarization, a relationship similar to that between polarized beams in classical optics, but which is now to be applied, not to beams, but to the states of polarization of one particular photon. This relationship allows any state of polarization to be resolved into, or expressed as a superposition of, any two mutually perpendicular states of polarization.</p>
+<p>When we make the photon meet a tourmaline crystal, we are subjecting it to an observation. We are observing whether it is polarized parallel or perpendicular to the optic axis. The effect of making this observation is to force the photon entirely into the state of parallel or entirely into the state of perpendicular polarization. It has to make a sudden jump from being partly in each of these two states to being entirely in one or other of them. Which of the two states it will jump into cannot be predicted, but is governed only by probability laws. If it jumps into the parallel state it gets absorbed and if it jumps into the perpendicular state it passes through the crystal and appears on the other side preserving this state of polarization.</p>
+<h1>3. Interference of photons</h1>
+<p>In this section we shall deal with another example of superposition. We shall again take photons. but shall be concerned with their position in space and their momentum instead of their polarization. If we are given a beam of roughly monochromatic light, then we know something about the location and momentum of the associated photons. We know that each of them is located somewhere in the region of space through which the beam is passing and has a momentum in the direction of the beam of magnitude given in terms of the frequency of the beam by Einstein's photo-electric law — momentum equals frequency multiplied by a universal constant, When we have such information about the location and momentum of a photon we shall say that it is in a definite translational state.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Summary:</span> <span class="nv">The</span> <span class="nv">actual</span> <span class="nv">double-slit</span> <span class="nv">experiment</span><span class="o">.</span>
+<span class="nv">The</span> <span class="nv">difference</span> <span class="nv">with</span> <span class="nv">the</span> <span class="nv">previous</span> <span class="nv">polarization</span> <span class="nv">experiment</span> <span class="nv">is</span> <span class="nv">that</span> <span class="nv">now</span> <span class="nv">we</span> <span class="nv">require</span>
+<span class="nv">de-Broglie</span> <span class="nv">relation</span> <span class="nv">which</span> <span class="nv">connects</span> <span class="nv">momentum</span> <span class="k">and </span><span class="nv">wavenumber,</span> <span class="nv">since</span> <span class="nv">we</span> <span class="nv">now</span> <span class="nv">need</span>
+<span class="nv">to</span> <span class="nv">represent</span> <span class="nv">the</span> <span class="nv">quantum</span> <span class="nv">state</span> <span class="nv">into</span> <span class="nv">the</span> <span class="nv">space-time</span> <span class="nv">basis</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      <p>We shall discuss the description which quantum mechanics provides of the interference of photons. Let us take a definite experiment demonstrating interference. Suppose we have a beam of light which is passed through some kind of interferometer, so that it gets split up into two components and the two components are subsequently made to interfere. We may, as in the preceding section, take an incident beam consisting of only a single photon and inquire what will happen to it as it goes through the apparatus. This will present to us the difficulty of the conflict between the wave and corpuscular theories of light in an acute form.</p>
+<p>Corresponding to the description that we had in the case of the polarization, we must now describe photon as going partly into each of the two components into which the incident beam is split. The photon is then, as we may say, in a translational state given by the superposition of the two translational states associated with the two components. We are thus led to a generalization of the term 'translational state' applied to a photon. For a photon to be in a definite translational state it need not be associated with one single beam of light, but may be associated with two or more beams of light which are the components into which one original beam has been split. † In the accurate mathematical theory each translational state is associated with one of the wave functions of ordinary wave optics, which wave function may describe either a single beam or two or more beams into which one original beam has been split. Translational states are thus superposable in a similar way to wave functions.</p>
+<p>† The circumstance that the superposition idea requires us to generalize our original meaning of translational states, but that no corresponding generalization was needed for the states of polarization of the preceding section, is an accidental one with no underlying theoretical significance.
+Let us consider now what happens when we determine the energy in one of the components. The result of such a determination must be either the whole photon or nothing at all. Thus the photon must change suddenly from being partly in one beam and partly in the other to being entirely in one of the beams. This sudden change is due to the disturbance in the translational state of the photon which the observation necessarily makes. It is impossible to predict in which of the two beams the photon will be found. Only the probability of either result can be calculated from the previous distribution of the photon over the two beams.</p>
+<p>One could carry out the energy measurement without destroying the component beam by, for example, reflecting the beam from a movable mirror and observing the recoil. Our description of the photon allows us to infer that, after such an energy measurement, it would not be possible to bring about any interference effects between the two components. So long as the photon is partly in one beam and partly in the other, interference can occur when the two beams are superposed, but this possibility disappears when the photon is forced entirely into one of the beams by an observation. The other beam then no longer enters into the description of the photon, so that it counts as being entirely in the one beam in the ordinary way for any experiment that may subsequently be performed on it.</p>
+<p>On these lines quantum mechanics is able to effect a reconciliation of the wave and corpuscular properties of light. The essential point is the association of each of the translational states of a photon with one of the wave functions of ordinary wave optics. The nature of this association cannot be pictured on a basis of classical mechanics, but is something entirely new. It would be quite wrong to picture the photon and its associated wave as interacting in the way in which particles and waves can interact in classical mechanics. The association can be interpreted only statistically, the wave function giving us information about the probability of our finding the photon in any particular place when we make an observation of where it is.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Distinguishing</span> <span class="nv">between</span> <span class="mi">1</span><span class="nv">-norm</span> <span class="nv">probability</span> <span class="k">and </span><span class="mi">2</span><span class="nv">-norm</span> <span class="nv">probability</span><span class="o">.</span>
+<span class="nv">Todo:</span> <span class="nv">fine-grain</span> <span class="nv">the</span> <span class="nv">summary</span> <span class="nv">more</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <p>Some time before the discovery of quantum mechanics people realized that the connexion between light waves and photons must be of a statistical character. What they did not clearly realize, however, was that the wave function gives information about the probability of one photon being in a particular place and not the probable number of photons in that place. The importance of the distinction can be made clear in the following way. Suppose we have a beam of light consisting of a large number of photons split up into two components of equal intensity. On the assumption that the intensity of a beam is connected with the probable number of photons in it, we should have half the total number of photons going into each component. If the two components are now made to interfere, we should require a photon in one component to be able to interfere with one in the other. Sometimes these two photons would have to annihilate one another and other times they would have to produce four photons. This would contradict the conservation of energy. The new theory, which connects the wave function with probabilities for one photon, gets over the difficulty by making each photon go partly into each of the two components. Each photon then interferes only with itself. Interference between two different photons never occurs.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="ss">&#39;Interference</span> <span class="nv">between</span> <span class="nv">two</span> <span class="nv">different</span> <span class="nv">photons</span> <span class="nv">never</span> <span class="nv">occurs</span><span class="o">&#39;</span> <span class="nv">may</span> <span class="nv">be</span> <span class="nv">related</span> <span class="nv">to</span> <span class="nv">the</span>
+<span class="nv">previous</span> <span class="nv">statement</span> <span class="ss">&#39;A</span> <span class="nv">fraction</span> <span class="nv">of</span> <span class="nv">a</span> <span class="nv">photon</span> <span class="nv">is</span> <span class="nv">never</span> <span class="nv">observed</span><span class="o">&#39;.</span> <span class="nv">Again,</span> <span class="nv">this</span> <span class="nv">is</span> <span class="nv">no</span>
+<span class="nv">longer</span> <span class="nv">true</span> <span class="nv">in</span> <span class="nv">QED</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      <p>The association of particles with waves discussed above is not restricted to the case of light, but is, according to modern theory, of universal applicability. All kinds of particles are associated with waves in this way and conversely all wave motion is associated with particles. Thus all particles can be made to exhibit interference effects and all wave motion has its energy in the form of quanta. The reason why these general phenomena are not more obvious is on account of a law of proportionality between the mass or energy of the particles and the frequency of the waves, the coefficient being such that for waves of familiar frequencies the associated quanta are extremely small, while for particles even as light as electrons the associated wave frequency is so high that it is not easy to demonstrate interference.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Finally,</span> <span class="nv">an</span> <span class="nv">explicit</span> <span class="nv">statement</span> <span class="nv">of</span> <span class="nv">de-Broglie</span> <span class="nv">relation</span> <span class="nv">between</span> <span class="nv">wave</span> <span class="k">and </span><span class="nv">particle,</span>
+<span class="nv">but</span> <span class="nv">the</span> <span class="nv">question</span> <span class="nv">is,</span> <span class="nv">why</span> <span class="k">do </span><span class="nv">we</span> <span class="nv">need</span> <span class="nv">to</span> <span class="nv">use</span> <span class="nv">a</span> <span class="nv">special</span> <span class="nv">name</span> <span class="nv">for</span> <span class="nv">the</span> <span class="nv">representation</span>
+<span class="nv">of</span> <span class="nv">degrees</span> <span class="nv">of</span> <span class="nv">freedom</span> <span class="nv">associated</span> <span class="nv">with</span> <span class="nv">space</span> <span class="k">and </span><span class="nv">time?</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <h1>4. Superposition and Indeterminacy</h1>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <p>The reader may possibly feel dissatisfied with the attempt in the two preceding sections to fit in the existence of photons with the classical theory of light. He may argue that a very strange idea has been introduced — the possibility of a photon being partly in each of two states of polarization, or partly in each of two separate beams — but even with the help of this strange idea no satisfying picture of the fundamental single-photon processes has been given. He may say further that this strange idea did not provide any information about experimental results for the experiments discussed, beyond what could have been obtained from an elementary consideration of photons being guided in some vague way by waves. What, then, is the use of the strange idea?</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Summary:</span> <span class="nv">connects</span> <span class="mi">3</span> <span class="nv">-&gt;</span> <span class="mi">4</span><span class="o">.</span>
+<span class="nv">Spot</span> <span class="nv">on</span><span class="o">.</span>
+<span class="nv">The</span> <span class="nv">two</span> <span class="nv">criticisms</span> <span class="nv">on</span> <span class="nv">the</span> <span class="nv">previous</span> <span class="nv">section</span> <span class="nv">are:</span>
+<span class="mi">1</span><span class="o">.</span> <span class="s">&quot;no satisfying picture of the fundamental single-photon processes has been</span>
+<span class="s">    given&quot;</span><span class="o">.</span>
+<span class="mi">2</span><span class="o">.</span> <span class="p">(</span><span class="nf">the</span> <span class="nv">wording</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">second</span> <span class="nv">criticism</span> <span class="nv">is</span> <span class="nv">still</span> <span class="nv">unclear</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-18'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-18'>#</a>
+      </div>
+      <p>In answer to the first criticism it may be remarked that the main object of physical science is not the provision of pictures, but is the formulation of laws governing phenomena and the application of these laws to the discovery of new phenomena. If a picture exists, so much the better; but whether a picture exists or not is a matter of only secondary importance. In the case of atomic phenomena no picture can be expected to exist in the usual sense of the word 'picture', by which is meant a model functioning essentially on classical lines. One may, however, extend the meaning of the word 'picture' to include any way of looking at the fundamental laws which makes their self-consistency obvious. With this extension, one may gradually acquire a picture of atomic phenomena by becoming familiar with the laws of the quantum theory.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Summary:</span> <span class="nv">what</span> <span class="nv">a</span> <span class="ss">&#39;picture</span><span class="o">&#39;</span> <span class="nv">ought</span> <span class="nv">to</span> <span class="nv">mean</span> <span class="nv">in</span> <span class="nv">physics</span><span class="o">.</span>
+<span class="nv">So</span> <span class="nv">far</span> <span class="nv">Dirac</span> <span class="nv">has</span> <span class="nv">only</span> <span class="nv">used</span> <span class="nv">tautology,</span> <span class="nv">that</span> <span class="nv">the</span> <span class="nv">photon</span> <span class="nv">is</span> <span class="nv">in</span> <span class="nv">a</span> <span class="nv">superposition</span> <span class="nv">state</span>
+<span class="nv">By</span> <span class="ss">&#39;laws</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">quantum</span> <span class="nv">theory</span><span class="ss">&#39;,</span> <span class="nv">he</span> <span class="nv">only</span> <span class="nv">refers</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">unitary</span> <span class="nv">quantum</span> <span class="nv">dynamics,</span>
+<span class="nv">but</span> <span class="nv">doesn</span><span class="ss">&#39;t</span> <span class="nv">include</span> <span class="nv">the</span> <span class="nv">measurement/collapse</span> <span class="nv">process</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-19'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-19'>#</a>
+      </div>
+      <p>With regard to the second criticism, it may be remarked that for many simple experiments with light, an elementary theory of waves and photons connected in a vague statistical way would be adequate to account for the results. In the case of such experiments quantum mechanics has no further information to give. In the great majority of experiments, however, the conditions are too complex for an elementary theory of this kind to be applicable and some more elaborate scheme, such as is provided by quantum mechanics, is then needed. The method of description that quantum mechanics gives in the more complex cases is applicable also to the simple cases and although it is then not really necessary for accounting for the experimental results, its study in these simple cases is perhaps a suitable introduction to its study in the general case.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">todo:</span> <span class="nv">connect</span> <span class="nv">this</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">observer</span> <span class="nv">effect</span> <span class="nv">again</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-20'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-20'>#</a>
+      </div>
+      <p>There remains an overall criticism that one may make to the whole scheme, namely, that in departing from the determinacy of the classical theory a great complication is introduced into the description of Nature, which is a highly undesirable feature. This complication is undeniable, but it is offset by a great simplification, provided by the general principle of superposition of states, which we shall now go on to consider. But first it is necessary to make precise the important concept of a 'state' of a general atomic system.</p>
+<p>Let us take any atomic system, composed of particles or bodies with specified properties (mass, moment of inertia, etc.) interacting according to specified laws of force. There will be various possible motions of the particles or bodies consistent with the laws of force. Each such motion is called a state of the system. According to classical ideas one could specify a state by giving numerical values to all the coordinates and velocities of the various component parts of the system at some instant of time, the whole motion being then completely determined. Now the argument of pp. 3 and 4 shows that we cannot observe a small system with that amount of detail which classical theory supposes. The limitation in the power of observation puts a limitation on the number of data that can be assigned to a state. Thus a state of an atomic system must be specified by fewer or more indefinite data than a complete set of numerical values for all the coordinates and velocities at some instant of time. In the case when the system is just a single photon, a state would be completely specified by a given translational state in the sense of § 3 together with a given state of polarization in the sense of § 2.</p>
+<p>A state of a system may be defined as an undisturbed motion that is restricted by as many conditions or data as are theoretically possible without mutual interference or contradiction. In practice the conditions could be imposed by a suitable preparation of the system, consisting perhaps in passing it through various kinds of sorting apparatus, such as slits and polarimeters, the system being left undisturbed after the preparation. The word 'state' may be used to mean either the state at one particular time (after the preparation), or the state throughout the whole of time after the preparation. To distinguish these two meanings, the latter will be called a 'state of motion' when there is liable to be ambiguity.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Summary:</span> <span class="nv">technical</span> <span class="nv">definition</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">word</span> <span class="ss">&#39;state</span><span class="o">&#39;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-21'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-21'>#</a>
+      </div>
+      <p>The general principle of superposition of quantum mechanics applies to the states, with either of the above meanings, of any one dynamical system. It requires us to assume that between these states there exist peculiar relationships such that whenever the system is definitely in one state we can consider it as being partly in each of two or more other states. The original state must be regarded as the result of a kind of superposition of the two or more new states, in a way that cannot be conceived on classical ideas. Any state may be considered as the result of a superposition of two or more other states, and indeed in an infinite number of ways. Conversely any two or more states may be superposed to give a new state. The procedure of expressing a state as the result of superposition of a number of other states is a mathematical procedure that is always permissible, independent of any reference to physical conditions, like the procedure of resolving a wave into Fourier components. Whether it is useful in any particular case, though, depends on the special physical conditions of the problem under consideration.</p>
+<p>In the two preceding sections examples were given of the superposition principle applied to a system consisting of a single photon. § 2 dealt with states differing only with regard to the polarization and § 3 with states differing only with regard to the motion of the photon as a whole.</p>
+<p>The nature of the relationships which the superposition principle requires to exist between the states of any system is of a kind that cannot be explained in terms of familiar physical concepts. One cannot in the classical sense picture a system being partly in each of two states and see the equivalence of this to the system being completely in some other state. There is an entirely new idea involved, to which one must get accustomed and in terms of which one must proceed to build up an exact mathematical theory, without having any detailed classical picture.</p>
+<p>When a state is formed by the superposition of two other states, it will have properties that are in some vague way intermediate between those of the two original states and that approach more or less closely to those of either of them according to the greater or less 'weight' attached to this state in the superposition process. The new state is completely defined by the two original states when their relative weights in the superposition process are known, together with a certain phase difference, the exact meaning of weights and phases being provided in the general case by the mathematical theory. In the case of the polarization of a photon their meaning is that provided by classical optics, so that, for example, When two perpendicularly plane polarized states are superposed with equal weights, the new state may be circularly polarized in either direction, or linearly polarized at an angle $\pi/4$, or else elliptically polarized, according to the phase difference.</p>
+<p>The non-classical nature of the superposition process is brought out clearly if we consider the superposition of two states, A and B, such that there exists an observation which, when made on the system in state A, is certain to lead to one particular result, a say, and when made on the system in state B is certain to lead to some different result, b say. What will be the result of the observation when made on the system in the superposed state? The answer is that the result will be sometimes a and sometimes b, according to a probability law depending on the relative weights of A and B in the superposition process. It will never be different from both a and b. The intermediate character of the state formed by superposition thus expresses itself through the probability of a particular result for an observation being intermediate between the corresponding probabilities for the original states,† not through the result itself being intermediate between the corresponding results for the original states.</p>
+<p>† The probability of a particular result for the state formed by superposition is not always intermediate between those for the original states in the general case when those for the original states are not zero or unity, so there are restrictions on the 'intermediateness' of a state formed by superposition.
+In this way we see that such a drastic departure from ordinary ideas as the assumption of superposition relationships between the states is possible only on account of the recognition of the importance of the disturbance accompanying an observation and of the consequent indeterminacy in the result of the observation. When an observation is made on any atomic system that is in a given state, in general the result will not be determinate, i.e., if the experiment is repeated several times under identical conditions several different results may be obtained. It is a law of nature, though, that if the experiment is repeated a large number of times, each particular result will be obtained in a definite fraction of the total number of times, so that there is a definite probability of its being obtained. This probability is what the theory sets out to calculate. Only in special cases when the probability for some result is unity is the result of the experiment determinate.</p>
+<p>The assumption of superposition relationships between the states leads to a mathematical theory in which the equations that define a state are linear in the unknowns. In consequence of this, people have tried to establish analogies with systems in classical mechanics, such as vibrating strings or membranes, which are governed by linear equations and for which, therefore, a superposition principle holds. Such analogies have led to the name 'Wave Mechanics' being sometimes given to quantum mechanics. It is important to remember, however, that the superposition that occurs in quantum mechanics is of an essentially different nature from any occurring in the classical theory, as is shown by the fact that the quantum superposition principle demands indeterminacy in the results of observations in order to be capable of a sensible physical interpretation. The analogies are thus liable to be misleading.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-22'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-22'>#</a>
+      </div>
+      <h1>5. Mathematical formulation of the principle</h1>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-23'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-23'>#</a>
+      </div>
+      <p>A profound change has taken place during the present century in the opinions physicists have held on the mathematical foundations of their subject. Previously they supposed that the principles of Newtonian mechanics would provide the basis for the description of the whole of physical phenomena and that all the theoretical physicist had to do was suitably to develop and apply these principles. With the recognition that there is no logical reason why Newtonian and other classical principles should be valid outside the domains in which they have been experimentally verified has come the realization that departures from these principles are indeed necessary. Such departures find their expression through the introduction of new mathematical formalisms, new schemes of axioms and rules of manipulation, into the methods of theoretical physics.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">Summary:</span> <span class="nv">this</span> <span class="nv">section</span> <span class="nv">is</span> <span class="nv">essentially</span> <span class="nv">the</span> <span class="nv">mathematical</span> <span class="nv">formulation</span> <span class="nv">of</span> <span class="nv">the</span>
+         <span class="nv">non-classical</span> <span class="nv">superposition</span> <span class="nv">state</span> <span class="nv">introduced</span> <span class="nv">earlier</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-24'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-24'>#</a>
+      </div>
+      <p>Quantum mechanics provides a good example of the new ideas. It requires the states of a dynamical system and the dynamical variables to be interconnected in quite strange ways that are unintelligible from the classical standpoint. The states and dynamical variables have to be represented by mathematical quantities of different natures from those ordinarily used in physics. The new scheme becomes a precise physical theory when all the axioms and rules of manipulation governing the mathematical quantities are specified and when in addition certain laws are laid down connecting physical facts with the mathematical formalism, so that from any given physical conditions equations between the mathematical quantities may be inferred and vice versa. In an application of the theory one would be given certain physical information, which one would proceed to express by equations between the mathematical quantities. One would then deduce new equations with the help of the axioms and rules of manipulation and would conclude by interpreting these new equations as physical conditions. The justification for the whole scheme depends, apart from internal consistency, on the agreement of the final results with experiment.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="p">(</span><span class="nf">interesting</span><span class="p">)</span> <span class="s">&quot;The Justification for the whole scheme depends, apart from</span>
+<span class="s">internal consistency, on the agreement of the final results with experiment&quot;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-25'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-25'>#</a>
+      </div>
+      <p>We shall begin to set up the scheme by dealing with the mathematical relations between the states of a dynamical system at one instant of time, which relations will come from the mathematical formulation of the principle of superposition. The superposition process is a kind of additive process and implies that states can in some way be added to give new states. The states must therefore be connected with mathematical quantities of a kind which can be added together to give other quantities of the same kind. The most obvious of such quantities are vectors. Ordinary vectors, existing in a space of a finite number of dimensions, are not sufficiently general for most of the dynamical systems in quantum mechanics. We have to make a generalization to vectors in a space of an infinite number of dimensions, and the mathematical treatment becomes complicated by questions of convergence. For the present, however, we shall deal merely with some general properties of the vectors, properties which can be deduced on the basis of a simple scheme of axioms, and questions of convergence and related topics will not be gone into until the need arises.</p>
+<p>It is desirable to have a special name for describing the vectors which are connected with the states of a system in quantum mechanics, whether they are in a space of a finite or an infinite number of dimensions. We shall call them ket vectors, or simply kets, and denote a general one of them by a special symbol $\ket{}$. If we want to specify a particular one of them by a label, A say, we insert it in the middle, thus $\ket{A}$. The suitability of this notation will become clear as the scheme is developed.</p>
+<p>Ket vectors may be multiplied by complex numbers and may be added together to give other ket vectors, from two ket vectors $\ket{A}$ and $\ket{B}$ we can form</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-26'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-26'>#</a>
+      </div>
+      <p>\begin{equation}c_1| A \rangle + c_2 | B \rangle = | R \rangle,\end{equation}</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="p">(</span><span class="nf">interesting</span><span class="p">)</span> <span class="nv">The</span> <span class="nv">first</span> <span class="nv">equation</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">book!</span> <span class="nv">Page</span> <span class="mi">16</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-27'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-27'>#</a>
+      </div>
+      <p>say, where $c_1$ and $c_2$ are any two complex numbers. We may also perform more general linear processes with them, such as adding an infinite sequence of them, and if we have a ket vector $\ket{x}$, depending on and labelled by a parameter x which can take on all values in a certain range, we may integrate it with respect to x, to get another ket vector
+$$\int \ket{x} \operatorname{d}x = \ket{Q}$$
+say. A ket vector which is expressible linearly in terms of certain others is said to be dependent on them. A set of ket vectors are called independent if no one of them is expressible linearly in terms of the others.</p>
+<p>We now assume that each state of a dynamical system at a particular time corresponds to a ket vector, the correspondence being such that if a state results from the superposition of certain other states, its corresponding ket vector is expressible linearly in terms of the corresponding ket vectors of the other states, and conversely. Thus the state $\ket{R}$ results from a superposition of the states $\ket{A}$ and $\ket{B}$ when the corresponding ket vectors are connected by (1).</p>
+<p>The above assumption leads to certain properties of the superposition process, properties which are in fact necessary for the word 'superposition' to be appropriate. When two or more states are superposed, the order in which they occur in the superposition process is unimportant, so the superposition process is symmetrical between the states that are superposed. Again, we see from equation (1) that (excluding the case when the coefficient $c_1$ or $c_2$ is zero) if the state $\ket{R}$ can be formed by superposition of the states $\ket{A}$ and $\ket{B}$, then the state $\ket{A}$ can be formed by superposition of $\ket{B}$ and $\ket{R}$, and $\ket{B}$ can be formed by superposition of $\ket{A}$ and $\ket{R}$. The superposition relationship is symmetrical between all three states $\ket{A}$, $\ket{B}$, and $\ket{R}$.</p>
+<p>A state which results from the superposition of certain other states will be said to be dependent on those states. More generally, a state will be said to be dependent on any set of states, finite or infinite in number, if its corresponding ket vector is dependent on the corresponding ket vectors of the set of states. A set of states will be called independent if no one of them is dependent on the others.</p>
+<p>To proceed with the mathematical formulation of the superposition principle we must introduce a further assumption, namely the assumption that by superposing a state with itself we cannot form any new state, but only the original state over again. If the original state corresponds to the ket vector $\ket{A}$, when it is superposed with itself the resulting state will correspond to</p>
+<p>\begin{equation} \nonumber c_1\ket{A} + c_2\ket{A} = (c_1 + c_2) \ket{A},\end{equation}
+where c1 and c2 are numbers. Now we may have $c_1 + c_2 = 0$, in which case the result of the superposition process would be nothing at all, the two components having cancelled each other by an interference effect. Our new assumption requires that, apart from this special case, the resulting state must be the same as the original one, so that $(c_1 + c_2) \ket{A}$ must correspond to the same state that $\ket{A}$ does. Now $c_1 + c_2$ is an arbitrary complex number and hence we can conclude that if the ket vector corresponding to a state is multiplied by any complex number, not zero, the resulting ket vector will correspond to the same state. Thus a state is specified by the direction of a ket vector and any length one may assign to the ket vector is irrelevant. All the states of the dynamical system are in one - one correspondence with all the possible directions for a ket vector, no distinction being made between the directions of the ket vectors $\ket{A}$ and $-\ket{A}$.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-28'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-28'>#</a>
+      </div>
+      <p>The assumption just made shows up very clearly the fundamental difference between the superposition of the quantum theory and any kind of classical superposition. In the case of a classical system for which a superposition principle holds, for instance a vibrating membrane, when one superposes a state with itself the result is a different state, with a different magnitude of the oscillations. There is no physical characteristic of a quantum state corresponding to the magnitude of the classical oscillations, as distinct from their quality, described by the ratios of the amplitudes at different points of the membrane. Again, while there exists a classical state with zero amplitude of oscillation everywhere, namely the state of rest, there does not exist any corresponding state for a quantum system, the zero ket vector corresponding to no state at all.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">The</span> <span class="nv">statement</span> <span class="nv">is</span> <span class="ss">&#39;true&#39;,</span> <span class="nv">but</span> <span class="nv">for</span> <span class="nv">a</span> <span class="nv">different</span> <span class="nv">reason</span><span class="o">.</span>
+<span class="nv">We</span> <span class="nv">need</span> <span class="nv">superposition</span> <span class="nv">because</span> <span class="nv">we</span> <span class="nv">genuinely</span> <span class="nv">cannot</span> <span class="nv">distinguish</span> <span class="nv">between</span>
+<span class="nv">alternative</span> <span class="nv">paths</span><span class="o">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-29'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-29'>#</a>
+      </div>
+      <p>Given two states corresponding to the ket vectors $\ket{A}$ and $\ket{B}$, the general state formed by superposing them corresponds to a ket vector $\ket{R}$ which is determined by two complex numbers, namely the coefficients $c_1$ and $c_2$ of equation (1). If these two coefficients are multiplied by the same factor (itself a complex number), the ket vector $\ket{R}$ will get multiplied by this factor and the corresponding state will be unaltered. Thus only the ratio of the two coefficients is effective in determining the state R. Hence this state is determined by one complex number, or by two real parameters. Thus from two given states, a twofold infinity of states may be obtained by superposition.</p>
+<p>This result is confirmed by the examples discussed in § 2 and § 3. In the example of § 2 there are just two independent states of polarization for a photon, which may be taken to be the states of plane polarization parallel and perpendicular to some fixed direction, and from the superposition of these two a twofold infinity of states of polarization can be obtained, namely all the states of elliptic polarization, the general one of which requires two parameters to describe it. Again, in the example of § 3, from the superposition of two given translational states for a photon a twofold infinity of translational states may be obtained, the general one of which is described by two parameters, which may be taken to be the ratio of the amplitudes of the two wave functions that are added together and their phase relationship. This confirmation shows the need for allowing complex coefficients in equation (1). If these coefficients were restricted to be real, then, since only their ratio is of importance for determining the direction of the resultant ket vector $\ket{R}$ when $\ket{A}$ and $\ket{B}$ are given, there would be only a simple infinity of states obtainable from the superposition.</p>
+<h1>6. Bra and ket vectors</h1>
+<p>Whenever we have a set of vectors in any mathematical theory, we can always set up a second set of vectors, which mathematicians call the dual vectors. The procedure will be described for the case when the original vectors are our ket vectors.</p>
+<p>Suppose we have a number $\varphi$ which is a function of a ket vector $|A\rangle$, i.e. to each ket vector $|A\rangle$ there corresponds one number and suppose further that the function is a linear one, which means that the number corresponding to $\ket{A} + \ket{A'}$ is the sum of the numbers corresponding to $\ket{A}$ and to $\ket{A'}$, and the number corresponding to c$\ket{A}$ is c times the number corresponding to $\ket{A}$, c being any numerical factor. Then the number $\varphi$ corresponding to any $\ket{A}$ may be looked upon as the scalar product of that $\ket{A}$ with some new vector, there being one of these new vectors for each linear function of the ket vectors $\ket{A}$. The justification for this way of looking at $\varphi$ is that, as will be seen later (see equations (5) and (6)), the new vectors may be added together and may be multiplied by numbers to give other vectors of the same kind. The new vectors are, of course, defined only to the extent that their scalar products with the original ket vectors are given numbers, but this is sufficient for one to be able to build up a mathematical theory about them.</p>
+<p>We shall call the new vectors bra vectors, or simply bras, and denote a general one of them by the symbol $\bra{A}$, the mirror image of the symbol for a ket vector. If we want to specify a particular one of them by a label, B say, we write it in the middle, thus $\bra{B}$. The scalar product of a bra vector $\bra{B}$ and a ket vector $\ket{A}$ will be written $\braket{B}{A}$, i.e. as a juxtaposition of the symbols for the bra and ket vectors, that for the bra vector being on the left, and the two vertical lines being contracted to one for brevity.</p>
+<p>One may look upon the symbols $\langle$ and $\rangle$ as a distinctive kind of brackets. A scalar product $\braket{B}{A}$ now appears as a complete bracket expression and a bra vector $\bra{B}$ or a ket vector $\ket{A}$ as an incomplete bracket expression. We have the rules that any complete bracket expression denotes a number and any incomplete bracket expression denotes a vector, of the bra or ket kind according to whether it contains the first or second part of the brackets. The condition that the scalar product of $\bra{B}$ and $\ket{A}$ is a linear function of $\ket{A}$ may be expressed symbolically by</p>
+<p>\begin{equation}\bra{B} \{ \ket{A} + \ket{A}\} = \braket{B}{A} + \braket{B}{A'},
+\end{equation}</p>
+<p>\begin{equation}
+\bra{B} \{ cA \rangle \} = c\braket{B}{A},
+\end{equation}</p>
+<p>c being any number.</p>
+<p>A bra vector is considered to be completely defined when its scalar product with every ket vector is given, so that if a bra vector has its scalar product with every ket vector vanishing, the bra vector itself must be considered as vanishing. In symbols, if</p>
+<p>\begin{align}
+\braket{P}{A} = 0, \mathrm{all} \ket{A},\
+\mathrm{then }  \bra{P} = 0.
+\end{align}</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nv">todo:fix</span> <span class="nv">equation</span> <span class="mi">4</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-30'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-30'>#</a>
+      </div>
+      <p>The sum of two bra vectors $\bra{B}$ and $\bra{B'}$ is defined by the condition that its scalar product with any ket vector $\ket{A}$ is the sum of the scalar products of $\bra{B}$ and $\bra{B'}$ with $\ket{A}$,</p>
+<p>\begin{equation}{ \bra{B} + \bra{B'} } \ket{A} = \braket{B}{A} + \braket{B'}{A},        \end{equation}</p>
+<p>and the product of a bra vector $\bra{B}$ and a number c is defined by the condition that its scalar product with any ket vector $|A\rangle$ is c times the scalar product of $\bra{B}$ with $\ket{A}$,</p>
+<p>\begin{equation}\{c \bra{B} \} \ket{A} = c \braket{B}{A}.        \end{equation}</p>
+<p>Equations (2) and (5) show that products of bra and ket vectors satisfy the distributive axiom of multiplication, and equations (3) and (6) show that multiplication by numerical factors satisfies the usual algebraic axioms.</p>
+<p>The bra vectors, as they have been here introduced, are quite a different kind of vector from the kets, and so far there is no connexion between them except for the existence of a scalar product of a bra and a ket. We now make the assumption that there is a one-one correspondence between the bras and the kets, such that the bra corresponding to $\ket{A} + \ket{A'}$ is the sum of the bras corresponding to $\ket{A}$ and to $\ket{A'}$, and the bra corresponding to $c\ket{A}$ is c times the bra corresponding to $\ket{A}$, c being the conjugate complex number to c. We shall use the same label to specify a ket and the corresponding bra. Thus the bra corresponding to $\ket{A}$ will be written $\bra{A}$.</p>
+<p>The relationship between a ket vector and the corresponding bra makes it reasonable to call one of them the conjugate imaginary of the other. Our bra and ket vectors are complex quantities, since they can be multiplied by complex numbers and are then of the same nature as before, but they are complex quantities of a special kind which cannot be split up into real and pure imaginary parts. The usual method of getting the real part of a complex quantity, by taking half the sum of the quantity itself and its conjugate, cannot be applied since a bra and a ket vector are of different natures and cannot be added together. To call attention to this distinction, we shall use the words 'conjugate complex' to refer to numbers and other complex quantities which can be split up into real and pure imaginary parts, and the words 'conjugate imaginary' for bra and ket vectors, which cannot. With the former kind of quantity, we shall use the notation of putting a bar over one of them to get the conjugate complex one.</p>
+<p>On account of the one-one correspondence between bra vectors and ket vectors, any state of our dynamical system at a particular time may be specified by the direction of a bra vector just as well as by the direction of a ket vector. In fact the whole theory will be symmetrical in its essentials between bras and kets.</p>
+<p>Given any two ket vectors $\ket{A}$ and $\ket{B}$, we can construct from them a number $\braket{A}{B}$ by taking the scalar product of the first with the conjugate imaginary of the second. This number depends linearly on $\ket{A}$ and antilinearly on $\ket{B}$, the antilinear dependence meaning that the number formed from $\ket{B} + \ket{B'}$ is the sum of the numbers formed from $\ket{B}$ and from $\ket{B'}$, and the number formed from $c\ket{B}$ is c-bar times the number formed from $\ket{B}$. There is a second way in which we can construct a number which depends linearly on $\ket{A}$ and antilinearly on $\ket{B}$, namely by forming the scalar product of $\ket{B}$ with the conjugate imaginary of $\ket{A}$ and taking the conjugate complex of this scalar product. We assume that these two numbers are always equal, i.e.</p>
+<p>\begin{equation}\braket{B}{A} = \overline{\braket{A}{B}}.        \end{equation}
+Putting $\ket{B} = \ket{A}$ here, we find that the number &lt; A | } $|A\rangle$ must be real. We make the further assumption</p>
+<p>\begin{equation}\braket{A}{A} &gt; 0,        \end{equation}
+except when $\ket{A} = 0$.</p>
+<p>In ordinary space, from any two vectors one can constrict a number — their scalar product — which is a real number and is symmetrical between them. In the space of bra vectors or the space of ket vectors, from any two vectors one can again construct a number — the scalar product of one with the conjugate imaginary of the other — but this number is complex and goes over into the conjugate complex number when the two vectors are interchanged. There is thus a kind of perpendicularity in these spaces, which is a generalization of the perpendicularity in ordinary space. We shall call a bra and a ket vector orthogonal if their scalar product is zero, and two bras or two kets will be called orthogonal if the scalar product of one with the conjugate imaginary of the other is zero. Further, we shall say that two states of our dynamical system are orthogonal if the vectors corresponding to these states are orthogonal.</p>
+<p>The length of a bra vector $\bra{A}$ or of the conjugate imaginary ket vector $\ket{A}$ is defined as the square root of the positive number $\braket{A}{A}$. When we are given a state and wish to set up a bra or ket vector to correspond to it, only the direction of the vector is given and the vector itself is undetermined to the extent of an arbitrary numerical factor. It is often convenient to choose this numerical factor so that the vector is of length unity. This procedure is called normalization and the vector so chosen is said to be normalized. The vector is not completely determined even then, since one can still multiply it by any number of modulus unity, i.e. any number $e^{i\gamma}$ where $\gamma$ is real, without changing its length. We shall call such a number a phase factor.</p>
+<p>The foregoing assumptions give the complete scheme of relations between the states of a dynamical system at a particular time. The relations appear in mathematical form, but they imply physical conditions, which will lead to results expressible in terms of observations when the theory is developed further. For instance, if two states are orthogonal, it means at present simply a certain equation in our formalism, but this equation implies a definite physical relationship between the states, which further developments of the theory will enable us to interpret in terms of observational results (see the bottom of p. 35).</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>

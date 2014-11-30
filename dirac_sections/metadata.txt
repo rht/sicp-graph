@@ -1,0 +1,76 @@
+dirac_sections/dirac75.md|75. Relativistic form of the quantum conditions
+dirac_sections/dirac14.md|14. Basic vectors
+dirac_sections/dirac36.md|36. Properties of angular momentum
+dirac_sections/dirac11.md|11. Functions of observables
+dirac_sections/dirac46.md|46. Transitions caused by a perturbation independent of the
+dirac_sections/dirac33.md|33. The Gibbs ensemble
+dirac_sections/dirac37.md|37. The spin of the electron
+dirac_sections/dirac64.md|64. Emission, absorption, and scattering of radiation
+dirac_sections/dirac42.md|42. General remarks
+dirac_sections/dirac31.md|31. The motion 0f Wave packets
+dirac_sections/dirac13.md|13. Commutability and compatibility
+dirac_sections/dirac4.md|4. Superposition and Indeterminacy
+dirac_sections/dirac49.md|49. The scattering coefﬁcient
+dirac_sections/dirac48.md|48. General remarks
+dirac_sections/dirac50.md|50. Solution with the momentum representation
+dirac_sections/dirac38.md|38. Motion in a central ﬁeld of force
+dirac_sections/dirac5.md|5. Mathematical formulation of the principle
+dirac_sections/dirac72.md|72. The fine-structure of the energy-levels of hydrogen
+dirac_sections/dirac44.md|44. The perturbation considered as causing transitions
+dirac_sections/dirac12.md|12. The general physical interpretation
+dirac_sections/dirac55.md|55. Permutations as dynamical variables
+dirac_sections/dirac77.md|77. The supplementary conditions
+dirac_sections/dirac20.md|20. Developments in notation
+dirac_sections/dirac43.md|43. The change in the energy-levels caused by a perturbation
+dirac_sections/dirac30.md|30. The free particle
+dirac_sections/dirac78.md|78. Electrons and positrons by themselves
+dirac_sections/dirac67.md|67. The Wave equation for the electron
+dirac_sections/dirac28.md|28. Heisenberg's form for the equations 0f motion
+dirac_sections/dirac27.md|27. Schrodinger's form for the equations 0f motion
+dirac_sections/dirac9.md|9. Eigenvalues and eigenvectors
+dirac_sections/dirac40.md|40. Selection rules
+dirac_sections/dirac80.md|80. The physical variables
+dirac_sections/dirac73.md|73. Theory of the positron
+dirac_sections/dirac47.md|47. The anomalous Zeeman effect
+dirac_sections/dirac70.md|70. Existence of the spin
+dirac_sections/dirac10.md|10. Observables
+dirac_sections/dirac15.md|15. The $\delta$ function
+dirac_sections/dirac74.md|74. The electromagnetic ﬁeld in the absence of matter
+dirac_sections/dirac8.md|8. Conjugate relations
+dirac_sections/dirac65.md|65. An assembly offermions
+dirac_sections/dirac81.md|81. Interpretation
+dirac_sections/dirac56.md|56. Permutations as constants 0f the motion
+dirac_sections/dirac32.md|32. The action principle
+dirac_sections/dirac39.md|39. Energy-levels of the hydrogen atom
+dirac_sections/dirac63.md|63. The interaction energy between photons and an atom
+dirac_sections/dirac54.md|54. Symmetrical and antisymmetrical states
+dirac_sections/dirac79.md|79. The interaction
+dirac_sections/dirac59.md|59. An assembly 0f bosons
+dirac_sections/dirac62.md|62. Application to photons
+dirac_sections/dirac58.md|58. Application to electrons
+dirac_sections/dirac1.md|1. The need for a quantum theory
+dirac_sections/dirac3.md|3. Interference of photons
+dirac_sections/dirac7.md|7. Linear operators
+dirac_sections/dirac69.md|69. The motion of a free electron
+dirac_sections/dirac41.md|41. The Zeeman effect for the hydrogen atom
+dirac_sections/dirac18.md|18. Probability amplitudes
+dirac_sections/dirac52.md|52. Resonance scattering
+dirac_sections/dirac35.md|35. Angular momentum
+dirac_sections/dirac6.md|6. Bra and ket vectors
+dirac_sections/dirac60.md|60. The connexion between bosons and oscillators
+dirac_sections/dirac57.md|57. Determination of the energy-levels
+dirac_sections/dirac2.md|2. The polarization of photons
+dirac_sections/dirac82.md|82. Applications
+dirac_sections/dirac19.md|19. Theorems about functions of observables
+dirac_sections/dirac53.md|53. Emission and absorption
+dirac_sections/dirac34.md|34. The harmonic oscillator
+dirac_sections/dirac16.md|16. Properties of the basic vectors
+dirac_sections/dirac51.md|51. Dispersive scattering
+dirac_sections/dirac76.md|76. The dynamical variables at one time
+dirac_sections/dirac17.md|17. The representation of linear operators
+dirac_sections/dirac61.md|61. Emission and absorption of bosons
+dirac_sections/dirac29.md|29. Stationary states
+dirac_sections/dirac68.md|68. Invariance under a Lorentz transformation
+dirac_sections/dirac66.md|66. Relativistic treatment 0f a particle
+dirac_sections/dirac71.md|71. Transition to polar variables
+dirac_sections/dirac45.md|45. Application to radiation
