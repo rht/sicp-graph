@@ -1,3 +1,8 @@
+//references:
+//http://bl.ocks.org/mbostock/950642
+//http://bl.ocks.org/mbostock/4062045
+//http://bost.ocks.org/mike/miserables/
+
 var w = 1200,
     h = 600,
     fill = d3.scale.category20();
