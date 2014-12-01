@@ -75,9 +75,9 @@ for text in corpus:
 index = similarities.Similarity('/tmp/tst', corpus_tfidf.corpus, num_features=corpus.num_terms+1)
 sims = index[corpus_tfidf]
 #step 3.1
-#sims[sims < pylab.percentile(sims, 60)] = 0
-#sims[sims < pylab.percentile(sims, 90)] = 0
-sims[sims < pylab.percentile(sims, 95)] = 0
+#sims[sims < pylab.percentile(sims, 60)] = 0  # dirac
+#sims[sims < pylab.percentile(sims, 90)] = 0  # sicp
+sims[sims < pylab.percentile(sims, 95)] = 0  # sicm, dirac_sections
 
 #step 4 convert datatype to networkx Graph
 print "converting similarity matrix to networkx Graph"
