@@ -1,0 +1,1054 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-36.html">previous</a></span><span>, <a href="book-Z-H-38.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_3.1"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_3.1">3.1&nbsp;&nbsp;Hamilton's Equations</a></h2>
+<p>
+<a name="%_idx_1556"></a>
+The momenta are given by momentum state functions of the time, the coordinates,
+and the velocities.<a name="call_footnote_Temp_223" href="#footnote_Temp_223"><sup><small>1</small></sup></a>
+Locally, we can find inverse functions that give the velocities in
+terms of the time, the coordinates, and the momenta.  We can use this
+inverse function to represent the state in terms of the coordinates
+and momenta rather than the coordinates and velocities.  The equations
+of motion when recast in terms of coordinates and momenta are called
+<em>Hamilton's canonical equations</em>.</p>
+<p>
+We present three derivations of Hamilton's equations.  The first
+derivation is guided by the strategy outlined above and uses nothing
+more complicated than implicit functions and the chain rule.  The
+second derivation first abstracts a key part of the first derivation
+and then applies the more abstract machinery to derive Hamilton's
+equations.  The third uses the action principle.</p>
+<p>
+Lagrange's equations give us the time derivative of the momentum <em>p</em>
+on a path <em>q</em>:
+<a name="EQUATION_3.1"></a></p>
+<div align=left><img src="chap3-Z-G-1.gif" border="0"></div>
+<p>
+where
+<a name="EQUATION_3.2"></a></p>
+<div align=left><img src="chap3-Z-G-2.gif" border="0"></div>
+<p>
+To eliminate <em>D</em><em>q</em> we need to solve
+equation&nbsp;(<a href="#EQUATION_3.2">3.2</a>) for <em>D</em><em>q</em> in terms of <em>p</em>.  </p>
+<p>
+Let <img src="chap1-Z-G-D-27.gif" border="0"> be the function that gives the velocities in terms of
+the time, coordinates, and momenta.  Defining <img src="chap1-Z-G-D-27.gif" border="0"> is a problem
+of functional inverses.  To prevent confusion we use names for the
+variables that have no mnemonic significance.  Let
+<a name="EQUATION_3.3"></a></p>
+<div align=left><img src="chap3-Z-G-3.gif" border="0"></div>
+<p>
+then <img src="chap1-Z-G-D-27.gif" border="0"> satisfies
+<a name="EQUATION_3.4"></a></p>
+<div align=left><img src="chap3-Z-G-4.gif" border="0"></div>
+<p>So <img src="chap1-Z-G-D-27.gif" border="0"> and <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>L</em> are inverses on the third argument position:
+<a name="EQUATION_3.5"></a></p>
+<div align=left><img src="chap3-Z-G-5.gif" border="0"></div>
+<p></p>
+<p>
+The Lagrange equation&nbsp;(<a href="#EQUATION_3.1">3.1</a>) can be rewritten in
+terms of <em>p</em> using <img src="chap1-Z-G-D-27.gif" border="0">:
+<a name="EQUATION_3.7"></a></p>
+<div align=left><img src="chap3-Z-G-6.gif" border="0"></div>
+<p>
+We can also use <img src="chap1-Z-G-D-27.gif" border="0"> to rewrite
+equation&nbsp;(<a href="#EQUATION_3.2">3.2</a>) as an equation for <em>D</em><em>q</em> in terms
+of <em>t</em>, <em>q</em> and <em>p</em>:
+<a name="EQUATION_3.8"></a></p>
+<div align=left><img src="chap3-Z-G-7.gif" border="0"></div>
+<p>
+Equations&nbsp;(<a href="#EQUATION_3.7">3.7</a>) and (<a href="#EQUATION_3.8">3.8</a>) 
+give the rate of change of <em>q</em> and <em>p</em> along realizable paths as
+functions of <em>t</em>, <em>q</em>, and <em>p</em> along the paths.</p>
+<p>
+
+Though these equations fulfill our goal of expressing the equations of motion
+entirely in terms of coordinates and momenta, we can find a more
+convenient representation.  Define the function
+<a name="EQUATION_3.9"></a></p>
+<div align=left><img src="chap3-Z-G-8.gif" border="0"></div>
+<p>
+which is the Lagrangian reexpressed as a function of time,
+coordinates, and momenta.<a name="call_footnote_Temp_224" href="#footnote_Temp_224"><sup><small>2</small></sup></a>
+For the equations of motion we need
+<img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>L</em> evaluated with the appropriate arguments.  Consider
+<a name="EQUATION_3.10"></a></p>
+<div align=left><img src="chap3-Z-G-9.gif" border="0"></div>
+<p>
+where we used the chain rule in the first step and the inverse
+property&nbsp;(<a href="#EQUATION_3.5">3.5</a>) of <img src="chap1-Z-G-D-27.gif" border="0"> in the second step.  Introducing the <a name="%_idx_1558"></a><a name="%_idx_1560"></a>momentum selector<a name="call_footnote_Temp_225" href="#footnote_Temp_225"><sup><small>3</small></sup></a>
+<em>P</em>(<em>t</em>, <em>q</em>, <em>p</em>)  =  <em>p</em>, and using the property <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>P</em>  =  0, we have
+<a name="EQUATION_3.11"></a></p>
+<div align=left><img src="chap3-Z-G-10.gif" border="0"></div>
+<p>
+where the <a name="%_idx_1562"></a><a name="%_idx_1564"></a><a name="%_idx_1566"></a><em>Hamiltonian</em> <em>H</em> is defined by<a name="call_footnote_Temp_226" href="#footnote_Temp_226"><sup><small>4</small></sup></a>
+<a name="EQUATION_3.12"></a></p>
+<div align=left><img src="chap3-Z-G-11.gif" border="0"></div>
+<p>
+Using the algebraic result&nbsp;(<a href="#EQUATION_3.11">3.11</a>), the
+Lagrange equation&nbsp;(<a href="#EQUATION_3.7">3.7</a>) for <em>D</em><em>p</em> becomes
+<a name="EQUATION_3.13"></a></p>
+<div align=left><img src="chap3-Z-G-12.gif" border="0"></div>
+<p></p>
+<p>
+The equation for <em>D</em><em>q</em>  can also be written in
+terms of <em>H</em>.  Consider
+<a name="EQUATION_3.14"></a></p>
+<div align=left><img src="chap3-Z-G-13.gif" border="0"></div>
+<p>
+To carry out the derivative of <img src="chap1-Z-G-D-49.gif" border="0"> we write it out
+in terms of <em>L</em>:
+<a name="EQUATION_3.15"></a></p>
+<div align=left><img src="chap3-Z-G-14.gif" border="0"></div>
+<p>
+again using the inverse property&nbsp;(<a href="#EQUATION_3.5">3.5</a>) of <img src="chap1-Z-G-D-27.gif" border="0">.  So, putting equations
+(<a href="#EQUATION_3.14">3.14</a>) and (<a href="#EQUATION_3.15">3.15</a>) together,
+we obtain
+<a name="EQUATION_3.16"></a></p>
+<div align=left><img src="chap3-Z-G-15.gif" border="0"></div>
+<p>
+Using the algebraic result&nbsp;(<a href="#EQUATION_3.16">3.16</a>),
+equation&nbsp;(<a href="#EQUATION_3.8">3.8</a>) for <em>D</em><em>q</em> becomes
+<a name="EQUATION_3.17"></a></p>
+<div align=left><img src="chap3-Z-G-16.gif" border="0"></div>
+<p></p>
+<p>
+Equations&nbsp;(<a href="#EQUATION_3.13">3.13</a>) and (<a href="#EQUATION_3.17">3.17</a>) give the
+derivatives of the coordinate and momentum path functions at each time in
+terms of the time, and the coordinates, and momenta at that time.  These equations are known
+as <em>Hamilton's&nbsp;equations</em>:<a name="call_footnote_Temp_227" href="#footnote_Temp_227"><sup><small>5</small></sup></a>
+<a name="EQUATION_3.18"></a></p>
+<div align=left><img src="chap3-Z-G-19.gif" border="0"></div>
+<p>
+The first equation is just a restatement of the
+relationship of the momenta to the velocities in terms of the
+Hamiltonian and holds for any path, whether or not it is a realizable
+path.  The second equation holds only for realizable paths.</p>
+<p>
+Hamilton's equations
+have an especially simple and symmetrical form.
+Just as Lagrange's equations are constructed from a real-valued
+function, the Lagrangian, Hamilton's equations are constructed from a
+real-valued function, the Hamiltonian.  The Hamiltonian function is<a name="call_footnote_Temp_228" href="#footnote_Temp_228"><sup><small>6</small></sup></a>
+<a name="%_idx_1572"></a><a name="%_idx_1574"></a><a name="EQUATION_3.19"></a></p>
+<div align=left><img src="chap3-Z-G-21.gif" border="0"></div>
+<p>
+The Hamiltonian has the same value as the <a name="%_idx_1576"></a><a name="%_idx_1578"></a>energy function <img src="chap1-Z-G-D-45.gif" border="0">
+(see equation&nbsp;<a href="book-Z-H-15.html#EQUATION_1.140">1.140</a>), except that the
+velocities are expressed in terms of time, coordinates, and momenta by
+<img src="chap1-Z-G-D-27.gif" border="0">:
+<a name="EQUATION_3.20"></a></p>
+<div align=left><img src="chap3-Z-G-22.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_229"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_229">Illustration</a></h4>
+<p>Let's try something simple: the motion of a particle 
+of mass <em>m</em> with potential energy <em>V</em>(<em>x</em>, <em>y</em>).  A Lagrangian is 
+<a name="EQUATION_3.21"></a></p>
+<div align=left><img src="chap3-Z-G-23.gif" border="0"></div>
+<p>
+To form the Hamiltonian we find the momenta <em>p</em>  =  <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>L</em>(<em>t</em>,
+<em>q</em>, <em>v</em>):
+<em>p</em><sub><em>x</em></sub>  =  <em>m</em> <em>v</em><sub><em>x</em></sub> and <em>p</em><sub><em>y</em></sub>  =  <em>m</em> <em>v</em><sub><em>y</em></sub>.  Solving for the velocities
+in terms of the momenta is easy here: <em>v</em><sub><em>x</em></sub>  =  <em>p</em><sub><em>x</em></sub>/<em>m</em> and <em>v</em><sub><em>y</em></sub>  = 
+<em>p</em><sub><em>y</em></sub>/<em>m</em>.  The Hamiltonian is <em>H</em>(<em>t</em>, <em>q</em>, <em>p</em>)  =  <em>p</em><em>v</em>  <tt>-</tt>  <em>L</em>(<em>t</em>, <em>q</em>, <em>v</em>), with <em>v</em> reexpressed in
+terms of (<em>t</em>, <em>q</em>, <em>p</em>):
+<a name="EQUATION_3.22"></a></p>
+<div align=left><img src="chap3-Z-G-24.gif" border="0"></div>
+<p>
+The kinetic energy is a homogeneous quadratic form in the velocities,
+so the energy is <em>T</em> + <em>V</em> and the Hamiltonian is the energy expressed in
+terms of momenta rather than velocities.
+Hamilton's equations for <em>D</em><em>q</em> are
+<a name="EQUATION_3.23"></a></p>
+<div align=left><img src="chap3-Z-G-25.gif" border="0"></div>
+<p>
+Note that these equations merely
+restate the relation between the momenta and the velocities.
+Hamilton's equations for <em>D</em><em>p</em> are
+<a name="EQUATION_3.24"></a></p>
+<div align=left><img src="chap3-Z-G-26.gif" border="0"></div>
+<p>
+The rate of change of the linear momentum is minus the gradient of the
+potential energy.</p>
+<p>
+</p>
+<p><a name="%_thm_3.1"></a>
+<b>Exercise 3.1.</b>&nbsp;&nbsp;<strong>Deriving Hamilton's equations</strong><br>
+For each of the following Lagrangians derive the Hamiltonian and
+Hamilton's equations.  These problems are simple enough to do by hand.</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;A Lagrangian for a planar pendulum:
+<em>L</em>(<em>t</em>, <img src="chap1-Z-G-D-19.gif" border="0">, <img src="chap1-Z-G-D-20.gif" border="0">)  =   (1/2) <em>m</em> <em>l</em><sup>2</sup> <img src="chap1-Z-G-D-20.gif" border="0"><sup>2</sup>  +  <em>m</em> <em>g</em> <em>l</em> cos <img src="chap1-Z-G-D-19.gif" border="0">.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;A Lagrangian for a particle of mass <em>m</em> with a
+two-dimensional
+potential energy: <em>V</em>(<em>x</em>, <em>y</em>)  =  (<em>x</em><sup>2</sup>  +  <em>y</em><sup>2</sup>)/2  +  <em>x</em><sup>2</sup> <em>y</em>  <tt>-</tt>  <em>y</em><sup>3</sup>/3 is <em>L</em>(<em>t</em>; <em>x</em>, <em>y</em>;
+<img src="chap1-Z-G-D-37.gif" border="0">, <img src="chap3-Z-G-D-1.gif" border="0">)  =   (1/2) <em>m</em> (<img src="chap1-Z-G-D-37.gif" border="0"><sup>2</sup>  +  <img src="chap3-Z-G-D-1.gif" border="0"><sup>2</sup>)  <tt>-</tt>  <em>V</em>(<em>x</em>, <em>y</em>).</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;A Lagrangian for a particle of mass <em>m</em> constrained to move
+on a sphere of radius <em>R</em>: <em>L</em>(<em>t</em>; <img src="chap1-Z-G-D-19.gif" border="0">, <img src="chap1-Z-G-D-16.gif" border="0">; <img src="chap1-Z-G-D-20.gif" border="0">,
+<img src="chap1-Z-G-D-34.gif" border="0">)  =   (1/2) <em>m</em> <em>R</em><sup>2</sup> (<img src="chap1-Z-G-D-20.gif" border="0"><sup>2</sup>  +  (<img src="chap1-Z-G-D-34.gif" border="0"> sin
+<img src="chap1-Z-G-D-19.gif" border="0">)<sup>2</sup>), where <img src="chap1-Z-G-D-19.gif" border="0"> is the colatitude and <img src="chap1-Z-G-D-16.gif" border="0"> is the
+longitude on the sphere.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_3.2"></a>
+<b>Exercise 3.2.</b>&nbsp;&nbsp;<strong>Sliding pendulum</strong><br>
+For the pendulum with a sliding support (see
+exercise&nbsp;<a href="book-Z-H-13.html#%_thm_1.20">1.20</a>), derive a Hamiltonian
+and Hamilton's equations.
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_232"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_232">Hamiltonian state</a></h4>
+<p><a name="%_idx_1580"></a><a name="%_idx_1582"></a>
+Given a coordinate path <em>q</em> and a Lagrangian <em>L</em>, the corresponding
+momentum path <em>p</em> is given by equation&nbsp;(<a href="#EQUATION_3.2">3.2</a>).
+Equation (<a href="#EQUATION_3.17">3.17</a>) expresses the same relationship in
+terms of the corresponding Hamiltonian <em>H</em>.  That these relations are
+valid for any path, whether or not it is a <a name="%_idx_1584"></a>realizable path, allows us
+to abstract to arbitrary velocity and momentum at a moment.  At a
+moment, the momentum <em>p</em> for the state tuple ( <em>t</em>, <em>q</em>, <em>v</em> ) is <em>p</em>  = 
+<img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>L</em>(<em>t</em>, <em>q</em>, <em>v</em>).  We also have <em>v</em>  =  <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>H</em>(<em>t</em>, <em>q</em>, <em>p</em>).  In
+the Lagrangian formulation the state of the system at a moment can be
+specified by the local state tuple ( <em>t</em>, <em>q</em>, <em>v</em> ) of time, generalized
+coordinates, and generalized velocities.  Lagrange's equations
+determine a unique path emanating from this state.  In the Hamiltonian
+formulation the state can be specified by the tuple ( <em>t</em>, <em>q</em>, <em>p</em> ) of
+time, generalized coordinates, and generalized momenta.  Hamilton's
+equations determine a unique path emanating from this state.  The
+Lagrangian state tuple ( <em>t</em>, <em>q</em>, <em>v</em> ) encodes exactly the same
+information as the Hamiltonian state tuple ( <em>t</em>, <em>q</em>, <em>p</em> ); we need a
+Lagrangian or a Hamiltonian to relate them.  The two formulations are
+equivalent in that the same coordinate
+path emanates from them for equivalent initial states.</p>
+<p>
+The Lagrangian state derivative is constructed from the Lagrange
+equations by solving for the highest-order derivative and abstracting
+to arbitrary positions and velocities at a moment.<a name="call_footnote_Temp_233" href="#footnote_Temp_233"><sup><small>7</small></sup></a>
+The Lagrangian state path is generated by integration of the
+Lagrangian state derivative given an initial Lagrangian state ( <em>t</em>, <em>q</em>,
+<em>v</em> ).  Similarly, the <a name="%_idx_1588"></a><a name="%_idx_1590"></a>Hamiltonian state derivative can be constructed
+from Hamilton's equations by abstracting to arbitrary positions and
+momenta at a moment.  Hamilton's equations are a set of first-order
+differential equations in explicit form.  The Hamiltonian state
+derivative can be directly written in terms of them.  The Hamiltonian
+state path is generated by integration of the Hamiltonian state
+derivative given an initial Hamiltonian state ( <em>t</em>, <em>q</em>, <em>p</em> ).
+If these state paths are obtained by integrating the state derivatives
+with equivalent initial states, then the coordinate path components of
+these state paths are the same and satisfy the Lagrange equations.
+The coordinate path and the momentum path components of the
+Hamiltonian state path satisfy Hamilton's equations.  The Hamiltonian
+formulation and the Lagrangian formulation are equivalent.</p>
+<p>
+Given a path <em>q</em>, the Lagrangian state path and the Hamiltonian state paths
+can be deduced from it.  The Lagrangian state path <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>] can be 
+constructed from a path <em>q</em> simply by taking derivatives.  The 
+<a name="%_idx_1592"></a><a name="%_idx_1594"></a><a name="%_idx_1596"></a>Lagrangian state path satisfies:
+<a name="EQUATION_3.25"></a></p>
+<div align=left><img src="chap3-Z-G-27.gif" border="0"></div>
+<p>
+The Lagrangian state path is uniquely determined by the path&nbsp;<em>q</em>.
+The <a name="%_idx_1598"></a><a name="%_idx_1600"></a><a name="%_idx_1602"></a>Hamiltonian state path <img src="chap3-Z-G-D-2.gif" border="0"><sub><em>L</em></sub>[<em>q</em>] can also be constructed from the
+path <em>q</em> but the construction requires a Lagrangian.  The
+Hamiltonian state path satisfies
+<a name="EQUATION_3.26"></a></p>
+<div align=left><img src="chap3-Z-G-28.gif" border="0"></div>
+<p>
+The Hamiltonian state tuple is not uniquely determined by the path <em>q</em>
+because it depends upon our choice of Lagrangian, which is not unique.</p>
+<p>
+The
+2<em>n</em>-dimensional space whose elements are labeled by the <em>n</em> generalized
+coordinates <em>q</em><sup><em>i</em></sup> and the <em>n</em> generalized momenta <em>p</em><sub><em>i</em></sub> is called the <a name="%_idx_1604"></a><em>phase space</em>.  The components of the generalized coordinates and
+momenta are collectively called the <em>phase-space components</em>.<a name="call_footnote_Temp_234" href="#footnote_Temp_234"><sup><small>8</small></sup></a>
+The dynamical state of the system is completely specified by the phase-space state
+tuple ( <em>t</em>, <em>q</em>, <em>p</em> ), given a Lagrangian or Hamiltonian to provide the
+map between velocities and momenta.</p>
+<p>
+</p>
+<a name="%_sec_Temp_235"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_235">Computing Hamilton's equations</a></h4>
+<p><a name="%_idx_1616"></a>
+Hamilton's equations are a system of first-order ordinary differential
+equations.  A procedural formulation of Lagrange's equations as a
+first-order system was presented in section&nbsp;<a href="book-Z-H-14.html#%_sec_1.7">1.7</a>.
+The following formulation of Hamilton's equations is analogous:
+</p>
+<p><tt><a name="%_idx_1618"></a>(define&nbsp;((Hamilton-equations&nbsp;Hamiltonian)&nbsp;q&nbsp;p)<br>
+&nbsp;&nbsp;(let&nbsp;((H-state-path&nbsp;(qp-&gt;H-state-path&nbsp;q&nbsp;p)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(D&nbsp;H-state-path)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(compose&nbsp;(phase-space-derivative&nbsp;Hamiltonian)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H-state-path))))<br>
+</p>
+</tt>
+<p>The Hamiltonian state derivative is computed as follows:
+</p>
+<p><tt><a name="%_idx_1620"></a>(define&nbsp;((phase-space-derivative&nbsp;Hamiltonian)&nbsp;H-state)<br>
+&nbsp;&nbsp;(up&nbsp;1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(((partial&nbsp;2)Hamiltonian)&nbsp;H-state)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(((partial&nbsp;1)Hamiltonian)&nbsp;H-state))))<br>
+</p>
+</tt>
+<p>The state in the Hamiltonian formulation is composed of the time, the
+coordinates, and the momenta.  We call this an <tt>H-state</tt>, to
+distinguish it from the state in the Lagrangian formulation.  We can
+select the components of the Hamiltonian state with the selectors
+<tt>time</tt>, <tt>coordinate</tt>, <a name="%_idx_1622"></a><tt>momentum</tt>.  We construct
+Hamiltonian states from their components with <tt>up</tt>.  
+The first component of the state is time, so the first component of
+the state derivative is one, the time rate of change of time.  
+Given procedures <tt>q</tt> and <tt>p</tt> implementing coordinate and
+momentum path functions, the Hamiltonian state path can be constructed with 
+the following procedure:
+</p>
+<p><tt>(define&nbsp;((qp-&gt;H-state-path&nbsp;q&nbsp;p)&nbsp;t)<br>
+&nbsp;&nbsp;(up&nbsp;t&nbsp;(q&nbsp;t)&nbsp;(p&nbsp;t)))<br>
+</p>
+</tt>
+<p>The <tt>Hamilton-equations</tt> procedure returns the residuals of
+Hamilton's equations for the given paths.</p>
+<p>
+For example, a procedure implementing the Hamiltonian for a point mass
+with potential energy <em>V</em>(<em>x</em>, <em>y</em>) is
+</p>
+<p><tt>(define&nbsp;((H-rectangular&nbsp;m&nbsp;V)&nbsp;H-state)<br>
+&nbsp;&nbsp;(let&nbsp;((q&nbsp;(coordinate&nbsp;H-state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(p&nbsp;(momentum&nbsp;H-state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(/&nbsp;(square&nbsp;p)&nbsp;(*&nbsp;2&nbsp;m))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(V&nbsp;(ref&nbsp;q&nbsp;0)&nbsp;(ref&nbsp;q&nbsp;1)))))<br>
+</p>
+</tt>
+<p>Hamilton's equations are<a name="call_footnote_Temp_236" href="#footnote_Temp_236"><sup><small>9</small></sup></a>
+</p>
+<p><tt>(show-expression&nbsp;<br>
+&nbsp;(((Hamilton-equations<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(H-rectangular&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'m<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'V&nbsp;(-&gt;&nbsp;(X&nbsp;Real&nbsp;Real)&nbsp;Real))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;(literal-function&nbsp;'x)&nbsp;(literal-function&nbsp;'y))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(down&nbsp;(literal-function&nbsp;'p_x)&nbsp;(literal-function&nbsp;'p_y)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'t))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap3-Z-G-29.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+The zero in the first element of the structure of Hamilton's equation
+residuals is just the tautology that time advances uniformly: the
+time function is just the identity, so its derivative is one and the
+residual is zero.  The equations in the second element of the structure
+relate the
+coordinate paths and the momentum paths.  The equations in the third
+element give the rate of change of the momenta in terms of the applied
+forces.</p>
+<p>
+</p>
+<p><a name="%_thm_3.3"></a>
+<b>Exercise 3.3.</b>&nbsp;&nbsp;<strong>Computing Hamilton's equations</strong><br>
+Check your answers to exercise&nbsp;<a href="#%_thm_3.1">3.1</a> with the
+<tt>Hamilton-equations</tt> procedure.
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_3.1.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_3.1.1">3.1.1&nbsp;&nbsp;The Legendre Transformation</a></h3>
+<p>
+<a name="%_idx_1626"></a>
+The Legendre transformation abstracts a key
+part of the process of transforming from the Lagrangian to the
+Hamiltonian formulation of mechanics -- the replacement of functional
+dependence on generalized velocities with functional dependence on
+generalized momenta.  The momentum state function is defined as a
+partial derivative of the Lagrangian, a real-valued function of time,
+coordinates, and velocities.  The Legendre transformation provides an
+inverse that gives the velocities in terms of the momenta: we are able
+to write the velocities as a partial derivative of a different
+real-valued function of time, coordinates, and momenta.<a name="call_footnote_Temp_238" href="#footnote_Temp_238"><sup><small>10</small></sup></a></p>
+<p>
+Given a real-valued function <em>F</em>, if we can find a real-valued
+function <em>G</em> such that <em>D</em><em>F</em> = (<em>D</em><em>G</em>)<sup><tt>-</tt>1</sup>, then we say that <em>F</em> and <em>G</em>
+are related by a Legendre transform.</p>
+<p>
+Locally, we can define the inverse function<a name="call_footnote_Temp_239" href="#footnote_Temp_239"><sup><small>11</small></sup></a>
+<img src="chap1-Z-G-D-27.gif" border="0"> of <em>D</em><em>F</em> so that <em>D</em><em>F</em> <small>o</small> <img src="chap1-Z-G-D-27.gif" border="0">  =  <em>I</em>, where <em>I</em> is the identity
+function <em>I</em>(<em>w</em>)  =  <em>w</em>.  Consider the composite function <img src="chap1-Z-G-D-47.gif" border="0">  = 
+<em>F</em> <small>o</small> <img src="chap1-Z-G-D-27.gif" border="0">.  The derivative of <img src="chap1-Z-G-D-47.gif" border="0"> is
+<a name="EQUATION_3.27"></a></p>
+<div align=left><img src="chap3-Z-G-30.gif" border="0"></div>
+<p>
+Using the product rule and <em>D</em><em>I</em> = 1, we have
+<a name="EQUATION_3.28"></a></p>
+<div align=left><img src="chap3-Z-G-31.gif" border="0"></div>
+<p>
+or
+<a name="EQUATION_3.29"></a></p>
+<div align=left><img src="chap3-Z-G-32.gif" border="0"></div>
+<p>
+The integral is determined up to a constant of integration.  If we
+define
+<a name="EQUATION_3.30"></a></p>
+<div align=left><img src="chap3-Z-G-33.gif" border="0"></div>
+<p>
+then we have
+<a name="EQUATION_3.31"></a></p>
+<div align=left><img src="chap3-Z-G-34.gif" border="0"></div>
+<p>
+The function <em>G</em> has the desired property that <em>D</em><em>G</em> is the inverse
+function <img src="chap1-Z-G-D-27.gif" border="0"> of <em>D</em><em>F</em>.  The derivation just given applies
+equally well if the arguments of <em>F</em> and <em>G</em> have multiple components.</p>
+<p>
+Given a relation <em>w</em>  =  <em>D</em><em>F</em>(<em>v</em>) for some given function <em>F</em>, then
+<em>v</em>  =  <em>D</em><em>G</em>(<em>w</em>) for <em>G</em>  =  <em>I</em><img src="chap1-Z-G-D-27.gif" border="0">  <tt>-</tt>  <em>F</em> <small>o</small> <img src="chap1-Z-G-D-27.gif" border="0">, where <img src="chap1-Z-G-D-27.gif" border="0"> is the inverse
+function of <em>D</em><em>F</em> provided it exists.</p>
+<p>
+<a name="FIGURE_3.1"></a></p>
+<div align=left><img src="chap3-Z-G-35.gif" border="0"></div>
+<p></p>
+<p>
+A picture may help (see figure&nbsp;<a href="#FIGURE_3.1">3.1</a>).  The curve is the graph of
+the function <em>D</em><em>F</em>.  Turned sideways, it is also the graph of the
+function <em>D</em><em>G</em>, because <em>D</em><em>G</em> is the inverse function of <em>D</em><em>F</em>.  The
+integral of <em>D</em><em>F</em> from <em>v</em><sub>0</sub> to <em>v</em> is <em>F</em>(<em>v</em>)  <tt>-</tt>  <em>F</em>(<em>v</em><sub>0</sub>); this is the
+area below the curve from <em>v</em><sub>0</sub> to <em>v</em>.  Likewise, the integral of <em>D</em><em>G</em>
+from <em>w</em><sub>0</sub> to <em>w</em> is <em>G</em>(<em>w</em>)  <tt>-</tt>  <em>G</em>(<em>w</em><sub>0</sub>); this is the area to the left of
+the curve from <em>w</em><sub>0</sub> to <em>w</em>.  The union of these two regions has
+area <em>w</em> <em>v</em>  <tt>-</tt>  <em>w</em><sub>0</sub> <em>v</em><sub>0</sub>.  So 
+<a name="EQUATION_3.32"></a></p>
+<div align=left><img src="chap3-Z-G-36.gif" border="0"></div>
+<p>
+which is the same as
+<a name="EQUATION_3.33"></a></p>
+<div align=left><img src="chap3-Z-G-37.gif" border="0"></div>
+<p>
+The left-hand side depends only on the point labeled by <em>w</em> and <em>v</em> and
+the right-hand side depends only on the point labeled by <em>w</em><sub>0</sub> and <em>v</em><sub>0</sub>, so
+these must be constant, independent of the variable endpoints.
+So as the point is changed the combination <em>G</em>(<em>w</em>)  +  <em>F</em>(<em>v</em>)  <tt>-</tt>  <em>w</em><em>v</em> is invariant.
+Thus
+<a name="EQUATION_3.34"></a></p>
+<div align=left><img src="chap3-Z-G-38.gif" border="0"></div>
+<p>
+with constant <em>C</em>. The requirement for <em>G</em> depends only on <em>D</em><em>G</em> so we
+can choose to define <em>G</em> with <em>C</em> = 0.</p>
+<p>
+
+</p>
+<a name="%_sec_Temp_240"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_240">Legendre transformations with passive arguments</a></h4>
+<p><a name="%_idx_1628"></a>
+Let <em>F</em> be a real-valued function of two arguments and
+<a name="EQUATION_3.35"></a></p>
+<div align=left><img src="chap3-Z-G-39.gif" border="0"></div>
+<p>
+If we can find a real-valued function <em>G</em> such that 
+<a name="EQUATION_3.36"></a></p>
+<div align=left><img src="chap3-Z-G-40.gif" border="0"></div>
+<p>
+we say that <em>F</em> and <em>G</em> are related by a Legendre transformation,
+that the second <a name="%_idx_1630"></a><a name="%_idx_1632"></a>argument in each function is <em>active</em>, and that the
+first argument is <em>passive</em> in the transformation.</p>
+<p>
+If the function <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>F</em> can be locally inverted with
+respect to the second argument we can define
+<a name="EQUATION_3.37"></a></p>
+<div align=left><img src="chap3-Z-G-41.gif" border="0"></div>
+<p>
+giving
+<a name="EQUATION_3.38"></a></p>
+<div align=left><img src="chap3-Z-G-42.gif" border="0"></div>
+<p>
+where <em>W</em> = <em>I</em><sub>1</sub> is the selector function for the second argument.</p>
+<p>
+For the active arguments the derivation goes through as before.  The
+first argument to <em>F</em> and <em>G</em> is just along for the ride -- it is a
+passive argument.  Let
+<a name="EQUATION_3.39"></a></p>
+<div align=left><img src="chap3-Z-G-43.gif" border="0"></div>
+<p>
+then define
+<a name="EQUATION_3.40"></a></p>
+<div align=left><img src="chap3-Z-G-44.gif" border="0"></div>
+<p>
+We can check that <em>G</em> has the property <img src="chap1-Z-G-D-27.gif" border="0">  =  <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub>
+<em>G</em> by carrying out the derivative:
+<a name="EQUATION_3.41"></a></p>
+<div align=left><img src="chap3-Z-G-45.gif" border="0"></div>
+<p>
+but 
+<a name="EQUATION_3.42"></a></p>
+<div align=left><img src="chap3-Z-G-46.gif" border="0"></div>
+<p>
+or 
+<a name="EQUATION_3.43"></a></p>
+<div align=left><img src="chap3-Z-G-47.gif" border="0"></div>
+<p>
+So
+<a name="EQUATION_3.44"></a></p>
+<div align=left><img src="chap3-Z-G-48.gif" border="0"></div>
+<p>
+as required.
+The active argument may have many components.</p>
+<p>
+The partial derivatives with respect to the passive
+arguments are related in a remarkably simple way.  Let's calculate the
+derivative <img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>G</em> in pieces.  First,
+<a name="EQUATION_3.45"></a></p>
+<div align=left><img src="chap3-Z-G-49.gif" border="0"></div>
+<p>
+because <img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>W</em>  =  0.  To calculate
+<img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <img src="chap1-Z-G-D-47.gif" border="0"> we must supply arguments:
+<a name="EQUATION_3.46"></a></p>
+<div align=left><img src="chap3-Z-G-50.gif" border="0"></div>
+<p>
+Putting these together, we find
+<a name="EQUATION_3.47"></a></p>
+<div align=left><img src="chap3-Z-G-51.gif" border="0"></div>
+<p>
+The calculation is unchanged if the passive argument has many components.</p>
+<p>
+We can write the Legendre transformation more symmetrically:
+<a name="EQUATION_3.48"></a></p>
+<div align=left><img src="chap3-Z-G-52.gif" border="0"></div>
+<p>
+The last relation is not as trivial as it looks, because <em>x</em> enters
+the equations connecting <em>w</em> and <em>v</em>.
+With this symmetrical form, we see that the Legendre transform is its
+own inverse.</p>
+<p>
+</p>
+<p><a name="%_thm_3.4"></a>
+<b>Exercise 3.4.</b>&nbsp;&nbsp;<strong>Simple Legendre transforms</strong><br>
+For each of the following functions, find the function that is related
+to the given function by the Legendre transform on the indicated
+active argument.
+Show that the Legendre transform relations hold for your solution,
+including the relations among passive arguments, if any.</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;<em>F</em>(<em>x</em>)  =  <em>a</em> <em>x</em>  +  <em>b</em> <em>x</em><sup>2</sup>, with no passive arguments.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;<em>F</em>(<em>x</em>, <em>y</em>)  =  <em>a</em> sin <em>x</em> cos <em>y</em>, with <em>x</em> active.</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;<em>F</em>(<em>x</em>, <em>y</em>, <img src="chap1-Z-G-D-37.gif" border="0">, <img src="chap3-Z-G-D-1.gif" border="0">)  =  <em>x</em> <img src="chap1-Z-G-D-37.gif" border="0"><sup>2</sup>  +  3 <img src="chap1-Z-G-D-37.gif" border="0"> <img src="chap3-Z-G-D-1.gif" border="0">  +  <em>y</em> <img src="chap3-Z-G-D-1.gif" border="0"><sup>2</sup>, with <img src="chap1-Z-G-D-37.gif" border="0"> and <img src="chap3-Z-G-D-1.gif" border="0"> active.
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_242"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_242">Hamilton's equations from the Legendre transformation</a></h4>
+<p>
+<a name="%_idx_1634"></a>
+We can use the Legendre transformation with the Lagrangian playing the
+role of <em>F</em> and with the generalized velocity slot playing the role of the
+active argument.  The Hamiltonian plays the role of <em>G</em> with the
+momentum slot active.  The coordinate and time slots are passive
+arguments.</p>
+<p>
+<a name="%_idx_1636"></a><a name="%_idx_1638"></a>The Lagrangian <em>L</em> and the Hamiltonian <em>H</em> are related by a Legendre
+transformation:
+<a name="EQUATION_3.49"></a></p>
+<div align=left><img src="chap3-Z-G-53.gif" border="0"></div>
+<p>
+<a name="EQUATION_3.50"></a></p>
+<div align=left><img src="chap3-Z-G-54.gif" border="0"></div>
+<p>
+and 
+<a name="EQUATION_3.51"></a></p>
+<div align=left><img src="chap3-Z-G-55.gif" border="0"></div>
+<p>
+with passive equations
+<a name="EQUATION_3.52"></a></p>
+<div align=left><img src="chap3-Z-G-56.gif" border="0"></div>
+<p>
+Presuming it exists, we can define the inverse of <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>L</em> 
+with respect to the last argument:
+<a name="EQUATION_3.54"></a></p>
+<div align=left><img src="chap3-Z-G-57.gif" border="0"></div>
+<p>
+and write the  Hamiltonian 
+<a name="EQUATION_3.55"></a></p>
+<div align=left><img src="chap3-Z-G-58.gif" border="0"></div>
+<p>
+These relations are purely algebraic in nature.</p>
+<p>
+On a path <em>q</em>  we have the momentum <em>p</em>:
+<a name="EQUATION_3.56"></a></p>
+<div align=left><img src="chap3-Z-G-59.gif" border="0"></div>
+<p>
+and from the definition of <img src="chap1-Z-G-D-27.gif" border="0"> we find
+<a name="EQUATION_3.57"></a></p>
+<div align=left><img src="chap3-Z-G-60.gif" border="0"></div>
+<p>
+The Legendre transform gives
+<a name="EQUATION_3.58"></a></p>
+<div align=left><img src="chap3-Z-G-61.gif" border="0"></div>
+<p>
+This relation is purely algebraic and is valid for any path.
+The passive equation&nbsp;(<a href="#EQUATION_3.53">3.53</a>) gives
+<a name="EQUATION_3.59"></a></p>
+<div align=left><img src="chap3-Z-G-62.gif" border="0"></div>
+<p>
+but the left-hand side can be rewritten using the Lagrange equations, so
+<a name="EQUATION_3.60"></a></p>
+<div align=left><img src="chap3-Z-G-63.gif" border="0"></div>
+<p>
+This equation is valid only for realizable paths, because we used the
+Lagrange equations to derive it.
+Equations&nbsp;(<a href="#EQUATION_3.58">3.58</a>) and (<a href="#EQUATION_3.60">3.60</a>)
+are Hamilton's equations.  </p>
+<p>
+The remaining passive equation is
+<a name="EQUATION_3.61"></a></p>
+<div align=left><img src="chap3-Z-G-64.gif" border="0"></div>
+<p>
+This passive equation says that the Lagrangian has no explicit time
+dependence (<img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>L</em>  =  0) if and only if the
+Hamiltonian has no explicit time dependence (<img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>H</em>  = 
+0).  We have found that if the Lagrangian has no explicit time
+dependence, then <a name="%_idx_1640"></a><a name="%_idx_1642"></a>energy is conserved.  So if the Hamiltonian has no
+explicit time dependence then it is a conserved quantity.</p>
+<p>
+</p>
+<p><a name="%_thm_3.5"></a>
+<b>Exercise 3.5.</b>&nbsp;&nbsp;<strong></strong><br>
+Using Hamilton's equations, show directly that the Hamiltonian is a
+conserved quantity if it has no explicit time dependence.
+</p>
+
+<p></p>
+<p>
+
+
+</p>
+<a name="%_sec_Temp_244"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_244">Legendre transforms of quadratic functions</a></h4>
+<p><a name="%_idx_1644"></a><a name="%_idx_1646"></a>We cannot implement the Legendre transform in general because it
+involves finding the functional inverse of an arbitrary function.
+However, many physical systems can be described by Lagrangians that
+are quadratic forms in the generalized velocities.  For such functions
+the generalized momenta are linear functions of the generalized
+velocities, and thus explicitly invertible.</p>
+<p>
+More generally, we can compute a Legendre transformation for polynomial 
+functions where the leading term is a quadratic form:
+<a name="EQUATION_3.62"></a></p>
+<div align=left><img src="chap3-Z-G-65.gif" border="0"></div>
+<p>
+We can assume <em>M</em> is symmetric,<a name="call_footnote_Temp_245" href="#footnote_Temp_245"><sup><small>12</small></sup></a>
+because it defines a quadratic form.  We can find linear expressions for 
+<em>w</em> as
+<a name="EQUATION_3.63"></a></p>
+<div align=left><img src="chap3-Z-G-66.gif" border="0"></div>
+<p>
+So if <em>M</em> is invertible we can solve for <em>v</em> in terms of <em>w</em>.
+Thus we may define a function <img src="chap1-Z-G-D-27.gif" border="0"> such that
+<a name="EQUATION_3.64"></a></p>
+<div align=left><img src="chap3-Z-G-67.gif" border="0"></div>
+<p>
+and we can use this to compute the value of the function <em>G</em>:
+<a name="EQUATION_3.65"></a></p>
+<div align=left><img src="chap3-Z-G-68.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_246"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_246">Computing Hamiltonians</a></h4>
+<p>We implement the Legendre transform for quadratic functions by
+the procedure<a name="call_footnote_Temp_247" href="#footnote_Temp_247"><sup><small>13</small></sup></a>
+</p>
+<p><tt><a name="%_idx_1660"></a>(define&nbsp;(Legendre-transform&nbsp;F)<br>
+&nbsp;&nbsp;(let&nbsp;((w-of-v&nbsp;(D&nbsp;F)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(define&nbsp;(G&nbsp;w)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((z&nbsp;(dual-zero&nbsp;w)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((M&nbsp;((D&nbsp;w-of-v)&nbsp;z))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(b&nbsp;(w-of-v&nbsp;z)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((v&nbsp;(/&nbsp;(-&nbsp;w&nbsp;b)&nbsp;M)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(*&nbsp;w&nbsp;v)&nbsp;(F&nbsp;v))))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;G))<br>
+</p>
+</tt>
+<p>The procedure <tt>Legendre-transform</tt> takes a procedure of one
+argument and returns the procedure that is associated with it by the
+Legendre transform.  If <em>w</em>  =  <em>D</em><em>F</em>(<em>v</em>), <em>w</em><em>v</em>  =  <em>F</em>(<em>v</em>)  +  <em>G</em>(<em>w</em>), and <em>v</em>  = 
+<em>D</em><em>G</em>(<em>w</em>) specifies a one-argument Legendre transformation, then <em>G</em> is
+the function associated with <em>F</em> by the Legendre transform: <em>G</em>  =  <em>I</em> <img src="chap1-Z-G-D-27.gif" border="0">  <tt>-</tt> 
+<em>F</em> <small>o</small> <img src="chap1-Z-G-D-27.gif" border="0">, where <img src="chap1-Z-G-D-27.gif" border="0"> is the functional inverse of <em>D</em><em>F</em>.</p>
+<p>
+We can use the <tt>Legendre-transform</tt> procedure to compute a
+Hamiltonian from a Lagrangian:
+</p>
+<p><tt><a name="%_idx_1662"></a>(define&nbsp;((Lagrangian-&gt;Hamiltonian&nbsp;Lagrangian)&nbsp;H-state)<br>
+&nbsp;&nbsp;(let&nbsp;((t&nbsp;(time&nbsp;H-state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(q&nbsp;(coordinate&nbsp;H-state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(p&nbsp;(momentum&nbsp;H-state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(define&nbsp;(L&nbsp;qdot)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Lagrangian&nbsp;(up&nbsp;t&nbsp;q&nbsp;qdot)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;((Legendre-transform&nbsp;L)&nbsp;p)))<br>
+</p>
+</tt>
+<p>Notice that the one-argument <tt>Legendre-transform</tt> procedure is
+sufficient.  The passive variables are given no
+special attention, they are just passed around.  </p>
+<p>
+The Lagrangian may be obtained from the Hamiltonian by the
+procedure:
+</p>
+<p><tt><a name="%_idx_1664"></a>(define&nbsp;((Hamiltonian-&gt;Lagrangian&nbsp;Hamiltonian)&nbsp;L-state)<br>
+&nbsp;&nbsp;(let&nbsp;((t&nbsp;(time&nbsp;L-state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(q&nbsp;(coordinate&nbsp;L-state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(qdot&nbsp;(velocity&nbsp;L-state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(define&nbsp;(H&nbsp;p)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Hamiltonian&nbsp;(up&nbsp;t&nbsp;q&nbsp;p)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;((Legendre-transform&nbsp;H)&nbsp;qdot)))<br>
+</p>
+</tt>
+<p>Notice that the two procedures <tt>Hamiltonian-&gt;Lagrangian</tt> and <tt>Lagrangian-&gt;Hamiltonian</tt> are identical, except for the names.</p>
+<p>
+For example, the Hamiltonian for the motion of the point mass with the
+potential energy <em>V</em>(<em>x</em>, <em>y</em>) may be computed from the Lagrangian:
+</p>
+<p><tt><a name="%_idx_1666"></a>(define&nbsp;((L-rectangular&nbsp;m&nbsp;V)&nbsp;local)<br>
+&nbsp;&nbsp;(let&nbsp;((q&nbsp;(coordinate&nbsp;local))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(qdot&nbsp;(velocity&nbsp;local)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(*&nbsp;1/2&nbsp;m&nbsp;(square&nbsp;qdot))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(V&nbsp;(ref&nbsp;q&nbsp;0)&nbsp;(ref&nbsp;q&nbsp;1)))))<br>
+</p>
+</tt>
+<p>And the Hamiltonian is
+</p>
+<p><tt>(show-expression&nbsp;<br>
+&nbsp;((Lagrangian-&gt;Hamiltonian<br>
+&nbsp;&nbsp;&nbsp;(L-rectangular&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'m<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'V&nbsp;(-&gt;&nbsp;(X&nbsp;Real&nbsp;Real)&nbsp;Real))))<br>
+&nbsp;&nbsp;(up&nbsp;'t&nbsp;(up&nbsp;'x&nbsp;'y)&nbsp;(down&nbsp;'p_x&nbsp;'p_y))))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap3-Z-G-69.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_3.6"></a>
+<b>Exercise 3.6.</b>&nbsp;&nbsp;<strong>On a helical track</strong><br>
+A uniform cylinder of mass <em>M</em>, radius <em>R</em>, and height <em>h</em> is mounted
+so as to rotate freely on a vertical axis.  A mass point of mass <em>m</em>
+is constrained to move on a uniform frictionless helical track of
+pitch <i>&szlig;</i> (measured in radians per meter of drop along the
+cylinder) mounted on the surface of the cylinder (see
+figure&nbsp;<a href="#FIGURE_3.2">3.2</a>).  The mass is acted upon by standard gravity
+(<em>g</em> = 9.8&nbsp;ms<sup><tt>-</tt>2</sup>).</p>
+<p>
+<a name="FIGURE_3.2"></a></p>
+<div align=left><img src="chap3-Z-G-70.gif" border="0"></div>
+<p></p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;What are the degrees of freedom of this system?  Pick and
+describe a convenient set of generalized coordinates for this problem.
+Write a Lagrangian to describe the dynamical behavior.  It may help to
+know that the moment of inertia of a cylinder around its axis is
+(1/2)<em>M</em><em>R</em><sup>2</sup>.  You may find it easier to do the algebra if
+various constants are combined and represented as single symbols.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Make a Hamiltonian for the system.  Write Hamilton's
+equations for the system.  Are there any conserved quantities?</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;If we release the mass point at time <em>t</em> = 0 at the top of the
+track with zero initial speed and let it slide down, what is the
+motion of the system?
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_3.7"></a>
+<b>Exercise 3.7.</b>&nbsp;&nbsp;<strong>An ellipsoidal bowl</strong><br>
+Consider a point particle of mass <em>m</em> constrained to move in a bowl
+and acted upon by a uniform gravitational acceleration <em>g</em>.  The bowl
+is ellipsoidal, with height <em>z</em>  =  <em>a</em> <em>x</em><sup>2</sup>  +  <em>b</em> <em>y</em><sup>2</sup>.  Make a Hamiltonian
+for this system.  Can you make any immediate deductions
+about this system?
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_3.1.2"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_3.1.2">3.1.2&nbsp;&nbsp;Hamilton's Equations from the Action Principle</a></h3>
+<p><a name="%_idx_1668"></a><a name="%_idx_1670"></a>
+The previous two derivations of Hamilton's equations have made use of
+the Lagrange equations.  Hamilton's equations can also be derived directly
+from the action principle.</p>
+<p>
+The action is the integral of the Lagrangian along a
+path:
+<a name="EQUATION_3.66"></a></p>
+<div align=left><img src="chap3-Z-G-71.gif" border="0"></div>
+<p>
+The action is stationary with respect to variations of the path that
+preserve the configuration at the endpoints (for Lagrangians that
+are functions of time, coordinates, and velocities).  </p>
+<p>
+We can rewrite the integrand in terms of the Hamiltonian
+<a name="EQUATION_3.67"></a></p>
+<div align=left><img src="chap3-Z-G-72.gif" border="0"></div>
+<p>
+with <em>p</em>(<em>t</em>)  =  <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>L</em>(<em>t</em>, <em>q</em>(<em>t</em>), <em>D</em><em>q</em>(<em>t</em>)).  The Legendre 
+transformation construction gives
+<a name="EQUATION_3.68"></a></p>
+<div align=left><img src="chap3-Z-G-73.gif" border="0"></div>
+<p>
+which is one of Hamilton's equations, the one that does not depend on
+the path being a realizable path.  </p>
+<p>
+In order to vary the action we need to make the dependences on the
+path explicit.  We introduce
+<a name="EQUATION_3.69"></a></p>
+<div align=left><img src="chap3-Z-G-74.gif" border="0"></div>
+<p>
+so <em>p</em>(<em>t</em>)  =  <img src="chap3-Z-G-D-3.gif" border="0">[<em>q</em>](<em>t</em>)
+and<a name="call_footnote_Temp_250" href="#footnote_Temp_250"><sup><small>14</small></sup></a>
+<a name="EQUATION_3.70"></a></p>
+<div align=left><img src="chap3-Z-G-75.gif" border="0"></div>
+<p>
+The integrand of the action integral is then
+<a name="EQUATION_3.71"></a></p>
+<div align=left><img src="chap3-Z-G-76.gif" border="0"></div>
+<p></p>
+<p>
+
+The variation of the action is 
+<a name="EQUATION_3.72"></a></p>
+<div align=left><img src="chap3-Z-G-77.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-17.gif" border="0"> <img src="chap3-Z-G-D-3.gif" border="0">[<em>q</em>] is the variation in the momentum.<a name="call_footnote_Temp_251" href="#footnote_Temp_251"><sup><small>15</small></sup></a>
+Integrating the second term by parts, using 
+<em>D</em>(<img src="chap3-Z-G-D-3.gif" border="0">[<em>q</em>] <img src="chap1-Z-G-D-17.gif" border="0"> <em>q</em>)  =  <em>D</em>(<img src="chap3-Z-G-D-3.gif" border="0">[<em>q</em>]) <img src="chap1-Z-G-D-17.gif" border="0"> <em>q</em>  +  <img src="chap3-Z-G-D-3.gif" border="0">[<em>q</em>] <em>D</em> <img src="chap1-Z-G-D-17.gif" border="0"> <em>q</em>, we get
+<a name="EQUATION_3.73"></a></p>
+<div align=left><img src="chap3-Z-G-79.gif" border="0"></div>
+<p>
+The variations are constrained so that <img src="chap1-Z-G-D-17.gif" border="0"> <em>q</em>(<em>t</em><sub>1</sub>)  =  <img src="chap1-Z-G-D-17.gif" border="0"> <em>q</em>(<em>t</em><sub>2</sub>)
+ = 0, so the integrated part vanishes.   The variation of the action
+is
+<a name="EQUATION_3.74"></a></p>
+<div align=left><img src="chap3-Z-G-80.gif" border="0"></div>
+<p>
+As a consequence of equation&nbsp;(<a href="#EQUATION_3.68">3.68</a>), the factor
+multiplying <img src="chap1-Z-G-D-17.gif" border="0"> <img src="chap3-Z-G-D-3.gif" border="0">[<em>q</em>] is zero.  We are left with
+<a name="EQUATION_3.75"></a></p>
+<div align=left><img src="chap3-Z-G-81.gif" border="0"></div>
+<p>
+For the variation of the action to be zero for arbitrary variations,
+except for the endpoint conditions, we must have
+<a name="EQUATION_3.76"></a></p>
+<div align=left><img src="chap3-Z-G-82.gif" border="0"></div>
+<p>
+Using using <em>p</em>(<em>t</em>)  =  <img src="chap3-Z-G-D-3.gif" border="0">[<em>q</em>](<em>t</em>), this is
+<a name="EQUATION_3.77"></a></p>
+<div align=left><img src="chap3-Z-G-83.gif" border="0"></div>
+<p>
+which is the <a name="%_idx_1674"></a>``dynamical'' Hamilton equation.<a name="call_footnote_Temp_252" href="#footnote_Temp_252"><sup><small>16</small></sup></a></p>
+<p>
+
+
+</p>
+<a name="%_sec_3.1.3"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_3.1.3">3.1.3&nbsp;&nbsp;A Wiring Diagram</a></h3>
+<p><a name="%_idx_1676"></a><a name="%_idx_1678"></a>
+Figure&nbsp;<a href="#FIGURE_3.3">3.3</a> shows a summary of the functional
+relationship between the Lagrangian and the Hamiltonian descriptions
+of a dynamical system.  The diagram shows a ``circuit''
+interconnecting some ``devices'' with ``wires.''  The devices
+represent the mathematical functions that relate the quantities on
+their terminals.  The wires represent identifications of the
+quantities on the terminals that they connect.  For example, there is
+a box that represents the Lagrangian function.  Given values <em>t</em>, <em>q</em>,
+and <img src="front-Z-G-D-1.gif" border="0">, the value of the Lagrangian <em>L</em>(<em>t</em>, <em>q</em>, <img src="front-Z-G-D-1.gif" border="0">) is on the
+terminal labeled <em>L</em>, which is wired to an addend terminal of an
+adder.  Other terminals of the Lagrangian carry the
+values of the partial derivatives of the Lagrangian function.</p>
+<p>
+<a name="FIGURE_3.3"></a></p>
+<div align=left><img src="chap3-Z-G-84.gif" border="0"></div>
+<p></p>
+<p>
+The upper part of the diagram summarizes the relationship of the
+Hamiltonian to the Lagrangian.  For example, the sum of the values on
+the terminals <em>L</em> of the Lagrangian and <em>H</em> of the Hamiltonian is the
+product of the value on the <img src="front-Z-G-D-1.gif" border="0"> terminal of the Lagrangian and
+the value on the <em>p</em> terminal of the Hamiltonian.  This is the active
+part of the Legendre transform.  The passive variables are related by
+the corresponding partial derivatives being negations of each other.
+In the lower part of the diagram the equations of motion are indicated
+by the presence of the integrators, relating the dynamical quantities
+to their time derivatives.</p>
+<p>
+One can use this diagram to help understand the underlying unity of
+the Lagrangian and Hamiltonian formulations of mechanics.  Lagrange's
+equations are just the connection of the <img src="chap3-Z-G-D-4.gif" border="0"> wire to the
+<img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>L</em> terminal of the Lagrangian device.  One of Hamilton's
+equations is just the connection of the <img src="chap3-Z-G-D-4.gif" border="0"> wire (through the
+negation device) to the <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>H</em> terminal of the Hamiltonian
+device.  The other is just the connection of the <img src="front-Z-G-D-1.gif" border="0"> wire to the
+<img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>H</em> terminal of the Hamiltonian device.  We see that the
+two formulations are consistent.  One does not have to abandon any
+part of the Lagrangian formulation to use the Hamiltonian formulation:
+there are deductions that can be made using both simultaneously.</p>
+<p>
+
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_223" href="#call_footnote_Temp_223"><sup><small>1</small></sup></a> Here we restrict our attention to Lagrangians that depend only on
+the time, the coordinates, and the velocities.</p>
+
+<p><a name="footnote_Temp_224" href="#call_footnote_Temp_224"><sup><small>2</small></sup></a> Here we are using mnemonic names <em>t</em>, <em>q</em>, <em>p</em> for formal
+parameters of the function being defined.  We could have used names like <em>a</em>, <em>b</em>, <em>c</em> as
+above, but this would have made the argument harder to read.</p>
+
+<p><a name="footnote_Temp_225" href="#call_footnote_Temp_225"><sup><small>3</small></sup></a> <em>P</em> = <em>I</em><sub>2</sub>.</p>
+
+<p><a name="footnote_Temp_226" href="#call_footnote_Temp_226"><sup><small>4</small></sup></a> The overall minus sign in the definition 
+of the Hamiltonian is traditional.</p>
+
+<p><a name="footnote_Temp_227" href="#call_footnote_Temp_227"><sup><small>5</small></sup></a> In traditional notation, Hamilton's equations are written:
+<a name="%_idx_1568"></a></p>
+<div align=left><img src="chap3-Z-G-17.gif" border="0"></div>
+<p>
+or as separate equations for each component:
+</p>
+<div align=left><img src="chap3-Z-G-18.gif" border="0"></div>
+<p>
+</p>
+
+<p><a name="footnote_Temp_228" href="#call_footnote_Temp_228"><sup><small>6</small></sup></a> Traditionally, the Hamiltonian is written
+<a name="%_idx_1570"></a></p>
+<div align=left><img src="chap3-Z-G-20.gif" border="0"></div>
+<p>
+This way of writing the Hamiltonian confuses the values of
+functions with the functions that generate them: both <img src="front-Z-G-D-1.gif" border="0"> and
+<em>L</em> must be reexpressed as functions of the time, coordinates, and
+momenta.</p>
+
+<p><a name="footnote_Temp_233" href="#call_footnote_Temp_233"><sup><small>7</small></sup></a> In the construction of the Lagrangian state derivative from the
+<a name="%_idx_1586"></a>  Lagrange equations we must solve for the highest-order derivative.
+The solution process requires the inversion of <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub>
+<img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>L</em>.  In the construction of Hamilton's equations, the
+construction of <img src="chap1-Z-G-D-27.gif" border="0"> from the momentum state function
+<img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>L</em> requires the inverse of the same structure.  
+If the Lagrangian formulation has singularities, they
+cannot be avoided by going to the Hamiltonian formulation.</p>
+
+<p><a name="footnote_Temp_234" href="#call_footnote_Temp_234"><sup><small>8</small></sup></a> The term <em>phase space</em> was introduced by Josiah
+<a name="%_idx_1606"></a><a name="%_idx_1608"></a><a name="%_idx_1610"></a><a name="%_idx_1612"></a><a name="%_idx_1614"></a>  Willard Gibbs in his formulation of statistical 
+mechanics.  The
+Hamiltonian plays a fundamental role in the Boltzmann-Gibbs
+formulation of statistical mechanics and in both the 
+Heisenberg and Schr&ouml;dinger approaches to 
+quantum mechanics.</p>
+<p>
+The momentum <em>p</em> can be viewed as the
+coordinate representation of a linear form on
+the tangent space. Thus <em>p</em><img src="front-Z-G-D-1.gif" border="0"> is a scalar quantity that is
+invariant under time-independent coordinate transformations of the configuration 
+space.  The set of
+momentum forms comprise an <em>n</em>-dimensional vector space at each point
+of the configuration space called the
+<em>cotangent space</em>.  The collection of all cotangent spaces of a
+configuration space forms a space called the <em>cotangent
+bundle</em> of the configuration manifold.</p>
+
+<p><a name="footnote_Temp_236" href="#call_footnote_Temp_236"><sup><small>9</small></sup></a> By default, literal functions map reals to reals;  
+<a name="%_idx_1624"></a>the default type for a literal function is <tt>(-&gt; Real Real)</tt>.
+Here, the potential energy <tt>V</tt> takes two real arguments and
+returns a real.</p>
+
+<p><a name="footnote_Temp_238" href="#call_footnote_Temp_238"><sup><small>10</small></sup></a> The
+Legendre transformation is more general than its use in mechanics in
+that it captures the relationship between conjugate variables in
+systems as diverse as thermodynamics, circuits, and field theory.</p>
+
+<p><a name="footnote_Temp_239" href="#call_footnote_Temp_239"><sup><small>11</small></sup></a> This can be done so long as the derivative is not zero.</p>
+
+<p><a name="footnote_Temp_245" href="#call_footnote_Temp_245"><sup><small>12</small></sup></a> If <strong><em>M</em></strong> is the matrix representation of <em>M</em>, then
+<strong><em>M</em></strong>  =  <strong><em>M</em></strong><sup><tt><em>T</em></tt></sup>.</p>
+
+<p><a name="footnote_Temp_247" href="#call_footnote_Temp_247"><sup><small>13</small></sup></a> The division operation, denoted by <tt>/</tt> in the <tt><a name="%_idx_1648"></a><a name="%_idx_1650"></a><a name="%_idx_1652"></a><a name="%_idx_1654"></a><a name="%_idx_1656"></a><a name="%_idx_1658"></a>  Legendre-transform</tt> procedure, is generic over mathematical objects.
+We interpret the division in the matrix representation as follows:
+a vector <strong><em>y</em></strong> divided by a matrix <strong><em>M</em></strong> is
+interpreted as a request to solve the linear system
+<strong><em>M</em></strong> <strong><em>x</em></strong>  =  <strong><em>y</em></strong>, where <strong><em>x</em></strong> is the unknown vector.</p>
+
+<p><a name="footnote_Temp_250" href="#call_footnote_Temp_250"><sup><small>14</small></sup></a> The function <img src="chap3-Z-G-D-2.gif" border="0">[<em>q</em>] is the same as <img src="chap3-Z-G-D-2.gif" border="0"><sub><em>L</em></sub>[<em>q</em>] introduced
+previously.  Indeed, the Lagrangian is needed to define momentum in
+every case, but we are suppressing the dependency here because it
+does not matter in this argument.</p>
+
+<p><a name="footnote_Temp_251" href="#call_footnote_Temp_251"><sup><small>15</small></sup></a> The variation of the momentum <img src="chap1-Z-G-D-17.gif" border="0"> <img src="chap3-Z-G-D-3.gif" border="0">[<em>q</em>] need not be
+<a name="%_idx_1672"></a>further expanded in this argument because it turns out that the factor
+multiplying it is zero.&nbsp;&nbsp;However, it is handy to see how it is related
+to the variations in the coordinate path <img src="chap1-Z-G-D-17.gif" border="0"> <em>q</em>:
+</p>
+<div align=left><img src="chap3-Z-G-78.gif" border="0"></div>
+<p>
+
+</p>
+
+<p><a name="footnote_Temp_252" href="#call_footnote_Temp_252"><sup><small>16</small></sup></a> It is sometimes asserted that the momenta have a different
+status in the Lagrangian and Hamiltonian formulations: that in the
+Hamiltonian framework the momenta are ``independent'' of the
+coordinates.  From this it is argued that the 
+variations <img src="chap1-Z-G-D-17.gif" border="0"> <em>q</em> and <img src="chap1-Z-G-D-17.gif" border="0"> <em>p</em> are arbitrary and independent,
+therefore implying that the factor multiplying each of
+them in the action integral&nbsp;(<a href="#EQUATION_3.74">3.74</a>) must
+independently be zero, apparently deriving both of Hamilton's
+equations.  The argument is fallacious: we can write <img src="chap1-Z-G-D-17.gif" border="0"> <em>p</em> in
+terms of <img src="chap1-Z-G-D-17.gif" border="0"> <em>q</em> (see
+footnote&nbsp;<a href="#footnote_Temp_251">15</a>).</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-36.html">previous</a></span><span>, <a href="book-Z-H-38.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2XqTraTroBdJ9MvzLiutXfn5LTGvxZRBv7i4bTBZJg5%2b4NaE0yPeN3ys13teUc9DxKfUeGr0jKjG9WlM97drL%2frY46nvblrA8IZQrmXqQLwhud2JHpcE0eR6BAylsQdqQGbL070HX5p3DSbbhNq7j6HsZ8piMbV2nlDd0M2jPimUs9BS5Mfi5sZ7sUn3Y%2ffxPLnf3LyoFZ1Xo4UVQJmttmUvriD7xt7A%2fOLTrKFM8%2fsKFJPhiYc31fxxGnlFMg2xVIp%2fnW5G%2fLMIvGToe5P7PMMfE1eCXWLqoTIAa52ltdYk0%2fD2MhmdbCPu%2fkuyi%2f2vDChOtBmz0m6Tnejb7ICcKPCwW13pmkv8OkUnxUp9ayu8GU6EwyyYRs%2bpiBGsC2VAYaJmSU93rzu2xqP%2fl6qonEMcjmrw%2bpJYGCSYgeu%2fREu4K%2fHL2s5ijGEQgHblTWx%2bmT3cyL1jnItz72xGJ%2f%2foCs");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

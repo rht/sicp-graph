@@ -1,0 +1,136 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-8.html">previous</a></span><span>, <a href="book-Z-H-10.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_1.2"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_1.2">1.2&nbsp;&nbsp;Configuration Spaces</a></h2>
+<p>
+<a name="%_idx_194"></a>
+Let us consider mechanical systems that can be thought of as composed
+of constituent point particles, with mass and
+position, but with no internal structure.<a name="call_footnote_Temp_27" href="#footnote_Temp_27"><sup><small>17</small></sup></a> 
+Extended bodies may be
+thought of as composed of a large number of these constituent
+particles with specific spatial relationships among them.  Extended
+bodies maintain their shape because of <a name="%_idx_198"></a><a name="%_idx_200"></a>spatial
+constraints among the constituent particles.  Specifying the
+position of all the constituent particles of a system specifies the
+<a name="%_idx_202"></a><em>configuration</em> of the system.  The existence
+of constraints among parts of the system, such as
+those that determine the shape of an extended body, means that the
+constituent particles cannot assume all possible positions.  The set
+of all configurations of the system that can be assumed is called the
+<em>configuration space</em> of the system.
+The <a name="%_idx_204"></a><em>dimension</em> of the
+configuration space is the smallest number of parameters that have to
+be given to completely specify a configuration.  The dimension of the
+configuration space is also called the number of <a name="%_idx_206"></a><em>degrees of
+freedom</em> of the
+system.<a name="call_footnote_Temp_28" href="#footnote_Temp_28"><sup><small>18</small></sup></a></p>
+<p>
+For a single unconstrained particle it takes three parameters to
+specify the configuration.  A point particle has a three-dimensional
+configuration space.  If we are dealing with a system with
+more than one point particle, the configuration space is more
+complicated.  If there are <em>k</em> separate particles we need 3<em>k</em>
+parameters to describe the possible configurations.  If there are
+constraints among the parts of a system the configuration is
+restricted to a lower-dimensional space.  For example, a system
+consisting of two point particles constrained to move in three
+dimensions so that the distance between the particles remains fixed
+has a five-dimensional configuration space: thus with three
+numbers we can fix the position of one particle, and with two others
+we can give the position of the other particle relative to the first.</p>
+<p>
+Consider a juggling pin.  The configuration of the pin is specified if
+we give the positions of the atoms making up the pin.  However, there
+exist more economical descriptions of the configuration.  In the
+idealization that the juggling pin is truly rigid, the distances among
+all the atoms of the pin remain constant.  So we can specify the
+configuration of the pin by giving the position of a single atom and
+the orientation of the pin.  Using the constraints, the positions of
+all the other constituents of the pin can be determined from
+this information.  The dimension of the configuration space of the
+juggling pin is six: the minimum number of parameters that specify the
+position in space is three, and the minimum number of parameters that
+specify an orientation is also three.</p>
+<p>
+
+As a system evolves with time, the constituent particles move subject
+to the constraints.  The motion of each constituent particle is
+specified by describing the changing configuration.  Thus, the motion
+of the system may be described as evolving along a path in
+configuration space.  The configuration path may be specified by a
+function, the <a name="%_idx_216"></a>configuration-path function, which gives the
+configuration of the system at any time.</p>
+<p>
+</p>
+<p><a name="%_thm_1.2"></a>
+<b>Exercise 1.2.</b>&nbsp;&nbsp;<strong>Degrees of freedom</strong><br>
+<a name="%_idx_218"></a><a name="%_idx_220"></a>For each of the mechanical systems described below, give the number of
+degrees of freedom of the configuration space.</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;Three juggling pins.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;A <a name="%_idx_222"></a>spherical pendulum, consisting of a point mass hanging
+from a rigid massless rod attached to a fixed support point.  The
+pendulum bob may move in any direction subject to the constraint
+imposed by the rigid rod.  The point mass is subject to the uniform
+force of gravity.</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;A <a name="%_idx_224"></a>spherical double pendulum, consisting of one point mass
+hanging from a rigid massless rod attached to a second point mass
+hanging from a second massless rod attached to a fixed support point.
+The point mass is subject to the uniform force of gravity.</p>
+<p>
+<strong>d</strong>.&nbsp;&nbsp;A point mass sliding without friction on a rigid curved wire.</p>
+<p>
+<strong>e</strong>.&nbsp;&nbsp;A top consisting of a rigid axisymmetric body with one point
+on the symmetry axis of the body attached to a fixed support, subject
+to a uniform gravitational force.</p>
+<p>
+<strong>f</strong>.&nbsp;&nbsp;The same as <strong>e</strong>, but not axisymmetric.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_27" href="#call_footnote_Temp_27"><sup><small>17</small></sup></a> We often refer to a point particle with mass but no internal
+<a name="%_idx_196"></a>structure as a <em>point mass</em>.</p>
+
+<p><a name="footnote_Temp_28" href="#call_footnote_Temp_28"><sup><small>18</small></sup></a> Strictly speaking, the dimension of the configuration
+<a name="%_idx_208"></a><a name="%_idx_210"></a><a name="%_idx_212"></a><a name="%_idx_214"></a>  space and the number of degrees of freedom are not the same.  The
+number of degrees of freedom is the dimension of the space of
+configurations that are ``locally accessible.''  For systems with
+integrable constraints the two are the same.  For systems with
+non-integrable constraints the configuration dimension can be larger
+than the number of degrees of freedom.  For further explanation see
+the discussion of systems with non-integrable constraints in
+section&nbsp;<a href="book-Z-H-17.html#%_sec_1.10.3">1.10.3</a>. Apart from that
+discussion, all of the systems we consider have integrable
+constraints (they are ``holonomic'').  This is why we have chosen to
+blur the distinction between the number of degrees of freedom and
+the dimension of the configuration space.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-8.html">previous</a></span><span>, <a href="book-Z-H-10.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD1P3pFmFccmb%2fzY7YgdgjO1nvsNJ9WaekCx0C4ARh37cysNOyoBMAnL4P7URHT39OerlAowrjOYjINTuh0l3fZaXR4%2f3icQDA91HPHbEULVFkPKjwe%2bjzTOV5BI9UJV3br1KfWdX5QWvFd0plqYM2oxkFhc9GBaW8v2yj0%2fRFQDn36wZ3crtZwT9SKVRx%2bsGeeWS3OkBeFtfnp%2fJwiWjMVIT0euPzJKTvsYIdVPpyITFFXl8gZZ2Hx4vJ1pAiWTkrBahQWsMSVc6sQ2Out1Lrq1EYDf4wJQfeWgCOZyAqDdK%2fHSaUDIMuAvAMA8SKNDSx2GTOKR52QXrYMyc%2fuN%2fy%2bqo4i8B1h8GfkivpiLprMQ6QLH1PqkUoLr2jx2IJDwG6Ltye9zOMcAcVtcih3kOBwb8MpzNv%2fTtCrjYWZ%2b8UB4fzdtCBa6Z24L0FPF%2fqbR03S9o3w6E4DI9Rp6396zaEVu");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

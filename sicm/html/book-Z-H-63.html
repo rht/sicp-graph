@@ -1,0 +1,1340 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-62.html">previous</a></span><span>, <a href="book-Z-H-64.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_5.6"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_5.6">5.6&nbsp;&nbsp;Generating Functions</a></h2>
+<p>
+<a name="%_idx_2658"></a>
+We have considered a number of properties of general canonical
+transformations without having a general method for coming up with
+them.  Here we introduce the method of <em>generating
+functions</em>.  The
+generating function is a real-valued function that compactly specifies a
+canonical transformation through its partial derivatives, as follows.</p>
+<p>
+Consider a real-valued function <a name="%_idx_2660"></a><em>F</em><sub>1</sub>(<em>t</em>, <em>q</em>, <em>q</em>') mapping
+configurations expressed in two coordinate systems to the reals.  We
+will use <em>F</em><sub>1</sub> to construct a canonical transformation from one
+coordinate system to the other.  We will show that the following
+relations among the coordinates, the momenta, and the Hamiltonians
+specify a canonical 
+transformation:
+<a name="EQUATION_5.147"></a></p>
+<div align=left><img src="chap5-Z-G-141.gif" border="0"></div>
+<p>
+The transformation will then be explicitly given by solving for one
+set of variables in terms of the others: To obtain the primed
+variables in terms of the unprimed ones, let <em>A</em> be the inverse of
+<img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>F</em><sub>1</sub> with respect to the third argument,
+<a name="EQUATION_5.150"></a></p>
+<div align=left><img src="chap5-Z-G-142.gif" border="0"></div>
+<p>
+then
+<a name="EQUATION_5.151"></a></p>
+<div align=left><img src="chap5-Z-G-143.gif" border="0"></div>
+<p>
+Let <em>B</em> be the coordinate part of the phase-space transformation
+<em>q</em>  =  <em>B</em>(<em>t</em>, <em>q</em>', <em>p</em>').  This <em>B</em> is an inverse function of <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub>
+<em>F</em><sub>1</sub>, satisfying
+<a name="EQUATION_5.153"></a></p>
+<div align=left><img src="chap5-Z-G-144.gif" border="0"></div>
+<p>
+Using <em>B</em>, we have
+<a name="EQUATION_5.154"></a></p>
+<div align=left><img src="chap5-Z-G-145.gif" border="0"></div>
+<p>
+To put the transformation in explicit form requires that the inverse
+functions <em>A</em> and <em>B</em> exist.</p>
+<p>
+We can use the above relations to verify that some given
+transformation from one set of phase-space coordinates (<em>q</em>, <em>p</em>) with
+Hamiltonian function <em>H</em>(<em>t</em>, <em>q</em>, <em>p</em>) to another set (<em>q</em>',
+<em>p</em>') with Hamiltonian function <em>H</em>'(<em>t</em>, <em>q</em>', <em>p</em>')
+is canonical by finding an <em>F</em><sub>1</sub>(<em>t</em>, <em>q</em>, <em>q</em>') such that the above
+relations are satisfied.  We can also use arbitrarily chosen
+generating functions of type <em>F</em><sub>1</sub> to generate new canonical
+transformations.</p>
+<p>
+</p>
+<a name="%_sec_Temp_367"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_367">The polar-canonical transformation</a></h4>
+<p><a name="%_idx_2662"></a>The polar-canonical transformation
+(<a href="book-Z-H-59.html#EQUATION_5.32">5.32</a>) from coordinate and momentum
+(<em>x</em>, <em>p</em><sub><em>x</em></sub>) to new coordinate and new momentum (<img src="chap1-Z-G-D-19.gif" border="0">, <em>I</em>),
+<a name="EQUATION_5.156"></a></p>
+<div align=left><img src="chap5-Z-G-146.gif" border="0"></div>
+<p>
+introduced earlier,
+is canonical.  This can also be demonstrated by finding a suitable <em>F</em><sub>1</sub>
+generating function.  The generating function satisfies a set of
+partial differential equations, (<a href="#EQUATION_5.147">5.147</a>) and (<a href="#EQUATION_5.147">5.148</a>):
+<a name="EQUATION_5.158"></a></p>
+<div align=left><img src="chap5-Z-G-147.gif" border="0"></div>
+<p>
+Using relations&nbsp;(<a href="#EQUATION_5.156">5.156</a>) and (<a href="#EQUATION_5.157">5.157</a>), which specify
+the canonical transformation, equation&nbsp;(<a href="#EQUATION_5.158">5.158</a>) can
+be rewritten
+<a name="EQUATION_5.160"></a></p>
+<div align=left><img src="chap5-Z-G-148.gif" border="0"></div>
+<p>
+which is easily integrated to yield
+<a name="EQUATION_5.161"></a></p>
+<div align=left><img src="chap5-Z-G-149.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-16.gif" border="0"> is some integration ``constant'' with respect to the
+first integration.  Substituting this form for <em>F</em><sub>1</sub> into the second
+partial differential equation (<a href="#EQUATION_5.159">5.159</a>), we find
+<a name="EQUATION_5.162"></a></p>
+<div align=left><img src="chap5-Z-G-150.gif" border="0"></div>
+<p>
+but we see that if we set <img src="chap1-Z-G-D-16.gif" border="0">  =  0 the desired relations are
+recovered.  So the generating function
+<a name="EQUATION_5.163"></a></p>
+<div align=left><img src="chap5-Z-G-151.gif" border="0"></div>
+<p>
+generates the polar-canonical transformation.  This shows that this
+transformation is canonical.</p>
+<p>
+</p>
+<a name="%_sec_5.6.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.6.1">5.6.1&nbsp;&nbsp;<em>F</em><sub>1</sub> Generates Canonical Transformations</a></h3>
+<p>We can prove directly that the transformation generated by <em>F</em><sub>1</sub> is
+canonical by showing that if Hamilton's equations are satisfied
+in one set of coordinates then they will be satisfied
+in the other set of coordinates.  Let <em>F</em><sub>1</sub> take arguments (<em>t</em>, <em>x</em>,
+<em>y</em>).  The relations among the coordinates are
+<a name="EQUATION_5.164"></a></p>
+<div align=left><img src="chap5-Z-G-152.gif" border="0"></div>
+<p>
+and the Hamiltonians are related by
+<a name="EQUATION_5.165"></a></p>
+<div align=left><img src="chap5-Z-G-153.gif" border="0"></div>
+<p>
+Substituting the generating function relations&nbsp;(<a href="#EQUATION_5.164">5.164</a>) into
+this equation, we have
+<a name="EQUATION_5.166"></a></p>
+<div align=left><img src="chap5-Z-G-154.gif" border="0"></div>
+<p>
+Take the partial derivatives of this equality of expressions with
+respect to the variables <em>x</em> and <em>y</em>:<a name="call_footnote_Temp_368" href="#footnote_Temp_368"><sup><small>17</small></sup></a>
+<a name="EQUATION_5.167"></a></p>
+<div align=left><img src="chap5-Z-G-155.gif" border="0"></div>
+<p>
+where the arguments are unambiguous and have been suppressed.  On
+solution paths we can use Hamilton's equations for the (<em>x</em>, <em>p</em><sub><em>x</em></sub>)
+system to replace the partial derivatives of <em>H</em> with derivatives of <em>x</em>
+and <em>p</em><sub><em>x</em></sub>, obtaining
+
+<a name="EQUATION_5.168"></a></p>
+<div align=left><img src="chap5-Z-G-156.gif" border="0"></div>
+<p>
+Now compute the derivative of <em>p</em><sub><em>x</em></sub> and <em>p</em><sub><em>y</em></sub>, from
+equations&nbsp;(<a href="#EQUATION_5.164">5.164</a>), along consistent paths:
+<a name="EQUATION_5.169"></a></p>
+<div align=left><img src="chap5-Z-G-157.gif" border="0"></div>
+<p>
+Substituting the first of these into the first of
+equations&nbsp;(<a href="#EQUATION_5.168">5.168</a>) yields
+<a name="EQUATION_5.170"></a></p>
+<div align=left><img src="chap5-Z-G-158.gif" border="0"></div>
+<p>
+Note that (<img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> (<img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>F</em><sub>1</sub>)<sub><em>i</em></sub>)<sub><em>j</em></sub>  =  (<img src="front-Z-G-D-2.gif" border="0"><sub>1</sub>
+(<img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>F</em><sub>1</sub>)<sub><em>j</em></sub>)<sub><em>i</em></sub>.  Provided that <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>F</em><sub>1</sub> is nonsingular,<a name="call_footnote_Temp_369" href="#footnote_Temp_369"><sup><small>18</small></sup></a>
+we have derived one of Hamilton's equations for the (<em>y</em>, <em>p</em><sub><em>y</em></sub>) system:
+<a name="EQUATION_5.171"></a></p>
+<div align=left><img src="chap5-Z-G-159.gif" border="0"></div>
+<p>
+Hamilton's other equation,
+<a name="EQUATION_5.172"></a></p>
+<div align=left><img src="chap5-Z-G-160.gif" border="0"></div>
+<p>
+can be derived in a similar way.  So the generating function relations
+indeed specify a canonical transformation.</p>
+<p>
+What we have shown is that the transformation is canonical, which
+means that the equations of motion transform appropriately; we have
+not shown that the <em>q</em><em>p</em> part of the transformation is symplectic.  If
+the transformation is time independent then the Hamiltonians transform
+by composition, and in that circumstance we know that canonical
+implies symplectic.  </p>
+<p>
+</p>
+<a name="%_sec_5.6.2"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.6.2">5.6.2&nbsp;&nbsp;Generating Functions and Integral Invariants</a></h3>
+<p><a name="%_idx_2672"></a><a name="%_idx_2674"></a><a name="%_idx_2676"></a>
+Generating functions can be used to specify a canonical transformation
+by the prescription given above.  We have shown that the generating
+function prescription gives a canonical transformation.  Here we show
+how to get a generating function from a canonical transformation, and
+derive the generating function rules.</p>
+<p>
+The generating function representation of canonical transformations
+can be derived from the Poincar&eacute; integral invariants.  The outline is
+the following.  We first show that, given a canonical transformation,
+the integral invariants imply the existence of a function of
+phase-space coordinates that can be written as a path-independent line
+integral.  Then we show that partial derivatives of this function,
+represented in mixed coordinates, give the generating function
+relations between the old and new coordinates.  We need to do this
+only for time-independent transformations because time-dependent
+transformations become time independent in the extended phase space.</p>
+<p>
+</p>
+<a name="%_sec_Temp_370"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_370">Generating functions of type <em>F</em><sub>1</sub></a></h4>
+<p>Recall the result about integral invariants from
+section&nbsp;<a href="book-Z-H-60.html#%_sec_5.3">5.3</a>.  There we found that
+<a name="EQUATION_5.173"></a></p>
+<div align=left><img src="chap5-Z-G-161.gif" border="0"></div>
+<p>
+where <em>R</em>' is a two-dimensional region in (<em>q</em>', <em>p</em>') coordinates at
+time <em>t</em>, and <em>R</em>  =  <em>C</em><sub><em>t</em></sub>(<em>R</em>') is the corresponding region in (<em>q</em>, <em>p</em>)
+coordinates, and where <img src="front-Z-G-D-2.gif" border="0"> <em>R</em> indicates the boundary of the
+region <em>R</em>.  This holds for any region and its boundary.  We will show
+that this implies there is a function <em>F</em>(<em>t</em>, <em>q</em>', <em>p</em>') that can be
+defined in terms of line integrals
+<a name="EQUATION_5.174"></a></p>
+<div align=left><img src="chap5-Z-G-162.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-1.gif" border="0">' is a curve in phase-space coordinates that begins at
+<img src="chap1-Z-G-D-1.gif" border="0">'(0)  =  (<em>q</em>'<sub>0</sub>, <em>p</em>'<sub>0</sub>) and ends at <img src="chap1-Z-G-D-1.gif" border="0">'(1)  =  (<em>q</em>', <em>p</em>'), and 
+<img src="chap1-Z-G-D-1.gif" border="0"> is its image under <em>C</em><sub><em>t</em></sub>.</p>
+<p>
+Let 
+<a name="EQUATION_5.175"></a></p>
+<div align=left><img src="chap5-Z-G-163.gif" border="0"></div>
+<p>
+and let <img src="chap1-Z-G-D-1.gif" border="0">'<sub>1</sub> and <img src="chap1-Z-G-D-1.gif" border="0">'<sub>2</sub> be two
+paths with the same endpoints.  Then 
+<a name="EQUATION_5.176"></a></p>
+<div align=left><img src="chap5-Z-G-164.gif" border="0"></div>
+<p>
+So the value of <em>G</em><sub><em>t</em></sub>(<img src="chap1-Z-G-D-1.gif" border="0">') depends only on the endpoints of
+<img src="chap1-Z-G-D-1.gif" border="0">'. </p>
+<p>
+Let 
+<a name="EQUATION_5.177"></a></p>
+<div align=left><img src="chap5-Z-G-165.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-1.gif" border="0">' is any path from <em>q</em>'<sub>0</sub>, <em>p</em>'<sub>0</sub> to <em>q</em>', <em>p</em>'.  
+Changing the initial point from <em>q</em>'<sub>0</sub> <em>p</em>'<sub>0</sub> to <em>q</em>'<sub>1</sub> <em>p</em>'<sub>1</sub> changes
+the value of <img src="chap5-Z-G-D-6.gif" border="0"> by a constant:
+<a name="EQUATION_5.178"></a></p>
+<div align=left><img src="chap5-Z-G-166.gif" border="0"></div>
+<p>
+So we can define <em>F</em> so that 
+<a name="EQUATION_5.179"></a></p>
+<div align=left><img src="chap5-Z-G-167.gif" border="0"></div>
+<p>
+demonstrating equation&nbsp;(<a href="#EQUATION_5.174">5.174</a>).</p>
+<p>
+The phase-space point (<em>q</em>, <em>p</em>) in unprimed variables corresponds to
+(<em>q</em>', <em>p</em>') in primed variables, at an arbitrary time <em>t</em>.  Both <em>p</em>
+and <em>q</em> are determined given <em>q</em>' and <em>p</em>'.  In general, given any two
+of these four quantities, we can solve for the other two.  
+If we can solve for the momenta in terms of the positions we get a
+particular class of generating functions.<a name="call_footnote_Temp_371" href="#footnote_Temp_371"><sup><small>19</small></sup></a>
+We introduce the functions
+<a name="EQUATION_5.180"></a></p>
+<div align=left><img src="chap5-Z-G-168.gif" border="0"></div>
+<p>
+that solve the transformation equations (<em>t</em>, <em>q</em>, <em>p</em>)  =  <em>C</em>(<em>t</em>, <em>q</em>', <em>p</em>') for
+the momenta in terms of the coordinates at a specified time.  With
+these we introduce a function <em>F</em><sub>1</sub>(<em>t</em>, <em>q</em>, <em>q</em>') such that 
+<a name="EQUATION_5.181"></a></p>
+<div align=left><img src="chap5-Z-G-169.gif" border="0"></div>
+<p>
+The function <em>F</em><sub>1</sub> has the same value as <em>F</em> but has different
+arguments.  We will show that this <em>F</em><sub>1</sub> is in fact the generating
+function for canonical transformations introduced in
+section&nbsp;<a href="#%_sec_5.6">5.6</a>.  Let's be explicit about the
+definition of <em>F</em><sub>1</sub> in terms of a line integral:
+<a name="EQUATION_5.182"></a></p>
+<div align=left><img src="chap5-Z-G-170.gif" border="0"></div>
+<p>
+The two line integrals can be combined into this one because they are
+both expressed as integrals along a curve in (<em>q</em>, <em>q</em>').</p>
+<p>
+
+We can use the path independence of <em>F</em><sub>1</sub> to compute the partial
+derivatives of <em>F</em><sub>1</sub> with respect to particular components and
+consequently derive the generating function relations for the momenta.<a name="call_footnote_Temp_372" href="#footnote_Temp_372"><sup><small>20</small></sup></a>
+So we conclude that
+
+<a name="EQUATION_5.183"></a></p>
+<div align=left><img src="chap5-Z-G-177.gif" border="0"></div>
+<p>
+<a name="EQUATION_5.185"></a></p>
+<div align=left><img src="chap5-Z-G-178.gif" border="0"></div>
+<p>
+These are just the configuration and momentum parts of the generating
+function relations for canonical transformation.  So starting with a
+canonical transformation, we can find a generating function that gives
+the coordinate-momentum part of the transformation through its
+derivatives.</p>
+<p>
+Starting from a general canonical transformation, we have constructed
+an <em>F</em><sub>1</sub> generating function from which the canonical transformation
+may be rederived.  So we expect there is a generating function for
+every canonical transformation.<a name="call_footnote_Temp_373" href="#footnote_Temp_373"><sup><small>21</small></sup></a> </p>
+<p>
+
+</p>
+<a name="%_sec_Temp_374"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_374">Generating functions of type <em>F</em><sub>2</sub></a></h4>
+<p><a name="%_idx_2678"></a>
+Point transformations were excluded from the previous argument because
+we could not deduce the momenta from the coordinates.  However, a
+similar derivation allows us to make a generating function for this
+case.  The integral invariants give us an equality of area integrals.
+There are other ways of writing the equality-of-areas
+relation&nbsp;(<a href="book-Z-H-60.html#EQUATION_5.83">5.83</a>) as a line integral.  
+We can also write
+<a name="EQUATION_5.186"></a></p>
+<div align=left><img src="chap5-Z-G-179.gif" border="0"></div>
+<p>
+The minus sign arises because by flipping the axes we are traversing
+the area in the opposite sense.
+Repeating the argument just given, we can define a function
+<a name="EQUATION_5.187"></a></p>
+<div align=left><img src="chap5-Z-G-180.gif" border="0"></div>
+<p>
+that is independent of the path <img src="chap1-Z-G-D-1.gif" border="0">'.  If we can solve for <em>q</em>'
+and <em>p</em> in terms of <em>q</em> and <em>p</em>' we can define the functions 
+<a name="EQUATION_5.188"></a></p>
+<div align=left><img src="chap5-Z-G-181.gif" border="0"></div>
+<p>
+and define
+<a name="EQUATION_5.189"></a></p>
+<div align=left><img src="chap5-Z-G-182.gif" border="0"></div>
+<p>
+Then the canonical transformation is given as partial derivatives of
+<em>F</em><sub>2</sub>:
+<a name="EQUATION_5.190"></a></p>
+<div align=left><img src="chap5-Z-G-183.gif" border="0"></div>
+<p>
+and
+<a name="EQUATION_5.191"></a></p>
+<div align=left><img src="chap5-Z-G-184.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_375"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_375">Relationship between <em>F</em><sub>1</sub> and <em>F</em><sub>2</sub></a></h4>
+<p>For canonical transformations that can be described by both an <em>F</em><sub>1</sub>
+and an <em>F</em><sub>2</sub>, there must be a relation between them.  The alternate
+line integral expressions for the area integral are related.  Consider
+the difference
+<a name="EQUATION_5.192"></a></p>
+<div align=left><img src="chap5-Z-G-185.gif" border="0"></div>
+<p>
+The functions <em>F</em> and <em>F</em>' are related by an integrated term
+<a name="EQUATION_5.193"></a></p>
+<div align=left><img src="chap5-Z-G-186.gif" border="0"></div>
+<p>
+as are <em>F</em><sub>1</sub> and <em>F</em><sub>2</sub>:
+<a name="EQUATION_5.194"></a></p>
+<div align=left><img src="chap5-Z-G-187.gif" border="0"></div>
+<p></p>
+<p>
+The generating functions <em>F</em><sub>1</sub> and <em>F</em><sub>2</sub> are related by a
+<a name="%_idx_2680"></a>Legendre transform:
+<a name="EQUATION_5.197"></a></p>
+<div align=left><img src="chap5-Z-G-188.gif" border="0"></div>
+<p>
+We have passive variables <em>q</em> and <em>t</em>:
+<a name="EQUATION_5.199"></a></p>
+<div align=left><img src="chap5-Z-G-189.gif" border="0"></div>
+<p>
+But <em>p</em>  =  <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>F</em><sub>1</sub>(<em>t</em>, <em>q</em>, <em>q</em>')
+from the first transformation, so 
+<a name="EQUATION_5.200"></a></p>
+<div align=left><img src="chap5-Z-G-190.gif" border="0"></div>
+<p>
+Furthermore, since <em>H</em>'(<em>t</em>, <em>q</em>', <em>p</em>')  <tt>-</tt>  <em>H</em>(<em>t</em>, <em>q</em>, <em>p</em>)  = 
+<img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>F</em><sub>1</sub>(<em>t</em>, <em>q</em>, <em>q</em>') we can conclude that
+<a name="EQUATION_5.201"></a></p>
+<div align=left><img src="chap5-Z-G-191.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<a name="%_sec_5.6.3"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.6.3">5.6.3&nbsp;&nbsp;Types of Generating Functions</a></h3>
+<p><a name="%_idx_2682"></a>
+<a name="%_idx_2684"></a><a name="%_idx_2686"></a>In summary,
+we have used <em>F</em><sub>1</sub>-type generating functions to construct canonical
+transformations: 
+</p>
+<p></p>
+<p></p>
+<p>
+</p>
+<hr>
+
+<p><a name="EQUATION_5.204"></a></p>
+<div align=left><img src="chap5-Z-G-192.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p></p>
+<p>
+<a name="%_idx_2688"></a><a name="%_idx_2690"></a>We can also represent canonical transformations with generating
+functions of the form <em>F</em><sub>2</sub>(<em>t</em>, <em>q</em>, <em>p</em>'), where
+the third argument of <em>F</em><sub>2</sub> is the momentum in the primed
+system.<a name="call_footnote_Temp_376" href="#footnote_Temp_376"><sup><small>22</small></sup></a> </p>
+<p>
+</p>
+<p></p>
+<p></p>
+<p>
+</p>
+<hr>
+
+<p><a name="EQUATION_5.207"></a></p>
+<div align=left><img src="chap5-Z-G-193.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p></p>
+<p>
+As in the <em>F</em><sub>1</sub> case, to put the
+transformation in explicit form requires that appropriate inverse
+functions be constructed to allow the solution of the equations.</p>
+<p>
+Similarly, we can construct two other forms for generating functions,
+<a name="%_idx_2692"></a><a name="%_idx_2694"></a>named mnemonically enough <em>F</em><sub>3</sub> and <em>F</em><sub>4</sub>:
+</p>
+<p></p>
+<p></p>
+<p>
+</p>
+<hr>
+
+<p><a name="EQUATION_5.210"></a></p>
+<div align=left><img src="chap5-Z-G-194.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p></p>
+<p>
+and
+</p>
+<p></p>
+<p></p>
+<p>
+<a name="%_idx_2696"></a><a name="%_idx_2698"></a></p>
+<hr>
+
+<p><a name="EQUATION_5.213"></a></p>
+<div align=left><img src="chap5-Z-G-195.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p></p>
+<p>
+In every case, if the generating function does not depend explicitly
+on time then the Hamiltonians are obtained from one another purely by
+composition with the appropriate canonical transformation.  If the
+generating function depends on time, then there are additional terms.</p>
+<p>
+The generating functions presented treat the coordinates and momenta
+collectively.  One could define more complicated generating functions
+for which the transformation of each degree of freedom is specified by
+generating functions of different types.</p>
+<p>
+</p>
+<a name="%_sec_Temp_377"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_377">Generating functions in extended phase space</a></h4>
+<p><a name="%_idx_2700"></a><a name="%_idx_2702"></a>
+We can represent canonical transformations with mixed-variable
+generating functions.  We can extend these to represent
+transformations in the extended phase space.  Let <em>F</em><sub>2</sub> be a generating
+function with arguments (<em>t</em>, <em>q</em>, <em>p</em>').  Then, the corresponding <em>F</em><sup><em>e</em></sup><sub>2</sub>
+in the extended phase space can be taken to be
+<a name="EQUATION_5.214"></a></p>
+<div align=left><img src="chap5-Z-G-196.gif" border="0"></div>
+<p>
+The relations between the coordinates and the momenta are the same as
+before.  We also have
+<a name="EQUATION_5.215"></a></p>
+<div align=left><img src="chap5-Z-G-197.gif" border="0"></div>
+<p>
+The first equation gives the relationship between the original
+Hamiltonians:
+<a name="EQUATION_5.216"></a></p>
+<div align=left><img src="chap5-Z-G-198.gif" border="0"></div>
+<p>
+as required.  We know that time-independent canonical transformations
+have symplectic <em>q</em><em>p</em> part.  The generating-function representation of
+a time-dependent transformation does not depend on the independent
+variable in the extended phase space.  So, in extended phase space 
+the <em>q</em><em>p</em> part of the transformation, which includes the time and the 
+momentum conjugate to time, is symplectic.</p>
+<p>
+
+</p>
+<a name="%_sec_5.6.4"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.6.4">5.6.4&nbsp;&nbsp;Point Transformations</a></h3>
+<p><a name="%_idx_2704"></a><a name="%_idx_2706"></a>
+Point transformations can be represented in terms
+of a generating function of type <em>F</em><sub>2</sub>.  
+Equations&nbsp;(<a href="book-Z-H-58.html#EQUATION_5.6">5.6</a>), which define a
+canonical point transformation derived from a coordinate
+transformation <em>F</em>, are
+<a name="EQUATION_5.217"></a></p>
+<div align=left><img src="chap5-Z-G-199.gif" border="0"></div>
+<p></p>
+<p>
+Let <em>S</em> be the inverse transformation of <em>F</em> with respect to the second argument
+<a name="EQUATION_5.218"></a></p>
+<div align=left><img src="chap5-Z-G-200.gif" border="0"></div>
+<p> 
+so that <em>q</em>'  =  <em>S</em>(<em>t</em>, <em>F</em>(<em>t</em>, <em>q</em>')).  The momentum
+transformation that accompanies this coordinate transformation is
+<a name="EQUATION_5.219"></a></p>
+<div align=left><img src="chap5-Z-G-201.gif" border="0"></div>
+<p>
+We can find the generating function <em>F</em><sub>2</sub> that gives this
+transformation by integrating equation&nbsp;(<a href="#EQUATION_5.205">5.204</a>) to get
+<a name="EQUATION_5.220"></a></p>
+<div align=left><img src="chap5-Z-G-202.gif" border="0"></div>
+<p>
+Substituting this into equation&nbsp;(<a href="#EQUATION_5.204">5.204</a>), we get
+<a name="EQUATION_5.221"></a></p>
+<div align=left><img src="chap5-Z-G-203.gif" border="0"></div>
+<p>
+We do not need the freedom provided by <img src="chap1-Z-G-D-16.gif" border="0">, so we can set it equal
+to zero:
+<a name="EQUATION_5.222"></a></p>
+<div align=left><img src="chap5-Z-G-204.gif" border="0"></div>
+<p>
+with
+<a name="EQUATION_5.223"></a></p>
+<div align=left><img src="chap5-Z-G-205.gif" border="0"></div>
+<p>
+So this <em>F</em><sub>2</sub> gives the canonical transformation of
+equations&nbsp;(<a href="#EQUATION_5.217">5.217</a>) and
+(<a href="#EQUATION_5.218">5.218</a>).</p>
+<p>
+The canonical transformation for the coordinate transformation <em>S</em> is
+the inverse of the canonical transformation for <em>F</em>.  By design <em>F</em>
+and <em>S</em> are inverses on the coordinate arguments.  The identity
+function is <em>q</em>'  =  <em>I</em>(<em>q</em>')  =  <em>S</em>(<em>t</em>, <em>F</em>(<em>t</em>, <em>q</em>')).  Differentiating yields
+<a name="EQUATION_5.224"></a></p>
+<div align=left><img src="chap5-Z-G-206.gif" border="0"></div>
+<p>
+so
+<a name="EQUATION_5.225"></a></p>
+<div align=left><img src="chap5-Z-G-207.gif" border="0"></div>
+<p>
+Using this, the relation between the
+momenta&nbsp;(<a href="#EQUATION_5.222">5.222</a>) is
+<a name="EQUATION_5.226"></a></p>
+<div align=left><img src="chap5-Z-G-208.gif" border="0"></div>
+<p>
+showing that <em>F</em><sub>2</sub> gives a point transformation equivalent to the
+point transformation&nbsp;(<a href="#EQUATION_5.216">5.216</a>).  So from this
+other point of view we see that the point transformation
+is canonical.</p>
+<p>
+The <em>F</em><sub>1</sub> that corresponds to the <em>F</em><sub>2</sub> for a point transformation&nbsp;is<a name="EQUATION_5.227"></a></p>
+<div align=left><img src="chap5-Z-G-209.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_378"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_378">Polar and rectangular coordinates</a></h4>
+<p><a name="%_idx_2708"></a><a name="%_idx_2710"></a><a name="%_idx_2712"></a>
+A commonly required point transformation is the transition between polar
+coordinates and rectangular coordinates:
+<a name="EQUATION_5.228"></a></p>
+<div align=left><img src="chap5-Z-G-210.gif" border="0"></div>
+<p>
+Using the formula for the generating function of a point
+transformation just derived, we find:
+<a name="EQUATION_5.229"></a></p>
+<div align=left><img src="chap5-Z-G-211.gif" border="0"></div>
+<p>
+So the full transformation is derived:
+<a name="EQUATION_5.230"></a></p>
+<div align=left><img src="chap5-Z-G-212.gif" border="0"></div>
+<p>
+We can isolate the rectangular coordinates to one side of the
+transformation and the polar coordinates to the other:
+<a name="EQUATION_5.231"></a></p>
+<div align=left><img src="chap5-Z-G-213.gif" border="0"></div>
+<p>
+So, interpreted in terms of Newtonian vectors, <em>p</em><sub><em>r</em></sub>  =  <img src="chap5-Z-G-D-7.gif" border="0">  &middot; 
+<img src="chap3-Z-G-D-7.gif" border="0"> is the radial component of the linear momentum and <em>p</em><sub><img src="chap1-Z-G-D-19.gif" border="0"></sub>  = 
+|| <img src="chap1-Z-G-D-46.gif" border="0"> &times; <img src="chap3-Z-G-D-7.gif" border="0"> || is the magnitude of the angular
+momentum.  The point transformation is time independent, so the
+Hamiltonian transforms by composition.</p>
+<p>
+</p>
+<a name="%_sec_Temp_379"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_379">Rotating coordinates</a></h4>
+<p><a name="%_idx_2714"></a><a name="%_idx_2716"></a><a name="%_idx_2718"></a><a name="%_idx_2720"></a><a name="%_idx_2722"></a>A useful time-dependent point transformation is the transition to a
+rotating coordinate system.  This is most easily accomplished in polar
+coordinates.  Here we have 
+<a name="EQUATION_5.232"></a></p>
+<div align=left><img src="chap5-Z-G-214.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-57.gif" border="0"> is the angular velocity of the rotating coordinate
+system.  The generating function is
+
+<a name="EQUATION_5.233"></a></p>
+<div align=left><img src="chap5-Z-G-215.gif" border="0"></div>
+<p>
+This yields the transformation equations
+<a name="EQUATION_5.234"></a></p>
+<div align=left><img src="chap5-Z-G-216.gif" border="0"></div>
+<p>
+which show that the momenta are the same in both coordinate systems.
+However, here the Hamiltonian is not a simple composition:
+<a name="EQUATION_5.235"></a></p>
+<div align=left><img src="chap5-Z-G-217.gif" border="0"></div>
+<p>
+The Hamiltonians differ by the derivative of the generating function
+with respect to the time argument.  In transforming to rotating
+coordinates, the values of the Hamiltonians differ by the product of the
+angular momentum and the angular velocity of the coordinate system.
+Notice that this addition to the Hamiltonian is the same as was found
+earlier&nbsp;(<a href="book-Z-H-54.html#EQUATION_5.57">5.57</a>).</p>
+<p>
+</p>
+<p><a name="%_thm_5.14"></a>
+<b>Exercise 5.14.</b>&nbsp;&nbsp;<strong>Rotating coordinates in extended phase space</strong><br>
+In the extended phase space the time is one of the coordinates.  
+Carry out the transformation to rotating coordinates using an
+<em>F</em><sub>2</sub>-type generating function in the extended phase space.  Compare
+the Hamiltonian obtained by composition with the transformation to
+Hamiltonian&nbsp;(<a href="#EQUATION_5.234">5.234</a>).</p>
+<p>
+</p>
+
+<p></p>
+<p>
+
+</p>
+<a name="%_sec_Temp_381"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_381">Two-body problem</a></h4>
+<p><a name="%_idx_2724"></a>
+In this example we illustrate how canonical transformations can be
+used to eliminate some of the degrees of freedom, leaving an essential
+problem with fewer degrees of freedom.</p>
+<p>
+Suppose that only certain combinations of the coordinates appear in the
+Hamiltonian.  We make a canonical transformation to a new set of
+phase-space coordinates such that these combinations of the old
+phase-space coordinates are some of the new phase-space coordinates.
+We choose other independent combinations of the coordinates to complete
+the set.  The advantage is that these other independent coordinates do
+not appear in the new Hamiltonian, so the momenta conjugate to them
+are conserved quantities.</p>
+<p>
+Let's see how this idea enables us to reduce the problem of two gravitating
+bodies to the simpler problem of the relative motion of the two
+bodies, and in the process discover that the momentum of the center
+of mass is conserved.  </p>
+<p>
+Consider the motion of two masses <em>m</em><sub>1</sub> and <em>m</em><sub>2</sub>, subject only to a
+mutual gravitational attraction described by the potential <em>V</em>(<em>r</em>).
+This problem has six degrees of freedom.  The rectangular
+coordinates of the particles are <em>x</em><sub>1</sub> and <em>x</em><sub>2</sub>, with conjugate
+momenta <em>p</em><sub>1</sub> and <em>p</em><sub>2</sub>.  Each of these is a structure of the three
+rectangular components.  The distance between the particles is <em>r</em>  = 
+|| <em>x</em><sub>1</sub>  <tt>-</tt>  <em>x</em><sub>2</sub> ||.  The <a name="%_idx_2726"></a>Hamiltonian for the two-body problem is
+<a name="EQUATION_5.236"></a></p>
+<div align=left><img src="chap5-Z-G-218.gif" border="0"></div>
+<p>
+We do not need to specify <em>V</em> further at this point.  </p>
+<p>
+We note that the only linear combination of coordinates that appears
+in the Hamiltonian is <em>x</em><sub>2</sub>  <tt>-</tt>  <em>x</em><sub>1</sub>.  We choose new
+coordinates so that one of the new coordinates is this combination:
+<a name="EQUATION_5.237"></a></p>
+<div align=left><img src="chap5-Z-G-219.gif" border="0"></div>
+<p>
+To complete the set of new coordinates we choose another to
+be some independent linear combination 
+<a name="EQUATION_5.238"></a></p>
+<div align=left><img src="chap5-Z-G-220.gif" border="0"></div>
+<p>
+where <em>a</em> and <em>b</em> are to be determined.  We can use
+an <em>F</em><sub>2</sub>-type generating function
+<a name="EQUATION_5.239"></a></p>
+<div align=left><img src="chap5-Z-G-221.gif" border="0"></div>
+<p>
+where <em>p</em> and <em>P</em> will be the new momenta conjugate to
+<em>x</em> and <em>X</em>, respectively.  We deduce
+<a name="EQUATION_5.240"></a></p>
+<div align=left><img src="chap5-Z-G-222.gif" border="0"></div>
+<p>
+We can solve these for the new momenta:
+<a name="EQUATION_5.242"></a></p>
+<div align=left><img src="chap5-Z-G-223.gif" border="0"></div>
+<p></p>
+<p>
+The generating function is not time dependent so the new Hamiltonian
+is the old Hamiltonian composed with the transformation:
+<a name="EQUATION_5.243"></a></p>
+<div align=left><img src="chap5-Z-G-224.gif" border="0"></div>
+<p>
+with the definitions 
+<a name="EQUATION_5.244"></a></p>
+<div align=left><img src="chap5-Z-G-225.gif" border="0"></div>
+<p>
+and 
+<a name="EQUATION_5.245"></a></p>
+<div align=left><img src="chap5-Z-G-226.gif" border="0"></div>
+<p>
+We recognize &micro; as the usual <a name="%_idx_2728"></a>``reduced 
+mass.''</p>
+<p>
+Notice that if the term proportional to <em>p</em> <em>P</em> were
+not present then the <em>x</em> and <em>X</em> degrees of freedom would
+not be coupled at all, and furthermore, the <em>X</em> part of the
+Hamiltonian would be just the Hamiltonian of a free particle, which is
+easy to solve.  The condition that the ``cross terms'' disappear
+is 
+<a name="EQUATION_5.246"></a></p>
+<div align=left><img src="chap5-Z-G-227.gif" border="0"></div>
+<p>
+which is satisfied by
+<a name="EQUATION_5.247"></a></p>
+<div align=left><img src="chap5-Z-G-228.gif" border="0"></div>
+<p>
+for any <em>c</em>.  For a transformation to be defined <em>c</em> must be nonzero.
+So with this choice the Hamiltonian becomes
+<a name="EQUATION_5.248"></a></p>
+<div align=left><img src="chap5-Z-G-229.gif" border="0"></div>
+<p>
+with
+<a name="EQUATION_5.249"></a></p>
+<div align=left><img src="chap5-Z-G-230.gif" border="0"></div>
+<p>
+and
+<a name="EQUATION_5.250"></a></p>
+<div align=left><img src="chap5-Z-G-231.gif" border="0"></div>
+<p>
+The reduced mass is the same as before, and now
+<a name="EQUATION_5.251"></a></p>
+<div align=left><img src="chap5-Z-G-232.gif" border="0"></div>
+<p>
+Notice that, without further specifying <em>c</em>, the problem has been
+separated into the problem of determining the relative motion of the
+two masses, and the problem of the other degrees of freedom.  We did
+not need a priori knowledge that the center of mass might be
+important; in fact, only for a particular choice of <em>c</em>  =  (<em>m</em><sub>1</sub>  + 
+<em>m</em><sub>2</sub>)<sup><tt>-</tt>1</sup> does <em>X</em> become the <a name="%_idx_2730"></a>center of mass.</p>
+<p>
+</p>
+<a name="%_sec_Temp_382"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_382">Epicyclic motion</a></h4>
+<p><a name="%_idx_2732"></a><a name="%_idx_2734"></a><a name="%_idx_2736"></a><a name="%_idx_2738"></a>
+<a name="%_idx_2740"></a><a name="%_idx_2742"></a>It is often useful to compose a sequence of canonical transformations
+to make up the transformation we need for any particular mechanical
+problem.  The transformations we have supplied are especially useful
+as components in these computations.</p>
+<p>
+We will illustrate the use of canonical transformations to learn about
+planar motion in a central field.  The strategy will be to consider
+perturbations of circular motion in the central field.  The analysis
+will proceed by transforming to a rotating coordinate system that
+rides on a circular reference orbit, and then making approximations
+that restrict the analysis to orbits that differ from the circular
+orbit only slightly.</p>
+<p>
+<a name="%_idx_2744"></a>In rectangular coordinates we can easily write a
+Hamiltonian for the motion of a particle of mass <em>m</em> in a field
+defined by a potential energy that is a function only of the distance
+from the origin as follows:
+<a name="EQUATION_5.252"></a></p>
+<div align=left><img src="chap5-Z-G-233.gif" border="0"></div>
+<p>
+
+In this coordinate system Hamilton's equations are easy, and they are
+exactly what is needed to develop trajectories by numerical
+integration, but the expressions are not very illuminating:
+<a name="EQUATION_5.256"></a></p>
+<div align=left><img src="chap5-Z-G-234.gif" border="0"></div>
+<p></p>
+<p>
+We can learn more by converting to polar coordinates centered on the
+source of our field:
+<a name="EQUATION_5.258"></a></p>
+<div align=left><img src="chap5-Z-G-235.gif" border="0"></div>
+<p>
+This coordinate system explicitly incorporates the geometrical
+symmetry of the potential energy.  Extending this coordinate
+transformation to a point transformation, we can write the new <a name="%_idx_2746"></a>Hamiltonian as:
+<a name="EQUATION_5.259"></a></p>
+<div align=left><img src="chap5-Z-G-236.gif" border="0"></div>
+<p>
+We can now write Hamilton's equations in these new coordinates, and
+they are much more illuminating than the equations expressed in
+rectangular coordinates:
+<a name="EQUATION_5.263"></a></p>
+<div align=left><img src="chap5-Z-G-237.gif" border="0"></div>
+<p></p>
+<p>
+
+We see that the angular momentum <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub> is conserved, and we are
+free to choose its constant value, so <em>D</em><img src="chap1-Z-G-D-16.gif" border="0"> depends only on
+<em>r</em>.  We also see that we can establish a circular orbit at any radius
+<em>R</em><sub>0</sub>: we choose <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub>  =  <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"><sub>0</sub></sub> so that <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0">
+0</sub><sup>2</sup>/(<em>m</em> <em>R</em><sub>0</sub><sup>3</sup>)  <tt>-</tt>  <em>D</em><em>V</em>(<em>R</em><sub>0</sub>)  =  0.  This will ensure that <em>D</em><em>p</em><sub><em>r</em></sub> = 0,
+and thus <em>D</em><em>r</em> = 0.  The (square of the) angular velocity of this
+circular orbit is
+<a name="EQUATION_5.264"></a></p>
+<div align=left><img src="chap5-Z-G-238.gif" border="0"></div>
+<p>
+It is instructive to consider how orbits that are close to the
+circular orbit differ from the circular orbit.  This is best done in
+rotating coordinates in which a body moving in the circular orbit is a
+stationary point at the origin.  We can do this by converting to
+coordinates that are 
+rotating with the circular orbit and centered on the orbiting body.
+We proceed in three stages.  First we will transform to a polar
+coordinate system that is rotating at angular velocity <img src="chap1-Z-G-D-57.gif" border="0">.  Then
+we will return to rectangular coordinates, and finally, we will shift
+the coordinates so the origin is on the reference circular orbit.</p>
+<p>
+
+We start by examining the system in rotating polar coordinates.  This
+is a time-dependent coordinate transformation:
+<a name="EQUATION_5.268"></a></p>
+<div align=left><img src="chap5-Z-G-239.gif" border="0"></div>
+<p>
+Using equation&nbsp;(<a href="#EQUATION_5.234">5.234</a>), we can
+write the new Hamiltonian directly:
+<a name="EQUATION_5.269"></a></p>
+<div align=left><img src="chap5-Z-G-240.gif" border="0"></div>
+<p>
+We see that <em>H</em>'' is not time dependent, and therefore it is
+conserved, but it is not energy.  Energy is not conserved in the
+moving coordinate system, but what is conserved here is a new quantity
+that combines the energy with the product of the angular momentum of
+the particle in the new coordinate and the angular velocity of the
+coordinate system.  We will want to keep track of this term.</p>
+<p>
+Next, we return to rectangular coordinates, but they are rotating with
+the reference circular orbit:
+<a name="EQUATION_5.273"></a></p>
+<div align=left><img src="chap5-Z-G-241.gif" border="0"></div>
+<p>
+The Hamiltonian is
+<a name="EQUATION_5.274"></a></p>
+<div align=left><img src="chap5-Z-G-242.gif" border="0"></div>
+<p></p>
+<p>
+With one more quick manipulation we shift the coordinate system so
+that the origin is out on our circular orbit.  We define new
+rectangular coordinates <img src="chap1-Z-G-D-18.gif" border="0"> and <img src="chap1-Z-G-D-13.gif" border="0"> with the following
+simple canonical transformation of coordinates and momenta:
+<a name="EQUATION_5.278"></a></p>
+<div align=left><img src="chap5-Z-G-243.gif" border="0"></div>
+<p>
+In this final coordinate system the Hamiltonian is
+<a name="EQUATION_5.279"></a></p>
+<div align=left><img src="chap5-Z-G-244.gif" border="0"></div>
+<p>
+and Hamilton's equations are uselessly complicated, but the next step is to consider only
+trajectories for which the coordinates <img src="chap1-Z-G-D-18.gif" border="0"> and <img src="chap1-Z-G-D-13.gif" border="0"> are small
+compared with <em>R</em><sub>0</sub>.  Under this assumption we will be able to
+construct approximate equations of motion for these trajectories that
+are linear in the coordinates, thus yielding simple analyzable motion.
+To this point we have made no approximations.  The
+equations above are perfectly accurate for any trajectories in a
+central field.</p>
+<p>
+The idea is to expand the potential-energy term in the Hamiltonian as
+a series and to discard any term higher than second-order in the
+coordinates, thus giving us first-order-accurate Hamilton's equations:
+<a name="EQUATION_5.282"></a></p>
+<div align=left><img src="chap5-Z-G-245.gif" border="0"></div>
+<p>
+So the (negated) generalized forces are
+<a name="EQUATION_5.284"></a></p>
+<div align=left><img src="chap5-Z-G-246.gif" border="0"></div>
+<p>
+With this expansion we obtain the linearized Hamilton's equations:
+<a name="EQUATION_5.288"></a></p>
+<div align=left><img src="chap5-Z-G-247.gif" border="0"></div>
+<p>
+Of course, once we have linear equations we know how to solve them
+exactly.  Because the linearized Hamiltonian is conserved we cannot get
+exponential expansion or collapse, so the possible solutions are
+quite limited.  It is instructive to convert these equations into a
+second-order system.  We use <img src="chap1-Z-G-D-57.gif" border="0"><sup>2</sup>  =  <em>D</em><em>V</em>(<em>R</em><sub>0</sub>)/(<em>m</em> <em>R</em><sub>0</sub>),
+equation&nbsp;(<a href="#EQUATION_5.263">5.263</a>), to
+eliminate the <em>D</em><em>V</em> terms:
+<a name="EQUATION_5.290"></a></p>
+<div align=left><img src="chap5-Z-G-248.gif" border="0"></div>
+<p>
+Combining these, we find
+<a name="EQUATION_5.291"></a></p>
+<div align=left><img src="chap5-Z-G-249.gif" border="0"></div>
+<p>
+where
+<a name="EQUATION_5.292"></a></p>
+<div align=left><img src="chap5-Z-G-250.gif" border="0"></div>
+<p>
+Thus we have a simple harmonic oscillator with frequency <img src="chap1-Z-G-D-23.gif" border="0"> as
+one of the components of the solution.  The general solution has
+three parts:
+<a name="EQUATION_5.295"></a></p>
+<div align=left><img src="chap5-Z-G-251.gif" border="0"></div>
+<p>
+where
+<a name="EQUATION_5.296"></a></p>
+<div align=left><img src="chap5-Z-G-252.gif" border="0"></div>
+<p></p>
+<p>
+The constants <img src="chap1-Z-G-D-13.gif" border="0"><sub>0</sub>, <img src="chap1-Z-G-D-18.gif" border="0"><sub>0</sub>, <em>C</em><sub>0</sub>, and <img src="chap1-Z-G-D-16.gif" border="0"><sub>0</sub> are determined
+by the initial conditions.  If <em>C</em><sub>0</sub> = 0, the particle of interest is on
+a circular trajectory, but not necessarily the same one as the
+reference trajectory.  If <em>C</em><sub>0</sub> = 0 and <img src="chap1-Z-G-D-18.gif" border="0"><sub>0</sub> = 0, we have a ``fellow
+traveler,'' a particle in the same circular orbit as the reference
+orbit but with different phase.  If <em>C</em><sub>0</sub> = 0 and <img src="chap1-Z-G-D-13.gif" border="0"><sub>0</sub> = 0, we have a
+particle in a circular orbit that is interior or exterior to the
+reference orbit and shearing away from the reference orbit.  The
+shearing is due to the fact that the angular velocity for a circular
+orbit varies with the radius.  The constant <em>A</em> gives the rate of
+shearing at each radius.  If both <img src="chap1-Z-G-D-13.gif" border="0"><sub>0</sub> = 0 and <img src="chap1-Z-G-D-18.gif" border="0"><sub>0</sub> = 0 but <em>C</em><sub>0</sub>
+neq 0, then we have ``epicyclic motion''.  A particle in a nearly
+circular orbit may be seen to move in an ellipse around the circular
+reference orbit.  The ellipse will be elongated in the direction of
+circular motion by the factor 2 <img src="chap1-Z-G-D-57.gif" border="0">/<img src="chap1-Z-G-D-23.gif" border="0"> and it will
+rotate in the direction opposite to the direction of the circular motion.
+The initial phase of the epicycle is <img src="chap1-Z-G-D-16.gif" border="0"><sub>0</sub>.  Of course, any
+combination of these solutions may exist.</p>
+<p>
+The epicyclic frequency <img src="chap1-Z-G-D-23.gif" border="0"> and the shearing rate <em>A</em> are
+determined by the force law (the radial derivative of the potential
+energy).  For a force law proportional to a power of the radius,
+<a name="EQUATION_5.297"></a></p>
+<div align=left><img src="chap5-Z-G-253.gif" border="0"></div>
+<p>
+the epicyclic frequency is related to the orbital frequency by
+<a name="EQUATION_5.298"></a></p>
+<div align=left><img src="chap5-Z-G-254.gif" border="0"></div>
+<p>
+and the shearing rate is
+<a name="EQUATION_5.299"></a></p>
+<div align=left><img src="chap5-Z-G-255.gif" border="0"></div>
+<p>
+For a few particular integer force laws we see:
+
+</p>
+<div align=center><table><tr><td>
+
+<table border=1><tr><td valign=top ><em>n</em>                     </td><td valign=top >0 </td><td valign=top >1 </td><td valign=top >2 </td><td valign=top >3 </td><td valign=top >4 </td><td valign=top >5 </td></tr>
+<tr><td valign=top >(<em>A</em>/<img src="chap1-Z-G-D-57.gif" border="0">)      </td><td valign=top >0 </td><td valign=top >(1/4) </td><td valign=top >(1/2) </td><td valign=top >(3/4) </td><td valign=top >1 </td><td valign=top >(5/4) </td></tr>
+<tr><td valign=top >(<img src="chap1-Z-G-D-23.gif" border="0">/<img src="chap1-Z-G-D-57.gif" border="0">) </td><td valign=top >2 </td><td valign=top >(3)<sup>1/2</sup> </td><td valign=top >(2)<sup>1/2</sup> </td><td valign=top >1 </td><td valign=top >0 </td><td valign=top >&plusmn; <em>i</em> </td></tr>
+<tr><td valign=top ></td></tr></table>
+</td></tr></table></div>
+
+<p>
+We can get some insight into the kinds of orbits produced by
+the epicyclic approximation by looking at a few examples.  For some
+force laws we have integer ratios of epicyclic frequency to orbital
+frequency.  In those cases we have closed orbits.  For an
+inverse-square force law (<em>n</em> = 3) we get elliptical orbits with the center of
+the field at a focus of the ellipse.  Figure&nbsp;<a href="#FIGURE_5.3">5.3</a> shows
+how an approximation to such an orbit can be constructed by
+superposition of the motion on an elliptical epicycle with the motion
+of the same frequency on a circle.  If the force is proportional to
+the radius (<em>n</em> = 0) we get a two-dimensional harmonic oscillator.  Here the
+epicyclic frequency is twice the orbital frequency.
+Figure&nbsp;<a href="#FIGURE_5.4">5.4</a> shows how this yields elliptical orbits
+that are centered on the source of the central force.  An orbit is
+closed when <img src="chap1-Z-G-D-23.gif" border="0">/<img src="chap1-Z-G-D-57.gif" border="0"> is a rational
+fraction.  If the force is proportional to the  <tt>-</tt> 3/4 power of the
+radius, the epicyclic frequency is 3/2 the orbital frequency.  This
+yields the three-lobed pattern seen in
+figure&nbsp;<a href="#FIGURE_5.5">5.5</a>.  For other force laws the orbits predicted
+by this analysis are multi-lobed patterns produced by precessing
+approximate ellipses.  Most of the cases have incommensurate epicyclic
+and orbital frequencies, leading to orbits that do not close in finite
+time.</p>
+<p>
+<a name="FIGURE_5.3"></a></p>
+<div align=left><img src="chap5-Z-G-256.gif" border="0"></div>
+<p></p>
+<p>
+<a name="FIGURE_5.4"></a></p>
+<div align=left><img src="chap5-Z-G-257.gif" border="0"></div>
+<p></p>
+<p>
+The epicyclic approximation gives a very good idea of what actual
+orbits look like.
+Figure&nbsp;<a href="#FIGURE_5.6">5.6</a>, drawn by numerical integration of 
+the orbit produced by integrating the original rectangular equations of
+motion for a particle in the field,
+shows the 
+rosette-type picture
+characteristic of incommensurate epicyclic and orbital frequencies for
+an <em>F</em> =  <tt>-</tt> <em>r</em><sup><tt>-</tt>2.3</sup> force law.</p>
+<p>
+
+<a name="FIGURE_5.5"></a></p>
+<div align=left><img src="chap5-Z-G-258.gif" border="0"></div>
+<p></p>
+<p>
+We can directly compare a numerically integrated system with one
+of our epicyclic approximations.  For example, the result of
+numerically integrating our <em>F</em> propto <em>r</em><sup><tt>-</tt>3/4</sup> system 
+is very similar to the picture we obtained by epicycles.  (See
+figure&nbsp;<a href="#FIGURE_5.7">5.7</a> and compare it with
+figure&nbsp;<a href="#FIGURE_5.5">5.5</a>.)</p>
+<p>
+
+<a name="FIGURE_5.6"></a></p>
+<div align=left><img src="chap5-Z-G-259.gif" border="0"></div>
+<p></p>
+<p>
+
+</p>
+<p><a name="%_thm_5.15"></a>
+<b>Exercise 5.15.</b>&nbsp;&nbsp;<strong>Collapsing orbits</strong><br>
+<a name="%_idx_2748"></a>What exactly happens as the force law becomes steeper?  Investigate
+this by sketching the contours of the Hamiltonian in <em>r</em>, <em>p</em><sub><em>r</em></sub> space
+for various values of the force-law exponent, <em>n</em>.  For what values of
+<em>n</em> are there stable circular orbits?  In the case that there are no
+stable circular orbits, what happens to circular and other noncircular
+orbits?  How are these results consistent with Liouville's theorem and
+the nonexistence of attractors in Hamiltonian systems?
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_5.6.5"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.6.5">5.6.5&nbsp;&nbsp;Classical ``Gauge'' Transformations</a></h3>
+<p><a name="%_idx_2750"></a><a name="%_idx_2752"></a><a name="%_idx_2754"></a>
+The addition of a total time derivative to a Lagrangian leads to the
+same Lagrange equations.  However, the two Lagrangians have different
+momenta, and they lead to different Hamilton's equations.  Here we
+find out how to represent the corresponding canonical transformation
+with a generating function.</p>
+<p>
+Let's restate the result about total time derivatives and
+Lagrangians from the first chapter.  Consider some function <em>G</em>(<em>t</em>, <em>q</em>)
+of time and coordinates.  We have shown that if <em>L</em> and <em>L</em>' are related
+by 
+<a name="EQUATION_5.300"></a></p>
+<div align=left><img src="chap5-Z-G-260.gif" border="0"></div>
+<p>
+then the Lagrange equations of motion are the same.
+The generalized coordinates used in the two Lagrangians are the same,
+but the momenta conjugate to the coordinates are different.  In the
+usual way, define
+<a name="EQUATION_5.301"></a></p>
+<div align=left><img src="chap5-Z-G-261.gif" border="0"></div>
+<p>
+and
+<a name="EQUATION_5.302"></a></p>
+<div align=left><img src="chap5-Z-G-262.gif" border="0"></div>
+<p>
+So we have
+<a name="EQUATION_5.303"></a></p>
+<div align=left><img src="chap5-Z-G-263.gif" border="0"></div>
+<p>
+Evaluated on a trajectory, we have
+<a name="EQUATION_5.304"></a></p>
+<div align=left><img src="chap5-Z-G-264.gif" border="0"></div>
+<p>
+<a name="%_idx_2756"></a>This transformation is a special case of an <em>F</em><sub>2</sub>-type
+transformation.  Let
+<a name="EQUATION_5.305"></a></p>
+<div align=left><img src="chap5-Z-G-265.gif" border="0"></div>
+<p>
+then the associated transformation is
+<a name="EQUATION_5.308"></a></p>
+<div align=left><img src="chap5-Z-G-266.gif" border="0"></div>
+<p>
+Explicitly, the new Hamiltonian is
+<a name="EQUATION_5.309"></a></p>
+<div align=left><img src="chap5-Z-G-267.gif" border="0"></div>
+<p>
+where we have used the fact that <em>q</em> = <em>q</em>'.
+The transformation is interesting in that the coordinate
+transformation is the identity transformation, but the new and old
+momenta are not the same, even in the case in which <em>G</em> has no
+explicit time dependence.  Suppose we have a Hamiltonian of the form
+<a name="EQUATION_5.310"></a></p>
+<div align=left><img src="chap5-Z-G-268.gif" border="0"></div>
+<p>
+then the transformed Hamiltonian is 
+<a name="EQUATION_5.311"></a></p>
+<div align=left><img src="chap5-Z-G-269.gif" border="0"></div>
+<p>
+We see that this transformation may be used to modify terms in the
+Hamiltonian that are linear in the momenta.  Starting from <em>H</em>, the
+transformation introduces linear momentum terms; starting from <em>H</em>',
+the transformation eliminates the linear terms.</p>
+<p>
+We illustrate the use of this transformation with the <a name="%_idx_2758"></a><a name="%_idx_2760"></a><a name="%_idx_2762"></a><a name="%_idx_2764"></a>driven pendulum.
+The Hamiltonian for the driven pendulum derived from the <em>T</em> <tt>-</tt> <em>V</em>
+Lagrangian (see section&nbsp;<a href="book-Z-H-13.html#%_sec_1.6.2">1.6.2</a>) is
+<a name="EQUATION_5.312"></a></p>
+<div align=left><img src="chap5-Z-G-270.gif" border="0"></div>
+<p>
+where <em>y</em><sub><em>s</em></sub> is the drive function.  
+The Hamiltonian is rather messy, and includes a term that is linear
+in the angular momentum with a coefficient that depends on both the
+angular coordinate and the time.  Let's see what happens if we apply
+our transformation to the problem to eliminate the linear term.  We
+can identify the transformation function <em>G</em> by requiring that the
+linear term in momentum be killed:
+<a name="EQUATION_5.313"></a></p>
+<div align=left><img src="chap5-Z-G-271.gif" border="0"></div>
+<p>
+The transformed momentum is 
+<a name="EQUATION_5.314"></a></p>
+<div align=left><img src="chap5-Z-G-272.gif" border="0"></div>
+<p>
+and the transformed Hamiltonian is 
+<a name="EQUATION_5.315"></a></p>
+<div align=left><img src="chap5-Z-G-273.gif" border="0"></div>
+<p>
+Dropping the last two terms, which do not affect the equations of
+motion, we find
+<a name="%_idx_2766"></a><a name="%_idx_2768"></a><a name="EQUATION_5.316"></a></p>
+<div align=left><img src="chap5-Z-G-274.gif" border="0"></div>
+<p>
+So we have found, by a straightforward canonical transformation, a
+Hamiltonian for the driven pendulum with the rather simple form of a
+pendulum with gravitational acceleration that is modified by the
+acceleration of the pivot.  It is, in fact, the Hamiltonian that
+corresponds to the alternate form of the Lagrangian for the driven
+pendulum we found earlier by inspection (see equation
+<a href="book-Z-H-13.html#EQUATION_1.120">1.120</a>).  Here the derivation
+is by a simple canonical transformation, motivated by a desire to
+eliminate unwanted terms that are linear in the momentum.</p>
+<p>
+</p>
+<p><a name="%_thm_5.16"></a>
+<b>Exercise 5.16.</b>&nbsp;&nbsp;<strong>Construction of generating functions</strong><br></p>
+<p>
+Suppose that canonical transformations <em>C</em><sub><em>a</em></sub> and <em>C</em><sub><em>b</em></sub> are generated
+by <em>F</em><sub>1</sub>-type generating functions <em>F</em><sub>1<em>a</em></sub> and <em>F</em><sub>1<em>b</em></sub>.</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;Show that the generating function for the inverse
+transformation of <em>C</em><sub><em>a</em></sub> is  <tt>-</tt> <em>F</em><sub>1<em>a</em></sub>.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Show that the generating function for the composition
+<a name="%_idx_2770"></a><a name="%_idx_2772"></a>transformation <em>C</em><sub><em>a</em></sub> <small>o</small> <em>C</em><sub><em>b</em></sub> is <em>F</em><sub>1<em>a</em></sub>  +  <em>F</em><sub>1<em>b</em></sub>, using the fact
+that the generating function does not depend on the intermediate
+point.</p>
+<p>
+</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_5.17"></a>
+<b>Exercise 5.17.</b>&nbsp;&nbsp;<strong>Linear canonical transformations</strong><br>
+We consider systems with two degrees of freedom and transformations
+for which the Hamiltonian transforms by composition.</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;Consider the linear canonical transformations that are generated by 
+</p>
+<div align=left><img src="chap5-Z-G-275.gif" border="0"></div>
+<p>
+Show that these transformations are just the point transformations,
+and that the corresponding <em>F</em><sub>1</sub> is zero.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Other linear canonical transformations can be generated by
+</p>
+<div align=left><img src="chap5-Z-G-276.gif" border="0"></div>
+<p>
+Surely we can make even more generators by constructing <em>F</em><sub>3</sub>- and
+<em>F</em><sub>4</sub>-type transformations analogously.  Are all of the linear
+canonical transformations obtainable in this way?  If not, show one
+that cannot be so generated.</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;Can all linear canonical transformations be generated by
+compositions of transformations generated by the functions shown in
+parts <strong>a</strong> and <strong>b</strong> above?</p>
+<p>
+<strong>d</strong>.&nbsp;&nbsp;How many independent parameters are necessary to specify all
+possible linear canonical transformations for systems with two degrees
+of freedom?</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_5.18"></a>
+<b>Exercise 5.18.</b>&nbsp;&nbsp;<strong>Integral invariants</strong><br></p>
+<p>
+Consider the linear canonical transformation for a system with two
+degrees of freedom generated by the function:
+</p>
+<div align=left><img src="chap5-Z-G-277.gif" border="0"></div>
+<p>
+and the general parallelogram with a vertex at the origin and with
+adjacent sides starting at the origin and extending to the phase-space
+points (<em>x</em><sub>1<em>a</em></sub>, <em>x</em><sub>2<em>a</em></sub>, <em>p</em><sub>1<em>a</em></sub>, <em>p</em><sub>2<em>a</em></sub>) and (<em>x</em><sub>1<em>b</em></sub>, <em>x</em><sub>2<em>b</em></sub>, <em>p</em><sub>1<em>b</em></sub>, <em>p</em><sub>2<em>b</em></sub>).</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;Find the area of the given parallelogram and the area of the
+target parallelogram under the canonical transformation.  Notice that
+the area of the parallelogram is not preserved.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Find the areas of the projections of the given
+parallelogram and the areas of the projections of the target under
+canonical transformation.  Show that the sum of the areas of the
+projections on the action-like planes is preserved.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_5.19"></a>
+<b>Exercise 5.19.</b>&nbsp;&nbsp;<strong>Standard-map generating function</strong><br>
+Find a generating function for the standard map (see
+exercise&nbsp;<a href="book-Z-H-59.html#%_thm_5.5">5.5</a>).
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_5.20"></a>
+<b>Exercise 5.20.</b>&nbsp;&nbsp;<strong>An incorrect derivation</strong><br>
+<a name="%_idx_2774"></a>The following is an incorrect derivation of the rules for the
+generating function.  As you read it, try to find the bug.  Write an
+essay on this subject.  What is actually the problem?</p>
+<p>
+Let <em>L</em> and <em>L</em>' be the Lagrangians expressed in two coordinate
+systems for which the path is <em>q</em> and <em>q</em>', respectively.  We
+further assume that the values of <em>L</em> and <em>L</em>' on the path differ
+by the time derivative of a function of the configuration and time
+evaluated on the path.  This function can be written in terms of the
+path expressed in terms of both sets of coordinates.  Consider the
+function <em>F</em><sub>1</sub>(<em>t</em>, <em>q</em>, <em>q</em>'), and its value on the path
+<img src="chap1-Z-G-D-47.gif" border="0"><sub>1</sub>(<em>t</em>)  =  <em>F</em><sub>1</sub>(<em>t</em>, <em>q</em>(<em>t</em>), <em>q</em>'(<em>t</em>)) at time <em>t</em>.  The time
+derivative of <img src="chap1-Z-G-D-47.gif" border="0"><sub>1</sub> is
+<a name="EQUATION_5.317"></a></p>
+<div align=left><img src="chap5-Z-G-278.gif" border="0"></div>
+<p>
+The relation between the Lagrangians is therefore
+<a name="EQUATION_5.318"></a></p>
+<div align=left><img src="chap5-Z-G-279.gif" border="0"></div>
+<p></p>
+<p>
+Now rewrite the Lagrangians in terms of the Hamiltonians 
+<a name="EQUATION_5.319"></a></p>
+<div align=left><img src="chap5-Z-G-280.gif" border="0"></div>
+<p>
+where <em>p</em> is determined by <em>t</em>, <em>q</em>, <img src="front-Z-G-D-1.gif" border="0">, and the Lagrangian
+<em>L</em>.  Similar relations hold for the primed functions.  Let's collect
+terms:
+<a name="EQUATION_5.320"></a></p>
+<div align=left><img src="chap5-Z-G-281.gif" border="0"></div>
+<p></p>
+<p>
+If the relations&nbsp;(<a href="#EQUATION_5.147">5.147</a>-<a href="#EQUATION_5.147">5.149</a>) hold, then each of these
+lines is independently zero, apparently verifying that the Lagrangians
+differ by a total time derivative.  If this were true then the
+equations of motion would be preserved and the transformation would
+have been shown to be canonical.<a name="call_footnote_Temp_389" href="#footnote_Temp_389"><sup><small>23</small></sup></a></p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_368" href="#call_footnote_Temp_368"><sup><small>17</small></sup></a> Here we use indices to select particular components of
+<a name="%_idx_2664"></a><a name="%_idx_2666"></a><a name="%_idx_2668"></a>  structured objects.  If an index symbol appears both as a superscript
+and as a subscript in an expression, the value of the expression is
+the sum over all possible values of the index symbol of the designated
+components (Einstein summation convention).  Thus, for example, if
+<img src="front-Z-G-D-1.gif" border="0"> and <em>p</em> are of dimension <em>n</em> then the indicated product <em>p</em><sub><em>i</em></sub>
+<img src="front-Z-G-D-1.gif" border="0"><sup><em>i</em></sup> is to be interpreted as  <img src="chap5-Z-G-D-5.gif" border="0"><sub><em>i</em>=0</sub><sup><em>n</em><tt>-</tt>1</sup> <em>p</em><sub><em>i</em></sub> <img src="front-Z-G-D-1.gif" border="0"><sup><em>i</em></sup>
+. </p>
+
+<p><a name="footnote_Temp_369" href="#call_footnote_Temp_369"><sup><small>18</small></sup></a> A structure is nonsingular if the determinant of the matrix
+<a name="%_idx_2670"></a>  representation of the structure is nonzero.</p>
+
+<p><a name="footnote_Temp_371" href="#call_footnote_Temp_371"><sup><small>19</small></sup></a> Point transformations are not in this class: we cannot solve
+for the momenta in terms of the positions for
+point transformations, because for a point transformation the primed
+and unprimed coordinates can be deduced from each other, so there is
+not enough information in the coordinates to deduce the momenta.</p>
+
+<p><a name="footnote_Temp_372" href="#call_footnote_Temp_372"><sup><small>20</small></sup></a> Let <em>F</em> be defined as the path-independent line integral 
+</p>
+<div align=left><img src="chap5-Z-G-171.gif" border="0"></div>
+<p> 
+then
+</p>
+<div align=left><img src="chap5-Z-G-172.gif" border="0"></div>
+<p></p>
+<p>
+The partial derivatives of <em>F</em> do not depend on the constant point
+<em>x</em><sub>0</sub> or the path from <em>x</em><sub>0</sub> to <em>x</em>, so we can choose a path that is
+convenient for evaluating the partial derivative.
+Let 
+</p>
+<div align=left><img src="chap5-Z-G-173.gif" border="0"></div>
+<p>
+The partial derivative of <em>F</em> with respect to the <em>i</em>th component 
+of <em>F</em> is
+</p>
+<div align=left><img src="chap5-Z-G-174.gif" border="0"></div>
+<p>
+The function <em>H</em> is defined by the line integral 
+</p>
+<div align=left><img src="chap5-Z-G-175.gif" border="0"></div>
+<p>
+where the second line follows because the line integral is along the
+coordinate direction <em>x</em><sup><em>i</em></sup>.  This is now an ordinary integral, so
+</p>
+<div align=left><img src="chap5-Z-G-176.gif" border="0"></div>
+<p>
+</p>
+
+<p><a name="footnote_Temp_373" href="#call_footnote_Temp_373"><sup><small>21</small></sup></a> There may be some singular cases and topological problems
+that prevent this from being rigorously true.</p>
+
+<p><a name="footnote_Temp_376" href="#call_footnote_Temp_376"><sup><small>22</small></sup></a> The various generating functions are traditionally
+known by the names <em>F</em><sub>1</sub>, <em>F</em><sub>2</sub>, <em>F</em><sub>3</sub>, and <em>F</em><sub>4</sub>.  Please don't
+blame us.</p>
+
+<p><a name="footnote_Temp_389" href="#call_footnote_Temp_389"><sup><small>23</small></sup></a> Many texts further muddy the matter by introducing an
+unjustified independence argument here: they argue that because
+<img src="front-Z-G-D-1.gif" border="0"> and <img src="chap5-Z-G-D-8.gif" border="0"> are independent the
+relations&nbsp;(<a href="#EQUATION_5.147">5.147</a>-<a href="#EQUATION_5.147">5.149</a>) must hold.  This is silly,
+because <em>p</em> and <em>p</em>' are functions of <img src="front-Z-G-D-1.gif" border="0"> and <img src="chap5-Z-G-D-8.gif" border="0">,
+respectively, so there are implied dependencies of the velocities in
+many places, and thus it is unjustified to separately set pieces of this
+equation to zero.  However, notwithstanding this problem, the
+derivation of the fact that the transformation is canonical is
+fallacious.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-62.html">previous</a></span><span>, <a href="book-Z-H-64.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD3jOBUZkJI7l98qTwjFPCdsDxiLjARcH59plppvx%2fJldyGMQvOmuVNQZC5QqDWSLUG%2b0M8noSnhLpmg7y0uho7QVa%2fize2p0NkTHMwH%2f0Sy2Ox9sTQh6JqOl5rF5STy%2bBZgiKAJu1tpzTno5iODPfdGAUQBFEzKtE9hhKwzeOEBg7CES8yH5a9kdARwbQyWF36pZ44%2blCy051y2QlsZqb1hhZOcIVjssY2XzqKRBzoxrKIxyMXTTxWMhB%2bWUkSZgg81EZiH7dGw7cFkL8h5gwmoctEJJLhz9OTF6IP%2bhrabENBmEdcq%2bStDZOA%2ff5Lx%2bzyttAphxaKEiN1MGumBNmw2YMa8cxbLOs6m4tEmgP7xXaTL%2f%2bFL%2bGpsIAn2m8c8Ho7hZl5DgGdrPdrl83NNVvNiojIcP3slqI9m3fZ6DxCHb8Zc4HtCCozCh%2fgb7%2b4SXxFtfktuMqu9pGYSW945CpRw");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

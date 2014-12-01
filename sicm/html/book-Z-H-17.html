@@ -1,0 +1,750 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-16.html">previous</a></span><span>, <a href="book-Z-H-18.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_1.10"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_1.10">1.10&nbsp;&nbsp;Constrained Motion</a></h2>
+<p>
+<a name="%_idx_982"></a><a name="%_idx_984"></a>
+An advantage of the Lagrangian approach is that coordinates can
+often be chosen that exactly describe the freedom of the system,
+automatically incorporating any constraints.  We may also use
+coordinates that have more freedom than the system
+actually has and consider explicit constraints among the 
+coordinates.  For example, the planar pendulum has a one-dimensional
+configuration space.  We have formulated this problem using the angle
+from the vertical as the configuration coordinate.  Alternatively, we
+may choose to represent the pendulum as a body moving in the plane,
+constrained to be on the circle of the correct radius around the
+pivot.  We would like to have valid descriptions for both choices and
+show they are equivalent.  In this section we develop tools to handle
+problems with explicit constraints.  The constraints considered here
+are more general than those used in the demonstration that the
+Lagrangian for systems with rigid constraints can be written as the
+difference of kinetic and potential energies (see
+section&nbsp;<a href="book-Z-H-13.html#%_sec_1.6.2">1.6.2</a>).</p>
+<p>
+Suppose the configuration of a system with <em>n</em> degrees of freedom
+is specified by <em>n</em> + 1 coordinates and that configuration paths <em>q</em> are
+constrained to satisfy some relation of the form
+<a name="EQUATION_1.175"></a></p>
+<div align=left><img src="chap1-Z-G-223.gif" border="0"></div>
+<p>
+How do we formulate the equations of motion?  One approach would be to
+use the constraint equation to eliminate one of the 
+coordinates in favor of the rest; then the evolution of the
+reduced set of generalized coordinates would be described by the usual
+Lagrange equations.  The equations governing the evolution of
+coordinates that are not fully independent should be
+equivalent.  </p>
+<p>
+We can address the problem of formulating equations of motion for
+systems with redundant coordinates by returning to the action
+principle.  Realizable paths are distinguished from other paths by
+having stationary action.  Stationary refers to the fact that the
+action does not change with certain small variations of the path.
+What variations should be considered?  We have seen that
+velocity-independent rigid constraints can be used to eliminate
+redundant coordinates.  In the irredundant coordinates we distinguished
+realizable paths by using variations that by construction satisfy the
+constraints.  Thus in the case where constraints can be used to
+eliminate redundant coordinates we can restrict the variations in the
+path to those that are consistent with the constraints.</p>
+<p>
+So how does the restriction of the possible variations affect the
+argument that led to Lagrange's equations (refer to
+section&nbsp;<a href="book-Z-H-12.html#%_sec_1.5">1.5</a>)?  Actually most of the
+calculation is unaffected.  The condition that the action is
+stationary still reduces to the 
+condition&nbsp;(<a href="book-Z-H-12.html#EQUATION_1.34">1.34</a>):
+<a name="EQUATION_1.176"></a></p>
+<div align=left><img src="chap1-Z-G-224.gif" border="0"></div>
+<p>
+At this point we argued that because the variations <img src="chap1-Z-G-D-13.gif" border="0"> are
+arbitrary (except for conditions at the endpoints), the only way for
+the integral to be zero is for the integrand to be zero.  Furthermore,
+the freedom in our choice of <img src="chap1-Z-G-D-13.gif" border="0"> allowed us to deduce that the factor 
+multiplying <img src="chap1-Z-G-D-13.gif" border="0"> in the integrand must be identically zero, thereby
+deriving Lagrange's equations.</p>
+<p>
+Now the choice of <img src="chap1-Z-G-D-13.gif" border="0"> is not completely free.  We can still deduce
+from the arbitrariness of <img src="chap1-Z-G-D-13.gif" border="0"> that the integrand must be zero,<a name="call_footnote_Temp_155" href="#footnote_Temp_155"><sup><small>88</small></sup></a>
+but we can no longer deduce that the factor
+multiplying <img src="chap1-Z-G-D-13.gif" border="0"> is zero (only that the projection of this factor
+onto acceptable variations is zero).  So we have
+<a name="EQUATION_1.177"></a></p>
+<div align=left><img src="chap1-Z-G-225.gif" border="0"></div>
+<p>
+with <img src="chap1-Z-G-D-13.gif" border="0"> subject to the constraints.</p>
+<p>
+A path <em>q</em> satisfies the constraint if <img src="chap1-Z-G-D-54.gif" border="0">[<em>q</em>]
+ =  <img src="chap1-Z-G-D-16.gif" border="0"> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>]  =  0.  The constraint must be satisfied even
+for the varied path, so we allow only variations <img src="chap1-Z-G-D-13.gif" border="0"> for which the
+variation of the constraint is zero:
+<a name="EQUATION_1.178"></a></p>
+<div align=left><img src="chap1-Z-G-226.gif" border="0"></div>
+<p>
+We can say that the variation must be ``tangent'' to the constraint
+surface.
+Expanding this with the chain rule, a variation <img src="chap1-Z-G-D-13.gif" border="0"> is tangent to the
+constraint surface <img src="chap1-Z-G-D-16.gif" border="0"> if 
+<a name="EQUATION_1.179"></a></p>
+<div align=left><img src="chap1-Z-G-227.gif" border="0"></div>
+<p>
+Note that these are functions of time; the variation at a given time
+is tangent to the constraint at that time.</p>
+<p>
+
+</p>
+<a name="%_sec_1.10.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_1.10.1">1.10.1&nbsp;&nbsp;Coordinate Constraints</a></h3>
+<p><a name="%_idx_986"></a><a name="%_idx_988"></a><a name="%_idx_990"></a>
+Consider constraints that do not depend on velocities: 
+</p>
+<div align=left><img src="chap1-Z-G-228.gif" border="0"></div>
+<p> 
+In this case the variation is tangent to the
+constraint surface if
+<a name="EQUATION_1.180"></a></p>
+<div align=left><img src="chap1-Z-G-229.gif" border="0"></div>
+<p>
+Together, equations&nbsp;(<a href="#EQUATION_1.177">1.177</a>) and
+(<a href="#EQUATION_1.180">1.180</a>) should determine the motion, but how do
+we eliminate <img src="chap1-Z-G-D-13.gif" border="0">?  The residual of the Lagrange
+equations is orthogonal<a name="call_footnote_Temp_156" href="#footnote_Temp_156"><sup><small>89</small></sup></a>
+to any <img src="chap1-Z-G-D-13.gif" border="0"> that is orthogonal to the
+normal to the constraint surface.  A vector that is orthogonal to
+all vectors orthogonal to a given vector is parallel to the given
+vector.  Thus, the residual of Lagrange's equations is parallel to the
+normal to the constraint surface; the two must be proportional:
+<a name="EQUATION_1.181"></a></p>
+<div align=left><img src="chap1-Z-G-230.gif" border="0"></div>
+<p>
+That the two vectors are parallel everywhere along the path does not
+guarantee that the proportionality factor is the same at each moment
+along the path, so the proportionality factor <img src="chap1-Z-G-D-40.gif" border="0"> is some
+function of time, which may depend on the path under consideration.
+These equations, with the constraint equation <img src="chap1-Z-G-D-16.gif" border="0"> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>]
+ =  0, are the governing equations.  These equations are sufficient to
+determine the path <em>q</em> and to eliminate the unknown function
+<img src="chap1-Z-G-D-40.gif" border="0">.</p>
+<p>
+</p>
+<a name="%_sec_Temp_157"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_157">Now watch this</a></h4>
+<p><a name="%_idx_1000"></a><a name="%_idx_1002"></a>Suppose we form an augmented Lagrangian treating
+<img src="chap1-Z-G-D-40.gif" border="0"> as one of the coordinates:
+<a name="EQUATION_1.182"></a></p>
+<div align=left><img src="chap1-Z-G-231.gif" border="0"></div>
+<p>
+The Lagrange equations associated with the coordinates <em>q</em> are just
+the modified Lagrange
+equations&nbsp;(<a href="#EQUATION_1.181">1.181</a>),
+and the Lagrange equation associated with <img src="chap1-Z-G-D-40.gif" border="0"> is just the
+constraint equation.  (Note that <img src="chap1-Z-G-D-41.gif" border="0"> does not appear in
+the augmented Lagrangian.)  So the Lagrange equations for this augmented
+Lagrangian fully encapsulate the modification to the Lagrange
+equations that is imposed by the addition of an explicit coordinate
+constraint, at the expense of introducing extra degrees of freedom.  
+Notice that this Lagrangian is of the same form as
+the Lagrangian (equation&nbsp;<a href="book-Z-H-13.html#EQUATION_1.89">1.89</a>) that we used in the
+derivation of <em>L</em> = <em>T</em> <tt>-</tt> <em>V</em> for rigid systems
+(section&nbsp;<a href="book-Z-H-13.html#%_sec_1.6.2">1.6.2</a>).</p>
+<p>
+
+</p>
+<a name="%_sec_Temp_158"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_158">Alternatively</a></h4>
+<p>How do we know that we have enough information to eliminate the
+unknown function <img src="chap1-Z-G-D-40.gif" border="0"> from
+equations&nbsp;(<a href="#EQUATION_1.181">1.181</a>), or
+that the extra degree of freedom introduced in
+Lagrangian&nbsp;(<a href="#EQUATION_1.182">1.182</a>) is purely formal?</p>
+<p>
+If <img src="chap1-Z-G-D-40.gif" border="0"> could be written as a function of the solution
+state path, then it would be clear that it is determined by the state
+and can thus be eliminated.  Suppose <img src="chap1-Z-G-D-40.gif" border="0"> can be written as a
+composition of a state-dependent function with the path: <img src="chap1-Z-G-D-40.gif" border="0">
+ =  <img src="chap1-Z-G-D-55.gif" border="0"> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>].  Consider the Lagrangian
+<a name="EQUATION_1.183"></a></p>
+<div align=left><img src="chap1-Z-G-232.gif" border="0"></div>
+<p>
+This new Lagrangian has no extra degrees of freedom.
+The Lagrange equations for <em>L</em>'' are the Lagrange equations for <em>L</em>
+with additional terms arising from the product of <img src="chap1-Z-G-D-55.gif" border="0"> <img src="chap1-Z-G-D-16.gif" border="0">.
+Applying the Euler-Lagrange operator  <em>E</em> (see
+section&nbsp;<a href="book-Z-H-16.html#%_sec_1.9">1.9</a>) to this Lagrangian gives<a name="call_footnote_Temp_159" href="#footnote_Temp_159"><sup><small>90</small></sup></a>
+<a name="EQUATION_1.184"></a></p>
+<div align=left><img src="chap1-Z-G-234.gif" border="0"></div>
+<p>
+Composition of  <em>E</em>[<em>L</em>''] with <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>] gives the Lagrange
+equations for the path <em>q</em>.  Using the fact that
+the constraint is satisfied on the path
+<img src="chap1-Z-G-D-16.gif" border="0"> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>]  =  0 and consequently
+ <em>D</em><sub><em>t</em></sub> <img src="chap1-Z-G-D-16.gif" border="0"> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>]  =  0,
+we have
+<a name="EQUATION_1.185"></a></p>
+<div align=left><img src="chap1-Z-G-235.gif" border="0"></div>
+<p>
+where we have used <img src="chap1-Z-G-D-40.gif" border="0">  =  <img src="chap1-Z-G-D-55.gif" border="0"> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>].
+If we now use the fact that we are dealing only with coordinate
+constraints, <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <img src="chap1-Z-G-D-16.gif" border="0">  =  0, then
+<a name="EQUATION_1.186"></a></p>
+<div align=left><img src="chap1-Z-G-236.gif" border="0"></div>
+<p>
+The Lagrange equations are the same as those derived from
+the augmented Lagrangian <em>L</em>'.  The difference is that now we see that
+<img src="chap1-Z-G-D-40.gif" border="0">  =  <img src="chap1-Z-G-D-55.gif" border="0"> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>] is determined by the unaugmented state.
+This is the same as saying that <img src="chap1-Z-G-D-40.gif" border="0"> can be eliminated.</p>
+<p>
+Considering only the formal validity of the Lagrange equations for the
+augmented Lagrangian, we could not deduce that <img src="chap1-Z-G-D-40.gif" border="0"> could
+be written as the composition of a state-dependent function <img src="chap1-Z-G-D-55.gif" border="0">
+with <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>].  The explicit Lagrange equations derived from the
+augmented Lagrangian depend on the accelerations <em>D</em><sup>2</sup><em>q</em> as well as
+<img src="chap1-Z-G-D-40.gif" border="0">, so we cannot deduce separately that either is the
+composition of a state-dependent function and <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>].  However, now
+we see that <img src="chap1-Z-G-D-40.gif" border="0"> is such a composition.  This allows us to
+deduce that <em>D</em><sup>2</sup><em>q</em> is also a state-dependent function composed
+with the path.  The evolution of the system is determined from the
+dynamical state.</p>
+<p>
+<a name="FIGURE_1.8"></a></p>
+<div align=left><img src="chap1-Z-G-237.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_160"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_160">The pendulum using constraints</a></h4>
+<p><a name="%_idx_1004"></a>The pendulum can be formulated as the motion of a massive particle in
+a vertical plane subject to the constraint that the distance to the
+pivot is constant (see figure&nbsp;<a href="#FIGURE_1.8">1.8</a>).</p>
+<p>
+In this formulation, the kinetic and potential energies in the
+Lagrangian are those of an unconstrained particle in a uniform
+gravitational acceleration.  A Lagrangian for the unconstrained
+particle is
+<a name="EQUATION_1.187"></a></p>
+<div align=left><img src="chap1-Z-G-238.gif" border="0"></div>
+<p>
+The constraint that the pendulum moves in a circle of radius <em>l</em> about
+the pivot is<a name="call_footnote_Temp_161" href="#footnote_Temp_161"><sup><small>91</small></sup></a>
+<a name="EQUATION_1.188"></a></p>
+<div align=left><img src="chap1-Z-G-239.gif" border="0"></div>
+<p>
+The augmented Lagrangian is
+<a name="EQUATION_1.189"></a></p>
+<div align=left><img src="chap1-Z-G-240.gif" border="0"></div>
+<p>
+The Lagrange equations for the augmented Lagrangian are
+<a name="EQUATION_1.190"></a></p>
+<div align=left><img src="chap1-Z-G-241.gif" border="0"></div>
+<p>
+These equations are sufficient to solve for the motion of
+the pendulum.  </p>
+<p>
+It should not be surprising that these equations simplify if we switch
+to ``polar'' coordinates
+<a name="EQUATION_1.193"></a></p>
+<div align=left><img src="chap1-Z-G-242.gif" border="0"></div>
+<p>
+Substituting this into the constraint equation, we determine that <em>r</em>  = 
+<em>l</em>, a constant.  Forming the derivatives and substituting into the
+other two equations, we find
+<a name="EQUATION_1.194"></a></p>
+<div align=left><img src="chap1-Z-G-243.gif" border="0"></div>
+<p>
+Multiplying the first by cos <img src="chap1-Z-G-D-19.gif" border="0"> and the second by sin <img src="chap1-Z-G-D-19.gif" border="0">
+and adding, we find
+<a name="EQUATION_1.196"></a></p>
+<div align=left><img src="chap1-Z-G-244.gif" border="0"></div>
+<p>
+which we recognize as the correct equation for the pendulum.  This is
+the same as the Lagrange equation for the pendulum using the
+unconstrained generalized coordinate <img src="chap1-Z-G-D-19.gif" border="0">.  For completeness, we
+can find <img src="chap1-Z-G-D-40.gif" border="0"> in terms of the other variables:
+<a name="EQUATION_1.197"></a></p>
+<div align=left><img src="chap1-Z-G-245.gif" border="0"></div>
+<p>
+This confirms that <img src="chap1-Z-G-D-40.gif" border="0"> is really the composition of a function
+of the state with the state path.  Notice that 2 <em>l</em> <img src="chap1-Z-G-D-40.gif" border="0"> is a
+<a name="%_idx_1006"></a><a name="%_idx_1008"></a>force -- it is the sum of the outward component of the gravitational
+force and the centrifugal force.  Using this interpretation in the two
+coordinate equations of motion, we see that the terms involving
+<img src="chap1-Z-G-D-40.gif" border="0"> are the forces that must be applied to the unconstrained
+particle to make it move on the circle required by the constraints.
+Equivalently, we may think of 2 <em>l</em> <img src="chap1-Z-G-D-40.gif" border="0"> as the tension in the
+pendulum rod that holds the mass.<a name="call_footnote_Temp_162" href="#footnote_Temp_162"><sup><small>92</small></sup></a></p>
+<p>
+</p>
+<a name="%_sec_Temp_163"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_163">Building systems from parts</a></h4>
+<p><a name="%_idx_1010"></a><a name="%_idx_1012"></a>The method of using augmented Lagrangians to enforce constraints on
+dynamical systems provides a way to analyze a compound system by
+combining the results of the analysis of the parts of the system and
+the coupling between them.</p>
+<p>
+<a name="%_idx_1014"></a>Consider the compound spring-mass system shown at the top of
+figure&nbsp;<a href="#FIGURE_1.9">1.9</a>.  We could analyze this as a monolithic
+system with two configuration coordinates <em>x</em><sub>1</sub> and <em>x</em><sub>2</sub>,
+representing the extensions of the springs from their equilibrium
+lengths <em>X</em><sub>1</sub> and <em>X</em><sub>2</sub>.</p>
+<p>
+An alternative procedure is to break the system into several parts.
+In our spring-mass system we can choose two parts: one is a spring and
+mass attached to the wall, and the other is a spring and mass with its
+attachment point at an additional configuration coordinate <img src="chap1-Z-G-D-18.gif" border="0">.  We
+can formulate a Lagrangian for each part separately.  We can then
+choose a Lagrangian for the composite system as the sum of the two
+component Lagrangians with a constraint <img src="chap1-Z-G-D-18.gif" border="0">  =  <em>X</em><sub>1</sub>  +  <em>x</em><sub>1</sub> to
+accomplish the coupling.</p>
+<p>
+<a name="FIGURE_1.9"></a></p>
+<div align=left><img src="chap1-Z-G-246.gif" border="0"></div>
+<p></p>
+<p>
+Let's see how this works.
+The Lagrangian for the subsystem attached to the wall is 
+<a name="EQUATION_1.198"></a></p>
+<div align=left><img src="chap1-Z-G-247.gif" border="0"></div>
+<p>
+and the Lagrangian for the subsystem that attaches to it is
+<a name="EQUATION_1.199"></a></p>
+<div align=left><img src="chap1-Z-G-248.gif" border="0"></div>
+<p>
+We construct a Lagrangian for the system composed from these parts as
+a sum of the Lagrangians for each of the separate parts, with a
+coupling term to enforce the constraint:
+<a name="EQUATION_1.200"></a></p>
+<div align=left><img src="chap1-Z-G-249.gif" border="0"></div>
+<p>
+Thus we can write Lagrange's equations for the four configuration
+coordinates, in order, as follows:
+<a name="EQUATION_1.201"></a></p>
+<div align=left><img src="chap1-Z-G-250.gif" border="0"></div>
+<p>
+Notice that in this system <img src="chap1-Z-G-D-40.gif" border="0"> is the force of
+constraint holding the system together.
+We can now eliminate the ``glue'' coordinates <img src="chap1-Z-G-D-18.gif" border="0"> and
+<img src="chap1-Z-G-D-40.gif" border="0"> to obtain the equations of
+motion in the coordinates <em>x</em><sub>1</sub> and&nbsp;<em>x</em><sub>2</sub>:
+<a name="EQUATION_1.205"></a></p>
+<div align=left><img src="chap1-Z-G-251.gif" border="0"></div>
+<p></p>
+<p>
+This strategy can be generalized.  We can make a library of primitive
+components.  Each component may be characterized by a Lagrangian with
+additional degrees of freedom for the <em>terminals</em> where that
+component may be attached to others.  We then can construct composite
+Lagrangians by combining components, using constraints to glue together
+the terminals.</p>
+<p>
+</p>
+<p><a name="%_thm_1.34"></a>
+<b>Exercise 1.34.</b>&nbsp;&nbsp;<strong>Combining Lagrangians</strong><br>
+<br><strong>a</strong>.&nbsp;&nbsp;Make another primitive component, compatible with the
+spring-mass structures described in this section.  For example, make a
+pendulum that can attach to the spring-mass system.  Build a
+combination and derive the equations of motion.  Be careful, the
+algebra is horrible if you choose bad coordinates.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;For a nice little project, construct a family of compatible
+mechanical parts, characterized by appropriate Lagrangians, that can
+be combined in a variety of ways to make interesting mechanisms.
+Remember that in a good language the result of combining pieces should
+be a piece of the same kind that can be further combined with other pieces.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.35"></a>
+<b>Exercise 1.35.</b>&nbsp;&nbsp;<strong>Bead on a triaxial surface</strong><br>
+Consider again the motion of a bead constrained to move on a triaxial
+surface (exercise&nbsp;<a href="book-Z-H-13.html#%_thm_1.18">1.18</a>).  Reformulate
+this using rectangular coordinates as the generalized coordinates with
+an explicit constraint that the bead stay on the surface.  Find 
+a Lagrangian and show that the Lagrange equations are equivalent to 
+those found in exercise&nbsp;<a href="book-Z-H-13.html#%_thm_1.18">1.18</a>.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.36"></a>
+<b>Exercise 1.36.</b>&nbsp;&nbsp;<strong>Motion of a tiny golf ball</strong><br>
+<a name="%_idx_1016"></a>Consider the motion of a golf ball idealized as a point mass
+constrained to a frictionless smooth surface of varying height <em>h</em>(<em>x</em>,
+<em>y</em>) in a uniform gravitational field with acceleration <em>g</em>.</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;Find an augmented Lagrangian for this system, and derive the
+equations governing the motion of the point mass in <em>x</em> and <em>y</em>.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Under what conditions is this approximated by a potential
+function <em>V</em>(<em>x</em>, <em>y</em>)  =  <em>m</em><em>g</em><em>h</em>(<em>x</em>, <em>y</em>)?</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;Assume that <em>h</em>(<em>x</em>, <em>y</em>) is axisymmetric about
+<em>x</em> = <em>y</em> = 0.  Can you find such an <em>h</em> that yields motions with closed
+orbits?
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_1.10.2"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_1.10.2">1.10.2&nbsp;&nbsp;Derivative Constraints</a></h3>
+<p><a name="%_idx_1018"></a><a name="%_idx_1020"></a><a name="%_idx_1022"></a>Here we investigate velocity-dependent constraints that are ``total
+time derivatives'' of velocity-independent constraints.  The methods
+presented so far do not apply because the constraint is
+velocity-dependent.</p>
+<p>
+Consider a velocity-dependent constraint  <img src="chap1-Z-G-D-56.gif" border="0">  =  0.
+That <img src="chap1-Z-G-D-56.gif" border="0"> is a total time derivative means that there exists a
+velocity-independent function <img src="chap1-Z-G-D-16.gif" border="0"> such that
+<a name="EQUATION_1.207"></a></p>
+<div align=left><img src="chap1-Z-G-252.gif" border="0"></div>
+<p>
+That <img src="chap1-Z-G-D-16.gif" border="0"> is velocity-independent means <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <img src="chap1-Z-G-D-16.gif" border="0">  =  0.
+As state functions the relationship between <img src="chap1-Z-G-D-56.gif" border="0"> and <img src="chap1-Z-G-D-16.gif" border="0"> is
+<a name="EQUATION_1.208"></a></p>
+<div align=left><img src="chap1-Z-G-253.gif" border="0"></div>
+<p>
+Given a <img src="chap1-Z-G-D-56.gif" border="0"> we can find <img src="chap1-Z-G-D-16.gif" border="0"> by solving this linear partial
+differential equation.  The solution is determined up to a constant,
+so <img src="chap1-Z-G-D-56.gif" border="0">  =  0 implies <img src="chap1-Z-G-D-16.gif" border="0">  =  <em>K</em> for some constant <em>K</em>.  On the other
+hand, if we knew <img src="chap1-Z-G-D-16.gif" border="0">  =  <em>K</em> then <img src="chap1-Z-G-D-56.gif" border="0">  =  0 follows.  Thus the
+velocity-dependent constraint  <img src="chap1-Z-G-D-56.gif" border="0">  =  0 is equivalent to the
+velocity-independent constraint <img src="chap1-Z-G-D-16.gif" border="0">  =  <em>K</em>, and we know how to find
+Lagrange equations for such systems.</p>
+<p>
+If <em>L</em> is a Lagrangian for the unconstrained problem, the Lagrange
+equations with the constraint <img src="chap1-Z-G-D-16.gif" border="0">  =  <em>K</em> are
+<a name="EQUATION_1.209"></a></p>
+<div align=left><img src="chap1-Z-G-254.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-40.gif" border="0"> is a function of time that will be eliminated during the
+solution process.  The constant <em>K</em> does not affect the Lagrange 
+equations.  The function <img src="chap1-Z-G-D-16.gif" border="0"> is independent of velocity, <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub>
+<img src="chap1-Z-G-D-16.gif" border="0">  =  0, so the Lagrange equations become
+<a name="EQUATION_1.210"></a></p>
+<div align=left><img src="chap1-Z-G-255.gif" border="0"></div>
+<p>
+From equation&nbsp;(<a href="#EQUATION_1.208">1.208</a>) we see that
+<a name="EQUATION_1.211"></a></p>
+<div align=left><img src="chap1-Z-G-256.gif" border="0"></div>
+<p>
+so the Lagrange equations with the constraint <img src="chap1-Z-G-D-56.gif" border="0">  =  0 are
+<a name="EQUATION_1.212"></a></p>
+<div align=left><img src="chap1-Z-G-257.gif" border="0"></div>
+<p>
+The important feature is that we can write the Lagrange equations
+directly in terms of <img src="chap1-Z-G-D-56.gif" border="0"> without having to produce the integral
+<img src="chap1-Z-G-D-16.gif" border="0">.  But the validity of these Lagrange equations depends on
+the existence of the integral <img src="chap1-Z-G-D-16.gif" border="0">.</p>
+<p>
+<a name="%_idx_1024"></a><a name="%_idx_1026"></a>It turns out that the augmented Lagrangian trick also works here.
+These Lagrange equations are given if we augment the Lagrangian with
+the constraint <img src="chap1-Z-G-D-56.gif" border="0"> multiplied by a function of time&nbsp;<img src="chap1-Z-G-D-40.gif" border="0">':
+<a name="EQUATION_1.213"></a></p>
+<div align=left><img src="chap1-Z-G-258.gif" border="0"></div>
+<p>
+The Lagrange equations for <em>L</em>' turn out to be
+<a name="EQUATION_1.214"></a></p>
+<div align=left><img src="chap1-Z-G-259.gif" border="0"></div>
+<p>
+which, 
+with the identification <img src="chap1-Z-G-D-40.gif" border="0">  =   <tt>-</tt>  <em>D</em><img src="chap1-Z-G-D-40.gif" border="0">', are the same as
+Lagrange equations&nbsp;(<a href="#EQUATION_1.212">1.212</a>).</p>
+<p>
+Sometimes a problem can be naturally formulated in terms of
+velocity-dependent constraints.  The formalism we have developed will
+handle any velocity-dependent constraint that can be written in terms
+of the derivative of a coordinate constraint.  Such a constraint is
+called an <a name="%_idx_1028"></a><a name="%_idx_1030"></a><a name="%_idx_1032"></a><a name="%_idx_1034"></a><em>integrable constraint</em>.  Any system for which the
+constraints can be put in the form of a coordinate constraint, or are
+already in that form, is called a <em>holonomic system</em>.</p>
+<p>
+</p>
+<p><a name="%_thm_1.37"></a>
+<b>Exercise 1.37.</b>&nbsp;&nbsp;<strong></strong><br>
+Show that the augmented
+Lagrangian&nbsp;(<a href="#EQUATION_1.213">1.213</a>) does lead to the
+Lagrange
+equations&nbsp;(<a href="#EQUATION_1.214">1.214</a>), taking
+into account the fact that <img src="chap1-Z-G-D-56.gif" border="0"> is a total time derivative of <img src="chap1-Z-G-D-16.gif" border="0">.
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_168"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_168">Goldstein's hoop</a></h4>
+<p><a name="%_idx_1036"></a>Here we consider a problem for which the constraint can be represented
+as a time derivative of a coordinate constraint: a
+hoop of mass <em>M</em> rolling,
+without slipping, down a (one-dimensional) inclined plane (see
+figure&nbsp;<a href="#FIGURE_1.10">1.10</a>).<a name="call_footnote_Temp_169" href="#footnote_Temp_169"><sup><small>93</small></sup></a></p>
+<p>
+<a name="FIGURE_1.10"></a></p>
+<div align=left><img src="chap1-Z-G-260.gif" border="0"></div>
+<p></p>
+<p>
+We will formulate this problem in terms of the two
+coordinates&nbsp;<img src="chap1-Z-G-D-19.gif" border="0">,
+the rotation of an arbitrary point on the hoop from an
+arbitrary reference direction, and <em>x</em>, the linear progress down the
+inclined plane.  The constraint is that the hoop does not slip.
+Thus a change in <img src="chap1-Z-G-D-19.gif" border="0"> is exactly reflected in a change in <em>x</em>;
+the constraint function is
+<a name="EQUATION_1.215"></a></p>
+<div align=left><img src="chap1-Z-G-261.gif" border="0"></div>
+<p>
+This constraint is phrased as a relation among generalized velocities, but it
+could be integrated to get <em>x</em>  =  <em>R</em> <img src="chap1-Z-G-D-19.gif" border="0">  +  <em>c</em>.  We may form our
+augmented Lagrangian with either the integrated constraint or its
+derivative.</p>
+<p>
+The kinetic energy has two parts, the energy of rotation of the hoop
+and the energy of the motion of its center of mass.<a name="call_footnote_Temp_170" href="#footnote_Temp_170"><sup><small>94</small></sup></a>
+The potential
+energy of the hoop decreases as the height decreases.  Thus we may
+write the augmented Lagrangian:
+<a name="EQUATION_1.216"></a></p>
+<div align=left><img src="chap1-Z-G-262.gif" border="0"></div>
+<p>
+Lagrange's equations are
+<a name="EQUATION_1.217"></a></p>
+<div align=left><img src="chap1-Z-G-263.gif" border="0"></div>
+<p>
+And by differentiation of the third Lagrange equation we obtain 
+<a name="EQUATION_1.220"></a></p>
+<div align=left><img src="chap1-Z-G-264.gif" border="0"></div>
+<p></p>
+<p>
+By combining these equations we can solve for the
+dynamical quantities of interest.  For this case of a rolling hoop the
+linear acceleration
+<a name="EQUATION_1.221"></a></p>
+<div align=left><img src="chap1-Z-G-265.gif" border="0"></div>
+<p>
+is just half of what it would have been if the mass had just slid down
+a frictionless plane without rotating.  Note that for this hoop <em>D</em><sup>2</sup><em>x</em>
+is independent of both <em>M</em> and <em>R</em>.  
+We see from the Lagrange equations
+that <em>D</em><img src="chap1-Z-G-D-40.gif" border="0"> can be interpreted as the friction force involved
+in enforcing the constraint.  The frictional force of constraint is
+<a name="EQUATION_1.222"></a></p>
+<div align=left><img src="chap1-Z-G-266.gif" border="0"></div>
+<p>
+and the angular acceleration is 
+<a name="EQUATION_1.223"></a></p>
+<div align=left><img src="chap1-Z-G-267.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<a name="%_sec_1.10.3"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_1.10.3">1.10.3&nbsp;&nbsp;Nonholonomic Systems</a></h3>
+<p>
+<a name="%_idx_1038"></a>
+Systems with constraints that are not integrable are termed <em>nonholonomic systems</em>.  A constraint is not integrable if it cannot
+be written in terms of an equivalent coordinate constraint.  An
+example of a nonholonomic system is a ball rolling without slipping
+in a bowl.  As the ball rolls it must turn so that its surface
+does not move relative to the bowl at the point of contact.  This
+looks as if it might establish a relation between the location of the
+ball in the bowl and the orientation of the ball, but it doesn't.  The
+ball may return to the same place in the bowl with different
+orientations depending on the intervening path it has taken.  As
+a consequence, the constraints cannot be used to eliminate any
+coordinates.</p>
+<p>
+<a name="%_idx_1040"></a><a name="%_idx_1042"></a>What are the equations of motion governing nonholonomic systems?
+For the restricted set of systems with nonholonomic
+constraints that are linear in the velocities, it is widely 
+reported<a name="call_footnote_Temp_171" href="#footnote_Temp_171"><sup><small>95</small></sup></a> 
+that the equations of motion are as follows.  Let <img src="chap1-Z-G-D-56.gif" border="0"> have the form
+<a name="EQUATION_1.224"></a></p>
+<div align=left><img src="chap1-Z-G-268.gif" border="0"></div>
+<p>
+a state function that is linear in the velocities.  We assume <img src="chap1-Z-G-D-56.gif" border="0">
+is not a total time derivative.  If <em>L</em> is a Lagrangian for the
+unconstrained system, then the equations of motion are
+asserted to be
+<a name="EQUATION_1.225"></a></p>
+<div align=left><img src="chap1-Z-G-269.gif" border="0"></div>
+<p>
+With the constraint <img src="chap1-Z-G-D-56.gif" border="0"> = 0, the system is closed and the
+evolution of the system is determined.  Note that these equations are
+identical to the Lagrange equations
+(<a href="#EQUATION_1.212">1.212</a>) for the case that <img src="chap1-Z-G-D-56.gif" border="0"> is a
+total time derivative, but here the derivation of those equations is
+no longer valid.</p>
+<p>
+An essential step in the
+derivation of the Lagrange equations for coordinate constraints <img src="chap1-Z-G-D-16.gif" border="0">
+ =  0 with <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <img src="chap1-Z-G-D-16.gif" border="0">  =  0 was to
+note that two conditions must be satisfied:
+<a name="EQUATION_1.226"></a></p>
+<div align=left><img src="chap1-Z-G-270.gif" border="0"></div>
+<p>
+and
+<a name="EQUATION_1.227"></a></p>
+<div align=left><img src="chap1-Z-G-271.gif" border="0"></div>
+<p>
+Because  <em>E</em> [<em>L</em>] <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>] is orthogonal to <img src="chap1-Z-G-D-13.gif" border="0"> and <img src="chap1-Z-G-D-13.gif" border="0">
+is constrained to be orthogonal to 
+<img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <img src="chap1-Z-G-D-16.gif" border="0"> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>] , the two must be parallel at
+each moment:
+<a name="EQUATION_1.228"></a></p>
+<div align=left><img src="chap1-Z-G-272.gif" border="0"></div>
+<p>
+The Lagrange equations for derivative constraints
+were derived from this.</p>
+<p>
+This derivation does not go through if the constraint function 
+depends on velocity.  In this case, for a
+variation <img src="chap1-Z-G-D-13.gif" border="0"> to be consistent with the velocity-dependent
+constraint function <img src="chap1-Z-G-D-56.gif" border="0"> it must satisfy 
+(see equation&nbsp;<a href="#1.179">1.179</a>)
+<a name="EQUATION_1.229"></a></p>
+<div align=left><img src="chap1-Z-G-273.gif" border="0"></div>
+<p>
+We may no longer eliminate <img src="chap1-Z-G-D-13.gif" border="0"> by the same argument, because <img src="chap1-Z-G-D-13.gif" border="0">
+is no longer orthogonal to <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <img src="chap1-Z-G-D-56.gif" border="0"> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>], and we
+cannot rewrite the constraint as a coordinate constraint because
+<img src="chap1-Z-G-D-56.gif" border="0"> is, by assumption, not integrable.</p>
+<p>
+The following is the derivation of the nonholonomic equations from
+Arnold et al.&nbsp;[<a href="book-Z-H-80.html#cite{Arnold88}">6</a>], translated into our notation.
+Define a ``virtual velocity'' <img src="chap1-Z-G-D-18.gif" border="0"> to be any velocity satisfying
+<a name="EQUATION_1.230"></a></p>
+<div align=left><img src="chap1-Z-G-274.gif" border="0"></div>
+<p>
+<a name="%_idx_1044"></a><a name="%_idx_1046"></a><a name="%_idx_1048"></a>The ``principle of d'Alembert-Lagrange,'' according to Arnold, states that
+<a name="EQUATION_1.231"></a></p>
+<div align=left><img src="chap1-Z-G-275.gif" border="0"></div>
+<p>
+for any virtual velocity <img src="chap1-Z-G-D-18.gif" border="0">.  
+Because <img src="chap1-Z-G-D-18.gif" border="0"> is arbitrary except that it is required to be orthogonal
+to <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <img src="chap1-Z-G-D-56.gif" border="0"> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>] and any such <img src="chap1-Z-G-D-18.gif" border="0"> is orthogonal
+to  <em>E</em> [<em>L</em>] <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>], then <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <img src="chap1-Z-G-D-56.gif" border="0"> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>]
+must be parallel to  <em>E</em> [<em>L</em>] <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>].
+So
+<a name="EQUATION_1.232"></a></p>
+<div align=left><img src="chap1-Z-G-276.gif" border="0"></div>
+<p>
+which are the nonholonomic equations.</p>
+<p>
+
+To convert the stationary action equations to the equations of Arnold
+we must do the following.  To get from
+equation&nbsp;(<a href="#EQUATION_1.226">1.226</a>) to
+equation&nbsp;(<a href="#EQUATION_1.231">1.231</a>), we must replace <img src="chap1-Z-G-D-13.gif" border="0"> by
+<img src="chap1-Z-G-D-18.gif" border="0">.  However, to get from equation&nbsp;(<a href="#EQUATION_1.229">1.229</a>) to
+equation&nbsp;(<a href="#EQUATION_1.230">1.230</a>), we must set <img src="chap1-Z-G-D-13.gif" border="0">  =  0 and
+replace <em>D</em><img src="chap1-Z-G-D-13.gif" border="0"> by <img src="chap1-Z-G-D-18.gif" border="0">.  All ``derivations'' of the nonholonomic
+equations have similar identifications.  It comes down to this: the
+nonholonomic equations do not follow from the action principle.  They
+are something else.  Whether they are correct or not depends on
+whether or not they agree with experiment.</p>
+<p>
+For systems with either coordinate constraints or derivative constraints, we
+have found that the Lagrange equations can be derived from a
+Lagrangian that is augmented with the constraint.  However, if the
+constraints are not integrable the Lagrange equations for the
+augmented Lagrangian are not the same as the nonholonomic
+system&nbsp;(equations&nbsp;<a href="#EQUATION_1.225">1.225</a>).<a name="call_footnote_Temp_172" href="#footnote_Temp_172"><sup><small>96</small></sup></a>
+Let <em>L</em>' be an augmented Lagrangian with non-integrable constraint <img src="chap1-Z-G-D-56.gif" border="0">:
+<a name="EQUATION_1.233"></a></p>
+<div align=left><img src="chap1-Z-G-277.gif" border="0"></div>
+<p>
+then the Lagrange equations associated with the coordinates are
+<a name="EQUATION_1.234"></a></p>
+<div align=left><img src="chap1-Z-G-278.gif" border="0"></div>
+<p>
+The Lagrange equation associated with <img src="chap1-Z-G-D-40.gif" border="0"> is just the constraint equation
+<a name="EQUATION_1.235"></a></p>
+<div align=left><img src="chap1-Z-G-279.gif" border="0"></div>
+<p>
+An interesting feature of these equations is that 
+they
+involve both <img src="chap1-Z-G-D-40.gif" border="0"> and <em>D</em><img src="chap1-Z-G-D-40.gif" border="0">.  Thus the usual state
+variables <em>q</em> and <em>D</em><em>q</em>, with the constraint, are not sufficient
+to determine a full set of initial conditions for the derived Lagrange
+equations; we need to specify an initial value for <img src="chap1-Z-G-D-40.gif" border="0"> as well.</p>
+<p>
+In general, for any particular physical system,
+equations&nbsp;(<a href="#EQUATION_1.225">1.225</a>) and (<a href="#EQUATION_1.234">1.234</a>)
+are not the same, and in fact they have different solutions.  It is
+not apparent that either set of equations accurately models the
+physical system.  The first approach to nonholonomic systems is not
+justified by extension of the arguments for the holonomic case and the
+other is not fully determined.  Perhaps this indicates that the
+models are inadequate, that more details of how the constraints are
+maintained need to be specified.</p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_155" href="#call_footnote_Temp_155"><sup><small>88</small></sup></a> Given any acceptable variation, we may make another
+acceptable variation by multiplying the given one by a bump function
+that emphasizes any particular time interval.</p>
+
+<p><a name="footnote_Temp_156" href="#call_footnote_Temp_156"><sup><small>89</small></sup></a> We take two tuple-valued functions of time to be orthogonal
+<a name="%_idx_992"></a><a name="%_idx_994"></a><a name="%_idx_996"></a><a name="%_idx_998"></a>  if at each instant the dot product of the tuples is zero.
+Similarly, tuple-valued functions are considered parallel if at each moment
+one of the tuples is a scalar multiple of the other.  The scalar
+multiplier is in general a function of time.</p>
+
+<p><a name="footnote_Temp_159" href="#call_footnote_Temp_159"><sup><small>90</small></sup></a> Recall that the Euler-Lagrange operator  <em>E</em> has the property
+</p>
+<div align=left><img src="chap1-Z-G-233.gif" border="0"></div>
+<p>
+</p>
+
+<p><a name="footnote_Temp_161" href="#call_footnote_Temp_161"><sup><small>91</small></sup></a> This constraint has the same form as those used
+in the demonstration that <em>L</em> = <em>T</em> <tt>-</tt> <em>V</em> can be used for
+rigid systems.  Here it is a particular example of a more general
+set of constraints.</p>
+
+<p><a name="footnote_Temp_162" href="#call_footnote_Temp_162"><sup><small>92</small></sup></a> Indeed, if we had scaled
+the constraint equations as we did in the discussion of Newtonian
+constraint forces, we could have identified <img src="chap1-Z-G-D-40.gif" border="0"> with the the
+magnitude of the constraint force <em>F</em>.  However, though <img src="chap1-Z-G-D-40.gif" border="0"> will
+in general be related to the constraint forces it will not be one of
+them.  We chose to leave the scaling as it naturally appeared rather
+than make things turn out artificially pretty.</p>
+
+<p><a name="footnote_Temp_169" href="#call_footnote_Temp_169"><sup><small>93</small></sup></a> This example appears in
+[<a href="book-Z-H-80.html#cite{Goldstein}">20</a>], pp.&nbsp;49-51,
+</p>
+
+<p><a name="footnote_Temp_170" href="#call_footnote_Temp_170"><sup><small>94</small></sup></a> We will see in chapter&nbsp;<a href="book-Z-H-20.html#%_chap_2">2</a> how to
+compute the kinetic energy of rotation, but for now the answer is
+ (1/2) <em>M</em> <em>R</em><sup>2</sup> <img src="chap1-Z-G-D-20.gif" border="0"><sup>2</sup>.</p>
+
+<p><a name="footnote_Temp_171" href="#call_footnote_Temp_171"><sup><small>95</small></sup></a> For some treatments of nonholonomic systems see,
+for example, Whittaker&nbsp;[<a href="book-Z-H-80.html#cite{Whittaker}">46</a>], Goldstein&nbsp;[<a href="book-Z-H-80.html#cite{Goldstein}">20</a>],
+Gantmakher&nbsp;[<a href="book-Z-H-80.html#cite{Gantmakher}">19</a>], or Arnold et al.&nbsp;[<a href="book-Z-H-80.html#cite{Arnold88}">6</a>].</p>
+
+<p><a name="footnote_Temp_172" href="#call_footnote_Temp_172"><sup><small>96</small></sup></a> Arnold et al.&nbsp;[<a href="book-Z-H-80.html#cite{Arnold88}">6</a>] call the variational mechanics 
+<a name="%_idx_1050"></a>  with the constraints added to the Lagrangian <em>Vakonomic mechanics</em>.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-16.html">previous</a></span><span>, <a href="book-Z-H-18.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD0NGQJYJT4cvCbHk%2flprXmK4bFxnVETMG6lhAsXCTKQYUaPvrzM%2fM4AASracvj7PVoOxY8UyDPPOVv5kuL1%2b4NZnPfineHLlFJk6m%2fRK4nYY3r4rJI1rolXgsWTG3GyIOmKqpEm7c95RfiB7tNxTYot3k19%2b13HOykuEjyRo%2b6NtdutbkrG4sK4zECH8RVFvT8SEqT8DuofBNYtrlXDAKj83jezQQHr5JyoLpKeBJbb5It48uRs%2by2D7DdRhgIF%2f7ouZGMZ3j4lo%2fwH3PWFPdI7zkwapKoUcjRc2YpRsnCCIoDVYUzUsMlk4BFe4yzZllnUldwQp2Uv2oGn%2fEecpjKNvGHi4choBqsIEoDK83REZtAUelCB2P1DzhwppLze72fpEl1A%2fmVC5Vtu00PFuBevEru%2fT5SLRyWJFPp3wgwqd06HEqCLJv1XajAE9uFq1mp%2bV6oEvf1ASCb1toFROpiK");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

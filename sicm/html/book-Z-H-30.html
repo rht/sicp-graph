@@ -1,0 +1,321 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-29.html">previous</a></span><span>, <a href="book-Z-H-31.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_2.10"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_2.10">2.10&nbsp;&nbsp;Axisymmetric Tops</a></h2>
+<p>
+<a name="%_idx_1334"></a>
+We have all played with a top at one time or another.  For the
+purposes of analysis we will consider an idealized top that does not
+wander around.  Thus, an ideal top is a rotating rigid body, one point
+of which is fixed in space.  Furthermore, the center of mass of the
+top is not at the fixed point, which is the center of rotation, and
+there is a uniform gravitational acceleration.</p>
+<p>
+For our top we can take the Lagrangian to be the difference of the
+kinetic energy and the potential energy.  We already know how to write
+the kinetic energy -- what is new here is that we must express the
+potential energy in terms of the configuration.  In the case of a body
+in a uniform gravitational field this is easy.  The potential energy
+is the sum of ``<em>m</em><em>g</em><em>h</em>'' for all the constituent particles:
+<a name="EQUATION_2.59"></a></p>
+<div align=left><img src="chap2-Z-G-66.gif" border="0"></div>
+<p>
+where <em>g</em> is the gravitational acceleration, <em>h</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>  =  <img src="chap1-Z-G-D-26.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>  &middot;  <img src="chap2-Z-G-D-7.gif" border="0">, and the unit
+vector <img src="chap2-Z-G-D-7.gif" border="0"> indicates which way is up.  Rewriting the vector to
+the constituents in terms of the vector <img src="chap2-Z-G-D-2.gif" border="0"> to the center of
+mass, the potential energy is
+<a name="EQUATION_2.60"></a></p>
+<div align=left><img src="chap2-Z-G-67.gif" border="0"></div>
+<p>
+where the last sum is zero because the center of mass is the origin of
+<img src="chap2-Z-G-D-3.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>.  So the potential energy of a body in a
+gravitational field with uniform acceleration is very simple:  it is
+just <em>M</em><em>g</em><em>h</em>, where <em>M</em> is the total mass and <em>h</em>  =   <img src="chap2-Z-G-D-2.gif" border="0">  &middot;  <img src="chap2-Z-G-D-7.gif" border="0"> is the
+height of the center of mass.</p>
+<p>
+Here we consider an axisymmetric top (see
+figure&nbsp;<a href="#FIGURE_2.4">2.4</a>).  Such a top has an axis of
+symmetry of the mass distribution, so the center of mass is on the
+symmetry axis and the fixed point is also on the axis
+of symmetry.</p>
+<p>
+<a name="FIGURE_2.4"></a></p>
+<div align=left><img src="chap2-Z-G-68.gif" border="0"></div>
+<p></p>
+<p>
+In order to write the Lagrangian we need to choose a set of generalized
+coordinates.  If we choose them well we can take advantage of the
+symmetries of the problem.  If the Lagrangian does not depend
+on a particular coordinate, the conjugate momentum is conserved, and
+the complexity of the system is reduced.</p>
+<p>
+The axisymmetric top has two apparent symmetries.
+The fact that the mass distribution is axisymmetric implies that neither the
+kinetic nor potential energy is sensitive to the orientation of
+the top about that symmetry axis.  Additionally, the kinetic and potential energy are
+insensitive to a rotation of the physical system about the
+vertical axis, because the gravitational field is uniform.</p>
+<p>
+We can take advantage of these symmetries by choosing appropriate
+coordinates, and we already have a coordinate system that
+does the job -- the <a name="%_idx_1336"></a><a name="%_idx_1338"></a>Euler angles.<a name="call_footnote_Temp_198" href="#footnote_Temp_198"><sup><small>12</small></sup></a> We
+choose the reference orientation so that the symmetry axis is
+vertical.  The first Euler angle, <img src="chap1-Z-G-D-56.gif" border="0">, expresses a rotation about the
+symmetry axis.  The next Euler angle, <img src="chap1-Z-G-D-19.gif" border="0">, is the tilt of the
+symmetry axis of the top from the vertical.  The third Euler angle,
+<img src="chap1-Z-G-D-16.gif" border="0">, expresses a rotation of the top about the <em>z</em> axis.  The
+symmetries of the problem imply that the first and third Euler angles
+do not appear in the Lagrangian.  As a consequence the momenta
+conjugate to these angles are conserved quantities.  Let's work out
+the details.</p>
+<p>
+First, we develop the <a name="%_idx_1340"></a>Lagrangian explicitly.  The general form of the
+kinetic energy about a point is given by equation&nbsp;<a href="book-Z-H-25.html#EQUATION_2.30">2.30</a>.  
+The
+top is constrained so that it pivots about a fixed point that is not
+at the center of mass.  So the moments of inertia that enter the
+kinetic energy are the moments of inertia of the top with respect to
+the pivot point, not with respect to the center of mass.  If we know the moments
+of inertia about the center of mass we can write the <a name="%_idx_1342"></a><a name="%_idx_1344"></a>moments of
+inertia about the pivot in terms of them (see
+exercise&nbsp;<a href="book-Z-H-23.html#%_thm_2.2">2.2</a>).  So let's assume the principal
+moments of inertia of the top about the pivot are <em>A</em>, <em>B</em>, and <em>C</em>,
+and <em>A</em> = <em>B</em> because of the symmetry.<a name="call_footnote_Temp_199" href="#footnote_Temp_199"><sup><small>13</small></sup></a>  We can use the computer to help us figure
+out the Lagrangian for this special case:
+</p>
+<p><tt>(show-expression<br>
+&nbsp;((T-rigid-body&nbsp;'A&nbsp;'A&nbsp;'C)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;(up&nbsp;'t&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'theta&nbsp;'phi&nbsp;'psi)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'thetadot&nbsp;'phidot&nbsp;'psidot))))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap2-Z-G-69.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+<a name="%_idx_1346"></a>We can rearrange this a bit to get
+<a name="EQUATION_2.61"></a></p>
+<div align=left><img src="chap2-Z-G-70.gif" border="0"></div>
+<p>
+<a name="%_idx_1348"></a><a name="%_idx_1350"></a>In terms of Euler angles, the potential energy is 
+<a name="EQUATION_2.62"></a></p>
+<div align=left><img src="chap2-Z-G-71.gif" border="0"></div>
+<p>
+where <em>R</em> is the
+distance of the center of mass from the pivot.  The Lagrangian is <em>L</em>  = 
+<em>T</em>  <tt>-</tt>  <em>V</em>.  We see that the Lagrangian is indeed independent of
+<img src="chap1-Z-G-D-56.gif" border="0"> and <img src="chap1-Z-G-D-16.gif" border="0">, as expected.</p>
+<p>
+There is no particular reason to look at the Lagrange equations.  We
+can assign that job to the computer when needed.  However, we have
+already seen that it may be useful to examine the <a name="%_idx_1352"></a><a name="%_idx_1354"></a>conserved quantities
+associated with the symmetries.</p>
+<p>
+The energy is conserved, because the Lagrangian 
+has no explicit time dependence.  Also, the energy is the sum of the kinetic
+and potential energy <em>E</em> = <em>T</em> + <em>V</em>, because the kinetic energy is a 
+homogeneous quadratic form in the generalized velocities.  
+The energy is
+<a name="EQUATION_2.63"></a></p>
+<div align=left><img src="chap2-Z-G-72.gif" border="0"></div>
+<p>
+Two of the generalized coordinates do not appear in the Lagrangian, so
+there are two conserved momenta.  The momentum conjugate to <img src="chap1-Z-G-D-16.gif" border="0"> is
+<a name="EQUATION_2.64"></a></p>
+<div align=left><img src="chap2-Z-G-73.gif" border="0"></div>
+<p>
+The momentum conjugate to <img src="chap1-Z-G-D-56.gif" border="0"> is
+<a name="EQUATION_2.65"></a></p>
+<div align=left><img src="chap2-Z-G-74.gif" border="0"></div>
+<p> </p>
+<p>
+The state of the system at a moment is specified by the tuple ( <em>t</em>;
+<img src="chap1-Z-G-D-19.gif" border="0">, <img src="chap1-Z-G-D-16.gif" border="0">, <img src="chap1-Z-G-D-56.gif" border="0">; <img src="chap1-Z-G-D-20.gif" border="0">, <img src="chap1-Z-G-D-34.gif" border="0">, <img src="chap2-Z-G-D-17.gif" border="0"> ).  The
+two coordinates <img src="chap1-Z-G-D-16.gif" border="0"> and <img src="chap1-Z-G-D-56.gif" border="0"> that do not appear in the
+Lagrangian do not appear in the Lagrange equations or the conserved
+momenta.  So the evolution of the remaining four state variables,
+<img src="chap1-Z-G-D-19.gif" border="0">, <img src="chap1-Z-G-D-20.gif" border="0">, <img src="chap1-Z-G-D-34.gif" border="0">, and <img src="chap2-Z-G-D-17.gif" border="0">, depends
+only on those remaining state variables.  This subsystem for the top
+has a four-dimensional state space.  The variables that did not appear
+in the Lagrangian can be determined by integrating the derivatives of
+these variables, which are determined separately by solving the
+independent subsystem.</p>
+<p>
+
+The evolution of the top is described by a four-dimensional subsystem
+and two auxiliary quadratures.<a name="call_footnote_Temp_200" href="#footnote_Temp_200"><sup><small>14</small></sup></a>  
+This subdivision is a consequence of choosing generalized coordinates
+that incorporate the symmetries.  However, the choice of generalized
+coordinates that incorporate the symmetries also gives conserved
+momenta.  We can make use of these momenta to simplify the
+formulation of the problem further.  Each integral can be used to locally
+eliminate one dimension of the subsystem.  In this case the subsystem
+has four dimensions and there are three integrals, so the system can
+be completely reduced to quadratures.  For the top, this can be done
+analytically, but we think it is a waste of time to do so.  Rather, we
+are interested in extracting interesting features of the motion.  We
+concentrate on the energy integral and use the two conserved momenta
+to eliminate <img src="chap1-Z-G-D-34.gif" border="0"> and <img src="chap2-Z-G-D-17.gif" border="0">.  After a bit of algebra we
+find:
+<a name="EQUATION_2.66"></a></p>
+<div align=left><img src="chap2-Z-G-75.gif" border="0"></div>
+<p>
+Along a path <img src="chap1-Z-G-D-19.gif" border="0">, where <em>D</em><img src="chap1-Z-G-D-19.gif" border="0">(<em>t</em>) is substituted for
+<img src="chap1-Z-G-D-20.gif" border="0">, this is an ordinary differential equation for
+<img src="chap1-Z-G-D-19.gif" border="0">. This differential equation involves various constants, some
+of which are set by the initial conditions of the other state
+variables.  The solution of the differential equation for <img src="chap1-Z-G-D-19.gif" border="0">
+involves no more than ordinary integrals.
+So the top is essentially solved.  We could continue this
+argument to obtain the qualitative behavior of <img src="chap1-Z-G-D-19.gif" border="0">: Using the
+energy&nbsp;(<a href="#EQUATION_2.66">2.66</a>), we can plot the trajectories in the
+plane of <img src="chap1-Z-G-D-20.gif" border="0"> versus <img src="chap1-Z-G-D-19.gif" border="0"> and see that the motion of
+<img src="chap1-Z-G-D-19.gif" border="0"> is simply periodic.  However, we will defer
+continuing along this path until chapter&nbsp;<a href="book-Z-H-36.html#%_chap_3">3</a>, when we have developed more tools for analysis.</p>
+<p>
+
+<a name="%_idx_1358"></a>Let's get real.  Let's make a top out of an aluminum disk
+with a steel rod through the center to make the pivot.  Measuring the
+top very carefully, we find that the moment of inertia of the top about
+the symmetry axis is about 6.60&nbsp;&times;&nbsp;10<sup><tt>-</tt>5</sup> kg m<sup>2</sup>,
+and the moment of inertia about the pivot point is about 
+3.28&nbsp;&times;&nbsp;10<sup><tt>-</tt>4</sup> kg m<sup>2</sup>.  The combination <em>g</em><em>M</em><em>R</em> is about
+0.0456 kg m<sup>2</sup> s<sup><tt>-</tt>2</sup>.  We spin the top up with
+an initial angular velocity of <img src="chap2-Z-G-D-17.gif" border="0">  =  140 rad s<sup><tt>-</tt>1</sup>
+(about 1337&nbsp;rpm).  The top initially has <img src="chap1-Z-G-D-20.gif" border="0">  =  <img src="chap1-Z-G-D-16.gif" border="0">  =  <img src="chap1-Z-G-D-56.gif" border="0">  = 
+0 and is initially tilted with <img src="chap1-Z-G-D-19.gif" border="0">  =  0.1&nbsp;rad.  We then
+kick it so that <img src="chap1-Z-G-D-34.gif" border="0">  =   <tt>-</tt> 15&nbsp;rad s<sup><tt>-</tt>1</sup>.  Figures
+<a href="#FIGURE_2.5">2.5</a>-<a href="#FIGURE_2.8">2.8</a> display aspects of
+the evolution of the top for 2 seconds.  The tilt of the top (measured
+by&nbsp;<img src="chap1-Z-G-D-19.gif" border="0">) varies in a periodic manner.  The orientation about the
+vertical is measured by <img src="chap1-Z-G-D-16.gif" border="0">: we see that the top also precesses,
+and the rate of precession varies with <img src="chap1-Z-G-D-19.gif" border="0">.  We also see that as
+the top bobs up and down the rate of rotation of the top 
+oscillates -- the top spins faster when it is more vertical.
+The plot of tilt versus precession angle shows that in this case
+the top executes a looping motion.  If we do not kick it but just let
+it drop, then the loop disappears, leaving just a cusp.  If we kick it
+in the other direction, then there is no cusp nor any looping motion.</p>
+<p>
+<a name="%_idx_1360"></a><a name="%_idx_1362"></a><a name="FIGURE_2.5"></a></p>
+<div align=left><img src="chap2-Z-G-76.gif" border="0"></div>
+<p></p>
+<p>
+<a name="%_idx_1364"></a><a name="%_idx_1366"></a><a name="FIGURE_2.6"></a></p>
+<div align=left><img src="chap2-Z-G-77.gif" border="0"></div>
+<p></p>
+<p>
+<a name="FIGURE_2.7"></a></p>
+<div align=left><img src="chap2-Z-G-78.gif" border="0"></div>
+<p></p>
+<p>
+<a name="FIGURE_2.8"></a></p>
+<div align=left><img src="chap2-Z-G-79.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_2.11"></a>
+<b>Exercise 2.11.</b>&nbsp;&nbsp;<strong>Kinetic energy of the top</strong><br>
+The rotational kinetic energy of the top can be written in terms of
+the principal moments of inertia with respect to the pivot point and
+the angular velocity vector of rotation with respect to the pivot
+point.  Show that this formulation of the kinetic energy yields the
+same value that one would obtain by computing the sum of the
+rotational kinetic energy about its center of mass and the kinetic
+energy of the motion of the center of mass.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_2.12"></a>
+<b>Exercise 2.12.</b>&nbsp;&nbsp;<strong>Nutation of the top</strong><br>
+<a name="%_idx_1368"></a><a name="%_idx_1370"></a>
+<br><strong>a</strong>.&nbsp;&nbsp;Carry out the algebra to obtain the
+energy&nbsp;(<a href="#EQUATION_2.66">2.66</a>) in terms of <img src="chap1-Z-G-D-19.gif" border="0"> and&nbsp;<img src="chap1-Z-G-D-20.gif" border="0">.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Numerically integrate the Lagrange equations for the top to 
+obtain figure&nbsp;<a href="#FIGURE_2.5">2.5</a>, <img src="chap1-Z-G-D-19.gif" border="0"> versus time.</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;Note that the energy is a differential equation for
+<img src="chap1-Z-G-D-20.gif" border="0"> in terms of <img src="chap1-Z-G-D-19.gif" border="0">, with conserved quantities
+<em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub>, <em>p</em><sub><img src="chap1-Z-G-D-56.gif" border="0"></sub>, and <em>E</em> determined by initial conditions.  Can we
+use this differential equation to obtain <img src="chap1-Z-G-D-19.gif" border="0"> as a function of
+time?  Explain.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_2.13"></a>
+<b>Exercise 2.13.</b>&nbsp;&nbsp;<strong>Precession of the top</strong><br>
+<a name="%_idx_1372"></a><a name="%_idx_1374"></a>
+Consider a top that is rotating so that <img src="chap1-Z-G-D-19.gif" border="0"> is constant.</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;Using the angular momentum integrals, compute the rate of
+precession <img src="chap1-Z-G-D-34.gif" border="0"> as a function of the conserved angular
+momenta and the equilibrium value of <img src="chap1-Z-G-D-19.gif" border="0">.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;For <img src="chap1-Z-G-D-19.gif" border="0"> to be at an equilibrium the acceleration <em>D</em><sup>2</sup>
+<img src="chap1-Z-G-D-19.gif" border="0"> must be zero.  Use the Lagrange equation for <img src="chap1-Z-G-D-19.gif" border="0"> to find
+the rate of precession <img src="chap1-Z-G-D-34.gif" border="0"> at the equilibrium in terms of the
+equilibrium <img src="chap1-Z-G-D-19.gif" border="0"> and <img src="chap2-Z-G-D-17.gif" border="0">.</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;Find an approximate expression for the precession rate in
+the limit that <img src="chap2-Z-G-D-17.gif" border="0"> is large.</p>
+<p>
+<strong>d</strong>.&nbsp;&nbsp;The Newtonian rule is that the rate of change of the angular
+<a name="%_idx_1376"></a>momentum is the torque.  Assume the top is spinning so fast that the
+angular momentum is nearly the same as the angular momentum of 
+rotation about the symmetry axis.  By equating the rate of change of this
+vector angular momentum to the gravitational torque on the center of
+mass develop an approximate formula for the precession rate.</p>
+<p>
+<strong>e</strong>.&nbsp;&nbsp;Numerically integrate the top to check your deductions.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_198" href="#call_footnote_Temp_198"><sup><small>12</small></sup></a> That the axisymmetric top
+can be solved in Euler angles is, no doubt, the reason for the
+traditional choice of the definition of these.  For other
+problems, the Euler angles may offer no particular advantage.</p>
+
+<p><a name="footnote_Temp_199" href="#call_footnote_Temp_199"><sup><small>13</small></sup></a> Here, we do not require
+that <em>C</em> be larger than <em>A</em> = <em>B</em>, because they are not measured with
+respect to the center of mass.</p>
+
+<p><a name="footnote_Temp_200" href="#call_footnote_Temp_200"><sup><small>14</small></sup></a> Traditionally, evaluating a definite integral is known as
+<a name="%_idx_1356"></a>  performing a quadrature.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-29.html">previous</a></span><span>, <a href="book-Z-H-31.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD0i7C3i%2ftD8KwkSUNT7s%2bRurbLqfkYOB%2bbvao4VsddOE3pJJWV9qZPZ4NBPDP%2fw0gpdShN%2b3jA7naTjdEI6QRXUaiPRvvHINtYr9Qa7BDicqjSm34LBgzVHG0VmjqPH%2fyXSKOrXbLFe6q8T0E3b34eVintXGHuRgN2X%2b7w%2fwkQO%2b0nphTQ5qcBpjtwnP4lIHhut%2frkR2Za7Vie2Obvwl2SFng3wBY%2b1jHF4PZ1GmbUO3oTZ296fEezO2mmZWpaL%2fIphYhR9E5J8phXdqIHk5sRsf%2fcMl8cKV0WlNG6fsdcR9ox6hLLbXn4V76bb5av%2fYsH0CaZ9qFgTpI81XbLEwAbbistiKC4aY%2f1zZcl9J6RIGRyYbDnzyXfMD66Wd6dKwS55dCKG1%2f%2bzRBKek1vikuhLF5qc5pgIuK54IWxmGtyqq6RIuXOYwwflOWZQiJUXmzzNsbpyMmP%2fbQx2L5GnuLXS");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

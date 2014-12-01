@@ -1,0 +1,123 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-5.html">previous</a></span><span>, <a href="book-Z-H-7.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_chap_Temp_7"></a>
+<h1 class=chapter>
+<div class=chapterheading>&nbsp;</div><br>
+<a href="book-Z-H-4.html#%_toc_%_chap_Temp_7">Acknowledgments</a></h1>
+<p>We would like to thank the many people who have helped us to develop
+this book and the curriculum it is designed to support.  We have
+had substantial help from the wonderful students who studied with us
+in our classical mechanics class.  They have forced us to be clear;
+they have found bugs that we had to fix in the software, in the
+presentation, and in our thinking.</p>
+<p>
+We have had considerable technical help in the development and
+presentation of the subject matter from Harold Abelson.  Abelson is
+one of the developers of the Scmutils software system.  He put mighty
+effort into some sections of the code.  We also consulted him when we
+were desperately trying to understand the logic of mechanics.  He
+often could propose a direction to lead out of an intellectual maze.</p>
+<p>
+Matthew Halfant started us on the development of the Scmutils system.
+He encouraged us to get into scientific computation, using Scheme and
+functional style as an active way to explain the ideas, without the
+distractions of imperative languages such as C.  In the 1980s he
+wrote some of the early Scheme procedures for numerical computation
+that we still use.</p>
+<p>
+Dan Zuras helped us with the invention of the unique organization of
+the Scmutils system.  It is because of his insight that the system is
+organized around a generic extension of the chain rule for taking
+derivatives.  He also helped in the heavy lifting that was required to
+make a really good polynomial GCD algorithm, based on ideas we
+learned from Richard Zippel.</p>
+<p>
+This book, and a great deal of other work of our laboratory, could not
+have been done without the outstanding work of Chris Hanson.  Chris
+developed and maintained the Scheme system underlying this work.  In
+addition, he took us through a pass of reorganization of the Scmutils
+system that forced the clarification of many of the ideas of types and
+of generic operations that make our system as good as it is.</p>
+<p>
+Guillermo Juan Rozas, co-developer of the Scheme system, made major
+contributions to the Scheme compiler, and implemented a number of
+other arcane mechanisms that make our system efficient enough to
+support our work.</p>
+<p>
+Besides contributing to some of the methods for the solution of linear
+equations in the Scmutils system, Jacob Katzenelson has provided
+valuable feedback that improved the presentation of the material.</p>
+<p>
+Julie Sussman, PPA, provided careful reading and serious criticism
+that forced us to reorganize and rewrite major parts of the text.  She
+also developed and maintained Gerald Jay Sussman over these many years.</p>
+<p>
+Cecile Wisdom, saint, is a constant reminder, by her faith and
+example, of what is really important.  This project would not have
+been possible without the loving support and unfailing encouragement
+she has given Jack Wisdom.  Their children, William, Edward, Thomas,
+John, and Elizabeth Wisdom, daily enrich his life with theirs.</p>
+<p>
+Meinhard (Hardy) Mayer wants to thank Rita Mayer for patient moral
+support, particularly during his frequent visits to MIT during the
+last 12 years, Niels Mayer for introducing him to the wonderful
+world of Scheme (thus sowing the seeds for this collaboration), as
+well as Elma and the rest of the family for their love.</p>
+<p>
+Many have contributed to our understanding of dynamics over the years.
+Boris Chirikov, Michel H&eacute;non, Peter Goldreich, and Stan Peale have
+had particular influence.  We also acknowledge the influence of the
+late Res Jost.</p>
+<p>
+Numerous others have contributed to this work, either in the
+development of the software or in the development of the content,
+including Bill Siebert, Panayotis Skordos, Kleanthes Koniaris, Kevin
+Lin, James McBride, Rebecca Frankel, Thomas F. Knight, Pawan Kumar,
+Elizabeth Bradley, Alice Seckel, Jihad Touma, and Kenneth Yip.  We
+have had extremely useful feedback from and discussions with Piet Hut,
+Jon Doyle, David Finkelstein, Peter Fisher, Guy Lewis Steele Jr., and
+Robert Hermann.</p>
+<p>
+We thank the MIT Artificial Intelligence Laboratory for its
+hospitality and logistical support.  We acknowledge the Matsushita
+Corporation for support of Gerald Jay Sussman through an endowed
+chair.  We thank Breene M. Kerr for support of Jack Wisdom
+through an endowed chair.  We thank the MIT Mathematics and EECS
+departments for sabbatical support for Meinhard Mayer.  </p>
+<p>
+We also want to thank Katrina Avery, our copy editor, for her help in
+the preparation of this book.  And, finally, we are grateful to
+Rebecca Bisbee for her assistance over the many years we have been
+involved in this project.
+</p>
+<p>
+
+</p>
+<p>
+</p>
+
+<p>
+</p>
+<p>
+
+
+</p>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-5.html">previous</a></span><span>, <a href="book-Z-H-7.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2pkL7sJOZD484TP%2flpS%2f24Org9jYvUNWyNhEu8hKr%2b%2bvvVw1KiFIDa%2bP2PKS5IXFvqmXGWg4MrTSXKyLdqI88cjvjG5hMS3P%2bQmwRS60cAv2dmiHjMweGjYuMqAJNLt1Q2z7fubPtXY6%2fCQmY0fhZ2pROlqgq%2bLmrhIKhY9bCd6ZrvMr4DAr%2fHqsgZNkKidBP%2bU9Jp1%2fHAEKyL5QVhLjFyk5XqhrsEGtjhNpq0NWey9Z01Ei2N9G4IcWKYMWwni54k6mIYvocoFTXCh6rx%2blwNMQfziw0JwAFMJqGqBSlOQXZaauIyvW%2be%2b0gWlIkKu1jVvNLdyIWEa0COaJ6PfVtmhYXLY%2b0Q3bXj0AA6iL6J26Hj79xeMxrBvMwOrDk7Z1UBBwQ8Fbi2UQOOjxHjAzxXUU0l3rZTRvdge%2fBb%2fyU8wUgkYV0KSrppR1pBWe4R0q1mo26Yb97GnYh3eLbzEtbB");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

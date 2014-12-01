@@ -1,0 +1,1539 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-12.html">previous</a></span><span>, <a href="book-Z-H-14.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_1.6"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_1.6">1.6&nbsp;&nbsp;How to Find Lagrangians</a></h2>
+<p></p>
+<p>
+Lagrange's equations are a system of second-order differential
+equations.  In order to use them to compute the evolution of a
+mechanical system, we must find a suitable Lagrangian for the system.
+There is no general way to construct a Lagrangian for every system,
+but there is an important class of systems for which we can identify
+Lagrangians in a straightforward way in terms of kinetic and potential
+energy.  The key idea is
+to construct a Lagrangian <em>L</em> such that Lagrange's equations are
+<a name="%_idx_590"></a><a name="%_idx_592"></a>Newton's equations <img src="chap1-Z-G-D-24.gif" border="0"> = <em>m</em><img src="chap1-Z-G-D-25.gif" border="0">.</p>
+<p>
+Suppose our system consists of <em>N</em>
+particles indexed by <img src="chap1-Z-G-D-21.gif" border="0">, with mass <em>m</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> and vector
+position <img src="chap1-Z-G-D-26.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>(<em>t</em>).  Suppose further that the forces acting
+on the particles can be written in terms of a gradient of a
+potential energy <img src="chap1-Z-G-D-27.gif" border="0"> that is a function of the positions of the
+particles and possibly time, but does not depend on the
+velocities.  In other words, the force on particle <img src="chap1-Z-G-D-21.gif" border="0"> is
+<img src="chap1-Z-G-D-24.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>  =   <tt>-</tt>  <img src="chap1-Z-G-D-28.gif" border="0"><sub><img src="chap1-Z-G-D-26.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub></sub> <img src="chap1-Z-G-D-27.gif" border="0">, where 
+<img src="chap1-Z-G-D-28.gif" border="0"><sub><img src="chap1-Z-G-D-26.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub></sub> <img src="chap1-Z-G-D-27.gif" border="0"> is the gradient of <img src="chap1-Z-G-D-27.gif" border="0"> with
+respect to the position of the particle with index <img src="chap1-Z-G-D-21.gif" border="0">.  We can
+write Newton's equations as
+<a name="EQUATION_1.51"></a></p>
+<div align=left><img src="chap1-Z-G-71.gif" border="0"></div>
+<p></p>
+<p>
+Vectors can be represented as tuples of components of the vectors on a
+rectangular basis.  So <img src="chap1-Z-G-D-26.gif" border="0"><sub>1</sub>(<em>t</em>) is represented as the tuple
+<strong>x</strong><sub>1</sub>(<em>t</em>).  Let <em>V</em> be the potential energy function 
+expressed in terms of components: 
+<a name="EQUATION_1.52"></a></p>
+<div align=left><img src="chap1-Z-G-72.gif" border="0"></div>
+<p>
+Newton's equations are
+<a name="EQUATION_1.53"></a></p>
+<div align=left><img src="chap1-Z-G-73.gif" border="0"></div>
+<p>
+where <img src="front-Z-G-D-2.gif" border="0"><sub>1, <img src="chap1-Z-G-D-21.gif" border="0"></sub> <em>V</em> is the partial derivative of <em>V</em> with
+respect to the <strong>x</strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>(<em>t</em>) argument slot.</p>
+<p>
+To form the Lagrange equations we collect all the position
+components of all the particles into one tuple <em>x</em>(<em>t</em>), so <em>x</em>(<em>t</em>)
+ =  (<strong>x</strong><sub>0</sub>(<em>t</em>), <tt>...</tt>, <strong>x</strong><sub><em>N</em><tt>-</tt>1</sub>(<em>t</em>)).
+The Lagrange equations for the coordinate path <em>x</em> are
+<a name="EQUATION_1.54"></a></p>
+<div align=left><img src="chap1-Z-G-74.gif" border="0"></div>
+<p></p>
+<p>
+Observe that Newton's equations&nbsp;(<a href="#EQUATION_1.51">1.51</a>) are just the components 
+of the Lagrange equations&nbsp;(<a href="#EQUATION_1.54">1.54</a>) if we choose <em>L</em> to have the 
+properties
+<a name="EQUATION_1.55"></a></p>
+<div align=left><img src="chap1-Z-G-75.gif" border="0"></div>
+<p>
+here 
+<em>V</em>(<em>t</em>, <em>x</em>(<em>t</em>))  =  <em>V</em>(<em>t</em>; <strong>x</strong><sub>0</sub>(<em>t</em>), <tt>...</tt>, <strong>x</strong><sub><em>N</em><tt>-</tt>1</sub>(<em>t</em>)) 
+ and
+<img src="front-Z-G-D-2.gif" border="0"><sub>1,<img src="chap1-Z-G-D-21.gif" border="0"></sub> <em>V</em>(<em>t</em>, <em>x</em>(<em>t</em>)) is the tuple of the
+components of the derivative of <em>V</em> with respect to the coordinates of
+the particle with index <img src="chap1-Z-G-D-21.gif" border="0">, evaluated at time <em>t</em> and
+coordinates <em>x</em>(<em>t</em>).
+These conditions are satisfied if for every <strong>a</strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> and&nbsp;<strong>b</strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> 
+<a name="EQUATION_1.56"></a></p>
+<div align=left><img src="chap1-Z-G-76.gif" border="0"></div>
+<p>
+and
+<a name="EQUATION_1.57"></a></p>
+<div align=left><img src="chap1-Z-G-77.gif" border="0"></div>
+<p> 
+where <em>a</em>  =  (<strong>a</strong><sub>0</sub>, <tt>...</tt> , <strong>a</strong><sub><em>N</em><tt>-</tt>1</sub>).  We use
+the symbols <em>a</em> and <em>b</em> to emphasize that these are just formal parameters
+of the Lagrangian.
+One choice for <em>L</em> that has the required properties&nbsp;(<a href="#EQUATION_1.56">1.56</a>-<a href="#EQUATION_1.57">1.57</a>) is
+<a name="EQUATION_1.58"></a></p>
+<div align=left><img src="chap1-Z-G-78.gif" border="0"></div>
+<p>
+where <em>v</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub><sup>2</sup> is the sum of the squares of the components of 
+<strong>v</strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>.<a name="call_footnote_Temp_92" href="#footnote_Temp_92"><sup><small>61</small></sup></a></p>
+<p>
+The first term is the kinetic energy, conventionally denoted&nbsp;<em>T</em>.  
+So this choice for the <a name="%_idx_594"></a><a name="%_idx_596"></a><a name="%_idx_598"></a>Lagrangian is <em>L</em>(<em>t</em>, <em>x</em>, <em>v</em>)  =  <em>T</em>(<em>t</em>, <em>x</em>, <em>v</em>)  <tt>-</tt> 
+<em>V</em>(<em>t</em>, <em>x</em>), the difference of the kinetic and potential energy.  We will
+often extend the arguments of the potential energy function to
+include the velocities so that we can write <em>L</em>  =  <em>T</em>  <tt>-</tt>  <em>V</em>.<a name="call_footnote_Temp_93" href="#footnote_Temp_93"><sup><small>62</small></sup></a></p>
+<p>
+</p>
+<a name="%_sec_Temp_94"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_94">Hamilton's principle</a></h4>
+<p><a name="%_idx_600"></a>
+Given a system of point particles for which we can identify the force
+as the (negative) derivative of a potential energy <em>V</em> that is
+independent of velocity, we have shown that the system evolves along a
+path that satisfies Lagrange's equations with <em>L</em> = <em>T</em> <tt>-</tt> <em>V</em>.  Having
+identified a Lagrangian for this class of systems, we can restate the
+principle of stationary action in terms of energies.  This statement
+is known as <em>Hamilton's principle</em>: A point-particle system for
+which the force is derived from a velocity-independent potential
+energy evolves along a path <em>q</em> for which the action
+</p>
+<div align=left><img src="chap1-Z-G-79.gif" border="0"></div>
+<p>
+is stationary with respect to variations of the path <em>q</em> that leave
+the endpoints fixed, where <em>L</em> = <em>T</em> <tt>-</tt> <em>V</em> is the difference between kinetic and
+potential energy.<a name="call_footnote_Temp_95" href="#footnote_Temp_95"><sup><small>63</small></sup></a></p>
+<p>
+<a name="%_idx_616"></a><a name="%_idx_618"></a><a name="%_idx_620"></a><a name="%_idx_622"></a><a name="%_idx_624"></a>It might seem that we have reduced Lagrange's equations to nothing
+more than <img src="chap1-Z-G-D-24.gif" border="0">  =  <em>m</em> <img src="chap1-Z-G-D-25.gif" border="0">, and indeed, the principle is
+motivated by comparing the two equations for this special class of
+systems.  However, the Lagrangian formulation of the equations of
+motion has an important advantage over <img src="chap1-Z-G-D-24.gif" border="0">  =  <em>m</em> <img src="chap1-Z-G-D-25.gif" border="0">.  Our
+derivation used the rectangular components <strong>x</strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> of
+the positions of the constituent particles for the generalized
+coordinates, but if the system's path satisfies Lagrange's equations
+in some particular coordinate system, it must satisfy the equations in
+<em>any</em> coordinate system.  Thus we see that <em>L</em> = <em>T</em> <tt>-</tt> <em>V</em> is suitable as
+<a name="%_idx_626"></a>a Lagrangian with <em>any</em> set of generalized coordinates.  The
+equations of variational mechanics are derived the same way in any
+configuration space and any coordinate system.  In contrast, the
+Newtonian formulation is based on elementary geometry: In order for
+<em>D</em><sup>2</sup><img src="chap1-Z-G-D-26.gif" border="0">(<em>t</em>) to be meaningful as an acceleration, <img src="chap1-Z-G-D-26.gif" border="0">(<em>t</em>) must
+be a vector in physical space.  Lagrange's equations have no such
+restriction on the meaning of the coordinate <em>q</em>.  The <a name="%_idx_628"></a>generalized
+coordinates can be any parameters that conveniently describe the
+configurations of the system.</p>
+<p>
+</p>
+<a name="%_sec_Temp_96"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_96">Constant acceleration</a></h4>
+<p>
+<a name="%_idx_630"></a>Consider a particle of mass <em>m</em> in a uniform gravitational field with
+acceleration <em>g</em>.  The potential energy is  <em>m</em> <em>g</em> <em>h</em> where <em>h</em> is
+the height of the particle.  The kinetic energy is just   (1/2)
+<em>m</em><em>v</em><sup>2</sup>.  A Lagrangian for the system is the difference of the kinetic
+and potential energies.  In rectangular
+coordinates, with <em>y</em> measuring the vertical position and <em>x</em>
+measuring the horizontal position, the Lagrangian is
+<em>L</em>(<em>t</em>; <em>x</em>, <em>y</em>; <em>v</em><sub><em>x</em></sub>, <em>v</em><sub><em>y</em></sub>)  =   (1/2) <em>m</em> ( <em>v</em><sub><em>x</em></sub><sup>2</sup>  +  <em>v</em><sub><em>y</em></sub><sup>2</sup> )  <tt>-</tt>  <em>m</em> <em>g</em> <em>y</em>.
+We have<a name="call_footnote_Temp_97" href="#footnote_Temp_97"><sup><small>64</small></sup></a>
+</p>
+<p><tt><a name="%_idx_634"></a>(define&nbsp;((L-uniform-acceleration&nbsp;m&nbsp;g)&nbsp;local)<br>
+&nbsp;&nbsp;(let&nbsp;((q&nbsp;(coordinate&nbsp;local))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(v&nbsp;(velocity&nbsp;local)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((y&nbsp;(ref&nbsp;q&nbsp;1)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(*&nbsp;1/2&nbsp;m&nbsp;(square&nbsp;v))&nbsp;(*&nbsp;m&nbsp;g&nbsp;y)))))<br>
+(show-expression<br>
+&nbsp;(((Lagrange-equations<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(L-uniform-acceleration&nbsp;'m&nbsp;'g))<br>
+&nbsp;&nbsp;&nbsp;(up&nbsp;(literal-function&nbsp;'x)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'y)))<br>
+&nbsp;&nbsp;'t))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-80.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+This equation describes unaccelerated motion in the
+horizontal direction (<em>m</em><em>D</em><sup>2</sup> <em>x</em>(<em>t</em>) =  0) and constant acceleration in the vertical
+direction (<em>m</em><em>D</em><sup>2</sup> <em>y</em>(<em>t</em>) =   <tt>-</tt>  <em>g</em> <em>m</em>).</p>
+<p>
+</p>
+<a name="%_sec_Temp_98"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_98">Central force field</a></h4>
+<p>
+<a name="%_idx_636"></a>
+Consider planar motion of a particle of mass <em>m</em> in a central force
+field, with an arbitrary potential energy <em>U</em>(<em>r</em>) depending only upon
+the distance <em>r</em> to the center of attraction.  We will derive the
+Lagrange equations for this system in both rectangular coordinates and
+polar coordinates.</p>
+<p>
+In rectangular coordinates (<em>x</em>, <em>y</em>), with origin at the center of
+attraction, the potential energy is 
+<em>V</em>(<em>t</em>; <em>x</em>, <em>y</em>)  =  <em>U</em>((<em>x</em><sup>2</sup>  +  <em>y</em><sup>2</sup>)<sup>1/2</sup>) and
+the kinetic energy is <em>T</em>(<em>t</em>; <em>x</em>, <em>y</em>; <em>v</em><sub><em>x</em></sub>, <em>v</em><sub><em>y</em></sub>)  =   (1/2) <em>m</em> (<em>v</em><sub><em>x</em></sub><sup>2</sup>
+ +  <em>v</em><sub><em>y</em></sub><sup>2</sup>).  A <a name="%_idx_638"></a>Lagrangian for the system
+is <em>L</em> = <em>T</em> <tt>-</tt> <em>V</em>:
+<a name="EQUATION_1.59"></a></p>
+<div align=left><img src="chap1-Z-G-81.gif" border="0"></div>
+<p>
+As a procedure:
+</p>
+<p><tt><a name="%_idx_640"></a>(define&nbsp;((L-central-rectangular&nbsp;m&nbsp;U)&nbsp;local)<br>
+&nbsp;&nbsp;(let&nbsp;((q&nbsp;(coordinate&nbsp;local))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(v&nbsp;(velocity&nbsp;local)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(*&nbsp;1/2&nbsp;m&nbsp;(square&nbsp;v))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(U&nbsp;(sqrt&nbsp;(square&nbsp;q))))))<br>
+</p>
+</tt>
+<p>The Lagrange equations are
+</p>
+<p><tt>(show-expression<br>
+&nbsp;(((Lagrange-equations&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(L-central-rectangular&nbsp;'m&nbsp;(literal-function&nbsp;'U)))<br>
+&nbsp;&nbsp;&nbsp;(up&nbsp;(literal-function&nbsp;'x)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'y)))<br>
+&nbsp;&nbsp;'t))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-82.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+<a name="%_idx_642"></a>We can rewrite these Lagrange equations as:
+<a name="EQUATION_1.60"></a></p>
+<div align=left><img src="chap1-Z-G-83.gif" border="0"></div>
+<p>
+where <em>r</em>(<em>t</em>)  =  ((<em>x</em>(<em>t</em>))<sup>2</sup> + (<em>y</em>(<em>t</em>))<sup>2</sup>)<sup>1/2</sup>.  We can interpret these as follows.  The
+particle is subject to a radially directed force with magnitude
+ <tt>-</tt> <em>D</em><em>U</em>(<em>r</em>).  Newton's equations equate the force with the product of the
+mass and the acceleration.  The two Lagrange equations are just the
+rectangular components of Newton's equations.</p>
+<p>
+<a name="%_idx_644"></a><a name="%_idx_646"></a>We can describe the same system in polar coordinates.
+The relationship between rectangular coordinates (<em>x</em>, <em>y</em>) and polar
+coordinates (<em>r</em>, <img src="chap1-Z-G-D-16.gif" border="0">) is
+<a name="EQUATION_1.62"></a></p>
+<div align=left><img src="chap1-Z-G-84.gif" border="0"></div>
+<p></p>
+<p>
+The relationship of the generalized velocities is derived from the
+coordinate transformation.  Consider a configuration path that is
+represented in both rectangular and polar coordinates.  Let
+<img src="chap1-Z-G-D-29.gif" border="0"> and <img src="chap1-Z-G-D-30.gif" border="0"> be components of the rectangular
+coordinate path, and let <img src="chap1-Z-G-D-31.gif" border="0"> and <img src="chap1-Z-G-D-32.gif" border="0"> be
+components of the corresponding polar coordinate path.  The
+rectangular components at time <em>t</em> are (<img src="chap1-Z-G-D-29.gif" border="0">(<em>t</em>),
+<img src="chap1-Z-G-D-30.gif" border="0">(<em>t</em>)) and the polar coordinates at time <em>t</em> are
+(<img src="chap1-Z-G-D-31.gif" border="0">(<em>t</em>), <img src="chap1-Z-G-D-32.gif" border="0">(<em>t</em>)).  They are related
+by&nbsp;(<a href="#EQUATION_1.62">1.62</a>):
+<a name="EQUATION_1.63"></a></p>
+<div align=left><img src="chap1-Z-G-85.gif" border="0"></div>
+<p>
+The rectangular
+velocity at time <em>t</em> is (<em>D</em><img src="chap1-Z-G-D-29.gif" border="0">(<em>t</em>), <em>D</em><img src="chap1-Z-G-D-30.gif" border="0">(<em>t</em>)).  
+Differentiating&nbsp;(<a href="#EQUATION_1.63">1.63</a>) gives the
+relationship among the velocities
+<a name="EQUATION_1.64"></a></p>
+<div align=left><img src="chap1-Z-G-86.gif" border="0"></div>
+<p>
+These relations are valid for any configuration path at any moment, so
+we can abstract them to relations among coordinate representations of
+an arbitrary velocity.  Let <em>v</em><sub><em>x</em></sub> and <em>v</em><sub><em>y</em></sub> be the rectangular
+components of the velocity and <img src="chap1-Z-G-D-33.gif" border="0"> and <img src="chap1-Z-G-D-34.gif" border="0"> be the
+rate of change of <em>r</em> and <img src="chap1-Z-G-D-16.gif" border="0">.  Then
+<a name="EQUATION_1.65"></a></p>
+<div align=left><img src="chap1-Z-G-87.gif" border="0"></div>
+<p></p>
+<p>
+The kinetic energy is  (1/2) <em>m</em>(<em>v</em><sub><em>x</em></sub><sup>2</sup>  +  <em>v</em><sub><em>y</em></sub><sup>2</sup>):
+<a name="EQUATION_1.66"></a></p>
+<div align=left><img src="chap1-Z-G-88.gif" border="0"></div>
+<p>
+and the Lagrangian is
+<a name="EQUATION_1.67"></a></p>
+<div align=left><img src="chap1-Z-G-89.gif" border="0"></div>
+<p>
+We express this Lagrangian as follows:
+</p>
+<p><tt><a name="%_idx_648"></a>(define&nbsp;((L-central-polar&nbsp;m&nbsp;U)&nbsp;local)<br>
+&nbsp;&nbsp;(let&nbsp;((q&nbsp;(coordinate&nbsp;local))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(qdot&nbsp;(velocity&nbsp;local)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((r&nbsp;(ref&nbsp;q&nbsp;0))&nbsp;(phi&nbsp;(ref&nbsp;q&nbsp;1))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(rdot&nbsp;(ref&nbsp;qdot&nbsp;0))&nbsp;(phidot&nbsp;(ref&nbsp;qdot&nbsp;1)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(*&nbsp;1/2&nbsp;m<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(square&nbsp;rdot)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(square&nbsp;(*&nbsp;r&nbsp;phidot)))&nbsp;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(U&nbsp;r)))))<br>
+</p>
+</tt>
+<p><a name="%_idx_650"></a>Lagrange's equations are
+</p>
+<p><tt>(show-expression<br>
+&nbsp;(((Lagrange-equations&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(L-central-polar&nbsp;'m&nbsp;(literal-function&nbsp;'U)))<br>
+&nbsp;&nbsp;&nbsp;(up&nbsp;(literal-function&nbsp;'r)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'phi)))<br>
+&nbsp;&nbsp;'t))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-90.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>    
+We can interpret the first equation as saying that the product of
+the mass and the radial acceleration is the sum of the force due to
+the potential and the centrifugal force.  The second equation can be
+interpreted as saying that the derivative of the angular momentum
+<a name="%_idx_652"></a><a name="%_idx_654"></a><em>m</em><em>r</em><sup>2</sup><em>D</em> <img src="chap1-Z-G-D-16.gif" border="0"> is zero, so angular momentum is conserved.</p>
+<p>
+Note that we used the same <tt>Lagrange-equations</tt> procedure
+for the derivation in both coordinate systems.  Coordinate
+representations of the Lagrangian are different for different
+coordinate systems, and the Lagrange equations in different coordinate
+systems look different.  Yet the same method is used to derive the
+Lagrange equations in any coordinate system.</p>
+<p>
+
+</p>
+<p><a name="%_thm_1.13"></a>
+<b>Exercise 1.13.</b>&nbsp;&nbsp;<strong></strong><br></p>
+<p>
+<a name="%_idx_656"></a><a name="%_idx_658"></a>Check that the Lagrange equations for central force motion in polar
+coordinates and in rectangular coordinates are
+equivalent.  Determine the relationship among the second derivatives
+by substituting paths into the transformation equations and computing
+derivatives, then substitute these relations into the equations of
+motion.  </p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_1.6.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_1.6.1">1.6.1&nbsp;&nbsp;Coordinate Transformations</a></h3>
+<p>
+<a name="%_idx_660"></a>
+<a name="%_idx_662"></a>The motion of a system is independent of the coordinates we use to
+describe it.  This coordinate-free nature of the motion is apparent in
+the action principle.  The action depends only on the value of the
+Lagrangian along the path and not on the particular coordinates used
+in the representation of the Lagrangian.  We can use this property to
+find a Lagrangian in one coordinate system in terms of a Lagrangian in
+another coordinate system.</p>
+<p>
+Suppose we have a mechanical system whose motion is described by a
+Lagrangian <em>L</em> that depends on time, coordinates, and velocities.  And
+suppose we have a coordinate transformation <em>F</em> such that <em>x</em>  =  <em>F</em>(<em>t</em>,
+<em>x</em>').  The Lagrangian <em>L</em> is expressed in terms of the unprimed
+coordinates.  We want to find a Lagrangian <em>L</em>' expressed in the
+primed coordinates that describes the same system.  One way to do this
+is to require that the value of the Lagrangian along any configuration
+path be independent of the coordinate system.  If <em>q</em> is a path in the
+unprimed coordinates and <em>q</em>' is the corresponding path in primed
+coordinates, then the Lagrangians must satisfy:
+<a name="EQUATION_1.68"></a></p>
+<div align=left><img src="chap1-Z-G-91.gif" border="0"></div>
+<p></p>
+<p>
+We have seen that the transformation from rectangular to polar
+coordinates implies that the generalized velocities transform in a
+certain way.  The velocity transformation can be deduced from the
+requirement that a path in polar coordinates and a corresponding path
+in rectangular coordinates are consistent with the coordinate
+transformation.  In general, the requirement that paths in two
+different coordinate systems be consistent with the coordinate
+transformation can be used to deduce how all of the components of the
+<a name="%_idx_664"></a><a name="%_idx_666"></a><a name="%_idx_668"></a>local tuple transform.   Given a coordinate transformation <em>F</em>, let <em>C</em> be the
+corresponding function that maps local tuples in the primed coordinate
+system to corresponding local tuples in the unprimed coordinate system:
+<a name="EQUATION_1.69"></a></p>
+<div align=left><img src="chap1-Z-G-92.gif" border="0"></div>
+<p>
+We will deduce the general form of <em>C</em> below.</p>
+<p>
+Given such a local-tuple transformation <em>C</em>, a Lagrangian <em>L</em>' that
+satisfies equation&nbsp;(<a href="#EQUATION_1.68">1.68</a>) is
+<a name="EQUATION_1.70"></a></p>
+<div align=left><img src="chap1-Z-G-93.gif" border="0"></div>
+<p>
+We can see this by substituting for <em>L</em>' in
+equation&nbsp;(<a href="#EQUATION_1.68">1.68</a>):
+<a name="EQUATION_1.71"></a></p>
+<div align=left><img src="chap1-Z-G-94.gif" border="0"></div>
+<p></p>
+<p>
+To find the local-tuple transformation <em>C</em> given a coordinate
+transformation <em>F</em>, we deduce how each component of the local tuple
+transforms.  Of course, the coordinate transformation specifies how
+the coordinate component of the local tuple transforms.  The
+<a name="%_idx_670"></a>generalized-velocity component of the local-tuple transformation can
+be deduced as
+follows.  Let <em>q</em> and <em>q</em>' be the same
+configuration path expressed in the two coordinate systems.
+Substituting these paths into the coordinate transformation and
+computing the derivative, we find
+<a name="EQUATION_1.72"></a></p>
+<div align=left><img src="chap1-Z-G-95.gif" border="0"></div>
+<p>
+Through any point there is always a path of any given velocity, so we
+may generalize and conclude that along corresponding coordinate paths
+the generalized velocities satisfy
+<a name="EQUATION_1.73"></a></p>
+<div align=left><img src="chap1-Z-G-96.gif" border="0"></div>
+<p>
+If needed, rules for higher-derivative components of the local tuple can be
+determined in a similar fashion.  The local-tuple transformation that
+takes a local tuple in the primed system to a local tuple in the
+unprimed system is constructed from the component transformations:
+<a name="EQUATION_1.74"></a></p>
+<div align=left><img src="chap1-Z-G-97.gif" border="0"></div>
+<p></p>
+<p>
+
+So if we take the Lagrangian <em>L</em>' to be
+<a name="EQUATION_1.75"></a></p>
+<div align=left><img src="chap1-Z-G-98.gif" border="0"></div>
+<p>
+then the action has a value that is independent of the coordinate
+system used to compute it.  The configuration path of stationary
+action does not depend on which coordinate system is used to describe
+the path.  The Lagrange equations derived from these
+Lagrangians will in general look very different from one another, but
+they must be equivalent.</p>
+<p>
+</p>
+<p><a name="%_thm_1.14"></a>
+<b>Exercise 1.14.</b>&nbsp;&nbsp;<strong></strong><br>
+Show by direct calculation that the Lagrange equations for <em>L</em>' are
+satisfied if the Lagrange equations for <em>L</em> are satisfied.
+</p>
+
+<p></p>
+<p>
+Given a coordinate transformation <em>F</em>, we can use
+(<a href="#EQUATION_1.74">1.74</a>) to find the function <em>C</em> that
+transforms local tuples.
+The procedure <tt>F-&gt;C</tt> implements this:<a name="call_footnote_Temp_101" href="#footnote_Temp_101"><sup><small>65</small></sup></a> 
+</p>
+<p><tt><a name="%_idx_672"></a>(define&nbsp;((F-&gt;C&nbsp;F)&nbsp;local)<br>
+&nbsp;&nbsp;(-&gt;local&nbsp;(time&nbsp;local)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(F&nbsp;local)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(((partial&nbsp;0)&nbsp;F)&nbsp;local)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;(((partial&nbsp;1)&nbsp;F)&nbsp;local)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(velocity&nbsp;local)))))<br>
+</p>
+</tt>
+<p>
+<a name="%_idx_674"></a>As an illustration, consider the transformation from polar to
+rectangular coordinates, <em>x</em>  =  <em>r</em> cos <img src="chap1-Z-G-D-16.gif" border="0"> and <em>y</em>  =  <em>r</em> sin <img src="chap1-Z-G-D-16.gif" border="0">,
+with the following implementation:
+</p>
+<p><tt><a name="%_idx_676"></a>(define&nbsp;(p-&gt;r&nbsp;local)<br>
+&nbsp;&nbsp;(let&nbsp;((polar-tuple&nbsp;(coordinate&nbsp;local)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((r&nbsp;(ref&nbsp;polar-tuple&nbsp;0))&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(phi&nbsp;(ref&nbsp;polar-tuple&nbsp;1)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((x&nbsp;(*&nbsp;r&nbsp;(cos&nbsp;phi)))&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(y&nbsp;(*&nbsp;r&nbsp;(sin&nbsp;phi))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;x&nbsp;y)))))<br>
+</p>
+</tt>
+<p>In terms of the polar coordinates and the rates of change of the polar
+coordinates, the rates of change of the rectangular components are
+</p>
+<p><tt>(show-expression&nbsp;<br>
+&nbsp;(velocity<br>
+&nbsp;&nbsp;((F-&gt;C&nbsp;p-&gt;r)<br>
+&nbsp;&nbsp;&nbsp;(-&gt;local&nbsp;'t&nbsp;(up&nbsp;'r&nbsp;'phi)&nbsp;(up&nbsp;'rdot&nbsp;'phidot)))))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-99.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+We can use <tt>F-&gt;C</tt> to find the Lagrangian for central force
+motion in polar coordinates from the Lagrangian in rectangular
+components, using equation&nbsp;(<a href="#EQUATION_1.70">1.70</a>):
+</p>
+<p><tt><a name="%_idx_678"></a>(define&nbsp;(L-central-polar&nbsp;m&nbsp;U)<br>
+&nbsp;&nbsp;(compose&nbsp;(L-central-rectangular&nbsp;m&nbsp;U)&nbsp;(F-&gt;C&nbsp;p-&gt;r)))<br>
+<br>
+(show-expression<br>
+&nbsp;&nbsp;((L-central-polar&nbsp;'m&nbsp;(literal-function&nbsp;'U))<br>
+&nbsp;&nbsp;&nbsp;(-&gt;local&nbsp;'t&nbsp;(up&nbsp;'r&nbsp;'phi)&nbsp;(up&nbsp;'rdot&nbsp;'phidot))))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-100.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+The result is the same as
+Lagrangian&nbsp;(<a href="#EQUATION_1.67">1.67</a>).</p>
+<p>
+</p>
+<p><a name="%_thm_1.15"></a>
+<b>Exercise 1.15.</b>&nbsp;&nbsp;<strong>Central force motion</strong><br>
+Find Lagrangians for central force motion in three dimensions in
+rectangular coordinates and in spherical coordinates.  First, find the
+Lagrangians analytically, then check the results with the computer by
+generalizing the programs that we have presented.
+</p>
+
+<p></p>
+<p>
+</p>
+<p>
+</p>
+<a name="%_sec_1.6.2"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_1.6.2">1.6.2&nbsp;&nbsp;Systems with Rigid Constraints</a></h3>
+<p>
+<a name="%_idx_680"></a><a name="%_idx_682"></a>
+<a name="%_idx_684"></a>We have found that <em>L</em>  =  <em>T</em>  <tt>-</tt>  <em>V</em> is a suitable Lagrangian for a system
+of point particles subject to forces derived from a potential.
+Extended bodies can sometimes be conveniently idealized as a system of
+point particles connected by rigid constraints.  We will find that <em>L</em>
+ =  <em>T</em>  <tt>-</tt>  <em>V</em>, expressed in irredundant coordinates, is a suitable
+Lagrangian for modeling systems of point particles with rigid
+constraints.  We will first illustrate the method and then provide a
+justification.</p>
+<p>
+</p>
+<a name="%_sec_Temp_103"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_103">Lagrangians for rigidly constrained systems</a></h4>
+<p><a name="%_idx_686"></a>
+The system is presumed to be made of <em>N</em> point masses, indexed by&nbsp;<img src="chap1-Z-G-D-21.gif" border="0">,
+in ordinary three-dimensional space.  The first step is to
+choose a convenient set of irredundant generalized coordinates <em>q</em> and
+redescribe the system in terms of these.  In terms of the generalized
+coordinates the rectangular coordinates of particle <img src="chap1-Z-G-D-21.gif" border="0"> are
+<a name="EQUATION_1.76"></a></p>
+<div align=left><img src="chap1-Z-G-101.gif" border="0"></div>
+<p>
+For irredundant coordinates <em>q</em> all the coordinate constraints are
+built into the functions <em>f</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>.
+We deduce the relationship of the generalized velocities <em>v</em> to the
+velocities of the constituent particles <strong>v</strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> by 
+inserting path functions into
+equation&nbsp;(<a href="#EQUATION_1.76">1.76</a>),
+differentiating, and abstracting to arbitrary velocities.<a name="call_footnote_Temp_104" href="#footnote_Temp_104"><sup><small>66</small></sup></a>
+We find
+<a name="EQUATION_1.77"></a></p>
+<div align=left><img src="chap1-Z-G-102.gif" border="0"></div>
+<p></p>
+<p>
+We use equations&nbsp;(<a href="#EQUATION_1.76">1.76</a>) and
+(<a href="#EQUATION_1.77">1.77</a>) to
+express the kinetic energy in terms of the generalized coordinates and
+velocities.
+Let <img src="chap1-Z-G-D-35.gif" border="0"> be the kinetic energy as a function of the
+rectangular coordinates and velocities:
+<a name="EQUATION_1.78"></a></p>
+<div align=left><img src="chap1-Z-G-103.gif" border="0"></div>
+<p>
+where <strong>v</strong><sup>2</sup><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> is the squared magnitude of <strong>v</strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>.
+As a function of the generalized coordinate tuple <em>q</em> and the
+generalized velocity tuple <em>v</em>, the kinetic energy is
+<a name="EQUATION_1.79"></a></p>
+<div align=left><img src="chap1-Z-G-104.gif" border="0"></div>
+<p></p>
+<p>
+Similarly, we use
+equation&nbsp;(<a href="#EQUATION_1.76">1.76</a>) to reexpress
+the potential energy in terms of the generalized coordinates.  Let 
+<img src="chap1-Z-G-D-36.gif" border="0">(<em>t</em>, <em>x</em>) be the potential energy at time <em>t</em> in the
+configuration specified by the tuple of rectangular coordinates <em>x</em>.
+Expressed in generalized coordinates the potential energy is
+<a name="EQUATION_1.80"></a></p>
+<div align=left><img src="chap1-Z-G-105.gif" border="0"></div>
+<p></p>
+<p>
+We take the Lagrangian to be the difference of the kinetic energy and
+the potential energy: <em>L</em>  =  <em>T</em>  <tt>-</tt>  <em>V</em>.</p>
+<p>
+</p>
+<a name="%_sec_Temp_105"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_105">A pendulum driven at the pivot</a></h4>
+<p>
+<a name="%_idx_688"></a>Consider a pendulum (see figure&nbsp;<a href="#FIGURE_1.2">1.2</a>) of length
+<em>l</em> and mass <em>m</em>, modeled as a point mass, supported by a pivot that
+is driven in the vertical direction by a given function of time <em>y</em><sub><em>s</em></sub>.</p>
+<p>
+<a name="FIGURE_1.2"></a></p>
+<div align=left><img src="chap1-Z-G-106.gif" border="0"></div>
+<p></p>
+<p>
+The dimension of the configuration space for this system is one; we
+choose <img src="chap1-Z-G-D-19.gif" border="0">, shown in figure&nbsp;<a href="#FIGURE_1.2">1.2</a>, as the 
+generalized coordinate.</p>
+<p>
+The position of the bob is given, in rectangular coordinates, by 
+<a name="EQUATION_1.81"></a></p>
+<div align=left><img src="chap1-Z-G-107.gif" border="0"></div>
+<p>
+The velocities are
+<a name="EQUATION_1.82"></a></p>
+<div align=left><img src="chap1-Z-G-108.gif" border="0"></div>
+<p>
+obtained by differentiating along a path and abstracting to velocities
+at the moment.</p>
+<p>
+The kinetic energy is <img src="chap1-Z-G-D-35.gif" border="0">(<em>t</em>; <em>x</em>, <em>y</em>; <em>v</em><sub><em>x</em></sub>, <em>v</em><sub><em>y</em></sub>)  =   (1/2) <em>m</em>
+(<em>v</em><sub><em>x</em></sub><sup>2</sup>  +  <em>v</em><sub><em>y</em></sub><sup>2</sup>).  Expressed in generalized coordinates the kinetic
+energy is
+<a name="EQUATION_1.83"></a></p>
+<div align=left><img src="chap1-Z-G-109.gif" border="0"></div>
+<p></p>
+<p>
+The potential energy is <img src="chap1-Z-G-D-36.gif" border="0">(<em>t</em>; <em>x</em>, <em>y</em>)  =  <em>m</em><em>g</em><em>y</em>.  Expressed in
+generalized coordinates the potential energy is
+<a name="EQUATION_1.84"></a></p>
+<div align=left><img src="chap1-Z-G-110.gif" border="0"></div>
+<p>
+<a name="%_idx_690"></a><a name="%_idx_692"></a>A Lagrangian is <em>L</em>  =  <em>T</em>  <tt>-</tt>  <em>V</em>.</p>
+<p>
+The Lagrangian is expressed as
+</p>
+<p><tt>(define&nbsp;((T-pend&nbsp;m&nbsp;l&nbsp;g&nbsp;ys)&nbsp;local)<br>
+&nbsp;&nbsp;(let&nbsp;((t&nbsp;(time&nbsp;local))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(theta&nbsp;(coordinate&nbsp;local))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(thetadot&nbsp;(velocity&nbsp;local)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((vys&nbsp;(D&nbsp;ys)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;1/2&nbsp;m<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(square&nbsp;(*&nbsp;l&nbsp;thetadot))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(square&nbsp;(vys&nbsp;t))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;2&nbsp;l&nbsp;(vys&nbsp;t)&nbsp;thetadot&nbsp;(sin&nbsp;theta)))))))<br>
+(define&nbsp;((V-pend&nbsp;m&nbsp;l&nbsp;g&nbsp;ys)&nbsp;local)<br>
+&nbsp;&nbsp;(let&nbsp;((t&nbsp;(time&nbsp;local))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(theta&nbsp;(coordinate&nbsp;local)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;m&nbsp;g&nbsp;(-&nbsp;(ys&nbsp;t)&nbsp;(*&nbsp;l&nbsp;(cos&nbsp;theta))))))<br>
+<br>
+<a name="%_idx_694"></a>(define&nbsp;L-pend&nbsp;(-&nbsp;T-pend&nbsp;V-pend))<br>
+</p>
+</tt>
+<p>
+<a name="%_idx_696"></a><a name="%_idx_698"></a>Lagrange's equation for this system is<a name="call_footnote_Temp_106" href="#footnote_Temp_106"><sup><small>67</small></sup></a>
+</p>
+<p><tt>(show-expression<br>
+&nbsp;(((Lagrange-equations<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(L-pend&nbsp;'m&nbsp;'l&nbsp;'g&nbsp;(literal-function&nbsp;'y_s)))<br>
+&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'theta))<br>
+&nbsp;&nbsp;'t))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-111.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.16"></a>
+<b>Exercise 1.16.</b>&nbsp;&nbsp;<strong></strong><br>
+Derive the Lagrangians in exercise&nbsp;<a href="book-Z-H-12.html#%_thm_1.9">1.9</a>.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.17"></a>
+<b>Exercise 1.17.</b>&nbsp;&nbsp;<strong>Bead on a helical wire</strong><br>
+A bead of mass <em>m</em> is constrained to move on a frictionless helical
+wire.  The helix is oriented so that its axis is horizontal.  The
+diameter of the helix is <em>d</em> and its pitch (turns per unit length) is
+<em>h</em>.  The system is in a uniform gravitational field with vertical acceleration
+<em>g</em>. Formulate a Lagrangian that describes the system and find the
+Lagrange equations of motion.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.18"></a>
+<b>Exercise 1.18.</b>&nbsp;&nbsp;<strong>Bead on a triaxial surface</strong><br>
+A bead of mass <em>m</em> moves without friction on a triaxial ellipsoidal
+surface.  In rectangular coordinates the surface satisfies
+<a name="EQUATION_1.85"></a></p>
+<div align=left><img src="chap1-Z-G-112.gif" border="0"></div>
+<p>
+for some constants <em>a</em>, <em>b</em>, and <em>c</em>. Identify suitable generalized 
+coordinates, formulate a Lagrangian, and find Lagrange's equations.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.19"></a>
+<b>Exercise 1.19.</b>&nbsp;&nbsp;<strong>A two-bar linkage</strong><br>
+The two-bar linkage shown in figure&nbsp;<a href="#FIGURE_1.3">1.3</a> is constrained to
+move in the plane.  It is composed of three small massive bodies
+interconnected by two massless rigid rods in a uniform gravitational
+field with vertical acceleration <em>g</em>.
+The rods are pinned to the central body
+by a hinge that allows the linkage to fold.  The
+system is arranged so that the hinge is completely free: the members
+can go through all configurations without collision.  Formulate a
+Lagrangian that describes the system and find the Lagrange equations
+of motion.  Use the computer to do this, because the equations are
+rather big.
+<a name="FIGURE_1.3"></a></p>
+<div align=left><img src="chap1-Z-G-113.gif" border="0"></div>
+<p>
+</p>
+
+<p></p>
+<p>
+
+</p>
+<p><a name="%_thm_1.20"></a>
+<b>Exercise 1.20.</b>&nbsp;&nbsp;<strong>Sliding pendulum</strong><br>
+Consider a pendulum of length <em>l</em> attached to a support that is free
+to move horizontally, as shown in figure&nbsp;<a href="#FIGURE_1.4">1.4</a>.
+Let the mass of the support be <em>m</em><sub>1</sub> and the
+mass of the pendulum be <em>m</em><sub>2</sub>.  
+Formulate a Lagrangian and derive Lagrange's equations for this
+system. 
+<a name="FIGURE_1.4"></a></p>
+<div align=left><img src="chap1-Z-G-114.gif" border="0"></div>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_112"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_112">Why it works</a></h4>
+<p><a name="%_idx_700"></a><a name="%_idx_702"></a>
+In this section we show that <em>L</em> = <em>T</em> <tt>-</tt> <em>V</em> is in fact a suitable Lagrangian
+for rigidly constrained systems.  We do this by requiring that the
+Lagrange equations be equivalent to the Newtonian vectorial dynamics
+with vector constraint forces.<a name="call_footnote_Temp_113" href="#footnote_Temp_113"><sup><small>68</small></sup></a></p>
+<p>
+We consider a system of particles.  The particle with index <img src="chap1-Z-G-D-21.gif" border="0">
+has mass <em>m</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> and position <img src="chap1-Z-G-D-26.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>(<em>t</em>) at time <em>t</em>.  There may be a
+very large number of these particles, or just a few.  Some of the
+positions may also be specified functions of time, such as the position of
+the pivot of a driven pendulum.
+There are rigid position
+constraints among some of the particles.  We assume that all of these
+constraints are of the form
+<a name="EQUATION_1.86"></a></p>
+<div align=left><img src="chap1-Z-G-115.gif" border="0"></div>
+<p>
+that is, the distance between particles <img src="chap1-Z-G-D-21.gif" border="0"> and <i>&szlig;</i> is <em>l</em><sub><img src="chap1-Z-G-D-21.gif" border="0"><i>&szlig;</i></sub>.</p>
+<p>
+The Newtonian equation of motion for particle <img src="chap1-Z-G-D-21.gif" border="0"> says that
+the mass times the acceleration of particle <img src="chap1-Z-G-D-21.gif" border="0"> is equal to the
+sum of the potential forces and the constraint forces.  The potential
+forces are derived as the negative gradient of the potential energy,
+and may depend on the positions of the other particles and the time.
+The constraint forces <img src="chap1-Z-G-D-24.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"><i>&szlig;</i></sub> are the vector
+constraint forces associated with the rigid constraint between
+particle <img src="chap1-Z-G-D-21.gif" border="0"> and particle <i>&szlig;</i>.  So
+<a name="EQUATION_1.87"></a></p>
+<div align=left><img src="chap1-Z-G-116.gif" border="0"></div>
+<p>
+where in the summation <i>&szlig;</i> ranges over only those particle
+indices for which there are rigid constraints with the particle
+indexed by&nbsp;<img src="chap1-Z-G-D-21.gif" border="0">; we use the notation <i>&szlig;</i> &lt;--&gt;
+<img src="chap1-Z-G-D-21.gif" border="0"> for the relation that there is a rigid constraint between the
+indicated particles.</p>
+<p>
+The force of constraint is
+directed along the line between the particles, so we may write
+<a name="EQUATION_1.88"></a></p>
+<div align=left><img src="chap1-Z-G-117.gif" border="0"></div>
+<p>
+where <em>F</em><sub><img src="chap1-Z-G-D-21.gif" border="0"><i>&szlig;</i></sub>(<em>t</em>) is the scalar magnitude of the tension in the
+constraint at time <em>t</em>.  Note that <img src="chap1-Z-G-D-24.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"><i>&szlig;</i></sub>  =   <tt>-</tt> 
+<img src="chap1-Z-G-D-24.gif" border="0"><sub><i>&szlig;</i><img src="chap1-Z-G-D-21.gif" border="0"></sub>.  In general, the scalar constraint forces 
+change as the system evolves.</p>
+<p>
+
+Formally, we can reproduce Newton's equations with the Lagrangian<a name="call_footnote_Temp_114" href="#footnote_Temp_114"><sup><small>69</small></sup></a>
+
+<a name="EQUATION_1.89"></a></p>
+<div align=left><img src="chap1-Z-G-118.gif" border="0"></div>
+<p>
+where the constraint forces are being treated as additional
+generalized coordinates.  Here <em>x</em> is a structure composed of all
+the rectangular components <strong>x</strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> of all the
+<img src="chap1-Z-G-D-26.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>, <img src="chap1-Z-G-D-37.gif" border="0"> is a structure composed of all the
+rectangular components <img src="chap1-Z-G-D-38.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> of all the
+velocity vectors <img src="chap1-Z-G-D-10.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>, and <em>F</em> is a structure composed of
+all the <em>F</em><sub><img src="chap1-Z-G-D-21.gif" border="0"><i>&szlig;</i></sub>.  The velocity of
+<em>F</em> does not appear in the Lagrangian, and <em>F</em> itself appears only
+linearly. So the Lagrange equations associated with <em>F</em> are
+<a name="EQUATION_1.90"></a></p>
+<div align=left><img src="chap1-Z-G-119.gif" border="0"></div>
+<p>
+but this is just a restatement of the constraints.  The Lagrange
+equations for the coordinates of the particles are Newton's
+equations&nbsp;(<a href="#EQUATION_1.87">1.87</a>)
+<a name="EQUATION_1.91"></a></p>
+<div align=left><img src="chap1-Z-G-120.gif" border="0"></div>
+<p></p>
+<p>
+Now that we have a suitable Lagrangian, we can use the fact that
+Lagrangians can be reexpressed in any generalized coordinates to find
+a simpler Lagrangian.  The strategy is to choose a new set of
+coordinates for which many of the coordinates are constants and the
+remaining coordinates are irredundant.</p>
+<p>
+Let <em>q</em> be a tuple of generalized coordinates that specify the degrees of freedom
+of the system without redundancy.  Let <em>c</em> be a tuple of other generalized
+coordinates that specify the distances between particles for which
+constraints are specified.  The <em>c</em> coordinates will have constant
+values.  The combination of <em>q</em> and <em>c</em> replaces the redundant
+rectangular coordinates <em>x</em>.<a name="call_footnote_Temp_115" href="#footnote_Temp_115"><sup><small>70</small></sup></a>
+In addition, we still have the <em>F</em>
+coordinates, which are the scalar constraint forces.  
+Our new coordinates are the components of <em>q</em>, <em>c</em>, and <em>F</em>.</p>
+<p>
+There exist functions <em>f</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> that give the rectangular
+coordinates of the constituent particles in terms of <em>q</em> and <em>c</em>:
+<a name="EQUATION_1.92"></a></p>
+<div align=left><img src="chap1-Z-G-121.gif" border="0"></div>
+<p>
+To reexpress the Lagrangian in terms of <em>q</em>, <em>c</em>, and <em>F</em>, we need to find
+<strong>v</strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> in terms of the generalized velocities
+<img src="front-Z-G-D-1.gif" border="0"> and <img src="chap1-Z-G-D-39.gif" border="0">: we do this by differentiating <em>f</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>
+along a path and abstracting to arbitrary velocities (see
+section&nbsp;<a href="#%_sec_1.6.1">1.6.1</a>):
+<a name="EQUATION_1.93"></a></p>
+<div align=left><img src="chap1-Z-G-122.gif" border="0"></div>
+<p>
+Substituting these into Lagrangian&nbsp;(<a href="#EQUATION_1.89">1.89</a>), and
+using
+<a name="EQUATION_1.94"></a></p>
+<div align=left><img src="chap1-Z-G-123.gif" border="0"></div>
+<p>
+we find
+<a name="EQUATION_1.95"></a></p>
+<div align=left><img src="chap1-Z-G-124.gif" border="0"></div>
+<p></p>
+<p>
+The Lagrange equations are derived by the usual procedure. Rather
+than write out all the gory details, let's think about how it will go.</p>
+<p>
+The Lagrange equations associated with <em>F</em> just restate
+the constraints:
+<a name="EQUATION_1.96"></a></p>
+<div align=left><img src="chap1-Z-G-125.gif" border="0"></div>
+<p>
+and consequently we know that along a solution path, <em>c</em>(<em>t</em>) = <em>l</em> and
+<em>D</em><em>c</em>(<em>t</em>)  =  <em>D</em><sup>2</sup><em>c</em>(<em>t</em>)  =  0.  We can use this result to simplify the
+Lagrange equations associated with <em>q</em> and <em>c</em>.  </p>
+<p>
+The Lagrange equations associated with <em>q</em> are the same as
+if they were derived from the Lagrangian<a name="call_footnote_Temp_116" href="#footnote_Temp_116"><sup><small>71</small></sup></a>
+<a name="EQUATION_1.97"></a></p>
+<div align=left><img src="chap1-Z-G-126.gif" border="0"></div>
+<p>
+but this is exactly <em>T</em>  <tt>-</tt>  <em>V</em> where <em>T</em> and <em>V</em> are computed from the
+generalized coordinates <em>q</em>, with fixed constraints.  Notice that the
+constraint forces do not appear in the Lagrange equations for <em>q</em>
+because in the Lagrange equations they are multiplied by a term that
+is identically zero on the solution paths.  So the Lagrange equations
+for <em>T</em>  <tt>-</tt>  <em>V</em> with irredundant generalized coordinates <em>q</em> and fixed
+constraints are equivalent to Newton's equations with vector
+constraint forces.</p>
+<p>
+The Lagrange equations for <em>c</em> can be used to find the constraint
+forces.  The Lagrange equations are a big mess so we will not show
+them explicitly, but in general they are equations in <em>D</em><sup>2</sup><em>c</em>, <em>D</em><em>c</em>,
+and <em>c</em> that will depend upon <em>q</em>, <em>D</em><em>q</em>, and <em>F</em>.  The dependence on
+<em>F</em> is linear, so we can solve for <em>F</em> in terms of the solution path
+<em>q</em> and <em>D</em><em>q</em>, with <em>c</em> = <em>l</em> and <em>D</em><em>c</em>  =  <em>D</em><sup>2</sup><em>c</em>  =  0.</p>
+<p>
+If we are not interested in the constraint forces, we can abandon the
+full Lagrangian&nbsp;(<a href="#EQUATION_1.95">1.95</a>) in favor
+of Lagrangian&nbsp;(<a href="#EQUATION_1.97">1.97</a>), which is
+equivalent as far as the evolution of the generalized coordinates <em>q</em>
+is concerned.</p>
+<p>
+The same derivation goes through even if the lengths
+<em>l</em><sub><img src="chap1-Z-G-D-21.gif" border="0"><i>&szlig;</i></sub> specified in the interparticle distance
+constraints are a function of time.  It can also be generalized to
+allow distance constraints to time-dependent positions, by making some
+of the positions of particles <img src="chap1-Z-G-D-26.gif" border="0"><sub><i>&szlig;</i></sub> be specified functions of
+time. </p>
+<p>
+</p>
+<a name="%_sec_Temp_117"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_117">More generally</a></h4>
+<p>Consider a constraint of the form
+<a name="EQUATION_1.98"></a></p>
+<div align=left><img src="chap1-Z-G-127.gif" border="0"></div>
+<p>
+where <em>x</em>(<em>t</em>) is the structure of all the rectangular components <strong><em>x</em></strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>(<em>t</em>) at time <em>t</em>.
+In section&nbsp;<a href="book-Z-H-17.html#%_sec_1.10">1.10</a> we will show, using the
+variational principle, that an
+appropriate Lagrangian for this system is
+<a name="EQUATION_1.99"></a></p>
+<div align=left><img src="chap1-Z-G-128.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-40.gif" border="0"> is an additional coordinate and <img src="chap1-Z-G-D-41.gif" border="0"> is the
+corresponding generalized velocity.
+The Lagrange equations associated with <img src="chap1-Z-G-D-40.gif" border="0"> are just a
+restatement of the constraints: <img src="chap1-Z-G-D-16.gif" border="0">(<em>t</em>, <em>x</em>(<em>t</em>))  =  0 .
+The Lagrange equations for the particle coordinates are
+<a name="EQUATION_1.100"></a></p>
+<div align=left><img src="chap1-Z-G-129.gif" border="0"></div>
+<p></p>
+<p>
+Such a constraint can also be modeled by
+including appropriate constraint forces in Newton's equations:
+<a name="EQUATION_1.101"></a></p>
+<div align=left><img src="chap1-Z-G-130.gif" border="0"></div>
+<p>
+For
+equations&nbsp;(<a href="#EQUATION_1.100">1.100</a>)
+to be the same as
+equations&nbsp;(<a href="#EQUATION_1.101">1.101</a>) we
+must identify <img src="chap1-Z-G-D-40.gif" border="0">(<em>t</em>) <img src="front-Z-G-D-2.gif" border="0"><sub>1,<img src="chap1-Z-G-D-21.gif" border="0"></sub> <img src="chap1-Z-G-D-16.gif" border="0">(<em>t</em>, <em>x</em>(<em>t</em>)) with the
+forces of constraint on particle&nbsp;<img src="chap1-Z-G-D-21.gif" border="0">.  Notice that these forces
+of constraint are proportional to the normal to the constraint surface
+at each instant and thus do no work for motions that obey the
+constraint.
+
+Lagrangian&nbsp;(<a href="#EQUATION_1.89">1.89</a>), which we developed above to
+include Newtonian forces of constraint for position constraints, is of exactly
+this form.  We can identify
+<a name="EQUATION_1.102"></a></p>
+<div align=left><img src="chap1-Z-G-131.gif" border="0"></div>
+<p>
+The forces of constraint satisfy
+<a name="EQUATION_1.103"></a></p>
+<div align=left><img src="chap1-Z-G-132.gif" border="0"></div>
+<p></p>
+<p>
+
+Accepting 
+Lagrangian&nbsp;(<a href="#EQUATION_1.99">1.99</a>) as
+describing systems with constraints of the
+form&nbsp;(<a href="#EQUATION_1.98">1.98</a>), we can make a coordinate
+transformation from the redundant
+coordinates <em>x</em> to irredundant generalized coordinates <em>q</em> and
+constraint coordinates <em>c</em>  =  <img src="chap1-Z-G-D-16.gif" border="0">(<em>t</em>,<em>x</em>), as above.  The coordinate
+<img src="chap1-Z-G-D-40.gif" border="0"> will not appear in the Lagrange equations for <em>q</em> because on
+solution paths they will be multiplied by a factor that is identically
+zero.  If we are interested only in the evolution of the generalized
+coordinates, we can assume the constraints are identically satisfied
+and take the Lagrangian to be the difference of the
+kinetic and potential energies expressed in terms of the generalized
+coordinates.</p>
+<p>
+</p>
+<p>
+<a name="FIGURE_1.5"></a></p>
+<div align=left><img src="chap1-Z-G-133.gif" border="0"></div>
+<p></p>
+<p>
+
+</p>
+<p><a name="%_thm_1.21"></a>
+<b>Exercise 1.21.</b>&nbsp;&nbsp;<strong>The dumbbell</strong><br>
+In this exercise we will recapitulate the derivation of the Lagrangian
+for constrained systems for a particular simple system.</p>
+<p>
+Consider two massive particles in the plane constrained by a massless
+rigid rod to remain a distance <em>l</em> apart, as in
+figure&nbsp;<a href="#FIGURE_1.5">1.5</a>.  There are apparently four degrees of
+freedom for two massive particles in the plane, but the rigid rod
+reduces this number to three.  </p>
+<p>
+We can uniquely specify the configuration with the redundant
+coordinates of the particles, say <em>x</em><sub>0</sub>(<em>t</em>), <em>y</em><sub>0</sub>(<em>t</em>) and <em>x</em><sub>1</sub>(<em>t</em>), <em>y</em><sub>1</sub>(<em>t</em>).
+The constraint (<em>x</em><sub>1</sub>(<em>t</em>) <tt>-</tt> <em>x</em><sub>0</sub>(<em>t</em>))<sup>2</sup>  +  (<em>y</em><sub>1</sub>(<em>t</em>) <tt>-</tt> <em>y</em><sub>0</sub>(<em>t</em>))<sup>2</sup> = <em>l</em><sup>2</sup> eliminates
+one degree of freedom.</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;Write Newton's equations for the balance of forces for the
+four rectangular coordinates of the two particles, given that the
+scalar tension in the rod is <em>F</em>.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Write the formal Lagrangian
+</p>
+<div align=left><img src="chap1-Z-G-134.gif" border="0"></div>
+<p>
+such that Lagrange's equations will yield the Newton's equations
+you derived in part&nbsp;<strong>a</strong>.</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;Make a change of coordinates to a coordinate system with
+center of mass coordinates <em>x</em><sub><em>c</em><em>m</em></sub>, <em>y</em><sub><em>c</em><em>m</em></sub>, angle <img src="chap1-Z-G-D-19.gif" border="0">,
+distance between the particles <em>c</em>, and tension force <em>F</em>.  Write the
+Lagrangian in these coordinates, and write the Lagrange equations.</p>
+<p>
+<strong>d</strong>.&nbsp;&nbsp;You may deduce from one of these equations that <em>c</em>(<em>t</em>) = <em>l</em>.  From
+this fact we get that <em>D</em><em>c</em> = 0 and <em>D</em><sup>2</sup><em>c</em> = 0.  Substitute these into the
+Lagrange equations you just computed to get the equation of motion for
+<em>x</em><sub><em>c</em><em>m</em></sub>, <em>y</em><sub><em>c</em><em>m</em></sub>, <img src="chap1-Z-G-D-19.gif" border="0">.</p>
+<p>
+<strong>e</strong>.&nbsp;&nbsp;Make a Lagrangian ( = <em>T</em> <tt>-</tt> <em>V</em>) for the system described with the
+irredundant generalized coordinates <em>x</em><sub><em>c</em><em>m</em></sub>, <em>y</em><sub><em>c</em><em>m</em></sub>, <img src="chap1-Z-G-D-19.gif" border="0">
+and compute the Lagrange equations from this Lagrangian.  They should
+be the same equations as you derived for the same coordinates in
+part&nbsp;<strong>d</strong>.  </p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.22"></a>
+<b>Exercise 1.22.</b>&nbsp;&nbsp;<strong>Driven pendulum</strong><br>
+Show that the Lagrangian&nbsp;(<a href="#EQUATION_1.89">1.89</a>) can be used to
+describe the driven pendulum, where the position of the pivot is a 
+specified function of time: Derive the equations of motion using the
+Newtonian constraint force prescription, and show that they are the
+same as the Lagrange equations.  Be sure to examine the equations for
+the constraint forces as well as the position of the pendulum bob.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.23"></a>
+<b>Exercise 1.23.</b>&nbsp;&nbsp;<strong>Fill in the details</strong><br>
+Show that the Lagrange equations for
+Lagrangian&nbsp;(<a href="#EQUATION_1.97">1.97</a>) are the same
+as the Lagrange equations for
+Lagrangian&nbsp;(<a href="#EQUATION_1.95">1.95</a>) with the
+substitution <em>c</em>(<em>t</em>) =  <em>l</em>, <em>D</em><em>c</em>(<em>t</em>)  =  <em>D</em><sup>2</sup><em>c</em>(<em>t</em>)  =  0.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.24"></a>
+<b>Exercise 1.24.</b>&nbsp;&nbsp;<strong>Constraint forces</strong><br>
+Find the tension in an undriven planar pendulum.
+</p>
+
+<p></p>
+<p>
+
+</p>
+<a name="%_sec_1.6.3"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_1.6.3">1.6.3&nbsp;&nbsp;Constraints as Coordinate Transformations</a></h3>
+<p><a name="%_idx_704"></a><a name="%_idx_706"></a><a name="%_idx_708"></a>The derivation of a Lagrangian for a constrained system involves steps
+that are analogous to those in the derivation of a coordinate
+transformation.</p>
+<p>
+For a constrained system we specify the rectangular coordinates of
+the constituent particles in terms of generalized coordinates that
+incorporate the constraints.  We then determine the rectangular
+velocities of the constituent particles as functions of the generalized
+coordinates and the generalized velocities.  The Lagrangian that we
+know how to express in rectangular coordinates and velocities of the
+constituent particles can then be reexpressed in terms of the
+generalized coordinates and velocities.</p>
+<p>
+To carry out a coordinate transformation one specifies how the
+configuration of a system expressed in one set of generalized
+coordinates can be reexpressed in terms of another set of generalized
+coordinates.  We then determine the transformation of generalized
+velocities implied by the transformation of generalized coordinates. 
+A Lagrangian that is expressed in terms of one of the sets of
+generalized coordinates can then be reexpressed in terms of the other
+set of generalized coordinates.</p>
+<p>
+These are really two applications of the same process, so we can make
+Lagrangians for constrained systems by composing a Lagrangian for
+unconstrained particles with a coordinate transformation that
+incorporates the constraint.  Our deduction that <em>L</em>  =  <em>T</em>  <tt>-</tt>  <em>V</em> is a
+suitable Lagrangian for a constrained systems was in fact based on a
+coordinate transformation from a set of coordinates subject to
+constraints to a set of irredundant coordinates plus constraint
+coordinates that are constant.</p>
+<p>
+Let <strong><em>x</em></strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> be the tuple of rectangular components of
+the constituent particle with index <img src="chap1-Z-G-D-21.gif" border="0">, and let <strong><em>v</em></strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>
+be its velocity.   The Lagrangian
+<a name="EQUATION_1.104"></a></p>
+<div align=left><img src="chap1-Z-G-135.gif" border="0"></div>
+<p>
+is the difference of kinetic and potential energies of the constituent
+particles.  This is a suitable Lagrangian for a set of unconstrained free
+particles with potential energy <em>V</em>.</p>
+<p>
+Let <em>q</em> be a tuple of irredundant generalized coordinates and <em>v</em> be
+the corresponding generalized velocity tuple.  The coordinates <em>q</em> are
+related to <strong><em>x</em></strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>, the coordinates of the constituent particles, by
+
+<strong><em>x</em></strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>  =  <em>f</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>(<em>t</em>, <em>q</em>),
+
+as before.  The constraints among the constituent particles are taken
+into account in the definition of the <em>f</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>.  Here we view
+this as a coordinate transformation.  What is unusual about this as a
+coordinate transformation is that the dimension of <em>x</em> is not the same
+as the dimension of <em>q</em>.  From this coordinate transformation we can find the
+local-tuple transformation function (see
+section&nbsp;<a href="#%_sec_1.6.1">1.6.1</a>)
+<a name="EQUATION_1.105"></a></p>
+<div align=left><img src="chap1-Z-G-136.gif" border="0"></div>
+<p></p>
+<p>
+
+A Lagrangian for the constrained system can be obtained from the
+Lagrangian for the unconstrained system by composing it with the local-tuple
+transformation function from constrained coordinates to
+unconstrained coordinates:
+<a name="EQUATION_1.106"></a></p>
+<div align=left><img src="chap1-Z-G-137.gif" border="0"></div>
+<p>
+The constraints enter only in the transformation.  </p>
+<p>
+To illustrate this we will find a Lagrangian for the driven pendulum
+introduced in section&nbsp;<a href="#%_sec_1.6.2">1.6.2</a>.
+The <em>T</em>  <tt>-</tt>  <em>V</em> Lagrangian for a free particle of mass <em>m</em> in a vertical
+plane subject to a gravitational potential with acceleration <em>g</em> is
+<a name="EQUATION_1.107"></a></p>
+<div align=left><img src="chap1-Z-G-138.gif" border="0"></div>
+<p>
+where <em>y</em> measures the vertical height of the point mass.  A program
+that computes this Lagrangian is
+</p>
+<p><tt><a name="%_idx_710"></a>(define&nbsp;((L-uniform-acceleration&nbsp;m&nbsp;g)&nbsp;local)<br>
+&nbsp;&nbsp;(let&nbsp;((q&nbsp;(coordinate&nbsp;local))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(v&nbsp;(velocity&nbsp;local)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((y&nbsp;(ref&nbsp;q&nbsp;1)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(*&nbsp;1/2&nbsp;m&nbsp;(square&nbsp;v))&nbsp;(*&nbsp;m&nbsp;g&nbsp;y)))))<br>
+</p>
+</tt>
+<p>The coordinate transformation from generalized coordinate <img src="chap1-Z-G-D-19.gif" border="0"> to
+rectangular coordinates is <em>x</em>  =  <em>l</em> sin <img src="chap1-Z-G-D-19.gif" border="0">, <em>y</em>  =  <em>y</em><sub><em>s</em></sub>(<em>t</em>)  <tt>-</tt>  <em>l</em> cos
+<img src="chap1-Z-G-D-19.gif" border="0">, where <em>l</em> is the length of the pendulum and <em>y</em><sub><em>s</em></sub> 
+gives the height of the support as a function of time.  It is
+interesting that the drive enters only through the specification of
+the constraints.  A program implementing this coordinate transformation
+is
+</p>
+<p><tt>(define&nbsp;((dp-coordinates&nbsp;l&nbsp;y_s)&nbsp;local)<br>
+&nbsp;&nbsp;(let&nbsp;((t&nbsp;(time&nbsp;local))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(theta&nbsp;(coordinate&nbsp;local)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((x&nbsp;(*&nbsp;l&nbsp;(sin&nbsp;theta)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(y&nbsp;(-&nbsp;(y_s&nbsp;t)&nbsp;(*&nbsp;l&nbsp;(cos&nbsp;theta)))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;x&nbsp;y))))<br>
+</p>
+</tt>
+<p>Using <tt>F-&gt;C</tt> we can deduce the local-tuple transformation and define the 
+Lagrangian for the driven pendulum by composition:
+</p>
+<p><tt>(define&nbsp;(L-pend&nbsp;m&nbsp;l&nbsp;g&nbsp;y_s)<br>
+&nbsp;&nbsp;(compose&nbsp;(L-uniform-acceleration&nbsp;m&nbsp;g)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(F-&gt;C&nbsp;(dp-coordinates&nbsp;l&nbsp;y_s))))<br>
+</p>
+</tt>
+<p>
+The Lagrangian is
+</p>
+<p><tt>(show-expression<br>
+&nbsp;((L-pend&nbsp;'m&nbsp;'l&nbsp;'g&nbsp;(literal-function&nbsp;'y_s))<br>
+&nbsp;&nbsp;(-&gt;local&nbsp;'t&nbsp;'theta&nbsp;'thetadot)))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-139.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>  
+This is the same as the Lagrangian found in
+section&nbsp;<a href="#%_sec_1.6.2">1.6.2</a>.</p>
+<p>
+We have found a very interesting decomposition of the Lagrangian for
+constrained systems.  One part consists of the difference of the
+kinetic and potential energy of the constituents.  The other part
+describes the constraints that are specific to the configuration of a
+particular system.</p>
+<p>
+</p>
+<a name="%_sec_1.6.4"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_1.6.4">1.6.4&nbsp;&nbsp;The Lagrangian Is Not Unique</a></h3>
+<p>
+<a name="%_idx_712"></a><a name="%_idx_714"></a>
+Lagrangians are not in a one-to-one relationship with physical
+systems -- many Lagrangians can be used to describe the same physical
+system.  In this section we will demonstrate this by showing that the
+addition to the Lagrangian of a ``total time derivative'' of a function
+of the coordinates and time does not change the paths of stationary
+action or the equations of motion deduced from the action principle.</p>
+<p>
+</p>
+<a name="%_sec_Temp_122"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_122">Total time derivatives</a></h4>
+<p><a name="%_idx_716"></a>
+Let's first explain what we mean by a ``total time derivative.'' Let
+<em>F</em> be a function of time and coordinates.  Then the time derivative of
+<em>F</em> along a path <em>q</em> is
+<a name="EQUATION_1.108"></a></p>
+<div align=left><img src="chap1-Z-G-140.gif" border="0"></div>
+<p>
+Because <em>F</em> depends only on time and coordinates, we have
+<a name="EQUATION_1.109"></a></p>
+<div align=left><img src="chap1-Z-G-141.gif" border="0"></div>
+<p>
+So we only need the first two components of <em>D</em><img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>],
+<a name="EQUATION_1.110"></a></p>
+<div align=left><img src="chap1-Z-G-142.gif" border="0"></div>
+<p>
+to form the product
+<a name="EQUATION_1.111"></a></p>
+<div align=left><img src="chap1-Z-G-143.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-42.gif" border="0"> = <em>I</em><sub>2</sub> is a selector function:<a name="call_footnote_Temp_123" href="#footnote_Temp_123"><sup><small>72</small></sup></a>
+<em>c</em>  =  <img src="chap1-Z-G-D-42.gif" border="0">(<em>a</em>, <em>b</em>, <em>c</em>), so <em>D</em><em>q</em>  =  <img src="chap1-Z-G-D-42.gif" border="0"> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>].
+<a name="%_idx_730"></a><a name="%_idx_732"></a><a name="%_idx_734"></a><a name="%_idx_736"></a>The function 
+<a name="EQUATION_1.112"></a></p>
+<div align=left><img src="chap1-Z-G-144.gif" border="0"></div>
+<p>
+is called the total time derivative of <em>F</em>; it is a function of three
+arguments: the time, the generalized coordinates, and the generalized
+velocities.  </p>
+<p>
+In general, the <em>total time derivative</em> of a
+local-tuple function <em>F</em> is that function <em>D</em><sub><em>t</em></sub> <em>F</em> that when
+composed with a local-tuple path is the time derivative of the
+composition of the function <em>F</em> with the same local-tuple path:
+<a name="EQUATION_1.113"></a></p>
+<div align=left><img src="chap1-Z-G-145.gif" border="0"></div>
+<p>
+The total time derivative <em>D</em><sub><em>t</em></sub> <em>F</em> is explicitly given by
+<a name="EQUATION_1.114"></a></p>
+<div align=left><img src="chap1-Z-G-146.gif" border="0"></div>
+<p>
+where we take as many terms as needed to exhaust the arguments of <em>F</em>.</p>
+<p>
+</p>
+<p><a name="%_thm_1.25"></a>
+<b>Exercise 1.25.</b>&nbsp;&nbsp;<strong>Properties of <em>D</em><sub><em>t</em></sub></strong><br>
+<a name="%_idx_738"></a>The total time derivative <em>D</em><sub><em>t</em></sub> <em>F</em> is not the derivative of the
+function <em>F</em>.  Nevertheless, the total time derivative shares many
+properties with the derivative.  Demonstrate that <em>D</em><sub><em>t</em></sub> has the
+following properties for local-tuple functions <em>F</em> and <em>G</em>, number <em>c</em>, and
+a function <em>H</em> with domain containing the range of <em>G</em>.</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;<em>D</em><sub><em>t</em></sub> (<em>F</em>  +  <em>G</em>)  =  <em>D</em><sub><em>t</em></sub> <em>F</em>  +  <em>D</em><sub><em>t</em></sub> <em>G</em></p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;<em>D</em><sub><em>t</em></sub> (<em>c</em><em>F</em>)  =  <em>c</em> <em>D</em><sub><em>t</em></sub> <em>F</em></p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;<em>D</em><sub><em>t</em></sub> (<em>F</em> <em>G</em>)  =  <em>F</em> <em>D</em><sub><em>t</em></sub> <em>G</em>  +  (<em>D</em><sub><em>t</em></sub> <em>F</em>) <em>G</em></p>
+<p>
+<strong>d</strong>.&nbsp;&nbsp;<em>D</em><sub><em>t</em></sub> (<em>H</em> <small>o</small> <em>G</em>)  =  (<em>D</em> <em>H</em> <small>o</small> <em>G</em> ) <em>D</em><sub><em>t</em></sub> <em>G</em> 
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_125"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_125">Adding total time derivatives to Lagrangians</a></h4>
+<p><a name="%_idx_740"></a><a name="%_idx_742"></a>
+
+Consider two Lagrangians <em>L</em> and <em>L</em>' that differ by the addition of a
+total time derivative of a function <em>F</em> that depends only on the time
+and the coordinates
+<a name="EQUATION_1.115"></a></p>
+<div align=left><img src="chap1-Z-G-147.gif" border="0"></div>
+<p>
+The corresponding action integral is
+<a name="EQUATION_1.116"></a></p>
+<div align=left><img src="chap1-Z-G-148.gif" border="0"></div>
+<p>
+The variational principle states that the action integral along a
+realizable trajectory is stationary with respect to variations of the
+trajectory that leave the configuration at the endpoints fixed.  The
+action integrals <em>S</em>[<em>q</em>](<em>t</em><sub>1</sub>, <em>t</em><sub>2</sub>) and <em>S</em><sup>/</sup>[<em>q</em>](<em>t</em><sub>1</sub>, <em>t</em><sub>2</sub>) differ
+by a term 
+<a name="EQUATION_1.117"></a></p>
+<div align=left><img src="chap1-Z-G-149.gif" border="0"></div>
+<p>
+that depends only on the coordinates and time at the
+endpoints and these are not allowed to vary.  Thus, if <em>S</em>[<em>q</em>](<em>t</em><sub>1</sub>,
+<em>t</em><sub>2</sub>) is stationary for a path, then <em>S</em><sup>/</sup>[<em>q</em>](<em>t</em><sub>1</sub>, <em>t</em><sub>2</sub>) will also
+be stationary.  So either Lagrangian can be used to distinguish the
+realizable paths.  </p>
+<p>
+The addition of a total time derivative to a Lagrangian does not
+affect whether the action is critical for a given path.  So if we have
+two Lagrangians that differ by a total time derivative, the
+corresponding Lagrange equations are equivalent in that the same paths
+satisfy each.  Moreover, the additional terms introduced into the
+action by the total time derivative appear only in the endpoint
+condition and thus do not affect the Lagrange equations derived from
+the variation of the action, so the Lagrange equations are the same.
+So the Lagrange equations are not changed by the addition of a total
+time derivative to a Lagrangian.</p>
+<p>
+</p>
+<p><a name="%_thm_1.26"></a>
+<b>Exercise 1.26.</b>&nbsp;&nbsp;<strong>Lagrange equations for total time derivatives</strong><br>
+Let <em>F</em>(<em>t</em>, <em>q</em>) be a function of
+<em>t</em> and <em>q</em> only, with total time derivative 
+<a name="EQUATION_1.118"></a></p>
+<div align=left><img src="chap1-Z-G-150.gif" border="0"></div>
+<p>
+Show explicitly that the Lagrange equations for <em>D</em><sub><em>t</em></sub> <em>F</em> are identically
+zero, and thus that the addition of <em>D</em><sub><em>t</em></sub> <em>F</em> to a Lagrangian does not
+affect the Lagrange equations.
+</p>
+
+<p></p>
+<p>
+<a name="%_idx_744"></a><a name="%_idx_746"></a><a name="%_idx_748"></a>The driven pendulum provides a nice illustration of adding total time
+derivatives to Lagrangians.
+The equation of motion for the driven pendulum (see 
+section&nbsp;<a href="#%_sec_1.6.2">1.6.2</a>),
+<a name="EQUATION_1.119"></a></p>
+<div align=left><img src="chap1-Z-G-151.gif" border="0"></div>
+<p>
+has an interesting and suggestive interpretation: it is the same as
+the equation of motion of an undriven pendulum, except that the
+acceleration of gravity <em>g</em> is augmented by the acceleration of the
+pivot <em>D</em><sup>2</sup> <em>y</em><sub><em>s</em></sub>.  This intuitive interpretation was not apparent in
+the Lagrangian derived as the difference of the kinetic and potential
+energies in section&nbsp;<a href="#%_sec_1.6.2">1.6.2</a>.  However, we can write an
+alternate Lagrangian with the same equation of motion that is as
+easy to interpret as the equation of motion:
+<a name="EQUATION_1.120"></a></p>
+<div align=left><img src="chap1-Z-G-152.gif" border="0"></div>
+<p>
+With this Lagrangian it is apparent that the effect of the
+accelerating pivot is to modify the acceleration of gravity.  Note,
+however, that it is not the difference of the kinetic and potential
+energies.  Let's compare the two Lagrangians for the driven pendulum.
+The difference <img src="chap1-Z-G-D-43.gif" border="0"> <em>L</em>  =  <em>L</em>  <tt>-</tt>  <em>L</em><sup>/</sup> is
+<a name="EQUATION_1.121"></a></p>
+<div align=left><img src="chap1-Z-G-153.gif" border="0"></div>
+<p>
+The two terms in <img src="chap1-Z-G-D-43.gif" border="0"> <em>L</em> that depend on neither <img src="chap1-Z-G-D-19.gif" border="0"> nor
+<img src="chap1-Z-G-D-20.gif" border="0"> do not affect the equations of motion.  The remaining
+two terms are the total time derivative of the function
+<em>F</em>(<em>t</em>, <img src="chap1-Z-G-D-19.gif" border="0">)  =   <tt>-</tt>  <em>m</em> <em>l</em> <em>D</em><em>y</em><sub><em>s</em></sub>(<em>t</em>) cos <img src="chap1-Z-G-D-19.gif" border="0">, which does not
+depend on <img src="chap1-Z-G-D-20.gif" border="0">.  The addition of
+such terms to a Lagrangian does not affect the equations of motion.</p>
+<p>
+</p>
+<a name="%_sec_Temp_127"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_127">Identification of total time derivatives</a></h4>
+<p><a name="%_idx_750"></a>
+If the local-tuple function <em>G</em>, with arguments (<em>t</em>, <em>q</em>, <em>v</em>), is the
+total time derivative of a function <em>F</em>, with arguments (<em>t</em>, <em>q</em>), then
+<em>G</em> must have certain properties.</p>
+<p>
+From equation&nbsp;(<a href="#EQUATION_1.112">1.112</a>), we see that <em>G</em> must be
+linear in the generalized velocities
+<a name="EQUATION_1.122"></a></p>
+<div align=left><img src="chap1-Z-G-154.gif" border="0"></div>
+<p>
+where neither <em>G</em><sub>1</sub> nor <em>G</em><sub>0</sub> depend on the generalized velocities:
+<img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>G</em><sub>1</sub>  =  <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>G</em><sub>0</sub>  =  0.</p>
+<p>
+If <em>G</em> is the total time derivative of <em>F</em> then <em>G</em><sub>1</sub>  =  <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>F</em> 
+and <em>G</em><sub>0</sub>  =  <img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>F</em>, so
+<a name="EQUATION_1.123"></a></p>
+<div align=left><img src="chap1-Z-G-155.gif" border="0"></div>
+<p>
+The partial derivative with respect to the time argument does not have
+structure, so <img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>F</em>  =  <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>F</em>.  
+So if <em>G</em> is the total time derivative of <em>F</em> then
+<a name="EQUATION_1.124"></a></p>
+<div align=left><img src="chap1-Z-G-156.gif" border="0"></div>
+<p></p>
+<p>
+Furthermore, <em>G</em><sub>1</sub>  =  <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>F</em>, so
+<a name="EQUATION_1.125"></a></p>
+<div align=left><img src="chap1-Z-G-157.gif" border="0"></div>
+<p>
+If there is more than one degree of freedom these
+partials are actually structures of partial derivatives with respect
+to each coordinate.  The partial derivatives with respect to two
+different coordinates must be the same independent of the order of the
+differentiation.  So <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>G</em><sub>1</sub> must be symmetric.</p>
+<p>
+Note that we have not shown that these conditions
+are sufficient for determining that a function is a total time
+derivative, only that they are necessary.</p>
+<p>
+</p>
+<p><a name="%_thm_1.27"></a>
+<b>Exercise 1.27.</b>&nbsp;&nbsp;<strong>Identifying total time derivatives</strong><br></p>
+<p>
+For each of the following functions, either show that it is not a
+total time derivative or produce a function from which it can be
+derived.</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;<em>G</em>(<em>t</em>, <em>x</em>, <em>v</em><sub><em>x</em></sub>)  =  <em>m</em> <em>v</em><sub><em>x</em></sub></p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;<em>G</em>(<em>t</em>, <em>x</em>, <em>v</em><sub><em>x</em></sub>)  =  <em>m</em> <em>v</em><sub><em>x</em></sub> cos <em>t</em></p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;<em>G</em>(<em>t</em>, <em>x</em>, <em>v</em><sub><em>x</em></sub>)  =  <em>v</em><sub><em>x</em></sub> cos <em>t</em>  <tt>-</tt>  <em>x</em> sin <em>t</em></p>
+<p>
+<strong>d</strong>.&nbsp;&nbsp;<em>G</em>(<em>t</em>, <em>x</em>, <em>v</em><sub><em>x</em></sub>)  =  <em>v</em><sub><em>x</em></sub> cos <em>t</em>  +  <em>x</em> sin <em>t</em></p>
+<p>
+<strong>e</strong>.&nbsp;&nbsp;<em>G</em>(<em>t</em>; <em>x</em>, <em>y</em>; <em>v</em><sub><em>x</em></sub>, <em>v</em><sub><em>y</em></sub>)  =  
+2 (<em>x</em> <em>v</em><sub><em>x</em></sub>  +  <em>y</em> <em>v</em><sub><em>y</em></sub>) cos <em>t</em>  <tt>-</tt>  (<em>x</em><sup>2</sup>  +  <em>y</em><sup>2</sup>) sin <em>t</em> </p>
+<p>
+<strong>f</strong>.&nbsp;&nbsp;<em>G</em>(<em>t</em>; <em>x</em>, <em>y</em>; <em>v</em><sub><em>x</em></sub>, <em>v</em><sub><em>y</em></sub>)  =  
+2 (<em>x</em> <em>v</em><sub><em>x</em></sub>  +  <em>y</em> <em>v</em><sub><em>y</em></sub>) cos <em>t</em>  <tt>-</tt>  (<em>x</em><sup>2</sup>  +  <em>y</em><sup>2</sup>) sin <em>t</em>
+ +  <em>y</em><sup>3</sup> <em>v</em><sub><em>x</em></sub>  +  <em>x</em> <em>v</em><sub><em>y</em></sub>
+</p>
+
+<p></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_92" href="#call_footnote_Temp_92"><sup><small>61</small></sup></a> Remember that <em>x</em> and <em>v</em> are just formal parameters of the
+Lagrangian.  This <em>x</em> is not the path <em>x</em> used earlier in the
+derivation, though it could be the value of that path at a particular
+time.</p>
+
+<p><a name="footnote_Temp_93" href="#call_footnote_Temp_93"><sup><small>62</small></sup></a> We can always give a function extra arguments that are not
+used so that it can be algebraically combined with other functions of
+the same shape.</p>
+
+<p><a name="footnote_Temp_95" href="#call_footnote_Temp_95"><sup><small>63</small></sup></a> Hamilton formulated the fundamental variational principle
+<a name="%_idx_602"></a><a name="%_idx_604"></a><a name="%_idx_606"></a><a name="%_idx_608"></a>for time-independent systems in 1834-1835.  Jacobi gave this principle
+the name ``Hamilton's principle.'' For systems subject to generic,
+nonstationary constraints Hamilton's principle was investigated in
+1848 by Ostrogradsky, and in the Russian literature Hamilton's principle
+is often called the Hamilton-Ostrogradsky principle.</p>
+<p>
+
+<a name="%_idx_610"></a>William Rowan Hamilton (1805-1865)
+was a brilliant mathematician.
+His early work on geometric optics (based  on Fermat's principle) 
+was so impressive that he was elected to the
+post of Professor of Astronomy at Trinity College and Royal
+Astronomer of Ireland while he was still an undergraduate.  He
+produced two monumental works of mathematics.  His
+discovery of quaternions revitalized abstract algebra and sparked
+the development of vector techniques in physics.  His 1835 memoir
+``On a General Method in Dynamics'' put variational mechanics on a
+firm footing, finally giving substance to Maupertuis's vaguely
+stated Principle of Least Action of 100 years before.  Hamilton also
+wrote poetry and carried on an extensive correspondence with
+Wordsworth, who advised him to put his energy into writing
+mathematics rather than poetry.</p>
+<p>
+<a name="%_idx_612"></a><a name="%_idx_614"></a>In addition to the formulation of the fundamental variational
+principle, Hamilton also emphasized the analogy between geometric optics
+and mechanics, and stressed the importance of the momentum variables
+(which were earlier introduced by Lagrange and Cauchy), leading to the
+``canonical'' form of mechanics 
+discussed in chapter&nbsp;<a href="book-Z-H-36.html#%_chap_3">3</a>. </p>
+
+<p><a name="footnote_Temp_97" href="#call_footnote_Temp_97"><sup><small>64</small></sup></a> When applied to a tuple, <tt>square</tt> means the 
+<a name="%_idx_632"></a>  the sum of the squares of the components of the tuple.</p>
+
+<p><a name="footnote_Temp_101" href="#call_footnote_Temp_101"><sup><small>65</small></sup></a> As described in footnote&nbsp;<a href="book-Z-H-11.html#footnote_Temp_41">28</a> above, the
+procedure <tt>-&gt;local</tt> constructs a local tuple from an initial
+segment of time, coordinates, and velocities.</p>
+
+<p><a name="footnote_Temp_104" href="#call_footnote_Temp_104"><sup><small>66</small></sup></a> See section&nbsp;<a href="#%_sec_1.6.1">1.6.1</a>.</p>
+
+<p><a name="footnote_Temp_106" href="#call_footnote_Temp_106"><sup><small>67</small></sup></a> We hope you appreciate the T<small>E</small>X  magic here.  A symbol with an
+underline character is converted by <tt>show-expression</tt> to a
+subscript.  Symbols with carets, the names of Greek letters, and those
+terminating in the characters ``dot'' are similarly mistreated.</p>
+
+<p><a name="footnote_Temp_113" href="#call_footnote_Temp_113"><sup><small>68</small></sup></a> We will simply accept the
+Newtonian procedure for systems with rigid constraints and find
+Lagrangians that are equivalent.  Of course, actual bodies are never
+truly rigid, so we may wonder what detailed approximations have to be
+made to treat them as if they were truly rigid.  For instance, a
+more satisfying
+approach would be to replace the rigid distance constraints by very
+stiff springs.  We could then immediately write the Lagrangian as
+<em>L</em> = <em>T</em> <tt>-</tt> <em>V</em>, and we should be able to <em>derive</em> the Newtonian procedure
+for systems with rigid constraints as an approximation.  However, this
+is too complicated to do at this stage, so we
+accept the Newtonian idealization.</p>
+
+<p><a name="footnote_Temp_114" href="#call_footnote_Temp_114"><sup><small>69</small></sup></a> This Lagrangian is purely formal and does not represent a
+model of the constraint forces.  In particular, note that the
+constraint terms do not add up to a potential energy with a minimum
+when the constraints are exactly satisfied.  Rather, the constraint
+terms in the Lagrangian are zero when the constraint is satisfied,
+and can be either positive or negative depending on whether the
+distance between the particles is larger or smaller than the
+constraint distance.</p>
+
+<p><a name="footnote_Temp_115" href="#call_footnote_Temp_115"><sup><small>70</small></sup></a> Typically the number of components of <em>x</em> is equal to the
+sum of the number of components of <em>q</em> and <em>c</em>; adding a strut removes
+a degree of freedom and adds a distance constraint.  However, there
+are singular cases in which the addition of single strut can remove
+more than a single degree of freedom.  We do not consider the singular
+cases here.</p>
+
+<p><a name="footnote_Temp_116" href="#call_footnote_Temp_116"><sup><small>71</small></sup></a> Consider a function <em>g</em> of, say, three arguments, and let
+<em>g</em><sub>0</sub> be a function of two arguments satisfying <em>g</em><sub>0</sub>(<em>x</em>, <em>y</em>)  =  <em>g</em>(<em>x</em>, <em>y</em>,
+0).  Then (<img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>g</em><sub>0</sub>)(<em>x</em>, <em>y</em>)  =  (<img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>g</em>)(<em>x</em>, <em>y</em>, 0).  The
+substitution of a value in an argument commutes with the taking of the
+partial derivative with respect to a different argument.  In deriving
+the Lagrange equations for <em>q</em> we can set <em>c</em> = <em>l</em> and <img src="chap1-Z-G-D-39.gif" border="0"> = 0 in the
+Lagrangian, but we cannot do this in deriving the Lagrange equations
+associated with <em>c</em>, because we have to take derivatives with respect
+to those arguments.</p>
+
+<p><a name="footnote_Temp_123" href="#call_footnote_Temp_123"><sup><small>72</small></sup></a> Components of a tuple structure, such as the value of
+<a name="%_idx_718"></a><a name="%_idx_720"></a><a name="%_idx_722"></a><a name="%_idx_724"></a><a name="%_idx_726"></a><a name="%_idx_728"></a><img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>](<em>t</em>), can be selected with selector functions: <em>I</em><sub><em>i</em></sub> gets the
+element with index <em>i</em> from the tuple.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-12.html">previous</a></span><span>, <a href="book-Z-H-14.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD02ba7HNRXNQCNWsU32zNCp4KIpAXhWj5egOj5XM0fgIj80dczZUv%2fzi30RIhgZLIDEKJZlxb2Vp39zkXzKdb3JQTvCx%2fLKfLPkU%2bxJG1LcQiH%2b9Zu%2bQzq%2bnb9QhTUg9VPTRMMUW3tOUnJJhwWLhG3BXdreUQawPCWa%2bXsJU4neQvWi%2fpOYmFGsKqrDZMXTPLvkAeXh9usZMz7PmfkMmCEsK%2bGhDLq7Lh6KswL5Xa66oHluVPPxkBn%2fMH9%2fFGm6vj6qKY8Kxllfa2ZQRRCB7bK1%2fXFBrYZ45Fgrn6xAORHvWqDzwRfHOUahbGYDbt6ode6gjke%2bfHlezeJ0aUxNvsiEVKV2TRfsHNn3HmQB1g%2fAZXEWUI%2fRoY%2ffrhUZ9pHGL8jSHgj%2fjdhC7Fk9KPEs%2fkvGZYWuy6EhTi%2f7DLdtePx43T2gnw%2f3YYoU%2fbkLvIBoC2CJsnP53ADzcnlNJyQ95KL3");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

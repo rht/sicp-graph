@@ -11,7 +11,8 @@ import networkx
 from networkx.readwrite import json_graph
 import pylab
 
-prefix = 'dirac_sections'
+#prefix = 'dirac_sections'
+prefix = 'sicm'
 metadata = open(prefix+'/metadata.txt','r').read().split('\n')[:-1]
 book, labels = zip(*[i.split('|') for i in metadata])
 
@@ -35,7 +36,7 @@ def prepare_corpus(documents):
     corpora.MmCorpus.serialize(prefix+"/corpus.mm", raw_corpus)
 
 
-if prefix == 'sicp':
+if (prefix == 'sicp') or (prefix == 'sicm'):
     #strip unreadable characters
     labels = [re.sub('\xc2|\xa0|\xe2|\x80|\x94',' ',i) for i in labels]
 
@@ -49,10 +50,7 @@ elif prefix == 'dirac':
 elif prefix == 'dirac_sections':
     labels = [ l.split('.')[0] for l in labels if l[0].isdigit()]
     groupdic = {d[0]:d[1] for d in [i.split(' ') for i in open(prefix+'/metadata_extra.txt','r').read().strip().split('\n')]}
-    print groupdic
     groups = [groupdic[i] for i in labels]
-    print groups
-    eixt()
 
 #step 1 prepare corpus
 prepare_corpus([open(section,'r').read().decode('utf-8') for section in book])

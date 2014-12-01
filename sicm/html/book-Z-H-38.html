@@ -1,0 +1,162 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-37.html">previous</a></span><span>, <a href="book-Z-H-39.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_3.2"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_3.2">3.2&nbsp;&nbsp;Poisson Brackets</a></h2>
+<p><a name="%_idx_1680"></a>
+Here we introduce the <em>Poisson bracket</em>, in terms of which 
+Hamilton's equations have an elegant and symmetric expression.
+Consider a function <em>F</em> of time, coordinates, and momenta.  The value
+of <em>F</em> along the <a name="%_idx_1682"></a>path <img src="chap3-Z-G-D-5.gif" border="0">(<em>t</em>)  =  ( <em>t</em>, <em>q</em>(<em>t</em>), <em>p</em>(<em>t</em>) ) is (<em>F</em> <small>o</small>
+<img src="chap3-Z-G-D-5.gif" border="0">)(<em>t</em>)  =  <em>F</em>(<em>t</em>, <em>q</em>(<em>t</em>), <em>p</em>(<em>t</em>)).  The time derivative of <em>F</em> <small>o</small>
+<img src="chap3-Z-G-D-5.gif" border="0"> is
+<a name="EQUATION_3.78"></a></p>
+<div align=left><img src="chap3-Z-G-85.gif" border="0"></div>
+<p>
+If the phase-space path is a realizable path for a system with
+Hamiltonian <em>H</em>, then <em>D</em><em>q</em> and <em>D</em><em>p</em> can be reexpressed using 
+Hamilton's equations:
+<a name="EQUATION_3.79"></a></p>
+<div align=left><img src="chap3-Z-G-86.gif" border="0"></div>
+<p>
+<a name="%_idx_1684"></a><a name="%_idx_1686"></a>where the Poisson bracket { <em>F</em> , <em>H</em> } of <em>F</em> and <em>H</em> is defined by<a name="call_footnote_Temp_253" href="#footnote_Temp_253"><sup><small>17</small></sup></a>
+<a name="EQUATION_3.80"></a></p>
+<div align=left><img src="chap3-Z-G-88.gif" border="0"></div>
+<p>
+Note that the Poisson bracket of two functions on the phase-state
+space is also a function on the phase-state space.</p>
+<p>
+<a name="%_idx_1690"></a><a name="%_idx_1692"></a>The coordinate selector <em>Q</em> = <em>I</em><sub>1</sub> is an example of a function
+on phase-state space: <em>Q</em>(<em>t</em>, <em>q</em>, <em>p</em>)  =  <em>q</em>.  According to
+equation&nbsp;(<a href="#EQUATION_3.79">3.79</a>),
+<a name="EQUATION_3.81"></a></p>
+<div align=left><img src="chap3-Z-G-89.gif" border="0"></div>
+<p>
+but this is the same as Hamilton's equation
+<a name="EQUATION_3.82"></a></p>
+<div align=left><img src="chap3-Z-G-90.gif" border="0"></div>
+<p>
+<a name="%_idx_1694"></a><a name="%_idx_1696"></a>Similarly, the momentum selector <em>P</em> = <em>I</em><sub>2</sub> is a function on phase-state
+space: <em>P</em>(<em>t</em>, <em>q</em>, <em>p</em>)  =  <em>p</em>.  We have
+<a name="EQUATION_3.83"></a></p>
+<div align=left><img src="chap3-Z-G-91.gif" border="0"></div>
+<p>
+which is the same as Hamilton's other equation
+<a name="EQUATION_3.84"></a></p>
+<div align=left><img src="chap3-Z-G-92.gif" border="0"></div>
+<p>
+So the <a name="%_idx_1698"></a><a name="%_idx_1700"></a>Poisson bracket provides a uniform way of writing Hamilton's
+equations:
+<a name="EQUATION_3.85"></a></p>
+<div align=left><img src="chap3-Z-G-93.gif" border="0"></div>
+<p></p>
+<p>
+The Poisson bracket of any function with itself is zero, so we 
+recover the conservation of energy for a system that has no explicit
+time dependence:
+<a name="EQUATION_3.86"></a></p>
+<div align=left><img src="chap3-Z-G-94.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_254"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_254">Properties of the Poisson bracket</a></h4>
+<p>Let <em>F</em>, <em>G</em>, and <em>H</em> be functions of time, position, and momentum,
+and let <em>c</em> be independent of position and momentum.</p>
+<p>
+The Poisson bracket is <a name="%_idx_1702"></a>antisymmetric:
+<a name="EQUATION_3.87"></a></p>
+<div align=left><img src="chap3-Z-G-95.gif" border="0"></div>
+<p>
+It is bilinear (linear in each argument):
+<a name="EQUATION_3.88"></a></p>
+<div align=left><img src="chap3-Z-G-96.gif" border="0"></div>
+<p>
+<a name="%_idx_1704"></a><a name="%_idx_1706"></a>The Poisson bracket satisfies Jacobi's identity:
+<a name="EQUATION_3.92"></a></p>
+<div align=left><img src="chap3-Z-G-97.gif" border="0"></div>
+<p>
+All but the last of (<a href="#EQUATION_3.87">3.87</a>-<a href="#EQUATION_3.92">3.92</a>)
+can immediately be verified from the definition.  Jacobi's
+identity requires a little more effort to verify.  We can use the
+computer to avoid some work.  Define some literal phase-space
+functions of Hamiltonian type:
+</p>
+<p><tt>(define&nbsp;F<br>
+&nbsp;&nbsp;(literal-function&nbsp;'F<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(-&gt;&nbsp;(UP&nbsp;Real&nbsp;(UP&nbsp;Real&nbsp;Real)&nbsp;(DOWN&nbsp;Real&nbsp;Real))&nbsp;Real)))<br>
+<br>
+(define&nbsp;G<br>
+&nbsp;&nbsp;(literal-function&nbsp;'G&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(-&gt;&nbsp;(UP&nbsp;Real&nbsp;(UP&nbsp;Real&nbsp;Real)&nbsp;(DOWN&nbsp;Real&nbsp;Real))&nbsp;Real)))<br>
+<br>
+(define&nbsp;H<br>
+&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'H<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-&gt;&nbsp;(UP&nbsp;Real&nbsp;(UP&nbsp;Real&nbsp;Real)&nbsp;(DOWN&nbsp;Real&nbsp;Real))&nbsp;Real)))<br>
+</p>
+</tt>
+<p>Then we check the Jacobi identity:
+</p>
+<p><tt>(print-expression<br>
+&nbsp;((+&nbsp;(Poisson-bracket&nbsp;F&nbsp;(Poisson-bracket&nbsp;G&nbsp;H))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Poisson-bracket&nbsp;G&nbsp;(Poisson-bracket&nbsp;H&nbsp;F))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Poisson-bracket&nbsp;H&nbsp;(Poisson-bracket&nbsp;F&nbsp;G)))<br>
+&nbsp;&nbsp;(up&nbsp;'t&nbsp;(up&nbsp;'x&nbsp;'y)&nbsp;(down&nbsp;'px&nbsp;'py))))<br>
+<i>0</i><br>
+</p>
+</tt>
+<p>The residual is zero, so the Jacobi identity is satisfied for any
+three phase-space state functions with two degrees of freedom.</p>
+<p>
+</p>
+<a name="%_sec_Temp_255"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_255">Poisson brackets of conserved quantities</a></h4>
+<p><a name="%_idx_1708"></a><a name="%_idx_1710"></a>
+The Poisson bracket of conserved quantities is conserved.
+Let <em>F</em> and <em>G</em> be time-independent phase-space state functions: 
+<img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>F</em>  =  <img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>G</em>  =  0.  If <em>F</em> and <em>G</em> are conserved
+by the evolution under <em>H</em> then
+<a name="EQUATION_3.93"></a></p>
+<div align=left><img src="chap3-Z-G-98.gif" border="0"></div>
+<p>
+So the Poisson brackets of <em>F</em> and <em>G</em> with <em>H</em> are zero: { <em>F</em>, <em>H</em>}  = 
+{ <em>G</em>, <em>H</em>}  =  0.  The Jacobi identity then implies
+<a name="EQUATION_3.94"></a></p>
+<div align=left><img src="chap3-Z-G-99.gif" border="0"></div>
+<p>
+and thus 
+<a name="EQUATION_3.95"></a></p>
+<div align=left><img src="chap3-Z-G-100.gif" border="0"></div>
+<p>
+so { <em>F</em>, <em>G</em> } is a conserved quantity.
+The Poisson bracket of two conserved quantities is also a
+conserved quantity.</p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_253" href="#call_footnote_Temp_253"><sup><small>17</small></sup></a> In traditional notation the Poisson bracket is written
+<a name="%_idx_1688"></a></p>
+<div align=left><img src="chap3-Z-G-87.gif" border="0"></div>
+<p>
+</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-37.html">previous</a></span><span>, <a href="book-Z-H-39.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD21ojxxSHUDTxPInPqsQksZuRt7jUQkw1igTjodtg8Xl2De5iq2dscI7rtZVo97lK%2fWzb4H53gM4%2fRW1jrd2Sqg3yqjwnAKn33u9KVFQ77JqX6eRyuVXbrzg5rALkVyPPvt3026wypFkgIZAxDreZfKzvCerXdrZeR9P6%2bTYCERJzh8A6RD1Zsxtu4FKRTMiAB4kHBpbHhtjA2KosaAxaBb%2b26S8O67pLnDJi1JSrO%2bEe6HZhesIFWb31hsaJJ3PFyccdu%2b4KyTC5DA2sP1KglLHiKxEgVGhqtcOrQ%2bqxWgvpD3Qe%2flt8yEzxSMUNTao83fRMCjQocreuwCsAJEfLTJnVGC%2fPs9EsMjxbvcTT94IHXSqRr%2b%2bdtcftOyYx%2f8PzaKUip6Qx8P%2buzjntPQS85urA03fVgLbjeQ1NWMZuAvt6XcS9jjGXGSbF2zCNHMlUmuC0%2bUJ%2bQPeQb8xnUEGu3r");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

@@ -1,0 +1,402 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-60.html">previous</a></span><span>, <a href="book-Z-H-62.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_5.4"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_5.4">5.4&nbsp;&nbsp;Extended Phase Space</a></h2>
+<p><a name="%_idx_2628"></a><a name="%_idx_2630"></a>
+In this section we show that we can treat time as just another
+coordinate if we wish.  Systems described by a time-dependent
+Hamiltonian may be recast in terms of a time-independent Hamiltonian
+with an extra degree of freedom.  An advantage of this view is that
+what was a time-dependent canonical transformation can be treated as a
+time-independent transformation, where there are no additional
+conditions for adjusting the Hamiltonian.</p>
+<p>
+Suppose that we have some system characterized by a time-dependent
+Hamiltonian, for example, a periodically driven pendulum.  We may
+imagine that there is some extremely massive oscillator, unperturbed
+by the motion of the relatively massless pendulum, that produces the
+drive.  Indeed, we may think of time itself as the coordinate of an
+infinitely massive particle moving uniformly and driving everything
+else.  We often consider the rotation of the Earth as exactly such a
+stable time reference when performing short-time experiments in the
+laboratory.</p>
+<p>
+More formally, consider a dynamical system with <em>n</em> degrees of
+freedom, whose behavior is described by a possibly time-dependent
+Lagrangian <em>L</em> with corresponding Hamiltonian <em>H</em>.  We make a new
+dynamical system with <em>n</em> + 1 degrees of freedom by extending the
+generalized coordinates to include time and introducing a new
+independent variable.  We also extend the generalized velocities to
+include a velocity for the time coordinate.  In this new <em>extended
+state space</em> the coordinates are redundant, so there is a constraint
+relating the time coordinate to the new independent variable.</p>
+<p>
+We relate the original dynamical system to the extended dynamical
+system as follows: Let <em>q</em> be a coordinate path.
+Let <em>q</em><sub><em>e</em></sub>,<em>t</em> : <img src="chap2-Z-G-D-22.gif" border="0"> <img src="chap1-Z-G-D-11.gif" border="0"> <em>q</em><sub><em>e</em></sub>(<img src="chap2-Z-G-D-22.gif" border="0">),<em>t</em>(<img src="chap2-Z-G-D-22.gif" border="0">)
+be a coordinate path in the extended system where <img src="chap2-Z-G-D-22.gif" border="0"> is the new
+independent variable.  Then <em>q</em><sub><em>e</em></sub>  =  <em>q</em> <small>o</small> <em>t</em>, or <em>q</em><sub><em>e</em></sub>(<img src="chap2-Z-G-D-22.gif" border="0">)  = 
+<em>q</em>(<em>t</em>(<img src="chap2-Z-G-D-22.gif" border="0">)).  Consequently, if <em>v</em>  =  <em>D</em><em>q</em> is the velocity along a
+path then <em>v</em><sub><em>e</em></sub>(<img src="chap2-Z-G-D-22.gif" border="0">)  =  <em>D</em> <em>q</em><sub><em>e</em></sub>(<img src="chap2-Z-G-D-22.gif" border="0">)  =  <em>D</em><em>q</em>(<em>t</em>(<img src="chap2-Z-G-D-22.gif" border="0">)) &middot;  <em>D</em><em>t</em>(<img src="chap2-Z-G-D-22.gif" border="0">)  =  <em>v</em>(<em>t</em>(<img src="chap2-Z-G-D-22.gif" border="0">))  &middot; 
+<em>v</em><sub><em>t</em></sub>(<img src="chap2-Z-G-D-22.gif" border="0">).</p>
+<p>
+
+We can find a Lagrangian for the extended system by requiring
+that the value of the action be unchanged.
+Introduce the extended Lagrangian action
+<a name="EQUATION_5.89"></a></p>
+<div align=left><img src="chap5-Z-G-91.gif" border="0"></div>
+<p>
+with
+<a name="EQUATION_5.90"></a></p>
+<div align=left><img src="chap5-Z-G-92.gif" border="0"></div>
+<p>
+We have
+<a name="EQUATION_5.91"></a></p>
+<div align=left><img src="chap5-Z-G-93.gif" border="0"></div>
+<p>
+The extended system is subject to a constraint that relates the time
+to the new independent variable.  We assume the constraint is of the
+form <img src="chap1-Z-G-D-16.gif" border="0">(<img src="chap2-Z-G-D-22.gif" border="0">; <em>q</em><sub><em>e</em></sub>, <em>q</em><sub><em>t</em></sub>; <em>v</em><sub><em>e</em></sub>, <em>v</em><sub><em>t</em></sub>)  =  <em>q</em><sub><em>t</em></sub>  <tt>-</tt>  <em>f</em>(<img src="chap2-Z-G-D-22.gif" border="0">)  =  0.  The
+constraint is a holonomic constraint
+involving the coordinates and time, so we can incorporate this
+constraint by augmenting the Lagrangian:<a name="call_footnote_Temp_356" href="#footnote_Temp_356"><sup><small>12</small></sup></a>
+<a name="EQUATION_5.92"></a></p>
+<div align=left><img src="chap5-Z-G-94.gif" border="0"></div>
+<p>
+The Lagrange equations of <em>L</em>'<sub><em>e</em></sub> for <em>q</em><sub><em>e</em></sub> are satisfied for the paths
+<em>q</em> <small>o</small> <em>t</em> where <em>q</em> is any path that satisfies the original Lagrange
+equations of <em>L</em>.</p>
+<p>
+The momenta conjugate to the coordinates are
+<a name="EQUATION_5.93"></a></p>
+<div align=left><img src="chap5-Z-G-95.gif" border="0"></div>
+<p>
+So the extended momenta have the same values as the original momenta
+at the corresponding states.  The momentum conjugate to the time
+coordinate is the negation of the energy plus <em>v</em><sub><img src="chap1-Z-G-D-40.gif" border="0"></sub>.  The
+momentum conjugate to <img src="chap1-Z-G-D-40.gif" border="0"> is the constraint, which must be zero.</p>
+<p>
+
+Next we carry out the transformation to the corresponding Hamiltonian
+formulation.   First, note that the Lagrangian <em>L</em><sub><em>e</em></sub> is a homogeneous
+form of degree one in the velocities.  Thus, by Euler's theorem,
+<a name="EQUATION_5.96"></a></p>
+<div align=left><img src="chap5-Z-G-96.gif" border="0"></div>
+<p>
+The <em>p</em><img src="front-Z-G-D-1.gif" border="0">-part of the Legendre transform of <em>L</em><sub><em>e</em></sub>' is
+<a name="EQUATION_5.97"></a></p>
+<div align=left><img src="chap5-Z-G-97.gif" border="0"></div>
+<p>
+So the Hamiltonian <em>H</em>'<sub><em>e</em></sub> corresponding to <em>L</em>'<sub><em>e</em></sub> is
+<a name="EQUATION_5.98"></a></p>
+<div align=left><img src="chap5-Z-G-98.gif" border="0"></div>
+<p>
+We have used the fact that that at corresponding states the momenta
+have the same values, so on paths <em>p</em><sub><em>e</em></sub>  =  <em>p</em> <small>o</small> <em>t</em>, and 
+<a name="EQUATION_5.99"></a></p>
+<div align=left><img src="chap5-Z-G-99.gif" border="0"></div>
+<p></p>
+<p>
+The Hamiltonian <em>H</em>'<sub><em>e</em></sub> does not depend on <img src="chap1-Z-G-D-40.gif" border="0"> so we deduce that
+<em>p</em><sub><img src="chap1-Z-G-D-40.gif" border="0"></sub> is constant.  In fact, <em>p</em><sub><img src="chap1-Z-G-D-40.gif" border="0"></sub> must be given the value
+zero, because it is the constraint.  When there is a cyclic coordinate
+we can form a reduced Hamiltonian for the remaining degrees of freedom
+by substituting the constant value of conserved momentum conjugate to
+the cyclic coordinate into the Hamiltonian.  The resulting Hamiltonian
+is
+<a name="EQUATION_5.100"></a></p>
+<div align=left><img src="chap5-Z-G-100.gif" border="0"></div>
+<p>
+This extended Hamiltonian governs the evolution of the extended
+system, for arbitrary <em>f</em>.<a name="call_footnote_Temp_357" href="#footnote_Temp_357"><sup><small>13</small></sup></a></p>
+<p>
+
+Hamilton's equations reduce to
+<a name="EQUATION_5.101"></a></p>
+<div align=left><img src="chap5-Z-G-101.gif" border="0"></div>
+<p>
+The second equation gives the required relation between <em>t</em> and&nbsp;<img src="chap2-Z-G-D-22.gif" border="0">.
+The first and third equations are equivalent to Hamilton's equations
+in the original coordinates, as we can see by
+using <em>q</em><sub><em>e</em></sub>  =  <em>q</em> <small>o</small> <em>t</em> to rewrite them:
+<a name="EQUATION_5.102"></a></p>
+<div align=left><img src="chap5-Z-G-102.gif" border="0"></div>
+<p>
+Using <em>D</em><em>t</em>(<img src="chap2-Z-G-D-22.gif" border="0">)  =  <em>D</em><em>f</em>(<img src="chap2-Z-G-D-22.gif" border="0">) and dividing these factors out, we
+recover Hamilton's equations.<a name="call_footnote_Temp_358" href="#footnote_Temp_358"><sup><small>14</small></sup></a></p>
+<p>
+Now consider the special case for which the time is the same as the
+independent variable: <em>f</em>(<img src="chap2-Z-G-D-22.gif" border="0">)  =  <img src="chap2-Z-G-D-22.gif" border="0">, <em>D</em><em>f</em>(<img src="chap2-Z-G-D-22.gif" border="0">) = 1.  In this
+case <em>q</em>  =  <em>q</em><sub><em>e</em></sub> and <em>p</em>  =  <em>p</em><sub><em>e</em></sub>.  The extended Hamiltonian becomes
+<a name="EQUATION_5.103"></a></p>
+<div align=left><img src="chap5-Z-G-103.gif" border="0"></div>
+<p>
+Hamilton's equation for <em>t</em> becomes <em>D</em><em>t</em>(<img src="chap2-Z-G-D-22.gif" border="0">)  =  1, restating the
+constraint.  
+The Hamilton's equations for <em>D</em><em>q</em><sub><em>e</em></sub> and <em>D</em><em>p</em><sub><em>e</em></sub> are directly Hamilton's
+equations:
+<a name="EQUATION_5.104"></a></p>
+<div align=left><img src="chap5-Z-G-104.gif" border="0"></div>
+<p>
+The extended Hamiltonian&nbsp;(<a href="#EQUATION_5.103">5.103</a>) does
+not depend on the independent variable, so it is a conserved quantity.
+Thus, up to an additive constant <em>p</em><sub><em>t</em></sub> is equal to minus the energy.  The
+Hamilton's equation for <em>D</em><em>p</em><sub><em>t</em></sub> relates the change of the energy to
+<img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>H</em>.  Note that in the more general case, the momentum
+conjugate to the time is not the negation of the energy.  This choice,
+<em>t</em>(<img src="chap2-Z-G-D-22.gif" border="0">)  =  <img src="chap2-Z-G-D-22.gif" border="0">, is useful for a number of applications.</p>
+<p>
+Note that the extension transformation is canonical in the sense that
+the two sets of equations of motion describe equivalent dynamics.
+However, the transformation is not symplectic; in fact, it does not
+even have the same number of input and output variables.</p>
+<p>
+</p>
+<p><a name="%_thm_5.10"></a>
+<b>Exercise 5.10.</b>&nbsp;&nbsp;<strong>Homogeneous extended Lagrangian</strong><br>
+Verify that <em>L</em><sub><em>e</em></sub> is homogeneous of degree one in the velocities.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_5.11"></a>
+<b>Exercise 5.11.</b>&nbsp;&nbsp;<strong>Lagrange equations</strong><br>
+<br><strong>a</strong>.&nbsp;&nbsp;Verify the claim that
+the Lagrange equations for <em>q</em><sub><em>e</em></sub> are satisfied for exactly the same
+trajectories that satisfy the original Lagrange equations for <em>q</em>.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Verify the claim that the Lagrange equation for <em>t</em> relates
+the rate of change of energy to <img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>L</em>.</p>
+<p>
+
+
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_5.12"></a>
+<b>Exercise 5.12.</b>&nbsp;&nbsp;<strong>Lorentz transformations</strong><br>
+<a name="%_idx_2632"></a>Investigate Lorentz transformations as point transformations in the
+extended phase space.
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_362"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_362">Restricted three-body problem</a></h4>
+<p><a name="%_idx_2634"></a>
+An example that shows the utility of reformulating a problem in the
+extended phase space is the restricted three-body problem: the motion
+of a low-mass particle subject to the gravitational attraction of two
+other massive bodies that move in some fixed orbit.  The problem is
+an idealization of the situation where a body with very small mass
+moves in the presence of two bodies with much larger masses.  Any
+effects of the smaller body on the larger bodies are neglected.  In the
+simplest version, the motion of all three bodies is assumed to be in
+the same plane, and the orbit of the two massive bodies is circular.</p>
+<p>
+The motion of the bodies with larger masses is not influenced
+by the  small mass, so we model this situation as the small body moving in
+a time-varying field of the larger bodies undergoing a prescribed
+motion.  This situation can be captured as a time-dependent
+Hamiltonian:
+<a name="%_idx_2636"></a><a name="EQUATION_5.105"></a></p>
+<div align=left><img src="chap5-Z-G-105.gif" border="0"></div>
+<p>
+where <em>r</em><sub>1</sub> and <em>r</em><sub>2</sub> are the distances of the small body to the
+larger bodies, <em>m</em> is the mass of the small body, and <em>m</em><sub>1</sub>
+and <em>m</em><sub>2</sub> are the masses of the larger bodies.  Note that <em>r</em><sub>1</sub> and
+<em>r</em><sub>2</sub> are quantities that depend both on the position of the small
+particle and the time varying position of the massive particles.</p>
+<p>
+The massive bodies are in circular orbits and maintain constant
+distance from the center of mass.  Let <em>a</em><sub>1</sub> and <em>a</em><sub>2</sub> be the
+distances to the center of mass; then the distances satisfy <em>m</em><sub>1</sub> <em>a</em><sub>1</sub>  =  <em>m</em><sub>2</sub>
+<em>a</em><sub>2</sub>.  The angular frequency is <img src="chap1-Z-G-D-57.gif" border="0">  =  (<em>G</em>(<em>m</em><sub>1</sub> + <em>m</em><sub>2</sub>)/<em>a</em><sup>3</sup>)<sup>1/2</sup>
+where <em>a</em> is the distance between the masses.</p>
+<p>
+In polar coordinates, with the center of mass of the subsystem of
+massive particles at the origin and with <em>r</em> and <img src="chap1-Z-G-D-19.gif" border="0"> describing
+the position of the low-mass particle, the positions of the two massive
+bodies are <em>a</em><sub>2</sub>  =  <em>m</em><sub>1</sub> <em>a</em> / (<em>m</em><sub>1</sub>  +  <em>m</em><sub>2</sub>) with <img src="chap1-Z-G-D-19.gif" border="0"><sub>2</sub>  =  <img src="chap1-Z-G-D-57.gif" border="0"> <em>t</em> ,
+<em>a</em><sub>1</sub>  =  <em>m</em><sub>2</sub> <em>a</em> / (<em>m</em><sub>1</sub>  +  <em>m</em><sub>2</sub>) with <img src="chap1-Z-G-D-19.gif" border="0"><sub>1</sub>  =  <img src="chap1-Z-G-D-57.gif" border="0"> <em>t</em>  +  <img src="chap1-Z-G-D-15.gif" border="0"> .  The
+distances to the point masses are
+<a name="EQUATION_5.106"></a></p>
+<div align=left><img src="chap5-Z-G-106.gif" border="0"></div>
+<p>
+So, in polar coordinates, the Hamiltonian is
+<a name="%_idx_2638"></a><a name="EQUATION_5.107"></a></p>
+<div align=left><img src="chap5-Z-G-107.gif" border="0"></div>
+<p>
+We see therefore that the Hamiltonian can be written in
+terms of some function <em>f</em> such that
+<a name="EQUATION_5.108"></a></p>
+<div align=left><img src="chap5-Z-G-108.gif" border="0"></div>
+<p>
+The essential feature is that <img src="chap1-Z-G-D-19.gif" border="0"> and <em>t</em> appear in the Hamiltonian
+only in the combination <img src="chap1-Z-G-D-19.gif" border="0">  <tt>-</tt>  <img src="chap1-Z-G-D-57.gif" border="0"> <em>t</em>.</p>
+<p>
+One way to get rid of the time dependence is to choose a new set of
+variables with one coordinate equal to this combination <img src="chap1-Z-G-D-19.gif" border="0">  <tt>-</tt> 
+<img src="chap1-Z-G-D-57.gif" border="0"> <em>t</em>, by making a point transformation to a <a name="%_idx_2640"></a>rotating coordinate
+system.  We have shown that
+<a name="EQUATION_5.109"></a></p>
+<div align=left><img src="chap5-Z-G-109.gif" border="0"></div>
+<p>
+with
+<a name="EQUATION_5.113"></a></p>
+<div align=left><img src="chap5-Z-G-110.gif" border="0"></div>
+<p>
+is a canonical transformation.  The new Hamiltonian, which is not the
+energy, is conserved because there is no explicit time dependence.  It
+is a useful integral of motion -- the <a name="%_idx_2642"></a><a name="%_idx_2644"></a>Jacobi constant.<a name="call_footnote_Temp_363" href="#footnote_Temp_363"><sup><small>15</small></sup></a></p>
+<p>
+We can also eliminate the dependence on the independent time-like
+variable from the Hamiltonian for the restricted problem by going to
+the extended phase space, choosing <em>t</em> = <img src="chap2-Z-G-D-22.gif" border="0">.  The Hamiltonian
+<a name="EQUATION_5.114"></a></p>
+<div align=left><img src="chap5-Z-G-111.gif" border="0"></div>
+<p>
+is autonomous and is consequently an integral of the motion. 
+Again, we see that <img src="chap1-Z-G-D-19.gif" border="0"> and <em>t</em> occur only in the combination
+<img src="chap1-Z-G-D-19.gif" border="0">  <tt>-</tt>  <img src="chap1-Z-G-D-57.gif" border="0"> <em>t</em>, 
+which suggests a point transformation to a new coordinate <img src="chap1-Z-G-D-19.gif" border="0">'
+ =  <img src="chap1-Z-G-D-19.gif" border="0">  <tt>-</tt>  <img src="chap1-Z-G-D-57.gif" border="0"> <em>t</em>.  This point transformation is independent of the
+new independent variable <img src="chap2-Z-G-D-22.gif" border="0">.
+The transformation is specified in equations&nbsp;(<a href="#EQUATION_5.109">5.109</a>-<a href="#EQUATION_5.109">5.112</a>),
+augmented by relations specifying how the time coordinate and its 
+conjugate momentum are handled:
+<a name="EQUATION_5.115"></a></p>
+<div align=left><img src="chap5-Z-G-112.gif" border="0"></div>
+<p>
+The new Hamiltonian is obtained by composing the old Hamiltonian
+with the transformation:
+<a name="EQUATION_5.117"></a></p>
+<div align=left><img src="chap5-Z-G-113.gif" border="0"></div>
+<p>
+We recognize that the new Hamiltonian in the extended phase space,
+which has the same value as the original Hamiltonian in the extended
+phase space, is just the Jacobi constant plus <em>p</em>'<sub><em>t</em></sub>.  The new
+Hamiltonian does not depend on <em>t</em>', so <em>p</em>'<sub><em>t</em></sub> is a constant of the
+motion.  In fact, its value is irrelevant to the rest of the dynamical
+evolution, so we may set the value of <em>p</em>'<sub><em>t</em></sub> to zero if we like.  Thus,
+we have found that the Hamiltonian in the extended phase space, which
+is conserved, is just the Jacobi constant plus an additive arbitrary
+constant.  We have two routes to the Jacobi constant: (1)&nbsp;transform
+the original system to a rotating coordinate system to eliminate the time
+dependence, but in the process add extra terms to the Hamiltonian, and (2)&nbsp;go
+to the extended phase space and immediately get an integral, and by
+going to rotating coordinates recognize that this Hamiltonian
+is the same as the Jacobi constant.  So sometimes the Hamiltonian in
+the extended phase space is a useful integral.</p>
+<p>
+</p>
+<p>
+</p>
+<p><a name="%_thm_5.13"></a>
+<b>Exercise 5.13.</b>&nbsp;&nbsp;<strong>Transformations in the extended phase space</strong><br>
+In section&nbsp;<a href="book-Z-H-59.html#%_sec_5.2.3">5.2.3</a> we found that
+time-dependent transformations for which the derivative of the
+coordinate-momentum part is symplectic are canonical only if the
+Hamiltonian is modified by adding a function <em>K</em> subject to certain
+constraints (equation <a href="book-Z-H-59.html#EQUATION_5.54">5.54</a>).  Show that the
+constraints on <em>K</em> follow from the symplectic condition in the
+extended phase space, using the choice <em>t</em> = <img src="chap2-Z-G-D-22.gif" border="0">.
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_5.4.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.4.1">5.4.1&nbsp;&nbsp;Poincar&eacute;-Cartan Integral Invariant</a></h3>
+<p><a name="%_idx_2646"></a><a name="%_idx_2648"></a>
+A time-dependent transformation is canonical if in the extended phase
+space the Hamiltonians transform by composition and the extended
+phase-space transformation is symplectic.
+In section&nbsp;<a href="book-Z-H-60.html#%_sec_5.3">5.3</a> 
+we showed that if the derivative of the
+transformation is symplectic then the sum of the areas of the
+projections of any two-dimensional region of phase space onto the
+canonical <em>q</em><sup><em>i</em></sup>, <em>p</em><sub><em>i</em></sub> planes is preserved.
+This invariance is also true of symplectic transformations in the extended phase space.
+Let <em>R</em> and <em>R</em>' be corresponding regions of extended phase-space
+coordinates.  Let <em>A</em><sub><em>i</em></sub> be the area of the projection of the region <em>R</em> onto the
+canonical <em>q</em><sup><em>i</em></sup>, <em>p</em><sub><em>i</em></sub> plane, and <em>A</em>'<sub><em>i</em></sub> be the area of the projection
+of the corresponding region <em>R</em>' onto the
+canonical <em>q</em>'<sup><em>i</em></sup>, <em>p</em>'<sub><em>i</em></sub> plane.  
+In the extended phase space, we also have a projection onto the <em>t</em>, <em>p</em><sub><em>t</em></sub>
+canonical plane.  Let <em>A</em><sub><em>n</em></sub> be the area of the projection onto 
+the <em>t</em>, <em>p</em><sub><em>t</em></sub> plane.  We have then
+<a name="EQUATION_5.118"></a></p>
+<div align=left><img src="chap5-Z-G-114.gif" border="0"></div>
+<p>
+In terms of integrals this is 
+<a name="EQUATION_5.119"></a></p>
+<div align=left><img src="chap5-Z-G-115.gif" border="0"></div>
+<p>
+This equality for the sum of area integrals can be rewritten in terms
+of line integrals by Stokes's theorem:
+<a name="EQUATION_5.120"></a></p>
+<div align=left><img src="chap5-Z-G-116.gif" border="0"></div>
+<p>
+where the order of the integration and summation can be reversed
+because the boundary of <em>R</em> projects to the boundary on the canonical
+planes.</p>
+<p>
+For the special choice of <em>t</em> = <img src="chap2-Z-G-D-22.gif" border="0"> this result can be rephrased in an
+interesting way.  Let <em>E</em> be the
+value of the Hamiltonian in the original unextended phase space.
+Using <em>q</em><sup><em>n</em></sup>  =  <em>t</em> and <em>p</em><sub><em>n</em></sub>  =  <em>p</em><sub><em>t</em></sub>  =   <tt>-</tt> <em>E</em>, we can write
+<a name="EQUATION_5.121"></a></p>
+<div align=left><img src="chap5-Z-G-117.gif" border="0"></div>
+<p>
+and
+<a name="EQUATION_5.122"></a></p>
+<div align=left><img src="chap5-Z-G-118.gif" border="0"></div>
+<p>
+The relations&nbsp;(<a href="#EQUATION_5.121">5.121</a>) and
+(<a href="#EQUATION_5.122">5.122</a>) are two
+formulations of the <em>Poincar&eacute;-Cartan integral invariant</em>.</p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_356" href="#call_footnote_Temp_356"><sup><small>12</small></sup></a> We augment the Lagrangian with the total time derivative of the 
+constraint so that the Legendre transform will be well defined.</p>
+
+<p><a name="footnote_Temp_357" href="#call_footnote_Temp_357"><sup><small>13</small></sup></a> Once we have made this reduction, taking <em>p</em><sub><img src="chap1-Z-G-D-40.gif" border="0"></sub> to be
+zero, we can no longer perform a Legendre transform back to the
+extended Lagrangian system; we cannot solve for <em>p</em><sub><em>t</em></sub> in terms of
+<em>v</em><sub><em>t</em></sub>.  However, the Legendre transform in the extended
+system from <em>H</em>'<sub><em>e</em></sub> to <em>L</em>'<sub><em>e</em></sub>, with associated state variables, is well
+defined.</p>
+
+<p><a name="footnote_Temp_358" href="#call_footnote_Temp_358"><sup><small>14</small></sup></a> If <em>f</em> is strictly increasing then <em>D</em><em>f</em> is never zero.</p>
+
+<p><a name="footnote_Temp_363" href="#call_footnote_Temp_363"><sup><small>15</small></sup></a> Actually, the traditional Jacobi constant 
+is <em>C</em>  =   <tt>-</tt>  2 <em>H</em>'.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-60.html">previous</a></span><span>, <a href="book-Z-H-62.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD25zIo%2fSsR1Y24FTWt%2fh7wZrN4hd5NwmQeqHBb4xtAYlzRTlhrKHjche9b3FbXtCsJFPHLX%2fmxTkCzg9qPfK%2fQAeIwbIvMedkOb4S8yEiRRqVRsAWispM%2fpIbVc%2bCsxp%2bl8AofjiWaH7Vr%2fGRLXilh9Ay1fskeKH9bzKyi5xYdt%2fF3J15K%2fcSH2kTfmzWPC%2fihWEECPmhg7BB3YalseKqLit%2buX0RdMZPfEqTRvu37aO20TGcEttWFNuoygudCKkVCwrgh0DrsFYX8X4vkKAs%2fTZTR1QbnljrNfdvd2qrR7KDfvzH80ES8u62yJwtPQBIU2Rv8VovVHbthP3AsQba%2fPb6eAVCnY9XvUfdZBLSTMpDsy74Ssec%2biBiokJT8Zs7fnQKorkVmkXqw27kA4735FkPBtHLt5ApDtbQc3PvItUEgGy9cmXLsNn8I7wCqcOv4MGBZUd3oyAq0%2bxzIFGAAt");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

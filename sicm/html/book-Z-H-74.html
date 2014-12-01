@@ -1,0 +1,201 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-73.html">previous</a></span><span>, <a href="book-Z-H-75.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_6.3"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_6.3">6.3&nbsp;&nbsp;Many Degrees of Freedom</a></h2>
+<p><a name="%_idx_3020"></a></p>
+<p>
+Other problems are encountered in applying perturbation theory to
+systems with more than a single degree of freedom.  Consider a
+Hamiltonian of the form
+<a name="EQUATION_6.37"></a></p>
+<div align=left><img src="chap6-Z-G-46.gif" border="0"></div>
+<p>
+where <em>H</em><sub>0</sub> depends only on the momenta and so is solvable.   We assume
+that the Hamiltonian has no explicit time dependence.  We
+further assume that the coordinates are all angles and that 
+<em>H</em><sub>1</sub> is a multiply periodic function of the coordinates.</p>
+<p>
+Carrying out a Lie
+transformation with generator <em>W</em> produces the Hamiltonian
+<a name="EQUATION_6.38"></a></p>
+<div align=left><img src="chap6-Z-G-47.gif" border="0"></div>
+<p>
+as before.  The condition that the order-<img src="chap1-Z-G-D-12.gif" border="0"> terms are
+eliminated is 
+<a name="EQUATION_6.39"></a></p>
+<div align=left><img src="chap6-Z-G-48.gif" border="0"></div>
+<p>
+a linear partial differential equation.  By assumption, the
+Hamiltonian <em>H</em><sub>0</sub> depends only on the momenta.  We define 
+<a name="EQUATION_6.40"></a></p>
+<div align=left><img src="chap6-Z-G-49.gif" border="0"></div>
+<p>
+the tuple of frequencies of the unperturbed system.  The condition on
+<em>W</em> is
+<a name="EQUATION_6.41"></a></p>
+<div align=left><img src="chap6-Z-G-50.gif" border="0"></div>
+<p></p>
+<p>
+As <em>H</em><sub>1</sub> is a multiply-periodic function of the coordinates, we can
+write it as a <a name="%_idx_3022"></a><a name="%_idx_3024"></a>Poisson series:<a name="call_footnote_Temp_426" href="#footnote_Temp_426"><sup><small>1</small></sup></a>
+<a name="EQUATION_6.42"></a></p>
+<div align=left><img src="chap6-Z-G-51.gif" border="0"></div>
+<p>
+Similarly, we assume <em>W</em> can be written as a Poisson series:
+<a name="EQUATION_6.43"></a></p>
+<div align=left><img src="chap6-Z-G-52.gif" border="0"></div>
+<p>
+Substituting these into the condition that order-<img src="chap1-Z-G-D-12.gif" border="0">
+terms are eliminated, we find
+<a name="EQUATION_6.44"></a></p>
+<div align=left><img src="chap6-Z-G-53.gif" border="0"></div>
+<p>
+The cosines are orthogonal so each term must be individually zero.
+We deduce
+<a name="EQUATION_6.45"></a></p>
+<div align=left><img src="chap6-Z-G-54.gif" border="0"></div>
+<p>
+and that the required Lie generator is
+<a name="EQUATION_6.46"></a></p>
+<div align=left><img src="chap6-Z-G-55.gif" border="0"></div>
+<p></p>
+<p>
+There are a couple of problems.  First, if <em>A</em><sub>0</sub> is nonzero
+then the expression for <em>B</em><sub>0</sub> involves a division by zero.  So the
+expression for <em>B</em><sub>0</sub> is not correct.  The problem is that the
+corresponding term in <em>H</em><sub>1</sub> does not involve <img src="chap1-Z-G-D-19.gif" border="0">.  So the
+integration for <em>B</em><sub>0</sub> should introduce linear terms in <img src="chap1-Z-G-D-19.gif" border="0">.  But
+this is the same situation that led to the secular terms in the
+perturbation approximation to the pendulum.  Having learned our lesson
+there, we avoid the secular terms by adjoining this term to the
+solvable Hamiltonian and excluding <em>k</em> = 0 from the sum for <em>W</em>.
+We have
+<a name="EQUATION_6.47"></a></p>
+<div align=left><img src="chap6-Z-G-56.gif" border="0"></div>
+<p>
+and 
+<a name="EQUATION_6.48"></a></p>
+<div align=left><img src="chap6-Z-G-57.gif" border="0"></div>
+<p></p>
+<p>
+Another problem is that there are many opportunities for small
+<a name="%_idx_3026"></a><a name="%_idx_3028"></a><a name="%_idx_3030"></a>denominators that would make the perturbation large and therefore
+not a perturbation.  As we saw in the perturbation approximation for
+the pendulum in terms of the rotor, we must exclude certain regions
+from the domain of applicability of the perturbation approximation.
+These excluded regions are associated with commensurabilities among
+the frequencies <img src="chap1-Z-G-D-23.gif" border="0"><sub>0</sub>(<em>p</em>).
+Consider the phase-space transformation of the coordinates
+<a name="EQUATION_6.49"></a></p>
+<div align=left><img src="chap6-Z-G-58.gif" border="0"></div>
+<p>
+So we must exclude from the domain of applicability all regions for
+which the coefficients are large.  If the second term dominates, the excluded
+regions satisfy
+<a name="EQUATION_6.50"></a></p>
+<div align=left><img src="chap6-Z-G-59.gif" border="0"></div>
+<p>
+Considering the fact that for any tuple of frequencies <img src="chap1-Z-G-D-23.gif" border="0"><sub>0</sub>(<em>p</em>') we can find a
+tuple of integers <em>k</em> such that <em>k</em>  &middot;  <img src="chap1-Z-G-D-23.gif" border="0">(<em>p</em>') is arbitrarily
+small, this problem of <a name="%_idx_3032"></a><em>small divisors</em> looks very serious.</p>
+<p>
+However, the problem, though serious, is not as bad as it may appear,
+for a couple of reasons.  First, it may be that <em>A</em><sub><em>k</em></sub> ne 0 only for
+certain <em>k</em>.  In this case, only the regions for these terms are
+excluded from the domain of applicability.  Second, for
+analytic functions the magnitude of <em>A</em><sub><em>k</em></sub> decreases strongly with the
+size of <em>k</em> (see [<a href="book-Z-H-80.html#cite{Arnold63}">4</a>]):
+<a name="EQUATION_6.51"></a></p>
+<div align=left><img src="chap6-Z-G-60.gif" border="0"></div>
+<p>
+for some positive <i>&szlig;</i> and <em>C</em>, and where | <em>k</em> |<sub>+</sub>  =  | <em>k</em><sub>0</sub> |  + 
+| <em>k</em><sub>1</sub> |  +  <tt>&middot;&middot;&middot;</tt> .  At any stage of a perturbation approximation
+we can limit consideration to just those terms that are larger than a
+specified magnitude.  The size of the excluded region corresponding to a
+term is of order square root
+of |<em>A</em><sub><em>k</em></sub>(<em>p</em>')| and
+the inequality&nbsp;(<a href="#EQUATION_6.51">6.51</a>) shows that
+|<em>A</em><sub><em>k</em></sub>(<em>p</em>')| decreases exponentially with the order of the term.</p>
+<p>
+</p>
+<a name="%_sec_6.3.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_6.3.1">6.3.1&nbsp;&nbsp;Driven Pendulum as a Perturbed Rotor</a></h3>
+<p><a name="%_idx_3034"></a><a name="%_idx_3036"></a></p>
+<p>
+More concretely, consider the periodically driven pendulum.  We will
+develop approximate solutions for the driven pendulum as a perturbed rotor.</p>
+<p>
+<a name="%_idx_3038"></a><a name="%_idx_3040"></a>We use the Hamiltonian 
+<a name="EQUATION_6.52"></a></p>
+<div align=left><img src="chap6-Z-G-61.gif" border="0"></div>
+<p>
+We can remove the explicit time dependence by going to the extended
+phase space.  The Hamiltonian is
+<a name="EQUATION_6.53"></a></p>
+<div align=left><img src="chap6-Z-G-62.gif" border="0"></div>
+<p>
+with the constants <img src="chap1-Z-G-D-21.gif" border="0">  =  <em>m</em><em>l</em><sup>2</sup>, <i>&szlig;</i>  =  <em>m</em><em>l</em><em>g</em>, and <img src="chap1-Z-G-D-1.gif" border="0">  =   (1/2) <em>m</em> <em>l</em>
+<em>A</em> <img src="chap1-Z-G-D-23.gif" border="0"><sup>2</sup> .</p>
+<p>
+With the intent to approximate the driven pendulum as a
+perturbed rotor, we choose
+<a name="EQUATION_6.54"></a></p>
+<div align=left><img src="chap6-Z-G-63.gif" border="0"></div>
+<p>
+Notice that the perturbation <em>H</em><sub>1</sub> has only three terms in its Poisson
+series, so in the first perturbation step only three
+regions will be excluded from the domain of applicability.
+The perturbation <em>H</em><sub>1</sub> is particularly simple:  it has only three terms,
+and the coefficients are constants.</p>
+<p>
+The Lie series generator that eliminates the terms in <em>H</em><sub>1</sub> to first
+order in <img src="chap1-Z-G-D-12.gif" border="0">, satisfying
+<a name="EQUATION_6.55"></a></p>
+<div align=left><img src="chap6-Z-G-64.gif" border="0"></div>
+<p>
+is
+<a name="EQUATION_6.56"></a></p>
+<div align=left><img src="chap6-Z-G-65.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  =  <img src="front-Z-G-D-2.gif" border="0"><sub>2,0</sub> <em>H</em><sub>0</sub>(<img src="chap2-Z-G-D-22.gif" border="0">; <img src="chap1-Z-G-D-19.gif" border="0">, <em>t</em>; <em>p</em>, <em>p</em><sub><em>t</em></sub>)  =  <em>p</em>/<img src="chap1-Z-G-D-21.gif" border="0">
+is the unperturbed rotor frequency.</p>
+<p>
+The resulting approximate solution has three regions in which there
+are <a name="%_idx_3042"></a>small denominators, and so three regions that are excluded from
+applicability of the perturbative solution.  Regions of phase space
+for which <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>) is near 0, <img src="chap1-Z-G-D-23.gif" border="0">, and  <tt>-</tt> <img src="chap1-Z-G-D-23.gif" border="0"> are
+excluded.  Away from these regions
+the perturbative solution works well, just as in the rotor
+approximation for the pendulum.  Unfortunately, some of the more
+interesting regions of the phase space of the driven pendulum are
+excluded: the region in which we find the remnant of the undriven
+pendulum is excluded, as are the two resonance regions in which the
+rotation of the pendulum is synchronous with the drive.  We need to
+develop methods for approximating these regions.</p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_426" href="#call_footnote_Temp_426"><sup><small>1</small></sup></a> In general, we need to include sine terms as well, but the
+cosine expansion is enough for this illustration.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-73.html">previous</a></span><span>, <a href="book-Z-H-75.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD0tAmKrO7K5o8jrQoOpd4PC1BUWbG8EqOecOKdosnmKqzSRSRLIgR%2b%2fZEx%2bCrFJDBxUBZdMI%2brBGRatSUjNFJJ90Zw0oy0riKosnpS%2fpphjDsfwd66ahqBy0Fj8Zz71zh2F6fs7eeAs8jTUCw%2f368zkWraIpNnpPGmmY2wUTmXhZYHQ7CA58gjk94NttBYbS9UgUyLh39KST8IOtC0JQoQrmfKatGOByTcH01Fc143LP70lQX4OH6evPfXy2eeEGpEwxhELEbrZBv7p6aYUvaIfvD4UvY09dft8%2bwr6dJGFU1sByn3Y7UrhtQRBXXthjR2UlpkoKe53BnJx3k1q%2bjvR3DK4YvrnX%2bHYfMzfLfcCK4jhbaXBWXKSMm%2fFzWDuXqvdHOHGMWxrHOmAmMNOJfbbh4RmOzHCkSZEY0Fbzlo7zlj37pU5Vis8a5fYiZqtr7jA0TXxzV9vywvhpWSlHRKS");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

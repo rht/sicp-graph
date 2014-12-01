@@ -1,0 +1,384 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-13.html">previous</a></span><span>, <a href="book-Z-H-15.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_1.7"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_1.7">1.7&nbsp;&nbsp;Evolution of Dynamical State</a></h2>
+<p></p>
+<p>
+<a name="%_idx_752"></a>Lagrange's equations are ordinary differential equations that the
+path must satisfy.  They can be used to test if a proposed
+path is a realizable path of the system.  However, we can also
+use them to develop a path, starting with initial conditions.</p>
+<p>
+<a name="%_idx_754"></a>The <em>state</em> of a system is defined to be the
+information that must be specified for the subsequent evolution to be
+determined.  Remember our juggler: he or she must throw the pin in a
+certain way for it to execute the desired motion.  The juggler has
+control of the initial position and orientation of the pin, and the
+initial velocity and spin of the pin.  Our experience with juggling
+and similar systems suggests that the initial configuration and the
+rate of change of the configuration are sufficient to determine the
+subsequent motion.  Other systems may require higher derivatives of
+the configuration.</p>
+<p>
+For Lagrangians that are written in terms of a set of generalized
+coordinates and velocities we have shown that <a name="%_idx_756"></a><a name="%_idx_758"></a>Lagrange's equations are
+second-order ordinary differential equations.  If the differential
+equations can be solved for the highest-order derivatives and if the
+differential equations satisfy appropriate conditions,<a name="call_footnote_Temp_129" href="#footnote_Temp_129"><sup><small>73</small></sup></a>
+then there is a unique solution to the initial-value
+problem: given values of the solution and the lower derivatives of the
+solution at a particular moment, there is a unique solution function.
+Given irredundant coordinates the Lagrange equations satisfy these
+conditions.<a name="call_footnote_Temp_130" href="#footnote_Temp_130"><sup><small>74</small></sup></a> 
+Thus a trajectory is determined by the generalized coordinates and the
+generalized velocities at any time.  This is the information required
+to specify the dynamical state.</p>
+<p>
+A complete local description of a path consists of the path and all of its
+derivatives at a moment.  The complete local description of a path can
+be reconstructed from an initial segment of the local tuple,
+given a prescription for computing higher-order derivatives of the path in
+terms of lower-order derivatives.  The state of the system is specified by
+that initial segment of the local tuple from which the rest of
+the complete local description can be deduced.  The complete local description
+gives us the path near that moment.  Actually, all we need is a rule
+for computing the next higher derivative; we can get all the rest from
+this.  Assume that the <a name="%_idx_764"></a>state of a system is given by the tuple
+( <em>t</em>, <em>q</em>, <em>v</em> ).  If we are given a prescription for computing the
+acceleration <em>a</em>  =  <em>A</em>(<em>t</em>, <em>q</em>, <em>v</em>), then
+<a name="EQUATION_1.126"></a></p>
+<div align=left><img src="chap1-Z-G-158.gif" border="0"></div>
+<p>
+and we have as a consequence
+<a name="EQUATION_1.127"></a></p>
+<div align=left><img src="chap1-Z-G-159.gif" border="0"></div>
+<p>
+and so on.  So the higher-derivative components of the local tuple are
+given by functions <em>D</em><sub><em>t</em></sub> <em>A</em>, <em>D</em><sub><em>t</em></sub><sup>2</sup> <em>A</em>, <tt>...</tt>.  Each of these
+functions depends on lower-derivative components of the local
+tuple.  All we need to deduce the path from the state is a
+function that gives the next-higher derivative component of the local
+description from the state.  We use the Lagrange equations to find
+this function.</p>
+<p>
+First, we expand the Lagrange equations 
+</p>
+<div align=left><img src="chap1-Z-G-160.gif" border="0"></div>
+<p>
+so that the second derivative appears explicitly:
+<a name="EQUATION_1.128"></a></p>
+<div align=left><img src="chap1-Z-G-161.gif" border="0"></div>
+<p>
+Solving this system for <em>D</em><sup>2</sup><em>q</em>, one obtains the generalized acceleration
+along a solution path <em>q</em>:
+<a name="EQUATION_1.128"></a></p>
+<div align=left><img src="chap1-Z-G-162.gif" border="0"></div>
+<p>
+where [ <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>L</em> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0"> ] is a
+structure that can be represented by a symmetric square matrix, so we can
+compute its inverse.
+The  function that gives the acceleration is 
+<a name="EQUATION_1.128"></a></p>
+<div align=left><img src="chap1-Z-G-163.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-42.gif" border="0"> = <em>I</em><sub>2</sub> is the velocity component selector.</p>
+<p>
+<a name="%_idx_766"></a><a name="%_idx_768"></a><a name="%_idx_770"></a>That initial segment of the local tuple that specifies the
+state is called the local state tuple, or, more simply, the state tuple.</p>
+<p>
+We can express the function that gives the acceleration as a function
+of the state tuple as the following procedure.  It
+takes a procedure that computes the Lagrangian, and
+returns a procedure that takes a state tuple as its argument and returns
+the acceleration.<a name="call_footnote_Temp_131" href="#footnote_Temp_131"><sup><small>75</small></sup></a>
+</p>
+<p><tt>(define&nbsp;(Lagrangian-&gt;acceleration&nbsp;L)<br>
+&nbsp;&nbsp;(let&nbsp;((P&nbsp;((partial&nbsp;2)&nbsp;L))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(F&nbsp;((partial&nbsp;1)&nbsp;L)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(/&nbsp;(-&nbsp;F<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;((partial&nbsp;0)&nbsp;P)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;((partial&nbsp;1)&nbsp;P)&nbsp;velocity)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((partial&nbsp;2)&nbsp;P))))<br>
+</p>
+</tt>
+<p>
+Once we have a way of computing the acceleration from the coordinates
+and the velocities, we can give a prescription for computing the
+<a name="%_idx_776"></a><a name="%_idx_778"></a><a name="%_idx_780"></a>derivative of the state as a function of the state.  
+For the state ( <em>t</em>, <em>q</em>(<em>t</em>), <em>D</em><em>q</em>(<em>t</em>) ) at the moment
+<em>t</em> the derivative of the state is ( 1, <em>D</em><em>q</em>(<em>t</em>), <em>D</em><sup>2</sup><em>q</em>(<em>t</em>) )
+ =  ( 1, <em>D</em><em>q</em>(<em>t</em>), <em>A</em>(<em>t</em>, <em>q</em>(<em>t</em>), <em>D</em><em>q</em>(<em>t</em>)) ).
+The procedure <tt>Lagrangian-&gt;state-derivative</tt> takes a Lagrangian and returns a procedure that takes a state and returns the derivative of the state:
+</p>
+<p><tt><a name="%_idx_782"></a>(define&nbsp;(Lagrangian-&gt;state-derivative&nbsp;L)<br>
+&nbsp;&nbsp;(let&nbsp;((acceleration&nbsp;(Lagrangian-&gt;acceleration&nbsp;L)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(lambda&nbsp;(state)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(velocity&nbsp;state)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(acceleration&nbsp;state)))))<br>
+</p>
+</tt>
+<p>We represent a state by an <tt>up</tt>-tuple of the components of that initial
+segment of the local tuple that determine the state.</p>
+<p>
+For example, the parametric state derivative for a harmonic oscillator is
+</p>
+<p><tt>(define&nbsp;(harmonic-state-derivative&nbsp;m&nbsp;k)<br>
+&nbsp;&nbsp;(Lagrangian-&gt;state-derivative&nbsp;(L-harmonic&nbsp;m&nbsp;k)))<br>
+<br>
+(print-expression<br>
+&nbsp;((harmonic-state-derivative&nbsp;'m&nbsp;'k)<br>
+&nbsp;&nbsp;(up&nbsp;'t&nbsp;(up&nbsp;'x&nbsp;'y)&nbsp;(up&nbsp;'v_x&nbsp;'v_y))))<br>
+<i>(up&nbsp;1&nbsp;(up&nbsp;v_x&nbsp;v_y)&nbsp;(up&nbsp;(/&nbsp;(*&nbsp;-1&nbsp;k&nbsp;x)&nbsp;m)&nbsp;(/&nbsp;(*&nbsp;-1&nbsp;k&nbsp;y)&nbsp;m)))</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+</p>
+</tt>
+<p>
+<a name="%_idx_784"></a>The Lagrange equations are a second-order system of differential
+equations that constrain realizable paths <em>q</em>.  
+We can use the state derivative to express the Lagrange equations 
+as a first-order system of differential equations that constrain
+realizable coordinate paths <em>q</em> and velocity paths <em>v</em>: 
+</p>
+<p><tt>(define&nbsp;((Lagrange-equations-first-order&nbsp;L)&nbsp;q&nbsp;v)<br>
+&nbsp;&nbsp;(let&nbsp;((state-path&nbsp;(qv-&gt;state-path&nbsp;q&nbsp;v)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(D&nbsp;state-path)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(compose&nbsp;(Lagrangian-&gt;state-derivative&nbsp;L)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state-path))))<br>
+<br>
+(define&nbsp;((qv-&gt;state-path&nbsp;q&nbsp;v)&nbsp;t)<br>
+&nbsp;&nbsp;(up&nbsp;t&nbsp;(q&nbsp;t)&nbsp;(v&nbsp;t)))<br>
+</p>
+</tt>
+<p><a name="%_idx_786"></a><a name="%_idx_788"></a><a name="%_idx_790"></a>For example, we can find the first-order form of the equations of motion of a
+two-dimensional harmonic oscillator:
+</p>
+<p><tt>(show-expression<br>
+&nbsp;(((Lagrange-equations-first-order&nbsp;(L-harmonic&nbsp;'m&nbsp;'k))<br>
+&nbsp;&nbsp;&nbsp;(up&nbsp;(literal-function&nbsp;'x)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'y))<br>
+&nbsp;&nbsp;&nbsp;(up&nbsp;(literal-function&nbsp;'v_x)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'v_y)))<br>
+&nbsp;&nbsp;'t))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-164.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+The zero in the first element of the structure of the Lagrange equations
+residuals is just the tautology that time advances uniformly: the
+time function is just the identity, so its derivative is one and the
+residual is zero.  The equations in the second element constrain the
+velocity path to be the derivative of the coordinate path.  The
+equations in the third element give the rate of change of the velocity
+in terms of the applied forces.</p>
+<p>
+
+</p>
+<a name="%_sec_Temp_132"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_132">Numerical integration</a></h4>
+<p><a name="%_idx_792"></a><a name="%_idx_794"></a>
+<a name="FIGURE_1.6"></a></p>
+<div align=left><img src="chap1-Z-G-165.gif" border="0"></div>
+<p></p>
+<p>
+A set of first-order ordinary differential equations that give the
+state derivative in terms of the state can be integrated to find the
+state path that emanates from a given initial state.  Numerical
+integrators find approximate solutions of such differential equations
+by a process illustrated in figure&nbsp;<a href="#FIGURE_1.6">1.6</a>.  The state
+derivative produced by <tt>Lagrangian-&gt;state-derivative</tt> can be
+used by a package that numerically integrates systems of first-order
+ordinary differential equations.  </p>
+<p>
+<a name="%_idx_796"></a>The procedure <tt>state-advancer</tt> can be used to find the state of a
+system at a specified time, given an initial state, which includes the
+initial time, and a parametric state-derivative procedure.<a name="call_footnote_Temp_133" href="#footnote_Temp_133"><sup><small>76</small></sup></a>
+For example, to advance the state of a two-dimensional harmonic
+oscillator we write<a name="call_footnote_Temp_134" href="#footnote_Temp_134"><sup><small>77</small></sup></a>
+</p>
+<p><tt>(print-expression<br>
+&nbsp;&nbsp;((state-advancer&nbsp;harmonic-state-derivative&nbsp;2&nbsp;1)<br>
+&nbsp;&nbsp;&nbsp;(up&nbsp;0&nbsp;(up&nbsp;1&nbsp;2)&nbsp;(up&nbsp;3&nbsp;4))<br>
+&nbsp;&nbsp;&nbsp;10<br>
+&nbsp;&nbsp;&nbsp;1.e-12))<br>
+<i>(up&nbsp;10.&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;3.712791664584467&nbsp;5.420620823651575)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;1.6148030925459906&nbsp;1.8189103724750977))</i><br>
+</p>
+</tt>
+<p>The arguments to <tt>state-advancer</tt> are a parametric state
+derivative, <tt>harmonic-state-derivative</tt>, and the state-derivative parameters
+(mass <tt>2</tt> and spring constant <tt>1</tt>).  A procedure is
+returned that takes an initial state, <tt>(up 0 (up 1 2) (up 3
+4))</tt>; a target time, <tt>10</tt>; and a relative error tolerance,
+<tt>1.e-12</tt>.  The output is an approximation to the state at the
+specified final time.</p>
+<p>
+
+<a name="%_idx_806"></a><a name="%_idx_808"></a>Consider the driven pendulum described
+above with a periodic drive.  We choose <em>y</em><sub><em>s</em></sub>(<em>t</em>)  =  <em>a</em> cos <img src="chap1-Z-G-D-23.gif" border="0"> <em>t</em>.
+</p>
+<p><tt>(define&nbsp;((periodic-drive&nbsp;amplitude&nbsp;frequency&nbsp;phase)&nbsp;t)<br>
+&nbsp;&nbsp;(*&nbsp;amplitude&nbsp;(cos&nbsp;(+&nbsp;(*&nbsp;frequency&nbsp;t)&nbsp;phase))))<br>
+(define&nbsp;(L-periodically-driven-pendulum&nbsp;m&nbsp;l&nbsp;g&nbsp;a&nbsp;omega)<br>
+&nbsp;&nbsp;(let&nbsp;((ys&nbsp;(periodic-drive&nbsp;a&nbsp;omega&nbsp;0)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(L-pend&nbsp;m&nbsp;l&nbsp;g&nbsp;ys)))<br>
+</p>
+</tt>
+<p>Lagrange's equation for this system is
+</p>
+<p><tt>(show-expression<br>
+&nbsp;(((Lagrange-equations<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(L-periodically-driven-pendulum&nbsp;'m&nbsp;'l&nbsp;'g&nbsp;'a&nbsp;'omega))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'theta))<br>
+&nbsp;&nbsp;'t))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-166.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+The parametric state derivative for the periodically driven pendulum is
+</p>
+<p><tt>(define&nbsp;(pend-state-derivative&nbsp;m&nbsp;l&nbsp;g&nbsp;a&nbsp;omega)<br>
+&nbsp;&nbsp;(Lagrangian-&gt;state-derivative<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(L-periodically-driven-pendulum&nbsp;m&nbsp;l&nbsp;g&nbsp;a&nbsp;omega)))<br>
+<br>
+(show-expression<br>
+&nbsp;&nbsp;((pend-state-derivative&nbsp;'m&nbsp;'l&nbsp;'g&nbsp;'a&nbsp;'omega)<br>
+&nbsp;&nbsp;&nbsp;(up&nbsp;'t&nbsp;'theta&nbsp;'thetadot)))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-167.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p></p>
+<p>
+To examine the evolution of the driven pendulum we need a mechanism
+that evolves a system for some interval while monitoring aspects of
+the system as it evolves.  The procedure <a name="%_idx_810"></a><tt>evolve</tt> provides this
+service, using <tt>state-advancer</tt> repeatedly to advance the state
+to the required moments.  The procedure <tt>evolve</tt> takes a
+parametric state derivative and its parameters and returns a procedure
+that evolves the system from a specified initial state to a number of
+other times, monitoring some aspect of the state at those times.
+To generate a <a name="%_idx_812"></a><a name="%_idx_814"></a>plot of the angle versus time we make a monitor
+procedure that generates the plot as the evolution proceeds:<a name="call_footnote_Temp_135" href="#footnote_Temp_135"><sup><small>78</small></sup></a>
+</p>
+<p><tt>(define&nbsp;((monitor-theta&nbsp;win)&nbsp;state)<br>
+&nbsp;&nbsp;(let&nbsp;((theta&nbsp;((principal-value&nbsp;:pi)&nbsp;(coordinate&nbsp;state))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(plot-point&nbsp;win&nbsp;(time&nbsp;state)&nbsp;theta)))<br>
+<br>
+(define&nbsp;plot-win&nbsp;(frame&nbsp;0.&nbsp;100.&nbsp;:-pi&nbsp;:pi))<br>
+((evolve&nbsp;pend-state-derivative&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;m=1kg<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;l=1m<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;g=9.8m/s<sup>2</sup><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;a=1/10&nbsp;m<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;2.0&nbsp;(sqrt&nbsp;9.8))&nbsp;)&nbsp;&nbsp;;omega<br>
+&nbsp;(up&nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;t<sub>0</sub>=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;theta<sub>0</sub>=1&nbsp;radian<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;thetadot<sub>0</sub>=0&nbsp;radians/s<br>
+&nbsp;(monitor-theta&nbsp;plot-win)<br>
+&nbsp;0.01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;step&nbsp;between&nbsp;plotted&nbsp;points<br>
+&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;final&nbsp;time<br>
+&nbsp;1.0e-13)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;local&nbsp;error&nbsp;tolerance<br>
+</p>
+</tt>
+<p>
+<a name="FIGURE_1.7"></a></p>
+<div align=left><img src="chap1-Z-G-168.gif" border="0"></div>
+<p></p>
+<p>
+Figure&nbsp;<a href="#FIGURE_1.7">1.7</a> shows the angle <img src="chap1-Z-G-D-19.gif" border="0">
+versus time for a couple of orbits for the driven pendulum.  The
+initial conditions for the two runs are the same except that in one
+the bob is given a tiny velocity equal to 10<sup><tt>-</tt>10</sup> m/s, about one
+atom width per second.  The initial segments of the two orbits are
+indistinguishable.  After about 75 seconds the two orbits diverge and
+become completely different.  This extreme sensitivity to tiny changes
+in initial conditions is characteristic of what is called <a name="%_idx_822"></a><a name="%_idx_824"></a><em>chaotic
+behavior</em>.  Later, we will investigate this example further, using
+other tools such as Lyapunov exponents, phase space, and Poincar&eacute;
+sections.</p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_129" href="#call_footnote_Temp_129"><sup><small>73</small></sup></a> For example, the
+<a name="%_idx_760"></a>  Lipschitz condition is that the rate of change of the derivative is
+bounded by a constant in an open set around each point of the
+trajectory.  See&nbsp;[<a href="book-Z-H-80.html#cite{Ince}">25</a>] for a good treatment of the Lipschitz
+condition.</p>
+
+<p><a name="footnote_Temp_130" href="#call_footnote_Temp_130"><sup><small>74</small></sup></a> If the coordinates are redundant we cannot, in
+<a name="%_idx_762"></a>  general, solve for the highest-order derivative.  However, since we can
+transform to irredundant coordinates, since we can solve the
+initial-value problem in the irredundant coordinates, and since we
+can construct the redundant coordinates from the irredundant
+coordinates, we can in general solve the initial-value problem for
+redundant coordinates.  The only hitch is that we cannot specify
+arbitrary initial conditions: the initial conditions must be
+consistent with the constraints.</p>
+
+<p><a name="footnote_Temp_131" href="#call_footnote_Temp_131"><sup><small>75</small></sup></a> In Scmutils, division by a structure is interpreted as 
+<a name="%_idx_772"></a><a name="%_idx_774"></a>  multiplication on the left by the inverse structure.</p>
+
+<p><a name="footnote_Temp_133" href="#call_footnote_Temp_133"><sup><small>76</small></sup></a> The Scmutils system provides a stable of numerical
+<a name="%_idx_798"></a><a name="%_idx_800"></a><a name="%_idx_802"></a><a name="%_idx_804"></a>  integration routines that can be accessed through this interface.
+These include quality-controlled Runge-Kutta and Bulirsch-Stoer. 
+The default integration method is Bulirsch-Stoer.</p>
+
+<p><a name="footnote_Temp_134" href="#call_footnote_Temp_134"><sup><small>77</small></sup></a> The procedure <tt>state-advancer</tt> automatically
+compiles state-derivative procedures the first time they are
+encountered.  The first time a new state derivative is used there is
+a delay while compilation occurs.</p>
+
+<p><a name="footnote_Temp_135" href="#call_footnote_Temp_135"><sup><small>78</small></sup></a> The results are plotted in a plot window created by the
+<a name="%_idx_816"></a><a name="%_idx_818"></a><a name="%_idx_820"></a>  procedure <tt>frame</tt> with arguments <tt>xmin</tt>, <tt>xmax</tt>, <tt>ymin</tt>, and <tt>ymax</tt> that specify the limits of the plotting area.
+Points are added to the plot with the procedure <tt>plot-point</tt> that
+takes a plot window and the abscissa and ordinate of the point to be
+plotted.</p>
+<p>
+The procedure <tt>principal-value</tt> is used to reduce an angle to a
+standard interval.  The argument to <tt>principal-value</tt> is the
+point at which the circle is to be cut.  Thus <tt>(principal-value :pi)</tt>
+is a procedure that reduces an angle <img src="chap1-Z-G-D-19.gif" border="0"> to the interval  <tt>-</tt> <img src="chap1-Z-G-D-15.gif" border="0">
+<u>&lt;</u> <img src="chap1-Z-G-D-19.gif" border="0"> &lt; <img src="chap1-Z-G-D-15.gif" border="0">.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-13.html">previous</a></span><span>, <a href="book-Z-H-15.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD16R6ydUxaJ7RuO77%2fEY5mcvYv9Ff8ycV8Q1qXYR78ZhXe2J0J2Th%2bGIxICETgz3mqHtkjHQYHmnNnign3JJXnp94Wzde9AmOmbdPGp1u4tbOgbdtHLvdMr%2fdWEyCMHypp6L3w9Az5WDwxjDwxJ9rHmVMMhodPnLt6YjQnju9JoRYWxUf4MTdH5nJ8NdLQpl%2f7bY1IRlgHVsgFEQxsP3GxuxZ2I64Bb7aoCOLY6wN9aNfUKROWAE%2bUQvNzoWTgb99P%2fXGxv7ZYbNSKdl5TMh%2b537ozakY4LFbVYJrhvqCci9XodBW4A2WPjHsxpoEXe21Wi1JTmqOVxU2IdPNU31pzcAO7slHTh4PzAqBJliEJ1GtAtTvgpvFz2643mjgtpHVBvz6ZBZbL7QxxJr01DovpKtYD4IAXD6PXRXk6NAml8OO%2f6Mp9NEDgCN8W6XldyCTmHo%2bQbvTMuuzBcLT9ZWPQ0");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

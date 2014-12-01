@@ -1,0 +1,418 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-53.html">previous</a></span><span>, <a href="book-Z-H-55.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_4.6"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_4.6">4.6&nbsp;&nbsp;Invariant Curves</a></h2>
+<p><a name="%_idx_2402"></a>
+<a name="%_idx_2404"></a>We started with an integrable system, where there are invariant
+curves.  Do any invariant curves survive if a perturbation is added?</p>
+<p>
+The Poincar&eacute;-Birkhoff construction for twist maps shows that
+invariant curves with rational rotation number typically do not survive
+perturbation.  Upon perturbation the invariant curves with rational
+rotation numbers are replaced by an alternating sequence of stable and
+unstable periodic orbits.  So if there are invariant curves that
+survive perturbation they must have irrational rotation numbers.</p>
+<p>
+The perturbed system has chains of 
+alternating stable and
+unstable fixed points for every rational rotation number.  Each
+stable fixed point is surrounded by an island that occupies some
+region of the section.  Each irrational is arbitrarily close to a rational, so
+it is not obvious that any invariant curve can survive an arbitrarily
+small perturbation.</p>
+<p>
+<a name="%_idx_2406"></a><a name="%_idx_2408"></a>Nevertheless, the Kolmogorov-Arnold-Moser (KAM)
+theorem proves that <a name="%_idx_2410"></a><a name="%_idx_2412"></a>invariant curves do exist if the perturbation is small
+enough that the perturbed problem is ``close enough'' to an
+integrable problem, and if the rotation number is ``irrational
+enough.''  We will not prove this theorem here.  Instead we will
+<a name="%_idx_2414"></a>develop methods for finding particular invariant curves.</p>
+<p>
+Stable periodic orbits have a stable island surrounding them on the
+surface of section.  The <a name="%_idx_2416"></a>largest islands are associated with rationals
+with <a name="%_idx_2418"></a><a name="%_idx_2420"></a>small denominators.  In general, the size of the island is limited
+to a size that decreases as the denominator increases.  These islands
+are a local indication of the effect of the perturbation.  Similarly,
+the chaotic zones appear near unstable periodic orbits and their
+homoclinic tangles.  The homoclinic tangle is a continuous curve so it
+cannot cross an invariant curve, which is also continuous.  If we are
+looking for invariant curves that persist upon perturbation, we would
+be wise to avoid regions of phase space where the islands or
+homoclinic tangles are major features.</p>
+<p>
+The Poincar&eacute;-Birkhoff islands are ordered by rotation number.
+Because of the twist condition, the rotation number is monotonic in the
+momentum of the unperturbed problem.  If there is an invariant curve
+with a given rotation number, it is sandwiched between island chains
+associated with rational rotation numbers.  The rotation number of the
+invariant curve must be between the rotation numbers of the island
+chains on either side of it.</p>
+<p>
+The fact that the size of the islands decreases with the size of the
+denominator suggests that invariant curves with rotation numbers for
+which nearby rationals require large denominators are the most likely
+to exist.  So we will begin our search for invariant curves by
+examining rotation numbers that are not near rationals with small
+denominators.  </p>
+<p>
+Any irrational can be approximated by a sequence of rationals, and for
+each of these rationals we expect there to be stable and unstable
+periodic orbits with stable islands and homoclinic tangles.  An
+invariant curve for a given rotation number has the best chance of
+surviving if the size of the islands associated with the each rational
+approximation is smaller than the separation of the islands from the
+invariant curve with that rotation number.</p>
+<p>
+<a name="%_idx_2422"></a><a name="%_idx_2424"></a>For any particular size denominator, the best rational approximation
+to an irrational number is given by an initial segment of a simple
+continued fraction.  If the approximating continued fraction converges
+slowly to the irrational number, then that number is not near rationals
+with small denominators.  Thus, we will look for invariant curves with
+rotation numbers that have slowly converging continued-fraction
+approximations.  The continued fractions that converge most slowly
+have tails that are all one.  Such a number is called a 
+<a name="%_idx_2426"></a><em>golden number</em>.
+For example, the <a name="%_idx_2428"></a>golden ratio,
+<a name="EQUATION_4.43"></a></p>
+<div align=left><img src="chap4-Z-G-59.gif" border="0"></div>
+<p>
+is just such a number.</p>
+<p>
+</p>
+<a name="%_sec_4.6.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_4.6.1">4.6.1&nbsp;&nbsp;Finding Invariant Curves</a></h3>
+<p><a name="%_idx_2430"></a>
+Invariant curves, if there are any, are characterized by a particular
+rotation number.  Points on the invariant curve map to points on the
+invariant curve.  Neighboring points map to neighboring points,
+preserving the order.</p>
+<p>
+On the section for the unperturbed integrable system, the angle
+between successive section points is constant: <img src="chap1-Z-G-D-43.gif" border="0"> <img src="chap1-Z-G-D-19.gif" border="0">  =  2 <img src="chap1-Z-G-D-15.gif" border="0">
+<img src="chap1-Z-G-D-14.gif" border="0">(<em>J</em>) for rotation number <img src="chap1-Z-G-D-14.gif" border="0">(<em>J</em>).  This map of the circle onto itself
+with constant angular step we call a <a name="%_idx_2432"></a><em>uniform circle map</em>.</p>
+<p>
+For a given rotation number points on the section are laid down in a
+particular order characteristic of the rotation number only.  As a
+perturbation is turned on, the invariant curve with a particular
+rotation number will be distorted and the angle between successive
+points will no longer be constant.  All that is required to have a
+particular rotation number is that the average change in angle 
+be&nbsp;<img src="chap1-Z-G-D-43.gif" border="0"> <img src="chap1-Z-G-D-19.gif" border="0">.  Nevertheless, the ordering of the points on the
+surface of section is preserved, and is characteristic of the rotation
+number.</p>
+<p>
+The sequence of points on the surface of section for an invariant
+curve with a given rotation number must have a particular order.  We
+can use this fact to find the invariant curve.  At a specified angle
+we perform a bisection search for the momentum that lies on the
+invariant curve.  We can tell whether the initial point is on the
+desired invariant curve or which side of the invariant curve it is on
+by evolving a candidate initial point with both the perturbed map and
+the uniform circle map and comparing the ordering of the sequences of
+points that are generated.</p>
+<p>
+A program to implement this plan of attack is<a name="call_footnote_Temp_321" href="#footnote_Temp_321"><sup><small>14</small></sup></a>
+</p>
+<p><tt><a name="%_idx_2434"></a>(define&nbsp;(find-invariant-curve&nbsp;the-map&nbsp;rn&nbsp;theta0&nbsp;Jmin&nbsp;Jmax&nbsp;eps)<br>
+&nbsp;&nbsp;(bisect&nbsp;(lambda&nbsp;(J)&nbsp;(which-way?&nbsp;rn&nbsp;theta0&nbsp;J&nbsp;the-map))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jmin&nbsp;Jmax&nbsp;eps))<br>
+</p>
+</tt>
+<p>However, we need to be able to determine which way to change the initial
+momentum to approach the required rotation number.</p>
+<p>
+
+We can evolve the orbits for both maps, producing streams of points
+that appear on the section.  (The momentum value of the uniform circle map is
+superfluous.)  Each orbit stream is transduced into a stream of
+positive integers.  
+The integers give the number of points in the stream that have
+been determined to have smaller values of the angle than the current point.
+The streams of integers are then compared until a discrepancy is
+found.  
+The first discrepancy is used to compare the rotation numbers
+of the two orbits, to determine which orbit has smaller rotation
+number:
+</p>
+<p><tt>(define&nbsp;(which-way?&nbsp;rn&nbsp;theta0&nbsp;J0&nbsp;the-map)<br>
+&nbsp;&nbsp;(compare-streams<br>
+&nbsp;&nbsp;&nbsp;(position-stream&nbsp;theta0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(orbit-stream&nbsp;the-map&nbsp;theta0&nbsp;J0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'())<br>
+&nbsp;&nbsp;&nbsp;(position-stream&nbsp;theta0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(orbit-stream&nbsp;(uniform-circle-map&nbsp;rn)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theta0&nbsp;J0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'())<br>
+&nbsp;&nbsp;&nbsp;0))<br>
+</p>
+</tt>
+<p>The maps are evolved and built into a stream by a simple recursive
+procedure.  The maps are represented in the same way as
+in section&nbsp;<a href="book-Z-H-42.html#%_sec_3.6.2">3.6.2</a>:
+</p>
+<p><tt>(define&nbsp;(orbit-stream&nbsp;the-map&nbsp;x&nbsp;y)<br>
+&nbsp;&nbsp;(cons-stream&nbsp;(list&nbsp;x&nbsp;y)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(the-map&nbsp;x&nbsp;y&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(lambda&nbsp;(nx&nbsp;ny)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(orbit-stream&nbsp;the-map&nbsp;nx&nbsp;ny))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(lambda&nbsp;()&nbsp;'fail))))<br>
+</p>
+</tt>
+<p>The <tt>uniform-circle-map</tt> is a simple map that has a uniformly progressing
+angle with constant momentum:
+</p>
+<p><tt>(define&nbsp;(uniform-circle-map&nbsp;rotation-number)<br>
+&nbsp;&nbsp;(let&nbsp;((delta-theta&nbsp;(*&nbsp;:2pi&nbsp;rotation-number)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(lambda&nbsp;(theta&nbsp;y&nbsp;result&nbsp;fail)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(result&nbsp;((principal-value&nbsp;:2pi)&nbsp;(+&nbsp;theta&nbsp;delta-theta))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y))))<br>
+</p>
+</tt>
+<p>The procedure <tt>position-stream</tt> produces a stream of index
+positions.  It maintains an ordered list of angle values, and as each
+new angle is added to the list it adds the position index to the
+stream.  A principal value is applied to the angle to bring it to a
+uniform range specified:
+</p>
+<p><tt>(define&nbsp;(position-stream&nbsp;cut&nbsp;orbit&nbsp;list)<br>
+&nbsp;&nbsp;(insert!&nbsp;((principal-value&nbsp;cut)&nbsp;(car&nbsp;(head&nbsp;orbit)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(lambda&nbsp;(nlist&nbsp;position)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(cons-stream&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;position<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(position-stream&nbsp;cut&nbsp;(tail&nbsp;orbit)&nbsp;nlist)))))<br>
+</p>
+</tt>
+<p>Given a new element <tt>x</tt> to be inserted into an ordered set <tt>set</tt>, the procedure <tt>insert!</tt> calls its continuation with the 
+updated set and the index that was used to insert the new element.<a name="call_footnote_Temp_322" href="#footnote_Temp_322"><sup><small>15</small></sup></a></p>
+<p>
+
+The streams of indices are compared with <tt>compare-streams</tt>:
+</p>
+<p><tt>(define&nbsp;(compare-streams&nbsp;s1&nbsp;s2&nbsp;count)<br>
+&nbsp;&nbsp;(if&nbsp;(=&nbsp;(head&nbsp;s1)&nbsp;(head&nbsp;s2))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(compare-streams&nbsp;(tail&nbsp;s1)&nbsp;(tail&nbsp;s2)&nbsp;(+&nbsp;count&nbsp;1))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((principal-range&nbsp;count)&nbsp;(-&nbsp;(head&nbsp;s2)&nbsp;(head&nbsp;s1)))))<br>
+</p>
+</tt>
+<p>The
+count is used to keep track of how many points we have already entered
+into the circle.  When there is a discrepancy between the indices, it
+means that one stream has begun to lead the other.  
+The <tt>principal-range</tt> procedure is used to determine which is the
+leader.<a name="call_footnote_Temp_323" href="#footnote_Temp_323"><sup><small>16</small></sup></a>
+This is analogous to using the principal value to determine
+the direction from one angle to another on a circle.</p>
+<p>
+Once we have created this mess we can use it to find the initial
+momentum (for a given initial angle) for an invariant curve with a
+given rotation number.  We search the standard map for an invariant
+curve with a <a name="%_idx_2436"></a><a name="%_idx_2438"></a>golden rotation number:<a name="call_footnote_Temp_324" href="#footnote_Temp_324"><sup><small>17</small></sup></a>
+</p>
+<p><tt>(find-invariant-curve&nbsp;(standard-map&nbsp;0.95)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;1&nbsp;(/&nbsp;1&nbsp;golden-ratio))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1e-5)<br>
+;Value:&nbsp;2.114462280273437<br>
+</p>
+</tt>
+<p>
+This algorithm, although correct, has terrible performance.  The
+problem is that each orbit builds a table of length the number of
+points examined, and each insertion of a new point scans that table
+sequentially, thus making a process that grows in time as the square of the
+number of points examined and in space as the number of points examined.  </p>
+<p>
+However, we observe that as ordering inconsistencies are found the
+angles are usually near the initial angle.  We can make use of this to
+simplify the algorithm.  Instead of keeping track of the whole list of
+angles, we can keep track of a small list of angles near the initial
+angle.  In fact, keeping track of the nearest angle on either side of
+the initial angle works well.  </p>
+<p>
+Here is the complete replacement for
+the <tt>which-way?</tt> procedure and its helpers.  The procedure is
+implemented as a simple loop with state variables for the two orbits
+and the endpoints of the intervals.  The <tt>z</tt> variables keep track
+of the angle of the uniform circle map; the <tt>x</tt> variables keep track of
+the angle of the map under study.  The <tt>y</tt> variable is the
+momentum for the map under study.  On each iteration we determine
+if the angle of the uniform circle map is in the interval of interest below or
+above the initial angle.  If it is in neither interval then the map is
+further iterated.  However, if it is in the region of interest then we
+check to see if the angle of the other map is in the corresponding
+interval.  If so, the intervals for the uniform circle map and the other map
+are narrowed and the iteration proceeds.  If the angle is not in the
+required interval, a discrepancy is noted and the sign of the
+discrepancy is reported.  For this process to make sense the
+differences between the angles for successive iterations of both maps
+must be less than <img src="chap1-Z-G-D-15.gif" border="0">.
+</p>
+<p><tt>(define&nbsp;(which-way?&nbsp;rotation-number&nbsp;x0&nbsp;y0&nbsp;the-map)<br>
+&nbsp;&nbsp;(let&nbsp;((pv&nbsp;(principal-value&nbsp;(+&nbsp;x0&nbsp;pi))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;lp&nbsp;((z&nbsp;x0)&nbsp;(zmin&nbsp;(-&nbsp;x0&nbsp;:2pi))&nbsp;(zmax&nbsp;(+&nbsp;x0&nbsp;:2pi))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(x&nbsp;x0)&nbsp;(xmin&nbsp;(-&nbsp;x0&nbsp;:2pi))&nbsp;(xmax&nbsp;(+&nbsp;x0&nbsp;:2pi))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(y&nbsp;y0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((nz&nbsp;(pv&nbsp;(+&nbsp;z&nbsp;(*&nbsp;:2pi&nbsp;rotation-number)))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(the-map&nbsp;x&nbsp;y&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(lambda&nbsp;(nx&nbsp;ny)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((nx&nbsp;(pv&nbsp;nx)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(cond&nbsp;((&lt;&nbsp;x0&nbsp;z&nbsp;zmax)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(if&nbsp;(&lt;&nbsp;x0&nbsp;x&nbsp;xmax)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(lp&nbsp;nz&nbsp;zmin&nbsp;z&nbsp;nx&nbsp;xmin&nbsp;x&nbsp;ny)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(if&nbsp;(&gt;&nbsp;x&nbsp;xmax)&nbsp;1&nbsp;-1)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((&lt;&nbsp;zmin&nbsp;z&nbsp;x0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(if&nbsp;(&lt;&nbsp;xmin&nbsp;x&nbsp;x0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(lp&nbsp;nz&nbsp;z&nbsp;zmax&nbsp;nx&nbsp;x&nbsp;xmax&nbsp;ny)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(if&nbsp;(&lt;&nbsp;x&nbsp;xmin)&nbsp;-1&nbsp;1)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(else&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(lp&nbsp;nz&nbsp;zmin&nbsp;zmax&nbsp;nx&nbsp;xmin&nbsp;xmax&nbsp;ny)))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(lambda&nbsp;()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(error&nbsp;&quot;Map&nbsp;failed&quot;&nbsp;x&nbsp;y)))))))<br>
+</p>
+</tt>
+<p>With this method of comparing rotation numbers we can
+find the initial conditions for an invariant curve to high 
+precision:
+</p>
+<p><tt>(find-invariant-curve&nbsp;(standard-map&nbsp;0.95)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;1&nbsp;(/&nbsp;1&nbsp;golden-ratio))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1e-16)<br>
+;Value:&nbsp;2.1144605494391726<br>
+</p>
+</tt>
+<p>Using initial conditions computed in this way, we can produce the
+invariant curve (see figure&nbsp;<a href="#FIGURE_4.20">4.20</a>).  If we expand
+the putative invariant curve it should remain a curve for all
+magnifications -- it should show no sign of chaotic fuzziness (see
+figure&nbsp;<a href="#FIGURE_4.21">4.21</a>).</p>
+<p>
+<a name="FIGURE_4.20"></a></p>
+<div align=left><img src="chap4-Z-G-60.gif" border="0"></div>
+<p>
+<a name="FIGURE_4.21"></a></p>
+<div align=left><img src="chap4-Z-G-61.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_4.8"></a>
+<b>Exercise 4.8.</b>&nbsp;&nbsp;<strong>Invariant curves in the standard map</strong><br> 
+Find an invariant curve of the standard
+map with a different golden rotation number.
+Expand it to show that it retains the features of a curve at
+high magnification.
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_4.6.2"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_4.6.2">4.6.2&nbsp;&nbsp;Dissolution of Invariant Curves</a></h3>
+<p><a name="%_idx_2440"></a><a name="%_idx_2442"></a>
+As can be seen in figure&nbsp;<a href="#FIGURE_4.21">4.21</a>, the
+points on an invariant curve are not uniformly visited, unlike the
+picture we would get plotting the angles for the uniform circle map.
+This is because an interval may be expanded or compressed when mapped.
+We can compute the relative probability density for visitation of each
+angle on the invariant curve.  A crude way to obtain this result is to
+count the number of points that fall into equal incremental angle
+bins.  It is more effective to use the linear variational map
+constructed from the map being investigated to compute the
+change in incremental angle from one point to its successor.  Since
+all of the points in a small interval around the source point are
+mapped to points (in the same order) in a small interval around the
+target point, the relative probability density at a point is inversely
+proportional to the size of the incremental interval around that point.
+In order to get this started we need a good estimate of the initial
+slope for the invariant curve.  We can estimate the slope by a
+difference quotient of the momentum and angle increments for the
+interval that we used to refine the momentum of the invariant curve
+with a given rotation number.
+<a name="FIGURE_4.22"></a></p>
+<div align=left><img src="chap4-Z-G-62.gif" border="0"></div>
+<p>
+Figures&nbsp;<a href="#FIGURE_4.22">4.22</a>
+and
+<a href="#FIGURE_4.23">4.23</a> 
+show the relative probability density of visitation as a function of
+angle for the invariant curve of golden rotation number in the standard
+map for three different values of the parameter <em>K</em>.  As <em>K</em>
+increases, certain angles become less likely.  Near <em>K</em> = 0.971635406
+some angles are never visited.  But the invariant curve must be
+continuous.  Thus it appears that for larger <em>K</em> the invariant curve
+with this rotation number will not exist.  Indeed, if the invariant
+set persists with the given rotation number it will have an infinite
+number of holes (because it has an irrational rotation number).  Such a
+set is sometimes called a <a name="%_idx_2444"></a><em>cantorus</em>.</p>
+<p>
+
+
+<a name="FIGURE_4.24"></a></p>
+<div align=left><img src="chap4-Z-G-63.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_321" href="#call_footnote_Temp_321"><sup><small>14</small></sup></a> This method depends on the assumptions that <tt>Jmin</tt> and <tt>Jmax</tt> bracket the actual momentum, and that the rotation number is
+sufficiently continuous in momentum in that region.</p>
+
+<p><a name="footnote_Temp_322" href="#call_footnote_Temp_322"><sup><small>15</small></sup></a> The insert procedure is ugly:
+</p>
+<p><tt>(define&nbsp;(insert!&nbsp;x&nbsp;set&nbsp;cont)<br>
+&nbsp;&nbsp;(cond&nbsp;((null?&nbsp;set)&nbsp;(cont&nbsp;(list&nbsp;x)&nbsp;1))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((&lt;&nbsp;x&nbsp;(car&nbsp;set))&nbsp;(cont&nbsp;(cons&nbsp;x&nbsp;set)&nbsp;0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(else&nbsp;(let&nbsp;lp&nbsp;((i&nbsp;1)&nbsp;(lst&nbsp;set))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(cond&nbsp;((null?&nbsp;(cdr&nbsp;lst))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(set-cdr!&nbsp;lst&nbsp;(cons&nbsp;x&nbsp;(cdr&nbsp;lst)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(cont&nbsp;set&nbsp;i))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((&lt;&nbsp;x&nbsp;(cadr&nbsp;lst))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(set-cdr!&nbsp;lst&nbsp;(cons&nbsp;x&nbsp;(cdr&nbsp;lst)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(cont&nbsp;set&nbsp;i))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(else&nbsp;(lp&nbsp;(+&nbsp;i&nbsp;1)&nbsp;(cdr&nbsp;lst))))))))<br>
+</p>
+</tt>
+<p></p>
+
+<p><a name="footnote_Temp_323" href="#call_footnote_Temp_323"><sup><small>16</small></sup></a> The <tt>principal-range</tt> procedure is implemented as follows:
+</p>
+<p><tt>(define&nbsp;((principal-range&nbsp;period)&nbsp;index)<br>
+&nbsp;&nbsp;(let&nbsp;((t&nbsp;(-&nbsp;index&nbsp;(*&nbsp;period&nbsp;(floor&nbsp;(/&nbsp;index&nbsp;period))))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(if&nbsp;(&lt;&nbsp;t&nbsp;(/&nbsp;period&nbsp;2.))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;t&nbsp;period))))<br>
+</p>
+</tt>
+<p></p>
+
+<p><a name="footnote_Temp_324" href="#call_footnote_Temp_324"><sup><small>17</small></sup></a> There is no invariant curve in the standard map that has
+rotation number phi  =  1.618....  However, 1 <tt>-</tt> 1/phi has the same
+continued-fraction tail as phi and there are rotation numbers of
+this size in the standard map.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-53.html">previous</a></span><span>, <a href="book-Z-H-55.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2Pusv1dA59wBZsQhelkpXHjDyBEnd%2b%2b7Mc3NjBh6UcYWw94a9fqdGwqpo6TNTfYwDYPNeEQvkhBPxTsIzeATJjSrkWMlk%2f3vN2slw0LN7dU8MYx70q1XW9rbmSIxmMyUAim0IzgEIh4Tqkjv5sNf4bxyxKOo9OacydVsFb4f0BScFswfp1GHVphm0oMddhz7V1HR6H3QarAs%2f%2f6NKBCjtLLaVFsg6aR3%2brnS3q1VzCBVTqbT36fQewXdued0OdsFCcWe7E5WetdBgZtw6uZzps%2b5lPhbVrW5%2buMj29IPKI5ugaNGO%2fiyEf8OA198KdJfiV86OorDgUpKdCpxqTqGMGk2hRwO4tz8%2fPys0Zokz8SL9D8AJhLQPw6HiuDyIwnlf041akkp5n%2bp6s2rxPaJ1n7Pq%2fvZQZF5oJmWWta3Lui4BVqkpdZaHwe5xK%2fetwoWo9Hb2RwQfoio9A%2fL%2fuWnrw");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

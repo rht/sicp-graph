@@ -1,0 +1,781 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-78.html">previous</a></span><span>, <a href="book-Z-H-80.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_chap_8"></a>
+<h1 class=chapter>
+<div class=chapterheading><a href="book-Z-H-4.html#%_toc_%_chap_8">Chapter 8</a></div><br>
+<a href="book-Z-H-4.html#%_toc_%_chap_8">Appendix: Our Notation</a></h1>
+<p></p>
+<p>
+
+</p>
+
+<div align=right> 
+<table width=60%><tr><td>
+<span class=epigraph>
+
+<p>
+An adequate notation should be understood by at least two people,
+one of whom may be the author. </p>
+<p>
+<a name="%_idx_3242"></a>Abdus Salam (1950).</p>
+<p>
+</p>
+
+</span>
+</td></tr></table>
+</div>
+
+<p></p>
+<p>
+<a name="%_idx_3244"></a><a name="%_idx_3246"></a>We adopt a <a name="%_idx_3248"></a><a name="%_idx_3250"></a><em>functional mathematical notation</em> that is close to that used
+<a name="%_idx_3252"></a>by Spivak in his <em>Calculus on Manifolds</em>&nbsp;[<a href="book-Z-H-80.html#cite{Spivak}">40</a>].  The use of functional
+notation avoids many of the ambiguities of <a name="%_idx_3254"></a>traditional mathematical
+notation; the ambiguities of traditional notation that can impede 
+clear reasoning in classical mechanics.  Functional notation
+carefully distinguishes the <a name="%_idx_3256"></a>function from the value of the function
+when applied to particular arguments.  In functional notation
+mathematical expressions are unambiguous and self-contained.</p>
+<p>
+<a name="%_idx_3258"></a><a name="%_idx_3260"></a><a name="%_idx_3262"></a>We adopt a <em>generic arithmetic</em> in which the basic arithmetic
+operations, such as addition and multiplication, are extended to a
+wide variety of mathematical types.  Thus, for example, the addition
+operator  +  can be applied to numbers, tuples of numbers, matrices,
+functions, etc.  Generic arithmetic formalizes the common informal
+practice used to manipulate mathematical objects.</p>
+<p>
+We often want to manipulate aggregate quantities, such as the
+collection of all of the rectangular coordinates of a collection of
+particles, without explicitly manipulating the component parts.
+<a name="%_idx_3264"></a>Tensor arithmetic provides a traditional way of manipulating aggregate
+objects: Indices label the parts; conventions, such as the
+summation convention, are introduced to manipulate the indices.  We
+introduce a <a name="%_idx_3266"></a><a name="%_idx_3268"></a><em>tuple arithmetic</em> as an alternative way of
+manipulating aggregate quantities that usually lets us avoid
+labeling the parts with indices.  Tuple arithmetic is inspired by
+tensor arithmetic but it is more general: not all of the components
+of a tuple need to be of the same size or type.</p>
+<p>
+The mathematical notation is in one-to-one correspondence with 
+expressions of the computer language
+<a name="%_idx_3270"></a><em>Scheme</em>&nbsp;[<a href="book-Z-H-80.html#cite{IEEE-Scheme-standard}">24</a>].  Scheme is based on the
+<a name="%_idx_3272"></a><a name="%_idx_3274"></a><img src="chap1-Z-G-D-40.gif" border="0">-calculus&nbsp;[<a href="book-Z-H-80.html#cite{Church}">13</a>] and directly supports the
+manipulation of functions.  We augment Scheme with symbolic,
+numerical, and generic features to support our applications.  For a
+simple introduction to Scheme, see the Scheme appendix.
+The correspondence between the mathematical notation and Scheme
+requires that mathematical expressions be unambiguous and
+self-contained.  Scheme provides immediate feedback in verification of
+mathematical deductions and facilitates the exploration of the
+behavior of systems.</p>
+<p>
+</p>
+<a name="%_sec_Temp_448"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_448">Functions</a></h4>
+<p><a name="%_idx_3276"></a>
+<a name="%_idx_3278"></a>The value of the function <em>f</em>, given the argument <em>x</em>, is written
+<em>f</em>(<em>x</em>).  The expression <em>f</em>(<em>x</em>) denotes the value of the function at
+the given argument; when we wish to denote the function we write just
+<em>f</em>.  Functions may take several arguments.  For example, we may have
+the function that gives the Euclidean distance between two points in
+the plane given by their rectangular coordinates:
+<a name="EQUATION_8.1"></a></p>
+<div align=left><img src="notation-Z-G-1.gif" border="0"></div>
+<p>
+In Scheme we can write this as:
+</p>
+<p><tt>(define&nbsp;(d&nbsp;x1&nbsp;y1&nbsp;x2&nbsp;y2)<br>
+&nbsp;&nbsp;(sqrt&nbsp;(+&nbsp;(square&nbsp;(-&nbsp;x2&nbsp;x1))&nbsp;(square&nbsp;(-&nbsp;y2&nbsp;y1)))))<br>
+</p>
+</tt>
+<p>
+Functions may be <a name="%_idx_3280"></a><a name="%_idx_3282"></a>composed if the range of one overlaps the domain of
+the other.  The composition of functions is constructed by passing the
+output of one to the input of the other.  We write the composition of
+two functions using the <a name="%_idx_3284"></a><small>o</small> operation:
+<a name="EQUATION_8.2"></a></p>
+<div align=left><img src="notation-Z-G-2.gif" border="0"></div>
+<p>
+A procedure <tt>h</tt> that computes the cube of the sine of its
+argument may be defined by composing the procedures <tt>cube</tt> and
+<tt>sin</tt>:
+</p>
+<p><tt>(define&nbsp;h&nbsp;(compose&nbsp;cube&nbsp;sin))<br>
+<br>
+(h&nbsp;2)<br>
+<i>.7518269446689928</i><br>
+</p>
+</tt>
+<p>which is the same as
+</p>
+<p><tt>(cube&nbsp;(sin&nbsp;2))<br>
+<i>.7518269446689928</i><br>
+</p>
+</tt>
+<p>
+
+<a name="%_idx_3286"></a><a name="%_idx_3288"></a>Arithmetic is extended to the manipulation of functions: the usual
+mathematical operations may be applied to functions.  Examples are
+addition and multiplication; we may add or multiply two functions if
+they take the same kinds of arguments and if their values can be added
+or multiplied:
+<a name="EQUATION_8.3"></a></p>
+<div align=left><img src="notation-Z-G-3.gif" border="0"></div>
+<p>
+A procedure <tt>g</tt> that multiplies the cube of its argument by the
+sine of its argument is
+</p>
+<p><tt>(define&nbsp;g&nbsp;(*&nbsp;cube&nbsp;sin))<br>
+<br>
+(g&nbsp;2)<br>
+<i>7.274379414605454</i><br>
+<br>
+(*&nbsp;(cube&nbsp;2)&nbsp;(sin&nbsp;2))<br>
+<i>7.274379414605454</i><br>
+</p>
+</tt>
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_449"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_449">Symbolic values</a></h4>
+<p><a name="%_idx_3290"></a>
+<a name="%_idx_3292"></a>As in usual mathematical notation, arithmetic is extended to allow the
+use of symbols that represent unknown or incompletely specified
+mathematical objects.  These symbols are manipulated as if they had
+values of a known type.  By default, a Scheme symbol is assumed to
+represent a real number.  So the expression <tt>'a</tt> is a literal
+Scheme symbol that represents an unspecified real number:
+</p>
+<p><tt>(print-expression<br>
+&nbsp;((compose&nbsp;cube&nbsp;sin)&nbsp;'a))<br>
+<i>(expt&nbsp;(sin&nbsp;a)&nbsp;3)</i><br>
+</p>
+</tt>
+<p>The procedure <a name="%_idx_3294"></a><a name="%_idx_3296"></a><a name="%_idx_3298"></a><tt>print-expression</tt> simplifies the expression,
+removes the type tags, and displays it in a readable form.
+We can use the simplifier to verify a trigonometric identity:
+</p>
+<p><tt>(print-expression&nbsp;<br>
+&nbsp;&nbsp;((-&nbsp;(+&nbsp;(square&nbsp;sin)&nbsp;(square&nbsp;cos))&nbsp;1)&nbsp;'a))<br>
+<i>0</i><br>
+</p>
+</tt>
+<p>
+Just as it is useful to be able to manipulate symbolic numbers, it is
+useful to be able to manipulate symbolic functions.  The procedure
+<a name="%_idx_3300"></a><tt>literal-function</tt> makes a procedure that acts as a function
+having no properties other than its name.  By default, a literal
+function is defined to take one real argument and produce one real
+value.  For example, we may want to work with a function <em>f</em> : <strong><em>R</em></strong>
+--> <strong><em>R</em></strong>:
+</p>
+<p><tt>(print-expression&nbsp;<br>
+&nbsp;&nbsp;((literal-function&nbsp;'f)&nbsp;'x))<br>
+<i>(f&nbsp;x)</i><br>
+<br>
+(print-expression&nbsp;<br>
+&nbsp;&nbsp;((compose&nbsp;(literal-function&nbsp;'f)&nbsp;(literal-function&nbsp;'g))&nbsp;'x))<br>
+<i>(f&nbsp;(g&nbsp;x))</i><br>
+</p>
+</tt>
+<p>
+We can also make literal functions of multiple, possibly structured
+arguments that return structured values.  For example, to denote a
+literal function named <tt>g</tt> that takes two real arguments and
+returns a real value (<em>g</em> : <strong><em>R</em></strong> &times; <strong><em>R</em></strong> --> <strong><em>R</em></strong>) we may write:
+</p>
+<p><tt>(define&nbsp;g&nbsp;(literal-function&nbsp;'g&nbsp;(-&gt;&nbsp;(X&nbsp;Real&nbsp;Real)&nbsp;Real)))<br>
+<br>
+(print-expression&nbsp;(g&nbsp;'x&nbsp;'y))<br>
+<i>(g&nbsp;x&nbsp;y)</i><br>
+</p>
+</tt>
+<p>We may use such a literal function anywhere that an explicit function
+of the same type may be used.</p>
+<p>
+There is a whole language for describing the type of a literal function in
+terms of the number of arguments, the types of the arguments, and the types of
+the values.  Here we describe a function that maps pairs of real
+numbers to real numbers with the expression <tt>(-&gt; (X Real Real)
+Real)</tt>.  Later we will introduce structured arguments and values and
+show extensions of literal functions to handle these.</p>
+<p>
+</p>
+<a name="%_sec_Temp_450"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_450">Tuples</a></h4>
+<p><a name="%_idx_3302"></a>
+There are two kinds of tuples: <a name="%_idx_3304"></a><a name="%_idx_3306"></a><a name="%_idx_3308"></a><em>up</em> tuples and <a name="%_idx_3310"></a><em>down</em> tuples.
+We write tuples as ordered lists of their components; a tuple is
+delimited by <a name="%_idx_3312"></a><a name="%_idx_3314"></a><a name="%_idx_3316"></a>parentheses if it is an up tuple and by
+square <a name="%_idx_3318"></a><a name="%_idx_3320"></a><a name="%_idx_3322"></a>brackets if it is a down tuple.  For example, the up tuple <em>v</em>
+of velocity components <em>v</em><sup>0</sup>, <em>v</em><sup>1</sup>, and <em>v</em><sup>2</sup> is
+<a name="EQUATION_8.4"></a></p>
+<div align=left><img src="notation-Z-G-4.gif" border="0"></div>
+<p>
+The down tuple <em>p</em> of momentum components <em>p</em><sub>0</sub>, <em>p</em><sub>1</sub>, and <em>p</em><sub>2</sub> is
+<a name="EQUATION_8.5"></a></p>
+<div align=left><img src="notation-Z-G-5.gif" border="0"></div>
+<p>
+A component of an up tuple is usually identified by a <a name="%_idx_3324"></a>superscript.
+A component of a down tuple is usually identified by a <a name="%_idx_3326"></a>subscript.
+<a name="%_idx_3328"></a>We use zero-based indexing when referring to tuple elements.  This
+notation follows the usual convention in tensor arithmetic.</p>
+<p>
+In Scheme we make tuples with the constructors <a name="%_idx_3330"></a><tt>up</tt> and <a name="%_idx_3332"></a><tt>down</tt>:
+</p>
+<p><tt>(define&nbsp;v&nbsp;(up&nbsp;'v^0&nbsp;'v^1&nbsp;'v^2))<br>
+<br>
+(print-expression&nbsp;v)<br>
+<i>(up&nbsp;v^0&nbsp;v^1&nbsp;v^2)</i><br>
+<br>
+(define&nbsp;p&nbsp;(down&nbsp;'p_0&nbsp;'p_1&nbsp;'p_2))<br>
+<br>
+(print-expression&nbsp;p)<br>
+<i>(down&nbsp;p_0&nbsp;p_1&nbsp;p_2)</i><br>
+</p>
+</tt>
+<p>
+<a name="%_idx_3334"></a><a name="%_idx_3336"></a><a name="%_idx_3338"></a>Tuple arithmetic is different from the usual tensor arithmetic in that
+the components of a tuple may also be tuples and different components
+need not have the same structure.  For example, a tuple structure <em>s</em> of
+phase-space states is
+<a name="EQUATION_8.6"></a></p>
+<div align=left><img src="notation-Z-G-6.gif" border="0"></div>
+<p>
+It is an up tuple of the time, the coordinates, and the momenta.  The
+time <em>t</em> has no substructure.  The coordinates are an up tuple of the
+coordinate components <em>x</em> and <em>y</em>.  The momentum is a down tuple of
+the momentum components <em>p</em><sub><em>x</em></sub> and <em>p</em><sub><em>y</em></sub>.
+In Scheme this is written:
+</p>
+<p><tt>(define&nbsp;s&nbsp;(up&nbsp;'t&nbsp;(up&nbsp;'x&nbsp;'y)&nbsp;(down&nbsp;'p_x&nbsp;'p_y)))<br>
+</p>
+</tt>
+<p>
+
+In order to reference components of tuple structures there are 
+<a name="%_idx_3340"></a><a name="%_idx_3342"></a><a name="%_idx_3344"></a><a name="%_idx_3346"></a><a name="%_idx_3348"></a><a name="%_idx_3350"></a>selector functions, for example:
+<a name="EQUATION_8.7"></a></p>
+<div align=left><img src="notation-Z-G-7.gif" border="0"></div>
+<p>
+<a name="%_idx_3352"></a>The sequence of integer subscripts on the selector describes the access chain
+to the desired component.  </p>
+<p>
+<a name="%_idx_3354"></a>The procedure <tt>component</tt> is the general selector procedure that
+implements the selector function <em>I</em><sub><em>z</em></sub>:
+</p>
+<p><tt>((component&nbsp;0&nbsp;1)&nbsp;(up&nbsp;(up&nbsp;'a&nbsp;'b)&nbsp;(up&nbsp;'c&nbsp;'d)))<br>
+<i>b</i><br>
+</p>
+</tt>
+<p>To access a component of a tuple we may also use the selector procedure
+<a name="%_idx_3356"></a><tt>ref</tt>, which takes a tuple and an index and returns the indicated
+element of the tuple:
+</p>
+<p><tt>(ref&nbsp;(up&nbsp;'a&nbsp;'b&nbsp;'c)&nbsp;1)<br>
+<i>b</i><br>
+</p>
+</tt>
+<p><a name="%_idx_3358"></a>We use zero-based indexing everywhere.
+The procedure <tt>ref</tt> can be used to access any substructure of a
+tree of tuples:
+</p>
+<p><tt>(ref&nbsp;(up&nbsp;(up&nbsp;'a&nbsp;'b)&nbsp;(up&nbsp;'c&nbsp;'d))&nbsp;0&nbsp;1)<br>
+<i>b</i><br>
+</p>
+</tt>
+<p>
+Two up tuples of the same length may be added or subtracted,
+elementwise, to produce an up tuple, if the components are compatible
+for addition.  Similarly, two down tuples of the same length may be
+added or subtracted, elementwise, to produce a down tuple, if the
+components are compatible for addition.</p>
+<p>
+<a name="%_idx_3360"></a><a name="%_idx_3362"></a>Any tuple may be multiplied by a number by multiplying each component
+by the number.  Numbers may, of course, be multiplied.  Tuples that
+are compatible for addition form a <a name="%_idx_3364"></a>vector space.</p>
+<p>
+<a name="%_idx_3366"></a>For convenience we define the square of a tuple to be
+the sum of the squares of the components of the tuple.  Tuples can be
+multiplied, as described below, but the square of a tuple is not the
+product of the tuple with itself.</p>
+<p>
+
+The meaning of multiplication of tuples depends on the structure of
+the tuples. 
+Two tuples are compatible for <a name="%_idx_3368"></a><a name="%_idx_3370"></a>contraction if they are of opposite
+types, they are of the same length, and corresponding elements have
+the following property: either they are both tuples and are
+compatible for contraction, or one of them is not a tuple.
+If two tuples are compatible
+for contraction then <a name="%_idx_3372"></a>generic multiplication is interpreted as
+contraction: the result is the sum of the products of corresponding
+components of the tuples.  For example, <em>p</em> and <em>v</em> introduced in
+equations&nbsp;(<a href="#EQUATION_8.4">8.4</a>) and&nbsp;(<a href="#EQUATION_8.5">8.5</a>) above
+are compatible for contraction; the product is
+<a name="EQUATION_8.8"></a></p>
+<div align=left><img src="notation-Z-G-8.gif" border="0"></div>
+<p>
+So the product of tuples that are compatible for contraction is an
+<a name="%_idx_3374"></a><a name="%_idx_3376"></a>inner product.
+Using the tuples <tt>p</tt> and <tt>v</tt> defined above gives us
+</p>
+<p><tt>(print-expression&nbsp;(*&nbsp;p&nbsp;v))<br>
+<i>(+&nbsp;(*&nbsp;p_0&nbsp;v^0)&nbsp;(*&nbsp;p_1&nbsp;v^1)&nbsp;(*&nbsp;p_2&nbsp;v^2))</i><br>
+</p>
+</tt>
+<p>
+<a name="%_idx_3378"></a>Contraction of tuples is commutative: <em>p</em><em>v</em>  =  <em>v</em><em>p</em>.
+Caution: Multiplication of tuples that are compatible for contraction
+is, in general, not <a name="%_idx_3380"></a><a name="%_idx_3382"></a>associative.  For example, let <em>u</em>  =  ( 5, 2 ),
+<em>v</em>  =  ( 11, 13 ), and <em>g</em>  =  [ [ 3, 5 ], [ 7, 9 ] ].
+Then <em>u</em> (<em>g</em> <em>v</em>)  =  964, but (<em>u</em> <em>g</em>) <em>v</em>  =  878.  The expression <em>u</em> <em>g</em> <em>v</em> is
+ambiguous.  An expression that has this ambiguity does not occur in
+this book.</p>
+<p>
+The rule for multiplying two structures that are not compatible
+for contraction is simple.  If <em>A</em> and <em>B</em> are not compatible for
+contraction, the product <em>A</em><em>B</em> is a tuple of type <em>B</em> whose components are
+the products of <em>A</em> and the components of <em>B</em>.  The same rule is
+applied recursively in multiplying the components.  So if <em>B</em>  =  (
+<em>B</em><sup>0</sup>, <em>B</em><sup>1</sup>, <em>B</em><sup>2</sup> ), the product of <em>A</em> and <em>B</em> is
+<a name="EQUATION_8.9"></a></p>
+<div align=left><img src="notation-Z-G-9.gif" border="0"></div>
+<p>
+If <em>A</em> and <em>C</em> are not compatible for contraction and <em>C</em>  =  [ <em>C</em><sub>0</sub>, <em>C</em><sub>1</sub>,
+<em>C</em><sub>2</sub> ], the product is
+<a name="EQUATION_8.10"></a></p>
+<div align=left><img src="notation-Z-G-10.gif" border="0"></div>
+<p></p>
+<p>
+
+<a name="%_idx_3384"></a><a name="%_idx_3386"></a><a name="%_idx_3388"></a><a name="%_idx_3390"></a>Tuple structures can be made to represent linear transformations.
+For example, the rotation commonly represented by the <a name="%_idx_3392"></a><a name="%_idx_3394"></a>matrix
+<a name="EQUATION_8.11"></a></p>
+<div align=left><img src="notation-Z-G-11.gif" border="0"></div>
+<p>
+can be represented as a tuple structure:<a name="call_footnote_Temp_451" href="#footnote_Temp_451"><sup><small>1</small></sup></a>
+<a name="EQUATION_8.12"></a></p>
+<div align=left><img src="notation-Z-G-12.gif" border="0"></div>
+<p>
+Such a tuple is compatible for contraction with an up tuple that
+represents a vector.  So, for example:
+<a name="EQUATION_8.13"></a></p>
+<div align=left><img src="notation-Z-G-13.gif" border="0"></div>
+<p>
+Two tuples that represent linear transformations, though not
+compatible for contraction, may also be combined by <a name="%_idx_3396"></a>multiplication.
+In this case the product represents the <a name="%_idx_3398"></a><a name="%_idx_3400"></a>composition of the linear
+transformations.  For example, the product of the tuples representing
+two rotations is
+<a name="EQUATION_8.14"></a></p>
+<div align=left><img src="notation-Z-G-14.gif" border="0"></div>
+<p>
+Multiplication of tuples that represent linear transformations is
+<a name="%_idx_3402"></a><a name="%_idx_3404"></a>associative but generally not <a name="%_idx_3406"></a>commutative, just as the composition of the
+transformations is associative but not generally commutative.</p>
+<p>
+</p>
+<a name="%_sec_Temp_452"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_452">Derivatives</a></h4>
+<p><a name="%_idx_3408"></a>
+<a name="%_idx_3410"></a><a name="%_idx_3412"></a>The derivative of a function <em>f</em> is a function, denoted by <em>D</em><em>f</em>.
+Our notational convention is that <em>D</em> is a <a name="%_idx_3414"></a>high-precedence operator.
+Thus <em>D</em> operates on the adjacent function before any other
+application occurs: <em>D</em><em>f</em>(<em>x</em>) is the same as (<em>D</em><em>f</em>)(<em>x</em>).
+Higher-order derivatives are described by exponentiating the
+derivative operator. Thus the <em>n</em>th derivative of a function <em>f</em> is
+notated as&nbsp;<em>D</em><sup><em>n</em></sup> <em>f</em>.</p>
+<p>
+<a name="%_idx_3416"></a><a name="%_idx_3418"></a>The Scheme procedure for producing the derivative of a function is
+named <tt>D</tt>.  The derivative of the <tt>sin</tt> procedure is a
+procedure that computes <tt>cos</tt>:
+</p>
+<p><tt>(define&nbsp;derivative-of-sine&nbsp;(D&nbsp;sin))<br>
+<br>
+(print-expression&nbsp;(derivative-of-sine&nbsp;'x))<br>
+<i>(cos&nbsp;x)</i><br>
+</p>
+</tt>
+<p>
+The derivative of a function <em>f</em> is the function <em>D</em><em>f</em> whose value
+for a particular argument is something that can be multiplied by an
+increment <img src="chap1-Z-G-D-43.gif" border="0"> <em>x</em> in the argument to get a linear approximation to the
+increment in the value of <em>f</em>:
+<a name="EQUATION_8.15"></a></p>
+<div align=left><img src="notation-Z-G-15.gif" border="0"></div>
+<p></p>
+<p>
+For example, let <em>f</em> be the function that cubes its argument
+(<em>f</em>(<em>x</em>) = <em>x</em><sup>3</sup>); then <em>D</em><em>f</em> is the function that yields three times the
+square of its argument (<em>D</em><em>f</em>(<em>y</em>) = 3<em>y</em><sup>2</sup>).  So <em>f</em>(5) = 125 and <em>D</em><em>f</em>(5) = 75.
+The value of <em>f</em> with argument <em>x</em>  +  <img src="chap1-Z-G-D-43.gif" border="0"> <em>x</em> is
+<a name="EQUATION_8.16"></a></p>
+<div align=left><img src="notation-Z-G-16.gif" border="0"></div>
+<p>
+and
+<a name="EQUATION_8.17"></a></p>
+<div align=left><img src="notation-Z-G-17.gif" border="0"></div>
+<p>
+So <em>D</em><em>f</em>(<em>x</em>) multiplied by <img src="chap1-Z-G-D-43.gif" border="0"> <em>x</em> gives us the
+term in <em>f</em>(<em>x</em> + <img src="chap1-Z-G-D-43.gif" border="0"> <em>x</em>) that is linear in <img src="chap1-Z-G-D-43.gif" border="0"> <em>x</em>, providing a good
+approximation to <em>f</em>(<em>x</em> + <img src="chap1-Z-G-D-43.gif" border="0"> <em>x</em>) <tt>-</tt> <em>f</em>(<em>x</em>) when <img src="chap1-Z-G-D-43.gif" border="0"> <em>x</em> is small.</p>
+<p>
+<a name="%_idx_3420"></a><a name="%_idx_3422"></a>Derivatives of compositions obey the chain rule:
+<a name="EQUATION_8.18"></a></p>
+<div align=left><img src="notation-Z-G-18.gif" border="0"></div>
+<p>
+So at <em>x</em>,
+<a name="EQUATION_8.19"></a></p>
+<div align=left><img src="notation-Z-G-19.gif" border="0"></div>
+<p></p>
+<p>
+<a name="%_idx_3424"></a><a name="%_idx_3426"></a><a name="%_idx_3428"></a><a name="%_idx_3430"></a>Derivatives are <em>operators</em>.  An operator is like a function
+except that <a name="%_idx_3432"></a><a name="%_idx_3434"></a><a name="%_idx_3436"></a>multiplication of operators is interpreted as <a name="%_idx_3438"></a>composition,
+whereas multiplication of functions is multiplication of the values
+(see equation&nbsp;<a href="#EQUATION_8.3">8.3</a>).  If <em>D</em> were an ordinary function,
+then the rule for multiplication would imply that <em>D</em><sup>2</sup> <em>f</em> would just
+be the product of <em>D</em><em>f</em> with itself, which is not what is intended.
+Arithmetic is extended to allow manipulation of operators.  A typical
+operator is (<em>D</em> + 1)(<em>D</em> <tt>-</tt> 1)  =  <em>D</em><sup>2</sup>  <tt>-</tt>  1, which subtracts a function
+from its second derivative.  The 1 acts as the identity operator: When
+arithmetically combined with operators, a number is treated as an
+operator that multiplies its input by the number.
+Such an operator can be constructed and used in Scheme as follows:
+</p>
+<p><tt>(print-expression<br>
+&nbsp;&nbsp;(((*&nbsp;(-&nbsp;D&nbsp;1)&nbsp;(+&nbsp;D&nbsp;1))&nbsp;(literal-function&nbsp;'f))&nbsp;'x))<br>
+<i>(+&nbsp;(((expt&nbsp;D&nbsp;2)&nbsp;f)&nbsp;x)&nbsp;(*&nbsp;-1&nbsp;(f&nbsp;x)))</i><br>
+</p>
+</tt>
+<p>
+</p>
+<a name="%_sec_Temp_453"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_453">Derivatives of functions of multiple arguments</a></h4>
+<p><a name="%_idx_3440"></a>
+The derivative generalizes to functions that take multiple arguments.
+The derivative of a real-valued function of multiple arguments is an
+object whose contraction with the tuple of increments in the arguments  
+gives a linear approximation to the increment in the function's value.</p>
+<p>
+<a name="%_idx_3442"></a>A function of multiple arguments can be thought of as a function of an
+up tuple of those arguments.  Thus an incremental argument tuple is an
+up tuple of components, one for each argument position.  The
+derivative of such a function is a down tuple of the partial
+derivatives of the function with respect to each argument position.</p>
+<p>
+Suppose we have a real-valued function <em>g</em> of two real-valued
+arguments, and we want to approximate the increment in the value of
+<em>g</em> from its value at <em>x</em>, <em>y</em>.  If the arguments are incremented by the
+tuple ( <img src="chap1-Z-G-D-43.gif" border="0"> <em>x</em>, <img src="chap1-Z-G-D-43.gif" border="0"> <em>y</em> ) we compute:
+<a name="EQUATION_8.20"></a></p>
+<div align=left><img src="notation-Z-G-20.gif" border="0"></div>
+<p>
+Using the two-argument literal function <tt>g</tt> defined above, we have:
+</p>
+<p><tt>(print-expression&nbsp;((D&nbsp;g)&nbsp;'x&nbsp;'y))<br>
+<i>(down&nbsp;(((partial&nbsp;0)&nbsp;g)&nbsp;x&nbsp;y)&nbsp;(((partial&nbsp;1)&nbsp;g)&nbsp;x&nbsp;y))</i><br>
+</p>
+</tt>
+<p>
+<a name="%_idx_3444"></a>In general, partial derivatives are just the components of the
+derivative of a function that takes multiple arguments (or structured
+arguments or both; see below).  So a partial derivative of a function
+is a composition of a component selector and the derivative of that
+function.  Indeed:
+<a name="EQUATION_8.21"></a></p>
+<div align=left><img src="notation-Z-G-21.gif" border="0"></div>
+<p></p>
+<p>
+Concretely, if
+<a name="EQUATION_8.23"></a></p>
+<div align=left><img src="notation-Z-G-22.gif" border="0"></div>
+<p>
+then
+<a name="EQUATION_8.24"></a></p>
+<div align=left><img src="notation-Z-G-23.gif" border="0"></div>
+<p>
+and the first-order approximation of the increment for changing the
+arguments by <img src="chap1-Z-G-D-43.gif" border="0"> <em>x</em> and <img src="chap1-Z-G-D-43.gif" border="0"> <em>y</em> is
+<a name="EQUATION_8.25"></a></p>
+<div align=left><img src="notation-Z-G-24.gif" border="0"></div>
+<p></p>
+<p>
+<a name="%_idx_3446"></a><a name="%_idx_3448"></a>Partial derivatives of compositions also obey a chain rule:
+<a name="EQUATION_8.26"></a></p>
+<div align=left><img src="notation-Z-G-25.gif" border="0"></div>
+<p>
+So if <em>x</em> is a tuple of arguments, then
+<a name="EQUATION_8.27"></a></p>
+<div align=left><img src="notation-Z-G-26.gif" border="0"></div>
+<p></p>
+<p>
+<a name="%_idx_3450"></a><a name="%_idx_3452"></a>Mathematical notation usually does not distinguish functions of
+multiple arguments and functions of the tuple of arguments.  Let
+<em>h</em>((<em>x</em>, <em>y</em>))  =  <em>g</em>(<em>x</em>, <em>y</em>).  The function <em>h</em>, which takes a tuple of
+arguments <em>x</em> and <em>y</em>, is not distinguished from the function <em>g</em> that
+takes arguments <em>x</em> and <em>y</em>.  We use both ways of defining functions
+of multiple arguments.  
+The derivatives of both kinds of functions are compatible for
+contraction with a tuple of increments to the arguments.  Scheme comes
+in handy here:
+</p>
+<p><tt>(define&nbsp;(h&nbsp;s)<br>
+&nbsp;&nbsp;(g&nbsp;(ref&nbsp;s&nbsp;0)&nbsp;(ref&nbsp;s&nbsp;1)))<br>
+<br>
+(print-expression<br>
+&nbsp;(h&nbsp;(up&nbsp;'x&nbsp;'y)))<br>
+<i>(g&nbsp;x&nbsp;y)</i><br>
+<br>
+(print-expression&nbsp;((D&nbsp;g)&nbsp;'x&nbsp;'y))<br>
+<i>(down&nbsp;(((partial&nbsp;0)&nbsp;g)&nbsp;x&nbsp;y)&nbsp;(((partial&nbsp;1)&nbsp;g)&nbsp;x&nbsp;y))</i><br>
+<br>
+(print-expression&nbsp;((D&nbsp;h)&nbsp;(up&nbsp;'x&nbsp;'y)))<br>
+<i>(down&nbsp;(((partial&nbsp;0)&nbsp;g)&nbsp;x&nbsp;y)&nbsp;(((partial&nbsp;1)&nbsp;g)&nbsp;x&nbsp;y))</i><br>
+</p>
+</tt>
+<p>
+<a name="%_idx_3454"></a>A phase-space state function is a function of time,
+coordinates, and momenta.  Let
+<em>H</em> be such a function.  The value of <em>H</em> is <em>H</em>(<em>t</em>, ( <em>x</em>, <em>y</em> ), [
+<em>p</em><sub><em>x</em></sub> , <em>p</em><sub><em>y</em></sub> ] ) for time <em>t</em>, coordinates 
+( <em>x</em>, <em>y</em> ) , and momenta [ <em>p</em><sub><em>x</em></sub> , <em>p</em><sub><em>y</em></sub> ].
+Let <em>s</em> be the phase-space state tuple as
+in&nbsp;(<a href="#EQUATION_8.6">8.6</a>):
+<a name="EQUATION_8.28"></a></p>
+<div align=left><img src="notation-Z-G-27.gif" border="0"></div>
+<p>
+The value of <em>H</em> for argument tuple <em>s</em> is <em>H</em>(<em>s</em>).  We use both ways
+of writing the value of <em>H</em>.</p>
+<p>
+
+We often show a function of multiple arguments that include
+tuples by indicating the boundaries of the argument tuples with
+<a name="%_idx_3456"></a><a name="%_idx_3458"></a><a name="%_idx_3460"></a><a name="%_idx_3462"></a><a name="%_idx_3464"></a>semicolons and separating their components with commas.  If <em>H</em> is a
+function of phase-space states with arguments <em>t</em>, ( <em>x</em>, <em>y</em>
+), and [ <em>p</em><sub><em>x</em></sub>, <em>p</em><sub><em>y</em></sub> ], we may write  <em>H</em>(<em>t</em>; <em>x</em>, <em>y</em> ; <em>p</em><sub><em>x</em></sub>, <em>p</em><sub><em>y</em></sub>) .
+This notation loses the up/down distinction, but our
+semicolon-and-comma notation is convenient and reasonably unambiguous.</p>
+<p>
+The derivative of <em>H</em> is a function that produces an object that can
+be contracted with an increment in the argument structure to produce
+an increment in the function's value.  The derivative
+is a down tuple of three <a name="%_idx_3466"></a>partial derivatives.  The first partial
+derivative is the partial derivative with respect to the numerical
+argument.  The second partial derivative is a down tuple of partial
+derivatives with respect to each component of the up-tuple argument.
+The third partial derivative is an up tuple of partial derivatives
+with respect to each component of the down-tuple argument:
+<a name="EQUATION_8.29"></a></p>
+<div align=left><img src="notation-Z-G-28.gif" border="0"></div>
+<p>
+where <img src="front-Z-G-D-2.gif" border="0"><sub>1,0</sub> indicates the partial derivative with respect
+to the first component (index 0) of the second argument (index 1)
+of the function, and so on.  Indeed, <a name="%_idx_3468"></a><a name="%_idx_3470"></a><img src="front-Z-G-D-2.gif" border="0"><sub><em>z</em></sub> <em>F</em>  =  <em>I</em><sub><em>z</em></sub> <small>o</small> <em>D</em> <em>F</em> for any function <em>F</em> and access chain <em>z</em>.
+So, if we let <img src="chap1-Z-G-D-43.gif" border="0"> <em>s</em> be an incremental phase-space state tuple,
+<a name="EQUATION_8.30"></a></p>
+<div align=left><img src="notation-Z-G-29.gif" border="0"></div>
+<p>
+then
+<a name="EQUATION_8.31"></a></p>
+<div align=left><img src="notation-Z-G-30.gif" border="0"></div>
+<p>
+Caution: Partial derivative operators with respect to
+<a name="%_idx_3472"></a>different structured arguments generally do not commute.</p>
+<p>
+<a name="%_idx_3474"></a>In Scheme we must make explicit choices.  We usually assume 
+phase-space state functions are functions of the tuple.  For example,
+</p>
+<p><tt><a name="%_idx_3476"></a>(define&nbsp;H<br>
+&nbsp;&nbsp;(literal-function&nbsp;'H&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(-&gt;&nbsp;(UP&nbsp;Real&nbsp;(UP&nbsp;Real&nbsp;Real)&nbsp;(DOWN&nbsp;Real&nbsp;Real))&nbsp;Real)))<br>
+<br>
+(print-expression<br>
+&nbsp;(H&nbsp;s))<br>
+<i>(H&nbsp;(up&nbsp;t&nbsp;(up&nbsp;x&nbsp;y)&nbsp;(down&nbsp;p_x&nbsp;p_y)))</i><br>
+<br>
+(print-expression<br>
+&nbsp;((D&nbsp;H)&nbsp;s))<br>
+<i>(down<br>
+&nbsp;(((partial&nbsp;0)&nbsp;H)&nbsp;(up&nbsp;t&nbsp;(up&nbsp;x&nbsp;y)&nbsp;(down&nbsp;p_x&nbsp;p_y)))<br>
+&nbsp;(down&nbsp;(((partial&nbsp;1&nbsp;0)&nbsp;H)&nbsp;(up&nbsp;t&nbsp;(up&nbsp;x&nbsp;y)&nbsp;(down&nbsp;p_x&nbsp;p_y)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(((partial&nbsp;1&nbsp;1)&nbsp;H)&nbsp;(up&nbsp;t&nbsp;(up&nbsp;x&nbsp;y)&nbsp;(down&nbsp;p_x&nbsp;p_y))))<br>
+&nbsp;(up&nbsp;(((partial&nbsp;2&nbsp;0)&nbsp;H)&nbsp;(up&nbsp;t&nbsp;(up&nbsp;x&nbsp;y)&nbsp;(down&nbsp;p_x&nbsp;p_y)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(((partial&nbsp;2&nbsp;1)&nbsp;H)&nbsp;(up&nbsp;t&nbsp;(up&nbsp;x&nbsp;y)&nbsp;(down&nbsp;p_x&nbsp;p_y)))))</i><br>
+</p>
+</tt>
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_454"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_454">Structured results</a></h4>
+<p><a name="%_idx_3478"></a><a name="%_idx_3480"></a><a name="%_idx_3482"></a>Some functions produce structured outputs.  A function whose output is
+a tuple is equivalent to a tuple of component functions each of which
+produces one component of the output tuple.</p>
+<p>
+For example, a function that takes one numerical argument and produces
+a structure of outputs may be used to describe a curve through space.
+The following function describes a helical path
+around the <em>z</em>-axis in three-dimensional space:
+<a name="EQUATION_8.32"></a></p>
+<div align=left><img src="notation-Z-G-31.gif" border="0"></div>
+<p>
+The derivative is just the up tuple of the
+derivatives of each component of the function:
+<a name="EQUATION_8.33"></a></p>
+<div align=left><img src="notation-Z-G-32.gif" border="0"></div>
+<p></p>
+<p>
+In Scheme we can write
+</p>
+<p><tt>(define&nbsp;(helix&nbsp;t)<br>
+&nbsp;&nbsp;(up&nbsp;(cos&nbsp;t)&nbsp;(sin&nbsp;t)&nbsp;t))<br>
+</p>
+</tt>
+<p>or just
+</p>
+<p><tt>(define&nbsp;helix&nbsp;(up&nbsp;cos&nbsp;sin&nbsp;identity))<br>
+</p>
+</tt>
+<p>Its derivative is just the up tuple of the derivatives of each component
+of the function:
+</p>
+<p><tt>(print-expression&nbsp;((D&nbsp;helix)&nbsp;'t))<br>
+<i>(up&nbsp;(*&nbsp;-1&nbsp;(sin&nbsp;t))&nbsp;(cos&nbsp;t)&nbsp;1)</i><br>
+</p>
+</tt>
+<p>
+
+In general, a function that produces structured outputs is just treated
+as a structure of functions, one for each of the components.  
+<a name="%_idx_3484"></a>The derivative of a function of structured inputs that produces structured
+outputs is an object that when contracted with an incremental input structure
+produces a linear approximation to the incremental output.  Thus, if we define function <em>g</em> by
+<a name="EQUATION_8.34"></a></p>
+<div align=left><img src="notation-Z-G-33.gif" border="0"></div>
+<p>
+then the derivative of <em>g</em> is
+<a name="EQUATION_8.35"></a></p>
+<div align=left><img src="notation-Z-G-34.gif" border="0"></div>
+<p>
+In Scheme:
+</p>
+<p><tt>(define&nbsp;(g&nbsp;x&nbsp;y)<br>
+&nbsp;&nbsp;(up&nbsp;(square&nbsp;(+&nbsp;x&nbsp;y))&nbsp;(cube&nbsp;(-&nbsp;y&nbsp;x))&nbsp;(exp&nbsp;(+&nbsp;x&nbsp;y))))<br>
+<br>
+(print-expression&nbsp;((D&nbsp;g)&nbsp;'x&nbsp;'y))<br>
+<i>(down&nbsp;(up&nbsp;(+&nbsp;(*&nbsp;2&nbsp;x)&nbsp;(*&nbsp;2&nbsp;y))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(*&nbsp;-3&nbsp;(expt&nbsp;x&nbsp;2))&nbsp;(*&nbsp;6&nbsp;x&nbsp;y)&nbsp;(*&nbsp;-3&nbsp;(expt&nbsp;y&nbsp;2)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;(exp&nbsp;y)&nbsp;(exp&nbsp;x)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;(+&nbsp;(*&nbsp;2&nbsp;x)&nbsp;(*&nbsp;2&nbsp;y))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(*&nbsp;3&nbsp;(expt&nbsp;x&nbsp;2))&nbsp;(*&nbsp;-6&nbsp;x&nbsp;y)&nbsp;(*&nbsp;3&nbsp;(expt&nbsp;y&nbsp;2)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;(exp&nbsp;y)&nbsp;(exp&nbsp;x))))</i><br>
+</p>
+</tt>
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_8.1"></a>
+<b>Exercise 8.1.</b>&nbsp;&nbsp;<strong>Chain rule</strong><br>
+
+<a name="%_idx_3486"></a><a name="%_idx_3488"></a><a name="%_idx_3490"></a><a name="%_idx_3492"></a>Let <em>F</em>(<em>x</em>, <em>y</em>)  =  <em>x</em><sup>2</sup> <em>y</em><sup>3</sup>, <em>G</em>(<em>x</em>, <em>y</em>)  =  (<em>F</em>(<em>x</em>, <em>y</em>), <em>y</em>), and <em>H</em>(<em>x</em>, <em>y</em>)  = 
+<em>F</em>(<em>F</em>(<em>x</em>, <em>y</em>), <em>y</em>),  so that <em>H</em>  =  <em>F</em> <small>o</small> <em>G</em>.</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;Compute <img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>F</em>(<em>x</em>, <em>y</em>) and <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>F</em>(<em>x</em>, <em>y</em>).</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Compute <img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>F</em>(<em>F</em>(<em>x</em>, <em>y</em>), <em>y</em>) and <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>F</em>(<em>F</em>(<em>x</em>, <em>y</em>), <em>y</em>).</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;Compute <img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>G</em>(<em>x</em>, <em>y</em>) and <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>G</em>(<em>x</em>, <em>y</em>).</p>
+<p>
+<strong>d</strong>.&nbsp;&nbsp;Compute <em>D</em><em>F</em>(<em>a</em>, <em>b</em>), <em>D</em><em>G</em>(3, 5) and <em>D</em><em>H</em>(3<em>a</em><sup>2</sup>, 5<em>b</em><sup>3</sup>).
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_8.2"></a>
+<b>Exercise 8.2.</b>&nbsp;&nbsp;<strong>Computing derivatives</strong><br>
+<a name="%_idx_3494"></a><a name="%_idx_3496"></a><a name="%_idx_3498"></a>We can represent functions of multiple arguments as procedures
+in several ways, depending upon how we wish to use them.  The simplest
+idea is to identify the procedure arguments with the function's
+arguments.</p>
+<p>
+For example, we could write implementations of the functions that
+occur in exercise&nbsp;<a href="#%_thm_8.1">8.1</a> as follows:
+</p>
+<p><tt>(define&nbsp;(f&nbsp;x&nbsp;y)<br>
+&nbsp;&nbsp;(*&nbsp;(square&nbsp;x)&nbsp;(cube&nbsp;y)))<br>
+(define&nbsp;(g&nbsp;x&nbsp;y)<br>
+&nbsp;&nbsp;(up&nbsp;(f&nbsp;x&nbsp;y)&nbsp;y))<br>
+(define&nbsp;(h&nbsp;x&nbsp;y)<br>
+&nbsp;&nbsp;(f&nbsp;(f&nbsp;x&nbsp;y)&nbsp;y))<br>
+</p>
+</tt>
+<p>
+<a name="%_idx_3500"></a><a name="%_idx_3502"></a>With this choice it is awkward to compose a function that takes multiple
+arguments, such as <em>f</em>, with a function that produces a tuple of those
+arguments, such as <em>g</em>.  Alternatively, we can represent the function
+arguments as slots of a tuple data structure, and then composition
+with a function that produces such a data structure is easy.  However,
+this choice requires the procedures to build and take apart
+structures.</p>
+<p>
+For example, we may define procedures that implement the functions
+above as follows:
+</p>
+<p><tt>(define&nbsp;(f&nbsp;v)&nbsp;<br>
+&nbsp;&nbsp;(let&nbsp;((x&nbsp;(ref&nbsp;v&nbsp;0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(y&nbsp;(ref&nbsp;v&nbsp;1)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;(square&nbsp;x)&nbsp;(cube&nbsp;y))))<br>
+(define&nbsp;(g&nbsp;v)&nbsp;<br>
+&nbsp;&nbsp;(let&nbsp;((x&nbsp;(ref&nbsp;v&nbsp;0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(y&nbsp;(ref&nbsp;v&nbsp;1)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;(f&nbsp;v)&nbsp;y)))<br>
+(define&nbsp;h&nbsp;(compose&nbsp;f&nbsp;g))<br>
+</p>
+</tt>
+<p>
+Repeat exercise&nbsp;<a href="#%_thm_8.1">8.1</a> using the computer.  Explore both
+implementations of multiple-argument functions.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<p>
+
+</p>
+<p>
+
+
+
+<small>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_451" href="#call_footnote_Temp_451"><sup><small>1</small></sup></a> The arrangement of the components of a tuple structure is
+not significant, as it is in matrix notation: We could just as well
+have written this tuple as [ ( cos<img src="chap1-Z-G-D-19.gif" border="0">, sin<img src="chap1-Z-G-D-19.gif" border="0"> ), (
+ <tt>-</tt> sin<img src="chap1-Z-G-D-19.gif" border="0">, cos<img src="chap1-Z-G-D-19.gif" border="0"> ) ].</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-78.html">previous</a></span><span>, <a href="book-Z-H-80.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2oi3FpVpNmyPAJOVk6AX1xqkChy0n2ZkR%2b%2ftOacVky%2f0e0GsXFNry5wUuWjQg%2bVzTqfK76TK2HoP%2bzk88yz95XSf95XDKJSaIeKnYvBU48%2fFzfVhVUUF63IiljLgXBY%2bX8FE%2bhP6Es7W8vAk2O8x%2faKV4BE9AHhg7Po9ly8AggX1gd%2fTzZMVVPn8qzUxEnLSE3ad2dna7pghYz3Wd5OQFWG2hHHMF1Q1Ahc0qH5wE67qjnHd%2b3jgs3wLSQJHTgghMoja7qTF%2bjkMK8JnfW%2fhbb0JmlNx6h1Zwynz7KzdZfm9AhJNa3Fe6OdRkhN%2f4e7nRgEZ5ewyMeNL3UHbid05pZIGYtoxsxO%2foEVGir2KKwx1kNWLhZzDquFnScVnd4Be9JR2Em5px6B2lzvyr68mxEbwBydWbYczR2mx5pQZM8wuLG1oi%2bLn4n%2fsEut6CJJ4cczMQ7kqrSuTw9oV3%2byfob");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

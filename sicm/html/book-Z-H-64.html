@@ -1,0 +1,560 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-63.html">previous</a></span><span>, <a href="book-Z-H-65.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_5.7"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_5.7">5.7&nbsp;&nbsp;Time Evolution Is Canonical</a></h2>
+<p><a name="%_idx_2776"></a><a name="%_idx_2778"></a>
+In this section we demonstrate that time evolution generates a canonical
+transformation: if we consider all possible initial states of a
+Hamiltonian system and follow all the trajectories for the same
+time interval, then the map from the initial state to the final state
+of each trajectory is a canonical transformation. </p>
+<p>
+We use time evolution to generate a transformation
+<a name="EQUATION_5.321"></a></p>
+<div align=left><img src="chap5-Z-G-282.gif" border="0"></div>
+<p>
+that is obtained in the following way.  Let <img src="chap3-Z-G-D-5.gif" border="0">(<em>t</em>)  =  (<em>t</em>, <img src="chap5-Z-G-D-9.gif" border="0">(<em>t</em>),
+<img src="chap5-Z-G-D-10.gif" border="0">(<em>t</em>)) be a solution of Hamilton's equations.  The transformation
+<img src="chap5-Z-G-D-11.gif" border="0"><sub><img src="chap1-Z-G-D-43.gif" border="0"></sub> satisfies
+<a name="EQUATION_5.322"></a></p>
+<div align=left><img src="chap5-Z-G-283.gif" border="0"></div>
+<p>
+or, equivalently,
+<a name="EQUATION_5.323"></a></p>
+<div align=left><img src="chap5-Z-G-284.gif" border="0"></div>
+<p>
+Notice that <img src="chap5-Z-G-D-11.gif" border="0"><sub><img src="chap1-Z-G-D-43.gif" border="0"></sub> changes the time component.  This is the
+first transformation of this kind that we have considered.<a name="call_footnote_Temp_390" href="#footnote_Temp_390"><sup><small>24</small></sup></a></p>
+<p>
+Given a state (<em>t</em>', <em>q</em>', <em>p</em>'), we find the phase-space path <img src="chap3-Z-G-D-5.gif" border="0">
+emanating from this state as an initial condition, satisfying
+<a name="EQUATION_5.324"></a></p>
+<div align=left><img src="chap5-Z-G-285.gif" border="0"></div>
+<p>
+The value (<em>t</em>, <em>q</em>, <em>p</em>) of <img src="chap5-Z-G-D-11.gif" border="0"><sub><img src="chap1-Z-G-D-43.gif" border="0"></sub>(<em>t</em>', <em>q</em>', <em>p</em>') is then 
+(<em>t</em>' + <img src="chap1-Z-G-D-43.gif" border="0">, <img src="chap5-Z-G-D-9.gif" border="0">(<em>t</em>' + <img src="chap1-Z-G-D-43.gif" border="0">), <img src="chap5-Z-G-D-10.gif" border="0">(<em>t</em>' + <img src="chap1-Z-G-D-43.gif" border="0">)).</p>
+<p>
+Time evolution is canonical if the transformation  <img src="chap5-Z-G-D-11.gif" border="0"><sub><img src="chap1-Z-G-D-43.gif" border="0"></sub> 
+is symplectic and if the Hamiltonian transforms in an appropriate
+manner.  The transformation  <img src="chap5-Z-G-D-11.gif" border="0"><sub><img src="chap1-Z-G-D-43.gif" border="0"></sub>  is symplectic if the
+bilinear antisymmetric form <img src="chap1-Z-G-D-23.gif" border="0"> is invariant (see
+equation&nbsp;<a href="book-Z-H-60.html#EQUATION_5.73">5.73</a>) for a general pair of
+linearized state variations with zero time component.  </p>
+<p>
+Let <img src="chap2-Z-G-D-10.gif" border="0">' be an increment with zero time component of the state
+(<em>t</em>', <em>q</em>', <em>p</em>').  The linearized increment in the value of <img src="chap5-Z-G-D-11.gif" border="0"><sub><img src="chap1-Z-G-D-43.gif" border="0"></sub>(<em>t</em>', <em>q</em>', <em>p</em>') is <img src="chap2-Z-G-D-10.gif" border="0">  =  <em>D</em><img src="chap5-Z-G-D-11.gif" border="0"><sub><img src="chap1-Z-G-D-43.gif" border="0"></sub>(<em>t</em>', <em>q</em>', <em>p</em>')
+<img src="chap2-Z-G-D-10.gif" border="0">'.  The image of the increment is obtained by multiplying the
+increment by the derivative of the transformation.  On the other hand,
+the transformation is obtained by time evolution, so the image of the
+increment can also be found by the time evolution of the linearized
+variational system.  
+Let 
+<a name="EQUATION_5.325"></a></p>
+<div align=left><img src="chap5-Z-G-286.gif" border="0"></div>
+<p>
+be variations of the state path <img src="chap3-Z-G-D-5.gif" border="0">(<em>t</em>)  =  (<em>t</em>, <img src="chap5-Z-G-D-9.gif" border="0">(<em>t</em>), <img src="chap5-Z-G-D-10.gif" border="0">(<em>t</em>));
+then
+
+<a name="EQUATION_5.326"></a></p>
+<div align=left><img src="chap5-Z-G-287.gif" border="0"></div>
+<p>
+The symplectic requirement is
+<a name="EQUATION_5.327"></a></p>
+<div align=left><img src="chap5-Z-G-288.gif" border="0"></div>
+<p>
+This must be true for arbitrary <img src="chap1-Z-G-D-43.gif" border="0">, so it is satisfied if the following quantity is constant:
+<a name="EQUATION_5.328"></a></p>
+<div align=left><img src="chap5-Z-G-289.gif" border="0"></div>
+<p>
+We compute the derivative:
+<a name="EQUATION_5.329"></a></p>
+<div align=left><img src="chap5-Z-G-290.gif" border="0"></div>
+<p>
+With Hamilton's equations, the variations satisfy
+<a name="EQUATION_5.330"></a></p>
+<div align=left><img src="chap5-Z-G-291.gif" border="0"></div>
+<p>
+Substituting these into <em>D</em><em>A</em> and collecting terms, we find<a name="call_footnote_Temp_391" href="#footnote_Temp_391"><sup><small>25</small></sup></a>
+<a name="EQUATION_5.331"></a></p>
+<div align=left><img src="chap5-Z-G-292.gif" border="0"></div>
+<p>
+We conclude that time evolution generates a phase-space transformation
+with symplectic derivative.  </p>
+<p>
+To make a canonical transformation we must specify how the Hamiltonian
+transforms.  The same Hamiltonian describes the evolution of a state
+and a time-advanced state because the latter is just another state.
+Thus the transformed Hamiltonian is the same as the
+original Hamiltonian.</p>
+<p>
+</p>
+<a name="%_sec_Temp_392"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_392">Liouville's theorem, again</a></h4>
+<p><a name="%_idx_2782"></a><a name="%_idx_2784"></a>
+We deduced that volumes in phase space are preserved by time
+evolution by showing that the divergence of the phase flow is zero,
+using the equations of motion (see section&nbsp;<a href="book-Z-H-44.html#%_sec_3.8">3.8</a>).  We
+can also show that volumes in phase space are preserved by the
+evolution using the fact that time evolution is a canonical
+transformation.</p>
+<p>
+We have shown that phase-space volume is preserved for symplectic
+transformations.  Now we have shown that the transformation generated
+by time evolution is a symplectic transformation.  Therefore, the
+transformation generated by time evolution preserves phase-space
+volume.  This is an alternate proof of Liouville's theorem.</p>
+<p>
+</p>
+<a name="%_sec_Temp_393"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_393">Another time-evolution transformation</a></h4>
+<p>There is another canonical transformation that can be constructed from
+time evolution.  We define the transformation <img src="chap5-Z-G-D-11.gif" border="0">'<sub><img src="chap1-Z-G-D-43.gif" border="0"></sub> such
+that
+<a name="EQUATION_5.332"></a></p>
+<div align=left><img src="chap5-Z-G-293.gif" border="0"></div>
+<p>
+where <em>S</em><sub><img src="chap1-Z-G-D-43.gif" border="0"></sub>(<em>a</em>, <em>b</em>, <em>c</em>)  =  (<em>a</em> + <img src="chap1-Z-G-D-43.gif" border="0">, <em>b</em>, <em>c</em>) shifts the time 
+of a phase-space state.<a name="call_footnote_Temp_394" href="#footnote_Temp_394"><sup><small>26</small></sup></a>
+More explicitly, given a state (<em>t</em>, <em>q</em>', <em>p</em>'), we evolve the state
+that is obtained by subtracting <img src="chap1-Z-G-D-43.gif" border="0"> from <em>t</em>; that is, we take the state
+(<em>t</em> <tt>-</tt> <img src="chap1-Z-G-D-43.gif" border="0">, <em>q</em>', <em>p</em>') as an initial state for evolution by Hamilton's
+equations.  The state path <img src="chap3-Z-G-D-5.gif" border="0"> satisfies
+<a name="EQUATION_5.333"></a></p>
+<div align=left><img src="chap5-Z-G-294.gif" border="0"></div>
+<p>
+The output of the transformation is the state
+<a name="EQUATION_5.334"></a></p>
+<div align=left><img src="chap5-Z-G-295.gif" border="0"></div>
+<p>
+The transformation satisfies
+<a name="EQUATION_5.335"></a></p>
+<div align=left><img src="chap5-Z-G-296.gif" border="0"></div>
+<p></p>
+<p>
+
+The arguments of <img src="chap5-Z-G-D-11.gif" border="0">'<sub><img src="chap1-Z-G-D-43.gif" border="0"></sub> are not a consistent phase-space
+state; the time argument must be decremented by <img src="chap1-Z-G-D-43.gif" border="0"> to obtain a
+consistent state.   The transformation is completed by evolution of
+this consistent state.</p>
+<p>
+Why is this a good idea?  Our usual canonical transformations do not
+change the time component.  This modified time-evolution
+transformation is thus of the form discussed previously.  The
+resulting time-evolution transformation is canonical and in the usual
+form:
+<a name="EQUATION_5.336"></a></p>
+<div align=left><img src="chap5-Z-G-297.gif" border="0"></div>
+<p></p>
+<p>
+This transformation can also be extended to
+be a canonical transformation, 
+with an appropriate adjustment of the Hamiltonian.  The Hamiltonian
+<em>H</em>'<sub><img src="chap1-Z-G-D-43.gif" border="0"></sub> that gives the correct Hamilton's equations at the
+transformed phase-space point is the original Hamiltonian composed
+with a function that decrements the independent variable by <img src="chap1-Z-G-D-43.gif" border="0">:
+<a name="EQUATION_5.337"></a></p>
+<div align=left><img src="chap5-Z-G-298.gif" border="0"></div>
+<p> 
+or 
+<a name="EQUATION_5.338"></a></p>
+<div align=left><img src="chap5-Z-G-299.gif" border="0"></div>
+<p>
+Notice that if <em>H</em> is time independent then <em>H</em>'<sub><img src="chap1-Z-G-D-43.gif" border="0"></sub>  =  <em>H</em>.</p>
+<p>
+Assume we have a procedure <tt>C</tt> such that <tt>((C&nbsp;delta-t)&nbsp;state)</tt> 
+implements a time-evolution transformation <img src="chap5-Z-G-D-11.gif" border="0"><sub><img src="chap1-Z-G-D-43.gif" border="0"></sub> of the state <tt>state</tt>
+with time interval <tt>delta-t</tt>;
+then the procedure <tt>Cp</tt> such that <tt>((Cp&nbsp;delta-t)&nbsp;state)</tt> implements
+<img src="chap5-Z-G-D-11.gif" border="0">'<sub><img src="chap1-Z-G-D-43.gif" border="0"></sub> of the same state and time interval can be derived from the procedure <tt>C</tt> by using the procedure
+</p>
+<p><tt>(define&nbsp;((C-&gt;Cp&nbsp;C)&nbsp;delta-t)<br>
+&nbsp;&nbsp;(compose&nbsp;(C&nbsp;delta-t)&nbsp;(shift-t&nbsp;(-&nbsp;delta-t))))<br>
+</p>
+</tt>
+<p>where <tt>shift-t</tt> implements <em>S</em><sub><img src="chap1-Z-G-D-43.gif" border="0"></sub>:
+</p>
+<p><tt>(define&nbsp;((shift-t&nbsp;delta-t)&nbsp;state)<br>
+&nbsp;&nbsp;(up&nbsp;<br>
+&nbsp;&nbsp;&nbsp;(+&nbsp;(time&nbsp;state)&nbsp;delta-t)<br>
+&nbsp;&nbsp;&nbsp;(coordinate&nbsp;state)<br>
+&nbsp;&nbsp;&nbsp;(momentum&nbsp;state)))<br>
+</p>
+</tt>
+<p>To complete the canonical transformation we have a procedure that
+transforms the Hamiltonian:
+</p>
+<p><tt>(define&nbsp;((H-&gt;Hp&nbsp;delta-t)&nbsp;H)<br>
+&nbsp;&nbsp;(compose&nbsp;H&nbsp;(shift-t&nbsp;(-&nbsp;delta-t))))<br>
+</p>
+</tt>
+<p>
+So both <img src="chap5-Z-G-D-11.gif" border="0"> and <img src="chap5-Z-G-D-11.gif" border="0">' can be used to make canonical
+transformations by specifying how the old and new Hamiltonians are
+related.  For <img src="chap5-Z-G-D-11.gif" border="0"><sub><img src="chap1-Z-G-D-43.gif" border="0"></sub> the Hamiltonian is unchanged.  For
+<img src="chap5-Z-G-D-11.gif" border="0">'<sub><img src="chap1-Z-G-D-43.gif" border="0"></sub> the Hamiltonian is time shifted.</p>
+<p>
+</p>
+<p><a name="%_thm_5.21"></a>
+<b>Exercise 5.21.</b>&nbsp;&nbsp;<strong>Verification</strong><br>
+The condition&nbsp;(<a href="book-Z-H-59.html#EQUATION_5.19">5.19</a>) that Hamilton's
+equations are preserved for <img src="chap5-Z-G-D-11.gif" border="0"><sub><img src="chap1-Z-G-D-43.gif" border="0"></sub> is 
+</p>
+<div align=left><img src="chap5-Z-G-300.gif" border="0"></div>
+<p>
+and the condition that Hamilton's
+equations are preserved for <img src="chap5-Z-G-D-11.gif" border="0">'<sub><img src="chap1-Z-G-D-43.gif" border="0"></sub> is
+</p>
+<div align=left><img src="chap5-Z-G-301.gif" border="0"></div>
+<p>
+Verify that these conditions are satisfied.
+</p>
+
+<p></p>
+<p>
+
+</p>
+<p><a name="%_thm_5.22"></a>
+<b>Exercise 5.22.</b>&nbsp;&nbsp;<strong>Driven harmonic oscillator</strong><br>
+<a name="%_idx_2786"></a><a name="%_idx_2788"></a>
+We can use the simple driven harmonic oscillator to illustrate that
+time evolution yields a symplectic transformation that can be
+extended to be canonical in two ways.  We use the driven harmonic
+oscillator because its solution can be compactly expressed in explicit
+form.  </p>
+<p>
+Suppose that we have a harmonic oscillator with natural frequency
+<img src="chap1-Z-G-D-23.gif" border="0"><sub>0</sub> driven by a periodic sinusoidal drive of frequency <img src="chap1-Z-G-D-23.gif" border="0">
+and amplitude&nbsp;<img src="chap1-Z-G-D-21.gif" border="0">.  The Hamiltonian we will consider is
+</p>
+<div align=left><img src="chap5-Z-G-302.gif" border="0"></div>
+<p>
+The general solution for a given initial state (<em>t</em><sub>0</sub>, <em>q</em><sub>0</sub>, <em>p</em><sub>0</sub>)
+evolved for a time <img src="chap1-Z-G-D-43.gif" border="0"> is
+</p>
+<div align=left><img src="chap5-Z-G-303.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-21.gif" border="0">'  =  <img src="chap1-Z-G-D-21.gif" border="0">/(<img src="chap1-Z-G-D-23.gif" border="0"><sub>0</sub><sup>2</sup>  <tt>-</tt>  <img src="chap1-Z-G-D-23.gif" border="0"><sup>2</sup>).</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;Fill in the details of the procedure 
+</p>
+<p><tt>(define&nbsp;(((C&nbsp;alpha&nbsp;omega&nbsp;omega0)&nbsp;delta-t)&nbsp;state)<br>
+&nbsp;&nbsp;&nbsp;...&nbsp;)<br>
+</p>
+</tt>
+<p>that implements the time-evolution transformation of the driven
+harmonic oscillator.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;In terms of <tt>C</tt>, the general solution emanating 
+from a given state is 
+</p>
+<p><tt>(define&nbsp;(((solution&nbsp;alpha&nbsp;omega&nbsp;omega0)&nbsp;state0)&nbsp;t)<br>
+&nbsp;&nbsp;(((C&nbsp;alpha&nbsp;omega&nbsp;omega0)&nbsp;(-&nbsp;t&nbsp;(time&nbsp;state0)))&nbsp;state0))<br>
+</p>
+</tt>
+<p>Check that the implementation of <tt>C</tt> is correct by using it
+to construct the solution and verifying that the solution satisfies
+Hamilton's equations.  Further check the solution by comparing to
+numerical integration.</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;We know that for any phase-space state function <em>F</em> the rate of change
+of that function along a solution path <img src="chap3-Z-G-D-5.gif" border="0"> is
+</p>
+<div align=left><img src="chap5-Z-G-304.gif" border="0"></div>
+<p>
+Show, by writing a short program to test it, that this is true of the
+function implemented by <tt>(C delta)</tt> for the driven oscillator.
+Why is this interesting?</p>
+<p>
+<strong>d</strong>.&nbsp;&nbsp;Verify that both <tt>C</tt> and <tt>Cp</tt> are symplectic using
+<tt>symplectic?</tt>.</p>
+<p>
+<strong>e</strong>.&nbsp;&nbsp;Use the procedure <tt>canonical?</tt> to verify that
+both <tt>C</tt> and <tt>Cp</tt> are canonical with the appropriate 
+transformed Hamiltonian.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_5.7.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.7.1">5.7.1&nbsp;&nbsp;Another View of Time Evolution</a></h3>
+<p><a name="%_idx_2790"></a><a name="%_idx_2792"></a><a name="%_idx_2794"></a>
+We can also show that time evolution generates canonical
+transformations using the Poincar&eacute;-Cartan integral invariant.</p>
+<p>
+
+Consider a two-dimensional region of phase-space coordinates, <em>R</em>', at
+some particular time <em>t</em>' (see figure&nbsp;<a href="#FIGURE_5.8">5.8</a>).  Let <em>R</em> be the
+image of this region at time <em>t</em> under time evolution for a time
+interval of <img src="chap1-Z-G-D-43.gif" border="0">.  The time evolution is governed by a Hamiltonian
+<em>H</em>.  Let sum<sub><em>i</em></sub> <em>A</em><sub><em>i</em></sub> be the sum of the oriented areas of the
+projections of <em>R</em> onto the fundamental canonical planes.<a name="call_footnote_Temp_397" href="#footnote_Temp_397"><sup><small>27</small></sup></a>
+Similarly, let sum<sub><em>i</em></sub> <em>A</em>'<sub><em>i</em></sub> be the sum of oriented projected areas for
+<em>R</em>'.  We will show that sum<sub><em>i</em></sub> <em>A</em><sub><em>i</em></sub>  =  sum<sub><em>i</em></sub> <em>A</em>'<sub><em>i</em></sub>, and thus the
+Poincar&eacute; integral invariant is preserved by time evolution.  By
+showing that the Poincar&eacute; integral invariant is preserved, we will
+have shown that the <em>q</em><em>p</em> part of the transformation generated by time
+evolution is symplectic.  From this we can construct canonical
+transformations from time evolution as before.</p>
+<p>
+
+In the extended phase space we see that the evolution sweeps out a
+cylindrical volume with endcaps <em>R</em>' and <em>R</em>, each at a
+fixed time.  Let <em>R</em>'' be the two-dimensional region swept out by the
+trajectories that map the boundary of region <em>R</em>' to the boundary of
+region <em>R</em>.  The regions <em>R</em>, <em>R</em>', and <em>R</em>'' together form the
+boundary of a volume of phase-state space.</p>
+<p>
+The Poincar&eacute;-Cartan integral invariant on the whole boundary is
+zero.<a name="call_footnote_Temp_398" href="#footnote_Temp_398"><sup><small>28</small></sup></a>
+Thus
+<a name="EQUATION_5.339"></a></p>
+<div align=left><img src="chap5-Z-G-305.gif" border="0"></div>
+<p>
+where the <em>n</em> index indicates the <em>t</em>, <em>p</em><sub><em>t</em></sub> canonical plane.  The second
+term is negative, because in the extended phase space we take the area to
+be positive if the normal to the surface is outward pointing.</p>
+<p>
+<a name="FIGURE_5.7"></a></p>
+<div align=left><img src="chap5-Z-G-306.gif" border="0"></div>
+<p></p>
+<p>
+We will show
+that the Poincar&eacute;-Cartan integral invariant for a region of phase
+space that is generated by time evolution is zero:
+<a name="EQUATION_5.340"></a></p>
+<div align=left><img src="chap5-Z-G-307.gif" border="0"></div>
+<p>
+This will allow us to conclude
+<a name="EQUATION_5.341"></a></p>
+<div align=left><img src="chap5-Z-G-308.gif" border="0"></div>
+<p>
+The areas of the projection of <em>R</em> and <em>R</em>' on the <em>t</em>, <em>p</em><sub><em>t</em></sub> plane are
+zero because <em>R</em> and <em>R</em>' are at constant times, so for these regions
+the Poincar&eacute;-Cartan integral invariant is the same as the Poincar&eacute;
+integral invariant.  Thus
+<a name="EQUATION_5.342"></a></p>
+<div align=left><img src="chap5-Z-G-309.gif" border="0"></div>
+<p></p>
+<p>
+We are left with showing that the Poincar&eacute;-Cartan integral invariant
+for the region <em>R</em>'' is zero.  This will be zero if the contribution
+from any small piece of <em>R</em>'' is zero.  We will show this by showing
+that the <img src="chap1-Z-G-D-23.gif" border="0"> form (see equation&nbsp;<a href="book-Z-H-60.html#EQUATION_5.71">5.71</a>) on a small
+parallelogram in this region 
+is zero.  Let (0; <em>q</em>, <em>t</em>; <em>p</em>, <em>p</em><sub><em>t</em></sub>) be a vertex of this parallelogram.  The
+parallelogram is specified by two edges <img src="chap2-Z-G-D-10.gif" border="0"><sub>1</sub> and <img src="chap2-Z-G-D-10.gif" border="0"><sub>2</sub>
+emanating from this vertex with components (0; <img src="chap1-Z-G-D-43.gif" border="0"> <em>q</em>, <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em>;
+<img src="chap1-Z-G-D-43.gif" border="0"> <em>p</em>, <img src="chap1-Z-G-D-43.gif" border="0"> <em>p</em><sub><em>t</em></sub>).  For edge <img src="chap2-Z-G-D-10.gif" border="0"><sub>1</sub> of the parallelogram, we take
+a constant-time phase-space increment with length <img src="chap1-Z-G-D-43.gif" border="0"> <em>q</em> and
+<img src="chap1-Z-G-D-43.gif" border="0"> <em>p</em> in the <em>q</em> and <em>p</em> directions.  The first-order change in
+the Hamiltonian that corresponds to these changes is
+
+<a name="EQUATION_5.343"></a></p>
+<div align=left><img src="chap5-Z-G-310.gif" border="0"></div>
+<p>
+for constant time <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em>  =  0.  The increment <img src="chap1-Z-G-D-43.gif" border="0"> <em>p</em><sub><em>t</em></sub> is the
+negative of <img src="chap1-Z-G-D-43.gif" border="0"> <em>H</em>.  So the extended phase-space increment is
+<a name="EQUATION_5.344"></a></p>
+<div align=left><img src="chap5-Z-G-311.gif" border="0"></div>
+<p>
+The edge <img src="chap2-Z-G-D-10.gif" border="0"><sub>2</sub> is obtained by time evolution of the vertex for a
+time interval <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em>.  Using Hamilton's equations, we obtain
+<a name="EQUATION_5.345"></a></p>
+<div align=left><img src="chap5-Z-G-312.gif" border="0"></div>
+<p>
+The <img src="chap1-Z-G-D-23.gif" border="0"> form applied to these incremental states that form the
+edges of this parallelogram gives the area of the parallelogram:
+<a name="EQUATION_5.346"></a></p>
+<div align=left><img src="chap5-Z-G-313.gif" border="0"></div>
+<p>
+So we may conclude that the integral of this expression over the
+entire surface of the tube of trajectories is also zero.  Thus the
+Poincar&eacute;-Cartan integral invariant is zero for any region that is
+generated by time evolution.</p>
+<p>
+Having proven that the trajectory tube provides no contribution, we have
+shown that the Poincar&eacute; integral invariant of the two endcaps is the
+same.  This proves that time evolution generates a symplectic <em>q</em><em>p</em>
+transformation.  </p>
+<p>
+</p>
+<a name="%_sec_Temp_399"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_399">Area preservation of surfaces of section</a></h4>
+<p><a name="%_idx_2796"></a><a name="%_idx_2798"></a><a name="%_idx_2800"></a>
+We can use the Poincar&eacute;-Cartan invariant to prove that for
+autonomous two-degree-of-freedom systems surfaces of section
+(constructed appropriately) preserve area.</p>
+<p>
+To show this we consider a surface of section for one coordinate (say
+<em>q</em><sub>2</sub>) equal to zero.   We construct the section by accumulating the
+(<em>q</em><sub>1</sub>, <em>p</em><sub>1</sub>) pairs.  We assume that all initial conditions have
+the same energy.  We compute the sum of the areas of canonical
+projections in the extended phase space again.  Because all initial
+conditions have the same <em>q</em><sub>2</sub>  =  0 there is no area on the <em>q</em><sub>2</sub>,
+<em>p</em><sub>2</sub> plane, and because all the trajectories have the same value of the
+Hamiltonian the area of the projection on the <em>t</em>, <em>p</em><sub><em>t</em></sub> plane is also
+zero.  So the sum of areas of the projections is just the area of the
+region on the surface of section.  Now let each point on the surface
+of section evolve to the next section crossing.  For each point on the
+section this may take a different amount of time.  Compute the sum of
+the areas again for the mapped region.  Again, all points of the
+mapped region have the same <em>q</em><sub>2</sub> so the area on the <em>q</em><sub>2</sub>, <em>p</em><sub>2</sub>
+plane is zero, and they continue to have the same energy so the area on
+the <em>t</em>, <em>p</em><sub><em>t</em></sub> plane is zero.  So the area of the mapped region is again
+just the area on the surface of section, the <em>q</em><sub>1</sub>, <em>p</em><sub>1</sub> plane.  Time
+evolution preserves the sum of areas, so the area on the surface of
+section is the same as the mapped area.</p>
+<p>
+So surfaces of section preserve area provided that the section points
+are entirely on a canonical plane.  For example, to make the
+H&eacute;non-Heiles surfaces of section (see
+section&nbsp;<a href="book-Z-H-42.html#%_sec_3.6.3">3.6.3</a>) 
+we plotted <em>p</em><sub><em>y</em></sub> versus <em>y</em> when <em>x</em> = 0 with <em>p</em><sub><em>x</em></sub> <u>&gt;</u> 0.  So
+for all section points the <em>x</em> coordinate has the fixed value 0, the
+trajectories all have the same energy, 
+and the points accumulated are entirely in the <em>y</em>, <em>p</em><sub><em>y</em></sub> canonical
+plane.  So the H&eacute;non-Heiles surfaces of section preserve area.
+
+</p>
+<a name="%_sec_5.7.2"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.7.2">5.7.2&nbsp;&nbsp;Yet Another View of Time Evolution</a></h3>
+<p><a name="%_idx_2802"></a><a name="%_idx_2804"></a>
+We can show that time evolution generates a symplectic transformation
+directly from the action principle.  </p>
+<p>
+Recall that the Lagrangian action <em>S</em> is
+<a name="EQUATION_5.347"></a></p>
+<div align=left><img src="chap5-Z-G-314.gif" border="0"></div>
+<p>
+We computed the variation of the action in deriving the Lagrange
+equations.  The variation is (see
+equation&nbsp;<a href="book-Z-H-12.html#EQUATION_1.33">1.33</a>)
+<a name="EQUATION_5.348"></a></p>
+<div align=left><img src="chap5-Z-G-315.gif" border="0"></div>
+<p>
+rewritten in terms of the Euler-Lagrange operator  <em>E</em>.  In the
+derivation of the Lagrange equations we considered only variations
+that preserved the endpoints of the path being tested.  However,
+equation&nbsp;(<a href="#EQUATION_5.347">5.347</a>) is true of arbitrary variations.
+Here we consider variations that are not zero at the endpoints
+around a realizable path <em>q</em> (one for which 
+  <em>E</em> [ <em>L</em> ] <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>]  =  0 ).  For these variations
+the variation of the action is just the integrated term:
+<a name="EQUATION_5.349"></a></p>
+<div align=left><img src="chap5-Z-G-316.gif" border="0"></div>
+<p>
+Recall that <em>p</em> and <img src="chap1-Z-G-D-13.gif" border="0"> are structures, and the product implies a
+sum of products of components.</p>
+<p>
+Consider a continuous family of realizable paths; the path for parameter <em>s</em> is
+<img src="chap5-Z-G-D-12.gif" border="0">(<em>s</em>) and the coordinates of this path at time <em>t</em> are
+<img src="chap5-Z-G-D-12.gif" border="0">(<em>s</em>)(<em>t</em>).
+We define <img src="chap5-Z-G-D-13.gif" border="0">(<em>s</em>)  =  <em>D</em><img src="chap5-Z-G-D-12.gif" border="0">(<em>s</em>); the variation of the path
+along the family is the
+derivative of the parametric path with respect to the parameter.
+Let 
+<a name="EQUATION_5.350"></a></p>
+<div align=left><img src="chap5-Z-G-317.gif" border="0"></div>
+<p>
+be the value of the action from <em>t</em><sub>1</sub> to <em>t</em><sub>2</sub> for path <img src="chap5-Z-G-D-12.gif" border="0">(<em>s</em>).  
+The derivative of the action along this parametric family of paths is<a name="call_footnote_Temp_400" href="#footnote_Temp_400"><sup><small>29</small></sup></a>
+<a name="EQUATION_5.351"></a></p>
+<div align=left><img src="chap5-Z-G-318.gif" border="0"></div>
+<p>
+Because <img src="chap5-Z-G-D-12.gif" border="0">(<em>s</em>) is
+a realizable path,  <em>E</em>[<em>L</em>] <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<img src="chap5-Z-G-D-12.gif" border="0">(<em>s</em>)]  =  0. So
+<a name="EQUATION_5.352"></a></p>
+<div align=left><img src="chap5-Z-G-319.gif" border="0"></div>
+<p>
+where <img src="chap3-Z-G-D-3.gif" border="0">(<em>s</em>) is the conjugate momentum to <img src="chap5-Z-G-D-12.gif" border="0">(<em>s</em>).
+The integral of <em>D</em><img src="chap5-Z-G-D-14.gif" border="0"> is 
+<a name="EQUATION_5.353"></a></p>
+<div align=left><img src="chap5-Z-G-320.gif" border="0"></div>
+<p>
+where
+<a name="EQUATION_5.354"></a></p>
+<div align=left><img src="chap5-Z-G-321.gif" border="0"></div>
+<p>
+In conventional notation the latter line integral is written
+<a name="EQUATION_5.355"></a></p>
+<div align=left><img src="chap5-Z-G-322.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-1.gif" border="0"><sub>1</sub>(<em>s</em>)  =  <img src="chap5-Z-G-D-12.gif" border="0">(<em>s</em>)(<em>t</em><sub>1</sub>) and <img src="chap1-Z-G-D-1.gif" border="0"><sub>2</sub>(<em>s</em>)  =  <img src="chap5-Z-G-D-12.gif" border="0">(<em>s</em>)(<em>t</em><sub>2</sub>).</p>
+<p>
+For a loop family of paths (such that <img src="chap5-Z-G-D-12.gif" border="0">(<em>s</em><sub>2</sub>)  =  <img src="chap5-Z-G-D-12.gif" border="0">(<em>s</em><sub>1</sub>)), the
+difference of actions at the endpoints vanishes, so we deduce
+<a name="EQUATION_5.356"></a></p>
+<div align=left><img src="chap5-Z-G-323.gif" border="0"></div>
+<p>
+which is the line-integral version of the integral invariants.</p>
+<p>
+In terms of area integrals, using Stokes's theorem, this is
+<a name="EQUATION_5.357"></a></p>
+<div align=left><img src="chap5-Z-G-324.gif" border="0"></div>
+<p>
+where <em>R</em><sup><em>i</em></sup><sub><em>j</em></sub> are the regions in the <em>i</em>th canonical plane.
+We have found that the time evolution preserves the integral
+invariants, and thus time evolution generates a symplectic transformation.</p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_390" href="#call_footnote_Temp_390"><sup><small>24</small></sup></a> Our theorems about which transformations are canonical are 
+still valid, because they required only that the derivative of the
+independent variable be&nbsp;1.</p>
+
+<p><a name="footnote_Temp_391" href="#call_footnote_Temp_391"><sup><small>25</small></sup></a> Partial derivatives of structured arguments do not generally
+<a name="%_idx_2780"></a>  commute, so this deduction is not as simple as it may appear.  It is
+helpful to introduce component indices and consider the equation 
+componentwise.</p>
+
+<p><a name="footnote_Temp_394" href="#call_footnote_Temp_394"><sup><small>26</small></sup></a> The transformation <em>S</em><sub><img src="chap1-Z-G-D-43.gif" border="0"></sub> is an identity on the <em>q</em><em>p</em>
+components, so it is symplectic.  Although it adjusts the time, it
+is not a time-dependent transformation in that the <em>q</em><em>p</em> components
+do not depend upon the time.  Thus, if we adjust the Hamiltonian by 
+composition with <em>S</em><sub><img src="chap1-Z-G-D-43.gif" border="0"></sub> we have a canonical transformation.</p>
+
+<p><a name="footnote_Temp_397" href="#call_footnote_Temp_397"><sup><small>27</small></sup></a> By Stokes's theorem we may compute the area of a region by a line
+integral around the boundary of the region.  We define the
+positive sense of the area to be the area enclosed
+by a curve that is traversed in a counterclockwise direction,
+when drawn on a plane with the coordinate on the abscissa and the
+momentum on the ordinate.</p>
+
+<p><a name="footnote_Temp_398" href="#call_footnote_Temp_398"><sup><small>28</small></sup></a> We can see this as follows.
+Let <img src="chap1-Z-G-D-1.gif" border="0"> be any closed curve in the boundary.  This curve divides
+the boundary into two regions.  By Stokes's theorem the integral
+invariant over both of these pieces can be written as a line integral
+along this boundary, but they have opposite signs, because <img src="chap1-Z-G-D-1.gif" border="0"> is
+traversed in opposite directions to keep the surface on the left.  So
+we conclude that the integral invariant over the entire surface is zero.</p>
+
+<p><a name="footnote_Temp_400" href="#call_footnote_Temp_400"><sup><small>29</small></sup></a> Let <em>f</em> be a path-dependent function,
+<img src="chap5-Z-G-D-13.gif" border="0">(<em>s</em>)  =  <em>D</em><img src="chap5-Z-G-D-12.gif" border="0">(<em>s</em>), and <em>g</em>(<em>s</em>)  = 
+<em>f</em>[<img src="chap5-Z-G-D-12.gif" border="0">(<em>s</em>)].  The variation of <em>f</em> at <img src="chap5-Z-G-D-12.gif" border="0">(<em>s</em>)
+in the direction <img src="chap5-Z-G-D-13.gif" border="0">(<em>s</em>) is
+<img src="chap1-Z-G-D-17.gif" border="0"><sub><img src="chap5-Z-G-D-13.gif" border="0">(<em>s</em>)</sub> <em>f</em>[<img src="chap5-Z-G-D-12.gif" border="0">(<em>s</em>)]  =  <em>D</em> <em>g</em>(<em>s</em>).
+</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-63.html">previous</a></span><span>, <a href="book-Z-H-65.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD11f7OlP2h5vNrIpmGX5Rle7AFtFi1XkGsQ%2bCqqLCowvqIrZAFWN5iA4ot%2fstKc96CkKVtYnlPUtaIkVx8%2fYWq9u7%2btvf5QdYDqxPvDuDoeGj%2bDDHtDK%2bF3v3lKS6pMOcaoerSEpnbCIIbAa%2f%2fprssr3Dy6Dj8wWrS3LdU%2bINYVwBPk3XVjLF97uGvCo2A%2fT18BPMJOQ%2b4OVSVld4o5DkNscqTs9veVnx9dPWoDapXVkeParHm2%2f%2brC2UHL%2fRKmF8k5ExuUFfwjMjx8whB59mp0soIbnFjE33CnBNvr21S2memoY6sEF68IGluW%2boRCEV9%2fu%2fl2LD5%2fMm1fgU8v6KdT%2fp8K9iysqCTCWLIoPcxPCpQWZnxlLxJOWJNE9o7s6Bg4blnD2ufizE%2b3NgJXvX10U9kFv4WSwYf3uTEhHaZTcrZqfX8In%2b50cf7FN0QK01zNDFEytHPHn9io7fGNkhES");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

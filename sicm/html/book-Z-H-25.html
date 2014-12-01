@@ -1,0 +1,175 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-24.html">previous</a></span><span>, <a href="book-Z-H-26.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_2.5"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_2.5">2.5&nbsp;&nbsp;Principal Moments of Inertia</a></h2>
+<p>
+<a name="%_idx_1138"></a><a name="%_idx_1140"></a>
+<a name="%_idx_1142"></a>We can use the transformation properties of the inertia
+tensor&nbsp;(<a href="book-Z-H-24.html#EQUATION_2.24">2.24</a>) to show that there are
+special rectangular coordinate systems for which the inertia tensor
+<em>I</em>' is diagonal, that is, <em>I</em>'<sub><em>i</em><em>j</em></sub>  =  0 for <em>i</em> ne <em>j</em>.  Let's assume
+that <strong><em>I</em></strong>' is diagonal and solve for the rotation matrix <strong><em>R</em></strong> that does the job.  Multiplying both sides of
+(<a href="book-Z-H-24.html#EQUATION_2.24">2.24</a>) on the left by <strong><em>R</em></strong>, we
+have
+<a name="EQUATION_2.25"></a></p>
+<div align=left><img src="chap2-Z-G-26.gif" border="0"></div>
+<p>
+We can examine pieces of this matrix equation by multiplying on the
+right by a trivial column vector that picks out a particular column.
+So we  multiply on the right by the column matrix representation
+<strong><em>e</em></strong><sub><em>i</em></sub> of each of the coordinate unit vectors <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>.
+These column matrices have a one in the <em>i</em>th row and zeros
+otherwise.  Using <strong><em>e</em></strong><sub><em>i</em></sub>'  =  <strong><em>R</em></strong> <strong><em>e</em></strong><sub><em>i</em></sub>, we find
+<a name="EQUATION_2.26"></a></p>
+<div align=left><img src="chap2-Z-G-27.gif" border="0"></div>
+<p>
+The matrix <strong><em>I</em></strong>' is diagonal so   
+<a name="EQUATION_2.27"></a></p>
+<div align=left><img src="chap2-Z-G-28.gif" border="0"></div>
+<p>
+So, from equations&nbsp;(<a href="#EQUATION_2.26">2.26</a>) and&nbsp;(<a href="#EQUATION_2.27">2.27</a>), we have
+<a name="EQUATION_2.28"></a></p>
+<div align=left><img src="chap2-Z-G-29.gif" border="0"></div>
+<p>
+<a name="%_idx_1144"></a>which we recognize as an equation for the eigenvalue <em>I</em>'<sub><em>i</em><em>i</em></sub> and
+<strong><em>e</em></strong><sub><em>i</em></sub>', the column matrix of components of the associated 
+eigenvector.   </p>
+<p>
+From <strong><em>e</em></strong><sub><em>i</em></sub>'  =  <strong><em>R</em></strong> <strong><em>e</em></strong><sub><em>i</em></sub>, we see that the
+<strong><em>e</em></strong><sub><em>i</em></sub>' are the columns of the rotation matrix <strong><em>R</em></strong>.  Now,
+rotation matrices are orthogonal, so <strong><em>R</em></strong><sup><tt><em>T</em></tt></sup> <strong><em>R</em></strong>  =  <strong>1</strong>; thus the columns of the rotation matrix must be
+orthonormal -- that is,
+(<strong><em>e</em></strong><sub><em>i</em></sub>')<sup><tt><em>T</em></tt></sup> <strong><em>e</em></strong><sub><em>j</em></sub>'  =  <img src="chap1-Z-G-D-17.gif" border="0"><sub><em>i</em><em>j</em></sub>, where <img src="chap1-Z-G-D-17.gif" border="0"><sub><em>i</em><em>j</em></sub> is one if <em>i</em> = <em>j</em>
+and zero otherwise.  But the eigenvectors that are solutions of
+equation&nbsp;(<a href="#EQUATION_2.28">2.28</a>) are not necessarily even
+orthogonal.  So we are not done yet.</p>
+<p>
+If a matrix is real and symmetric then the eigenvalues are real.
+Furthermore, if the eigenvalues are distinct then the eigenvectors are
+orthogonal.  However, if the eigenvalues are not distinct then the
+directions of the eigenvectors for the degenerate eigenvalues are not
+uniquely determined -- we have the freedom to choose particular
+<strong><em>e</em></strong><sub><em>i</em></sub>' that are orthogonal.<a name="call_footnote_Temp_186" href="#footnote_Temp_186"><sup><small>8</small></sup></a>  The linearity of
+equation&nbsp;(<a href="#EQUATION_2.28">2.28</a>) implies the <strong><em>e</em></strong><sub><em>i</em></sub>' can be
+normalized.  Thus whether or not the eigenvalues are distinct we can
+obtain an orthonormal set of <strong><em>e</em></strong><sub><em>i</em></sub>.  This is enough to
+reconstruct a rotation matrix <strong><em>R</em></strong> that does the job we asked of
+it: to rotate the coordinate system to a configuration such that the
+inertia tensor is diagonal.  If the eigenvalues are not distinct, the
+rotation matrix <strong><em>R</em></strong> is not uniquely defined -- there is more
+than one rotation matrix <strong><em>R</em></strong> that does the job.</p>
+<p>
+The eigenvectors and eigenvalues are determined by the requirement
+that the inertia tensor be diagonal with respect to the rotated
+coordinate system.  Thus the rotated coordinate system has a special
+orientation with respect to the body.  The basis vectors <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>'
+therefore actually point along particular directions in the body.  We
+define the axes in the body through the center of mass with these
+directions to be the <a name="%_idx_1146"></a><a name="%_idx_1148"></a><a name="%_idx_1150"></a><em>principal axes</em>.  With respect to the coordinate
+system defined by <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>', the inertia tensor is diagonal, by construction, with the
+eigenvalues&nbsp;<em>I</em>'<sub><em>i</em><em>i</em></sub> on the diagonal.  Thus the moments of inertia
+about the principal axes are the eigenvalues&nbsp;<em>I</em>'<sub><em>i</em><em>i</em></sub>.  We call the
+moments of inertia about the principal axes the <em>principal moments
+of inertia</em>.</p>
+<p>
+For convenience, we often label the principal moments of inertia
+according to their size: <em>A</em> <u>&lt;</u> <em>B</em> <u>&lt;</u> <em>C</em>, with principal axis unit
+vectors hata, <img src="chap2-Z-G-D-13.gif" border="0">, <img src="chap2-Z-G-D-14.gif" border="0">, respectively.  The positive
+direction along the principal axes can be chosen so that hata,
+<img src="chap2-Z-G-D-13.gif" border="0">, <img src="chap2-Z-G-D-14.gif" border="0"> form a right-handed rectangular coordinate basis.</p>
+<p>
+Let <strong><em>x</em></strong> represent the matrix of components of a vector
+<img src="chap1-Z-G-D-26.gif" border="0"> with respect to the basis vectors <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>.  Recall that the
+components <strong><em>x</em></strong>' of a vector <img src="chap1-Z-G-D-26.gif" border="0"> with respect to the
+principal axis unit vectors <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>' satisfy
+<a name="EQUATION_2.29"></a></p>
+<div align=left><img src="chap2-Z-G-30.gif" border="0"></div>
+<p>
+This makes sense because the columns of <strong><em>R</em></strong> are the components
+of <strong><em>e</em></strong><sub><em>i</em></sub>'.  Multiplying the components of <img src="chap1-Z-G-D-26.gif" border="0"> by the
+transpose of <strong><em>R</em></strong> is taking the dot product of each <img src="chap2-Z-G-D-9.gif" border="0"><sub><em>i</em></sub>'
+with <img src="chap1-Z-G-D-26.gif" border="0"> to produce the components.  The components of a vector
+on the principal axis basis are sometimes called the <a name="%_idx_1152"></a><a name="%_idx_1154"></a><em>body
+components</em> of the vector.
+<a name="%_idx_1156"></a><a name="%_idx_1158"></a><a name="%_idx_1160"></a>Now let's rewrite the kinetic energy in terms of the principal moments
+of inertia.  If we choose our rectangular coordinate system so that it
+coincides with the principal axes then the calculation is simple.  Let
+the components of the angular velocity vector on the principal axes be
+( <img src="chap1-Z-G-D-23.gif" border="0"><sup><em>a</em></sup>, <img src="chap1-Z-G-D-23.gif" border="0"><sup><em>b</em></sup>, <img src="chap1-Z-G-D-23.gif" border="0"><sup><em>c</em></sup> ).  Then, keeping in mind that the
+inertia tensor is diagonal with respect to the principal axis basis, 
+the kinetic energy is just
+<a name="EQUATION_2.30"></a></p>
+<div align=left><img src="chap2-Z-G-31.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_2.5"></a>
+<b>Exercise 2.5.</b>&nbsp;&nbsp;<strong>A constraint on the moments of inertia</strong><br>
+Show that the sum of any two of the moments of inertia is
+greater than or equal to the third moment of inertia.  You may assume
+the moments of inertia are with respect to orthogonal axes.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_2.6"></a>
+<b>Exercise 2.6.</b>&nbsp;&nbsp;<strong>Principal moments of inertia</strong><br>
+For each of the configurations described below find the principal
+moments of inertia with respect to the center of mass; find the 
+corresponding principal axes.</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;A regular tetrahedron consisting of four equal point masses
+tied together with rigid massless wire.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;A cube of uniform density.</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;Five equal point masses rigidly connected by massless
+stuff.  The point masses are at the rectangular coordinates: 
+</p>
+<div align=left><img src="chap2-Z-G-32.gif" border="0"></div>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_2.7"></a>
+<b>Exercise 2.7.</b>&nbsp;&nbsp;<strong>This book</strong><br>
+<a name="%_idx_1162"></a><a name="%_idx_1164"></a>Measure this book.  You will admit that it is pretty dense.  Don't
+worry, you will get to throw it later.  Show that the principal axes
+are the lines connecting the centers of opposite faces of the
+idealized brick approximating the book.  Compute the corresponding
+principal moments of inertia.
+</p>
+
+<p></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_186" href="#call_footnote_Temp_186"><sup><small>8</small></sup></a> If two eigenvalues are not
+distinct then linear combinations of the associated eigenvectors are
+eigenvectors.  This gives us the freedom to find linear combinations
+of the eigenvectors that are orthonormal.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-24.html">previous</a></span><span>, <a href="book-Z-H-26.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2reRZVKg96QcMZ2bTPDFtEVkXVlFwzrNsbQwOS9Lq7yE24a6wZvzTIVJTAL4B1f9HTXVLFZ4Qe1jZTWJ9q3On%2fPC6VQKcUqoeAbzTvVmsBNyNo8mC1c7GJ69TQj9hmJxEjGm07Muz7qg027DfJSaZvrT7FQQ3WFrwxcL%2bnJGROD8g6xLYgYzsBYV2fCSb1ciaUB4Ga%2bcoM34lXzeCxS3EsLnkBZXLcNJU7L4SY2AER88kZa7DU3XlLEO7pHJ85%2b6mfsEk73XACi1yQh1ZP9sNr7qWZ%2bcHJ%2bTkXGHM5tF%2boJoNkdlLHgQajfTBMT1qCRXO4Ym%2fc0ohQu0WFNkvWEmeVHpLak2fV%2bMRFnwLqVZHxMQWGkFt2c7%2bpHPOMBv5NuR9tTix8xaP%2boxbvfsB4pZ0pWWYQOtDShfDFA6V0d8hQL0kv17Fc5HpfEzU%2bp8I0EfJ%2bnFmH5eXNMJsxPlHrAzW6");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

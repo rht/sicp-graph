@@ -1,0 +1,273 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-52.html">previous</a></span><span>, <a href="book-Z-H-54.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_4.5"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_4.5">4.5&nbsp;&nbsp;Poincar&eacute;-Birkhoff Theorem</a></h2>
+<p><a name="%_idx_2350"></a><a name="%_idx_2352"></a><a name="%_idx_2354"></a>
+How does this picture change if we add additional effects?</p>
+<p>
+<a name="%_idx_2356"></a><a name="%_idx_2358"></a><a name="%_idx_2360"></a>One peculiar feature of the orbits in integrable systems is that there
+are continuous families of periodic orbits.  The initial angles do not
+matter; the frequencies depend only on the actions.  Contrast this with
+our earlier experience with surfaces of section in which periodic points
+are isolated, and associated with island chains.  
+Poincar&eacute; and Birkhoff investigated periodic orbits of <a name="%_idx_2362"></a>near-integrable systems, and found that typically
+for each <a name="%_idx_2364"></a><a name="%_idx_2366"></a><a name="%_idx_2368"></a>rational rotation number there are a finite number of
+periodic points, half of which are linearly stable and half linearly
+unstable.  Here we show how to construct the Poincar&eacute;-Birkhoff
+periodic points.</p>
+<p>
+Consider an integrable system described in action-angle coordinates by
+the Hamiltonian <em>H</em><sub>0</sub>(<em>t</em>, <img src="chap1-Z-G-D-19.gif" border="0">, <em>J</em>)  =  <em>f</em>(<em>J</em>).  We add some small
+additional effect described by the term <em>H</em><sub>1</sub> in the <a name="%_idx_2370"></a><a name="%_idx_2372"></a><a name="%_idx_2374"></a><a name="%_idx_2376"></a>Hamiltonian
+<a name="EQUATION_4.40"></a></p>
+<div align=left><img src="chap4-Z-G-51.gif" border="0"></div>
+<p>
+An example of such a system is the periodically driven pendulum with
+small-amplitude drive.  For zero-amplitude drive the driven pendulum
+is integrable, but not for small drive.  Unfortunately, we do not yet
+have the tools to develop action-angle coordinates for the pendulum.
+A simpler problem that is already in action-angle form is the <a name="%_idx_2378"></a><a name="%_idx_2380"></a>driven
+rotor, which is just the driven pendulum with gravity turned off.  We
+can implement this by turning our driven pendulum on its side, making
+the plane of the pendulum horizontal.  
+<a name="%_idx_2382"></a>A Hamiltonian for the driven 
+rotor is
+<a name="EQUATION_4.41"></a></p>
+<div align=left><img src="chap4-Z-G-52.gif" border="0"></div>
+<p>
+where <em>A</em> is the amplitude of the drive with frequency <img src="chap1-Z-G-D-23.gif" border="0">, <em>m</em>
+is the mass of the bob, and <em>l</em> is the length of the rotor.  For zero
+amplitude, the Hamiltonian is already in action-angle form in that it
+depends only on the momentum <em>p</em><sub><img src="chap1-Z-G-D-19.gif" border="0"></sub> and the coordinate is an
+angle.</p>
+<p>
+For an integrable system, the map generated on the surface of section
+is of the form&nbsp;(<a href="book-Z-H-52.html#EQUATION_4.39">4.39</a>).  With the addition of a small
+perturbation to the Hamiltonian, small corrections are added to the map
+<a name="EQUATION_4.42"></a></p>
+<div align=left><img src="chap4-Z-G-53.gif" border="0"></div>
+<p>
+Both the map <em>T</em> and the perturbed map <em>T</em><sub><img src="chap1-Z-G-D-12.gif" border="0"></sub> are area
+preserving because the maps are generated as surfaces of section for
+Hamiltonian systems.</p>
+<p>
+Suppose we are interested in determining whether periodic orbits of a
+particular rational rotation number <img src="chap4-Z-G-D-4.gif" border="0">(<img src="chap4-Z-G-D-3.gif" border="0">(0))  =  <em>j</em>/<em>k</em> exist in
+some interval of the action <img src="chap1-Z-G-D-21.gif" border="0"> &lt; <img src="chap4-Z-G-D-3.gif" border="0">(0) &lt; <i>&szlig;</i>.  If the
+rotation number is strictly monotonic in this interval and orbits with
+the rotation number <img src="chap4-Z-G-D-4.gif" border="0">(<img src="chap4-Z-G-D-3.gif" border="0">(0)) occur in this interval for the
+unperturbed map <em>T</em>, then by a simple construction we can show that
+periodic orbits with this rotation number also exist for <em>T</em><sub><img src="chap1-Z-G-D-12.gif" border="0"></sub>
+for sufficiently small <img src="chap1-Z-G-D-12.gif" border="0">.</p>
+<p>
+If a point is periodic for rational rotation number <img src="chap4-Z-G-D-4.gif" border="0">(<img src="chap4-Z-G-D-3.gif" border="0">(0))  = 
+<em>j</em>/<em>k</em>, with relatively prime <em>j</em> and <em>k</em>, we expect <em>k</em> distinct images
+of the point to appear on the section.  So if we consider the <em>k</em>th
+iterate of the map then the point is a fixed point of the map.  For
+rational rotation number <em>j</em>/<em>k</em> the map <em>T</em><sup><em>k</em></sup> has a fixed point for
+every initial angle.</p>
+<p>
+The rotation number of the map <em>T</em> is strictly monotonic.  Suppose for
+definiteness we assume the rotation number <img src="chap4-Z-G-D-4.gif" border="0">(<img src="chap4-Z-G-D-3.gif" border="0">(0)) increases with
+<img src="chap4-Z-G-D-3.gif" border="0">(0).  For some <img src="chap4-Z-G-D-3.gif" border="0"><sup>*</sup> such that <img src="chap1-Z-G-D-21.gif" border="0"> &lt; <img src="chap4-Z-G-D-3.gif" border="0"><sup>*</sup> &lt;
+<i>&szlig;</i> the 
+rotation number is <em>j</em>/<em>k</em>, and (<img src="chap4-Z-G-D-2.gif" border="0"><sup>*</sup>, <img src="chap4-Z-G-D-3.gif" border="0"><sup>*</sup>) is a fixed
+point of
+<em>T</em><sup><em>k</em></sup> for any initial
+<img src="chap4-Z-G-D-2.gif" border="0"><sup>*</sup>.  For <img src="chap4-Z-G-D-3.gif" border="0"><sup>*</sup> the rotation number of <em>T</em><sup><em>k</em></sup> is zero.  The
+rotation number of the map <em>T</em> is monotonically increasing so for <img src="chap4-Z-G-D-3.gif" border="0">(0)
+&gt; <img src="chap4-Z-G-D-3.gif" border="0"><sup>*</sup> the rotation number of <em>T</em><sup><em>k</em></sup> is positive, and for <img src="chap4-Z-G-D-3.gif" border="0">(0) &lt;
+<img src="chap4-Z-G-D-3.gif" border="0"><sup>*</sup> the rotation number of <em>T</em><sup><em>k</em></sup> is negative, as long as <img src="chap4-Z-G-D-3.gif" border="0">(0) is
+not too far from <img src="chap4-Z-G-D-3.gif" border="0"><sup>*</sup>.  See figure&nbsp;<a href="#FIGURE_4.12">4.12</a>.</p>
+<p>
+<a name="FIGURE_4.12"></a></p>
+<div align=left><img src="chap4-Z-G-54.gif" border="0"></div>
+<p></p>
+<p>
+Now consider the map <em>T</em><sub><img src="chap1-Z-G-D-12.gif" border="0"></sub><sup><em>k</em></sup>.  In general, for small
+<img src="chap1-Z-G-D-12.gif" border="0">, points map to slightly different points under <em>T</em><sub><img src="chap1-Z-G-D-12.gif" border="0"></sub>
+than they do under <em>T</em>, but not too different.  So we can expect that
+there is still some interval near <img src="chap4-Z-G-D-3.gif" border="0"><sup>*</sup> such that for <img src="chap4-Z-G-D-3.gif" border="0">(0) in the
+upper end of the interval, <em>T</em><sub><img src="chap1-Z-G-D-12.gif" border="0"></sub><sup><em>k</em></sup> maps points to larger
+<img src="chap1-Z-G-D-19.gif" border="0"><sup>0</sup>, and for points in the lower end of the interval,
+<em>T</em><sub><img src="chap1-Z-G-D-12.gif" border="0"></sub><sup><em>k</em></sup> maps points
+to smaller <img src="chap1-Z-G-D-19.gif" border="0"><sup>0</sup>.  If this is the case then
+for every <img src="chap4-Z-G-D-2.gif" border="0">(0) there is a point somewhere in the interval, some
+<img src="chap4-Z-G-D-3.gif" border="0"><sup>+</sup>(<img src="chap4-Z-G-D-2.gif" border="0">(0)), for which <img src="chap1-Z-G-D-19.gif" border="0"><sup>0</sup> does not change, by
+continuity.  These are not fixed points because the momentum <em>J</em><sub>0</sub>
+generally changes. See figure&nbsp;<a href="#FIGURE_4.12">4.12</a>.</p>
+<p>
+The map is continuous, so we can expect that <img src="chap4-Z-G-D-3.gif" border="0"><sup>+</sup> is a continuous
+function of the <img src="chap1-Z-G-D-19.gif" border="0"><sup>0</sup>.  As we let <img src="chap1-Z-G-D-19.gif" border="0"><sup>0</sup> vary through 2<img src="chap1-Z-G-D-15.gif" border="0">,
+this function is either periodic or not.  That it must be periodic is
+a consequence of area preservation.<a name="call_footnote_Temp_319" href="#footnote_Temp_319"><sup><small>13</small></sup></a>
+So the set of points that do not change <img src="chap1-Z-G-D-19.gif" border="0"><sup>0</sup> under <em>T</em><sub><img src="chap1-Z-G-D-12.gif" border="0"></sub><sup><em>k</em></sup>
+form some periodic function of <img src="chap1-Z-G-D-19.gif" border="0"><sup>0</sup>.  Call this curve <em>C</em><sub>0</sub>.
+See figure&nbsp;<a href="#FIGURE_4.14">4.14</a>.</p>
+<p>
+<a name="FIGURE_4.14"></a></p>
+<div align=left><img src="chap4-Z-G-55.gif" border="0"></div>
+<p></p>
+<p>
+The map <em>T</em><sub><img src="chap1-Z-G-D-12.gif" border="0"></sub><sup><em>k</em></sup> takes the curve <em>C</em><sub>0</sub> to another curve <em>C</em><sub>1</sub>
+that, like <em>C</em><sub>0</sub>, is continuous and periodic.  The two curves <em>C</em><sub>0</sub>
+and <em>C</em><sub>1</sub> must cross each other, as a consequence of area
+preservation.  How do we see this?  Typically, there is a lower
+boundary or upper boundary in <em>J</em><sub>0</sub> for the evolution.  In some
+situations, we have such a lower boundary because <em>J</em><sub>0</sub> cannot be
+negative.  For example, in action-angle variables for motion near an
+elliptic fixed point we will see that the action is the area enclosed
+on the phase plane, which cannot be negative.  For others, we might
+use the fact that there are invariant curves for large positive or
+negative <em>J</em><sub>0</sub>.  In any case, suppose there is such a barrier <em>B</em>.
+Then, the area of the region between the barrier and <em>C</em><sub>0</sub> must be
+equal to the area of the image of this region, which is the region
+between the barrier and <em>C</em><sub>1</sub>.  So if at any point the two
+curves <em>C</em><sub>0</sub> and <em>C</em><sub>1</sub> do not coincide, then they must cross to
+contain the same area.  In fact, they must cross an even number of
+times: they are both periodic, so if they cross once they must
+cross again to get back to the same side they started on.  The points
+at which the curves <em>C</em><sub>0</sub> and <em>C</em><sub>1</sub> cross are <a name="%_idx_2384"></a>fixed points because the
+angle does not change (that is what it means to be on <em>C</em><sub>0</sub>) and the
+action does not change (that is what it means for <em>C</em><sub>0</sub> and <em>C</em><sub>1</sub> to
+be the same at this point).  So we have deduced that there must be an
+even number of fixed points of <em>T</em><sub><img src="chap1-Z-G-D-12.gif" border="0"></sub><sup><em>k</em></sup>.  For each fixed point
+of <em>T</em><sub><img src="chap1-Z-G-D-12.gif" border="0"></sub><sup><em>k</em></sup> there are <em>k</em> images of this fixed point generated on the
+surface of section for the map <em>T</em><sub><img src="chap1-Z-G-D-12.gif" border="0"></sub>.
+Each of these image points is a periodic point of the map <em>T</em><sub><img src="chap1-Z-G-D-12.gif" border="0"></sub>.</p>
+<p>
+We can deduce the stability of these fixed points of <em>T</em><sub><img src="chap1-Z-G-D-12.gif" border="0"></sub><sup><em>k</em></sup> 
+just from the
+construction.  The fixed points come in two types, <a name="%_idx_2386"></a>elliptic and
+<a name="%_idx_2388"></a>hyperbolic.  An elliptic fixed point appears where the flow is around
+the fixed point: the map from <em>C</em><sub>0</sub> to <em>C</em><sub>1</sub> can be continued along
+the background flow to make a closed curve.  A hyperbolic fixed point
+appears where in following the map from <em>C</em><sub>0</sub> to <em>C</em><sub>1</sub> we enter the
+background flow in such a way as to leave the fixed point.  So just
+from the way the arrows connect we can determine the character of the
+fixed point.  See figure&nbsp;<a href="#FIGURE_4.15">4.15</a>.</p>
+<p>
+<a name="FIGURE_4.15"></a></p>
+<div align=left><img src="chap4-Z-G-56.gif" border="0"></div>
+<p></p>
+<p>
+As we develop a Poincar&eacute; section, we find that some orbits leave
+traces that circulate around the stable fixed points, resulting in the
+<a name="%_idx_2390"></a>Poincar&eacute;-Birkhoff islands.  If we look at a particular island we see
+that orbits in the island circulate around the fixed point at a rate
+that is monotonically dependent upon the distance from the fixed
+point.  In the vicinity of the fixed point the evolution is governed
+by a twist map.  So the entire <a name="%_idx_2392"></a>Poincar&eacute;-Birkhoff construction can be
+carried out again.  We expect that there will be concentric families
+of stable periodic points surrounded by islands and separated by
+separatrices emanating from unstable periodic points.  Around each of
+these stable periodic orbits, the construction is repeated.  So the
+Poincar&eacute;-Birkhoff construction is recursive, leading to the
+development of an infinite hierarchy of structure.</p>
+<p>
+</p>
+<p>
+</p>
+<a name="%_sec_4.5.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_4.5.1">4.5.1&nbsp;&nbsp;Computing the Poincar&eacute;-Birkhoff Construction</a></h3>
+<p><a name="%_idx_2394"></a>
+There are so many conditions in our construction of the fixed points
+that one might be suspicious.  We can make the construction more
+convincing by actually computing the various pieces for a specific
+problem.  Consider the periodically driven rotor, with
+Hamiltonian&nbsp;(<a href="#EQUATION_4.41">4.41</a>).  We set <em>m</em> = 1 kg,
+<em>l</em> = 1 m,
+<em>A</em> = 0.1 m, <img src="chap1-Z-G-D-23.gif" border="0">  =  4.2 (9.8)<sup>1/2</sup> rad s<sup><tt>-</tt>1</sup>.</p>
+<p>
+
+We call points that map to the same angle ``radially mapping points.''
+We find them with a simple bisection:
+<a name="%_idx_2396"></a></p>
+<p><tt>(define&nbsp;(radially-mapping-points&nbsp;Tmap&nbsp;Jmin&nbsp;Jmax&nbsp;phi&nbsp;eps)<br>
+&nbsp;&nbsp;(bisect&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(lambda&nbsp;(J)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((principal-value&nbsp;pi)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;phi&nbsp;(Tmap&nbsp;phi&nbsp;J&nbsp;(lambda&nbsp;(phip&nbsp;Jp)&nbsp;phip)&nbsp;list))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Jmin&nbsp;Jmax&nbsp;eps))<br>
+</p>
+</tt>
+<p>The procedure <tt>Tmap</tt> implements some map, which may be an
+iterate of some more primitive map.  We give the procedure an angle
+<tt>phi</tt> to study, a range of actions <tt>Jmin</tt> to <tt>Jmax</tt>
+to search, and a tolerance <tt>eps</tt> for the solution.</p>
+<p>
+We make a plot of the curves <em>C</em><sub>0</sub> (of initial conditions that map
+radially) and <em>C</em><sub>1</sub> (the image of <em>C</em><sub>0</sub>) with an appropriate piece of
+wrapper code.</p>
+<p>
+In figure&nbsp;<a href="#FIGURE_4.16">4.16</a> we show the
+Poincar&eacute;-Birkhoff construction of the fixed points for the <a name="%_idx_2398"></a><a name="%_idx_2400"></a>driven
+rotor.  These particular curves are constructed for the two 1:1
+commensurabilities between the rotation and the drive.  One
+set of fixed points is constructed for each sense of rotation.  The
+corresponding section is in figure&nbsp;<a href="#FIGURE_4.17">4.17</a>.  We
+see that the section shows the existence of fixed points exactly where
+the Poincar&eacute;-Birkhoff construction shows the crossing of the curves
+<em>C</em><sub>0</sub> and <em>C</em><sub>1</sub>.  Indeed, the nature of the fixed
+point is clearly reflected in the relative configuration of the <em>C</em><sub>0</sub>
+and <em>C</em><sub>1</sub> curves.</p>
+<p>
+<a name="FIGURE_4.16"></a></p>
+<div align=left><img src="chap4-Z-G-57.gif" border="0"></div>
+<p></p>
+<p>
+In figure&nbsp;<a href="#FIGURE_4.18">4.18</a> we show the result for a
+rotation number of 1/3.  The curves are the radially mapping points
+for the third iterate of the section map (solid) and the images of
+these points (dotted).  These curves are distorted by their proximity
+to the 1:1 islands shown in figure&nbsp;<a href="#FIGURE_4.17">4.17</a>.
+The corresponding section is shown in
+figure&nbsp;<a href="#FIGURE_4.19">4.19</a>.</p>
+<p>
+<a name="FIGURE_4.18"></a></p>
+<div align=left><img src="chap4-Z-G-58.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_4.7"></a>
+<b>Exercise 4.7.</b>&nbsp;&nbsp;<strong>Computing the Poincar&eacute;-Birkhoff construction</strong><br>
+Consider figure&nbsp;<a href="book-Z-H-45.html#FIGURE_3.27">3.27</a>.  Find the fixed points
+for the three major island chains, using the Poincar&eacute;-Birkhoff
+construction.
+</p>
+
+<p></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_319" href="#call_footnote_Temp_319"><sup><small>13</small></sup></a> If <img src="chap4-Z-G-D-3.gif" border="0"><sup>+</sup> were not periodic in <img src="chap1-Z-G-D-19.gif" border="0"><sup>0</sup> then it would
+have to spiral.  Suppose it spirals.  The region enclosed by two
+successive turns of the spiral is mapped to a region between successive
+turns of the spiral further down the spiral.  The map preserves area,
+so the spiral cannot get tighter and tighter, but must progress infinitely down the
+cylinder.  This is impossible because of the twist condition:
+sufficiently far down the cylinder the rotation number is too different 
+to allow the angle to be the same under <em>T</em><sub><img src="chap1-Z-G-D-12.gif" border="0"></sub><sup><em>k</em></sup>.  So 
+<img src="chap4-Z-G-D-3.gif" border="0"><sup>+</sup> does not spiral.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-52.html">previous</a></span><span>, <a href="book-Z-H-54.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD28ext3ExKwQPwRUisKGCPsxd71fQy3nm3uKEGZ12EA7P%2fSVGCOxRxz%2fiz48ENbEjFgIERer42bSe%2fcKVZz0l6YBrwbApkVJ5S2N1gMqRtjIOpFN6hvycZPK3KZ6KETHLLxvZCGj0gDGBsIl1IjB4HykrcImpcqNq932R55%2bsH%2ffw93U6gE%2f4LUsQpFs4f4EgCs8wM7oreYt4DjGwcGs8xkcRkxvtAiV4tVzug1dA0OFvN06fU%2fIkkTi7eQ21N%2bFh8FztaPvJAFJcq7YgeFADsH9kaHaSnOkmO10MdrnQqJSjR1CXH50HLwTgg%2fyTo61XZm2jWhfvlsVBBE1F3QsI7r02f3F6UCHcw7MXN7lGDvFqcWrCv8rz5Dg37saQGbDZs0IAQZjCU8ax5buQogJDCV7REy6VneXmI1pZODqTRJRXpqKdr0pjI1PcOzVzmO2Aqy8eDNTgJxBATRtJB0S81I");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

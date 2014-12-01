@@ -1,0 +1,328 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-7.html">previous</a></span><span>, <a href="book-Z-H-9.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_1.1"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_1.1">1.1&nbsp;&nbsp;The Principle of Stationary Action</a></h2>
+<p>
+<a name="%_idx_58"></a>
+Let us suppose that for each physical system there is a
+<a name="%_idx_60"></a>path-distinguishing function that is stationary on realizable paths.
+We will try to deduce some of its properties.</p>
+<p>
+</p>
+<a name="%_sec_Temp_10"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_10">Experience of motion</a></h4>
+<p>Our ordinary experience suggests that physical <a name="%_idx_62"></a>motion can be described
+by configuration paths that are continuous and smooth.<a name="call_footnote_Temp_11" href="#footnote_Temp_11"><sup><small>3</small></sup></a> 
+We do not see the juggling pin jump from one place to another.  Nor do
+we see the juggling pin suddenly change the way it is moving.</p>
+<p>
+Our ordinary experience suggests that the motion of physical systems
+does not depend upon the entire history of the system.  If we enter
+the room after the juggling pin has been thrown into the air we cannot
+tell when it left the juggler's hand.  The juggler could have thrown
+the pin from a variety of places at a variety of times with the same
+apparent result as we walk through the door.<a name="call_footnote_Temp_12" href="#footnote_Temp_12"><sup><small>4</small></sup></a> 
+So the motion of the pin does not depend on the details of the
+history.</p>
+<p>
+<a name="%_idx_74"></a>Our ordinary experience suggests that the motion of physical systems
+is deterministic.  In fact, a small number of parameters summarize the
+important aspects of the history of the system and determine its
+future evolution.  For example, at any moment the
+position, velocity, orientation, and rate of change of the orientation
+of the juggling pin are enough to completely determine the future
+motion of the pin.</p>
+<p>
+
+</p>
+<a name="%_sec_Temp_13"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_13">Realizable paths</a></h4>
+<p><a name="%_idx_76"></a>
+<a name="%_idx_78"></a>From our experience of motion we develop certain expectations about
+realizable configuration paths.  If a path is realizable, then any
+segment of the path is a realizable path segment.  Conversely, a path
+is realizable if every segment of the path is a realizable path
+segment.  The realizability of a path segment depends on all points of
+the path in the segment.  The realizability of a path segment depends
+on every point of the path segment in the same way; no part of the
+path is special.  The realizability of a path segment depends only on
+points of the path within the segment; the realizability of a path
+segment is a local property.</p>
+<p>
+So the path-distinguishing function aggregates some local property
+of the system measured at each moment along the path segment.  Each
+moment along the path must be treated in the same way.  The contributions
+from each moment along the path segment 
+must be combined in a way that maintains the independence of the
+contributions from disjoint subsegments.  One method of combination
+that satisfies these requirements is to add up the contributions,
+making the path-distinguishing function an integral over the path
+segment of some local property of the path.<a name="call_footnote_Temp_14" href="#footnote_Temp_14"><sup><small>5</small></sup></a></p>
+<p>
+So we will try to arrange that the path-distinguishing function,
+constructed as an integral of a local property along the path, assumes
+an extreme value for any realizable path.  Such a path-distinguishing
+function is traditionally called an 
+<a name="%_idx_80"></a><em>action</em> 
+for the system.  We use the word ``action'' to be consistent with
+common usage.  Perhaps it would be clearer to continue to call it
+``path-distinguishing function,'' but then it would be more difficult
+for others to know what we were talking about.<a name="call_footnote_Temp_15" href="#footnote_Temp_15"><sup><small>6</small></sup></a>  </p>
+<p>
+In order to pursue the agenda of variational mechanics, we must invent
+action functions that are stationary on the realizable
+trajectories of the systems we are studying.  We will consider actions
+that are integrals of some local property of the configuration path at
+each moment.  Let <a name="%_idx_90"></a><a name="%_idx_92"></a><img src="chap1-Z-G-D-1.gif" border="0"> be the configuration-path function;
+<img src="chap1-Z-G-D-1.gif" border="0">(<em>t</em>) is the configuration at time <em>t</em>. The <a name="%_idx_94"></a><a name="%_idx_96"></a><a name="%_idx_98"></a>action of the
+segment of the path <img src="chap1-Z-G-D-1.gif" border="0"> in the time interval from <em>t</em><sub>1</sub> to <em>t</em><sub>2</sub>
+is<a name="call_footnote_Temp_16" href="#footnote_Temp_16"><sup><small>7</small></sup></a>
+<a name="EQUATION_1.1"></a></p>
+<div align=left><img src="chap1-Z-G-1.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-3.gif" border="0">[<img src="chap1-Z-G-D-1.gif" border="0">] is a function of time that measures some
+local property of the path.  It may depend upon
+the value of the function <img src="chap1-Z-G-D-1.gif" border="0"> at that time and the value of any
+derivatives of <img src="chap1-Z-G-D-1.gif" border="0"> at that time.<a name="call_footnote_Temp_17" href="#footnote_Temp_17"><sup><small>8</small></sup></a></p>
+<p>
+
+The configuration path can be locally described at a
+moment in terms of the configuration, the rate of change of the
+configuration, and all the higher derivatives of the configuration at
+the given moment.  Given this information the path can be
+reconstructed in some interval containing that moment.<a name="call_footnote_Temp_18" href="#footnote_Temp_18"><sup><small>9</small></sup></a>
+Local properties of paths can depend on no more than the local
+description of the path.</p>
+<p>
+The function <img src="chap1-Z-G-D-3.gif" border="0"> measures some local property of the
+configuration path <img src="chap1-Z-G-D-1.gif" border="0">.  
+We can decompose <img src="chap1-Z-G-D-3.gif" border="0">[<img src="chap1-Z-G-D-1.gif" border="0">] into
+two parts: a part that measures some property of a local
+description and a part that extracts a local description of the path
+from the path function.  The function that
+measures the local property of the system depends on the particular
+physical system; the method of construction of a local description of a
+path from a path is the same for any system.
+We can write <img src="chap1-Z-G-D-3.gif" border="0">[<img src="chap1-Z-G-D-1.gif" border="0">] as a composition of
+these two functions:<a name="call_footnote_Temp_19" href="#footnote_Temp_19"><sup><small>10</small></sup></a>
+<a name="EQUATION_1.2"></a></p>
+<div align=left><img src="chap1-Z-G-2.gif" border="0"></div>
+<p></p>
+<p>
+<a name="%_idx_124"></a><a name="%_idx_126"></a>The function <img src="chap1-Z-G-D-6.gif" border="0"> takes the path and produces a function of
+time whose value is an ordered tuple containing the time, the
+configuration at that time, the rate of change of the configuration at
+that time, and the values of higher derivatives of the path evaluated
+at that time.  For the path <img src="chap1-Z-G-D-1.gif" border="0"> and time <em>t</em>:<a name="call_footnote_Temp_20" href="#footnote_Temp_20"><sup><small>11</small></sup></a>
+<a name="EQUATION_1.3"></a></p>
+<div align=left><img src="chap1-Z-G-3.gif" border="0"></div>
+<p>
+We refer to this tuple, which includes as many derivatives as are
+<a name="%_idx_128"></a>needed, as the <em>local tuple</em>.</p>
+<p>
+<a name="%_idx_130"></a><a name="%_idx_132"></a>The function <img src="chap1-Z-G-D-5.gif" border="0"> depends on the specific details of the
+physical system being investigated, but does not depend on any
+particular configuration path.  The function <img src="chap1-Z-G-D-5.gif" border="0"> computes a
+real-valued local property of the path.  We will find that <img src="chap1-Z-G-D-5.gif" border="0">
+needs only a finite number of components of the local tuple to compute
+this property: The path can be locally reconstructed from the full
+local description; that <img src="chap1-Z-G-D-5.gif" border="0"> depends on a finite number of
+components of the local tuple guarantees that it measures a local
+property.<a name="call_footnote_Temp_21" href="#footnote_Temp_21"><sup><small>12</small></sup></a></p>
+<p>
+The advantage of this decomposition is that the local description of
+the path is computed by a uniform process from the configuration path,
+independent of the system being considered.  All of the
+system-specific information is captured in the function <img src="chap1-Z-G-D-5.gif" border="0">.</p>
+<p>
+<a name="%_idx_134"></a>The function <img src="chap1-Z-G-D-5.gif" border="0"> is called a <em>Lagrangian</em><a name="call_footnote_Temp_22" href="#footnote_Temp_22"><sup><small>13</small></sup></a>
+<a name="%_idx_148"></a><a name="%_idx_150"></a>for the
+system, and the resulting action,
+<a name="EQUATION_1.4"></a></p>
+<div align=left><img src="chap1-Z-G-4.gif" border="0"></div>
+<p>
+is called the <em>Lagrangian action</em>.  Lagrangians can be found for a
+great variety of systems.  We will see that for many
+systems the <a name="%_idx_152"></a>Lagrangian can be taken to be the difference between
+kinetic and potential energy.  Such Lagrangians depend only on the
+time, the configuration, and the rate of change of the configuration.
+We will focus on this class of systems, but will also consider more
+general systems from time to time.</p>
+<p>
+A realizable path of the system is to be distinguished from others by
+having stationary action with respect to some set of nearby
+unrealizable paths.  Now some paths near realizable paths will also be
+realizable: for any motion of the juggling pin there is another that
+is slightly different. So when addressing the question of whether the
+action is stationary with respect to <a name="%_idx_154"></a><a name="%_idx_156"></a><a name="%_idx_158"></a><a name="%_idx_160"></a>variations of the path we must
+somehow restrict the set of paths we are considering to contain only
+one realizable path.  It will turn out that for Lagrangians that
+depend only on the configuration and rate of change of configuration
+it is enough to restrict the set of paths to those that have the same
+configuration at the endpoints of the path segment.</p>
+<p>
+<a name="%_idx_162"></a>The <em>principle of stationary action</em><a name="call_footnote_Temp_23" href="#footnote_Temp_23"><sup><small>14</small></sup></a>
+asserts that for each dynamical system we can cook up a Lagrangian
+such that a realizable path connecting the configurations at two
+times <em>t</em><sub>1</sub> and <em>t</em><sub>2</sub> is distinguished from all conceivable paths by
+the fact that the action <img src="chap1-Z-G-D-4.gif" border="0">[<img src="chap1-Z-G-D-1.gif" border="0">](<em>t</em><sub>1</sub>, <em>t</em><sub>2</sub>) is stationary with respect to variations of the
+path.  For Lagrangians that depend only on the configuration and rate
+of change of configuration, the variations are restricted to those that
+preserve the configurations at <em>t</em><sub>1</sub> and <em>t</em><sub>2</sub>.<a name="call_footnote_Temp_24" href="#footnote_Temp_24"><sup><small>15</small></sup></a></p>
+<p>
+</p>
+<p><a name="%_thm_1.1"></a>
+<b>Exercise 1.1.</b>&nbsp;&nbsp;<strong>Fermat optics</strong><br>
+<a name="%_idx_184"></a><a name="%_idx_186"></a><a name="%_idx_188"></a>Fermat observed that the laws of reflection and refraction could be
+accounted for by the following facts: Light travels in a straight line
+in any particular medium with a velocity that depends upon the medium.
+The path taken by a ray from a source to a destination through any
+sequence of media is a path of least total time, compared to
+neighboring paths.  Show that these facts imply the laws of
+reflection and refraction.<a name="call_footnote_Temp_26" href="#footnote_Temp_26"><sup><small>16</small></sup></a>
+</p>
+
+<p></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_11" href="#call_footnote_Temp_11"><sup><small>3</small></sup></a> Experience with systems on an atomic scale suggests
+<a name="%_idx_64"></a><a name="%_idx_66"></a>  that at this scale systems do not travel along well defined
+configuration paths.  To describe the evolution of systems on the atomic
+scale we employ quantum mechanics.  Here, we restrict attention to
+systems for which the motion is well described by a smooth
+configuration path.</p>
+
+<p><a name="footnote_Temp_12" href="#call_footnote_Temp_12"><sup><small>4</small></sup></a> Extrapolation of the orbit of the Moon backward in time
+<a name="%_idx_68"></a><a name="%_idx_70"></a><a name="%_idx_72"></a>  cannot determine the point at which it was placed on this
+trajectory.  To determine the origin of the Moon we must supplement
+dynamical evidence with other physical evidence such as chemical
+compositions.</p>
+
+<p><a name="footnote_Temp_14" href="#call_footnote_Temp_14"><sup><small>5</small></sup></a> We suspect that this argument can be promoted to a precise
+constraint on the possible ways of making this path-distinguishing
+function.</p>
+
+<p><a name="footnote_Temp_15" href="#call_footnote_Temp_15"><sup><small>6</small></sup></a> Historically, Huygens was the first to use the term
+<a name="%_idx_82"></a><a name="%_idx_84"></a><a name="%_idx_86"></a><a name="%_idx_88"></a>  ``action'' in mechanics, referring to ``the effect of
+a motion.''  This is an idea that came from the Greeks.  In his
+manuscript ``Dynamica'' (1690) Leibniz enunciated a ``Least Action
+Principle'' using the ``harmless action,'' which was the product of
+mass, velocity, and the distance of the motion.  Leibniz also spoke of
+a ``violent action'' in the case where things collided.</p>
+
+<p><a name="footnote_Temp_16" href="#call_footnote_Temp_16"><sup><small>7</small></sup></a> A definite integral of a real-valued function <em>f</em> of a real
+<a name="%_idx_100"></a><a name="%_idx_102"></a><a name="%_idx_104"></a>argument is written <img src="chap1-Z-G-D-2.gif" border="0"><sub><em>a</em></sub><sup><em>b</em></sup> <em>f</em>.  This can also be written  <img src="chap1-Z-G-D-2.gif" border="0"><sub><em>a</em></sub><sup><em>b</em></sup>
+<em>f</em>(<em>x</em>) <em>d</em><em>x</em> .  The first notation emphasizes that a function is being
+integrated.</p>
+
+<p><a name="footnote_Temp_17" href="#call_footnote_Temp_17"><sup><small>8</small></sup></a> Traditionally, square brackets are put around functional
+<a name="%_idx_106"></a><a name="%_idx_108"></a><a name="%_idx_110"></a><a name="%_idx_112"></a><a name="%_idx_114"></a>arguments.  In this case, the square brackets remind us that the value
+of <img src="chap1-Z-G-D-4.gif" border="0"> may depend on the function <img src="chap1-Z-G-D-1.gif" border="0"> in complicated ways,
+such as through its derivatives.</p>
+
+<p><a name="footnote_Temp_18" href="#call_footnote_Temp_18"><sup><small>9</small></sup></a> In the case of a real-valued function, the value of the
+function and its derivatives at some point can be used to construct a
+power series.  For sufficiently nice functions (real analytic), the
+power series constructed in this way converges in some interval
+containing the point.  Not all functions can be locally represented in
+this way.  For example, the function <em>f</em>(<em>x</em>) = exp( <tt>-</tt> 1/<em>x</em><sup>2</sup>), with
+<em>f</em>(0) = 0, is zero and has all derivatives zero at <em>x</em> = 0, but this
+infinite number of derivatives is insufficient to determine the
+function value at any other point.</p>
+
+<p><a name="footnote_Temp_19" href="#call_footnote_Temp_19"><sup><small>10</small></sup></a> Here <small>o</small> denotes composition of
+<a name="%_idx_116"></a><a name="%_idx_118"></a><a name="%_idx_120"></a><a name="%_idx_122"></a>functions: (<em>f</em> <small>o</small> <em>g</em>)(<em>t</em>) = <em>f</em>(<em>g</em>(<em>t</em>)).  In our notation the application
+of a path-dependent function to its path is of higher precedence than
+the composition, so <img src="chap1-Z-G-D-5.gif" border="0"> <small>o</small> <img src="chap1-Z-G-D-6.gif" border="0">[<img src="chap1-Z-G-D-1.gif" border="0">]  =  <img src="chap1-Z-G-D-5.gif" border="0"> <small>o</small>
+(<img src="chap1-Z-G-D-6.gif" border="0">[<img src="chap1-Z-G-D-1.gif" border="0">]).</p>
+
+<p><a name="footnote_Temp_20" href="#call_footnote_Temp_20"><sup><small>11</small></sup></a> The derivative <img src="chap1-Z-G-D-7.gif" border="0"> <img src="chap1-Z-G-D-1.gif" border="0"> of a configuration path
+<img src="chap1-Z-G-D-1.gif" border="0"> can be defined in terms of ordinary derivatives by specifying
+how it acts on sufficiently smooth real-valued functions <em>f</em> of
+configurations.  The exact definition is unimportant at this stage.
+If you are curious see footnote&nbsp;<a href="book-Z-H-10.html#footnote_Temp_34">23</a>.</p>
+
+<p><a name="footnote_Temp_21" href="#call_footnote_Temp_21"><sup><small>12</small></sup></a> We will later discover that an initial segment of the local
+tuple is sufficient to determine the future evolution of the
+system.  That a configuration and a finite number of derivatives
+determine the future means that there is a way of determining all of
+the rest of the derivatives of the path from the initial segment.  </p>
+
+<p><a name="footnote_Temp_22" href="#call_footnote_Temp_22"><sup><small>13</small></sup></a> The classical
+<a name="%_idx_136"></a><a name="%_idx_138"></a><a name="%_idx_140"></a><a name="%_idx_142"></a><a name="%_idx_144"></a><a name="%_idx_146"></a>Lagrangian plays a fundamental role in the
+path-integral formulation of quantum mechanics
+(due to Dirac and Feynman), where the complex exponential of the classical action yields
+the relative probability amplitude for a path.  The Lagrangian is the
+starting point for the Hamiltonian formulation of
+mechanics (discussed in
+chapter&nbsp;<a href="book-Z-H-36.html#%_chap_3">3</a>), which is also essential in
+the Schr&ouml;dinger and
+Heisenberg formulations of quantum mechanics
+and in the Boltzmann-Gibbs
+approach to statistical mechanics.</p>
+
+<p><a name="footnote_Temp_23" href="#call_footnote_Temp_23"><sup><small>14</small></sup></a> The principle
+<a name="%_idx_164"></a><a name="%_idx_166"></a><a name="%_idx_168"></a><a name="%_idx_170"></a><a name="%_idx_172"></a><a name="%_idx_174"></a>  is often called the ``principle of least action'' because its initial formulations spoke in
+terms of the action being minimized rather than the more general case
+of taking on a stationary value.  The term ``principle of least
+action'' is also commonly used to refer to a result, due to
+Maupertuis, Euler, and Lagrange, which says that free
+particles move along paths for which the integral of the kinetic
+energy is minimized among all paths with the given endpoints.
+Correspondingly, the term ``action'' is sometimes used to refer
+specifically to the integral of the kinetic energy.  (Actually, Euler
+and Lagrange used the <em>vis viva</em>, or twice the
+kinetic energy.)</p>
+
+<p><a name="footnote_Temp_24" href="#call_footnote_Temp_24"><sup><small>15</small></sup></a> Other ways of stating the principle of stationary action
+<a name="%_idx_176"></a>  make it sound teleological and mysterious.  For instance, one could
+imagine that the system considers all possible paths from its initial
+configuration to its final configuration and then chooses the one with
+the smallest action.  Indeed, the underlying vision of a purposeful,
+economical, and rational universe played no small part in the
+philosophical considerations that accompanied the initial development
+of mechanics.  The earliest action principle that remains part of
+<a name="%_idx_178"></a><a name="%_idx_180"></a><a name="%_idx_182"></a>  modern physics is Fermat's principle, which states that the path
+traveled by a light ray between two points is the path that takes the
+least amount of time.  Fermat formulated this
+principle around 1660 and used it to derive the laws of reflection and
+refraction.  Motivated by this, the French mathematician and
+astronomer Pierre-Louis Moreau de Maupertuis enunciated the principle
+of least action as a grand unifying principle in physics.  In his <em>Essai de cosmologie</em> (1750) Maupertuis appealed to this principle of
+``economy in nature'' as evidence of the existence of God, asserting
+that it demonstrated ``God's intention to regulate physical phenomena
+by a general principle of the highest perfection.'' For a historical
+perspective on Maupertuis's, Euler's, and Lagrange's roles in the
+formulation of the principle of least action,
+see [<a href="book-Z-H-80.html#cite{Jourdain}">28</a>].</p>
+
+<p><a name="footnote_Temp_26" href="#call_footnote_Temp_26"><sup><small>16</small></sup></a> For reflection the angle of incidence is equal to the angle
+<a name="%_idx_190"></a><a name="%_idx_192"></a>  of reflection.  Refraction is described by Snell's law: when light
+passes from one medium to another, the ratio of the
+sines of the angles made to the normal to the interface is the inverse
+of the ratio of the refractive indices of the media.  The refractive
+index is the ratio of the speed of light in the vacuum to the speed of
+light in the medium.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-7.html">previous</a></span><span>, <a href="book-Z-H-9.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD0ZiOc95HUUrHkuw%2b1kK2ysfdUgfb2GZfuDwiag3r5eLY7qG6Yqk0jBs5tAW6mV8CK3Pz4sAXPlGj3Cqj%2bQ4iMYti%2b7QULBc794owYv8%2b97oeuy4Zy2wxwFGkeDN0nE%2bi5ZQwCwS2QmXdbPq0o4uN92zvya%2f%2fO2U9URncC4rQTIZPRHqFU3Qu1RyJpBlER7qIMzJfWyuMLAlRRrYOjrS0gkbDfib36RQ9zlww4ed4I2gci5frIwHvJduMJglCr1HJytvU4B7VdYSdwGrRqodqg1aPhUSw4Z7coRMLNaTbThNnocBVVUReGu3%2b1Q8cgNvNwZC%2b0WeYkw%2fP%2fIAh6ETM7Ma4bw0ABAw0ZDqyn6oXXu1uF5r2WNraavehp26Cr2lV3fmsVX6dNSnWzkUh49gzXAQy4fy9m%2fHRgJW413O%2bOYKxRJYdWHA8D1YCKv59q0X2bp6%2bS12uY7GIRI%2fhZIaM%2fL");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

@@ -1,0 +1,625 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-11.html">previous</a></span><span>, <a href="book-Z-H-13.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_1.5"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_1.5">1.5&nbsp;&nbsp;The Euler-Lagrange Equations</a></h2>
+<p>
+<a name="%_idx_496"></a>The principle of stationary action characterizes the realizable paths
+of systems in configuration space as those for which the action has a
+stationary value.  In elementary calculus, we learn that the critical
+points of a function are the points where the derivative vanishes.  In
+an analogous way, the <a name="%_idx_498"></a>paths along which the action is stationary are
+solutions of a system of differential equations.  This system, called
+the <em>Euler-Lagrange equations</em> or
+just the <em>Lagrange equations</em>, is the link that permits us to
+use the principle of stationary action to compute the motions of
+mechanical systems, and to relate the variational and Newtonian
+formulations of mechanics.<a name="call_footnote_Temp_66" href="#footnote_Temp_66"><sup><small>48</small></sup></a></p>
+<p>
+</p>
+<a name="%_sec_Temp_67"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_67">Lagrange equations</a></h4>
+<p>We will find that if <em>L</em> is a Lagrangian for a system that depends on time, coordinates, and velocities, and
+if <em>q</em> is a coordinate path for which the action <em>S</em>[<em>q</em>](<em>t</em><sub>1</sub>, <em>t</em><sub>2</sub>) is
+stationary (with respect to any variation in the
+path that keeps the endpoints of the path
+fixed), then
+<a name="EQUATION_1.18"></a></p>
+<div align=left><img src="chap1-Z-G-33.gif" border="0"></div>
+<p> 
+Here <em>L</em> is a real-valued function of a local tuple;
+<a name="%_idx_500"></a><a name="%_idx_502"></a><img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>L</em> and <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>L</em> denote the <a name="%_idx_504"></a>partial derivatives
+of <em>L</em> with respect to its generalized position and generalized
+velocity arguments.<a name="call_footnote_Temp_68" href="#footnote_Temp_68"><sup><small>49</small></sup></a>
+The function  <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>L</em> maps a local tuple to a structure
+whose components are the
+derivatives of <em>L</em> with respect to each component of the generalized velocity.
+The function <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>] maps time to the local tuple:
+<img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>](<em>t</em>)  =  ( <em>t</em>, <em>q</em>(<em>t</em>), <em>D</em><em>q</em>(<em>t</em>), <tt>...</tt> ).
+Thus the compositions <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>L</em> <small>o</small>
+<img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>] and <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>L</em> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>] are functions of one argument,
+time.  The Lagrange equations assert that the derivative of <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub>
+<em>L</em> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>] is equal to <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>L</em>
+<small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>], at any time.
+Given a Lagrangian,
+the Lagrange equations form a system of ordinary differential equations
+that must be satisfied by realizable paths.<a name="call_footnote_Temp_69" href="#footnote_Temp_69"><sup><small>50</small></sup></a></p>
+<p>
+</p>
+<a name="%_sec_1.5.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_1.5.1">1.5.1&nbsp;&nbsp;Derivation of the Lagrange Equations</a></h3>
+<p><a name="%_idx_514"></a>
+We will show that principle of stationary action implies that
+realizable paths satisfy a set of ordinary differential equations.
+First we will develop tools for investigating how path-dependent
+functions vary as the paths are varied.  We will then apply these
+tools to the action, to derive the Lagrange equations.</p>
+<p>
+</p>
+<a name="%_sec_Temp_70"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_70">Varying a path</a></h4>
+<p><a name="%_idx_516"></a><a name="%_idx_518"></a>Suppose that we have a function <em>f</em>[<em>q</em>] that depends on a path <em>q</em>.
+How does the function vary as the path is varied?  Let <em>q</em> be a
+coordinate path and <em>q</em>  +  <img src="chap1-Z-G-D-12.gif" border="0"> <img src="chap1-Z-G-D-13.gif" border="0"> be a varied path, where the function
+<img src="chap1-Z-G-D-13.gif" border="0"> is a path-like function that can be added to the path <em>q</em>, and the
+factor <img src="chap1-Z-G-D-12.gif" border="0"> is a scale factor.  We define the <a name="%_idx_520"></a><a name="%_idx_522"></a><a name="%_idx_524"></a><em>variation</em>
+<a name="%_idx_526"></a><img src="chap1-Z-G-D-17.gif" border="0"><sub><img src="chap1-Z-G-D-13.gif" border="0"></sub> <em>f</em>[<em>q</em>] of the function <em>f</em> on the path <em>q</em> by<a name="call_footnote_Temp_71" href="#footnote_Temp_71"><sup><small>51</small></sup></a>
+<a name="EQUATION_1.19"></a></p>
+<div align=left><img src="chap1-Z-G-36.gif" border="0"></div>
+<p>
+The variation of <em>f</em> is a linear approximation to the change in the
+function <em>f</em> for small variations in the path.  The variation of <em>f</em>
+depends on <img src="chap1-Z-G-D-13.gif" border="0">.</p>
+<p>
+A simple example is the variation of the identity path function: <em>I</em>[<em>q</em>]  =  <em>q</em>.
+Applying the definition, we find
+<a name="EQUATION_1.20"></a></p>
+<div align=left><img src="chap1-Z-G-37.gif" border="0"></div>
+<p>
+It is traditional to write <img src="chap1-Z-G-D-17.gif" border="0"><sub><img src="chap1-Z-G-D-13.gif" border="0"></sub> <em>I</em>[<em>q</em>] simply as <img src="chap1-Z-G-D-17.gif" border="0"> <em>q</em>.
+Another example is the variation of the path function that returns
+the derivative of the path.  We have
+<a name="EQUATION_1.21"></a></p>
+<div align=left><img src="chap1-Z-G-38.gif" border="0"></div>
+<p>
+It is traditional to write <img src="chap1-Z-G-D-17.gif" border="0"><sub><img src="chap1-Z-G-D-13.gif" border="0"></sub> <em>g</em>[<em>q</em>] as <img src="chap1-Z-G-D-17.gif" border="0"> <em>D</em><em>q</em>.</p>
+<p>
+The variation may be represented in terms of a derivative.  Let <em>g</em>(<img src="chap1-Z-G-D-12.gif" border="0">)
+ =  <em>f</em>[<em>q</em>  +  <img src="chap1-Z-G-D-12.gif" border="0"> <img src="chap1-Z-G-D-13.gif" border="0">]; then 
+<a name="EQUATION_1.22"></a></p>
+<div align=left><img src="chap1-Z-G-39.gif" border="0"></div>
+<p></p>
+<p>
+Variations have the following derivative-like properties.  For
+path-dependent functions <em>f</em> and <em>g</em> and constant <em>c</em>:
+<a name="EQUATION_1.23"></a></p>
+<div align=left><img src="chap1-Z-G-40.gif" border="0"></div>
+<p>
+Let <em>F</em> be a path-independent function and
+<em>g</em> be a path-dependent function; then
+<a name="%_idx_528"></a><a name="%_idx_530"></a><a name="EQUATION_1.26"></a></p>
+<div align=left><img src="chap1-Z-G-41.gif" border="0"></div>
+<p>
+<a name="%_idx_532"></a>The operators <em>D</em> (differentiation) and <img src="chap1-Z-G-D-17.gif" border="0"> (variation)
+commute in the following sense:
+<a name="EQUATION_1.27"></a></p>
+<div align=left><img src="chap1-Z-G-42.gif" border="0"></div>
+<p>
+Variations also commute with integration in a similar sense.</p>
+<p>
+If a path-dependent function <em>f</em> is stationary for a particular path
+<em>q</em> with respect to small changes in that path, then it must be
+stationary for a subset of those variations that results from adding
+small multiples of a particular function <img src="chap1-Z-G-D-13.gif" border="0"> to <em>q</em>.  So the
+statement <img src="chap1-Z-G-D-17.gif" border="0"><sub><img src="chap1-Z-G-D-13.gif" border="0"></sub> <em>f</em>[<em>q</em>] = 0 for arbitrary <img src="chap1-Z-G-D-13.gif" border="0"> implies the
+function <em>f</em> is <a name="%_idx_534"></a>stationary for small variations of the path around <em>q</em>.</p>
+<p>
+</p>
+<p><a name="%_thm_1.7"></a>
+<b>Exercise 1.7.</b>&nbsp;&nbsp;<strong>Properties of <img src="chap1-Z-G-D-17.gif" border="0"></strong><br>
+
+Show that <img src="chap1-Z-G-D-17.gif" border="0"> has the 
+properties&nbsp;<a href="#EQUATION_1.23">1.23</a>-<a href="#EQUATION_1.27">1.27</a>.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.8"></a>
+<b>Exercise 1.8.</b>&nbsp;&nbsp;<strong>Implementation of <img src="chap1-Z-G-D-17.gif" border="0"></strong><br></p>
+<p>
+<br><strong>a</strong>.&nbsp;&nbsp;Suppose we have a procedure <tt>f</tt> that implements a path-dependent
+function: for path <tt>q</tt> and time <tt>t</tt> it has the value
+<tt>((f q) t)</tt>.
+The procedure <tt>delta</tt> computes the
+variation (<img src="chap1-Z-G-D-17.gif" border="0"><sub><img src="chap1-Z-G-D-13.gif" border="0"></sub> <em>f</em>)[<em>q</em>](<em>t</em>) as the value of the expression <tt>((((delta eta)
+f) q) t)</tt>.
+Complete the definition of <tt>delta</tt>:
+</p>
+<p><tt>(define&nbsp;(((delta&nbsp;eta)&nbsp;f)&nbsp;q)<br>
+&nbsp;&nbsp;<tt>...</tt>&nbsp;&nbsp;)<br>
+</p>
+</tt>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Use your <tt>delta</tt> procedure to verify the properties of <img src="chap1-Z-G-D-17.gif" border="0">
+listed in exercise&nbsp;<a href="#%_thm_1.7">1.7</a> for simple functions
+such as implemented by the procedure&nbsp;<tt>f</tt>:
+</p>
+<p><tt>(define&nbsp;(f&nbsp;q)<br>
+&nbsp;&nbsp;(compose&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'F&nbsp;(-&gt;&nbsp;(UP&nbsp;Real&nbsp;Real&nbsp;Real)&nbsp;Real))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(Gamma&nbsp;q)))<br>
+</p>
+</tt>
+<p>This implements a one-degree-of-freedom path-dependent function
+that depends on the local tuple of the path at each moment.  
+You should compute both sides of the equalities and compare the results.
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_Temp_74"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_74">Varying the action</a></h4>
+<p><a name="%_idx_536"></a><a name="%_idx_538"></a>
+The action is the integral of the Lagrangian along a
+path:
+<a name="EQUATION_1.28"></a></p>
+<div align=left><img src="chap1-Z-G-43.gif" border="0"></div>
+<p>
+For a realizable path <em>q</em> the variation of the action with respect to
+any variation <img src="chap1-Z-G-D-13.gif" border="0"> that preserves the endpoints, <img src="chap1-Z-G-D-13.gif" border="0">(<em>t</em><sub>1</sub>)  = 
+<img src="chap1-Z-G-D-13.gif" border="0">(<em>t</em><sub>2</sub>)  =  0, is zero:
+<a name="EQUATION_1.29"></a></p>
+<div align=left><img src="chap1-Z-G-44.gif" border="0"></div>
+<p></p>
+<p>
+Variation commutes with integration, so the variation of the action is
+<a name="EQUATION_1.30"></a></p>
+<div align=left><img src="chap1-Z-G-45.gif" border="0"></div>
+<p></p>
+<p>
+Using the fact that
+<a name="EQUATION_1.31"></a></p>
+<div align=left><img src="chap1-Z-G-46.gif" border="0"></div>
+<p>
+which follows from equations&nbsp;(<a href="#EQUATION_1.20">1.20</a>) and
+(<a href="#EQUATION_1.21">1.21</a>), and using
+the chain rule for variations&nbsp;(<a href="#EQUATION_1.26">1.26</a>), we get<a name="call_footnote_Temp_75" href="#footnote_Temp_75"><sup><small>52</small></sup></a>
+<a name="EQUATION_1.32"></a></p>
+<div align=left><img src="chap1-Z-G-48.gif" border="0"></div>
+<p></p>
+<p>
+Integrating the last term of
+equation&nbsp;(<a href="#EQUATION_1.32">1.32</a>) by parts gives 
+<a name="EQUATION_1.33"></a></p>
+<div align=left><img src="chap1-Z-G-49.gif" border="0"></div>
+<p>
+For our variation <img src="chap1-Z-G-D-13.gif" border="0"> we have <img src="chap1-Z-G-D-13.gif" border="0">(<em>t</em><sub>1</sub>)  =  <img src="chap1-Z-G-D-13.gif" border="0">(<em>t</em><sub>2</sub>)  =  0, so
+the first term vanishes.</p>
+<p>
+Thus the variation of the action is zero if and only if
+<a name="EQUATION_1.34"></a></p>
+<div align=left><img src="chap1-Z-G-50.gif" border="0"></div>
+<p>
+The variation of the action is zero because, by assumption, <em>q</em> is a
+realizable path.
+Thus&nbsp;(<a href="#EQUATION_1.34">1.34</a>) must be true for <em>any</em>
+function <img src="chap1-Z-G-D-13.gif" border="0"> that is zero at the endpoints.</p>
+<p>
+We retain enough freedom in the choice of the variation that 
+the factor in the integrand multiplying <img src="chap1-Z-G-D-13.gif" border="0"> is forced to be zero at
+each point along the path.  We argue by contradiction: Suppose this
+factor were nonzero at some particular time.  Then it would have to be
+nonzero in at least one of its components.  But if we choose our
+<img src="chap1-Z-G-D-13.gif" border="0"> to be a bump that is nonzero only in that component in a
+neighborhood of that time, and zero everywhere else, then the integral
+will be nonzero.
+So we may conclude that the factor in curly brackets is identically zero:<a name="call_footnote_Temp_76" href="#footnote_Temp_76"><sup><small>53</small></sup></a>
+<a name="EQUATION_1.35"></a></p>
+<div align=left><img src="chap1-Z-G-51.gif" border="0"></div>
+<p>
+This is just what we set out to obtain, the Lagrange equations.</p>
+<p>
+A path satisfying Lagrange's equations is one for which the action is
+stationary, and the fact that the action is stationary depends only on
+the values of <em>L</em> at each point of the path (and at each point on
+nearby paths), not on the <a name="%_idx_542"></a><a name="%_idx_544"></a>coordinate
+system we use to compute these values.  So if the system's path
+satisfies Lagrange's equations in some particular coordinate system,
+it must satisfy Lagrange's equations in <em>any</em> coordinate system.
+Thus the equations of variational mechanics are derived the same way in any
+configuration space and any coordinate system.</p>
+<p>
+</p>
+<a name="%_sec_Temp_77"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_77">Harmonic oscillator</a></h4>
+<p><a name="%_idx_546"></a><a name="%_idx_548"></a>For an example, consider the harmonic oscillator.  A Lagrangian&nbsp;is
+<a name="EQUATION_1.36"></a></p>
+<div align=left><img src="chap1-Z-G-52.gif" border="0"></div>
+<p>
+Then
+<a name="EQUATION_1.37"></a></p>
+<div align=left><img src="chap1-Z-G-53.gif" border="0"></div>
+<p>
+The Lagrangian is applied to a
+tuple of the time, a coordinate, and a velocity.  The symbols <em>t</em>,
+<em>x</em>, and <em>v</em> are arbitrary; they are used to specify
+formal parameters of the Lagrangian.  </p>
+<p>
+Now suppose we have a configuration path <em>y</em>, which gives the
+coordinate of the oscillator <em>y</em>(<em>t</em>) for each time <em>t</em>.  The
+initial segment of the corresponding local tuple at time <em>t</em> is
+<a name="EQUATION_1.38"></a></p>
+<div align=left><img src="chap1-Z-G-54.gif" border="0"></div>
+<p>
+So
+<a name="EQUATION_1.39"></a></p>
+<div align=left><img src="chap1-Z-G-55.gif" border="0"></div>
+<p>
+and
+<a name="EQUATION_1.40"></a></p>
+<div align=left><img src="chap1-Z-G-56.gif" border="0"></div>
+<p>
+so the Lagrange equation is
+<a name="EQUATION_1.41"></a></p>
+<div align=left><img src="chap1-Z-G-57.gif" border="0"></div>
+<p>
+which is the equation of motion of the harmonic oscillator.</p>
+<p>
+
+</p>
+<a name="%_sec_Temp_78"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_78">Orbital motion</a></h4>
+<p><a name="%_idx_550"></a><a name="%_idx_552"></a><a name="%_idx_554"></a>As another example, consider the two-dimensional motion of a particle
+of mass <em>m</em> with gravitational potential energy  <tt>-</tt>  &micro;/<em>r</em>, where <em>r</em>
+is the distance to the center of attraction.  A <a name="%_idx_556"></a>Lagrangian is<a name="call_footnote_Temp_79" href="#footnote_Temp_79"><sup><small>54</small></sup></a>
+<a name="EQUATION_1.42"></a></p>
+<div align=left><img src="chap1-Z-G-58.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-18.gif" border="0"> and <img src="chap1-Z-G-D-13.gif" border="0"> are formal parameters for rectangular
+coordinates of the particle, and <em>v</em><sub><img src="chap1-Z-G-D-18.gif" border="0"></sub> and <em>v</em><sub><img src="chap1-Z-G-D-13.gif" border="0"></sub> are formal
+parameters for corresponding rectangular velocity components.  Then<a name="call_footnote_Temp_80" href="#footnote_Temp_80"><sup><small>55</small></sup></a>
+<a name="EQUATION_1.43"></a></p>
+<div align=left><img src="chap1-Z-G-59.gif" border="0"></div>
+<p>
+Similarly,
+<a name="EQUATION_1.44"></a></p>
+<div align=left><img src="chap1-Z-G-60.gif" border="0"></div>
+<p>
+Now suppose we have a configuration path <em>q</em>  =  ( <em>x</em>, <em>y</em> ), so that the
+coordinate tuple at time <em>t</em> is <em>q</em>(<em>t</em>)  =  ( <em>x</em>(<em>t</em>), <em>y</em>(<em>t</em>) ).
+The initial segment of the local tuple at time <em>t</em> is
+<a name="EQUATION_1.45"></a></p>
+<div align=left><img src="chap1-Z-G-61.gif" border="0"></div>
+<p>
+So
+<a name="EQUATION_1.46"></a></p>
+<div align=left><img src="chap1-Z-G-62.gif" border="0"></div>
+<p>
+and
+<a name="EQUATION_1.47"></a></p>
+<div align=left><img src="chap1-Z-G-63.gif" border="0"></div>
+<p>
+<a name="%_idx_564"></a>The component Lagrange equations at time <em>t</em> are 
+<a name="EQUATION_1.48"></a></p>
+<div align=left><img src="chap1-Z-G-64.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.9"></a>
+<b>Exercise 1.9.</b>&nbsp;&nbsp;<strong>Lagrange's equations</strong><br>
+Derive the Lagrange equations for the following systems, showing 
+all of the intermediate steps as in the harmonic oscillator and
+orbital motion examples.</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;A particle of mass <em>m</em> moves in a
+two-dimensional potential <em>V</em>(<em>x</em>, <em>y</em>)  =  (<em>x</em><sup>2</sup>  +  <em>y</em><sup>2</sup>)/2  +  <em>x</em><sup>2</sup> <em>y</em>  <tt>-</tt>  <em>y</em><sup>3</sup>/3,
+where <em>x</em> and <em>y</em> are rectangular coordinates of the particle.  A
+Lagrangian is 
+<em>L</em>(<em>t</em>; <em>x</em>, <em>y</em>; <em>v</em><sub><em>x</em></sub>, <em>v</em><sub><em>y</em></sub>)  =   (1/2) <em>m</em> (<em>v</em><sub><em>x</em></sub><sup>2</sup>  +  <em>v</em><sub><em>y</em></sub><sup>2</sup>)  <tt>-</tt>  <em>V</em>(<em>x</em>, <em>y</em>).</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;An ideal planar pendulum consists of a bob of mass <em>m</em> connected
+to a pivot by a massless rod of length <em>l</em> subject to uniform
+<a name="%_idx_566"></a>gravitational acceleration <em>g</em>.  A Lagrangian is <em>L</em>(<em>t</em>, <img src="chap1-Z-G-D-19.gif" border="0">,
+<img src="chap1-Z-G-D-20.gif" border="0">)  =   (1/2) <em>m</em> <em>l</em><sup>2</sup> <img src="chap1-Z-G-D-20.gif" border="0"><sup>2</sup>  +  <em>m</em> <em>g</em> <em>l</em> cos <img src="chap1-Z-G-D-19.gif" border="0">.
+The formal parameters of <em>L</em> are <em>t</em>,
+<img src="chap1-Z-G-D-19.gif" border="0">, and <img src="chap1-Z-G-D-20.gif" border="0">;  <img src="chap1-Z-G-D-19.gif" border="0"> measures the 
+angle of the pendulum rod to a plumb line and <img src="chap1-Z-G-D-20.gif" border="0"> is the
+angular velocity of the rod.<a name="call_footnote_Temp_82" href="#footnote_Temp_82"><sup><small>56</small></sup></a></p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;A Lagrangian for a particle of mass <em>m</em> constrained to move
+on a sphere of radius <em>R</em> is <em>L</em>(<em>t</em>; <img src="chap1-Z-G-D-19.gif" border="0">, <img src="chap1-Z-G-D-16.gif" border="0">; <img src="chap1-Z-G-D-21.gif" border="0">, <i>&szlig;</i>)  = 
+ (1/2) <em>m</em> <em>R</em><sup>2</sup> (<img src="chap1-Z-G-D-21.gif" border="0"><sup>2</sup>  +  (<i>&szlig;</i> sin <img src="chap1-Z-G-D-19.gif" border="0">)<sup>2</sup>).  The angle <img src="chap1-Z-G-D-19.gif" border="0">
+is the colatitude of the particle and <img src="chap1-Z-G-D-16.gif" border="0"> is the longitude; the rate of
+change of the colatitude is <img src="chap1-Z-G-D-21.gif" border="0"> and the rate of change of the
+longitude is&nbsp;<i>&szlig;</i>.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.10"></a>
+<b>Exercise 1.10.</b>&nbsp;&nbsp;<strong>Higher-derivative Lagrangians</strong><br>
+Derive Lagrange's equations for Lagrangians that depend on 
+accelerations.  In particular, show that the Lagrange equations for Lagrangians of the form
+<em>L</em>(<em>t</em>, <em>q</em>, <img src="front-Z-G-D-1.gif" border="0">, <img src="chap1-Z-G-D-22.gif" border="0">) with <img src="chap1-Z-G-D-22.gif" border="0"> terms are<a name="call_footnote_Temp_84" href="#footnote_Temp_84"><sup><small>57</small></sup></a>
+<a name="EQUATION_1.49"></a></p>
+<div align=left><img src="chap1-Z-G-66.gif" border="0"></div>
+<p>
+In general, these equations, first derived by <a name="%_idx_570"></a>Poisson, will involve
+the fourth derivative of <em>q</em>.  Note that the derivation is completely
+analogous to the derivation of the Lagrange equations without
+accelerations; it is just longer.  What restrictions must we place on
+the variations so that the critical path satisfies a differential
+equation?
+</p>
+
+<p></p>
+<p>
+
+</p>
+<a name="%_sec_1.5.2"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_1.5.2">1.5.2&nbsp;&nbsp;Computing Lagrange's Equations</a></h3>
+<p>
+<a name="%_idx_572"></a>The procedure for
+computing Lagrange's equations mirrors the functional
+expression&nbsp;(<a href="#EQUATION_1.18">1.18</a>), where the procedure <tt>Gamma</tt> implements <img src="chap1-Z-G-D-9.gif" border="0">:<a name="call_footnote_Temp_85" href="#footnote_Temp_85"><sup><small>58</small></sup></a>
+</p>
+<p><tt><a name="%_idx_576"></a>(define&nbsp;((Lagrange-equations&nbsp;Lagrangian)&nbsp;q)<br>
+&nbsp;&nbsp;(-&nbsp;(D&nbsp;(compose&nbsp;((partial&nbsp;2)&nbsp;Lagrangian)&nbsp;(Gamma&nbsp;q)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(compose&nbsp;((partial&nbsp;1)&nbsp;Lagrangian)&nbsp;(Gamma&nbsp;q))))<br>
+</p>
+</tt>
+<p>The argument of <tt>Lagrange-equations</tt> is a procedure that computes
+a Lagrangian.  It returns a procedure that when applied to a path
+<tt>q</tt> returns a procedure of one argument (time) that computes
+the left-hand side of the Lagrange
+equations&nbsp;(<a href="#EQUATION_1.18">1.18</a>).  These residual values are
+zero if <tt>q</tt> is a path for which the Lagrangian action is
+stationary.</p>
+<p>
+Observe that the <tt>Lagrange-equations</tt> procedure, like the
+Lagrange equations themselves, is valid for <em>any</em> generalized
+coordinate system.  When we write programs to investigate particular
+systems, the procedures that implement the Lagrangian function and
+the path <em>q</em> will reflect the actual coordinates chosen to represent
+the system, but we use the same <tt>Lagrange-equations</tt> procedure in
+each case.  This abstraction reflects the important fact that the
+method of derivation of Lagrange's equations from a Lagrangian is
+always the same; it is independent of the number of degrees of
+freedom, the topology of the configuration space, and the 
+coordinate system used to describe points in the configuration space.</p>
+<p>
+
+</p>
+<a name="%_sec_Temp_86"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_86">The free particle</a></h4>
+<p>
+<a name="%_idx_578"></a>Consider again the case of a free particle.  The Lagrangian is
+implemented by the procedure <tt>L-free-particle</tt>.  Rather
+than numerically integrating and minimizing the action, as we did
+in section&nbsp;<a href="book-Z-H-11.html#%_sec_1.4">1.4</a>, we can check Lagrange's equations for an arbitrary
+straight-line path <em>t</em> <img src="chap1-Z-G-D-11.gif" border="0"> ( <em>a</em><em>t</em> + <em>a</em><sub>0</sub>, <em>b</em><em>t</em> + <em>b</em><sub>0</sub>, <em>c</em><em>t</em> + <em>c</em><sub>0</sub> ):
+</p>
+<p><tt>(define&nbsp;(test-path&nbsp;t)<br>
+&nbsp;&nbsp;(up&nbsp;(+&nbsp;(*&nbsp;'a&nbsp;t)&nbsp;'a0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(*&nbsp;'b&nbsp;t)&nbsp;'b0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(*&nbsp;'c&nbsp;t)&nbsp;'c0)))<br>
+(print-expression<br>
+&nbsp;(((Lagrange-equations&nbsp;(L-free-particle&nbsp;'m))<br>
+&nbsp;&nbsp;&nbsp;test-path)<br>
+&nbsp;&nbsp;'t))<br>
+<i>(down&nbsp;0&nbsp;0&nbsp;0)</i><br>
+</p>
+</tt>
+<p>That the residuals are zero indicates that the test path satisfies the
+Lagrange equations.<a name="call_footnote_Temp_87" href="#footnote_Temp_87"><sup><small>59</small></sup></a></p>
+<p>
+We can also
+apply the <tt>Lagrange-equations</tt> procedure to an arbitrary function:<a name="call_footnote_Temp_88" href="#footnote_Temp_88"><sup><small>60</small></sup></a>
+</p>
+<p><tt>(show-expression<br>
+&nbsp;(((Lagrange-equations&nbsp;(L-free-particle&nbsp;'m))<br>
+&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'x))<br>
+&nbsp;&nbsp;'t))<br>
+<i>(*&nbsp;(((expt&nbsp;D&nbsp;2)&nbsp;x)&nbsp;t)&nbsp;m)</i><br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-67.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+The result is an expression containing
+the arbitrary time <em>t</em> and mass <em>m</em>, so it is zero precisely when
+<em>D</em><sup>2</sup> <em>x</em>  =  0, which is the expected equation for a free
+particle.</p>
+<p>
+</p>
+<a name="%_sec_Temp_89"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_89">The harmonic oscillator</a></h4>
+<p><a name="%_idx_586"></a>Consider the harmonic oscillator again, with
+Lagrangian&nbsp;(<a href="book-Z-H-11.html#EQUATION_1.16">1.16</a>).  We know that
+the motion of a harmonic oscillator is a sinusoid with a given
+amplitude, frequency, and phase:
+<a name="EQUATION_1.50"></a></p>
+<div align=left><img src="chap1-Z-G-68.gif" border="0"></div>
+<p>
+Suppose we have forgotten how the constants in the solution relate to
+the physical parameters of the oscillator.  Let's plug in the proposed
+solution and look at the residual:
+</p>
+<p><tt>(define&nbsp;(proposed-solution&nbsp;t)<br>
+&nbsp;&nbsp;(*&nbsp;'a&nbsp;(cos&nbsp;(+&nbsp;(*&nbsp;'omega&nbsp;t)&nbsp;'phi))))<br>
+<br>
+(show-expression<br>
+&nbsp;(((Lagrange-equations&nbsp;(L-harmonic&nbsp;'m&nbsp;'k))<br>
+&nbsp;&nbsp;&nbsp;proposed-solution)<br>
+&nbsp;&nbsp;'t))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-69.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+The residual here shows that for nonzero amplitude, the only solutions
+allowed are ones where ( <em>k</em>  <tt>-</tt>  <em>m</em> <img src="chap1-Z-G-D-23.gif" border="0"><sup>2</sup> )  =  0 or
+<img src="chap1-Z-G-D-23.gif" border="0">  =  (<em>k</em>/<em>m</em>)<sup>1/2</sup>.</p>
+<p>
+
+</p>
+<p><a name="%_thm_1.11"></a>
+<b>Exercise 1.11.</b>&nbsp;&nbsp;<strong></strong><br>
+Compute Lagrange's equations for the Lagrangians in
+exercise&nbsp;<a href="#%_thm_1.9">1.9</a> using the <tt>Lagrange-equations</tt> procedure.  Additionally, use the computer to
+perform each of the steps in the <tt>Lagrange-equations</tt> procedure
+and show the intermediate results.  Relate these steps to the ones you
+showed in the hand derivation of exercise&nbsp;<a href="#%_thm_1.9">1.9</a>.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.12"></a>
+<b>Exercise 1.12.</b>&nbsp;&nbsp;<strong></strong><br>
+<br><strong>a</strong>.&nbsp;&nbsp;Write a procedure to compute the Lagrange equations for
+<a name="%_idx_588"></a>Lagrangians that depend upon acceleration, as in
+exercise&nbsp;<a href="#%_thm_1.10">1.10</a>.  Note that <tt>Gamma</tt> can take an optional argument giving
+the length of the initial segment
+of the local tuple needed.  The default length is 3, giving
+components of the local tuple up to and including the velocities.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Use your procedure to compute the Lagrange equations for the
+Lagrangian </p>
+<div align=left><img src="chap1-Z-G-70.gif" border="0"></div>
+<p>  Do you
+recognize the resulting equation of motion?</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;For more fun, write the general Lagrange equation
+procedure that takes a Lagrangian of any order, and the order,
+to produce the required equations of motion.
+</p>
+
+<p></p>
+<p>
+
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_66" href="#call_footnote_Temp_66"><sup><small>48</small></sup></a> This result was initially discovered by Euler and later
+rederived by Lagrange.</p>
+
+<p><a name="footnote_Temp_68" href="#call_footnote_Temp_68"><sup><small>49</small></sup></a> The derivative or partial derivative of a function that
+<a name="%_idx_506"></a><a name="%_idx_508"></a>  takes structured arguments is a new function that takes the same
+number and type of arguments.  The range of this new function is
+itself a structure with the same number of components as the argument
+with respect to which the function is differentiated.</p>
+
+<p><a name="footnote_Temp_69" href="#call_footnote_Temp_69"><sup><small>50</small></sup></a> Lagrange's equations are traditionally written in the form
+<a name="%_idx_510"></a>  </p>
+<div align=left><img src="chap1-Z-G-34.gif" border="0"></div>
+<p>
+or, if we write a separate equation for each component of <em>q</em>, as
+</p>
+<div align=left><img src="chap1-Z-G-35.gif" border="0"></div>
+<p></p>
+<p>
+<a name="%_idx_512"></a>  In this way of writing Lagrange's equations the notation
+does not distinguish between <em>L</em>, which is a real-valued function of
+three variables (<em>t</em>, <em>q</em>, <img src="front-Z-G-D-1.gif" border="0">), and <em>L</em> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>], which is
+a real-valued function of one real variable <em>t</em>.  If we do not
+realize this notational pun, the equations don't make sense as
+written -- <img src="front-Z-G-D-2.gif" border="0"> <em>L</em>/<img src="front-Z-G-D-2.gif" border="0"> <img src="front-Z-G-D-1.gif" border="0"> is a function of three
+variables, so we must regard the arguments <em>q</em>, <img src="front-Z-G-D-1.gif" border="0"> as functions
+of <em>t</em> before taking <em>d</em>/<em>d</em><em>t</em> of the expression.  Similarly, <img src="front-Z-G-D-2.gif" border="0">
+<em>L</em>/<img src="front-Z-G-D-2.gif" border="0"> <em>q</em> is a function of three variables, which we must view
+as a function of <em>t</em> before setting it equal to <em>d</em>/<em>d</em><em>t</em>(<img src="front-Z-G-D-2.gif" border="0">
+<em>L</em>/<img src="front-Z-G-D-2.gif" border="0"> <img src="front-Z-G-D-1.gif" border="0">).  These implicit applications of the chain
+rule pose no problem in performing hand computations -- once you
+understand what the equations represent.</p>
+
+<p><a name="footnote_Temp_71" href="#call_footnote_Temp_71"><sup><small>51</small></sup></a> The variation operator <img src="chap1-Z-G-D-17.gif" border="0"><sub><img src="chap1-Z-G-D-13.gif" border="0"></sub> is like the derivative operator in
+that it acts on the immediately following function: <img src="chap1-Z-G-D-17.gif" border="0"><sub><img src="chap1-Z-G-D-13.gif" border="0"></sub> <em>f</em>[<em>q</em>]  = 
+(<img src="chap1-Z-G-D-17.gif" border="0"><sub><img src="chap1-Z-G-D-13.gif" border="0"></sub> <em>f</em>)[<em>q</em>].</p>
+
+<p><a name="footnote_Temp_75" href="#call_footnote_Temp_75"><sup><small>52</small></sup></a> A function of multiple arguments is considered a function
+<a name="%_idx_540"></a>  of a tuple of its arguments.  Thus, the derivative of a function of
+multiple arguments is a tuple of the partial derivatives of that
+function with respect to each of the arguments.  So in the case of 
+a Lagrangian <em>L</em>,
+</p>
+<div align=left><img src="chap1-Z-G-47.gif" border="0"></div>
+<p>
+</p>
+
+<p><a name="footnote_Temp_76" href="#call_footnote_Temp_76"><sup><small>53</small></sup></a> To make this argument more precise requires careful 
+analysis.</p>
+
+<p><a name="footnote_Temp_79" href="#call_footnote_Temp_79"><sup><small>54</small></sup></a> When we write a definition that names the components of the
+<a name="%_idx_558"></a><a name="%_idx_560"></a>  local tuple, we indicate that these are grouped into time, position,
+and velocity components by separating the groups with
+semicolons.
+</p>
+
+<p><a name="footnote_Temp_80" href="#call_footnote_Temp_80"><sup><small>55</small></sup></a> The derivative with respect to a tuple is a tuple of the partial
+<a name="%_idx_562"></a>  derivatives with respect to each component of the tuple (see the
+appendix on notation).</p>
+
+<p><a name="footnote_Temp_82" href="#call_footnote_Temp_82"><sup><small>56</small></sup></a> The symbol <img src="chap1-Z-G-D-20.gif" border="0"> is just a mnemonic symbol; the dot
+<a name="%_idx_568"></a>  over the <img src="chap1-Z-G-D-19.gif" border="0"> does not indicate differentiation.  To
+define <em>L</em> we could have just as well have written: <em>L</em>(<em>a</em>, <em>b</em>, <em>c</em>)  =   (1/2) <em>m</em>
+<em>l</em><sup>2</sup> <em>c</em><sup>2</sup>  +  <em>m</em> <em>g</em> <em>l</em> cos <em>b</em>.  However, we use a dotted symbol to remind us
+that the argument matching a formal parameter, such as <img src="chap1-Z-G-D-20.gif" border="0">,
+is a rate of change of an angle, such as <img src="chap1-Z-G-D-19.gif" border="0">.</p>
+
+<p><a name="footnote_Temp_84" href="#call_footnote_Temp_84"><sup><small>57</small></sup></a> In traditional notation these equations read
+</p>
+<div align=left><img src="chap1-Z-G-65.gif" border="0"></div>
+<p></p>
+
+<p><a name="footnote_Temp_85" href="#call_footnote_Temp_85"><sup><small>58</small></sup></a> The <tt>Lagrange-equations</tt>
+<a name="%_idx_574"></a>  procedure uses the operations <tt>(partial 1)</tt> and <tt>(partial 2)</tt>, 
+which implement the partial derivative operators with respect to the
+second and third argument positions (those with indices 1 and 2).</p>
+
+<p><a name="footnote_Temp_87" href="#call_footnote_Temp_87"><sup><small>59</small></sup></a> There is a Lagrange equation for every degree of freedom.
+The residuals of all the equations are zero if the path is realizable.
+The residuals are arranged in a <tt>down</tt> tuple because they result
+from derivatives of the Lagrangian with respect to argument slots that take
+<tt>up</tt> tuples.  See the appendix on notation.
+</p>
+
+<p><a name="footnote_Temp_88" href="#call_footnote_Temp_88"><sup><small>60</small></sup></a> Observe that the second derivative is indicated as the
+<a name="%_idx_580"></a><a name="%_idx_582"></a><a name="%_idx_584"></a>  square of the derivative operator <tt>(expt D 2)</tt>.  Arithmetic 
+operations in Scmutils extend over operators as
+well as functions.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-11.html">previous</a></span><span>, <a href="book-Z-H-13.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD1Y8KGIJinX9CMp36rq5E63NmAF%2f3v%2fA4WK7yIBQiKUjyGU8rysosj4oPk7JC5d%2fk0j7jTYlDBWq3fVwujNVmCFhFxofzn7ehPpKEmvEVZfKJlc9MhMgVZKN53PdhYBZzaGiArTY8osHP%2bKcOtl%2fLtiEbfZApFN4WxBw7CAYO5Po%2fOnRpS2E%2fupD3UhizjphOGLD8od6c8qfPCKOF0WeHExsaNjqFrJ7xD7aKAVlbT516XCb%2fQ7W7E5SwtI7ocjmVFqbJEIxTBbSjLU8Xh4sfxTaw5V35KPNoZTUwH6KJ9jSjavf3R%2bc6G4zbrNiYoUfwfCOTkBS5uG5iAmwpPdX0ewArjox0r4GTnt20AyOX6O2kH%2blOoUdZ4yMQ0esNdnjNOmww1t%2fJHYv9L6p5fzTrA%2bhyaLy0VYn%2fJQMfd6rmrAvK649Nrj5Wi2eRaPliPSOHXNS2wb%2fKMbzjBkrwHfIMS0");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

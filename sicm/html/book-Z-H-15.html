@@ -1,0 +1,640 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-14.html">previous</a></span><span>, <a href="book-Z-H-16.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_1.8"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_1.8">1.8&nbsp;&nbsp;Conserved Quantities</a></h2>
+<p></p>
+<p>
+A function of the state of the system that is
+constant along a solution path is called a <a name="%_idx_826"></a><a name="%_idx_828"></a><a name="%_idx_830"></a><a name="%_idx_832"></a><a name="%_idx_834"></a><em>conserved
+quantity</em> or a <em>constant of motion</em>. If <em>C</em> is
+a conserved quantity, then 
+<a name="EQUATION_1.129"></a></p>
+<div align=left><img src="chap1-Z-G-169.gif" border="0"></div>
+<p>
+for solution paths <em>q</em>.  Following historical practice we also refer
+to constants of the motion as <em>integrals</em> of the motion.<a name="call_footnote_Temp_136" href="#footnote_Temp_136"><sup><small>79</small></sup></a> 
+<a name="%_idx_836"></a><a name="%_idx_838"></a>In this section, we will investigate systems with symmetry and find
+that symmetries are associated with conserved quantities.  For
+instance, linear momentum is conserved in a system with translational
+symmetry, angular momentum is conserved if there is rotational
+symmetry, energy is conserved if the system does not depend on the
+origin of time.  We first consider systems for which a coordinate
+system can be chosen that expresses the symmetry naturally, and later
+discuss systems for which no coordinate system can be chosen that
+simultaneously expresses all symmetries.</p>
+<p>
+</p>
+<a name="%_sec_1.8.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_1.8.1">1.8.1&nbsp;&nbsp;Conserved Momenta</a></h3>
+<p>
+<a name="%_idx_840"></a><a name="%_idx_842"></a><a name="%_idx_844"></a><a name="%_idx_846"></a>
+If a Lagrangian <em>L</em>(<em>t</em>, <em>q</em>, <em>v</em>) does not depend on some particular
+coordinate <em>q</em><sup><em>i</em></sup>, then
+<a name="EQUATION_1.130"></a></p>
+<div align=left><img src="chap1-Z-G-170.gif" border="0"></div>
+<p>
+and the corresponding <em>i</em>th component of the Lagrange equations&nbsp;is
+<a name="EQUATION_1.131"></a></p>
+<div align=left><img src="chap1-Z-G-171.gif" border="0"></div>
+<p>
+This is the same as<a name="call_footnote_Temp_137" href="#footnote_Temp_137"><sup><small>80</small></sup></a>
+<a name="EQUATION_1.132"></a></p>
+<div align=left><img src="chap1-Z-G-172.gif" border="0"></div>
+<p>
+So we see that
+<a name="EQUATION_1.133"></a></p>
+<div align=left><img src="chap1-Z-G-173.gif" border="0"></div>
+<p>
+<a name="%_idx_848"></a><a name="%_idx_850"></a><a name="%_idx_852"></a>is a conserved quantity.   The function <img src="chap1-Z-G-D-44.gif" border="0"> is called
+the <em>momentum state function</em>.  The value of
+the momentum state function is the <a name="%_idx_854"></a><em>generalized momentum</em>.  We
+refer to the <em>i</em>th component of the generalized momentum as the
+<a name="%_idx_856"></a>momentum <em>conjugate</em> to the <em>i</em>th coordinate.<a name="call_footnote_Temp_138" href="#footnote_Temp_138"><sup><small>81</small></sup></a>
+A generalized coordinate component that does not appear explicitly in
+the Lagrangian is called a <a name="%_idx_864"></a><a name="%_idx_866"></a><a name="%_idx_868"></a><a name="%_idx_870"></a><a name="%_idx_872"></a><em>cyclic coordinate</em>.  The generalized
+momentum component conjugate to any cyclic coordinate is a constant of
+the motion.  Its value is constant along realizable
+paths; it may have different values on different paths.  As we will
+see, momentum is an important quantity even when it is not conserved.</p>
+<p>
+<a name="%_idx_874"></a><a name="%_idx_876"></a>Given the coordinate path <em>q</em> and the Lagrangian <em>L</em>, the momentum path <em>p</em> is
+<a name="EQUATION_1.134"></a></p>
+<div align=left><img src="chap1-Z-G-174.gif" border="0"></div>
+<p>
+with components
+<a name="EQUATION_1.135"></a></p>
+<div align=left><img src="chap1-Z-G-175.gif" border="0"></div>
+<p>
+The momentum path is well defined for any path <em>q</em>.  If the path is
+realizable and the Lagrangian does not depend on <em>q</em><sup><em>i</em></sup>, then <em>p</em><sub><em>i</em></sub> is a
+constant function
+<a name="EQUATION_1.136"></a></p>
+<div align=left><img src="chap1-Z-G-176.gif" border="0"></div>
+<p>
+The constant value of <em>p</em><sub><em>i</em></sub> may be different for different trajectories.</p>
+<p>
+</p>
+<a name="%_sec_Temp_139"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_139">Examples of conserved momenta</a></h4>
+<p><a name="%_idx_878"></a>The free-particle Lagrangian <em>L</em>(<em>t</em>, <em>x</em>, <em>v</em>) =   (1/2) <em>m</em><em>v</em><sup>2</sup> is independent
+of&nbsp;<em>x</em>.  So the momentum state function, <img src="chap1-Z-G-D-44.gif" border="0">(<em>t</em>, <em>q</em>, <em>v</em>) =  <em>m</em><em>v</em>, is
+conserved along realizable paths.  The momentum path <em>p</em> for the
+coordinate path <em>q</em> is <em>p</em>(<em>t</em>)  =  <img src="chap1-Z-G-D-44.gif" border="0"> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>](<em>t</em>)  =  <em>m</em> <em>D</em><em>q</em>(<em>t</em>).
+For a realizable path <em>D</em><em>p</em>(<em>t</em>) = 0.  For the free particle the
+usual linear momentum is conserved for realizable paths.</p>
+<p>
+For a particle in a central force field (section&nbsp;<a href="book-Z-H-13.html#%_sec_1.6">1.6</a>), 
+the Lagrangian 
+</p>
+<div align=left><img src="chap1-Z-G-177.gif" border="0"></div>
+<p>
+depends on <em>r</em> but is independent of
+<img src="chap1-Z-G-D-16.gif" border="0">.  The momentum state function is
+</p>
+<div align=left><img src="chap1-Z-G-178.gif" border="0"></div>
+<p>
+<a name="%_idx_880"></a><a name="%_idx_882"></a><a name="%_idx_884"></a>It has two components.  The first component, the ``radial momentum,'' is
+not conserved.  The second component, the ``angular momentum,'' is
+conserved along any solution trajectory.  </p>
+<p>
+If the central-potential problem had been expressed in rectangular
+coordinates, then all of the coordinates would have appeared in the
+Lagrangian.  In that case there would not be any obvious conserved
+quantities.  Nevertheless, the motion of the system does not depend on
+the choice of coordinates, so the angular momentum is still conserved.</p>
+<p>
+We see that there is great advantage in making a judicious choice for
+the coordinate system.  If we can choose the coordinates so that a
+symmetry of the system is reflected in the Lagrangian by the absence
+of some coordinate component, then the existence of a corresponding
+conserved quantity will be automatic.<a name="call_footnote_Temp_140" href="#footnote_Temp_140"><sup><small>82</small></sup></a></p>
+<p>
+
+</p>
+<a name="%_sec_1.8.2"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_1.8.2">1.8.2&nbsp;&nbsp;Energy Conservation</a></h3>
+<p>
+<a name="%_idx_888"></a><a name="%_idx_890"></a>
+<a name="%_idx_892"></a>Momenta are conserved by the motion if the Lagrangian does not depend
+on the corresponding coordinate.  There is another constant of the
+motion, the energy, if the Lagrangian <em>L</em>(<em>t</em>, <em>q</em>, <img src="front-Z-G-D-1.gif" border="0">) does not
+depend explicitly on the time: <img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>L</em>  =  0.</p>
+<p>
+Consider the time derivative of the Lagrangian along a solution path <em>q</em>:
+<a name="EQUATION_1.137"></a></p>
+<div align=left><img src="chap1-Z-G-179.gif" border="0"></div>
+<p>
+Using Lagrange's equations to rewrite the second term yields
+<a name="EQUATION_1.138"></a></p>
+<div align=left><img src="chap1-Z-G-180.gif" border="0"></div>
+<p>
+Isolating <img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>L</em> and combining the first two terms 
+on the right side gives
+<a name="EQUATION_1.139"></a></p>
+<div align=left><img src="chap1-Z-G-181.gif" border="0"></div>
+<p>
+where, as before, <img src="chap1-Z-G-D-42.gif" border="0"> selects the velocity from the state.  So
+we see that if <img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>L</em>  =  0 then
+<a name="%_idx_894"></a><a name="EQUATION_1.140"></a></p>
+<div align=left><img src="chap1-Z-G-182.gif" border="0"></div>
+<p>
+is conserved along realizable paths.
+<a name="%_idx_896"></a><a name="%_idx_898"></a><a name="%_idx_900"></a>The function <img src="chap1-Z-G-D-45.gif" border="0"> is called the <em>energy state function</em>.<a name="call_footnote_Temp_141" href="#footnote_Temp_141"><sup><small>83</small></sup></a>
+Let <em>E</em>  =  <img src="chap1-Z-G-D-45.gif" border="0"> <small>o</small> <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>] denote the
+energy function on the path <em>q</em>.  
+The energy function has a
+constant value along any realizable trajectory if the Lagrangian has no explicit
+time dependence; the energy <em>E</em> may have a different
+value for different trajectories.  A <a name="%_idx_902"></a>system that has no explicit time
+dependence is called <em>autonomous</em>.</p>
+<p>
+Given a Lagrangian procedure <tt>L</tt>, we may compute the energy: 
+</p>
+<p><tt><a name="%_idx_904"></a>(define&nbsp;(Lagrangian-&gt;energy&nbsp;L)<br>
+&nbsp;&nbsp;(let&nbsp;((P&nbsp;((partial&nbsp;2)&nbsp;L)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(*&nbsp;P&nbsp;velocity)&nbsp;L)))<br>
+</p>
+</tt>
+<p>
+
+</p>
+<a name="%_sec_Temp_142"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_142">Energy in terms of kinetic and potential energies</a></h4>
+<p><a name="%_idx_906"></a>
+In some cases the energy can be written as the sum of kinetic and
+potential energies.  Suppose the system is composed of
+particles with rectangular coordinates <strong>x</strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>, the
+movement of which may be subject to constraints, and that these rectangular
+coordinates are some functions of the generalized coordinates <em>q</em> and
+possibly time&nbsp;<em>t</em>: <strong>x</strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>  =  <em>f</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>(<em>t</em>, <em>q</em>).  We form
+the Lagrangian as <em>L</em>  =  <em>T</em>  <tt>-</tt>  <em>V</em> and compute the kinetic energy in terms
+of <em>q</em> by writing the rectangular velocities in terms of the
+generalized velocities:
+<a name="EQUATION_1.141"></a></p>
+<div align=left><img src="chap1-Z-G-183.gif" border="0"></div>
+<p>
+The kinetic energy is
+<a name="EQUATION_1.142"></a></p>
+<div align=left><img src="chap1-Z-G-184.gif" border="0"></div>
+<p>
+where <em>v</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> is the magnitude of <strong>v</strong><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>.</p>
+<p>
+If the <em>f</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> functions do not depend explicitly on time
+(<img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>f</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub>  =  0), then the rectangular velocities are
+homogeneous functions of the generalized velocities of degree 1, and
+<em>T</em> is a homogeneous function of the generalized velocities of degree
+2, because it is formed by summing the square of homogeneous functions
+of degree 1.  If <em>T</em> is a homogeneous function of degree 2 in the
+generalized velocities then
+<a name="EQUATION_1.143"></a></p>
+<div align=left><img src="chap1-Z-G-185.gif" border="0"></div>
+<p>
+where the second equality follows from Euler's theorem on homogeneous
+functions.<a name="call_footnote_Temp_143" href="#footnote_Temp_143"><sup><small>84</small></sup></a>
+The energy state function is
+<a name="EQUATION_1.144"></a></p>
+<div align=left><img src="chap1-Z-G-186.gif" border="0"></div>
+<p>
+So if <em>f</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> is independent of time, the energy function can be rewritten
+<a name="EQUATION_1.145"></a></p>
+<div align=left><img src="chap1-Z-G-187.gif" border="0"></div>
+<p>
+Notice that if <em>V</em> depends on time the energy is still the sum of
+the kinetic energy and potential energy, but the energy is not
+conserved.</p>
+<p>
+The energy state function is always a well defined function, whether
+or not it can be written in the form <em>T</em>  +  <em>V</em>, and whether or not it
+is conserved along realizable paths.</p>
+<p>
+</p>
+<p><a name="%_thm_1.28"></a>
+<b>Exercise 1.28.</b>&nbsp;&nbsp;<strong></strong><br>
+An analogous result holds when the <em>f</em><sub><img src="chap1-Z-G-D-21.gif" border="0"></sub> depend explicitly on time.</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp; Show that in this case the kinetic energy contains terms
+that are linear in the generalized velocities.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp; Show that, by adding a total time derivative,  the
+Lagrangian can be written in the form <em>L</em>  =  <em>A</em>  <tt>-</tt>  <em>B</em>, where <em>A</em> is 
+a homogeneous quadratic form in the generalized
+velocities and <em>B</em> is independent of velocity.</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp; Show, using Euler's theorem, that the energy function is 
+<img src="chap1-Z-G-D-45.gif" border="0">  =  <em>A</em>  +  <em>B</em>. </p>
+<p>
+</p>
+<p></p>
+<p>
+An example in which terms that were linear in the velocity were removed
+from the Lagrangian by adding a total time derivative has already been
+given: the driven pendulum.  
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.29"></a>
+<b>Exercise 1.29.</b>&nbsp;&nbsp;<strong></strong><br>
+A particle of mass <em>m</em> slides off a horizontal cylinder of radius <em>R</em>
+in a uniform gravitational field with acceleration <em>g</em>.  If the
+particle starts close to the top of the cylinder with zero initial speed, with what
+angular velocity does it leave the cylinder?
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_1.8.3"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_1.8.3">1.8.3&nbsp;&nbsp;Central Forces in Three Dimensions</a></h3>
+<p><a name="%_idx_914"></a>
+One important physical system is the motion of a particle in a central
+field in three dimensions, with an arbitrary potential energy <em>V</em>(<em>r</em>)
+depending only on the radius.  We will describe this system in
+<a name="%_idx_916"></a>spherical coordinates <em>r</em>, <img src="chap1-Z-G-D-19.gif" border="0">, and <img src="chap1-Z-G-D-16.gif" border="0">, where <img src="chap1-Z-G-D-19.gif" border="0"> is the
+colatitude and <img src="chap1-Z-G-D-16.gif" border="0"> is the longitude.  The <a name="%_idx_918"></a><a name="%_idx_920"></a>kinetic energy has three
+terms: 
+</p>
+<div align=left><img src="chap1-Z-G-188.gif" border="0"></div>
+<p>
+As a procedure:
+</p>
+<p><tt>(define&nbsp;((T3-spherical&nbsp;m)&nbsp;state)<br>
+&nbsp;&nbsp;(let&nbsp;((q&nbsp;(coordinate&nbsp;state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(qdot&nbsp;(velocity&nbsp;state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((r&nbsp;(ref&nbsp;q&nbsp;0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(theta&nbsp;(ref&nbsp;q&nbsp;1))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(rdot&nbsp;(ref&nbsp;qdot&nbsp;0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(thetadot&nbsp;(ref&nbsp;qdot&nbsp;1))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(phidot&nbsp;(ref&nbsp;qdot&nbsp;2)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;1/2&nbsp;m<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(square&nbsp;rdot)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(square&nbsp;(*&nbsp;r&nbsp;thetadot))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(square&nbsp;(*&nbsp;r&nbsp;(sin&nbsp;theta)&nbsp;phidot)))))))<br>
+</p>
+</tt>
+<p><a name="%_idx_922"></a><a name="%_idx_924"></a>The Lagrangian is then formed by subtracting the potential energy:
+</p>
+<p><tt>(define&nbsp;(L3-central&nbsp;m&nbsp;Vr)<br>
+&nbsp;&nbsp;(define&nbsp;(Vs&nbsp;state)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((r&nbsp;(ref&nbsp;(coordinate&nbsp;state)&nbsp;0)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Vr&nbsp;r)))<br>
+&nbsp;&nbsp;(-&nbsp;(T3-spherical&nbsp;m)&nbsp;Vs))<br>
+</p>
+</tt>
+<p>Let's first look at the generalized forces (the derivatives of the
+Lagrangian with respect to the generalized coordinates).  We compute
+these with a partial derivative with respect to the coordinate argument of
+the Lagrangian:
+</p>
+<p><tt>(show-expression<br>
+&nbsp;(((partial&nbsp;1)&nbsp;(L3-central&nbsp;'m&nbsp;(literal-function&nbsp;'V)))<br>
+&nbsp;&nbsp;(up&nbsp;'t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'r&nbsp;'theta&nbsp;'phi)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'rdot&nbsp;'thetadot&nbsp;'phidot))))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-189.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+The <img src="chap1-Z-G-D-16.gif" border="0"> component of the force is zero because
+<img src="chap1-Z-G-D-16.gif" border="0"> does not appear in the Lagrangian (it is a cyclic variable).
+The corresponding momentum component is conserved.  Compute
+the momenta:
+</p>
+<p><tt>(show-expression<br>
+&nbsp;(((partial&nbsp;2)&nbsp;(L3-central&nbsp;'m&nbsp;(literal-function&nbsp;'V)))<br>
+&nbsp;&nbsp;(up&nbsp;'t&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'r&nbsp;'theta&nbsp;'phi)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'rdot&nbsp;'thetadot&nbsp;'phidot))))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-190.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+The momentum conjugate to <img src="chap1-Z-G-D-16.gif" border="0"> is conserved.  This is the <em>z</em> component of
+the angular momentum <img src="chap1-Z-G-D-46.gif" border="0"> &times; (<em>m</em> <img src="chap1-Z-G-D-10.gif" border="0">), for vector
+position <img src="chap1-Z-G-D-46.gif" border="0"> and linear momentum <em>m</em> <img src="chap1-Z-G-D-10.gif" border="0">.  We can show this by
+writing the <a name="%_idx_926"></a><em>z</em> component of the angular momentum in
+spherical coordinates:
+</p>
+<p><tt>(define&nbsp;((ang-mom-z&nbsp;m)&nbsp;state)<br>
+&nbsp;&nbsp;(let&nbsp;((q&nbsp;(coordinate&nbsp;state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(v&nbsp;(velocity&nbsp;state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ref&nbsp;(cross-product&nbsp;q&nbsp;(*&nbsp;m&nbsp;v))&nbsp;2)))<br>
+<a name="%_idx_928"></a>(define&nbsp;(s-&gt;r&nbsp;state)<br>
+&nbsp;&nbsp;(let&nbsp;((q&nbsp;(coordinate&nbsp;state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((r&nbsp;(ref&nbsp;q&nbsp;0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(theta&nbsp;(ref&nbsp;q&nbsp;1))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(phi&nbsp;(ref&nbsp;q&nbsp;2)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((x&nbsp;(*&nbsp;r&nbsp;(sin&nbsp;theta)&nbsp;(cos&nbsp;phi)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(y&nbsp;(*&nbsp;r&nbsp;(sin&nbsp;theta)&nbsp;(sin&nbsp;phi)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(z&nbsp;(*&nbsp;r&nbsp;(cos&nbsp;theta))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;x&nbsp;y&nbsp;z)))))<br>
+(show-expression<br>
+&nbsp;&nbsp;((compose&nbsp;(ang-mom-z&nbsp;'m)&nbsp;(F-&gt;C&nbsp;s-&gt;r))<br>
+&nbsp;&nbsp;&nbsp;(up&nbsp;'t&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'r&nbsp;'theta&nbsp;'phi)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'rdot&nbsp;'thetadot&nbsp;'phidot))))<br>
+</p>
+</tt>
+<p>         
+</p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-191.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p> 
+The choice of the <em>z</em>-axis is arbitrary, so the conservation of any
+<a name="%_idx_930"></a><a name="%_idx_932"></a>component of the angular momentum implies the conservation of all
+components.  Thus the total angular momentum is conserved.  We can
+choose the <em>z</em>-axis so all of the angular momentum is in the <em>z</em>
+component.  The angular momentum must be perpendicular to both the
+radius vector and the linear momentum vector.  Thus the motion is
+planar, <img src="chap1-Z-G-D-19.gif" border="0"> = <img src="chap1-Z-G-D-15.gif" border="0">/2, and <img src="chap1-Z-G-D-20.gif" border="0">  =  0.  Planar motion in a
+central-force field was discussed in section&nbsp;<a href="book-Z-H-13.html#%_sec_1.6">1.6</a>.</p>
+<p>
+We can also see that the energy state function computed from the
+Lagrangian for a central field is in fact <em>T</em> + <em>V</em>:
+</p>
+<p><tt>(show-expression<br>
+&nbsp;((Lagrangian-&gt;energy&nbsp;(L3-central&nbsp;'m&nbsp;(literal-function&nbsp;'V)))<br>
+&nbsp;&nbsp;(up&nbsp;'t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'r&nbsp;'theta&nbsp;'phi)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'rdot&nbsp;'thetadot&nbsp;'phidot))))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap1-Z-G-192.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+The energy is conserved because the Lagrangian has no explicit time
+dependence. </p>
+<p>
+</p>
+<p><a name="%_thm_1.30"></a>
+<b>Exercise 1.30.</b>&nbsp;&nbsp;<strong>Driven spherical pendulum</strong><br>
+<a name="%_idx_934"></a>A spherical pendulum is a massive bob, subject to uniform gravity,
+that may swing in three dimensions, but remains at a given distance
+from the pivot.  Formulate a Lagrangian for a spherical pendulum,
+driven by vertical motion of the pivot.  What symmetry(ies) can you find?
+Find coordinates that express the symmetry.  What is conserved?  Give
+analytic expression(s) for the conserved quantity(ies).
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_1.8.4"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_1.8.4">1.8.4&nbsp;&nbsp;Noether's Theorem</a></h3>
+<p>
+<a name="%_idx_936"></a><a name="%_idx_938"></a><a name="%_idx_940"></a><a name="%_idx_942"></a>
+We have seen that if a system has a symmetry and if a coordinate
+system can be chosen so that the Lagrangian does not depend on the
+coordinate associated with the symmetry, then there is a conserved
+quantity associated with the symmetry.  However, there are more
+general symmetries that no coordinate system can fully
+express.  For example, motion in a central potential is
+spherically symmetric (the dynamical system is invariant under
+rotations about any axis), but the expression of the Lagrangian for the
+system in spherical coordinates exhibits symmetry around only one
+axis.  More generally, a <a name="%_idx_944"></a><a name="%_idx_946"></a>Lagrangian has a symmetry if there is a
+coordinate transformation that leaves the Lagrangian unchanged.  A
+continuous symmetry is a parametric family of symmetries.  Noether
+proved that for any continuous symmetry there is a conserved
+quantity.  </p>
+<p>
+Consider a parametric coordinate transformation <img src="chap1-Z-G-D-47.gif" border="0"> with
+parameter <em>s</em>:
+<a name="EQUATION_1.146"></a></p>
+<div align=left><img src="chap1-Z-G-193.gif" border="0"></div>
+<p>
+To this parametric coordinate transformation there corresponds a
+parametric state transformation <img src="chap1-Z-G-D-48.gif" border="0">:
+<a name="EQUATION_1.147"></a></p>
+<div align=left><img src="chap1-Z-G-194.gif" border="0"></div>
+<p>
+We require that the transformation <img src="chap1-Z-G-D-47.gif" border="0">(0) be
+the identity coordinate transformation <em>x</em>'  =  <img src="chap1-Z-G-D-47.gif" border="0">(0)(<em>t</em>, <em>x</em>'),
+and as a consequence <img src="chap1-Z-G-D-48.gif" border="0">(0) is the identity state
+transformation ( <em>t</em>, <em>x</em>', <em>v</em>' )  =  <img src="chap1-Z-G-D-48.gif" border="0">(0)(<em>t</em>, <em>x</em>', <em>v</em>').  
+The Lagrangian <em>L</em> has a continuous symmetry corresponding to
+<img src="chap1-Z-G-D-47.gif" border="0"> if it is invariant under the transformations
+<a name="EQUATION_1.148"></a></p>
+<div align=left><img src="chap1-Z-G-195.gif" border="0"></div>
+<p>
+for any <em>s</em>.  The Lagrangian <em>L</em> is the same function as the transformed
+Lagrangian <img src="chap1-Z-G-D-49.gif" border="0">(<em>s</em>).  </p>
+<p>
+That <img src="chap1-Z-G-D-49.gif" border="0">(<em>s</em>)  =  <em>L</em> for any <em>s</em> implies <em>D</em><img src="chap1-Z-G-D-49.gif" border="0">(<em>s</em>)  = 
+0.  Explicitly, <img src="chap1-Z-G-D-49.gif" border="0">(<em>s</em>) is
+<a name="EQUATION_1.149"></a></p>
+<div align=left><img src="chap1-Z-G-196.gif" border="0"></div>
+<p>
+where we have rewritten the velocity component of <img src="chap1-Z-G-D-48.gif" border="0">(<em>s</em>)
+in terms of the total time derivative.
+The derivative of <img src="chap1-Z-G-D-49.gif" border="0"> is zero:
+<a name="EQUATION_1.150"></a></p>
+<div align=left><img src="chap1-Z-G-197.gif" border="0"></div>
+<p>
+where we have used the fact that<a name="call_footnote_Temp_147" href="#footnote_Temp_147"><sup><small>85</small></sup></a>
+<a name="EQUATION_1.151"></a></p>
+<div align=left><img src="chap1-Z-G-198.gif" border="0"></div>
+<p>
+On a realizable path <em>q</em> we can use the Lagrange equations to 
+rewrite the first term:
+<a name="EQUATION_1.152"></a></p>
+<div align=left><img src="chap1-Z-G-199.gif" border="0"></div>
+<p>
+For <em>s</em> = 0 the paths <em>q</em> and <em>q</em>' are the same, because
+<img src="chap1-Z-G-D-47.gif" border="0">(0) is the identity, so <img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>]  = 
+<img src="chap1-Z-G-D-9.gif" border="0">[<em>q</em>'] and this equation becomes
+<a name="EQUATION_1.153"></a></p>
+<div align=left><img src="chap1-Z-G-200.gif" border="0"></div>
+<p>
+Thus the state function <img src="chap1-Z-G-D-50.gif" border="0">,
+<a name="EQUATION_1.154"></a></p>
+<div align=left><img src="chap1-Z-G-201.gif" border="0"></div>
+<p>
+is conserved along solution trajectories.  This is Noether's integral.
+The integral is the product of the momentum and a vector
+associated with the symmetry.</p>
+<p>
+</p>
+<a name="%_sec_Temp_148"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_148">Illustration: motion in a central potential</a></h4>
+<p>For example, consider the central potential Lagrangian in rectangular
+coordinates:
+<a name="EQUATION_1.155"></a></p>
+<div align=left><img src="chap1-Z-G-202.gif" border="0"></div>
+<p>
+and a parametric rotation <em>R</em><sub><em>z</em></sub>(<em>s</em>) about the <em>z</em> axis
+<a name="EQUATION_1.156"></a></p>
+<div align=left><img src="chap1-Z-G-203.gif" border="0"></div>
+<p>
+The rotation is an orthogonal transformation so 
+<a name="EQUATION_1.157"></a></p>
+<div align=left><img src="chap1-Z-G-204.gif" border="0"></div>
+<p>
+Differentiating along a path, we get
+<a name="EQUATION_1.158"></a></p>
+<div align=left><img src="chap1-Z-G-205.gif" border="0"></div>
+<p>
+so the velocities also transform by an orthogonal transformation, and 
+ <em>v</em><sub><em>x</em></sub><sup>2</sup>  +  <em>v</em><sub><em>y</em></sub><sup>2</sup>  +  <em>v</em><sub><em>z</em></sub><sup>2</sup>  =  (<em>v</em><sub><em>x</em></sub>')<sup>2</sup>  +  (<em>v</em><sub><em>y</em></sub>')<sup>2</sup>  +  (<em>v</em><sub><em>z</em></sub>')<sup>2</sup> .
+Thus 
+<a name="EQUATION_1.159"></a></p>
+<div align=left><img src="chap1-Z-G-206.gif" border="0"></div>
+<p>
+and we see that <em>L</em>' is precisely the same function as <em>L</em>.</p>
+<p>
+The momenta are 
+<a name="EQUATION_1.160"></a></p>
+<div align=left><img src="chap1-Z-G-207.gif" border="0"></div>
+<p>
+and
+<a name="EQUATION_1.161"></a></p>
+<div align=left><img src="chap1-Z-G-208.gif" border="0"></div>
+<p>
+So the Noether integral is
+<a name="EQUATION_1.162"></a></p>
+<div align=left><img src="chap1-Z-G-209.gif" border="0"></div>
+<p>
+which we recognize as minus the <em>z</em> component of the angular momentum:
+<img src="chap1-Z-G-D-26.gif" border="0"> &times; (<em>m</em> <img src="chap1-Z-G-D-10.gif" border="0">).
+Since the Lagrangian is preserved by any continuous rotational
+symmetry, all components of the vector angular momenta are conserved
+for the central-potential problem.</p>
+<p>
+<a name="%_idx_950"></a>The procedure calls <tt>((Rx angle-x) q)</tt>, 
+<tt>((Ry angle-y) q)</tt>, 
+and <tt>((Rz angle-z) q)</tt> rotate the rectangular tuple <tt>q</tt>
+about the indicated axis by the indicated angle.<a name="call_footnote_Temp_149" href="#footnote_Temp_149"><sup><small>86</small></sup></a>
+We use these to make a parametric coordinate transformation <tt>F-tilde</tt>:
+</p>
+<p><tt>(define&nbsp;(F-tilde&nbsp;angle-x&nbsp;angle-y&nbsp;angle-z)<br>
+&nbsp;&nbsp;(compose&nbsp;(Rx&nbsp;angle-x)&nbsp;(Ry&nbsp;angle-y)&nbsp;(Rz&nbsp;angle-z)&nbsp;coordinate))<br>
+</p>
+</tt>
+<p>A Lagrangian for motion in a central potential is
+</p>
+<p><tt>(define&nbsp;((L-central-rectangular&nbsp;m&nbsp;U)&nbsp;state)<br>
+&nbsp;&nbsp;(let&nbsp;((q&nbsp;(coordinate&nbsp;state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(v&nbsp;(velocity&nbsp;state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(*&nbsp;1/2&nbsp;m&nbsp;(square&nbsp;v))&nbsp;(U&nbsp;(sqrt&nbsp;(square&nbsp;q))))))<br>
+</p>
+</tt>
+<p>The Noether integral is then
+</p>
+<p><tt>(define&nbsp;Noether-integral<br>
+&nbsp;&nbsp;(let&nbsp;((L&nbsp;(L-central-rectangular&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'m&nbsp;(literal-function&nbsp;'U))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;((partial&nbsp;2)&nbsp;L)&nbsp;((D&nbsp;F-tilde)&nbsp;0&nbsp;0&nbsp;0))))<br>
+<br>
+(print-expression<br>
+&nbsp;&nbsp;(Noether-integral&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'x&nbsp;'y&nbsp;'z)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'vx&nbsp;'vy&nbsp;'vz))))<br>
+<i>(down&nbsp;(+&nbsp;(*&nbsp;m&nbsp;vy&nbsp;z)&nbsp;(*&nbsp;-1&nbsp;m&nbsp;vz&nbsp;y))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(*&nbsp;m&nbsp;vz&nbsp;x)&nbsp;(*&nbsp;-1&nbsp;m&nbsp;vx&nbsp;z))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(*&nbsp;m&nbsp;vx&nbsp;y)&nbsp;(*&nbsp;-1&nbsp;m&nbsp;vy&nbsp;x)))</i><br>
+</p>
+</tt>
+<p>We get all three components of the angular momentum.</p>
+<p>
+
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_136" href="#call_footnote_Temp_136"><sup><small>79</small></sup></a> In older literature conserved quantities are sometimes
+called <em>first integrals</em>.</p>
+
+<p><a name="footnote_Temp_137" href="#call_footnote_Temp_137"><sup><small>80</small></sup></a> The derivative of a component is equal to the component of
+the derivative.</p>
+
+<p><a name="footnote_Temp_138" href="#call_footnote_Temp_138"><sup><small>81</small></sup></a> Observe that we indicate a component of the generalized
+<a name="%_idx_858"></a><a name="%_idx_860"></a><a name="%_idx_862"></a>  momentum with a subscript, and a component of the generalized
+coordinates with a superscript.  These conventions are consistent with
+those commonly used in tensor algebra, which is sometimes
+helpful in working out complex problems.</p>
+
+<p><a name="footnote_Temp_140" href="#call_footnote_Temp_140"><sup><small>82</small></sup></a> In general, conserved quantities in a physical system are
+<a name="%_idx_886"></a>  associated with continuous symmetries, whether or not one can find a
+coordinate system in which the symmetry is apparent.  This powerful
+notion was formalized and a theorem linking conservation laws with
+symmetries was proved by Noether early in the 20th century.  See
+section&nbsp;<a href="#%_sec_1.8.4">1.8.4</a> on Noether's theorem.</p>
+
+<p><a name="footnote_Temp_141" href="#call_footnote_Temp_141"><sup><small>83</small></sup></a> The sign of the energy state function is a matter of convention.</p>
+
+<p><a name="footnote_Temp_143" href="#call_footnote_Temp_143"><sup><small>84</small></sup></a> A function <em>f</em> is homogenous of degree <em>n</em> if and only if
+<a name="%_idx_908"></a><a name="%_idx_910"></a><a name="%_idx_912"></a><em>f</em>(<em>a</em><em>x</em>) = <em>a</em><sup><em>n</em></sup><em>f</em>(<em>x</em>).  Euler's theorem says that if <em>f</em> is a homogeneous
+function of degree <em>n</em>, then <em>D</em><em>f</em>(<em>x</em>)<em>x</em>  =  <em>n</em><em>f</em>(<em>x</em>).  The proof is as
+follows:  Let <em>g</em><sub><em>x</em></sub>(<em>a</em>) = <em>f</em>(<em>a</em><em>x</em>).  Then <em>D</em><em>g</em><sub><em>x</em></sub>(<em>a</em>) = <em>D</em><em>f</em>(<em>a</em><em>x</em>)<em>x</em>.  But
+<em>g</em><sub><em>x</em></sub>(<em>a</em>) = <em>a</em><sup><em>n</em></sup><em>f</em>(<em>x</em>) by the definition of homogeneity.  Therefore
+<em>D</em><em>g</em><sub><em>x</em></sub>(<em>a</em>) = <em>n</em><em>a</em><sup><em>n</em><tt>-</tt>1</sup><em>f</em>(<em>x</em>).  Equating these, we find <em>D</em><em>f</em>(<em>a</em><em>x</em>)<em>x</em> = <em>n</em><em>a</em><sup><em>n</em><tt>-</tt>1</sup><em>f</em>(<em>x</em>).
+Specializing to <em>a</em> = 1 we obtain <em>D</em><em>f</em>(<em>x</em>)<em>x</em>  =  <em>n</em><em>f</em>(<em>x</em>) as required.</p>
+
+<p><a name="footnote_Temp_147" href="#call_footnote_Temp_147"><sup><small>85</small></sup></a> The total time derivative is like a derivative with respect to a
+<a name="%_idx_948"></a>  real-number argument in that it does not generate structure, so it can
+commute with derivatives that generate structure.  Be careful, though:
+it may not commute with some derivatives for other reasons.  For
+example,  <em>D</em><sub><em>t</em></sub> <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> (<img src="chap1-Z-G-D-47.gif" border="0">(<em>s</em>)) is the same as <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub>
+<em>D</em><sub><em>t</em></sub> (<img src="chap1-Z-G-D-47.gif" border="0">(<em>s</em>)), but <em>D</em><sub><em>t</em></sub> <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> (<img src="chap1-Z-G-D-47.gif" border="0">(<em>s</em>)) 
+is not the same as <img src="front-Z-G-D-2.gif" border="0"><sub>2</sub> <em>D</em><sub><em>t</em></sub> (<img src="chap1-Z-G-D-47.gif" border="0">(<em>s</em>)).  The reason is
+that <img src="chap1-Z-G-D-47.gif" border="0">(<em>s</em>) does not depend on the velocity, but <em>D</em><sub><em>t</em></sub>
+(<img src="chap1-Z-G-D-47.gif" border="0">(<em>s</em>)) does.</p>
+
+<p><a name="footnote_Temp_149" href="#call_footnote_Temp_149"><sup><small>86</small></sup></a> The definition of the procedure <tt>Rx</tt> is
+</p>
+<p><tt>(define&nbsp;((Rx&nbsp;angle)&nbsp;q)<br>
+&nbsp;&nbsp;(let&nbsp;((ca&nbsp;(cos&nbsp;angle))&nbsp;(sa&nbsp;(sin&nbsp;angle)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((x&nbsp;(ref&nbsp;q&nbsp;0))&nbsp;(y&nbsp;(ref&nbsp;q&nbsp;1))&nbsp;(z&nbsp;(ref&nbsp;q&nbsp;2)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;x<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-&nbsp;(*&nbsp;ca&nbsp;y)&nbsp;(*&nbsp;sa&nbsp;z))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(*&nbsp;sa&nbsp;y)&nbsp;(*&nbsp;ca&nbsp;z))))))<br>
+</p>
+</tt>
+<p>The definitions of <tt>Ry</tt> and <tt>Rz</tt> are similar.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-14.html">previous</a></span><span>, <a href="book-Z-H-16.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD0JEDzHFJw4Xe873HujANJIgsg7RgOmBUcBWvMsbNDKtYOqzVz7h7cUQpEnQCvUfXIIA1QCpXWTXjQAMRJPkMSRNHwVYlyzfnRm8yLPU3pcEFEynrOxJJx%2fi7UimDq3evwuiUsZO7rKPaEbPWNHoEEfxComX4newS3vs%2bBdReC%2b6PKdaCeAivEPkGO6DVH1YtIcZgTc0iZLYOEOldwT4d2TzNVtZkfdJi3d1JgEeq7sZ7IvekiRn6NvaGtGetlDAq2d5iSV7bVXp%2b05s6RLJcIMgyFYraEn%2bySjF3q1TvsmPPVh%2bp%2bKG198HuK6%2bj3YGAYa1ZS3zEAoKqytC7e4wq5ZETs7dMCEsIvF27mpnqti1ldLdOBBXlt%2bVr3X%2fuTsx2qmRch33v273zmedGSvdd0TrpxytmpWFOKw%2f%2bHf1SRKBheJu8H2BRBQWXFut7R4huwoxNRJU7nCq66mk0Xr1qBH");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

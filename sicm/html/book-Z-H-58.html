@@ -1,0 +1,218 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-57.html">previous</a></span><span>, <a href="book-Z-H-59.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_5.1"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_5.1">5.1&nbsp;&nbsp;Point Transformations</a></h2>
+<p><a name="%_idx_2450"></a>
+A <em>point transformation</em> is a canonical transformation that
+extends a possibly time-dependent transformation of the configuration
+coordinates to a phase-space transformation.  For example, one might
+want to reexpress motion in terms of polar coordinates, given a
+description in terms of rectangular coordinates.  In order to extend a
+transformation of the configuration coordinates to a phase-space
+transformation we must specify how the momenta and Hamiltonian are
+transformed.</p>
+<p>
+We have already seen how configuration transformations can be carried
+out in the Lagrangian formulation (see
+section&nbsp;<a href="book-Z-H-13.html#%_sec_1.6.1">1.6.1</a>).  In that case, we found
+that if the Lagrangian transforms by composition with the coordinate
+transformation, then the Lagrange equations are equivalent.</p>
+<p>
+Lagrangians that differ by the addition of a total time derivative are
+equivalent, but have different momenta conjugate to the generalized
+coordinates.  So there is more than one way to make a canonical
+extension of a coordinate transformation.</p>
+<p>
+Here, we find the particular canonical extension of a coordinate
+transformation for which the Lagrangians transform by composition with
+the transformation, with no extra total time derivative terms added to
+the Lagrangian.</p>
+<p>
+Let <em>L</em> be a Lagrangian for a system.  Consider the
+coordinate transformation <em>q</em>  =  <em>F</em>(<em>t</em>, <em>q</em>').  The velocities transform
+by
+<a name="EQUATION_5.1"></a></p>
+<div align=left><img src="chap5-Z-G-1.gif" border="0"></div>
+<p>
+We can obtain a Lagrangian in the transformed coordinates by
+composition <em>L</em>'(<em>t</em>, <em>q</em>', <em>v</em>')  =  <em>L</em>(<em>t</em>, <em>q</em>, <em>v</em>):
+<a name="EQUATION_5.2"></a></p>
+<div align=left><img src="chap5-Z-G-2.gif" border="0"></div>
+<p>
+The momentum conjugate to <em>q</em>' is 
+<a name="EQUATION_5.3"></a></p>
+<div align=left><img src="chap5-Z-G-3.gif" border="0"></div>
+<p>
+where we have used
+<a name="EQUATION_5.4"></a></p>
+<div align=left><img src="chap5-Z-G-4.gif" border="0"></div>
+<p>
+So, from equation&nbsp;(<a href="#EQUATION_5.3">5.3</a>),<a name="call_footnote_Temp_328" href="#footnote_Temp_328"><sup><small>1</small></sup></a>
+<a name="%_idx_2452"></a><a name="EQUATION_5.5"></a></p>
+<div align=left><img src="chap5-Z-G-5.gif" border="0"></div>
+<p> 
+We can collect these results to define a canonical phase-space
+transformation <em>C</em>:<a name="call_footnote_Temp_329" href="#footnote_Temp_329"><sup><small>2</small></sup></a>
+<a name="EQUATION_5.6"></a></p>
+<div align=left><img src="chap5-Z-G-6.gif" border="0"></div>
+<p></p>
+<p>
+The Hamiltonian is obtained by the Legendre transform
+<a name="EQUATION_5.7"></a></p>
+<div align=left><img src="chap5-Z-G-7.gif" border="0"></div>
+<p>
+using relations&nbsp;(<a href="#EQUATION_5.1">5.1</a>) and
+(<a href="#EQUATION_5.5">5.5</a>) in the second step.
+Fully expressed in terms of the transformed coordinates and momenta, the
+transformed Hamiltonian is
+<a name="EQUATION_5.8"></a></p>
+<div align=left><img src="chap5-Z-G-8.gif" border="0"></div>
+<p>
+The Hamiltonians <em>H</em>' and <em>H</em> are equivalent because <em>L</em> and <em>L</em>' have
+the same value for a given dynamical state and so have the same paths
+of stationary action.  In general <em>H</em> and <em>H</em>' do not have
+the same values for a given dynamical state, but differ
+by a term that depends on the coordinate transformation.</p>
+<p>
+<a name="%_idx_2458"></a>For time-independent transformations, <img src="front-Z-G-D-2.gif" border="0"><sub>0</sub> <em>F</em>  =  0, there are a
+number of simplifications.  The relationship of the velocities
+(<a href="#EQUATION_5.1">5.1</a>) becomes
+<a name="EQUATION_5.9"></a></p>
+<div align=left><img src="chap5-Z-G-9.gif" border="0"></div>
+<p>
+Comparing this to the relation (<a href="#EQUATION_5.5">5.5</a>) between the
+momenta, we see that in this case the momenta transform ``oppositely'' to
+the velocities<a name="call_footnote_Temp_330" href="#footnote_Temp_330"><sup><small>3</small></sup></a>
+<a name="EQUATION_5.10"></a></p>
+<div align=left><img src="chap5-Z-G-10.gif" border="0"></div>
+<p>
+so the product of the momenta and the velocities is not changed by the
+transformation.  This, combined with the fact that by construction
+<em>L</em>(<em>t</em>, <em>q</em>, <em>v</em>)  =  <em>L</em>'(<em>t</em>, <em>q</em>', <em>v</em>'), shows that
+<a name="EQUATION_5.11"></a></p>
+<div align=left><img src="chap5-Z-G-11.gif" border="0"></div>
+<p>
+For time-independent coordinate transformations the Hamiltonian
+transforms by composition with the associated phase-space
+transformation.  We can also see this from the general relationship
+(<a href="#EQUATION_5.7">5.7</a>) between the Hamiltonians.</p>
+<p>
+</p>
+<a name="%_sec_Temp_331"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_331">Implementing point transformations</a></h4>
+<p><a name="%_idx_2466"></a>
+<a name="%_idx_2468"></a>The procedure <tt>F-&gt;CT</tt> takes
+a procedure <tt>F</tt> implementing a transformation of configuration coordinates
+and returns a procedure implementing a transformation
+of phase-space coordinates:
+</p>
+<p><tt>(define&nbsp;((F-&gt;CT&nbsp;F)&nbsp;H-state)<br>
+&nbsp;&nbsp;(up&nbsp;(time&nbsp;H-state)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(F&nbsp;H-state)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;(momentum&nbsp;H-state)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(invert&nbsp;(((partial&nbsp;1)&nbsp;F)&nbsp;H-state)))))<br>
+</p>
+</tt>
+<p>
+<a name="%_idx_2470"></a>Consider a particle moving in a central field.  In rectangular
+coordinates a Hamiltonian is
+</p>
+<p><tt><a name="%_idx_2472"></a>(define&nbsp;((H-central&nbsp;m&nbsp;V)&nbsp;H-state)<br>
+&nbsp;&nbsp;(let&nbsp;((x&nbsp;(coordinate&nbsp;H-state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(p&nbsp;(momentum&nbsp;H-state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;(/&nbsp;(square&nbsp;p)&nbsp;(*&nbsp;2&nbsp;m))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(V&nbsp;(sqrt&nbsp;(square&nbsp;x))))))<br>
+</p>
+</tt>
+<p>Let's look at this Hamiltonian in polar coordinates.  The phase-space
+<a name="%_idx_2474"></a><a name="%_idx_2476"></a>transformation is obtained by applying <tt>F-&gt;CT</tt> to the procedure
+<tt>p-&gt;r</tt> that takes a time and a polar tuple and returns a tuple of
+rectangular coordinates (see section&nbsp;<a href="book-Z-H-13.html#%_sec_1.6.1">1.6.1</a>).  The transformation is
+time independent so the Hamiltonian transforms by composition.  In
+polar coordinates the Hamiltonian is
+</p>
+<p><tt>(show-expression<br>
+&nbsp;((compose&nbsp;(H-central&nbsp;'m&nbsp;(literal-function&nbsp;'V))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(F-&gt;CT&nbsp;p-&gt;r))<br>
+&nbsp;&nbsp;(up&nbsp;'t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'r&nbsp;'phi)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(down&nbsp;'p_r&nbsp;'p_phi))))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap5-Z-G-12.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+There are three terms.  There is the potential energy, which depends
+on the radius, there is the kinetic energy due to radial motion, and
+there is the kinetic energy due to tangential motion.  As expected,
+the angle <img src="chap1-Z-G-D-16.gif" border="0"> does not appear and thus the angular momentum is a
+conserved quantity.  By going to polar coordinates we have decoupled
+one of the two degrees of freedom in the problem.</p>
+<p>
+</p>
+<p><a name="%_thm_5.1"></a>
+<b>Exercise 5.1.</b>&nbsp;&nbsp;<strong>Rotations</strong><br></p>
+<p>
+Let <em>q</em> and <em>q</em>' be rectangular coordinates that are related by a
+rotation <em>R</em>: <em>q</em>  =  <em>R</em> <em>q</em>'.  The Lagrangian for the system is <em>L</em>(<em>t</em>, <em>q</em>,
+<em>v</em>)  =   (1/2) <em>m</em> <em>v</em><sup>2</sup>  <tt>-</tt>  <em>V</em>(<em>q</em>).  Find the corresponding phase-space
+transformation <em>C</em>.  Compare the transformation equations for the
+rectangular components of the momenta to those for the rectangular
+components of the velocities.  Are you surprised, considering
+equation&nbsp;(<a href="#EQUATION_5.10">5.10</a>)?</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_328" href="#call_footnote_Temp_328"><sup><small>1</small></sup></a>  Solving for <em>p</em> in terms of <em>p</em>' involves multiplying
+equation&nbsp;(<a href="#EQUATION_5.3">5.3</a>) on the right by (<img src="front-Z-G-D-2.gif" border="0"><sub>1</sub>
+<em>F</em>(<em>t</em>, <em>q</em>'))<sup><tt>-</tt>1</sup>.  This inverse is the structure that when multiplying
+<img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>F</em>(<em>t</em>, <em>q</em>') on the right gives an identity structure.
+Structures representing linear transformations may be represented in
+terms of matrices.  In this case, the matrix representation of the
+inverse structure is the inverse of the matrix representing the
+given structure.</p>
+
+<p><a name="footnote_Temp_329" href="#call_footnote_Temp_329"><sup><small>2</small></sup></a> In chapter&nbsp;<a href="book-Z-H-7.html#%_chap_1">1</a> the
+<a name="%_idx_2454"></a><a name="%_idx_2456"></a>  transformation <em>C</em> takes a local tuple in one coordinate system and
+gives a local tuple in another coordinate system.  In this chapter <em>C</em>
+is a phase-space transformation.</p>
+
+<p><a name="footnote_Temp_330" href="#call_footnote_Temp_330"><sup><small>3</small></sup></a> The velocities and the momenta are dual geometric objects
+<a name="%_idx_2460"></a><a name="%_idx_2462"></a><a name="%_idx_2464"></a>  with respect to time-independent point transformations.  The
+velocities comprise a vector field on the configuration manifold, and
+the momenta comprise a covector field on the configuration manifold.
+The invariance of the inner product <em>p</em> <em>v</em> under point transformations
+provides the motivation for our use of superscripts for velocity
+components and subscripts for momentum components.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-57.html">previous</a></span><span>, <a href="book-Z-H-59.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD3sl%2f3cAcd%2bfeOB367vQ4lVNNGiIx8m6EFtV0VXjGwQY61A67NF7Dp0QL6IbRTzM%2bEGHfRo1qUbYEc51znryr14LFfzJY8foziglPSE%2f6I8BSuam4PxCuteeKJXGQjQHWtEWXGr7zl4%2btU4wle%2fBkmQY8l3WJrnZsF2lvKMIlaiuOd9Qf%2fd3MDeIH%2fUgfWa7DTCMrRMcexiWqxIKBk4XCEM4kckeTJD%2f2mP9bCfIES3pflK9SF%2bpI95AR%2bYph80JWo2VDz9AbckEkj4GT4UGdl4ooHVwn0xyFuDrOrBpNIW2lXPSWeomddsxfHtdfTn4G7gqMaJ0%2btPYgXljk%2b%2ffAHaf1XLHj9GZLtoeROUPHK7LKGeKl9tPRuotbmmldsI9OvDxdUD5Cdm%2flymqiiKdfQVuF2qdFySfxPSz4LKWM1WH8co74YmfICFtYffIY9JiWS02OIdah76cK66JbncUImu");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

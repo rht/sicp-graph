@@ -1,0 +1,449 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-66.html">previous</a></span><span>, <a href="book-Z-H-68.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_5.10"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_5.10">5.10&nbsp;&nbsp;Lie Series</a></h2>
+<p><a name="%_idx_2858"></a>
+Taylor's theorem gives us a way of approximating the value of a nice
+enough function at a point near to a point where the value is known.
+If we know <em>f</em> and all of its derivatives at <em>t</em> then we can get the
+value of <em>f</em>(<em>t</em> + <img src="chap1-Z-G-D-12.gif" border="0">), for small enough <img src="chap1-Z-G-D-12.gif" border="0">, as follows:
+<a name="EQUATION_5.444"></a></p>
+<div align=left><img src="chap5-Z-G-412.gif" border="0"></div>
+<p>
+We recall that the power series for the exponential function is
+<a name="EQUATION_5.445"></a></p>
+<div align=left><img src="chap5-Z-G-413.gif" border="0"></div>
+<p> 
+This suggests that we can formally construct a Taylor-series operator
+<a name="%_idx_2860"></a>as the exponential of a differential operator<a name="call_footnote_Temp_412" href="#footnote_Temp_412"><sup><small>34</small></sup></a>
+<a name="EQUATION_5.446"></a></p>
+<div align=left><img src="chap5-Z-G-414.gif" border="0"></div>
+<p> 
+and write
+<a name="EQUATION_5.447"></a></p>
+<div align=left><img src="chap5-Z-G-415.gif" border="0"></div>
+<p>
+We have to be a bit careful here: (<img src="chap1-Z-G-D-12.gif" border="0"> <em>D</em>)<sup>2</sup>  =  <img src="chap1-Z-G-D-12.gif" border="0"> <em>D</em>
+<img src="chap1-Z-G-D-12.gif" border="0"> <em>D</em>.  We can turn it into <img src="chap1-Z-G-D-12.gif" border="0"><sup>2</sup> <em>D</em><sup>2</sup> only because
+<img src="chap1-Z-G-D-12.gif" border="0"> is a scalar constant, which commutes with every
+differential operator.  But with this caveat in mind we can 
+define the differential operator
+<a name="EQUATION_5.448"></a></p>
+<div align=left><img src="chap5-Z-G-416.gif" border="0"></div>
+<p></p>
+<p>
+Before going on, it is interesting to compute with these a bit.  In
+the code transcripts that follow we develop the series by
+exponentiation.  We can examine the series incrementally by looking at
+successive elements of the (infinite) sequence of terms of the series.
+<a name="%_idx_2862"></a>The procedure <tt>series:for-each</tt> is an incremental traverser that
+applies its first argument to successive elements of the series given
+as its second argument.  The third argument (when given) specifies the
+number of terms to be traversed.  In each of the following transcripts
+we print simplified expressions for the successive terms.</p>
+<p>
+The first thing to look at is the general Taylor expansion for an
+unknown literal function, expanded around <em>t</em>, with 
+increment&nbsp;<img src="chap1-Z-G-D-12.gif" border="0">.  Understanding what we see in this simple problem will
+help us understand more complex problems later.
+</p>
+<p><tt>(series:for-each&nbsp;print-expression<br>
+&nbsp;(((exp&nbsp;(*&nbsp;'epsilon&nbsp;D))<br>
+&nbsp;&nbsp;&nbsp;(literal-function&nbsp;'f))<br>
+&nbsp;&nbsp;'t)<br>
+&nbsp;6)<br>
+<br>
+(f&nbsp;t)<br>
+(*&nbsp;((D&nbsp;f)&nbsp;t)&nbsp;epsilon)<br>
+(*&nbsp;1/2&nbsp;(((expt&nbsp;D&nbsp;2)&nbsp;f)&nbsp;t)&nbsp;(expt&nbsp;epsilon&nbsp;2))<br>
+(*&nbsp;1/6&nbsp;(((expt&nbsp;D&nbsp;3)&nbsp;f)&nbsp;t)&nbsp;(expt&nbsp;epsilon&nbsp;3))<br>
+(*&nbsp;1/24&nbsp;(((expt&nbsp;D&nbsp;4)&nbsp;f)&nbsp;t)&nbsp;(expt&nbsp;epsilon&nbsp;4))<br>
+(*&nbsp;1/120&nbsp;(((expt&nbsp;D&nbsp;5)&nbsp;f)&nbsp;t)&nbsp;(expt&nbsp;epsilon&nbsp;5))<br>
+<i>...</i><br>
+</p>
+</tt>
+<p></p>
+<p>
+We can also look at the expansions of particular functions that we
+recognize, such as the expansion of sin around 0.
+</p>
+<p><tt>(series:for-each&nbsp;print-expression<br>
+&nbsp;&nbsp;&nbsp;(((exp&nbsp;(*&nbsp;'epsilon&nbsp;D))&nbsp;sin)&nbsp;0)<br>
+&nbsp;&nbsp;&nbsp;6)<br>
+<br>
+0<br>
+epsilon<br>
+0<br>
+(*&nbsp;-1/6&nbsp;(expt&nbsp;epsilon&nbsp;3))<br>
+0<br>
+(*&nbsp;1/120&nbsp;(expt&nbsp;epsilon&nbsp;5))<br>
+<i>...</i><br>
+</p>
+</tt>
+<p></p>
+<p>
+It is often instructive to expand functions we usually don't remember,
+such as <em>f</em>(<em>x</em>)  =  (1 + <em>x</em>)<sup>1/2</sup>.
+</p>
+<p><tt>(series:for-each&nbsp;print-expression<br>
+&nbsp;(((exp&nbsp;(*&nbsp;'epsilon&nbsp;D))<br>
+&nbsp;&nbsp;&nbsp;(lambda&nbsp;(x)&nbsp;(sqrt&nbsp;(+&nbsp;x&nbsp;1))))<br>
+&nbsp;&nbsp;0)<br>
+&nbsp;6)<br>
+<br>
+1<br>
+(*&nbsp;1/2&nbsp;epsilon)<br>
+(*&nbsp;-1/8&nbsp;(expt&nbsp;epsilon&nbsp;2))<br>
+(*&nbsp;1/16&nbsp;(expt&nbsp;epsilon&nbsp;3))<br>
+(*&nbsp;-5/128&nbsp;(expt&nbsp;epsilon&nbsp;4))<br>
+(*&nbsp;7/256&nbsp;(expt&nbsp;epsilon&nbsp;5))<br>
+<i>...</i><br>
+</p>
+</tt>
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_5.27"></a>
+<b>Exercise 5.27.</b>&nbsp;&nbsp;<strong>Binomial series</strong><br></p>
+<p>
+Develop the binomial expansion of (1 + <em>x</em>)<sup><em>n</em></sup> as a Taylor expansion.  Of
+course, it must be the case that for <em>n</em> a positive integer all of the
+coefficients except for the first <em>n</em> + 1 are zero.  However, in the
+general case, for symbolic <em>n</em>, the coefficients are rather
+complicated polynomials in <em>n</em>.  For example, you will find that the 
+seventh term is
+</p>
+<p><tt>(+&nbsp;(*&nbsp;1/5040&nbsp;(expt&nbsp;n&nbsp;7))<br>
+&nbsp;&nbsp;&nbsp;(*&nbsp;-1/240&nbsp;(expt&nbsp;n&nbsp;6))<br>
+&nbsp;&nbsp;&nbsp;(*&nbsp;5/144&nbsp;(expt&nbsp;n&nbsp;5))<br>
+&nbsp;&nbsp;&nbsp;(*&nbsp;-7/48&nbsp;(expt&nbsp;n&nbsp;4))<br>
+&nbsp;&nbsp;&nbsp;(*&nbsp;29/90&nbsp;(expt&nbsp;n&nbsp;3))<br>
+&nbsp;&nbsp;&nbsp;(*&nbsp;-7/20&nbsp;(expt&nbsp;n&nbsp;2))<br>
+&nbsp;&nbsp;&nbsp;(*&nbsp;1/7&nbsp;n))<br>
+</p>
+</tt>
+<p>These terms must evaluate to the entries in Pascal's triangle.  In
+particular, this polynomial must be zero for <em>n</em>&lt;7.  How is this arranged? 
+</p>
+
+<p></p>
+<p>
+
+
+</p>
+<a name="%_sec_Temp_414"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_414">Dynamics</a></h4>
+<p>Now, to play this game with dynamical functions we want to provide a
+derivative-like operator that we can exponentiate, which will give us
+the time-advance operator.  The key idea is to write the derivative of the
+<a name="%_idx_2864"></a><a name="%_idx_2866"></a>function in terms of the Poisson bracket.
+Equation&nbsp;(<a href="book-Z-H-37.html#EQUATION_3.79">3.79</a>) shows how to do this in
+general:<a name="EQUATION_5.449"></a></p>
+<div align=left><img src="chap5-Z-G-417.gif" border="0"></div>
+<p>
+We define the operator <em>D</em><sub><em>H</em></sub> by
+<a name="EQUATION_5.450"></a></p>
+<div align=left><img src="chap5-Z-G-418.gif" border="0"></div>
+<p>
+so
+<a name="EQUATION_5.451"></a></p>
+<div align=left><img src="chap5-Z-G-419.gif" border="0"></div>
+<p>
+and iterates of this operator
+can be used to compute higher-order derivatives:
+<a name="EQUATION_5.452"></a></p>
+<div align=left><img src="chap5-Z-G-420.gif" border="0"></div>
+<p>
+We can express the advance of the path function <em>f</em> = <em>F</em><small>o</small><img src="chap3-Z-G-D-5.gif" border="0"> for an interval
+<img src="chap1-Z-G-D-12.gif" border="0"> with respect to <em>H</em> as a power series in the
+derivative operator <em>D</em><sub><em>H</em></sub> applied to the phase-space function <em>F</em> and
+then composed with the path:
+<a name="EQUATION_5.453"></a></p>
+<div align=left><img src="chap5-Z-G-421.gif" border="0"></div>
+<p>
+Indeed, we can implement the time-advance operator with this series
+when it converges.</p>
+<p>
+</p>
+<p><a name="%_thm_5.28"></a>
+<b>Exercise 5.28.</b>&nbsp;&nbsp;<strong>Iterated derivatives</strong><br>
+Show that equation&nbsp;(<a href="#EQUATION_5.452">5.452</a>) is correct.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_5.29"></a>
+<b>Exercise 5.29.</b>&nbsp;&nbsp;<strong>Lagrangian analog</strong><br>
+Compare <em>D</em><sub><em>H</em></sub> with the total time derivative operator.
+Recall that
+</p>
+<div align=left><img src="chap5-Z-G-422.gif" border="0"></div>
+<p>
+abstracts the derivative of a function of a path through state space to a function 
+of the derivatives of the path.  Define another derivative 
+operator <em>D</em><sub><em>L</em></sub>, analogous to <em>D</em><sub><em>H</em></sub>, that would give the time derivative of functions along 
+Lagrangian state paths that are solutions of Lagrange's equations for a given
+Lagrangian.  How might this be useful?
+</p>
+
+<p></p>
+<p>
+For time-independent Hamiltonian <em>H</em> and time-independent state
+function <em>F</em>,
+we can simplify the computation of the advance of <em>F</em>.  In this case
+<a name="%_idx_2868"></a><a name="%_idx_2870"></a><a name="%_idx_2872"></a><a name="%_idx_2874"></a><a name="%_idx_2876"></a>we define the <em>Lie derivative operator</em> <em>L</em><sub><em>H</em></sub> such that
+<a name="EQUATION_5.454"></a></p>
+<div align=left><img src="chap5-Z-G-423.gif" border="0"></div>
+<p>
+which reads ``the Lie derivative of <em>F</em> with respect to <em>H</em>.''<a name="call_footnote_Temp_417" href="#footnote_Temp_417"><sup><small>35</small></sup></a>
+So
+<a name="EQUATION_5.455"></a></p>
+<div align=left><img src="chap5-Z-G-424.gif" border="0"></div>
+<p>
+and for time-independent <em>F</em>
+<a name="EQUATION_5.456"></a></p>
+<div align=left><img src="chap5-Z-G-425.gif" border="0"></div>
+<p>
+We can iterate this process to compute higher derivatives.  So
+<a name="EQUATION_5.457"></a></p>
+<div align=left><img src="chap5-Z-G-426.gif" border="0"></div>
+<p>
+and successively higher-order Poisson brackets of <em>F</em> with <em>H</em> give
+successively higher-order derivatives when evaluated on the
+trajectory.  </p>
+<p>
+Let <em>f</em>  =  <em>F</em> <small>o</small> <img src="chap3-Z-G-D-5.gif" border="0">.  We have
+<a name="EQUATION_5.458"></a></p>
+<div align=left><img src="chap5-Z-G-427.gif" border="0"></div>
+<p>
+Thus we can rewrite the advance of the path function <em>f</em> for an interval
+<img src="chap1-Z-G-D-12.gif" border="0"> with respect to <em>H</em> as a power series in the
+Lie derivative operator applied to the phase-space function <em>F</em> and
+then composed with the path:
+<a name="EQUATION_5.460"></a></p>
+<div align=left><img src="chap5-Z-G-428.gif" border="0"></div>
+<p>
+We can implement the time-advance operator <em>E</em>'<sub><img src="chap1-Z-G-D-12.gif" border="0">,<em>H</em></sub> with the
+<em>Lie series</em> <em>e</em><sup><img src="chap1-Z-G-D-12.gif" border="0"> <em>L</em><sub><em>H</em></sub></sup> <em>F</em> when this series converges:
+<a name="%_idx_2884"></a><a name="%_idx_2886"></a><a name="%_idx_2888"></a><a name="EQUATION_5.461"></a></p>
+<div align=left><img src="chap5-Z-G-429.gif" border="0"></div>
+<p></p>
+<p>
+
+<a name="%_idx_2890"></a>We have shown that time evolution is canonical, so the series above are
+formal representations of canonical transformations as power
+series in the time.  These series may not converge, even if the
+evolution governed by the Hamiltonian <em>H</em> is well defined.  </p>
+<p>
+</p>
+<a name="%_sec_Temp_418"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_418">Computing Lie series</a></h4>
+<p><a name="%_idx_2892"></a>
+We can use the Lie transform as a computational tool to
+examine the local evolution of dynamical systems.  We define the Lie derivative of <em>F</em> as a derivative-like operator
+relative to the given Hamiltonian function, <em>H</em>:<a name="call_footnote_Temp_419" href="#footnote_Temp_419"><sup><small>36</small></sup></a>
+</p>
+<p><tt><a name="%_idx_2900"></a>(define&nbsp;((Lie-derivative&nbsp;H)&nbsp;F)<br>
+&nbsp;&nbsp;(Poisson-bracket&nbsp;F&nbsp;H))<br>
+</p>
+</tt>
+<p>
+<a name="%_idx_2902"></a>We also define a procedure to implement the Lie
+transform:<a name="call_footnote_Temp_420" href="#footnote_Temp_420"><sup><small>37</small></sup></a>
+</p>
+<p><tt><a name="%_idx_2904"></a>(define&nbsp;(Lie-transform&nbsp;H&nbsp;t)<br>
+&nbsp;&nbsp;(exp&nbsp;(*&nbsp;t&nbsp;(Lie-derivative&nbsp;H))))<br>
+</p>
+</tt>
+<p></p>
+<p>
+<a name="%_idx_2906"></a><a name="%_idx_2908"></a>Let's start by examining the beginning of the Lie series for the
+position of a simple harmonic oscillator of mass <em>m</em> and spring
+constant <em>k</em>.  We can implement the Hamiltonian as
+</p>
+<p><tt><a name="%_idx_2910"></a>(define&nbsp;((H-harmonic&nbsp;m&nbsp;k)&nbsp;state)<br>
+&nbsp;&nbsp;(+&nbsp;(/&nbsp;(square&nbsp;(momentum&nbsp;state))&nbsp;(*&nbsp;2&nbsp;m))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;1/2&nbsp;k&nbsp;(square&nbsp;(coordinate&nbsp;state)))))<br>
+</p>
+</tt>
+<p>We make the Lie transform (series) by passing the <tt>Lie-transform</tt>
+operator an appropriate Hamiltonian function and an
+interval to evolve for.  The resulting operator is then given the <tt>coordinate</tt> procedure, which selects the position coordinates from the
+phase-space state.  The Lie transform operator returns 
+a procedure that, when given a phase-space state composed of a dummy
+time, a position
+<tt>x0</tt>, and a momentum <tt>p0</tt>, returns the position resulting
+from advancing that state by the interval <tt>dt</tt>.
+</p>
+<p><tt>(series:for-each&nbsp;print-expression<br>
+&nbsp;(((Lie-transform&nbsp;(H-harmonic&nbsp;'m&nbsp;'k)&nbsp;'dt)<br>
+&nbsp;&nbsp;&nbsp;coordinate)<br>
+&nbsp;&nbsp;(up&nbsp;0&nbsp;'x0&nbsp;'p0))<br>
+&nbsp;6)<br>
+<br>
+x0<br>
+(/&nbsp;(*&nbsp;dt&nbsp;p0)&nbsp;m)<br>
+(/&nbsp;(*&nbsp;-1/2&nbsp;(expt&nbsp;dt&nbsp;2)&nbsp;k&nbsp;x0)&nbsp;m)<br>
+(/&nbsp;(*&nbsp;-1/6&nbsp;(expt&nbsp;dt&nbsp;3)&nbsp;k&nbsp;p0)&nbsp;(expt&nbsp;m&nbsp;2))<br>
+(/&nbsp;(*&nbsp;1/24&nbsp;(expt&nbsp;dt&nbsp;4)&nbsp;(expt&nbsp;k&nbsp;2)&nbsp;x0)&nbsp;(expt&nbsp;m&nbsp;2))<br>
+(/&nbsp;(*&nbsp;1/120&nbsp;(expt&nbsp;dt&nbsp;5)&nbsp;(expt&nbsp;k&nbsp;2)&nbsp;p0)&nbsp;(expt&nbsp;m&nbsp;3))<br>
+<i>...</i><br>
+</p>
+</tt>
+<p>
+We should recognize the terms of this series.  We start with the
+initial position <em>x</em><sub>0</sub>.  The first-order correction (<em>p</em><sub>0</sub>/<em>m</em>) <em>d</em><em>t</em>
+is due to the initial velocity.  Next we find an acceleration term
+( <tt>-</tt> <em>k</em> <em>x</em><sub>0</sub>/2<em>m</em>) <em>d</em><em>t</em><sup>2</sup> due to the restoring force of the
+spring at the initial position.  </p>
+<p>
+The Lie transform is just as appropriate for showing us how the
+momentum evolves over the interval:
+</p>
+<p><tt>(series:for-each&nbsp;print-expression<br>
+&nbsp;(((Lie-transform&nbsp;(H-harmonic&nbsp;'m&nbsp;'k)&nbsp;'dt)<br>
+&nbsp;&nbsp;&nbsp;momentum)<br>
+&nbsp;&nbsp;(up&nbsp;0&nbsp;'x0&nbsp;'p0))<br>
+&nbsp;6)<br>
+<br>
+p0<br>
+(*&nbsp;-1&nbsp;dt&nbsp;k&nbsp;x0)<br>
+(/&nbsp;(*&nbsp;-1/2&nbsp;(expt&nbsp;dt&nbsp;2)&nbsp;k&nbsp;p0)&nbsp;m)<br>
+(/&nbsp;(*&nbsp;1/6&nbsp;(expt&nbsp;dt&nbsp;3)&nbsp;(expt&nbsp;k&nbsp;2)&nbsp;x0)&nbsp;m)<br>
+(/&nbsp;(*&nbsp;1/24&nbsp;(expt&nbsp;dt&nbsp;4)&nbsp;(expt&nbsp;k&nbsp;2)&nbsp;p0)&nbsp;(expt&nbsp;m&nbsp;2))<br>
+(/&nbsp;(*&nbsp;-1/120&nbsp;(expt&nbsp;dt&nbsp;5)&nbsp;(expt&nbsp;k&nbsp;3)&nbsp;x0)&nbsp;(expt&nbsp;m&nbsp;2))<br>
+<i>...</i><br>
+</p>
+</tt>
+<p>
+In this series we see how the initial momentum <em>p</em><sub>0</sub> is corrected by
+the effect of the restoring force  <tt>-</tt> <em>k</em> <em>x</em><sub>0</sub> <em>d</em><em>t</em>, etc.</p>
+<p>
+What is a bit more fun is to see how a more complex phase-space
+function is treated by the Lie series
+expansion.  In the experiment below we examine the Lie series
+developed by advancing the harmonic-oscillator Hamiltonian, by means of
+the transform generated by the same harmonic-oscillator Hamiltonian: 
+</p>
+<p><tt>(series:for-each&nbsp;print-expression<br>
+&nbsp;(((Lie-transform&nbsp;(H-harmonic&nbsp;'m&nbsp;'k)&nbsp;'dt)<br>
+&nbsp;&nbsp;&nbsp;(H-harmonic&nbsp;'m&nbsp;'k))<br>
+&nbsp;&nbsp;(up&nbsp;0&nbsp;'x0&nbsp;'p0))<br>
+&nbsp;6)<br>
+<br>
+(/&nbsp;(+&nbsp;(*&nbsp;1/2&nbsp;k&nbsp;m&nbsp;(expt&nbsp;x0&nbsp;2))&nbsp;(*&nbsp;1/2&nbsp;(expt&nbsp;p0&nbsp;2)))&nbsp;m)<br>
+0<br>
+0<br>
+0<br>
+0<br>
+0<br>
+<i>...</i><br>
+</p>
+</tt>
+<p>
+As we would hope, the series shows us the original energy expression
+(<em>k</em>/2)<em>x</em><sub>0</sub><sup>2</sup>  +  (1/2<em>m</em>)<em>p</em><sub>0</sub><sup>2</sup> as the first term.  Each
+subsequent correction term turns out to be zero -- because the energy
+is conserved.</p>
+<p>
+Of course, the Lie series can be used in much more complex situations
+where we want to see the expansion of the motion of a system
+characterized by a more complex Hamiltonian.  The planar motion of a
+particle in a general central field (see equation&nbsp;<a href="book-Z-H-40.html#EQUATION_3.99">3.99</a>) is a simple problem for which the
+<a name="%_idx_2912"></a><a name="%_idx_2914"></a>Lie series is instructive.  In the following transcript we can see how
+rapidly the series becomes complicated.  It is worth one's while to
+try to interpret the additive parts of the third (acceleration) term
+shown below:
+</p>
+<p><tt>(series:for-each&nbsp;print-expression<br>
+&nbsp;(((Lie-transform<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(H-central-polar&nbsp;'m&nbsp;(literal-function&nbsp;'U))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'dt)<br>
+&nbsp;&nbsp;&nbsp;coordinate)<br>
+&nbsp;&nbsp;(up&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(up&nbsp;'r_0&nbsp;'phi_0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(down&nbsp;'p_r_0&nbsp;'p_phi_0)))<br>
+&nbsp;4)<br>
+(up&nbsp;r_0&nbsp;phi_0)<br>
+(up&nbsp;(/&nbsp;(*&nbsp;dt&nbsp;p_r_0)&nbsp;m)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(/&nbsp;(*&nbsp;dt&nbsp;p_phi_0)&nbsp;(*&nbsp;m&nbsp;(expt&nbsp;r_0&nbsp;2))))<br>
+(up<br>
+&nbsp;(+&nbsp;(/&nbsp;(*&nbsp;-1/2&nbsp;((D&nbsp;U)&nbsp;r_0)&nbsp;(expt&nbsp;dt&nbsp;2))&nbsp;m)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(/&nbsp;(*&nbsp;1/2&nbsp;(expt&nbsp;dt&nbsp;2)&nbsp;(expt&nbsp;p_phi_0&nbsp;2))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;(expt&nbsp;m&nbsp;2)&nbsp;(expt&nbsp;r_0&nbsp;3))))<br>
+&nbsp;(/&nbsp;(*&nbsp;-1&nbsp;(expt&nbsp;dt&nbsp;2)&nbsp;p_phi_0&nbsp;p_r_0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;(expt&nbsp;m&nbsp;2)&nbsp;(expt&nbsp;r_0&nbsp;3))))<br>
+(up<br>
+&nbsp;(+&nbsp;(/&nbsp;(*&nbsp;-1/6&nbsp;(((expt&nbsp;D&nbsp;2)&nbsp;U)&nbsp;r_0)&nbsp;(expt&nbsp;dt&nbsp;3)&nbsp;p_r_0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(expt&nbsp;m&nbsp;2))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(/&nbsp;(*&nbsp;-1/2&nbsp;(expt&nbsp;dt&nbsp;3)&nbsp;(expt&nbsp;p_phi_0&nbsp;2)&nbsp;p_r_0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;(expt&nbsp;m&nbsp;3)&nbsp;(expt&nbsp;r_0&nbsp;4))))<br>
+&nbsp;(+&nbsp;(/&nbsp;(*&nbsp;1/3&nbsp;((D&nbsp;U)&nbsp;r_0)&nbsp;(expt&nbsp;dt&nbsp;3)&nbsp;p_phi_0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;(expt&nbsp;m&nbsp;2)&nbsp;(expt&nbsp;r_0&nbsp;3)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(/&nbsp;(*&nbsp;-1/3&nbsp;(expt&nbsp;dt&nbsp;3)&nbsp;(expt&nbsp;p_phi_0&nbsp;3))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;(expt&nbsp;m&nbsp;3)&nbsp;(expt&nbsp;r_0&nbsp;6)))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(/&nbsp;(*&nbsp;(expt&nbsp;dt&nbsp;3)&nbsp;p_phi_0&nbsp;(expt&nbsp;p_r_0&nbsp;2))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*&nbsp;(expt&nbsp;m&nbsp;3)&nbsp;(expt&nbsp;r_0&nbsp;4)))))<br>
+<i>...</i><br>
+</p>
+</tt>
+<p></p>
+<p>
+Of course, if we know the closed-form Lie transform it is probably a
+good idea to take advantage of it, but when we do not know the closed
+form the Lie series representation of it can come in handy.</p>
+<p>
+
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_412" href="#call_footnote_Temp_412"><sup><small>34</small></sup></a> We are playing
+fast and loose with differential operators here.  In a formal
+treatment it is essential to prove that these games are mathematically
+well defined and have appropriate convergence properties.</p>
+
+<p><a name="footnote_Temp_417" href="#call_footnote_Temp_417"><sup><small>35</small></sup></a> Our <em>L</em><sub><em>H</em></sub> is a special case of what is referred to as a Lie 
+<a name="%_idx_2878"></a><a name="%_idx_2880"></a><a name="%_idx_2882"></a>derivative in differential geometry.  The more general idea is that a
+vector field defines a flow.  The Lie derivative of an object with respect to
+a vector field gives the rate of change of the object as it is dragged
+along with the flow.  In our case the flow is the evolution generated
+by Hamilton's equations, with Hamiltonian <em>H</em>.</p>
+
+<p><a name="footnote_Temp_419" href="#call_footnote_Temp_419"><sup><small>36</small></sup></a> Actually, we
+define the Lie derivative slightly differently, as follows:
+</p>
+<p><tt><a name="%_idx_2894"></a>(define&nbsp;((Lie-derivative-procedure&nbsp;H)&nbsp;F)<br>
+&nbsp;&nbsp;(Poisson-bracket&nbsp;F&nbsp;H))<br>
+(define&nbsp;Lie-derivative<br>
+&nbsp;&nbsp;(make-operator&nbsp;Lie-derivative-procedure&nbsp;'Lie-derivative))<br>
+</p>
+</tt>
+<p>
+<a name="%_idx_2896"></a><a name="%_idx_2898"></a>The reason is that we want <tt>Lie-derivative</tt> to be an <em>operator</em>, which is just like a function except that the product of
+operators is interpreted as composition while the product of
+functions is the function computing the product of their values.</p>
+
+<p><a name="footnote_Temp_420" href="#call_footnote_Temp_420"><sup><small>37</small></sup></a> The <tt>Lie-transform</tt> procedure here is also
+defined to be an operator, just like <tt>Lie-derivative</tt>.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-66.html">previous</a></span><span>, <a href="book-Z-H-68.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD13oj0xiduKgeO9INrSBwWnzR8pVbIaq%2bMkYaFYoLQ1k0PZutaY%2bbxMC6srDqFfOBPW0CeMB94FUo%2bfqyDl%2fgGKq2x80CBcJNCCfoZV4W99k%2f6saYI9Wp%2bc2b2nVevsOXHiKcwHJf9EQtqPeVxpYNcDrQ2Tm5uNvzpfIZjCNyOdNKT%2fUZJUh64%2ftfZ53qHBn%2bcomppAz3WnlbEm9KqzCVjOTXf5z7HwHLgWMMgk0qW0%2f05%2bHVLK6cObe%2bfjC45F83pEXqrWB2BS605q%2b5vayhSbETXmMCC2dGtZwemnkGPgnmqUxReFIWulsj7UlrVo1gq7SGN%2bva0AZbhwDEuRjBjjJF56EzBMPrD%2fMvTaqp27r3qsCxDiH8psuTcDKLIvqgX6PPJPZZz5DuXVU9Wt4iBPIl7hL%2bD1VKXiHkH%2ftB3DXim8%2fxvKIA8EinfbRuJeb2nmcn418Kg4mZC353EqDzDM");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

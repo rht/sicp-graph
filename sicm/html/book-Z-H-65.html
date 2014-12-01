@@ -1,0 +1,596 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-64.html">previous</a></span><span>, <a href="book-Z-H-66.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_5.8"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_5.8">5.8&nbsp;&nbsp;Hamilton-Jacobi Equation</a></h2>
+<p><a name="%_idx_2806"></a>
+If we could find a canonical transformation so that the transformed
+Hamiltonian was identically zero, then by Hamilton's equations the new
+coordinates and momenta would be constants.  All of the time variation
+of the solution would be captured in the canonical transformation, and
+there would be nothing more to the solution.  The mixed-variable
+generating function that does this job satisfies a partial
+differential equation called the Hamilton-Jacobi equation.  In most
+cases, the Hamilton-Jacobi equation cannot be solved explicitly.  When
+it can be solved, however, the Hamilton-Jacobi equation provides a means of
+reducing a problem to a useful simple form.</p>
+<p>
+Recall the relations satisfied by an <em>F</em><sub>2</sub>-type generating
+function:
+<a name="EQUATION_5.360"></a></p>
+<div align=left><img src="chap5-Z-G-325.gif" border="0"></div>
+<p>
+If we require the new Hamiltonian to be zero, then <em>F</em><sub>2</sub> must satisfy
+the equation
+<a name="EQUATION_5.361"></a></p>
+<div align=left><img src="chap5-Z-G-326.gif" border="0"></div>
+<p>
+So the solution of the problem is ``reduced'' to the problem of
+solving an <em>n</em>-dimensional partial differential equation for <em>F</em><sub>2</sub>
+with unspecified new (constant) momenta <em>p</em>'.  This is the
+Hamilton-Jacobi equation, and in some cases we can solve it.</p>
+<p>
+We can also attempt a somewhat less drastic method of solution.
+Rather than try to find an <em>F</em><sub>2</sub> that makes the new Hamiltonian
+identically zero, we can seek an <em>F</em><sub>2</sub>-shaped function <em>W</em> that
+gives a new Hamiltonian that is solely a function of the new momenta.
+A system described by this form of Hamiltonian is also easy to solve.
+So if we set
+<a name="EQUATION_5.362"></a></p>
+<div align=left><img src="chap5-Z-G-327.gif" border="0"></div>
+<p>
+and are able to solve for <em>W</em>, then the problem is essentially solved.
+In this case, the primed momenta are all constant and the primed
+positions are linear in time.  This is an alternate form of the
+Hamilton-Jacobi equation.</p>
+<p>
+These forms are related.  Suppose that we have a <em>W</em> that satisfies
+the second form of the Hamilton-Jacobi
+equation&nbsp;(<a href="#EQUATION_5.361">5.361</a>).  Then the <em>F</em><sub>2</sub> constructed
+from <em>W</em>
+<a name="EQUATION_5.363"></a></p>
+<div align=left><img src="chap5-Z-G-328.gif" border="0"></div>
+<p>
+satisfies the first form of the Hamilton-Jacobi equation&nbsp;(<a href="#EQUATION_5.360">5.360</a>).
+Furthermore,
+<a name="EQUATION_5.364"></a></p>
+<div align=left><img src="chap5-Z-G-329.gif" border="0"></div>
+<p>
+so the primed momenta are the same in the two formulations.  But
+<a name="EQUATION_5.365"></a></p>
+<div align=left><img src="chap5-Z-G-330.gif" border="0"></div>
+<p>
+so we see that the primed coordinates differ by a term that is linear
+in time -- both <em>p</em>'(<em>t</em>) = <em>p</em>'<sub>0</sub> and <em>q</em>'(<em>t</em>) = <em>q</em>'<sub>0</sub> are constant.
+Thus we can use either <em>W</em> or <em>F</em><sub>2</sub> as the generating function,
+depending on the form of the new Hamiltonian we want.</p>
+<p>
+Note that if <em>H</em> is time independent then we can often find a
+time-independent <em>W</em> that does the job.  For time-independent <em>W</em> the
+<a name="%_idx_2808"></a>Hamilton-Jacobi equation simplifies to
+<a name="EQUATION_5.366"></a></p>
+<div align=left><img src="chap5-Z-G-331.gif" border="0"></div>
+<p>
+The corresponding <em>F</em><sub>2</sub> is then linear in time.  Notice that an
+implicit requirement is that the energy can be written as a function 
+of the new momenta alone.  This excludes the possibility that the
+transformed phase-space coordinates <em>q</em>' and <em>p</em>' are simply initial
+conditions for <em>q</em> and <em>p</em>.</p>
+<p>
+It turns out that there is flexibility in the choice of the function <em>E</em>.
+With an appropriate choice the phase-space
+coordinates obtained through the transformation generated by <em>W</em> are
+<a name="%_idx_2810"></a><a name="%_idx_2812"></a>action-angle coordinates.</p>
+<p>
+</p>
+<p><a name="%_thm_5.23"></a>
+<b>Exercise 5.23.</b>&nbsp;&nbsp;<strong>Hamilton-Jacobi with <em>F</em><sub>1</sub></strong><br></p>
+<p>
+We have used an <em>F</em><sub>2</sub>-type generating function to carry out the
+Hamilton-Jacobi transformations. Carry out the equivalent
+transformations with an <em>F</em><sub>1</sub>-type generating function.  Find the
+equations corresponding to equations&nbsp;(<a href="#EQUATION_5.360">5.360</a>),
+(<a href="#EQUATION_5.361">5.361</a>), and (<a href="#EQUATION_5.365">5.365</a>).</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_5.8.1"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.8.1">5.8.1&nbsp;&nbsp;Harmonic Oscillator</a></h3>
+<p><a name="%_idx_2814"></a><a name="%_idx_2816"></a>
+Consider the familiar time-independent Hamiltonian
+<a name="EQUATION_5.367"></a></p>
+<div align=left><img src="chap5-Z-G-332.gif" border="0"></div>
+<p>
+We form the Hamilton-Jacobi equation for this problem:
+<a name="EQUATION_5.368"></a></p>
+<div align=left><img src="chap5-Z-G-333.gif" border="0"></div>
+<p>
+Using <em>F</em><sub>2</sub>(<em>t</em>, <em>x</em>, <em>p</em>')  =  <em>W</em>(<em>t</em>, <em>x</em>, <em>p</em>')  <tt>-</tt>  <em>E</em>(<em>p</em>') <em>t</em>, we find
+<a name="EQUATION_5.369"></a></p>
+<div align=left><img src="chap5-Z-G-334.gif" border="0"></div>
+<p>
+Writing this out explicitly yields
+<a name="EQUATION_5.370"></a></p>
+<div align=left><img src="chap5-Z-G-335.gif" border="0"></div>
+<p>
+and solving for <img src="front-Z-G-D-2.gif" border="0"><sub>1</sub> <em>W</em> gives
+<a name="EQUATION_5.371"></a></p>
+<div align=left><img src="chap5-Z-G-336.gif" border="0"></div>
+<p>
+Integrating gives the desired <em>W</em>:
+<a name="EQUATION_5.372"></a></p>
+<div align=left><img src="chap5-Z-G-337.gif" border="0"></div>
+<p></p>
+<p>
+
+We can use either <em>W</em> or the corresponding <em>F</em><sub>2</sub> as the generating function.
+First, take <em>W</em> to be the generating function.  We obtain the coordinate 
+transformation by differentiating:
+<a name="EQUATION_5.373"></a></p>
+<div align=left><img src="chap5-Z-G-338.gif" border="0"></div>
+<p>
+and then integrating to get
+<a name="EQUATION_5.374"></a></p>
+<div align=left><img src="chap5-Z-G-339.gif" border="0"></div>
+<p>
+with some integration constant <em>C</em>(<em>p</em>').  Inverting this, we get the 
+unprimed coordinate in terms of the primed coordinate and momentum:
+<a name="EQUATION_5.375"></a></p>
+<div align=left><img src="chap5-Z-G-340.gif" border="0"></div>
+<p>
+The new Hamiltonian <em>H</em>' depends only on the momentum:
+<a name="EQUATION_5.376"></a></p>
+<div align=left><img src="chap5-Z-G-341.gif" border="0"></div>
+<p>
+The equations of motion are just
+<a name="EQUATION_5.377"></a></p>
+<div align=left><img src="chap5-Z-G-342.gif" border="0"></div>
+<p>
+with solution
+<a name="EQUATION_5.378"></a></p>
+<div align=left><img src="chap5-Z-G-343.gif" border="0"></div>
+<p>
+for initial conditions <em>x</em>'<sub>0</sub> and <em>p</em>'<sub>0</sub>.
+If we plug these expressions for <em>x</em>'(<em>t</em>) and <em>p</em>'(<em>t</em>) into equation&nbsp;(<a href="#EQUATION_5.374">5.374</a>) we
+find
+<a name="EQUATION_5.379"></a></p>
+<div align=left><img src="chap5-Z-G-344.gif" border="0"></div>
+<p>
+where the angular frequency is <img src="chap1-Z-G-D-23.gif" border="0">  =  (<em>k</em>/<em>m</em>)<sup>1/2</sup>, the amplitude is
+<em>A</em>  =  (2<em>E</em>(<em>p</em>')/<em>k</em>)<sup>1/2</sup>, and the phase is <img src="chap1-Z-G-D-16.gif" border="0">  =   <tt>-</tt>  <img src="chap1-Z-G-D-23.gif" border="0"> <em>t</em><sub>0</sub>  =  <img src="chap1-Z-G-D-23.gif" border="0">
+(<em>x</em>'<sub>0</sub>  <tt>-</tt>  <em>C</em>(<em>p</em>'))/<em>D</em><em>E</em>(<em>p</em>').  </p>
+<p>
+We can also use <em>F</em><sub>2</sub>  =  <em>W</em>  <tt>-</tt>  <em>E</em> <em>t</em> as the generating function.  The
+new Hamiltonian is zero, so both <em>x</em>' and <em>p</em>' are constant, but the
+relationship between the old and new variables is
+<a name="EQUATION_5.380"></a></p>
+<div align=left><img src="chap5-Z-G-345.gif" border="0"></div>
+<p>
+Plugging in the solution <em>x</em>'  =  <em>x</em>'<sub>0</sub> and <em>p</em>'  =  <em>p</em>'<sub>0</sub> and solving
+for&nbsp;<em>x</em>, 
+we find equation&nbsp;(<a href="#EQUATION_5.378">5.378</a>).  So once again we see 
+that the two approaches are equivalent.</p>
+<p>
+It is interesting to note that the solution depends upon the constants
+<em>E</em>(<em>p</em>') and <em>D</em><em>E</em>(<em>p</em>'), but otherwise the motion is not dependent in any
+essential way on what the function <em>E</em> actually is.  The momentum <em>p</em>'
+is constant and the values of the constants are set by the initial
+conditions.  Given a particular function <em>E</em>, the initial conditions
+determine <em>p</em>', but the solution can be obtained without further
+specifying the <em>E</em> function.</p>
+<p>
+If we choose particular functions <em>E</em> we can get particular canonical
+transformations.  For example, a convenient choice is simply
+<a name="EQUATION_5.381"></a></p>
+<div align=left><img src="chap5-Z-G-346.gif" border="0"></div>
+<p>
+for some constant <img src="chap1-Z-G-D-21.gif" border="0"> that will be chosen later.  We find 
+<a name="EQUATION_5.382"></a></p>
+<div align=left><img src="chap5-Z-G-347.gif" border="0"></div>
+<p>
+So we see that a convenient choice is <img src="chap1-Z-G-D-21.gif" border="0">  =  <img src="chap1-Z-G-D-23.gif" border="0">  =  (<em>k</em>/<em>m</em>)<sup>1/2</sup>,
+so
+<a name="EQUATION_5.383"></a></p>
+<div align=left><img src="chap5-Z-G-348.gif" border="0"></div>
+<p>
+with <i>&szlig;</i>  =  (<em>k</em><em>m</em>)<sup>1/2</sup>. The new Hamiltonian is 
+<a name="EQUATION_5.384"></a></p>
+<div align=left><img src="chap5-Z-G-349.gif" border="0"></div>
+<p>
+The solution are just <em>x</em>'  =  <img src="chap1-Z-G-D-23.gif" border="0"> <em>t</em>  +  <em>x</em>'<sub>0</sub> and <em>p</em>'  =  <em>p</em>'<sub>0</sub>.
+Substituting the expression for
+<em>x</em> in terms of <em>x</em>' and <em>p</em>' into <em>H</em>(<em>t</em>, <em>x</em>, <em>p</em>)  =  <em>H</em>'(<em>t</em>, <em>x</em>', <em>p</em>'), we derive
+<a name="EQUATION_5.385"></a></p>
+<div align=left><img src="chap5-Z-G-350.gif" border="0"></div>
+<p>
+The two transformation equations&nbsp;(<a href="#EQUATION_5.382">5.382</a>) and
+(<a href="#EQUATION_5.383">5.383</a>) are what we have called the polar-canonical
+transformation (equation&nbsp;<a href="book-Z-H-59.html#EQUATION_5.34">5.34</a>).  We have already shown that
+this transformation is canonical and that it solves the harmonic
+oscillator, but it was not derived.  Here we have derived this
+transformation as a particular case of the solution of the
+Hamilton-Jacobi equation.</p>
+<p>
+We can also explore other choices for the <em>E</em> function.  For example,
+we could choose
+<a name="EQUATION_5.386"></a></p>
+<div align=left><img src="chap5-Z-G-351.gif" border="0"></div>
+<p>
+Following the same steps as before, we find
+<a name="EQUATION_5.387"></a></p>
+<div align=left><img src="chap5-Z-G-352.gif" border="0"></div>
+<p>
+So a convenient choice is again <img src="chap1-Z-G-D-21.gif" border="0">  =  <img src="chap1-Z-G-D-23.gif" border="0">, leaving
+<a name="EQUATION_5.388"></a></p>
+<div align=left><img src="chap5-Z-G-353.gif" border="0"></div>
+<p>
+with <i>&szlig;</i>  =  (<em>k</em><em>m</em>)<sup>1/4</sup>.  By construction, this transformation is 
+also canonical and also brings the harmonic oscillator problem into an
+easily solvable form:
+<a name="EQUATION_5.389"></a></p>
+<div align=left><img src="chap5-Z-G-354.gif" border="0"></div>
+<p> 
+The harmonic oscillator Hamiltonian has been transformed to what looks
+a lot like the Hamiltonian for a free particle.  This is very
+interesting.  Notice that whereas
+Hamiltonian&nbsp;(<a href="#EQUATION_5.383">5.383</a>) does not have a well
+defined Legendre transform to an equivalent Lagrangian, the ``free
+particle'' harmonic oscillator has a well defined Legendre
+transform: 
+<a name="EQUATION_5.390"></a></p>
+<div align=left><img src="chap5-Z-G-355.gif" border="0"></div>
+<p>
+Of course, there may be additional properties that make one choice
+more useful than others for particular applications.</p>
+<p>
+</p>
+<p><a name="%_thm_5.24"></a>
+<b>Exercise 5.24.</b>&nbsp;&nbsp;<strong>Pendulum</strong><br></p>
+<p>
+Solve the Hamilton-Jacobi equation for the pendulum; investigate both
+the circulating and oscillating regions of phase space.  (Note: This
+is a long story and requires some knowledge of elliptic functions.)</p>
+<p>
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_5.8.2"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.8.2">5.8.2&nbsp;&nbsp;Kepler Problem</a></h3>
+<p><a name="%_idx_2818"></a><a name="%_idx_2820"></a>
+We can use the Hamilton-Jacobi equation to find canonical coordinates
+that solve the Kepler problem.  This is an essential first step in
+doing perturbation theory for orbital problems.  </p>
+<p>
+<a name="%_idx_2822"></a>In rectangular coordinates (<em>x</em>, <em>y</em>, <em>z</em>), the Kepler Hamiltonian is
+<a name="EQUATION_5.391"></a></p>
+<div align=left><img src="chap5-Z-G-356.gif" border="0"></div>
+<p>
+where <em>r</em><sup>2</sup>  =  <em>x</em><sup>2</sup>  +  <em>y</em><sup>2</sup>  +  <em>z</em><sup>2</sup> and <em>p</em><sup>2</sup>  =  <em>p</em><sub><em>x</em></sub><sup>2</sup>  +  <em>p</em><sub><em>y</em></sub><sup>2</sup>  +  <em>p</em><sub><em>z</em></sub><sup>2</sup>.  
+The Kepler problem describes the relative motion of
+two bodies; it is also encountered in the formulation of other
+problems involving orbital motion, such as the <em>n</em>-body problem.</p>
+<p>
+We try a generating function of the form <em>W</em>(<em>t</em>; <em>x</em>, <em>y</em>, <em>z</em>; <em>p</em>'<sub><em>x</em></sub>, <em>p</em>'<sub><em>y</em></sub>,
+<em>p</em>'<sub><em>z</em></sub>).  The Hamilton-Jacobi equation is then<a name="call_footnote_Temp_403" href="#footnote_Temp_403"><sup><small>30</small></sup></a>
+<a name="EQUATION_5.392"></a></p>
+<div align=left><img src="chap5-Z-G-357.gif" border="0"></div>
+<p>
+This is a partial differential equation in the three partial
+derivatives of <em>W</em>.  We stare at it a while and give up.</p>
+<p>
+<a name="%_idx_2824"></a>Next we try converting to spherical coordinates.  This is motivated by
+the fact that the potential energy depends only on <em>r</em>.  The Hamiltonian in
+spherical coordinates (<em>r</em>, <img src="chap1-Z-G-D-19.gif" border="0">, <img src="chap1-Z-G-D-16.gif" border="0">), where <img src="chap1-Z-G-D-19.gif" border="0"> is the
+colatitude and <img src="chap1-Z-G-D-16.gif" border="0"> is the longitude, is
+<a name="EQUATION_5.393"></a></p>
+<div align=left><img src="chap5-Z-G-358.gif" border="0"></div>
+<p>
+The Hamilton-Jacobi equation is 
+<a name="EQUATION_5.394"></a></p>
+<div align=left><img src="chap5-Z-G-359.gif" border="0"></div>
+<p></p>
+<p>
+We can solve the Hamilton-Jacobi equation by successively isolating
+the dependence on the various variables.  Looking first at the <img src="chap1-Z-G-D-16.gif" border="0">
+dependence, we see that, outside of <em>W</em>, <img src="chap1-Z-G-D-16.gif" border="0"> appears only in one
+partial derivative.  If we write 
+<a name="EQUATION_5.395"></a></p>
+<div align=left><img src="chap5-Z-G-360.gif" border="0"></div>
+<p>
+then <img src="front-Z-G-D-2.gif" border="0"><sub>1,2</sub><em>W</em>(<em>t</em>; <em>r</em>, <img src="chap1-Z-G-D-19.gif" border="0">, <img src="chap1-Z-G-D-16.gif" border="0">; <em>p</em>'<sub>0</sub>, <em>p</em>'<sub>1</sub>, <em>p</em>'<sub>2</sub>)  =  <em>p</em>'<sub>2</sub>, and then <img src="chap1-Z-G-D-16.gif" border="0"> does not appear in
+the remaining equation for <em>f</em>:
+<a name="EQUATION_5.396"></a></p>
+<div align=left><img src="chap5-Z-G-361.gif" border="0"></div>
+<p>
+Any function of the <em>p</em>'<sub><em>i</em></sub> could have been used as the coefficient of
+<img src="chap1-Z-G-D-16.gif" border="0"> in the generating function.  This particular choice has the
+nice feature that <em>p</em>'<sub>2</sub> is the <em>z</em> component of the angular momentum.</p>
+<p>
+We can eliminate the <img src="chap1-Z-G-D-19.gif" border="0"> dependence if we choose
+<a name="EQUATION_5.397"></a></p>
+<div align=left><img src="chap5-Z-G-362.gif" border="0"></div>
+<p>
+and require that <img src="chap5-Z-G-D-15.gif" border="0"> be a solution to
+<a name="EQUATION_5.398"></a></p>
+<div align=left><img src="chap5-Z-G-363.gif" border="0"></div>
+<p>
+We are free to choose the right-hand side to be any function of the
+new momenta.  This choice reflects the fact that the left-hand side is
+non-negative.  It turns out that <em>p</em>'<sub>1</sub> is the total angular momentum.
+This equation for <img src="chap5-Z-G-D-15.gif" border="0"> can be solved by quadrature.</p>
+<p>
+The remaining equation that determines <em>R</em> is 
+<a name="EQUATION_5.399"></a></p>
+<div align=left><img src="chap5-Z-G-364.gif" border="0"></div>
+<p>
+which also can be solved by quadrature.</p>
+<p>
+Altogether the solution of the Hamilton-Jacobi equation reads
+<a name="EQUATION_5.400"></a></p>
+<div align=left><img src="chap5-Z-G-365.gif" border="0"></div>
+<p></p>
+<p>
+It is interesting that our solution to the Hamilton-Jacobi
+partial differential equation is of the form
+<a name="EQUATION_5.401"></a></p>
+<div align=left><img src="chap5-Z-G-366.gif" border="0"></div>
+<p>
+Thus we have a separation-of-variables technique that involves writing
+the solution as a sum of functions of the individual variables.  This
+might be contrasted with the separation-of-variables technique
+encountered in elementary quantum mechanics and classical
+electrodynamics, which uses products of functions of individual
+variables.  However, integrable problems in classical mechanics are
+rare, so it would be incorrect to think of this method as a general
+solution method.</p>
+<p>
+The coordinates <em>q</em>'  =  (<em>q</em><sup>/ 0</sup>, <em>q</em><sup>/ 1</sup>, <em>q</em><sup>/ 2</sup>) conjugate to the momenta
+<em>p</em>'  =  [<em>p</em>'<sub>0</sub>, <em>p</em>'<sub>1</sub>, <em>p</em>'<sub>2</sub>] are
+<a name="EQUATION_5.401"></a></p>
+<div align=left><img src="chap5-Z-G-367.gif" border="0"></div>
+<p></p>
+<p>
+
+We are still free to choose the functional form of <em>E</em>.  A convenient
+(and conventional) choice is
+<a name="EQUATION_5.402"></a></p>
+<div align=left><img src="chap5-Z-G-368.gif" border="0"></div>
+<p>
+With this choice the momentum <em>p</em>'<sub>0</sub> has dimensions of angular
+momentum, and the conjugate coordinate is an angle.</p>
+<p>
+The Hamiltonian for the Kepler problem is reduced to
+<a name="EQUATION_5.403"></a></p>
+<div align=left><img src="chap5-Z-G-369.gif" border="0"></div>
+<p>
+Thus 
+<a name="EQUATION_5.406"></a></p>
+<div align=left><img src="chap5-Z-G-370.gif" border="0"></div>
+<p>
+where <em>n</em>  =  <em>m</em> &micro;<sup>2</sup> / (<em>p</em>'<sub>0</sub>)<sup>3</sup> and where <i>&szlig;</i><sup>0</sup>, <i>&szlig;</i><sup>1</sup>, and
+<i>&szlig;</i><sup>2</sup> are the initial values of the components of <em>q</em>'.  Only one
+of the new variables changes with time.<a name="call_footnote_Temp_404" href="#footnote_Temp_404"><sup><small>31</small></sup></a>
+</p>
+<a name="%_sec_5.8.3"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.8.3">5.8.3&nbsp;&nbsp;<em>F</em><sub>2</sub> and the Lagrangian</a></h3>
+<p><a name="%_idx_2828"></a><a name="%_idx_2830"></a><a name="%_idx_2832"></a><a name="%_idx_2834"></a>
+The solution to the Hamilton-Jacobi equation, the mixed-variable
+generating function that generates time evolution, is related to the
+action used in the variational principle.  In particular, the time
+derivative of the generating function along 
+realizable paths has the same value as the Lagrangian.</p>
+<p>
+Let <img src="chap1-Z-G-D-47.gif" border="0"><sub>2</sub> (<em>t</em>)  =  <em>F</em><sub>2</sub>(<em>t</em>, <em>q</em>(<em>t</em>), <em>p</em>'(<em>t</em>)) be the value of <em>F</em><sub>2</sub>
+along the paths <em>q</em>  and <em>p</em>' at time <em>t</em>.
+The derivative of <img src="chap1-Z-G-D-47.gif" border="0"><sub>2</sub> is
+<a name="EQUATION_5.407"></a></p>
+<div align=left><img src="chap5-Z-G-371.gif" border="0"></div>
+<p>
+where we have used the relation for <em>p</em> in terms of <em>F</em><sub>2</sub> in the first
+term.  Using the Hamilton-Jacobi equation&nbsp;(<a href="#EQUATION_5.360">5.360</a>),
+this becomes 
+<a name="EQUATION_5.408"></a></p>
+<div align=left><img src="chap5-Z-G-372.gif" border="0"></div>
+<p>
+On realizable paths we have  <em>D</em><em>p</em>'(<em>t</em>)  =  0, so along realizable paths
+the time derivative of <em>F</em><sub>2</sub> is the same as the Lagrangian along the
+path.  The time integral of the Lagrangian along any path is the
+action along that path.  This means that, up to an additive term that
+is constant on realizable paths but may be a function of the
+transformed phase-space coordinates <em>q</em>' and <em>p</em>',
+the <em>F</em><sub>2</sub> that solves the Hamilton-Jacobi equation has the same value
+as the Lagrangian action for realizable paths.</p>
+<p>
+The same conclusion follows for the Hamilton-Jacobi equation
+formulated in terms of <em>F</em><sub>1</sub>.  Up to an additive term that
+is constant on realizable paths but may be a function of the
+transformed phase-space coordinates <em>q</em>' and <em>p</em>', the <em>F</em><sub>1</sub>
+that solves the corresponding Hamilton-Jacobi equation has the same
+value as the Lagrangian action for realizable paths.  </p>
+<p>
+Recall that a transformation given by an <em>F</em><sub>2</sub>-type generating function is also
+given by an <em>F</em><sub>1</sub>-type generating function related to it by a 
+Legendre transform (see equation <a href="book-Z-H-63.html#EQUATION_5.195">5.195</a>):
+<a name="EQUATION_5.409"></a></p>
+<div align=left><img src="chap5-Z-G-373.gif" border="0"></div>
+<p>
+provided the transformations are nonsingular.  In this case, both
+<em>q</em>' and <em>p</em>' are constant on realizable paths, so the additive
+constants that make <em>F</em><sub>1</sub> and <em>F</em><sub>2</sub> equal to the Lagrangian action
+differ by <em>q</em>' <em>p</em>'.</p>
+<p>
+
+</p>
+<p><a name="%_thm_5.25"></a>
+<b>Exercise 5.25.</b>&nbsp;&nbsp;<strong>Harmonic oscillator</strong><br></p>
+<p>
+Let's check this for the harmonic oscillator (of course).  </p>
+<p>
+<strong>a</strong>.&nbsp;&nbsp;Finish the integral&nbsp;(<a href="#EQUATION_5.371">5.371</a>):
+</p>
+<div align=left><img src="chap5-Z-G-374.gif" border="0"></div>
+<p>
+Write the result in terms of the amplitude <em>A</em>  =  (2<em>E</em>(<em>p</em>')/<em>k</em>)<sup>1/2</sup>.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Check that this generating function gives the transformation
+</p>
+<div align=left><img src="chap5-Z-G-375.gif" border="0"></div>
+<p>
+which is the same as equation&nbsp;(<a href="#EQUATION_5.373">5.373</a>) for a
+particular choice of the integration constant.  The other part of the
+transformation is
+</p>
+<div align=left><img src="chap5-Z-G-376.gif" border="0"></div>
+<p>
+with the same definition of <em>A</em> as before.  </p>
+<p>
+<strong>c</strong>.&nbsp;&nbsp;Compute the time derivative of the associated <em>F</em><sub>2</sub> along
+realizable paths (<em>D</em><em>p</em>'(<em>t</em>)  =  0), and compare to the Lagrangian along 
+realizable paths.</p>
+<p>
+
+</p>
+
+<p></p>
+<p>
+</p>
+<a name="%_sec_5.8.4"></a>
+<h3><a href="book-Z-H-4.html#%_toc_%_sec_5.8.4">5.8.4&nbsp;&nbsp;The Action Generates Time Evolution</a></h3>
+<p><a name="%_idx_2836"></a><a name="%_idx_2838"></a>
+We define the function <img src="chap5-Z-G-D-16.gif" border="0">(<em>t</em><sub>1</sub>, <em>q</em><sub>1</sub>, <em>t</em><sub>2</sub>, <em>q</em><sub>2</sub>) to be the value
+of the action for a realizable path <em>q</em> such that <em>q</em>(<em>t</em><sub>1</sub>)  =  <em>q</em><sub>1</sub> and
+<em>q</em>(<em>t</em><sub>2</sub>)  =  <em>q</em><sub>2</sub>.  So <img src="chap5-Z-G-D-16.gif" border="0"> satisfies
+<a name="EQUATION_5.410"></a></p>
+<div align=left><img src="chap5-Z-G-377.gif" border="0"></div>
+<p></p>
+<p>
+For variations <img src="chap1-Z-G-D-13.gif" border="0"> that are not necessarily zero at the end times
+and for realizable paths <em>q</em>, the variation of the action is
+<a name="EQUATION_5.411"></a></p>
+<div align=left><img src="chap5-Z-G-378.gif" border="0"></div>
+<p>
+Alternatively, the variation of <em>S</em>[<em>q</em>] in
+equation&nbsp;(<a href="#EQUATION_5.409">5.409</a>) gives
+<a name="EQUATION_5.412"></a></p>
+<div align=left><img src="chap5-Z-G-379.gif" border="0"></div>
+<p>
+Comparing equations&nbsp;(<a href="#EQUATION_5.410">5.410</a>) and
+(<a href="#EQUATION_5.411">5.411</a>) and using the fact that the variation
+<img src="chap1-Z-G-D-13.gif" border="0"> is arbitrary,  we find
+<a name="EQUATION_5.413"></a></p>
+<div align=left><img src="chap5-Z-G-380.gif" border="0"></div>
+<p>
+The partial derivatives of <img src="chap5-Z-G-D-16.gif" border="0"> with respect to the coordinate
+arguments give the momenta.  Abstracting off paths, we have
+<a name="EQUATION_5.414"></a></p>
+<div align=left><img src="chap5-Z-G-381.gif" border="0"></div>
+<p>
+This looks a bit like the <em>F</em><sub>1</sub>-type generating function relations,
+but here there are two times.</p>
+<p>
+Given a realizable path <em>q</em> such that <em>q</em>(<em>t</em><sub>1</sub>) = <em>q</em><sub>1</sub> and <em>q</em>(<em>t</em><sub>2</sub>) = <em>q</em><sub>2</sub>,
+we get the partial derivatives with respect to the time slots:
+<a name="EQUATION_5.415"></a></p>
+<div align=left><img src="chap5-Z-G-382.gif" border="0"></div>
+<p>
+Therefore
+<a name="EQUATION_5.416"></a></p>
+<div align=left><img src="chap5-Z-G-383.gif" border="0"></div>
+<p>
+and similarly
+<a name="EQUATION_5.417"></a></p>
+<div align=left><img src="chap5-Z-G-384.gif" border="0"></div>
+<p>
+<a name="%_idx_2840"></a>These are a pair of the Hamilton-Jacobi equations, computed at the
+endpoints of the path.
+<a name="%_idx_2842"></a>
+
+Solving equations&nbsp;(<a href="#EQUATION_5.413">5.413</a>) for <em>q</em><sub>2</sub> and <em>p</em><sub>2</sub> as
+functions of <em>t</em><sub>2</sub> and the initial state <em>t</em><sub>1</sub>, <em>q</em><sub>1</sub>, <em>p</em><sub>1</sub>, we get
+the time evolution of the system in terms of <img src="chap5-Z-G-D-16.gif" border="0">.
+The function <img src="chap5-Z-G-D-16.gif" border="0"> generates time evolution.</p>
+<p>
+The function <img src="chap5-Z-G-D-16.gif" border="0"> can be written in terms of the <em>F</em><sub>2</sub> or <em>F</em><sub>1</sub>
+that solves the Hamilton-Jacobi equation.  We can compute time
+evolution by using the <em>F</em><sub>2</sub> solution of the Hamilton-Jacobi equation
+to express the state (<em>t</em><sub>1</sub>, <em>q</em><sub>1</sub>, <em>p</em><sub>1</sub>) in terms of the constants <em>q</em>' and <em>p</em>' at a
+given time <em>t</em><sub>1</sub>.  We can then perform a subsequent transformation back
+from <em>q</em>' <em>p</em>' to the original state variables at a different time
+<em>t</em><sub>2</sub>, giving the state (<em>t</em><sub>2</sub>, <em>q</em><sub>2</sub>, <em>p</em><sub>2</sub>).  The composition of
+canonical transformations is canonical.  The generating function for
+the composition is the difference of the generating functions for each
+step:
+<a name="EQUATION_5.418"></a></p>
+<div align=left><img src="chap5-Z-G-385.gif" border="0"></div>
+<p>
+with the condition
+<a name="EQUATION_5.419"></a></p>
+<div align=left><img src="chap5-Z-G-386.gif" border="0"></div>
+<p>
+which allows us to eliminate <em>p</em>'.</p>
+<p>
+</p>
+<p><a name="%_thm_5.26"></a>
+<b>Exercise 5.26.</b>&nbsp;&nbsp;<strong>Uniform acceleration</strong><br></p>
+<p>
+<br><strong>a</strong>.&nbsp;&nbsp;Compute the Lagrangian action, as a function of the
+endpoints and times, for a uniformly accelerated particle.  Use this
+to construct the canonical transformation for time evolution from a
+given initial state.</p>
+<p>
+<strong>b</strong>.&nbsp;&nbsp;Solve the Hamilton-Jacobi equation for the uniformly
+accelerated particle, obtaining the <em>F</em><sub>2</sub> that makes the transformed
+Hamiltonian zero.  Show that the Lagrangian action can be expressed as
+a difference of two applications of this <em>F</em><sub>2</sub>.
+</p>
+
+<p></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_403" href="#call_footnote_Temp_403"><sup><small>30</small></sup></a> Remember that <img src="front-Z-G-D-2.gif" border="0"><sub>1,0</sub> means the derivative with respect to the first coordinate position.</p>
+
+<p><a name="footnote_Temp_404" href="#call_footnote_Temp_404"><sup><small>31</small></sup></a> 
+<a name="%_idx_2826"></a>The canonical phase-space coordinates can be written in terms of the
+parameters that specify an orbit.  We merely summarize the
+results;  for further explanation see [<a href="book-Z-H-80.html#cite{Plummer}">36</a>] or
+[<a href="book-Z-H-80.html#cite{Almanac}">38</a>].  </p>
+<p>
+Assume we have a bound orbit with semimajor axis <em>a</em>,
+eccentricity <em>e</em>, inclination <em>i</em>, longitude of ascending node
+<img src="chap1-Z-G-D-57.gif" border="0">, argument of pericenter <img src="chap1-Z-G-D-23.gif" border="0">, and mean anomaly <em>M</em>.  The
+three canonical momenta are
+<em>p</em>'<sub>0</sub>  =  (<em>m</em> &micro; <em>a</em>)<sup>1/2</sup>,
+<em>p</em>'<sub>1</sub>  =  (<em>m</em> &micro; <em>a</em> (1  <tt>-</tt>  <em>e</em><sup>2</sup>))<sup>1/2</sup>, and
+<em>p</em>'<sub>2</sub>   =  (<em>m</em> &micro; <em>a</em> (1  <tt>-</tt>  <em>e</em><sup>2</sup>))<sup>1/2</sup> cos <em>i</em>.
+The first momentum is related to the energy, the second momentum is
+the total angular momentum, and the third momentum is the component of
+the angular momentum in the <img src="chap2-Z-G-D-7.gif" border="0"> direction.  The conjugate
+canonical coordinates are (<em>q</em>')<sup>0</sup>  =  <em>M</em>, (<em>q</em>')<sup>1</sup>  =  <img src="chap1-Z-G-D-23.gif" border="0">, and (<em>q</em>')<sup>2</sup>  =  <img src="chap1-Z-G-D-57.gif" border="0">.
+</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-64.html">previous</a></span><span>, <a href="book-Z-H-66.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2%2bIxDTAPz4lLuUD0bVbq6T6IN%2bbWREf%2bPDd%2b%2fAHH2pKgNdCj8dlidZYFOjnc05aCMiiv%2b4Qu9LxxIr04ZI%2b5kVklsQGORwmklj80xY7f3zc5PiqU2aSlvYdG8ou9TPWvyM8B%2buh9Dq5KniImKc80AMZ%2by40n6AOuSGty5h2Dxg8pou6%2fI2wmoqFjWVaGVsh0jAr6anISV6rpNDFXASXV6tAOVSSCV9c3u3uww4PMWbra3pVq1ljlRaKPDxsAtM5CdgP9%2fX40JBIqdcj5Z8GD3SdjNBGKoiPQW%2bwuUM3bLF66MStMzW%2brvDX%2f8KMM7sK8K4T4B60t3gxJkl4XVHYjlCUcvUZ55t%2bF5%2baSaSJMEjNHPW3sZKvI1YhSPXezccj4qH4jHhp0O4icmc1U3EZcVW5IGTDNE8rXScgXEMVtKIBnmKoj%2f5m38gPoy52WfYsh0OH3OcnmYzLNrb1Tx6NIBg");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>

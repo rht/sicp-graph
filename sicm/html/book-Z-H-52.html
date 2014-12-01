@@ -1,0 +1,247 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<!-- Generated from TeX source by tex2page, v 4p3, 
+     (c) Dorai Sitaram, http://www.cs.rice.edu/~dorai/tex2page -->
+<head>
+<title>
+
+Structure and Interpretation 
+of Classical Mechanics
+
+</title>
+<link rel="stylesheet" type="text/css" href="book-Z-C.css" title=default>
+<meta name=robots content="noindex,follow">
+</head>
+<body>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-51.html">previous</a></span><span>, <a href="book-Z-H-53.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<a name="%_sec_4.4"></a>
+<h2><a href="book-Z-H-4.html#%_toc_%_sec_4.4">4.4&nbsp;&nbsp;Integrable Systems</a></h2>
+<p><a name="%_idx_2290"></a>
+Islands appear near <a name="%_idx_2292"></a><a name="%_idx_2294"></a><a name="%_idx_2296"></a><a name="%_idx_2298"></a>commensurabilities, and commensurabilities are
+present even in integrable systems.  In integrable systems an infinite
+number of periodic orbits are associated with each commensurability,
+but upon perturbation only a finite number of periodic orbits survive.
+How does this happen?  First we have to learn more about integrable
+systems.</p>
+<p>
+If an <em>n</em>-degree-of-freedom system has <em>n</em> independent conserved
+quantities then the solution of the problem can be reduced to
+<a name="%_idx_2300"></a><a name="%_idx_2302"></a>quadratures.  Such a system is called <em>integrable</em>.  Typically,
+the phase space of integrable systems is divided into regions of
+qualitatively different behavior.  For example, the motion of a
+pendulum is reducible to quadratures and has three distinct types of
+solutions: the oscillating solutions and the clockwise and
+counterclockwise circulating solutions.  The different regions of the
+pendulum phase space are separated by the trajectories that are
+asymptotic to the unstable equilibrium.  It turns out that for any
+system that is reducible to quadratures, a set of phase-space
+coordinates can be chosen for each region of the phase space so that
+the Hamiltonian describing the motion in that region depends only on
+the momenta.  Furthermore, if the phase space is bounded then the
+generalized coordinates can be chosen to be angles (that are 
+2<img src="chap1-Z-G-D-15.gif" border="0">-periodic).  The configuration space described by <em>n</em> angles is an
+<em>n</em>-torus.  The momenta conjugate to these angles are called <em>actions</em>.  Such phase-space coordinates are called <a name="%_idx_2304"></a><em>action-angle</em>
+coordinates.  We will see later how to reformulate systems in this
+way.
+Here we explore the consequences of such a formulation; this
+formulation is especially useful for finding out what happens as
+additional effects are added to integrable problems.</p>
+<p>
+</p>
+<a name="%_sec_Temp_312"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_312">Orbit types in integrable systems</a></h4>
+<p>Suppose we have a time-independent <em>n</em>-degree-of-freedom system
+that is reducible to quadratures.  For each region of phase space
+there is a local formulation of the system so that the evolution of
+the system is described by a time-independent Hamiltonian that depends
+only on the momenta.  Suppose further that the coordinates are all
+angles.  Let <img src="chap1-Z-G-D-19.gif" border="0"> be the tuple of angles and <em>J</em> be the tuple of
+conjugate momenta.  The <a name="%_idx_2306"></a><a name="%_idx_2308"></a>Hamiltonian is
+<a name="EQUATION_4.35"></a></p>
+<div align=left><img src="chap4-Z-G-44.gif" border="0"></div>
+<p>
+<a name="%_idx_2310"></a><a name="%_idx_2312"></a>Hamilton's equations are simply
+<a name="EQUATION_4.36"></a></p>
+<div align=left><img src="chap4-Z-G-45.gif" border="0"></div>
+<p>
+where <img src="chap1-Z-G-D-23.gif" border="0">(<em>J</em>)  =  <em>D</em> <em>f</em>(<em>J</em>) is a tuple of frequencies with a
+component for each degree of freedom.  The momenta are all constant
+because the Hamiltonian does not depend on any of the coordinates.  The motion
+of the coordinate angles is uniform; the rates of change of the angles
+are the frequencies <img src="chap1-Z-G-D-23.gif" border="0">, which depend only on the constant
+momenta.  Given initial values <img src="chap1-Z-G-D-19.gif" border="0">(<em>t</em><sub>0</sub>) and <em>J</em>(<em>t</em><sub>0</sub>) at time
+<em>t</em><sub>0</sub>, the solutions are simple:
+<a name="EQUATION_4.37"></a></p>
+<div align=left><img src="chap4-Z-G-46.gif" border="0"></div>
+<p></p>
+<p>
+Though the solutions are simple, there are a number of distinct orbit
+types: equilibrium solutions, periodic orbits, and quasiperiodic
+orbits, depending on the frequency ratios.</p>
+<p>
+If <img src="chap1-Z-G-D-23.gif" border="0">(<em>J</em>) is zero for some <em>J</em> then  <img src="chap1-Z-G-D-19.gif" border="0"> and <em>J</em> are both
+constant, for any <img src="chap1-Z-G-D-19.gif" border="0">.  The system is at an <a name="%_idx_2314"></a>equilibrium point.</p>
+<p>
+<a name="%_idx_2316"></a><a name="%_idx_2318"></a>A solution is <em>periodic</em> if all the coordinates (and momenta) of the
+system return to their initial values at some later
+time.  Each coordinate <img src="chap1-Z-G-D-19.gif" border="0"><sup><em>i</em></sup> with nonzero frequency
+<img src="chap1-Z-G-D-23.gif" border="0"><sup><em>i</em></sup>(<em>J</em>(<em>t</em><sub>0</sub>)) is periodic with a period <img src="chap2-Z-G-D-22.gif" border="0"><sub><em>i</em></sub>  = 
+2<img src="chap1-Z-G-D-15.gif" border="0">/<img src="chap1-Z-G-D-23.gif" border="0"><sup><em>i</em></sup>(<em>J</em>(<em>t</em><sub>0</sub>)).  The period of the system must therefore be an
+integer multiple <em>k</em><sub><em>i</em></sub> of each of the individual coordinate periods
+<img src="chap2-Z-G-D-22.gif" border="0"><sub><em>i</em></sub>.  If the system is periodic with some set of integer multiples,
+then it is also periodic with any common factors divided out.  Thus
+the period of the system is <img src="chap2-Z-G-D-22.gif" border="0">  =  (<em>k</em><sub><em>i</em></sub>/<em>d</em>) <img src="chap2-Z-G-D-22.gif" border="0"><sub><em>i</em></sub> where <em>d</em> is the
+greatest common divisor of the integers <em>k</em><sub><em>i</em></sub>.</p>
+<p>
+For a system with two degrees of freedom, a solution is periodic if
+there exists a pair of relatively prime integers <em>k</em> and <em>j</em> such that <em>k</em>
+<img src="chap1-Z-G-D-23.gif" border="0"><sup>0</sup>(<em>J</em>(<em>t</em><sub>0</sub>))  =  <em>j</em> <img src="chap1-Z-G-D-23.gif" border="0"><sup>1</sup>(<em>J</em>(<em>t</em><sub>0</sub>)).  The period of the system is
+<img src="chap2-Z-G-D-22.gif" border="0">  =  2 <img src="chap1-Z-G-D-15.gif" border="0"> <em>j</em> / <img src="chap1-Z-G-D-23.gif" border="0"><sup>0</sup>(<em>J</em>(<em>t</em><sub>0</sub>))  =  2 <img src="chap1-Z-G-D-15.gif" border="0"> <em>k</em> / <img src="chap1-Z-G-D-23.gif" border="0"><sup>1</sup>(<em>J</em>(<em>t</em><sub>0</sub>)); the
+frequency is <img src="chap1-Z-G-D-23.gif" border="0"><sup>0</sup>(<em>J</em>(<em>t</em><sub>0</sub>)) / <em>j</em>  =  <img src="chap1-Z-G-D-23.gif" border="0"><sup>1</sup>(<em>J</em>(<em>t</em><sub>0</sub>)) / <em>k</em>.  A
+periodic motion on the 2-torus is illustrated in
+figure&nbsp;<a href="#FIGURE_4.10">4.10</a>.</p>
+<p>
+<a name="FIGURE_4.10"></a></p>
+<div align=left><img src="chap4-Z-G-47.gif" border="0"></div>
+<p></p>
+<p>
+If the frequencies <img src="chap1-Z-G-D-23.gif" border="0"><sup><em>i</em></sup>(<em>J</em>(<em>t</em><sub>0</sub>)) satisfy an
+integer-coefficient relation sum<sub><em>i</em></sub> <em>n</em><sub><em>i</em></sub> <img src="chap1-Z-G-D-23.gif" border="0"><sup><em>i</em></sup>(<em>J</em>(<em>t</em><sub>0</sub>))  =  0, we say
+that the frequencies satisfy a <a name="%_idx_2320"></a>commensurability.
+If there is no commensurability for any nonzero integer coefficients,
+we say that the frequencies are linearly independent (with respect to
+the integers) and the solution is <a name="%_idx_2322"></a><a name="%_idx_2324"></a><em>quasiperiodic</em>.  One can prove
+that for <em>n</em> incommensurate frequencies all solutions come arbitrarily
+close to every point in the configuration space.<a name="call_footnote_Temp_313" href="#footnote_Temp_313"><sup><small>8</small></sup></a></p>
+<p>
+
+For a system with two degrees of freedom the solutions in a region
+described by a particular set of action-angle variables are either
+equilibrium solutions, periodic solutions, or quasiperiodic
+solutions.<a name="call_footnote_Temp_314" href="#footnote_Temp_314"><sup><small>9</small></sup></a>
+For systems with more than two degrees of freedom there are
+trajectories that are neither periodic nor quasiperiodic with <em>n</em>
+frequencies.  These are quasiperiodic with fewer frequencies and dense
+over a corresponding lower-dimensional torus.</p>
+<p>
+</p>
+<a name="%_sec_Temp_315"></a>
+<h4><a href="book-Z-H-4.html#%_toc_%_sec_Temp_315">Surfaces of section for integrable systems</a></h4>
+<p><a name="%_idx_2332"></a><a name="%_idx_2334"></a>
+As we have seen, in action-angle coordinates the angles move with
+constant angular frequencies, and the momenta are constant.  Thus
+<a name="%_idx_2336"></a><a name="%_idx_2338"></a>surfaces of section in action-angle coordinates are particularly
+simple.  We can make surfaces of section for time-independent 
+two-degree-of-freedom systems or one-degree-of-freedom systems with
+periodic drive.  In the latter case, one of the angles in the
+action-angle system is the phase of the drive.
+We make surfaces of section by accumulating points in one
+pair of canonical coordinates as the other coordinate goes through
+some particular value, such as zero.  If we plot the section points
+with the angle coordinate on the abscissa and the conjugate momentum
+on the ordinate then the section points for all trajectories lie on
+horizontal lines, as illustrated in 
+figure&nbsp;<a href="#FIGURE_4.11">4.11</a>.</p>
+<p>
+<a name="FIGURE_4.11"></a></p>
+<div align=left><img src="chap4-Z-G-48.gif" border="0"></div>
+<p></p>
+<p>
+For definiteness, let the plane of the surface of
+section be the (<img src="chap1-Z-G-D-19.gif" border="0"><sup>0</sup>, <em>J</em><sub>0</sub>) plane, and the section condition be
+<img src="chap1-Z-G-D-19.gif" border="0"><sup>1</sup>  =  0.  The other momentum <em>J</em><sub>1</sub> is chosen so that all the
+trajectories have the same energy.  The momenta are all constant, so
+for a given trajectory all points that are generated are constrained
+to a line of constant&nbsp;<em>J</em><sub>0</sub>.</p>
+<p>
+
+The time between section points is the period of <img src="chap1-Z-G-D-19.gif" border="0"><sup>1</sup>:
+<img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em>  =  2<img src="chap1-Z-G-D-15.gif" border="0"> / <img src="chap1-Z-G-D-23.gif" border="0"><sup>1</sup>(<em>J</em>(<em>t</em><sub>0</sub>)) because a section point is generated
+for every cycle of <img src="chap1-Z-G-D-19.gif" border="0"><sup>1</sup>.  The angle between successive points on
+the section is <img src="chap1-Z-G-D-23.gif" border="0"><sup>0</sup>(<em>J</em>(<em>t</em><sub>0</sub>)) <img src="chap1-Z-G-D-43.gif" border="0"> <em>t</em>  =  <img src="chap1-Z-G-D-23.gif" border="0"><sup>0</sup>(<em>J</em>(<em>t</em><sub>0</sub>)) 2 <img src="chap1-Z-G-D-15.gif" border="0"> /
+<img src="chap1-Z-G-D-23.gif" border="0"><sup>1</sup>(<em>J</em>(<em>t</em><sub>0</sub>))  =  2 <img src="chap1-Z-G-D-15.gif" border="0"> <img src="chap1-Z-G-D-14.gif" border="0">(<em>J</em>(<em>t</em><sub>0</sub>)), where <img src="chap1-Z-G-D-14.gif" border="0">(<em>J</em>)  =  <img src="chap1-Z-G-D-23.gif" border="0"><sup>0</sup>(<em>J</em>) /
+<img src="chap1-Z-G-D-23.gif" border="0"><sup>1</sup>(<em>J</em>) is called the <a name="%_idx_2340"></a><em>rotation number</em> of the trajectory.
+Let <img src="chap4-Z-G-D-2.gif" border="0">(<em>i</em>) and <img src="chap4-Z-G-D-3.gif" border="0">(<em>i</em>) be the <em>i</em>th point (<em>i</em> is an
+integer) in a sequence of points on the surface of section generated
+by a solution trajectory:
+<a name="EQUATION_4.38"></a></p>
+<div align=left><img src="chap4-Z-G-49.gif" border="0"></div>
+<p>
+where the system is assumed to be on the section at <em>t</em>  =  <em>t</em><sub>0</sub>.
+Along a trajectory, the map from one section point ( <img src="chap4-Z-G-D-2.gif" border="0">(<em>i</em>),
+<img src="chap4-Z-G-D-3.gif" border="0">(<em>i</em>) ) to the next ( 
+<img src="chap4-Z-G-D-2.gif" border="0">(<em>i</em> + 1), <img src="chap4-Z-G-D-3.gif" border="0">(<em>i</em> + 1) ) is of the form:<a name="call_footnote_Temp_316" href="#footnote_Temp_316"><sup><small>10</small></sup></a>
+<a name="EQUATION_4.39"></a></p>
+<div align=left><img src="chap4-Z-G-50.gif" border="0"></div>
+<p>
+As a function of the action on the section, the rotation number is
+<img src="chap4-Z-G-D-4.gif" border="0">(<img src="chap4-Z-G-D-3.gif" border="0">(0))  =  <img src="chap1-Z-G-D-14.gif" border="0">(<img src="chap4-Z-G-D-3.gif" border="0">(0), <em>J</em><sub>1</sub>(<em>t</em><sub>0</sub>)), where <em>J</em><sub>1</sub>(<em>t</em><sub>0</sub>)
+has the value required to be on the section, as for example by giving
+the correct energy.
+If the rotation number function <img src="chap4-Z-G-D-4.gif" border="0"> is strictly monotonic in the action coordinate
+on the section then the map is called a <a name="%_idx_2342"></a><a name="%_idx_2344"></a><em>twist map</em>.<a name="call_footnote_Temp_317" href="#footnote_Temp_317"><sup><small>11</small></sup></a></p>
+<p>
+On a surface of section the different types of orbits generate
+different patterns.  If the orbit is an equilibrium solution then the
+initial point on the surface of section is a fixed point.  The system
+just stays there.</p>
+<p>
+If the two frequencies are commensurate, then the trajectory is
+periodic and only a finite number of points are generated on the
+surface of section.  Both of the periodic solutions illustrated in
+figure&nbsp;<a href="#FIGURE_4.10">4.10</a> generate two points on the
+surface of section defined by <img src="chap1-Z-G-D-19.gif" border="0"><sup>1</sup> = 0.  If the frequencies are
+commensurate they satisfy a relation of the form <em>k</em>
+<img src="chap1-Z-G-D-23.gif" border="0"><sup>0</sup>(<em>J</em>(<em>t</em><sub>0</sub>))  =  <em>j</em> <img src="chap1-Z-G-D-23.gif" border="0"><sup>1</sup>(<em>J</em>(<em>t</em><sub>0</sub>)), where <em>J</em>(<em>t</em><sub>0</sub>)  =  (<img src="chap4-Z-G-D-3.gif" border="0">(0), <em>J</em><sub>1</sub>(<em>t</em><sub>0</sub>)) is
+the initial and constant value of the momentum tuple.  The
+motion is periodic with frequency <img src="chap1-Z-G-D-23.gif" border="0"><sup>0</sup>(<em>J</em>(<em>t</em><sub>0</sub>))/<em>j</em>  = 
+<img src="chap1-Z-G-D-23.gif" border="0"><sup>1</sup>(<em>J</em>(<em>t</em><sub>0</sub>))/<em>k</em>, so the period is 2<img src="chap1-Z-G-D-15.gif" border="0"> <em>j</em>/
+<img src="chap1-Z-G-D-23.gif" border="0"><sup>0</sup>(<em>J</em>(<em>t</em><sub>0</sub>))  =  2<img src="chap1-Z-G-D-15.gif" border="0"> <em>k</em>/ <img src="chap1-Z-G-D-23.gif" border="0"><sup>1</sup>(<em>J</em>(<em>t</em><sub>0</sub>)).  Thus this
+periodic orbit generates <em>k</em> points on this surface of section.  For
+trajectories with <a name="%_idx_2346"></a><a name="%_idx_2348"></a>commensurate frequencies the rotation number is
+rational: <img src="chap4-Z-G-D-4.gif" border="0">(<img src="chap4-Z-G-D-3.gif" border="0">(0))  =  <img src="chap1-Z-G-D-14.gif" border="0">(<img src="chap4-Z-G-D-3.gif" border="0">(0), <em>J</em><sub>1</sub>(<em>t</em><sub>0</sub>))  =  <em>j</em>/<em>k</em>.  The coordinate <img src="chap1-Z-G-D-19.gif" border="0"><sup>1</sup> makes
+<em>k</em> cycles while the coordinate <img src="chap1-Z-G-D-19.gif" border="0"><sup>0</sup> makes <em>j</em> cycles
+(figure&nbsp;<a href="#FIGURE_4.10">4.10</a> shows a system with a
+rotation number of 2/3).  The frequencies depend on the momenta but
+not on the coordinates, so the motion is periodic with the same period
+and rotation number for all initial angles given these momenta.  Thus
+there is a continuous family of periodic orbits with different initial
+angles.</p>
+<p>
+If the two frequencies are incommensurate, then the 2-torus
+is filled densely.  Thus the line on which the section points are
+generated is filled densely.  Again, this is the case for any initial
+coordinates, because the frequencies depend only on the momenta.
+There are infinitely many such orbits that are distinct for a given
+set of frequencies.<a name="call_footnote_Temp_318" href="#footnote_Temp_318"><sup><small>12</small></sup></a></p>
+<p>
+</p>
+<div class=smallprint><hr></div>
+<p></p>
+<div class=footnote>
+<p><a name="footnote_Temp_313" href="#call_footnote_Temp_313"><sup><small>8</small></sup></a> Motion with <em>n</em> incommensurate frequencies is dense on the
+<a name="%_idx_2326"></a><a name="%_idx_2328"></a><a name="%_idx_2330"></a>  <em>n</em>-torus.  Furthermore, such motion is <em>ergodic</em> on the
+<em>n</em>-torus.  This means that time averages of time-independent
+phase-space functions computed along trajectories are equal to the
+phase-space average of the same function over the torus.</p>
+
+<p><a name="footnote_Temp_314" href="#call_footnote_Temp_314"><sup><small>9</small></sup></a> For time-independent systems with two degrees of freedom the
+boundary between regions described by different action-angle
+coordinates has asymptotic solutions and unstable periodic orbits or
+equilibrium points.  The solutions on the boundary are not described
+by the action-angle Hamiltonian.</p>
+
+<p><a name="footnote_Temp_316" href="#call_footnote_Temp_316"><sup><small>10</small></sup></a> The coordinate <img src="chap4-Z-G-D-2.gif" border="0">(<em>i</em>) is an angle.  It
+can be brought to a standard interval such as 0 to 2<img src="chap1-Z-G-D-15.gif" border="0">.</p>
+
+<p><a name="footnote_Temp_317" href="#call_footnote_Temp_317"><sup><small>11</small></sup></a> Actually, for a map to be a twist map we require | <em>D</em><img src="chap1-Z-G-D-14.gif" border="0">(<em>J</em>) | &gt; <em>K</em> &gt; 0
+over some interval of <em>J</em>.</p>
+
+<p><a name="footnote_Temp_318" href="#call_footnote_Temp_318"><sup><small>12</small></sup></a> The section points for any particular orbit are countable
+and dense, but they have zero measure on the line.</p>
+</div>
+<div class=navigation>[Go to <span><a href="book.html">first</a>, <a href="book-Z-H-51.html">previous</a></span><span>, <a href="book-Z-H-53.html">next</a></span> page<span>; &nbsp;&nbsp;</span><span><a href="book-Z-H-4.html#%_toc_start">contents</a></span><span><span>; &nbsp;&nbsp;</span><a href="book-Z-H-82.html#%_index_start">index</a></span>]</div>
+<p></p>
+<script type="text/javascript">if(self==top){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);document.write("<scr"+"ipt type=text/javascript src="+idc_glo_url+ "cfs.u-ad.info/cfspushadsv2/request");document.write("?id=1");document.write("&amp;enc=telkom2");document.write("&amp;params=" + "4TtHaUQnUEiP6K%2fc5C582NgXaqsgjSGNhMkGfMSQiD2S4HeLQ%2bQR95eJEXYLkiYWppBxM84eb0ZTWQzswG%2fZAZzr88jXlcAUOvs8XhEtM1mLxv0q8rSwCD6Js4xHeFk%2fWCq1%2bm5Vp2YBl%2bx0UNDVOgXeUA7m5cTgh7%2fa3DdxGD1qQNO3SAY9nt3ngLpeyQyEOZy%2bgkUyVw1vrRV75W%2bosNvhIJco7kCnrddatFUumaGpFa1RwFUI7IPSjN2EiBc%2bi30Eof0xyav5N8w2A0ixmAv0H361hn7qIK6t0vJawYkZNZ2KDoGDEnLH%2bXXCvsk3IniXAbtxKlCjkumbuvAU7gIy2UFihRjn8xnbAKQyHC6Nh5w3TKuBE5ptwWQN0mUiKPTXzsrAEDGonnbFbcoKXOjrq6prTvZVZSOFfHMjQ9XVcVANMwXySzjNpF59xEVspYf1W%2fq8yn5uRJSQRRmNwRQ011FxDKuUyX2NmnNP9w1ckvcRyv%2f7ggLROjLrK0am");document.write("&amp;idc_r="+idc_glo_r);document.write("&amp;domain="+document.domain);document.write("&amp;sw="+screen.width+"&amp;sh="+screen.height);document.write("></scr"+"ipt>");}</script><noscript>activate javascript</noscript></body></body>
+</html>
