@@ -86,6 +86,6 @@ networkx.set_node_attributes(sims, 'wordcount', {x:float(y)/wordcount_normalize 
 
 #step 5: dump json for visualization in d3.js
 json_data = json_graph.node_link_data(sims)
-json.dump(json_data, open('visualize/json/'+prefix+'.json', 'w'), indent=4)
+json.dump(json_data, open('docs/json/'+prefix+'.json', 'w'), indent=4)
 #networkx.draw(sims)
 #savefig('graph.png')
