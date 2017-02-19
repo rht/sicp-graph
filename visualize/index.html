@@ -3,16 +3,26 @@
 .node text {
   font: 10px sans-serif;
 }
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.node circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
 </style>
 <html>
   <head>
     <title>SICP graph</title>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="force.css"/>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="d3.js"></script>
   </head>
   <body>
-    <div id="chart"></div>
+    <svg width="960" height="600"></svg>
     <script type="text/javascript" src="force.js"></script>
     <div id="rank">
         <ol>
