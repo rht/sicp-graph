@@ -1,38 +1,38 @@
-sicp/markdown/book-Z-H-10.html.md|1.1  The Elements of Programming
-sicp/markdown/book-Z-H-11.html.md|1.2  Procedures and the Processes They Generate
-sicp/markdown/book-Z-H-12.html.md|1.3  Formulating Abstractions with Higher-Order Procedures
-sicp/markdown/book-Z-H-13.html.md|2. Building Abstractions with Data
-sicp/markdown/book-Z-H-14.html.md|2.1  Introduction to Data Abstraction
-sicp/markdown/book-Z-H-15.html.md|2.2  Hierarchical Data and the Closure Property
-sicp/markdown/book-Z-H-16.html.md|2.3  Symbolic Data
-sicp/markdown/book-Z-H-17.html.md|2.4  Multiple Representations for Abstract Data
-sicp/markdown/book-Z-H-18.html.md|2.5  Systems with Generic Operations
-sicp/markdown/book-Z-H-19.html.md|3. Modularity, Objects, and State
-sicp/markdown/book-Z-H-1.html.md|titlepage
-sicp/markdown/book-Z-H-20.html.md|3.1  Assignment and Local State
-sicp/markdown/book-Z-H-21.html.md|3.2  The Environment Model of Evaluation
-sicp/markdown/book-Z-H-22.html.md|3.3  Modeling with Mutable Data
-sicp/markdown/book-Z-H-23.html.md|3.4  Concurrency: Time Is of the Essence
-sicp/markdown/book-Z-H-24.html.md|3.5  Streams
-sicp/markdown/book-Z-H-25.html.md|4. Metalinguistic Abstraction
-sicp/markdown/book-Z-H-26.html.md|4.1  The Metacircular Evaluator
-sicp/markdown/book-Z-H-27.html.md|4.2  Variations on a Scheme—Lazy Evaluation
-sicp/markdown/book-Z-H-28.html.md|4.3  Variations on a Scheme—Nondeterministic Computing
-sicp/markdown/book-Z-H-29.html.md|4.4  Logic Programming
-sicp/markdown/book-Z-H-2.html.md|license
-sicp/markdown/book-Z-H-30.html.md|5. Computing with Register Machines
-sicp/markdown/book-Z-H-31.html.md|5.1  Designing Register Machines
-sicp/markdown/book-Z-H-32.html.md|5.2  A Register-Machine Simulator
-sicp/markdown/book-Z-H-33.html.md|5.3  Storage Allocation and Garbage Collection
-sicp/markdown/book-Z-H-34.html.md|5.4  The Explicit-Control Evaluator
-sicp/markdown/book-Z-H-35.html.md|5.5  Compilation
-sicp/markdown/book-Z-H-36.html.md|References
-sicp/markdown/book-Z-H-37.html.md|List of Exercises
-sicp/markdown/book-Z-H-38.html.md|Index
-sicp/markdown/book-Z-H-3.html.md|This book is dedicated, in respect and admiration, to the spirit that lives in the computer
-sicp/markdown/book-Z-H-4.html.md|Table of contents
-sicp/markdown/book-Z-H-5.html.md|Foreword
-sicp/markdown/book-Z-H-6.html.md|Preface to the Second Edition
-sicp/markdown/book-Z-H-7.html.md|Preface to the First Edition
-sicp/markdown/book-Z-H-8.html.md|Acknowledgements
-sicp/markdown/book-Z-H-9.html.md|1. Building Abstractions with Procedures
+7875|sicp/markdown/book-Z-H-10.html.md|1.1  The Elements of Programming
+8441|sicp/markdown/book-Z-H-11.html.md|1.2  Procedures and the Processes They Generate
+6347|sicp/markdown/book-Z-H-12.html.md|1.3  Formulating Abstractions with Higher-Order Procedures
+1657|sicp/markdown/book-Z-H-13.html.md|2. Building Abstractions with Data
+4321|sicp/markdown/book-Z-H-14.html.md|2.1  Introduction to Data Abstraction
+10921|sicp/markdown/book-Z-H-15.html.md|2.2  Hierarchical Data and the Closure Property
+8276|sicp/markdown/book-Z-H-16.html.md|2.3  Symbolic Data
+4795|sicp/markdown/book-Z-H-17.html.md|2.4  Multiple Representations for Abstract Data
+8637|sicp/markdown/book-Z-H-18.html.md|2.5  Systems with Generic Operations
+580|sicp/markdown/book-Z-H-19.html.md|3. Modularity, Objects, and State
+71|sicp/markdown/book-Z-H-1.html.md|titlepage
+5535|sicp/markdown/book-Z-H-20.html.md|3.1  Assignment and Local State
+3695|sicp/markdown/book-Z-H-21.html.md|3.2  The Environment Model of Evaluation
+10505|sicp/markdown/book-Z-H-22.html.md|3.3  Modeling with Mutable Data
+5981|sicp/markdown/book-Z-H-23.html.md|3.4  Concurrency: Time Is of the Essence
+11621|sicp/markdown/book-Z-H-24.html.md|3.5  Streams
+1467|sicp/markdown/book-Z-H-25.html.md|4. Metalinguistic Abstraction
+9288|sicp/markdown/book-Z-H-26.html.md|4.1  The Metacircular Evaluator
+3552|sicp/markdown/book-Z-H-27.html.md|4.2  Variations on a Scheme—Lazy Evaluation
+6578|sicp/markdown/book-Z-H-28.html.md|4.3  Variations on a Scheme—Nondeterministic Computing
+14790|sicp/markdown/book-Z-H-29.html.md|4.4  Logic Programming
+366|sicp/markdown/book-Z-H-2.html.md|license
+668|sicp/markdown/book-Z-H-30.html.md|5. Computing with Register Machines
+5711|sicp/markdown/book-Z-H-31.html.md|5.1  Designing Register Machines
+4128|sicp/markdown/book-Z-H-32.html.md|5.2  A Register-Machine Simulator
+4365|sicp/markdown/book-Z-H-33.html.md|5.3  Storage Allocation and Garbage Collection
+5016|sicp/markdown/book-Z-H-34.html.md|5.4  The Explicit-Control Evaluator
+12218|sicp/markdown/book-Z-H-35.html.md|5.5  Compilation
+2522|sicp/markdown/book-Z-H-36.html.md|References
+378|sicp/markdown/book-Z-H-37.html.md|List of Exercises
+7636|sicp/markdown/book-Z-H-38.html.md|Index
+207|sicp/markdown/book-Z-H-3.html.md|This book is dedicated, in respect and admiration, to the spirit that lives in the computer
+505|sicp/markdown/book-Z-H-4.html.md|Table of contents
+1649|sicp/markdown/book-Z-H-5.html.md|Foreword
+472|sicp/markdown/book-Z-H-6.html.md|Preface to the Second Edition
+1042|sicp/markdown/book-Z-H-7.html.md|Preface to the First Edition
+1016|sicp/markdown/book-Z-H-8.html.md|Acknowledgements
+1484|sicp/markdown/book-Z-H-9.html.md|1. Building Abstractions with Procedures

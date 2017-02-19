@@ -1,82 +1,82 @@
-sicm/markdown/book-Z-H-41.html.md|3.5  Phase Space Evolution
-sicm/markdown/book-Z-H-8.html.md|1.1  The Principle of Stationary Action
-sicm/markdown/book-Z-H-59.html.md|5.2  General Canonical Transformations
-sicm/markdown/book-Z-H-62.html.md|5.5  Reduced Phase Space
-sicm/markdown/book-Z-H-40.html.md|3.4  Phase Space Reduction
-sicm/markdown/book-Z-H-31.html.md|2.11  Spin-Orbit Coupling
-sicm/markdown/book-Z-H-50.html.md|4.2  Linear Stability
-sicm/markdown/book-Z-H-22.html.md|2.2  Kinematics of Rotation
-sicm/markdown/book-Z-H-15.html.md|1.8  Conserved Quantities
-sicm/markdown/book-Z-H-75.html.md|6.4  Nonlinear Resonance
-sicm/markdown/book-Z-H-53.html.md|4.5  Poincaré-Birkhoff Theorem
-sicm/markdown/book-Z-H-43.html.md|3.7  Exponential Divergence
-sicm/markdown/book-Z-H-73.html.md|6.2  Pendulum as a Perturbed Rotor
-sicm/markdown/book-Z-H-52.html.md|4.4  Integrable Systems
-sicm/markdown/book-Z-H-38.html.md|3.2  Poisson Brackets
-sicm/markdown/book-Z-H-9.html.md|1.2  Configuration Spaces
-sicm/markdown/book-Z-H-49.html.md|4.1  Emergence of the Divided Phase Space
-sicm/markdown/book-Z-H-12.html.md|1.5  The Euler-Lagrange Equations
-sicm/markdown/book-Z-H-10.html.md|1.3  Generalized Coordinates
-sicm/markdown/book-Z-H-14.html.md|1.7  Evolution of Dynamical State
-sicm/markdown/book-Z-H-61.html.md|5.4  Extended Phase Space
-sicm/markdown/book-Z-H-54.html.md|4.6  Invariant Curves
-sicm/markdown/book-Z-H-39.html.md|3.3  One Degree of Freedom
-sicm/markdown/book-Z-H-23.html.md|2.3  Moments of Inertia
-sicm/markdown/book-Z-H-16.html.md|1.9  Abstraction of Path Functions
-sicm/markdown/book-Z-H-68.html.md|5.11  Exponential Identities
-sicm/markdown/book-Z-H-24.html.md|2.4  Inertia Tensor
-sicm/markdown/book-Z-H-30.html.md|2.10  Axisymmetric Tops
-sicm/markdown/book-Z-H-42.html.md|3.6  Surfaces of Section
-sicm/markdown/book-Z-H-17.html.md|1.10  Constrained Motion
-sicm/markdown/book-Z-H-72.html.md|6.1  Perturbation Theory with Lie Series
-sicm/markdown/book-Z-H-58.html.md|5.1  Point Transformations
-sicm/markdown/book-Z-H-32.html.md|2.12  Euler's Equations
-sicm/markdown/book-Z-H-44.html.md|3.8  Liouville's Theorem
-sicm/markdown/book-Z-H-63.html.md|5.6  Generating Functions
-sicm/markdown/book-Z-H-67.html.md|5.10  Lie Series
-sicm/markdown/book-Z-H-66.html.md|5.9  Lie Transforms
-sicm/markdown/book-Z-H-29.html.md|2.9  Motion of a Free Rigid Body
-sicm/markdown/book-Z-H-65.html.md|5.8  Hamilton-Jacobi Equation
-sicm/markdown/book-Z-H-13.html.md|1.6  How to Find Lagrangians
-sicm/markdown/book-Z-H-51.html.md|4.3  Homoclinic Tangle
-sicm/markdown/book-Z-H-64.html.md|5.7  Time Evolution Is Canonical
-sicm/markdown/book-Z-H-33.html.md|2.13  Nonsingular Generalized Coordinates
-sicm/markdown/book-Z-H-45.html.md|3.9  Standard Map
-sicm/markdown/book-Z-H-25.html.md|2.5  Principal Moments of Inertia
-sicm/markdown/book-Z-H-27.html.md|2.7  Euler Angles
-sicm/markdown/book-Z-H-28.html.md|2.8  Vector Angular Momentum
-sicm/markdown/book-Z-H-11.html.md|1.4  Computing Actions
-sicm/markdown/book-Z-H-26.html.md|2.6  Representation of the Angular Velocity Vector
-sicm/markdown/book-Z-H-60.html.md|5.3  Invariants of Canonical Transformations
-sicm/markdown/book-Z-H-74.html.md|6.3  Many Degrees of Freedom
-sicm/markdown/book-Z-H-21.html.md|2.1  Rotational Kinetic Energy
-sicm/markdown/book-Z-H-37.html.md|3.1  Hamilton's Equations
-sicm/markdown/book-Z-H-79.html.md|8. Appendix: Our Notation
-sicm/markdown/book-Z-H-78.html.md|7. Appendix: Scheme
-sicm/markdown/book-Z-H-57.html.md|5. Canonical Transformations
-sicm/markdown/book-Z-H-48.html.md|4. Phase Space Structure
-sicm/markdown/book-Z-H-20.html.md|2. Rigid Bodies
-sicm/markdown/book-Z-H-7.html.md|1. Lagrangian Mechanics
-sicm/markdown/book-Z-H-36.html.md|3. Hamiltonian Mechanics
-sicm/markdown/book-Z-H-71.html.md|6. Canonical Peturbation Theory
-sicm/markdown/book-Z-H-1.html.md|titlepage
-sicm/markdown/book-Z-H-2.html.md|license
-sicm/markdown/book-Z-H-3.html.md|This book is dedicated, in respect and admiration, to The Principle of Least Action
-sicm/markdown/book-Z-H-4.html.md|toc
-sicm/markdown/book-Z-H-5.html.md|Preface
-sicm/markdown/book-Z-H-6.html.md|Acknowledgements
-sicm/markdown/book-Z-H-18.html.md|1.11 Summary
-sicm/markdown/book-Z-H-19.html.md|1.12 Projects
-sicm/markdown/book-Z-H-34.html.md|2.14 Summary
-sicm/markdown/book-Z-H-35.html.md|2.15 Projects
-sicm/markdown/book-Z-H-46.html.md|3.10 Summary
-sicm/markdown/book-Z-H-47.html.md|3.11 Projects
-sicm/markdown/book-Z-H-55.html.md|4.7 Summary
-sicm/markdown/book-Z-H-56.html.md|4.8 Projects
-sicm/markdown/book-Z-H-69.html.md|5.12 Summary
-sicm/markdown/book-Z-H-70.html.md|5.13 Projects
-sicm/markdown/book-Z-H-76.html.md|6.5 Summary
-sicm/markdown/book-Z-H-77.html.md|6.7 Projects
-sicm/markdown/book-Z-H-80.html.md|Bibliography
-sicm/markdown/book-Z-H-81.html.md|List of Exercises
-sicm/markdown/book-Z-H-82.html.md|Index
+1538|sicm/markdown/book-Z-H-10.html.md|1.3  Generalized Coordinates
+2821|sicm/markdown/book-Z-H-11.html.md|1.4  Computing Actions
+2926|sicm/markdown/book-Z-H-12.html.md|1.5  The Euler-Lagrange Equations
+7453|sicm/markdown/book-Z-H-13.html.md|1.6  How to Find Lagrangians
+1751|sicm/markdown/book-Z-H-14.html.md|1.7  Evolution of Dynamical State
+2655|sicm/markdown/book-Z-H-15.html.md|1.8  Conserved Quantities
+1118|sicm/markdown/book-Z-H-16.html.md|1.9  Abstraction of Path Functions
+4144|sicm/markdown/book-Z-H-17.html.md|1.10  Constrained Motion
+375|sicm/markdown/book-Z-H-18.html.md|1.11 Summary
+732|sicm/markdown/book-Z-H-19.html.md|1.12 Projects
+66|sicm/markdown/book-Z-H-1.html.md|titlepage
+711|sicm/markdown/book-Z-H-20.html.md|2. Rigid Bodies
+449|sicm/markdown/book-Z-H-21.html.md|2.1  Rotational Kinetic Energy
+453|sicm/markdown/book-Z-H-22.html.md|2.2  Kinematics of Rotation
+961|sicm/markdown/book-Z-H-23.html.md|2.3  Moments of Inertia
+699|sicm/markdown/book-Z-H-24.html.md|2.4  Inertia Tensor
+969|sicm/markdown/book-Z-H-25.html.md|2.5  Principal Moments of Inertia
+663|sicm/markdown/book-Z-H-26.html.md|2.6  Representation of the Angular Velocity Vector
+643|sicm/markdown/book-Z-H-27.html.md|2.7  Euler Angles
+461|sicm/markdown/book-Z-H-28.html.md|2.8  Vector Angular Momentum
+2843|sicm/markdown/book-Z-H-29.html.md|2.9  Motion of a Free Rigid Body
+209|sicm/markdown/book-Z-H-2.html.md|license
+1943|sicm/markdown/book-Z-H-30.html.md|2.10  Axisymmetric Tops
+3408|sicm/markdown/book-Z-H-31.html.md|2.11  Spin-Orbit Coupling
+1545|sicm/markdown/book-Z-H-32.html.md|2.12  Euler's Equations
+2263|sicm/markdown/book-Z-H-33.html.md|2.13  Nonsingular Generalized Coordinates
+389|sicm/markdown/book-Z-H-34.html.md|2.14 Summary
+261|sicm/markdown/book-Z-H-35.html.md|2.15 Projects
+850|sicm/markdown/book-Z-H-36.html.md|3. Hamiltonian Mechanics
+4955|sicm/markdown/book-Z-H-37.html.md|3.1  Hamilton's Equations
+540|sicm/markdown/book-Z-H-38.html.md|3.2  Poisson Brackets
+647|sicm/markdown/book-Z-H-39.html.md|3.3  One Degree of Freedom
+156|sicm/markdown/book-Z-H-3.html.md|This book is dedicated, in respect and admiration, to The Principle of Least Action
+2799|sicm/markdown/book-Z-H-40.html.md|3.4  Phase Space Reduction
+559|sicm/markdown/book-Z-H-41.html.md|3.5  Phase Space Evolution
+5470|sicm/markdown/book-Z-H-42.html.md|3.6  Surfaces of Section
+865|sicm/markdown/book-Z-H-43.html.md|3.7  Exponential Divergence
+2445|sicm/markdown/book-Z-H-44.html.md|3.8  Liouville's Theorem
+627|sicm/markdown/book-Z-H-45.html.md|3.9  Standard Map
+384|sicm/markdown/book-Z-H-46.html.md|3.10 Summary
+355|sicm/markdown/book-Z-H-47.html.md|3.11 Projects
+548|sicm/markdown/book-Z-H-48.html.md|4. Phase Space Structure
+1289|sicm/markdown/book-Z-H-49.html.md|4.1  Emergence of the Divided Phase Space
+2309|sicm/markdown/book-Z-H-4.html.md|toc
+2932|sicm/markdown/book-Z-H-50.html.md|4.2  Linear Stability
+1908|sicm/markdown/book-Z-H-51.html.md|4.3  Homoclinic Tangle
+1652|sicm/markdown/book-Z-H-52.html.md|4.4  Integrable Systems
+1812|sicm/markdown/book-Z-H-53.html.md|4.5  Poincaré-Birkhoff Theorem
+2212|sicm/markdown/book-Z-H-54.html.md|4.6  Invariant Curves
+537|sicm/markdown/book-Z-H-55.html.md|4.7 Summary
+144|sicm/markdown/book-Z-H-56.html.md|4.8 Projects
+412|sicm/markdown/book-Z-H-57.html.md|5. Canonical Transformations
+919|sicm/markdown/book-Z-H-58.html.md|5.1  Point Transformations
+2738|sicm/markdown/book-Z-H-59.html.md|5.2  General Canonical Transformations
+1646|sicm/markdown/book-Z-H-5.html.md|Preface
+1565|sicm/markdown/book-Z-H-60.html.md|5.3  Invariants of Canonical Transformations
+2265|sicm/markdown/book-Z-H-61.html.md|5.4  Extended Phase Space
+865|sicm/markdown/book-Z-H-62.html.md|5.5  Reduced Phase Space
+6189|sicm/markdown/book-Z-H-63.html.md|5.6  Generating Functions
+2853|sicm/markdown/book-Z-H-64.html.md|5.7  Time Evolution Is Canonical
+2817|sicm/markdown/book-Z-H-65.html.md|5.8  Hamilton-Jacobi Equation
+1188|sicm/markdown/book-Z-H-66.html.md|5.9  Lie Transforms
+1641|sicm/markdown/book-Z-H-67.html.md|5.10  Lie Series
+306|sicm/markdown/book-Z-H-68.html.md|5.11  Exponential Identities
+455|sicm/markdown/book-Z-H-69.html.md|5.12 Summary
+766|sicm/markdown/book-Z-H-6.html.md|Acknowledgements
+1284|sicm/markdown/book-Z-H-70.html.md|5.13 Projects
+474|sicm/markdown/book-Z-H-71.html.md|6. Canonical Peturbation Theory
+431|sicm/markdown/book-Z-H-72.html.md|6.1  Perturbation Theory with Lie Series
+2156|sicm/markdown/book-Z-H-73.html.md|6.2  Pendulum as a Perturbed Rotor
+960|sicm/markdown/book-Z-H-74.html.md|6.3  Many Degrees of Freedom
+3149|sicm/markdown/book-Z-H-75.html.md|6.4  Nonlinear Resonance
+471|sicm/markdown/book-Z-H-76.html.md|6.5 Summary
+270|sicm/markdown/book-Z-H-77.html.md|6.7 Projects
+1914|sicm/markdown/book-Z-H-78.html.md|7. Appendix: Scheme
+3447|sicm/markdown/book-Z-H-79.html.md|8. Appendix: Our Notation
+1165|sicm/markdown/book-Z-H-7.html.md|1. Lagrangian Mechanics
+742|sicm/markdown/book-Z-H-80.html.md|Bibliography
+158|sicm/markdown/book-Z-H-81.html.md|List of Exercises
+5175|sicm/markdown/book-Z-H-82.html.md|Index
+2374|sicm/markdown/book-Z-H-8.html.md|1.1  The Principle of Stationary Action
+833|sicm/markdown/book-Z-H-9.html.md|1.2  Configuration Spaces

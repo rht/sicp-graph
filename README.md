@@ -1,12 +1,10 @@
-Create a d3 visualization of the interconnectedness between the sections in SICP.
-Requires pandoc, of course.
+A graph visualization of the interconnectedness between the sections in SICP.
 
-Graphs for various other texts exist, too
+Graphs for various other texts:
 
-1. sicp http://rht.github.io/sicp-lda
-2. sicm http://rht.github.io/sicp-lda?type=sicm
+1. sicp http://rht.github.io/sicp-graph
+2. sicm http://rht.github.io/sicp-graph?type=sicm
    * You may discover that sections in each chapter are highly connected to each other but not to other chapters.
    * Lagrangian mechanics is more related to rigid bodies than Hamiltonian mechanics.
-3. sicm http://rht.github.io/sicp-lda?type=dirac
-4. sicm http://rht.github.io/sicp-lda?type=dirac_sections
-
+3. sicm http://rht.github.io/sicp-graph?type=dirac
+4. sicm http://rht.github.io/sicp-graph?type=dirac_sections
