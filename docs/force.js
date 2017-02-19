@@ -90,7 +90,7 @@ d3.json("json/" + type + ".json", function(error, graph) {
 
   node.append("circle")
       .attr("class", "node")
-      .attr("r", function(d) { return Math.max(5, Math.log(d.wordcount)); })
+      .attr("r", function(d) { return Math.max(5, Math.log('wordcount' in d ? d.wordcount: 5)); })
       .attr("fill", function(d) { return color(d.group); });
 
   node.append("text")
