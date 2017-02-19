@@ -11,10 +11,9 @@ from nltk import bigrams, trigrams
 # for main reference see http://www.clips.ua.ac.be/stylometry/aboutSty.php
 
 fname = sys.argv[1]
-print fname
-text = open(fname).read()
+text = open(fname).read().decode('utf-8')
 #see http://splasho.com/blog/2013/01/17/a-bit-more-about-the-up-goer-five-text-editor/
-simple_english = open('/Users/rht/sources/bin/nltk/1000dicin_withinflections.txt').read().lower().split('\n')
+simple_english = open('/home/rht/github/rht/sicp-lda/nlpdata/1000dicin_withinflections.txt').read().lower().split('\n')
 tic = time()
 tokens = nltk.word_tokenize(text)
 total_length = len(tokens)
@@ -47,12 +46,12 @@ for w in words:
 non_simple_words = Counter(non_simple_words)
 toc=time()
 #print "style analysis (or, writer invariant, or writeprint):"
-print "total number of words {:d}".format(total_length)
-print "{:3.2f}% simple english".format(number_of_simple_words *100. / total_length)
+print("total number of words {:d}".format(total_length))
+print("{:3.2f}% simple english".format(number_of_simple_words *100. / total_length))
 sentences_length = map(len, [i.split(' ') for i in sentences])
-print "average sentence length {:.2f}".format(pylab.mean(sentences_length))
+print("average sentence length {:.2f}".format(pylab.mean(sentences_length)))
 cusum = pylab.cumsum(pylab.array(sentences_length) - pylab.mean(sentences_length))
-print "average word length {:.2f}".format(pylab.mean(map(len, tokens)))
+print("average word length {:.2f}".format(pylab.mean(map(len, tokens))))
 #print "noun usage frequency {:.2f}%".format(normalized_counts['NN'] + normalized_counts['NNP'] + normalized_counts['NNS'])
 #print "verb usage frequency {:.2f}%".format(normalized_counts['VBD'] + normalized_counts['VBP'] + normalized_counts['VBZ'])
 

@@ -6,7 +6,7 @@
 """
 CLASSICAL mechanics has been developed continuously from the time of Newton and applied to an ever-widening range of dynamical systems, including the electromagnetic field in interaction with matter. The underlying ideas and the laws governing their application form a simple and elegant scheme, which one would be inclined to think could not be seriously modified without having all its attractive features spoilt. Nevertheless it has been found possible to set up a new scheme, called quantum mechanics, which is more suitable for the description of phenomena on the atomic scale and which is in some respects more elegant and satisfying than the classical scheme. This possibility is due to the changes which the new scheme involves being of a very profound character and not clashing with the features of the classical theory that make it so attractive, as a result of which all these features can be incorporated in the new scheme.
 """
-#Summary: (okay) Consistency between the classical scheme and the new scheme.
+#Summary: (current) Consistency between the classical scheme and the new scheme.
 #'not clashing' can possibly have two meanings:
 #1. that the new scheme agrees with the classical scheme via Bohr correspondence
 #   principle in the classical limit.
@@ -22,8 +22,8 @@ One might try to get over the difficulty without departing from classical mechan
 
 This leads us to a new clash between classical mechanics and the results of experiment. There must certainly be some internal motion in an atom to account for its spectrum, but the internal degrees of freedom, for some classically inexplicable reason, do not contribute to the specific heat. A similar clash is found in connexion with the energy of oscillation of the electromagnetic field in a vacuum. Classical mechanics requires the specific heat corresponding to this energy to be infinite, but it is observed to be quite finite. A general conclusion from experimental results is that oscillations of high frequency do not contribute their classical quota to the specific heat.
 """
-Summary: (possibly outdated) Three experimental evidences of the need of quantum
-mechanics.
+#Summary: (possibly outdated) Three experimental evidences of the need of quantum
+#mechanics.
 #1. The stability of atoms. This is forbidden in classical electrodynamics by
 #   Earnshaw theorem. The stability of atoms is explained through Heisenberg
 #   uncertainty, while the stability of many body systems is explained by Fermion

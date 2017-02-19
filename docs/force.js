@@ -39,7 +39,7 @@ var directed = false;
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().distance(function(d) { return 40; }))
-    .force("charge", d3.forceManyBody().strength(function(d) { return type == 'dirac' ? -550: -12; }))
+    .force("charge", d3.forceManyBody().strength(function(d) { return {'dirac': -550, 'sicp': -30}[type] || -12; }))
     .force("center", d3.forceCenter(width / 2, height / 2));
 
 d3.json("json/" + type + ".json", function(error, graph) {
