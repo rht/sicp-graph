@@ -35,9 +35,11 @@ var drag = d3.drag()
 
 var color = d3.scaleOrdinal(d3.schemeCategory20);
 
+var directed = false;
+
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().distance(function(d) { return 40; }))
-    .force("charge", d3.forceManyBody().strength(function(d) { return -12; }))
+    .force("charge", d3.forceManyBody().strength(function(d) { return type == 'dirac' ? -550: -12; }))
     .force("center", d3.forceCenter(width / 2, height / 2));
 
 d3.json("json/" + type + ".json", function(error, graph) {
@@ -53,18 +55,20 @@ d3.json("json/" + type + ".json", function(error, graph) {
   svg = svg.call(zoom).append("svg:g");
 
   // build the arrow.
-  //svg.append("svg:defs").selectAll("marker")
-  //    .data(["end"])      // Different link/path types can be defined here
-  //  .enter().append("svg:marker")    // This section adds in the arrows
-  //    .attr("id", String)
-  //    .attr("viewBox", "0 -5 10 10")
-  //    .attr("refX", 15)
-  //    .attr("refY", -1.5)
-  //    .attr("markerWidth", 6)
-  //    .attr("markerHeight", 6)
-  //    .attr("orient", "auto")
-  //  .append("svg:path")
-  //    .attr("d", "M0,-5L10,0L0,5");
+  if (directed) {
+    svg.append("svg:defs").selectAll("marker")
+      .data(["end"])      // Different link/path types can be defined here
+    .enter().append("svg:marker")    // This section adds in the arrows
+      .attr("id", String)
+      .attr("viewBox", "0 -5 10 10")
+      .attr("refX", 15)
+      .attr("refY", -1.5)
+      .attr("markerWidth", 6)
+      .attr("markerHeight", 6)
+      .attr("orient", "auto")
+    .append("svg:path")
+      .attr("d", "M0,-5L10,0L0,5");
+  }
 
 
   var link = svg.append("g")
@@ -79,7 +83,9 @@ d3.json("json/" + type + ".json", function(error, graph) {
     .enter().append("g")
       .attr("class", "node")
       .call(drag);
-      //.call(d3.behavior.zoom().on("zoom", rescale));
+  if (directed) {
+      node.call(d3.behavior.zoom().on("zoom", rescale));
+  }
 
 
   node.append("circle")

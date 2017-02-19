@@ -8,6 +8,8 @@ from gensim import utils, corpora, models, similarities
 from gensim.parsing import preprocessing
 import networkx
 from networkx.readwrite import json_graph
+import matplotlib
+matplotlib.use('Agg')
 import pylab
 
 prefix = ['dirac', 'dirac_sections', 'sicp', 'sicm'][0]
@@ -43,8 +45,7 @@ if (prefix == 'sicp') or (prefix == 'sicm'):
     groups = [(l[0].isdigit() and l[0]) or 0 for l in labels]
 
 elif prefix == 'dirac':
-    labels = [ l.split('.')[0] for l in labels if l[0].isdigit()]
-    groups = [((l[0].isdigit() and not l[1].isdigit()) and l[0]) or ((l[0].isdigit() and l[1].isdigit()) and l[:2]) or 0 for l in labels]
+    groups = [l.split('.')[0] for l in labels]
 elif prefix == 'dirac_sections':
     labels = [ l.split('.')[0] for l in labels if l[0].isdigit()]
     groupdic = {d[0]:d[1] for d in [i.split(' ') for i in open(prefix+'/metadata_extra.txt','r').read().strip().split('\n')]}
@@ -77,7 +78,7 @@ sims[sims < pylab.percentile(sims, percentile)] = 0
 
 #step 4 convert datatype to networkx Graph
 print("converting similarity matrix to networkx Graph")
-sims = networkx.Graph(sims, node_list=range(len(book)))
+sims = networkx.Graph(sims, node_list=list(range(len(book))))
 networkx.set_node_attributes(sims, 'name', {x:y for x,y in enumerate(labels)})
 networkx.set_node_attributes(sims, 'group', {x:y for x,y in enumerate(groups)})
 wordcount_normalize = {'sicp':1000,'sicm':500}.get(prefix,1000)

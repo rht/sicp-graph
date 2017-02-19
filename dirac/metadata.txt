@@ -1,12 +1,12 @@
-dirac/chapters/dirac_ch1.md|1. The Principle of Superposition
-dirac/chapters/dirac_ch2.md|2. Dynamical Variables and Observables
-dirac/chapters/dirac_ch3.md|3. Representations
-dirac/chapters/dirac_ch4.md|4. The Quantum Conditions
-dirac/chapters/dirac_ch5.md|5. The Equations of Motion
-dirac/chapters/dirac_ch6.md|6. Elementary Applications
-dirac/chapters/dirac_ch7.md|7. Perturbation Theory
-dirac/chapters/dirac_ch8.md|8. Collision Problems
-dirac/chapters/dirac_ch9.md|9. Systems Containing Several Similar Particles
-dirac/chapters/dirac_ch10.md|10. Theory of Radiation
-dirac/chapters/dirac_ch11.md|11. Relativistic Theory of the Electron
-dirac/chapters/dirac_ch12.md|12. Quantum Electrodynamics
+184|dirac/chapters/dirac_ch1.md|1. The Principle of Superposition
+620|dirac/chapters/dirac_ch2.md|2. Dynamical Variables and Observables
+1273|dirac/chapters/dirac_ch3.md|3. Representations
+1154|dirac/chapters/dirac_ch4.md|4. The Quantum Conditions
+1356|dirac/chapters/dirac_ch5.md|5. The Equations of Motion
+1525|dirac/chapters/dirac_ch6.md|6. Elementary Applications
+897|dirac/chapters/dirac_ch7.md|7. Perturbation Theory
+1065|dirac/chapters/dirac_ch8.md|8. Collision Problems
+846|dirac/chapters/dirac_ch9.md|9. Systems Containing Several Similar Particles
+1419|dirac/chapters/dirac_ch10.md|10. Theory of Radiation
+1132|dirac/chapters/dirac_ch11.md|11. Relativistic Theory of the Electron
+1760|dirac/chapters/dirac_ch12.md|12. Quantum Electrodynamics
