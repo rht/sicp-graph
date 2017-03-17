@@ -1,0 +1,131 @@
+<html>
+<head>
+	<title>error-daemon@aurellem:</title>
+	<style type="text/css">
+		html,body{margin:0;padding:0;}
+		body{font:100% monospace;line-height:1.2em;}
+		
+		body{background:black;color:white;}
+		em{color:#444;font-style:normal; background:white;}	
+		em{background:inherit;color:inherit;color:#fcc;}
+	</style>
+	<script type="text/javascript" src="/aurellem/js/jquery.min.js"></script>
+
+<script type="text/javascript">
+var caret;
+
+// caret functions
+
+function Caret(){
+	this.obj = null;
+	this.txt = "";
+	this.glyph = "_";
+	this.glyph = "&#x2588;";
+	this.gylph_mode = false;
+	this.queue = new Array();//queue of things to type next 
+
+	this.attach = function(elt){this.obj = elt;}
+	this.refresh = function(){
+		$(this.obj).html(this.txt + (this.glyph_mode ? this.glyph : ""));
+	}	
+	this.stall = function(n){
+		for(i=0;i<n;i++){this.instantly('##')};// ## is used to mean Stall for one increment
+	}
+	this.blink = function(){
+		this.glyph_mode = !this.glyph_mode;
+		this.refresh();
+	}
+	this.keystroke = function(str){this.queue = this.queue.concat(str.split(""));} 
+	this.instantly = function(str){this.queue.push(str)}	
+	this.newline = function(str){this.instantly('<br>');}
+	this.prompt = function(){this.instantly('<em>error-daemon@aurellem:$</em> ');}
+
+	this.type = function(){
+		if(this.queue.length > 0){
+			var x = this.queue.shift();
+			if(x != "##"){this.txt += x;}
+			this.refresh();
+		}
+	} 
+}
+
+
+
+function error_404(){
+
+	caret.instantly("**** ERROR 404: PAGE NOT FOUND");
+	
+	caret.newline();
+	caret.prompt();
+	caret.stall(80);
+	caret.keystroke("I regret to inform you that the page you have requested does not exist on our servers at this time.");
+	
+	caret.newline();
+	caret.prompt();
+	caret.stall(40);
+	caret.keystroke("Preliminary analysis, building on previously acquired data, indicates that some form of human error is to blame. ");
+	caret.stall(20);
+	caret.keystroke("Furthermore, all available data indicate that computer involvement of any kind is extremely unlikely.");
+	caret.stall(20);
+
+	caret.keystroke(" Possible human errors include:");
+	caret.newline();
+	caret.prompt();
+	caret.stall(40);
+	caret.instantly("&nbsp;&nbsp;&nbsp;&nbsp;");
+	caret.keystroke("1. The authors of aurellem, both of whom are are manifestly human, may have directed you, the user, to a nonexistent page.");	
+	
+	caret.newline();
+	caret.prompt();
+	caret.stall(40);
+	caret.instantly("&nbsp;&nbsp;&nbsp;&nbsp;");
+	caret.keystroke("2. The authors of another webpage, many of whom are manifestly human, may have directed you, the user, to a nonexistent page.");
+	
+	caret.newline();
+	caret.prompt();
+	caret.stall(40);
+	caret.instantly("&nbsp;&nbsp;&nbsp;&nbsp;");
+	caret.keystroke("3. You, the user, ");
+	caret.stall(40);
+	caret.keystroke("manifestly human");
+	caret.stall(20);
+	caret.keystroke(", may have directed yourself to a nonexistent page.");
+	
+	
+	caret.newline();
+	caret.prompt();
+	caret.stall(40);
+	caret.keystroke("Please be advised that you or another human may have subjected you to malice and/or incompetence by directing you to request a page that does not exist on our servers at this time.");
+	caret.stall(20);caret.newline();caret.keystroke("Please be advised that this incident has been reported and that the responsible parties are being determined. ");
+caret.stall(40);
+	caret.instantly("*****Have a nice day.*****");
+	caret.stall(60);
+	caret.instantly("<br><br>Connection to aurellem closed.");
+}
+
+
+$(document).ready(function(){
+	caret = new Caret();
+	caret.attach($('body'));
+	caret.refresh();
+	
+	error_404();
+
+	// blinking cursor
+	(function(){caret.blink();setTimeout(String("("+arguments.callee+")()"),500);})();
+	// typing text
+	(function(){caret.type();setTimeout(String("("+arguments.callee+")()"),40);})();
+
+	
+	
+});
+
+</script>
+
+</head>
+<body>
+	testsetahslkfashdljkasdfhkljasdhflskadfhlksadfhlkasdfhlkajsdfhlkasdfhlaksdfhlkjadfhalkjsdfhkalsdfhlkj
+	<em>TESERHKSJLDFHKSJLDF</em>
+</body>
+
+</html>

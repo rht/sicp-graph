@@ -1,0 +1,77 @@
+<div class="chapnav">
+
+<span class="prev">Previous: [the nemeic
+spiral](./som-20.6.html)</span><span class="next">Next: [connection
+lines](./som-20.8.html)</span><span
+class="contents">[Contents](index.html)</span>
+<div class="titlebar">
+
+Society of Mind
+===============
+
+</div>
+
+</div>
+
+*20.7* connections
+------------------
+
+To speak and understand a language well, an ordinary person must learn
+thousands of words. To learn the proper use of a single word must
+involve great numbers of connections between the agents for that word
+and other agents. What could cause such connections to be made, and what
+might be their physical embodiments?
+
+Any comprehensive theory of the mind must include some ideas about the
+nature of the connections among agents. Consider that a person can learn
+to *associate* virtually any combination of ideas or words. Does this
+require us to assume that it is possible for a given K-line agent to
+become connected, directly, to any of thousands or millions of other
+agents? That seems out of the question, in view of what we know about
+connections in the human brain. Many brain cells have fibers that branch
+out enough to approach many thousands of other cells — but few of them
+branch out enough to reach millions of other cells, and as far as we
+know, a mature brain cell can only make new connections to other cells
+that already lie close to the fibers that branch into or out from it.
+Furthermore, we do not seem to grow many new brain cells after birth; on
+the contrary, their number actually decreases. To be sure, brain cells
+continue to *mature* for several years, and probably their fibers grow
+extensively. But no one yet knows whether this comes about as a result
+of learning new connections or whether it must happen first, to make it
+feasible for those cells to learn new connections.
+
+Even the arrangements of long-distance connections between our brain
+cells do not permit direct connection between arbitrary pairs of agents,
+for those long connections are generally arranged in relatively orderly
+bundles, less regular but otherwise resembling the parallel pathways
+from skin to brain. Fortunately, direct connections are not really
+necessary, for the same reasons that every telephone in the world can
+easily be connected to any other telephone without the need for
+connecting a billion separate wires to each house. Instead, telephone
+systems make their connections indirectly, by using agencies called
+*exchanges* that require only moderate numbers of wires. I don't mean to
+suggest that brains use the sorts of switching-schemes found in
+telephone systems but only to say that it is not necessary for every
+K-line agent to directly contact every agent to which it might
+eventually become linked.
+
+There are several factors that reduce the magnitude of the
+interconnection problem. First, in order to reproduce the major features
+of a remembered partial state of mind, it should suffice to activate
+only a representative sample of its agents. Second, according to our
+theory of knowledge-trees, most K-lines' connections are indirect to
+begin with, since they connect only to other, nearby K-line trees. A
+polyneme, too, need be connected only to a single memorizer agent near
+each agency. And no K-line needs potential connections to all the agents
+in any agency, since it is enough to make connections only in a certain
+level-band.
+
+<div class="footer">
+
+[![Creative Commons
+License](http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png)](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US)\
+\
+[![](./images/som_book.jpeg){#book}
+![](./images/a_logo_17.gif)](http://www.amazon.com/gp/product/0671657135?ie=UTF8&camp=1789&creativeASIN=0671657135&linkCode=xm2&tag=marvinminsky)
+
+</div>

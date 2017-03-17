@@ -1,0 +1,293 @@
+4435|som/markdown/index.html.md|index
+281|som/markdown/som-10.1.html.md|10.1 Piaget's Experiments
+461|som/markdown/som-10.2.html.md|10.2 Reasoning About Amounts
+462|som/markdown/som-10.3.html.md|10.3 Priorities
+429|som/markdown/som-10.4.html.md|10.4 Papert's Principle
+311|som/markdown/som-10.5.html.md|10.5 The Society-Of-More
+495|som/markdown/som-10.6.html.md|10.6 About Piaget's Experiments
+544|som/markdown/som-10.7.html.md|10.7 The Concept Of Concept
+553|som/markdown/som-10.8.html.md|10.8 Education And Development
+217|som/markdown/som-10.9.html.md|10.9 Learning A Hierarchy
+63|som/markdown/som-10.html.md|10 Papert's Principle
+378|som/markdown/som-11.1.html.md|11.1 Seeing Red
+613|som/markdown/som-11.2.html.md|11.2 The Shape Of Space
+360|som/markdown/som-11.3.html.md|11.3 Nearnesses
+581|som/markdown/som-11.4.html.md|11.4 Innate Geography
+552|som/markdown/som-11.5.html.md|11.5 Sensing Similarities
+496|som/markdown/som-11.6.html.md|11.6 The Centered Self
+518|som/markdown/som-11.7.html.md|11.7 Predestined Learning
+575|som/markdown/som-11.8.html.md|11.8 Half-Brains
+374|som/markdown/som-11.9.html.md|11.9 Dumbbell Theories
+337|som/markdown/som-1.1.html.md|1.1 The Agents Of The Mind
+62|som/markdown/som-11.html.md|11 The Shape Of Space
+595|som/markdown/som-12.10.html.md|12.10 How Towers Work
+593|som/markdown/som-12.11.html.md|12.11 How Causes Work
+438|som/markdown/som-12.12.html.md|12.12 Meaning And Definition
+508|som/markdown/som-12.13.html.md|12.13 Bridge-Definitions
+304|som/markdown/som-12.1.html.md|12.1 A Block-Arch Scenario
+596|som/markdown/som-12.2.html.md|12.2 Learning Meaning
+548|som/markdown/som-12.3.html.md|12.3 Uniframes
+363|som/markdown/som-12.4.html.md|12.4 Structure And Function
+460|som/markdown/som-12.5.html.md|12.5 The Function Of Structures
+482|som/markdown/som-12.6.html.md|12.6 Accumulation
+422|som/markdown/som-12.7.html.md|12.7 Accumulation Strategies
+482|som/markdown/som-12.8.html.md|12.8 Problems Of Disunity
+604|som/markdown/som-12.9.html.md|12.9 The Exception Principle
+627|som/markdown/som-1.2.html.md|1.2 The Mind And The Brain
+77|som/markdown/som-12.html.md|12 Learning Meaning
+413|som/markdown/som-13.1.html.md|13.1 Reformulation
+345|som/markdown/som-13.2.html.md|13.2 Boundaries
+365|som/markdown/som-13.3.html.md|13.3 Seeing And Believing
+477|som/markdown/som-13.4.html.md|13.4 Children's Drawing-Frames
+439|som/markdown/som-13.5.html.md|13.5 Learning A Script
+448|som/markdown/som-13.6.html.md|13.6 The Frontier Effect
+513|som/markdown/som-13.7.html.md|13.7 Duplications
+637|som/markdown/som-1.3.html.md|1.3 The Society Of Mind
+51|som/markdown/som-13.html.md|13 Seeing And Believing
+883|som/markdown/som-14.1.html.md|14.1 Using Reformulation
+454|som/markdown/som-14.2.html.md|14.2 Means And Ends
+352|som/markdown/som-14.3.html.md|14.3 Seeing Squares
+494|som/markdown/som-14.4.html.md|14.4 Brainstorming
+691|som/markdown/som-14.5.html.md|14.5 The Investment Principle
+479|som/markdown/som-14.6.html.md|14.6 Parts And Holes
+577|som/markdown/som-14.7.html.md|14.7 The Power Of Negative Thinking
+432|som/markdown/som-14.8.html.md|14.8 The Interaction-Square
+1286|som/markdown/som-1.4.html.md|1.4 The World Of Blocks
+58|som/markdown/som-14.html.md|14 Reformulation
+596|som/markdown/som-15.10.html.md|15.10 Losing Track
+565|som/markdown/som-15.11.html.md|15.11 The Recursion Principle
+602|som/markdown/som-15.1.html.md|15.1 Momentary Mental State
+442|som/markdown/som-15.2.html.md|15.2 Self-Examination
+598|som/markdown/som-15.3.html.md|15.3 Memory
+566|som/markdown/som-15.4.html.md|15.4 Memories Of Memories
+680|som/markdown/som-15.5.html.md|15.5 The Immanence Illusion
+565|som/markdown/som-15.6.html.md|15.6 Many Kinds Of Memory
+533|som/markdown/som-15.7.html.md|15.7 Memory Rearrangements
+354|som/markdown/som-15.8.html.md|15.8 Anatomy Of Memory
+630|som/markdown/som-15.9.html.md|15.9 Interruption And Recovery
+72|som/markdown/som-15.html.md|15 Consciousness And Memory
+560|som/markdown/som-16.10.html.md|16.10 Adult Emotions
+649|som/markdown/som-16.1.html.md|16.1 Emotion
+552|som/markdown/som-16.2.html.md|16.2 Mental Growth
+400|som/markdown/som-16.3.html.md|16.3 Mental Proto-Specialists
+535|som/markdown/som-16.4.html.md|16.4 Cross-Exclusion
+538|som/markdown/som-16.5.html.md|16.5 Avalanche Effects
+324|som/markdown/som-16.6.html.md|16.6 Motivation
+499|som/markdown/som-16.7.html.md|16.7 Exploitation
+541|som/markdown/som-16.8.html.md|16.8 Stimulus Vs. Simulus
+592|som/markdown/som-16.9.html.md|16.9 Infant Emotions
+133|som/markdown/som-16.html.md|16 Emotion
+737|som/markdown/som-17.10.html.md|17.10 Intellectual Trauma
+534|som/markdown/som-17.11.html.md|17.11 Intellectual Ideals
+580|som/markdown/som-17.1.html.md|17.1 Sequences Of Teaching-Selves
+353|som/markdown/som-17.2.html.md|17.2 Attachment-Learning
+570|som/markdown/som-17.3.html.md|17.3 Attachment Simplifies
+571|som/markdown/som-17.4.html.md|17.4 Functional Autonomy
+596|som/markdown/som-17.5.html.md|17.5 Developmental Stages
+564|som/markdown/som-17.6.html.md|17.6 Prerequisites For Growth
+615|som/markdown/som-17.7.html.md|17.7 Genetic Timetables
+579|som/markdown/som-17.8.html.md|17.8 Attachment-Images
+639|som/markdown/som-17.9.html.md|17.9 Different Spans Of Memories
+241|som/markdown/som-17.html.md|17 Development
+596|som/markdown/som-18.1.html.md|18.1 Must Machines Be Logical?
+490|som/markdown/som-18.2.html.md|18.2 Chains Of Reasoning
+270|som/markdown/som-18.3.html.md|18.3 Chaining
+510|som/markdown/som-18.4.html.md|18.4 Logical Chains
+353|som/markdown/som-18.5.html.md|18.5 Strong Arguments
+419|som/markdown/som-18.6.html.md|18.6 Magnitude From Multitude
+608|som/markdown/som-18.7.html.md|18.7 What Is A Number?
+640|som/markdown/som-18.8.html.md|18.8 Mathematics Made Hard
+578|som/markdown/som-18.9.html.md|18.9 Robustness And Recovery
+223|som/markdown/som-18.html.md|18 Reasoning
+408|som/markdown/som-19.10.html.md|19.10 Closing The Ring
+628|som/markdown/som-19.1.html.md|19.1 The Roots Of Intention
+406|som/markdown/som-19.2.html.md|19.2 The Language-Agency
+523|som/markdown/som-19.3.html.md|19.3 Words And Ideas
+610|som/markdown/som-19.4.html.md|19.4 Objects And Properties
+347|som/markdown/som-19.5.html.md|19.5 Polynemes
+409|som/markdown/som-19.6.html.md|19.6 Recognizers
+410|som/markdown/som-19.7.html.md|19.7 Weighing Evidence
+507|som/markdown/som-19.8.html.md|19.8 Generalizing
+447|som/markdown/som-19.9.html.md|19.9 Recognizing Thoughts
+140|som/markdown/som-19.html.md|19 Words And Ideas
+55|som/markdown/som-1.html.md|1 Building Blocks
+470|som/markdown/som-20.1.html.md|20.1 Ambiguity
+468|som/markdown/som-20.2.html.md|20.2 Negotiating Ambiguity
+385|som/markdown/som-20.3.html.md|20.3 Visual Ambiguity
+566|som/markdown/som-20.4.html.md|20.4 Locking-In And Weeding-Out
+494|som/markdown/som-20.5.html.md|20.5 Micronemes
+362|som/markdown/som-20.6.html.md|20.6 The Nemeic Spiral
+539|som/markdown/som-20.7.html.md|20.7 Connections
+410|som/markdown/som-20.8.html.md|20.8 Connection Lines
+423|som/markdown/som-20.9.html.md|20.9 Distributed Memory
+58|som/markdown/som-20.html.md|20 Context And Ambiguity
+556|som/markdown/som-21.1.html.md|21.1 The Pronouns Of The Mind
+385|som/markdown/som-21.2.html.md|21.2 Pronomes
+438|som/markdown/som-21.3.html.md|21.3 Trans-Frames
+505|som/markdown/som-21.4.html.md|21.4 Communication Among Agents
+515|som/markdown/som-21.5.html.md|21.5 Automatism
+384|som/markdown/som-21.6.html.md|21.6 Trans-Frame Pronomes
+467|som/markdown/som-21.7.html.md|21.7 Generalizing With Pronomes
+521|som/markdown/som-21.8.html.md|21.8 Attention
+410|som/markdown/som-2.1.html.md|2.1 Components And Connections
+58|som/markdown/som-21.html.md|21 Trans-Frames
+607|som/markdown/som-22.10.html.md|22.10 Verbal Expression
+626|som/markdown/som-22.11.html.md|22.11 Creative Expression
+479|som/markdown/som-22.1.html.md|22.1 Pronomes And Polynemes
+404|som/markdown/som-22.2.html.md|22.2 Isonomes
+534|som/markdown/som-22.3.html.md|22.3 De-Specializing
+578|som/markdown/som-22.4.html.md|22.4 Learning And Teaching
+569|som/markdown/som-22.5.html.md|22.5 Inference
+668|som/markdown/som-22.6.html.md|22.6 Expression
+556|som/markdown/som-22.7.html.md|22.7 Causes And Clauses
+506|som/markdown/som-22.8.html.md|22.8 Interruptions
+647|som/markdown/som-22.9.html.md|22.9 Pronouns And References
+537|som/markdown/som-2.2.html.md|2.2 Novelists And Reductionists
+195|som/markdown/som-22.html.md|22 Expression
+502|som/markdown/som-23.1.html.md|23.1 A World Of Differences
+430|som/markdown/som-23.2.html.md|23.2 Differences And Duplicates
+560|som/markdown/som-23.3.html.md|23.3 Time Blinking
+569|som/markdown/som-23.4.html.md|23.4 The Meanings Of More
+546|som/markdown/som-23.5.html.md|23.5 Foreign Accents
+514|som/markdown/som-2.3.html.md|2.3 Parts And Wholes
+52|som/markdown/som-23.html.md|23 Comparisons
+490|som/markdown/som-24.1.html.md|24.1 The Speed Of Thought
+537|som/markdown/som-24.2.html.md|24.2 Frames Of Mind
+413|som/markdown/som-24.3.html.md|24.3 How Trans-Frames Work
+570|som/markdown/som-24.4.html.md|24.4 Default Assumptions
+470|som/markdown/som-24.5.html.md|24.5 Nonverbal Reasoning
+416|som/markdown/som-24.6.html.md|24.6 Direction-Nemes
+495|som/markdown/som-24.7.html.md|24.7 Picture-Frames
+368|som/markdown/som-24.8.html.md|24.8 How Picture-Frames Work
+346|som/markdown/som-24.9.html.md|24.9 Recognizers And Memorizers
+597|som/markdown/som-2.4.html.md|2.4 Holes And Parts
+63|som/markdown/som-24.html.md|24 Frames
+359|som/markdown/som-25.1.html.md|25.1 One Frame At A Time?
+395|som/markdown/som-25.2.html.md|25.2 Frame-Arrays
+452|som/markdown/som-25.3.html.md|25.3 The Stationary World
+566|som/markdown/som-25.4.html.md|25.4 The Sense Of Continuity
+548|som/markdown/som-25.5.html.md|25.5 Expectations
+583|som/markdown/som-25.6.html.md|25.6 The Frame Idea
+651|som/markdown/som-2.5.html.md|2.5 Easy Things Are Hard
+58|som/markdown/som-25.html.md|25 Frame Arrays
+512|som/markdown/som-26.10.html.md|26.10 Learning Language
+585|som/markdown/som-26.11.html.md|26.11 Grammar
+585|som/markdown/som-26.12.html.md|26.12 Coherent Discourse
+449|som/markdown/som-26.1.html.md|26.1 Understanding Words
+297|som/markdown/som-26.2.html.md|26.2 Understanding Stories
+420|som/markdown/som-26.3.html.md|26.3 Sentence-Frames
+400|som/markdown/som-26.4.html.md|26.4 A Party-Frame
+455|som/markdown/som-26.5.html.md|26.5 Story-Frames
+539|som/markdown/som-26.6.html.md|26.6 Sentence And Nonsense
+572|som/markdown/som-26.7.html.md|26.7 Frames For Nouns
+496|som/markdown/som-26.8.html.md|26.8 Frames For Verbs
+456|som/markdown/som-26.9.html.md|26.9 Language And Vision
+113|som/markdown/som-2.6.html.md|2.6 Confusion
+68|som/markdown/som-26.html.md|26 Language-Frames
+532|som/markdown/som-27.1.html.md|27.1 Demons
+462|som/markdown/som-27.2.html.md|27.2 Suppressors
+503|som/markdown/som-27.3.html.md|27.3 Censors
+527|som/markdown/som-27.4.html.md|27.4 Exceptions To Logic
+509|som/markdown/som-27.5.html.md|27.5 Jokes
+619|som/markdown/som-27.6.html.md|27.6 Humor And Censorship
+520|som/markdown/som-27.7.html.md|27.7 Laughter
+581|som/markdown/som-27.8.html.md|27.8 Good Humor
+462|som/markdown/som-2.7.html.md|2.7 Are People Machines?
+53|som/markdown/som-27.html.md|27 Censors And Jokes
+570|som/markdown/som-28.1.html.md|28.1 The Myth Of Mental Energy
+613|som/markdown/som-28.2.html.md|28.2 Magnitude And Marketplace
+604|som/markdown/som-28.3.html.md|28.3 Quantity And Quality
+516|som/markdown/som-28.4.html.md|28.4 Mind Over Matter
+575|som/markdown/som-28.5.html.md|28.5 The Mind And The World
+611|som/markdown/som-28.6.html.md|28.6 Minds And Machines
+653|som/markdown/som-28.7.html.md|28.7 Individual Identities
+564|som/markdown/som-28.8.html.md|28.8 Overlapping Minds
+72|som/markdown/som-28.html.md|28 The Mind And The World
+396|som/markdown/som-29.1.html.md|29.1 The Realms Of Thought
+392|som/markdown/som-29.2.html.md|29.2 Several Thoughts At Once
+480|som/markdown/som-29.3.html.md|29.3 Paranomes
+556|som/markdown/som-29.4.html.md|29.4 Cross-Realm Correspondences
+561|som/markdown/som-29.5.html.md|29.5 The Problem Of Unity
+457|som/markdown/som-29.6.html.md|29.6 Autistic Children
+507|som/markdown/som-29.7.html.md|29.7 Likenesses And Analogies
+579|som/markdown/som-29.8.html.md|29.8 Metaphors
+65|som/markdown/som-29.html.md|29 The Realms Of Thought
+103|som/markdown/som-2.html.md|2 Wholes And Parts
+512|som/markdown/som-30.1.html.md|30.1 Knowing
+541|som/markdown/som-30.2.html.md|30.2 Knowing And Believing
+620|som/markdown/som-30.3.html.md|30.3 Mental Models
+393|som/markdown/som-30.4.html.md|30.4 World Models
+417|som/markdown/som-30.5.html.md|30.5 Knowing Ourselves
+578|som/markdown/som-30.6.html.md|30.6 Freedom Of Will
+519|som/markdown/som-30.7.html.md|30.7 The Myth Of The Third Alternative
+528|som/markdown/som-30.8.html.md|30.8 Intelligence And Resourcefulness
+68|som/markdown/som-30.html.md|30 Mental Models
+376|som/markdown/som-3.1.html.md|3.1 Conflict
+596|som/markdown/som-3.2.html.md|3.2 Noncompromise
+420|som/markdown/som-3.3.html.md|3.3 Hierarchies
+407|som/markdown/som-3.4.html.md|3.4 Heterarchies
+306|som/markdown/som-3.5.html.md|3.5 Destructiveness
+452|som/markdown/som-3.6.html.md|3.6 Pain And Pleasure Simplified
+47|som/markdown/som-3.html.md|3 Conflict And Compromise
+535|som/markdown/som-4.1.html.md|4.1 The Self
+371|som/markdown/som-4.2.html.md|4.2 One Self Or Many?
+384|som/markdown/som-4.3.html.md|4.3 The Soul
+536|som/markdown/som-4.4.html.md|4.4 The Conservative Self
+466|som/markdown/som-4.5.html.md|4.5 Exploitation
+325|som/markdown/som-4.6.html.md|4.6 Self-Control
+433|som/markdown/som-4.7.html.md|4.7 Long-Range Plans
+347|som/markdown/som-4.8.html.md|4.8 Ideals
+79|som/markdown/som-4.html.md|4 The Self
+484|som/markdown/som-5.1.html.md|5.1 Circular Causality
+571|som/markdown/som-5.2.html.md|5.2 Unanswerable Questions
+324|som/markdown/som-5.3.html.md|5.3 The Remote-Control Self
+345|som/markdown/som-5.4.html.md|5.4 Personal Identity
+475|som/markdown/som-5.5.html.md|5.5 Fashion And Style
+520|som/markdown/som-5.6.html.md|5.6 Traits
+376|som/markdown/som-5.7.html.md|5.7 Permanent Identity
+51|som/markdown/som-5.html.md|5 Individuality
+559|som/markdown/som-6.10.html.md|6.10 Worlds Out Of Mind
+474|som/markdown/som-6.11.html.md|6.11 In-Sight
+483|som/markdown/som-6.12.html.md|6.12 Internal Communication
+910|som/markdown/som-6.13.html.md|6.13 Self-Knowledge Is Dangerous
+533|som/markdown/som-6.1.html.md|6.1 Consciousness
+563|som/markdown/som-6.2.html.md|6.2 Signals And Signs
+558|som/markdown/som-6.3.html.md|6.3 Thought-Experiments
+556|som/markdown/som-6.4.html.md|6.4 B-Brains
+502|som/markdown/som-6.5.html.md|6.5 Frozen Reflection
+411|som/markdown/som-6.6.html.md|6.6 Momentary Mental Time
+389|som/markdown/som-6.7.html.md|6.7 The Causal Now
+421|som/markdown/som-6.8.html.md|6.8 Thinking Without Thinking
+518|som/markdown/som-6.9.html.md|6.9 Heads In The Clouds
+75|som/markdown/som-6.html.md|6 Insight And Introspection
+672|som/markdown/som-7.10.html.md|7.10 Genius
+510|som/markdown/som-7.1.html.md|7.1 Intelligence
+579|som/markdown/som-7.2.html.md|7.2 Uncommon Sense
+494|som/markdown/som-7.3.html.md|7.3 The Puzzle Principle
+518|som/markdown/som-7.4.html.md|7.4 Problem Solving
+650|som/markdown/som-7.5.html.md|7.5 Learning And Memory
+592|som/markdown/som-7.6.html.md|7.6 Reinforcement And Reward
+708|som/markdown/som-7.7.html.md|7.7 Local Responsibility
+397|som/markdown/som-7.8.html.md|7.8 Difference-Engines
+524|som/markdown/som-7.9.html.md|7.9 Intentions
+61|som/markdown/som-7.html.md|7 Problems And Goals
+450|som/markdown/som-8.10.html.md|8.10 Levels And Classifications
+535|som/markdown/som-8.11.html.md|8.11 Layers Of Societies
+552|som/markdown/som-8.1.html.md|8.1 K-Lines: A Theory Of Memory
+351|som/markdown/som-8.2.html.md|8.2 Re-Membering
+612|som/markdown/som-8.3.html.md|8.3 Mental States And Dispositions
+530|som/markdown/som-8.4.html.md|8.4 Partial Mental States
+431|som/markdown/som-8.5.html.md|8.5 Level-Bands
+479|som/markdown/som-8.6.html.md|8.6 Levels
+598|som/markdown/som-8.7.html.md|8.7 Fringes
+543|som/markdown/som-8.8.html.md|8.8 Societies Of Memories
+420|som/markdown/som-8.9.html.md|8.9 Knowledge-Trees
+72|som/markdown/som-8.html.md|8 A Theory Of Memory
+622|som/markdown/som-9.1.html.md|9.1 Wanting And Liking
+450|som/markdown/som-9.2.html.md|9.2 Gerrymandering
+531|som/markdown/som-9.3.html.md|9.3 Learning From Failure
+520|som/markdown/som-9.4.html.md|9.4 Enjoying Discomfort
+45|som/markdown/som-9.html.md|9 Summaries
+7347|som/markdown/som-appendix.html.md|Appendix
+2723|som/markdown/som-postscript.html.md|Postscript
+394|som/markdown/som-prologue.html.md|Prologue

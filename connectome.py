@@ -12,7 +12,7 @@ import matplotlib
 matplotlib.use('Agg')
 import pylab
 
-prefix = ['sicp', 'dirac', 'dirac_sections', 'sicm'][0]
+prefix = ['sicp', 'dirac', 'dirac_sections', 'sicm', 'som'][-1]
 metadata = open('texts/'+prefix+'/metadata.txt','r').read().split('\n')[:-1]
 wordcount, book, labels = zip(*[i.split('|') for i in metadata])
 
@@ -32,7 +32,7 @@ def prepare_corpus(documents):
     dictionary = corpora.Dictionary(texts)
     dictionary.save('texts/'+prefix+'/dictionary.dict')
     raw_corpus = [dictionary.doc2bow(text) for text in texts]
-    corpora.MmCorpus.serialize(prefix+"/corpus.mm", raw_corpus)
+    corpora.MmCorpus.serialize('texts/'+prefix+"/corpus.mm", raw_corpus)
 
 
 if (prefix == 'sicp') or (prefix == 'sicm'):
@@ -50,9 +50,11 @@ elif prefix == 'dirac_sections':
     labels = [ l.split('.')[0] for l in labels if l[0].isdigit()]
     groupdic = {d[0]:d[1] for d in [i.split(' ') for i in open('texts/'+prefix+'/metadata_extra.txt','r').read().strip().split('\n')]}
     groups = [groupdic[i] for i in labels]
+else:
+    groups = [l.split('.')[0] for l in labels]
 
 #step 1 prepare corpus
-#prepare_corpus([open(section,'r').read().decode('utf-8') for section in book])
+#prepare_corpus([open('texts/'+section,'r').read() for section in book])
 dictionary = corpora.Dictionary.load('texts/'+prefix+'/dictionary.dict')
 corpus = corpora.MmCorpus('texts/'+prefix+"/corpus.mm")
 
@@ -73,7 +75,7 @@ for text in corpus:
 index = similarities.Similarity('/tmp/tst', corpus_tfidf.corpus, num_features=corpus.num_terms+1)
 sims = index[corpus_tfidf]
 #step 3.1
-percentile = {'sicp': 90, 'sicm':95, 'dirac':60, 'dirac_sections':95}[prefix]
+percentile = {'sicp': 90, 'sicm':95, 'dirac':60, 'dirac_sections':95, 'som': 98}[prefix]
 sims[sims < pylab.percentile(sims, percentile)] = 0
 
 #step 4 convert datatype to networkx Graph
