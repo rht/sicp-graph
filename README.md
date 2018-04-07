@@ -1,4 +1,13 @@
+# SICP-Graph
+
+This project began from a question "can machines understand the text within SICP?".
+
+
 A graph visualization of the interconnectedness between the sections in SICP.
+
+Directory tree structure:
+- `docs` contains all the data and the static pages rendered on gh-pages
+- `texts` contains the cleaned html and markdown version of each texts
 
 The graph visualization has since been extended to other texts:
 - [Structure and Interpretation of Computer Programs](https://rht.github.io/sicp-graph)
