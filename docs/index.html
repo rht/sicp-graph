@@ -1,32 +1,110 @@
 <!DOCTYPE html>
-<style>
-.node text {
-  font: 7px sans-serif;
-}
+<head>
+  <meta charset="utf-8">
+  <title>D3 v5 force simulation</title>
+  <style>
+    text {
+      font-family: sans-serif;
+      font-size: 10px;
+    }
 
-.links line {
-  stroke: #999;
-  stroke-opacity: 0.6;
-}
+  </style>
+</head>
 
-.node circle {
-  stroke: #fff;
-  stroke-width: 1.5px;
-}
+<body>
+  <svg width="1200" height="600"></svg>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- <script type="text/javascript" src="force.js"></script> -->
+  <script type="module">
+  // From https://stackoverflow.com/questions/63446134/javascript-d3-js-forced-directed-graph-with-label
 
-</style>
-<html>
-  <head>
-    <title>SICP graph</title>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
-  </head>
-  <body>
-    <svg width="1200" height="600"></svg>
-    <script type="text/javascript" src="force.js"></script>
-    <div id="rank">
-        <ol>
-        </ol>
-    </div>
-  </body>
-</html>
+  function gup( name ) {
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp( regexS );
+    var results = regex.exec( window.location.href );
+    if( results === null )
+      return null;
+    else
+      return results[1];
+  }
+  var type = (gup("type") || "sicp").replace("/","");
+
+
+  const graph = await d3.json("json/" + type + ".json")
+  const color = d3.scaleOrdinal(d3.schemeCategory10)
+
+  var svg = d3.select("svg"),
+     width =  +svg.attr("width"),
+     height = +svg.attr("height");
+
+  var link = svg.append("g")
+    .selectAll("line")
+    .data(graph.links)
+    .enter()
+    .append("line")
+    .attr("stroke-width", 1)
+    .attr("stroke", "black");
+
+
+  var node = svg.append("g")
+    .selectAll("g")
+    .data(graph.nodes)
+    .enter()
+    .append("g")
+    .call(d3.drag()
+      .on("start", dragstarted)
+      .on("drag", dragged)
+      .on("end", dragended));
+
+  var circles = node.append("circle")
+    .data(graph.nodes)
+    .attr("r", d => Math.max(5, Math.log('wordcount' in d ? d.wordcount: 5)))
+    .attr("fill", d => color(d.group))
+
+  var labels = node.append("text")
+    .text(function(d){return d.name;});
+
+  var simulation = d3.forceSimulation()
+    .force("link", d3.forceLink().id(function(d) { return d.id; }))
+    .force("charge", d3.forceManyBody())
+    .force("center", d3.forceCenter(200, 150));
+
+  simulation
+    .nodes(graph.nodes)
+    .on("tick", ticked);
+
+  simulation.force("link")
+    .links(graph.links);
+
+
+  function ticked() {
+    link
+      .attr("x1", function(d) { return d.source.x; })
+      .attr("y1", function(d) { return d.source.y; })
+      .attr("x2", function(d) { return d.target.x; })
+      .attr("y2", function(d) { return d.target.y; });
+    node
+      .attr("transform", function(d) { return `translate(${d.x},${d.y})` });
+  }
+
+
+  function dragstarted(d) {
+    if(!d3.event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+
+  function dragged(d) {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+  }
+
+  function dragended(d) {
+    if(!d3.event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
+  </script>
+</body>
+</html> 
