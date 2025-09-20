@@ -11,9 +11,10 @@ from nltk import bigrams, trigrams
 # for main reference see http://www.clips.ua.ac.be/stylometry/aboutSty.php
 
 fname = sys.argv[1]
-text = open(fname).read().decode('utf-8')
+with open(fname) as f:
+    text = f.read()
 #see http://splasho.com/blog/2013/01/17/a-bit-more-about-the-up-goer-five-text-editor/
-simple_english = open('/home/rht/github/rht/sicp-lda/nlpdata/1000dicin_withinflections.txt').read().lower().split('\n')
+simple_english = open('nlpdata/1000dicin_withinflections.txt').read().lower().split('\n')
 tic = time()
 tokens = nltk.word_tokenize(text)
 total_length = len(tokens)
@@ -46,12 +47,12 @@ for w in words:
 non_simple_words = Counter(non_simple_words)
 toc=time()
 #print "style analysis (or, writer invariant, or writeprint):"
-print("total number of words {:d}".format(total_length))
-print("{:3.2f}% simple english".format(number_of_simple_words *100. / total_length))
-sentences_length = map(len, [i.split(' ') for i in sentences])
-print("average sentence length {:.2f}".format(pylab.mean(sentences_length)))
+print(("total number of words {:d}".format(total_length)))
+print(("{:3.2f}% simple english".format(number_of_simple_words *100. / total_length)))
+sentences_length = list(map(len, [i.split(' ') for i in sentences]))
+print(("average sentence length {:.2f}".format(pylab.mean(sentences_length))))
 cusum = pylab.cumsum(pylab.array(sentences_length) - pylab.mean(sentences_length))
-print("average word length {:.2f}".format(pylab.mean(map(len, tokens))))
+print(("average word length {:.2f}".format(pylab.mean(list(map(len, tokens))))))
 #print "noun usage frequency {:.2f}%".format(normalized_counts['NN'] + normalized_counts['NNP'] + normalized_counts['NNS'])
 #print "verb usage frequency {:.2f}%".format(normalized_counts['VBD'] + normalized_counts['VBP'] + normalized_counts['VBZ'])
 
@@ -66,19 +67,19 @@ print("average word length {:.2f}".format(pylab.mean(map(len, tokens))))
 #lexical richness; dis legomena
 #print "lexical richness; dis legomena {:.3f}".format(VN(2)*1./vocabulary_size)
 #lexical richness; yule K function
-freqs = Counter(nltk.probability.FreqDist(words).values())
+freqs = Counter(list(nltk.probability.FreqDist(words).values()))
 VN = lambda i:freqs[i]
 K = (-1./total_length + 1.*sum(VN(i)*i*i for i in range(1,total_length+1))/(total_length**2))
 # just like 1/TTR, K is a measure of rate of repeated word, and can be used to gauge the lexical richness
-print "lexical richness; inverse Yule K function {:.0f}".format(1/K)
+print("lexical richness; inverse Yule K function {:.0f}".format(1/K))
 
 
 #word frequency distribution
 # also see http://www.iu1.org/special/cdsi/speech/criteria/files/language/determiningTheType.pdf
-print "unigram:",
+print("unigram:", end=' ')
 for w, count in non_simple_words.most_common(30):
-   print "%s: %d," % (w, count),
-print
+   print("%s: %d," % (w, count), end=' ')
+print()
 
 #print "average , or : or ; /sentences {:.2f}%".format((tokens.count(',') + tokens.count(';') + tokens.count('--'))/ float(len(sentences)))
 #print "function words frequency"
@@ -95,8 +96,8 @@ print
 #collocation, also see nltk book chapter 7, and this http://nlpwp.org/book/chap-ngrams.xhtml
 #http://stackoverflow.com/questions/2452982/how-to-extract-common-significant-phrases-from-a-series-of-text-entries
 # return the 10 n-grams with the highest PMI
-print "bigrams:", ', '.join([' '.join(i) for i in bigram_finder.nbest(bigram_measures.pmi, 10)])
-print "trigrams:", ', '.join([' '.join(i) for i in trigram_finder.nbest(trigram_measures.pmi, 10)])
+print("bigrams:", ', '.join([' '.join(i) for i in bigram_finder.nbest(bigram_measures.pmi, 10)]))
+print("trigrams:", ', '.join([' '.join(i) for i in trigram_finder.nbest(trigram_measures.pmi, 10)]))
 #print ', '.join([' '.join(i) for i in bigrams(words)[:20]])
 #print ', '.join([' '.join(i) for i in trigrams(words)[:20]])
 
