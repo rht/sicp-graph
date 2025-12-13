@@ -1,68 +1,394 @@
 <!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
-  <title>SICP Graph</title>
+  <title>SICP Graph - Arc Diagram</title>
   <style>
-    body { margin: 0; }
-    #graph-select {
-      position: absolute;
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #fafafa;
+    }
+    #controls {
+      position: fixed;
       top: 10px;
       left: 10px;
-      z-index: 1;
+      z-index: 10;
+      background: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    #controls label {
+      margin-right: 15px;
+      font-size: 14px;
+    }
+    #controls select, #controls input {
       padding: 5px;
       font-size: 14px;
     }
+    #tooltip {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      max-width: 300px;
+      z-index: 100;
+    }
+    #legend {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      font-size: 12px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin: 4px 0;
+    }
+    .legend-color {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      margin-right: 8px;
+    }
+    svg {
+      display: block;
+    }
+    .node-label {
+      font-size: 10px;
+      cursor: pointer;
+    }
+    .arc {
+      fill: none;
+      stroke-opacity: 0.4;
+      transition: stroke-opacity 0.2s;
+    }
+    .arc.highlighted {
+      stroke-opacity: 1;
+    }
+    .arc.dimmed {
+      stroke-opacity: 0.05;
+    }
+    .node.dimmed circle {
+      opacity: 0.2;
+    }
+    .node.dimmed text {
+      opacity: 0.2;
+    }
+    #info {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      font-size: 13px;
+      max-width: 300px;
+    }
+    #info h3 {
+      margin: 0 0 10px 0;
+      font-size: 14px;
+    }
+    #info p {
+      margin: 5px 0;
+      color: #555;
+    }
   </style>
 </head>
-
 <body>
-  <select id="graph-select">
-    <option value="sicp">sicp</option>
-    <option value="sicm">sicm</option>
-    <option value="sicp_tfidf">sicp_tfidf</option>
-    <option value="dirac">dirac</option>
-    <option value="dirac_sections">dirac_sections</option>
-    <option value="som">som</option>
-  </select>
-  <div id="graph"></div>
-  <script src="https://unpkg.com/force-graph"></script>
+  <div id="controls">
+    <label>
+      Book:
+      <select id="graph-select">
+        <option value="sicp">SICP</option>
+        <option value="sicm">SICM</option>
+        <option value="dirac">Dirac (chapters)</option>
+        <option value="dirac_sections">Dirac (sections)</option>
+        <option value="som">Society of Mind</option>
+      </select>
+    </label>
+    <label>
+      Min weight:
+      <input type="range" id="weight-slider" min="0" max="1" step="0.01" value="0">
+      <span id="weight-value">0.00</span>
+    </label>
+    <label>
+      <input type="checkbox" id="show-labels" checked>
+      Show labels
+    </label>
+  </div>
+  <div id="tooltip"></div>
+  <div id="legend"></div>
+  <div id="info">
+    <h3>Arc Diagram</h3>
+    <p>Chapters are arranged in reading order. Arcs show semantic similarity between chapters.</p>
+    <p><strong>Hover</strong> over a node to see its connections.</p>
+    <p><strong>Click</strong> a node to lock the highlight.</p>
+  </div>
+  <svg id="chart"></svg>
+
   <script type="module">
-  import chroma from 'https://esm.sh/chroma-js';
+    import * as d3 from 'https://esm.sh/d3@7';
+    import chroma from 'https://esm.sh/chroma-js';
 
-  const type = new URLSearchParams(location.search).get("type") || "sicp";
-  const select = document.getElementById('graph-select');
-  select.value = type;
-  select.onchange = () => location.search = `?type=${select.value}`;
+    const margin = { top: 20, right: 40, bottom: 150, left: 40 };
+    let width = window.innerWidth - margin.left - margin.right;
+    let height = window.innerHeight - margin.top - margin.bottom;
 
-  const graph = await fetch("json/" + type + ".json").then(r => r.json());
+    const svg = d3.select('#chart')
+      .attr('width', width + margin.left + margin.right)
+      .attr('height', height + margin.top + margin.bottom);
 
-  const groups = [...new Set(graph.nodes.map(n => n.group))];
-  const colorScale = chroma.scale('Spectral').colors(groups.length);
-  const getColor = (group) => colorScale[groups.indexOf(group)];
+    const g = svg.append('g')
+      .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-  ForceGraph()
-    (document.getElementById('graph'))
-    .width(window.innerWidth)
-    .height(window.innerHeight)
-    .graphData({ nodes: graph.nodes, links: graph.edges })
-    .nodeCanvasObject((node, ctx) => {
-      const r = Math.max(5, Math.log(node.wordcount || 5));
-      ctx.beginPath();
-      ctx.arc(node.x, node.y, r, 0, 2 * Math.PI);
-      ctx.fillStyle = getColor(node.group);
-      ctx.fill();
-      ctx.font = '10px sans-serif';
-      ctx.fillStyle = 'black';
-      ctx.fillText(node.name, node.x + r + 2, node.y + 3);
-    })
-    .nodePointerAreaPaint((node, color, ctx) => {
-      const r = Math.max(5, Math.log(node.wordcount || 5));
-      ctx.beginPath();
-      ctx.arc(node.x, node.y, r, 0, 2 * Math.PI);
-      ctx.fillStyle = color;
-      ctx.fill();
-    })
-    .linkColor(() => 'black');
+    const tooltip = d3.select('#tooltip');
+    const legend = d3.select('#legend');
+
+    let currentData = null;
+    let selectedNode = null;
+    let minWeight = 0;
+
+    // Get type from URL or default
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialType = urlParams.get('type') || 'sicp';
+    document.getElementById('graph-select').value = initialType;
+
+    async function loadGraph(type) {
+      const data = await d3.json(`json/${type}.json`);
+      currentData = data;
+
+      // Sort nodes by id to get reading order
+      const nodes = [...data.nodes].sort((a, b) => a.id - b.id);
+
+      // Filter out self-loops and very low weight edges
+      const edges = data.edges.filter(e =>
+        e.source !== e.target && e.weight > 0
+      );
+
+      // Create node id to index mapping
+      const nodeIndex = new Map(nodes.map((n, i) => [n.id, i]));
+
+      // Get unique groups and create color scale
+      const groups = [...new Set(nodes.map(n => n.group))].sort();
+      const colorScale = chroma.scale('Spectral').colors(groups.length);
+      const getColor = (group) => colorScale[groups.indexOf(group)] || '#999';
+
+      // Update legend
+      legend.html('<strong>Chapters</strong>');
+      groups.forEach((group, i) => {
+        if (group === 0 || group === '0') return; // Skip "other" group
+        const item = legend.append('div').attr('class', 'legend-item');
+        item.append('div')
+          .attr('class', 'legend-color')
+          .style('background', colorScale[i]);
+        item.append('span').text(`Chapter ${group}`);
+      });
+
+      render(nodes, edges, nodeIndex, getColor);
+    }
+
+    function render(nodes, edges, nodeIndex, getColor) {
+      g.selectAll('*').remove();
+
+      // X scale - position nodes along the bottom
+      const x = d3.scalePoint()
+        .domain(nodes.map(n => n.id))
+        .range([0, width])
+        .padding(0.5);
+
+      // Node radius scale based on wordcount
+      const radiusScale = d3.scaleSqrt()
+        .domain([0, d3.max(nodes, n => n.wordcount)])
+        .range([3, 12]);
+
+      // Filter edges by weight threshold
+      const filteredEdges = edges.filter(e => e.weight >= minWeight);
+
+      // Calculate arc height based on distance
+      const maxDist = nodes.length;
+      const arcHeight = d3.scaleLinear()
+        .domain([1, maxDist])
+        .range([30, height - 50]);
+
+      // Draw arcs
+      const arcs = g.append('g').attr('class', 'arcs');
+
+      arcs.selectAll('path')
+        .data(filteredEdges)
+        .join('path')
+        .attr('class', 'arc')
+        .attr('d', d => {
+          const sourceIdx = nodeIndex.get(d.source);
+          const targetIdx = nodeIndex.get(d.target);
+          if (sourceIdx === undefined || targetIdx === undefined) return '';
+
+          const x1 = x(d.source);
+          const x2 = x(d.target);
+          const dist = Math.abs(sourceIdx - targetIdx);
+          const h = arcHeight(dist);
+
+          // Arc goes above the line
+          return `M ${x1} ${height} Q ${(x1 + x2) / 2} ${height - h} ${x2} ${height}`;
+        })
+        .attr('stroke', d => {
+          const sourceNode = nodes.find(n => n.id === d.source);
+          return sourceNode ? getColor(sourceNode.group) : '#999';
+        })
+        .attr('stroke-width', d => Math.max(1, d.weight * 3))
+        .attr('data-source', d => d.source)
+        .attr('data-target', d => d.target);
+
+      // Draw nodes
+      const nodeGroups = g.append('g').attr('class', 'nodes')
+        .selectAll('g')
+        .data(nodes)
+        .join('g')
+        .attr('class', 'node')
+        .attr('transform', d => `translate(${x(d.id)}, ${height})`)
+        .style('cursor', 'pointer');
+
+      nodeGroups.append('circle')
+        .attr('r', d => radiusScale(d.wordcount))
+        .attr('fill', d => getColor(d.group))
+        .attr('stroke', '#fff')
+        .attr('stroke-width', 1.5);
+
+      // Add labels
+      const labels = nodeGroups.append('text')
+        .attr('class', 'node-label')
+        .attr('transform', 'rotate(-45)')
+        .attr('x', 8)
+        .attr('y', 4)
+        .text(d => d.name)
+        .style('display', document.getElementById('show-labels').checked ? 'block' : 'none');
+
+      // Interaction handlers
+      function highlightNode(nodeId) {
+        const connectedNodes = new Set([nodeId]);
+
+        // Find all connected nodes
+        filteredEdges.forEach(e => {
+          if (e.source === nodeId) connectedNodes.add(e.target);
+          if (e.target === nodeId) connectedNodes.add(e.source);
+        });
+
+        // Highlight arcs
+        arcs.selectAll('path')
+          .classed('highlighted', d => d.source === nodeId || d.target === nodeId)
+          .classed('dimmed', d => d.source !== nodeId && d.target !== nodeId);
+
+        // Highlight nodes
+        nodeGroups
+          .classed('dimmed', d => !connectedNodes.has(d.id));
+
+        // Show tooltip
+        const node = nodes.find(n => n.id === nodeId);
+        const connections = filteredEdges.filter(e => e.source === nodeId || e.target === nodeId);
+        tooltip
+          .style('opacity', 1)
+          .html(`
+            <strong>${node.name}</strong><br>
+            Group: ${node.group}<br>
+            Word count: ${Math.round(node.wordcount * 1000)}<br>
+            Connections: ${connections.length}
+          `);
+      }
+
+      function resetHighlight() {
+        if (selectedNode !== null) return;
+
+        arcs.selectAll('path')
+          .classed('highlighted', false)
+          .classed('dimmed', false);
+
+        nodeGroups.classed('dimmed', false);
+        tooltip.style('opacity', 0);
+      }
+
+      nodeGroups
+        .on('mouseenter', (event, d) => {
+          if (selectedNode === null) {
+            highlightNode(d.id);
+          }
+        })
+        .on('mousemove', (event) => {
+          tooltip
+            .style('left', (event.pageX + 10) + 'px')
+            .style('top', (event.pageY - 10) + 'px');
+        })
+        .on('mouseleave', () => {
+          resetHighlight();
+        })
+        .on('click', (event, d) => {
+          if (selectedNode === d.id) {
+            selectedNode = null;
+            resetHighlight();
+          } else {
+            selectedNode = d.id;
+            highlightNode(d.id);
+          }
+        });
+
+      // Click on background to deselect
+      svg.on('click', (event) => {
+        if (event.target === svg.node()) {
+          selectedNode = null;
+          resetHighlight();
+        }
+      });
+
+      // Update labels visibility handler
+      document.getElementById('show-labels').onchange = (e) => {
+        labels.style('display', e.target.checked ? 'block' : 'none');
+      };
+
+      // Store render function for re-rendering on weight change
+      window.currentRender = () => render(nodes, edges, nodeIndex, getColor);
+    }
+
+    // Event listeners
+    document.getElementById('graph-select').onchange = (e) => {
+      const type = e.target.value;
+      window.history.replaceState({}, '', `?type=${type}`);
+      selectedNode = null;
+      loadGraph(type);
+    };
+
+    document.getElementById('weight-slider').oninput = (e) => {
+      minWeight = parseFloat(e.target.value);
+      document.getElementById('weight-value').textContent = minWeight.toFixed(2);
+      if (window.currentRender) {
+        selectedNode = null;
+        window.currentRender();
+      }
+    };
+
+    // Handle resize
+    window.addEventListener('resize', () => {
+      width = window.innerWidth - margin.left - margin.right;
+      height = window.innerHeight - margin.top - margin.bottom;
+      svg
+        .attr('width', width + margin.left + margin.right)
+        .attr('height', height + margin.top + margin.bottom);
+      if (window.currentRender) {
+        window.currentRender();
+      }
+    });
+
+    // Initial load
+    loadGraph(initialType);
   </script>
 </body>
 </html>

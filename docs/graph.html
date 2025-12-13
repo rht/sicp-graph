@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>SICP Graph</title>
+  <style>
+    body { margin: 0; }
+    #graph-select {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+      padding: 5px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <select id="graph-select">
+    <option value="sicp">sicp</option>
+    <option value="sicm">sicm</option>
+    <option value="sicp_tfidf">sicp_tfidf</option>
+    <option value="dirac">dirac</option>
+    <option value="dirac_sections">dirac_sections</option>
+    <option value="som">som</option>
+  </select>
+  <div id="graph"></div>
+  <script src="https://unpkg.com/force-graph"></script>
+  <script type="module">
+  import chroma from 'https://esm.sh/chroma-js';
+
+  const type = new URLSearchParams(location.search).get("type") || "sicp";
+  const select = document.getElementById('graph-select');
+  select.value = type;
+  select.onchange = () => location.search = `?type=${select.value}`;
+
+  const graph = await fetch("json/" + type + ".json").then(r => r.json());
+
+  const groups = [...new Set(graph.nodes.map(n => n.group))];
+  const colorScale = chroma.scale('Spectral').colors(groups.length);
+  const getColor = (group) => colorScale[groups.indexOf(group)];
+
+  ForceGraph()
+    (document.getElementById('graph'))
+    .width(window.innerWidth)
+    .height(window.innerHeight)
+    .graphData({ nodes: graph.nodes, links: graph.edges })
+    .nodeCanvasObject((node, ctx) => {
+      const r = Math.max(5, Math.log(node.wordcount || 5));
+      ctx.beginPath();
+      ctx.arc(node.x, node.y, r, 0, 2 * Math.PI);
+      ctx.fillStyle = getColor(node.group);
+      ctx.fill();
+      ctx.font = '10px sans-serif';
+      ctx.fillStyle = 'black';
+      ctx.fillText(node.name, node.x + r + 2, node.y + 3);
+    })
+    .nodePointerAreaPaint((node, color, ctx) => {
+      const r = Math.max(5, Math.log(node.wordcount || 5));
+      ctx.beginPath();
+      ctx.arc(node.x, node.y, r, 0, 2 * Math.PI);
+      ctx.fillStyle = color;
+      ctx.fill();
+    })
+    .linkColor(() => 'black');
+  </script>
+</body>
+</html>
