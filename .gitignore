@@ -1,3 +1,4 @@
 *.mm
 *.mm.index
 *.dict
+.env
