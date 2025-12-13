@@ -22,6 +22,7 @@ except LookupError:
 
 # Configuration
 prefix = ["sicp", "dirac", "dirac_sections", "sicm", "som"][2]
+prefix = "luke"
 metadata = open("texts/" + prefix + "/metadata.txt", "r").read().split("\n")[:-1]
 if prefix == "dirac_sections":
     book, labels = zip(*[i.split("|") for i in metadata])
@@ -179,9 +180,14 @@ print("Computing similarity matrix...")
 sims = cosine_similarity(embeddings)
 
 # Step 4: Apply percentile threshold
-percentile = {"sicp": 90, "sicm": 95, "dirac": 60, "dirac_sections": 95, "som": 98}[
-    prefix
-]
+percentile = {
+    "sicp": 90,
+    "sicm": 95,
+    "dirac": 60,
+    "dirac_sections": 95,
+    "som": 98,
+    "luke": 70,
+}[prefix]
 sims[sims < np.percentile(sims, percentile)] = 0
 
 # Step 5: Convert to NetworkX Graph
