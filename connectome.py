@@ -3,6 +3,7 @@ import os
 import json
 
 from dotenv import load_dotenv
+
 load_dotenv()
 
 import numpy as np
@@ -15,14 +16,17 @@ from networkx.readwrite import json_graph
 
 # Download NLTK data if not present
 try:
-    nltk.data.find('tokenizers/punkt')
+    nltk.data.find("tokenizers/punkt")
 except LookupError:
-    nltk.download('punkt')
+    nltk.download("punkt")
 
 # Configuration
-prefix = ['sicp', 'dirac', 'dirac_sections', 'sicm', 'som'][0]
-metadata = open('texts/'+prefix+'/metadata.txt', 'r').read().split('\n')[:-1]
-wordcount, book, labels = zip(*[i.split('|') for i in metadata])
+prefix = ["sicp", "dirac", "dirac_sections", "sicm", "som"][2]
+metadata = open("texts/" + prefix + "/metadata.txt", "r").read().split("\n")[:-1]
+if prefix == "dirac_sections":
+    book, labels = zip(*[i.split("|") for i in metadata])
+else:
+    wordcount, book, labels = zip(*[i.split("|") for i in metadata])
 
 # OpenAI client (uses OPENAI_API_KEY env var)
 client = OpenAI()
@@ -59,22 +63,24 @@ def chunk_document(text, max_tokens=8000):
         if sentence_tokens > max_tokens:
             # Save current chunk if any
             if current_chunk:
-                chunks.append(' '.join(current_chunk))
+                chunks.append(" ".join(current_chunk))
                 current_chunk = []
                 current_tokens = 0
             # Split long sentence by encoding and chunking tokens directly
             encoded = encoding.encode(sentence)
             for i in range(0, len(encoded), max_tokens):
-                chunk_tokens = encoded[i:i + max_tokens]
+                chunk_tokens = encoded[i : i + max_tokens]
                 chunks.append(encoding.decode(chunk_tokens))
             continue
 
         # Check if adding this sentence would exceed limit
-        test_tokens = current_tokens + sentence_tokens + (1 if current_chunk else 0)  # +1 for space
+        test_tokens = (
+            current_tokens + sentence_tokens + (1 if current_chunk else 0)
+        )  # +1 for space
 
         if test_tokens > max_tokens:
             # Save current chunk and start new one
-            chunks.append(' '.join(current_chunk))
+            chunks.append(" ".join(current_chunk))
             current_chunk = [sentence]
             current_tokens = sentence_tokens
         else:
@@ -82,7 +88,7 @@ def chunk_document(text, max_tokens=8000):
             current_tokens = test_tokens
 
     if current_chunk:
-        chunks.append(' '.join(current_chunk))
+        chunks.append(" ".join(current_chunk))
 
     return chunks if chunks else [text]
 
@@ -99,10 +105,7 @@ def embed_texts(texts):
             encoded = encoding.encode(text)[:MAX_TOKENS]
             text = encoding.decode(encoded)
 
-        response = client.embeddings.create(
-            model=MODEL,
-            input=text
-        )
+        response = client.embeddings.create(model=MODEL, input=text)
         embeddings.append(response.data[0].embedding)
 
     return np.array(embeddings)
@@ -123,7 +126,7 @@ def embed_document(text):
 
 def get_embeddings(documents, prefix, force_recompute=False):
     """Load cached embeddings or compute and cache them."""
-    cache_path = f'texts/{prefix}/embeddings_openai.npy'
+    cache_path = f"texts/{prefix}/embeddings_openai.npy"
 
     if os.path.exists(cache_path) and not force_recompute:
         print(f"Loading cached embeddings from {cache_path}")
@@ -139,25 +142,34 @@ def get_embeddings(documents, prefix, force_recompute=False):
 
 
 # Process labels based on book type
-if (prefix == 'sicp') or (prefix == 'sicm'):
+if (prefix == "sicp") or (prefix == "sicm"):
     # Strip unreadable characters
-    labels = [re.sub('\xc2|\xa0|\xe2|\x80|\x94', ' ', i) for i in labels]
+    labels = [re.sub("\xc2|\xa0|\xe2|\x80|\x94", " ", i) for i in labels]
     groups = [(l[0].isdigit() and l[0]) or 0 for l in labels]
 
-elif prefix == 'dirac':
-    groups = [l.split('.')[0] for l in labels]
+elif prefix == "dirac":
+    groups = [l.split(".")[0] for l in labels]
 
-elif prefix == 'dirac_sections':
-    labels = [l.split('.')[0] for l in labels if l[0].isdigit()]
-    groupdic = {d[0]: d[1] for d in [i.split(' ') for i in open('texts/'+prefix+'/metadata_extra.txt', 'r').read().strip().split('\n')]}
+elif prefix == "dirac_sections":
+    labels = [l.split(".")[0] for l in labels if l[0].isdigit()]
+    groupdic = {
+        d[0]: d[1]
+        for d in [
+            i.split(" ")
+            for i in open("texts/" + prefix + "/metadata_extra.txt", "r")
+            .read()
+            .strip()
+            .split("\n")
+        ]
+    }
     groups = [groupdic[i] for i in labels]
 
 else:
-    groups = [l.split('.')[0] for l in labels]
+    groups = [l.split(".")[0] for l in labels]
 
 # Step 1: Load documents
 print("Loading documents...")
-documents = [open('texts/'+section, 'r').read() for section in book]
+documents = [open("texts/" + section, "r").read() for section in book]
 
 # Step 2: Compute embeddings via OpenAI API
 embeddings = get_embeddings(documents, prefix)
@@ -167,18 +179,25 @@ print("Computing similarity matrix...")
 sims = cosine_similarity(embeddings)
 
 # Step 4: Apply percentile threshold
-percentile = {'sicp': 90, 'sicm': 95, 'dirac': 60, 'dirac_sections': 95, 'som': 98}[prefix]
+percentile = {"sicp": 90, "sicm": 95, "dirac": 60, "dirac_sections": 95, "som": 98}[
+    prefix
+]
 sims[sims < np.percentile(sims, percentile)] = 0
 
 # Step 5: Convert to NetworkX Graph
 print("Converting similarity matrix to networkx Graph")
 sims = networkx.Graph(sims, node_list=list(range(len(book))))
-networkx.set_node_attributes(sims, {x: y for x, y in enumerate(labels)}, 'name')
-networkx.set_node_attributes(sims, {x: y for x, y in enumerate(groups)}, 'group')
-wordcount_normalize = {'sicp': 1000, 'sicm': 500}.get(prefix, 1000)
-networkx.set_node_attributes(sims, {x: float(y)/wordcount_normalize for x, y in enumerate(wordcount)}, 'wordcount')
+networkx.set_node_attributes(sims, {x: y for x, y in enumerate(labels)}, "name")
+networkx.set_node_attributes(sims, {x: y for x, y in enumerate(groups)}, "group")
+wordcount_normalize = {"sicp": 1000, "sicm": 500}.get(prefix, 1000)
+if prefix != "dirac_sections":
+    networkx.set_node_attributes(
+        sims,
+        {x: float(y) / wordcount_normalize for x, y in enumerate(wordcount)},
+        "wordcount",
+    )
 
 # Step 6: Export JSON for D3.js visualization
 json_data = json_graph.node_link_data(sims)
-json.dump(json_data, open('docs/json/'+prefix+'.json', 'w'), indent=4)
+json.dump(json_data, open("docs/json/" + prefix + ".json", "w"), indent=4)
 print(f"Saved graph to docs/json/{prefix}.json")

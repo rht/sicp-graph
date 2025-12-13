@@ -1,217 +1,6 @@
 {
+    "directed": false,
     "multigraph": false,
-    "edges": [
-        {
-            "weight": 0.5042144060134888,
-            "target": 0,
-            "source": 0
-        },
-        {
-            "weight": 0.09451790153980255,
-            "target": 1,
-            "source": 0
-        },
-        {
-            "weight": 0.12970653176307678,
-            "target": 4,
-            "source": 0
-        },
-        {
-            "weight": 0.09245522320270538,
-            "target": 5,
-            "source": 0
-        },
-        {
-            "weight": 0.09230589866638184,
-            "target": 7,
-            "source": 0
-        },
-        {
-            "weight": 0.12032001465559006,
-            "target": 9,
-            "source": 0
-        },
-        {
-            "weight": 0.4796386957168579,
-            "target": 1,
-            "source": 1
-        },
-        {
-            "weight": 0.1486736536026001,
-            "target": 2,
-            "source": 1
-        },
-        {
-            "weight": 0.09392686933279037,
-            "target": 3,
-            "source": 1
-        },
-        {
-            "weight": 0.557990550994873,
-            "target": 2,
-            "source": 2
-        },
-        {
-            "weight": 0.4349084496498108,
-            "target": 3,
-            "source": 3
-        },
-        {
-            "weight": 0.17310458421707153,
-            "target": 4,
-            "source": 3
-        },
-        {
-            "weight": 0.10904397815465927,
-            "target": 5,
-            "source": 3
-        },
-        {
-            "weight": 0.3992345333099365,
-            "target": 4,
-            "source": 4
-        },
-        {
-            "weight": 0.09548076242208481,
-            "target": 5,
-            "source": 4
-        },
-        {
-            "weight": 0.1077641099691391,
-            "target": 6,
-            "source": 4
-        },
-        {
-            "weight": 0.13179364800453186,
-            "target": 7,
-            "source": 4
-        },
-        {
-            "weight": 0.09622640907764435,
-            "target": 8,
-            "source": 4
-        },
-        {
-            "weight": 0.14600156247615814,
-            "target": 10,
-            "source": 4
-        },
-        {
-            "weight": 0.12606661021709442,
-            "target": 11,
-            "source": 4
-        },
-        {
-            "weight": 0.5134936571121216,
-            "target": 5,
-            "source": 5
-        },
-        {
-            "weight": 0.15495827794075012,
-            "target": 6,
-            "source": 5
-        },
-        {
-            "weight": 0.09350159764289856,
-            "target": 7,
-            "source": 5
-        },
-        {
-            "weight": 0.10343991219997406,
-            "target": 8,
-            "source": 5
-        },
-        {
-            "weight": 0.12544165551662445,
-            "target": 9,
-            "source": 5
-        },
-        {
-            "weight": 0.14372555911540985,
-            "target": 10,
-            "source": 5
-        },
-        {
-            "weight": 0.10635063052177429,
-            "target": 11,
-            "source": 5
-        },
-        {
-            "weight": 0.6016459465026855,
-            "target": 6,
-            "source": 6
-        },
-        {
-            "weight": 0.16847628355026245,
-            "target": 7,
-            "source": 6
-        },
-        {
-            "weight": 0.10073161870241165,
-            "target": 8,
-            "source": 6
-        },
-        {
-            "weight": 0.09993097186088562,
-            "target": 9,
-            "source": 6
-        },
-        {
-            "weight": 0.11186376959085464,
-            "target": 10,
-            "source": 6
-        },
-        {
-            "weight": 0.09238921850919724,
-            "target": 11,
-            "source": 6
-        },
-        {
-            "weight": 0.6180912256240845,
-            "target": 7,
-            "source": 7
-        },
-        {
-            "weight": 0.14178268611431122,
-            "target": 9,
-            "source": 7
-        },
-        {
-            "weight": 0.5179418325424194,
-            "target": 8,
-            "source": 8
-        },
-        {
-            "weight": 0.1119873896241188,
-            "target": 9,
-            "source": 8
-        },
-        {
-            "weight": 0.10658656060695648,
-            "target": 10,
-            "source": 8
-        },
-        {
-            "weight": 0.5826563239097595,
-            "target": 9,
-            "source": 9
-        },
-        {
-            "weight": 0.5325870513916016,
-            "target": 10,
-            "source": 10
-        },
-        {
-            "weight": 0.13424073159694672,
-            "target": 11,
-            "source": 10
-        },
-        {
-            "weight": 0.4022657871246338,
-            "target": 11,
-            "source": 11
-        }
-    ],
     "graph": {
         "node_list": [
             0,
@@ -230,77 +19,253 @@
     },
     "nodes": [
         {
-            "group": "1",
-            "id": 0,
             "name": "1. The Principle of Superposition",
-            "wordcount": 0.184
+            "group": "1",
+            "wordcount": 0.184,
+            "id": 0
         },
         {
-            "group": "2",
-            "id": 1,
             "name": "2. Dynamical Variables and Observables",
-            "wordcount": 0.62
+            "group": "2",
+            "wordcount": 0.62,
+            "id": 1
         },
         {
-            "group": "3",
-            "id": 2,
             "name": "3. Representations",
-            "wordcount": 1.273
+            "group": "3",
+            "wordcount": 1.273,
+            "id": 2
         },
         {
-            "group": "4",
-            "id": 3,
             "name": "4. The Quantum Conditions",
-            "wordcount": 1.154
+            "group": "4",
+            "wordcount": 1.154,
+            "id": 3
         },
         {
-            "group": "5",
-            "id": 4,
             "name": "5. The Equations of Motion",
-            "wordcount": 1.356
+            "group": "5",
+            "wordcount": 1.356,
+            "id": 4
         },
         {
-            "group": "6",
-            "id": 5,
             "name": "6. Elementary Applications",
-            "wordcount": 1.525
+            "group": "6",
+            "wordcount": 1.525,
+            "id": 5
         },
         {
-            "group": "7",
-            "id": 6,
             "name": "7. Perturbation Theory",
-            "wordcount": 0.897
+            "group": "7",
+            "wordcount": 0.897,
+            "id": 6
         },
         {
-            "group": "8",
-            "id": 7,
             "name": "8. Collision Problems",
-            "wordcount": 1.065
+            "group": "8",
+            "wordcount": 1.065,
+            "id": 7
         },
         {
-            "group": "9",
-            "id": 8,
             "name": "9. Systems Containing Several Similar Particles",
-            "wordcount": 0.846
+            "group": "9",
+            "wordcount": 0.846,
+            "id": 8
         },
         {
-            "group": "10",
-            "id": 9,
             "name": "10. Theory of Radiation",
-            "wordcount": 1.419
+            "group": "10",
+            "wordcount": 1.419,
+            "id": 9
         },
         {
-            "group": "11",
-            "id": 10,
             "name": "11. Relativistic Theory of the Electron",
-            "wordcount": 1.132
+            "group": "11",
+            "wordcount": 1.132,
+            "id": 10
         },
         {
-            "group": "12",
-            "id": 11,
             "name": "12. Quantum Electrodynamics",
-            "wordcount": 1.76
+            "group": "12",
+            "wordcount": 1.76,
+            "id": 11
         }
     ],
-    "directed": false
+    "edges": [
+        {
+            "weight": 0.9999999999999997,
+            "source": 0,
+            "target": 0
+        },
+        {
+            "weight": 0.9999999999999989,
+            "source": 1,
+            "target": 1
+        },
+        {
+            "weight": 0.9999999999999992,
+            "source": 2,
+            "target": 2
+        },
+        {
+            "weight": 0.8703562445376094,
+            "source": 2,
+            "target": 3
+        },
+        {
+            "weight": 0.8219518419875428,
+            "source": 2,
+            "target": 9
+        },
+        {
+            "weight": 0.999999999999999,
+            "source": 3,
+            "target": 3
+        },
+        {
+            "weight": 0.8295503390405928,
+            "source": 3,
+            "target": 4
+        },
+        {
+            "weight": 0.8377353643675804,
+            "source": 3,
+            "target": 5
+        },
+        {
+            "weight": 0.8185179995309195,
+            "source": 3,
+            "target": 8
+        },
+        {
+            "weight": 0.8375934254223688,
+            "source": 3,
+            "target": 9
+        },
+        {
+            "weight": 0.8703668584573732,
+            "source": 3,
+            "target": 11
+        },
+        {
+            "weight": 0.9999999999999997,
+            "source": 4,
+            "target": 4
+        },
+        {
+            "weight": 0.8108657760190977,
+            "source": 4,
+            "target": 10
+        },
+        {
+            "weight": 0.8546463025151836,
+            "source": 4,
+            "target": 11
+        },
+        {
+            "weight": 1.0,
+            "source": 5,
+            "target": 5
+        },
+        {
+            "weight": 0.8385458657955736,
+            "source": 5,
+            "target": 6
+        },
+        {
+            "weight": 0.856666758657399,
+            "source": 5,
+            "target": 8
+        },
+        {
+            "weight": 0.826782879352468,
+            "source": 5,
+            "target": 9
+        },
+        {
+            "weight": 0.8549917151913111,
+            "source": 5,
+            "target": 10
+        },
+        {
+            "weight": 0.8538177273051955,
+            "source": 5,
+            "target": 11
+        },
+        {
+            "weight": 0.999999999999998,
+            "source": 6,
+            "target": 6
+        },
+        {
+            "weight": 0.8214594325051123,
+            "source": 6,
+            "target": 8
+        },
+        {
+            "weight": 0.8176356186213344,
+            "source": 6,
+            "target": 10
+        },
+        {
+            "weight": 0.8296858108788506,
+            "source": 6,
+            "target": 11
+        },
+        {
+            "weight": 0.9999999999999991,
+            "source": 7,
+            "target": 7
+        },
+        {
+            "weight": 0.9999999999999989,
+            "source": 8,
+            "target": 8
+        },
+        {
+            "weight": 0.8559515503686732,
+            "source": 8,
+            "target": 9
+        },
+        {
+            "weight": 0.8579069679622384,
+            "source": 8,
+            "target": 10
+        },
+        {
+            "weight": 0.8643979927409333,
+            "source": 8,
+            "target": 11
+        },
+        {
+            "weight": 0.999999999999999,
+            "source": 9,
+            "target": 9
+        },
+        {
+            "weight": 0.8403127732257438,
+            "source": 9,
+            "target": 10
+        },
+        {
+            "weight": 0.8732091723700361,
+            "source": 9,
+            "target": 11
+        },
+        {
+            "weight": 0.9999999999999994,
+            "source": 10,
+            "target": 10
+        },
+        {
+            "weight": 0.8926001582254793,
+            "source": 10,
+            "target": 11
+        },
+        {
+            "weight": 0.9999999999999997,
+            "source": 11,
+            "target": 11
+        }
+    ]
 }
