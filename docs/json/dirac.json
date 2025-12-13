@@ -1,6 +1,6 @@
 {
     "multigraph": false,
-    "links": [
+    "edges": [
         {
             "weight": 0.5042144060134888,
             "target": 0,
