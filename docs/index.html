@@ -3,107 +3,66 @@
   <meta charset="utf-8">
   <title>SICP Graph</title>
   <style>
-    text {
-      font-family: sans-serif;
-      font-size: 10px;
+    body { margin: 0; }
+    #graph-select {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+      padding: 5px;
+      font-size: 14px;
     }
-
   </style>
 </head>
 
 <body>
-  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <select id="graph-select">
+    <option value="sicp">sicp</option>
+    <option value="sicm">sicm</option>
+    <option value="sicp_tfidf">sicp_tfidf</option>
+    <option value="dirac">dirac</option>
+    <option value="dirac_sections">dirac_sections</option>
+    <option value="som">som</option>
+  </select>
+  <div id="graph"></div>
+  <script src="https://unpkg.com/force-graph"></script>
   <script type="module">
-  // From https://stackoverflow.com/questions/63446134/javascript-d3-js-forced-directed-graph-with-label
+  import chroma from 'https://esm.sh/chroma-js';
 
-  function gup( name ) {
-    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-    const regexS = "[\\?&]"+name+"=([^&#]*)";
-    const regex = new RegExp( regexS );
-    const results = regex.exec( window.location.href );
-    if( results === null )
-      return null;
-    else
-      return results[1];
-  }
-  const type = (gup("type") || "sicp").replace("/","");
+  const type = new URLSearchParams(location.search).get("type") || "sicp";
+  const select = document.getElementById('graph-select');
+  select.value = type;
+  select.onchange = () => location.search = `?type=${select.value}`;
 
+  const graph = await fetch("json/" + type + ".json").then(r => r.json());
 
-  const graph = await d3.json("json/" + type + ".json")
-  const color = d3.scaleOrdinal(d3.schemeCategory10)
+  const groups = [...new Set(graph.nodes.map(n => n.group))];
+  const colorScale = chroma.scale('Spectral').colors(groups.length);
+  const getColor = (group) => colorScale[groups.indexOf(group)];
 
-  d3.select('body').append('svg')
-    .attr('width', window.innerWidth)
-    .attr('height', window.innerHeight)
-
-  const svg = d3.select("svg")
-
-  const link = svg.append("g")
-    .selectAll("line")
-    .data(graph.edges)
-    .enter()
-    .append("line")
-    .attr("stroke-width", 1)
-    .attr("stroke", "black");
-
-  const node = svg.append("g")
-    .selectAll("g")
-    .data(graph.nodes)
-    .enter()
-    .append("g")
-    .call(d3.drag()
-      .on("start", dragstarted)
-      .on("drag", dragged)
-      .on("end", dragended));
-
-  const circles = node.append("circle")
-    .data(graph.nodes)
-    .attr("r", d => Math.max(5, Math.log('wordcount' in d ? d.wordcount: 5)))
-    .attr("fill", d => color(d.group))
-
-  const labels = node.append("text")
-    .text(d => d.name);
-
-  const simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().id(d => d.id))
-    .force("charge", d3.forceManyBody())
-    .force("center", d3.forceCenter(400, 400));
-
-  simulation
-    .nodes(graph.nodes)
-    .on("tick", ticked);
-
-  simulation.force("link")
-    .links(graph.edges);
-
-
-  function ticked() {
-    link
-      .attr("x1", function(d) { return d.source.x; })
-      .attr("y1", function(d) { return d.source.y; })
-      .attr("x2", function(d) { return d.target.x; })
-      .attr("y2", function(d) { return d.target.y; });
-    node
-      .attr("transform", function(d) { return `translate(${d.x},${d.y})` });
-  }
-
-
-  function dragstarted(event, d) {
-    if(!event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x;
-    d.fy = d.y;
-  }
-
-  function dragged(event, d) {
-    d.fx = event.x;
-    d.fy = event.y;
-  }
-
-  function dragended(event, d) {
-    if(!event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
-  }
+  ForceGraph()
+    (document.getElementById('graph'))
+    .width(window.innerWidth)
+    .height(window.innerHeight)
+    .graphData({ nodes: graph.nodes, links: graph.edges })
+    .nodeCanvasObject((node, ctx) => {
+      const r = Math.max(5, Math.log(node.wordcount || 5));
+      ctx.beginPath();
+      ctx.arc(node.x, node.y, r, 0, 2 * Math.PI);
+      ctx.fillStyle = getColor(node.group);
+      ctx.fill();
+      ctx.font = '10px sans-serif';
+      ctx.fillStyle = 'black';
+      ctx.fillText(node.name, node.x + r + 2, node.y + 3);
+    })
+    .nodePointerAreaPaint((node, color, ctx) => {
+      const r = Math.max(5, Math.log(node.wordcount || 5));
+      ctx.beginPath();
+      ctx.arc(node.x, node.y, r, 0, 2 * Math.PI);
+      ctx.fillStyle = color;
+      ctx.fill();
+    })
+    .linkColor(() => 'black');
   </script>
 </body>
-</html> 
+</html>
