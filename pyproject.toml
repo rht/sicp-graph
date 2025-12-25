@@ -1,0 +1,22 @@
+[project]
+name = "sicp-graph"
+version = "0.1.0"
+description = "Visualize semantic similarity between book chapters using force-directed graphs"
+requires-python = ">=3.9"
+dependencies = [
+    "openai>=1.0.0",
+    "networkx",
+    "numpy",
+    "nltk",
+    "scikit-learn",
+    "python-dotenv",
+    "tiktoken",
+    "rank-bm25",
+]
+
+[project.optional-dependencies]
+dev = ["matplotlib"]
+legacy = ["gensim"]  # For the original TF-IDF approach
+
+[tool.setuptools]
+py-modules = []  # No Python modules to install, just dependencies

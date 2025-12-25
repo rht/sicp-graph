@@ -3,17 +3,17 @@ import os
 import json
 
 from dotenv import load_dotenv
-
-load_dotenv()
-
 import numpy as np
 import nltk
 import tiktoken
 from openai import OpenAI
 from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.preprocessing import MinMaxScaler
+from rank_bm25 import BM25Okapi
 import networkx
 from networkx.readwrite import json_graph
 
+load_dotenv()
 # Download NLTK data if not present
 try:
     nltk.data.find("tokenizers/punkt")
@@ -21,8 +21,9 @@ except LookupError:
     nltk.download("punkt")
 
 # Configuration
-prefix = ["sicp", "dirac", "dirac_sections", "sicm", "som"][2]
+prefix = ["sicp", "dirac", "dirac_sections", "sicm", "som"][0]
 prefix = "luke"
+# prefix = "bible"
 metadata = open("texts/" + prefix + "/metadata.txt", "r").read().split("\n")[:-1]
 if prefix == "dirac_sections":
     book, labels = zip(*[i.split("|") for i in metadata])
@@ -125,6 +126,73 @@ def embed_document(text):
     return np.mean(chunk_embeddings, axis=0)
 
 
+def compute_bm25_similarity(documents):
+    """Compute BM25-based lexical similarity matrix."""
+    # Tokenize documents (simple whitespace tokenization)
+    tokenized_docs = [doc.lower().split() for doc in documents]
+
+    # Create BM25 index
+    bm25 = BM25Okapi(tokenized_docs)
+
+    # Compute similarity matrix: each doc's BM25 scores against all docs
+    n_docs = len(documents)
+    bm25_matrix = np.zeros((n_docs, n_docs))
+
+    for i, doc_tokens in enumerate(tokenized_docs):
+        scores = bm25.get_scores(doc_tokens)
+        bm25_matrix[i] = scores
+
+    # Normalize to [0, 1] range for combining with cosine similarity
+    scaler = MinMaxScaler()
+    bm25_matrix = scaler.fit_transform(bm25_matrix.flatten().reshape(-1, 1)).reshape(
+        n_docs, n_docs
+    )
+
+    # Make symmetric (average of both directions)
+    bm25_matrix = (bm25_matrix + bm25_matrix.T) / 2
+
+    return bm25_matrix
+
+
+def hybrid_similarity(semantic_sims, bm25_sims, alpha=0.7):
+    """Combine semantic and lexical similarity.
+
+    Args:
+        semantic_sims: Cosine similarity matrix from embeddings
+        bm25_sims: BM25 similarity matrix (normalized)
+        alpha: Weight for semantic similarity (1-alpha for lexical)
+
+    Returns:
+        Combined similarity matrix
+    """
+    return alpha * semantic_sims + (1 - alpha) * bm25_sims
+
+
+def apply_knn_threshold(sims, k=5):
+    """Apply k-NN thresholding: keep only top-k neighbors per node.
+
+    More principled than percentile thresholding - ensures each node
+    has exactly k connections (to its most similar neighbors).
+    """
+    n = sims.shape[0]
+    result = np.zeros_like(sims)
+
+    for i in range(n):
+        # Get indices of top-k neighbors (excluding self)
+        row = sims[i].copy()
+        row[i] = -np.inf  # Exclude self-similarity
+        top_k_indices = np.argsort(row)[-k:]
+
+        # Keep only top-k connections
+        for j in top_k_indices:
+            result[i, j] = sims[i, j]
+
+    # Make symmetric (edge exists if either node considers other a neighbor)
+    result = np.maximum(result, result.T)
+
+    return result
+
+
 def get_embeddings(documents, prefix, force_recompute=False):
     """Load cached embeddings or compute and cache them."""
     cache_path = f"texts/{prefix}/embeddings_openai.npy"
@@ -175,20 +243,29 @@ documents = [open("texts/" + section, "r").read() for section in book]
 # Step 2: Compute embeddings via OpenAI API
 embeddings = get_embeddings(documents, prefix)
 
-# Step 3: Compute similarity matrix
-print("Computing similarity matrix...")
-sims = cosine_similarity(embeddings)
+# Step 3: Compute similarity matrix (hybrid: semantic + lexical)
+print("Computing semantic similarity matrix...")
+semantic_sims = cosine_similarity(embeddings)
 
-# Step 4: Apply percentile threshold
-percentile = {
-    "sicp": 90,
-    "sicm": 95,
-    "dirac": 60,
-    "dirac_sections": 95,
-    "som": 98,
-    "luke": 70,
-}[prefix]
-sims[sims < np.percentile(sims, percentile)] = 0
+print("Computing BM25 lexical similarity matrix...")
+bm25_sims = compute_bm25_similarity(documents)
+
+# Hybrid similarity: combine semantic and lexical
+alpha = 0.7  # 70% semantic, 30% lexical
+print(f"Computing hybrid similarity (alpha={alpha})...")
+sims = hybrid_similarity(semantic_sims, bm25_sims, alpha)
+
+# Step 4: Apply k-NN threshold (more principled than percentile)
+knn_k = {
+    "sicp": 5,
+    "sicm": 3,
+    "dirac": 8,
+    "dirac_sections": 3,
+    "som": 2,
+    "luke": 5,
+}.get(prefix, 5)
+print(f"Applying k-NN thresholding (k={knn_k})...")
+sims = apply_knn_threshold(sims, k=knn_k)
 
 # Step 5: Convert to NetworkX Graph
 print("Converting similarity matrix to networkx Graph")

@@ -7,7 +7,14 @@ A graph visualization of the interconnectedness between the sections in SICP.
 
 ## Method
 
-Semantic similarity is computed using OpenAI's `text-embedding-3-small` model. Each chapter/section is embedded (with automatic chunking for long documents), and cosine similarity is computed between all pairs. A percentile threshold is applied to keep only the strongest connections, resulting in a sparse similarity graph visualized with D3.js force-directed layout.
+Similarity is computed using a hybrid approach combining semantic and lexical methods:
+
+1. **Semantic similarity**: OpenAI's `text-embedding-3-small` embeddings with cosine similarity
+2. **Lexical similarity**: BM25 (Okapi BM25) for keyword-based matching
+
+The final similarity score combines both: `0.7 * semantic + 0.3 * lexical`. This captures both conceptual relationships (via embeddings) and shared terminology (via BM25).
+
+A k-NN threshold is applied to keep only the top-k most similar neighbors per chapter, resulting in a sparse similarity graph visualized with D3.js force-directed layout.
 
 ## Directory structure
 

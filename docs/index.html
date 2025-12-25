@@ -186,15 +186,16 @@
       const getColor = (group) => colorScale[groups.indexOf(group)] || '#999';
 
       // Update legend
-      legend.html('<strong>Chapters</strong>');
-      groups.forEach((group, i) => {
-        if (group === 0 || group === '0') return; // Skip "other" group
-        const item = legend.append('div').attr('class', 'legend-item');
-        item.append('div')
-          .attr('class', 'legend-color')
-          .style('background', colorScale[i]);
-        item.append('span').text(`Chapter ${group}`);
-      });
+      // Disabled for now
+      // legend.html('<strong>Chapters</strong>');
+      // groups.forEach((group, i) => {
+      //   if (group === 0 || group === '0') return; // Skip "other" group
+      //   const item = legend.append('div').attr('class', 'legend-item');
+      //   item.append('div')
+      //     .attr('class', 'legend-color')
+      //     .style('background', colorScale[i]);
+      //   item.append('span').text(`Chapter ${group}`);
+      // });
 
       render(nodes, edges, nodeIndex, getColor);
     }
